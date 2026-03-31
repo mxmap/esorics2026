@@ -87,6 +87,7 @@
   "6195": {"domain": "loetschen.ch", "reason": "Shared Lötschental admin"},
   "6197": {"domain": "loetschen.ch", "reason": "Shared Lötschental admin"},
   "6205": {"domain": "gemeinde-bettmeralp.ch", "reason": "as on website"},
+  "6267": {"domain": "veysonnaz.org", "reason": "Not the skiing resort"},
   "6285": {"domain": "graechen.ch", "reason": "Wikidata URL incorrect (gemeinde-graechen.ch has SSL issues); actual website at gemeinde.graechen.ch, email on graechen.ch (MS365)"},
   "6289": {"domain": "3908.ch", "reason": "SSL cert mismatch on gemeinde-saas-balen.ch (*.metanet.ch cert); website redirects to 3908.ch"},
   "6404": {"domain": "ne.ch", "reason": "Using cantonal mail"},

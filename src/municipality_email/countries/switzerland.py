@@ -68,32 +68,58 @@ CANTON_ABBREVIATIONS = {
 }
 
 SKIP_DOMAINS_CH = {
+    # Generic / test
     "example.com",
     "example.ch",
+    "domain.com",
+    # Tech / tracking
     "sentry.io",
     "w3.org",
     "gstatic.com",
     "googleapis.com",
     "schema.org",
-    "gmail.com",
-    "hotmail.com",
-    "hotmail.ch",
-    "outlook.com",
-    "gmx.ch",
-    "bluewin.ch",
-    "yahoo.com",
-    "domain.com",
-    "netconsult.ch",
-    "bbf.ch",
-    "dp-wired.de",
     "google.com",
     "group.calendar.google.com",
-    "mail.com",
     "wordpress.org",
     "defiant.com",
     "schedulista.com",
+    # Personal email providers
+    "gmail.com",
+    "hotmail.com",
+    "hotmail.ch",
+    "hotmail.fr",
+    "hotmail.it",
+    "outlook.com",
+    "gmx.ch",
+    "gmx.net",
+    "bluewin.ch",
+    "yahoo.com",
+    "yahoo.fr",
+    "mail.com",
+    "windowslive.com",
+    "ymail.com",
+    "bluemail.ch",
+    "protonmail.com",
+    "protonmail.ch",
+    "icloud.com",
+    # ISPs / telcos
+    "sunrise.ch",
+    "hispeed.ch",
+    "swissonline.ch",
+    "vtxnet.ch",
+    "netplus.ch",
+    # Web agencies / CMS providers
+    "netconsult.ch",
+    "bbf.ch",
+    "dp-wired.de",
+    "talus.ch",
+    "hemmer.ch",
+    "contactmail.ch",
+    # Misc known noise
     "zurich-airport.com",
     "avasad.ch",
+    "post.ch",
+    "hin.ch",
 }
 
 SUBPAGES_CH = [
@@ -122,7 +148,11 @@ class SwitzerlandConfig(CountryConfig):
     government_tlds: list[str] = []
     skip_domains = SKIP_DOMAINS_CH
     subpages = SUBPAGES_CH
-    concurrency = 30
+    concurrency = 50
+
+    def regional_suffixes(self, region: str) -> list[str]:
+        abbrev = CANTON_ABBREVIATIONS.get(region, "")
+        return [f"{abbrev}.ch"] if abbrev else []
 
     async def collect_candidates(self, data_dir: Path) -> list[MunicipalityRecord]:
         # BFS API is canonical

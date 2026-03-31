@@ -24,6 +24,7 @@ from municipality_email.schemas import (
     PipelineOutput,
     Source,
 )
+from municipality_email.filtering import build_frequency_blocklist, filter_scraped_pool
 from municipality_email.scraping import (
     detect_website_mismatch,
     scrape_email_domains,
@@ -427,8 +428,9 @@ def phase_decide(
 ) -> None:
     """Phase 5: Decide email domain(s) for each municipality."""
     t0 = time.time()
+    frequency_blocklist = build_frequency_blocklist(records)
     for rec in records:
-        _decide_one(rec, config, mx_valid, validation)
+        _decide_one(rec, config, mx_valid, validation, frequency_blocklist)
     logger.info("[5/6] Decide: done ({:.1f}s)", time.time() - t0)
 
 
@@ -437,6 +439,7 @@ def _decide_one(
     config: CountryConfig,
     mx_valid: dict[str, bool],
     validation: dict[str, tuple[bool, str | None, bool]],
+    frequency_blocklist: set[str] | None = None,
 ) -> None:
     """Decide email domain(s) for a single municipality."""
     # Build source detail for provenance
@@ -454,6 +457,17 @@ def _decide_one(
     for domain, redirect in rec.redirects.items():
         if redirect and redirect not in config.skip_domains and mx_valid.get(redirect, False):
             scraped_pool.add(redirect)
+
+    # Apply filtering layers
+    if frequency_blocklist is not None and scraped_pool:
+        candidate_domains = {c.domain for c in rec.candidates}
+        scraped_pool = filter_scraped_pool(
+            scraped_pool,
+            municipality_name=rec.name,
+            config=config,
+            frequency_blocklist=frequency_blocklist,
+            candidate_domains=candidate_domains,
+        )
 
     static_pool: set[str] = set()
     for cand in rec.candidates:

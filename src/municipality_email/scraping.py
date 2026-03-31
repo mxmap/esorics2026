@@ -17,6 +17,8 @@ import httpx
 from email_validator import EmailNotValidError, validate_email
 from loguru import logger
 
+from municipality_email.filtering import is_valid_tld
+
 # ── Constants ────────────────────────────────────────────────────────
 
 EMAIL_RE = re.compile(r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}")
@@ -117,8 +119,11 @@ def extract_email_domains(html: str, skip_domains: set[str]) -> set[str]:
         if not _is_valid_email(email):
             return
         domain = email.split("@")[1].lower().rstrip("\\/.")
-        if domain and domain not in skip_domains:
-            domains.add(domain)
+        if not domain or domain in skip_domains:
+            return
+        if not is_valid_tld(domain):
+            return
+        domains.add(domain)
 
     # Decode HTML entities first so &#105;n&#102;o&#64;domain.ch becomes info@domain.ch
     decoded_html = htmlmod.unescape(html)
