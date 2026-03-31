@@ -1,0 +1,179 @@
+"""Tests for pipeline orchestrator."""
+
+from municipality_email.countries.germany import GermanyConfig
+from municipality_email.pipeline import _decide_one, phase_export
+from municipality_email.schemas import (
+    Confidence,
+    Country,
+    DomainCandidate,
+    MunicipalityRecord,
+    Source,
+)
+
+
+def _make_record(**kwargs) -> MunicipalityRecord:
+    defaults = dict(code="001", name="Test", region="Region", country=Country.DE)
+    defaults.update(kwargs)
+    return MunicipalityRecord(**defaults)
+
+
+class TestDecideOne:
+    def setup_method(self):
+        self.config = GermanyConfig()
+        self.empty_validation: dict[str, tuple[bool, str | None, bool]] = {}
+
+    def test_override_with_mx(self):
+        rec = _make_record(override_domain="test.de")
+        mx_valid = {"test.de": True}
+        _decide_one(rec, self.config, mx_valid, self.empty_validation)
+        assert rec.emails == ["test.de"]
+        assert rec.confidence == Confidence.HIGH
+        assert rec.source == Source.OVERRIDE
+
+    def test_override_without_mx(self):
+        rec = _make_record(override_domain="test.de")
+        mx_valid = {"test.de": False}
+        _decide_one(rec, self.config, mx_valid, self.empty_validation)
+        assert rec.emails == ["test.de"]
+        assert rec.confidence == Confidence.MEDIUM
+        assert "no_mx" in rec.flags
+
+    def test_override_empty_domain(self):
+        rec = _make_record(override_domain="")
+        _decide_one(rec, self.config, {}, self.empty_validation)
+        assert rec.confidence == Confidence.NONE
+        assert rec.source == Source.OVERRIDE
+
+    def test_scraped_emails(self):
+        rec = _make_record(
+            candidates=[DomainCandidate(domain="test.de", source="livenson")],
+            scraped_emails={"test.de": ["email.de"]},
+        )
+        mx_valid = {"email.de": True, "test.de": True}
+        _decide_one(rec, self.config, mx_valid, self.empty_validation)
+        assert "email.de" in rec.emails
+        assert rec.confidence == Confidence.HIGH
+        assert rec.source == Source.SCRAPE
+
+    def test_scraped_beats_static(self):
+        rec = _make_record(
+            candidates=[
+                DomainCandidate(domain="static.de", source="livenson"),
+                DomainCandidate(domain="other.de", source="wikidata"),
+            ],
+            scraped_emails={"static.de": ["scraped.de"]},
+        )
+        mx_valid = {"scraped.de": True, "static.de": True, "other.de": True}
+        _decide_one(rec, self.config, mx_valid, self.empty_validation)
+        assert rec.confidence == Confidence.HIGH
+        assert rec.source == Source.SCRAPE
+
+    def test_static_unconfirmed(self):
+        rec = _make_record(
+            candidates=[DomainCandidate(domain="static.de", source="livenson")],
+        )
+        mx_valid = {"static.de": True}
+        _decide_one(rec, self.config, mx_valid, self.empty_validation)
+        assert rec.emails == ["static.de"]
+        assert rec.confidence == Confidence.MEDIUM
+        assert "unverified" in rec.flags
+
+    def test_guess_only(self):
+        rec = _make_record(
+            candidates=[DomainCandidate(domain="guess.de", source="guess")],
+        )
+        mx_valid = {"guess.de": True}
+        _decide_one(rec, self.config, mx_valid, self.empty_validation)
+        assert rec.emails == ["guess.de"]
+        assert rec.confidence == Confidence.LOW
+        assert "guess_only" in rec.flags
+
+    def test_nothing_found(self):
+        rec = _make_record()
+        _decide_one(rec, self.config, {}, self.empty_validation)
+        assert rec.emails == []
+        assert rec.confidence == Confidence.NONE
+        assert rec.source == Source.NONE
+
+    def test_multiple_scraped_emails(self):
+        rec = _make_record(
+            name="Flensburg",
+            candidates=[DomainCandidate(domain="flensburg.de", source="livenson")],
+            scraped_emails={"flensburg.de": ["flensburg.de", "alt-flensburg.de"]},
+        )
+        mx_valid = {"flensburg.de": True, "alt-flensburg.de": True}
+        _decide_one(rec, self.config, mx_valid, self.empty_validation)
+        assert len(rec.emails) == 2
+        assert rec.confidence == Confidence.HIGH
+
+    def test_sources_disagree_flag(self):
+        rec = _make_record(
+            candidates=[DomainCandidate(domain="static.de", source="livenson")],
+            scraped_emails={"static.de": ["different.de"]},
+        )
+        mx_valid = {"different.de": True, "static.de": True}
+        _decide_one(rec, self.config, mx_valid, self.empty_validation)
+        assert "sources_disagree" in rec.flags
+
+
+class TestPhaseExport:
+    def test_creates_three_files(self, tmp_path):
+        records = [
+            _make_record(
+                code="001",
+                emails=["test.de"],
+                source=Source.SCRAPE,
+                confidence=Confidence.HIGH,
+            ),
+            _make_record(
+                code="002",
+                emails=[],
+                source=Source.NONE,
+                confidence=Confidence.NONE,
+            ),
+        ]
+        phase_export(records, tmp_path, "de")
+
+        assert (tmp_path / "de.json").exists()
+        assert (tmp_path / "de_detailed.json").exists()
+        assert (tmp_path / "de_review.json").exists()
+
+    def test_output_format(self, tmp_path):
+        import json
+
+        records = [
+            _make_record(
+                code="001",
+                name="Flensburg",
+                region="SH",
+                emails=["flensburg.de"],
+                source=Source.SCRAPE,
+                confidence=Confidence.HIGH,
+                website_domain="flensburg.de",
+            ),
+        ]
+        phase_export(records, tmp_path, "de")
+
+        data = json.loads((tmp_path / "de.json").read_text())
+        assert data["total"] == 1
+        m = data["municipalities"][0]
+        assert m["code"] == "001"
+        assert m["name"] == "Flensburg"
+        assert m["emails"] == ["flensburg.de"]
+
+    def test_review_filters_correctly(self, tmp_path):
+        import json
+
+        records = [
+            _make_record(code="001", confidence=Confidence.HIGH),
+            _make_record(code="002", confidence=Confidence.LOW, flags=["guess_only"]),
+            _make_record(code="003", confidence=Confidence.NONE),
+        ]
+        phase_export(records, tmp_path, "de")
+
+        review = json.loads((tmp_path / "de_review.json").read_text())
+        assert review["total"] == 2
+        codes = [m["code"] for m in review["municipalities"]]
+        assert "001" not in codes
+        assert "002" in codes
+        assert "003" in codes
