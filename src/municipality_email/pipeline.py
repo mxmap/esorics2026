@@ -249,14 +249,75 @@ async def phase_scrape(
 
     scraped_with_emails = sum(1 for eds, _, _ in results.values() if eds)
     logger.info(
-        "[3/6] Scrape: {}/{} had emails ({:.1f}s)",
+        "[3a/6] Scrape (httpx): {}/{} had emails ({:.1f}s)",
         scraped_with_emails,
         len(results),
         time.time() - t0,
     )
 
+    # Phase 3b: Playwright fallback for domains with no emails
+    no_email_domains = sorted(d for d in to_scrape if not results.get(d, (set(),))[0])
+    if no_email_domains:
+        await _playwright_fallback(no_email_domains, results, config, cache, t0)
+
     _update_records_from_scrape(records, results)
     return results
+
+
+async def _playwright_fallback(
+    domains: list[str],
+    results: dict[str, tuple[set[str], str | None, bool]],
+    config: CountryConfig,
+    cache: CacheDB | None,
+    t0: float,
+) -> None:
+    """Phase 3b: Use Chromium to render JS-heavy sites that httpx missed."""
+    from municipality_email.scraping import scrape_with_playwright
+
+    total = len(domains)
+    logger.info("[3b/6] JS fallback: {} domains to retry with Chromium", total)
+
+    sem = asyncio.Semaphore(3)
+    done = 0
+    found_count = 0
+
+    async def try_one(domain: str) -> None:
+        nonlocal done, found_count
+        async with sem:
+            try:
+                emails, redirect = await asyncio.wait_for(
+                    scrape_with_playwright(domain, config.subpages, config.skip_domains),
+                    timeout=30,
+                )
+                if emails:
+                    results[domain] = (emails, redirect, True)
+                    found_count += 1
+                    logger.info(
+                        "[3b] {} -> {} email(s): {}",
+                        domain,
+                        len(emails),
+                        ", ".join(sorted(emails)),
+                    )
+                    if cache is not None:
+                        await cache.put_scrape(domain, emails, redirect, True)
+            except asyncio.TimeoutError:
+                logger.debug("[3b] {} timed out", domain)
+            except Exception as exc:
+                logger.debug("[3b] {} failed: {!r}", domain, exc)
+
+            done += 1
+            if done % 10 == 0 or done == total:
+                logger.info("[3b] Progress: {}/{}", done, total)
+
+    tasks = [try_one(d) for d in domains]
+    await asyncio.gather(*tasks)
+
+    logger.info(
+        "[3b/6] JS fallback: found emails on {}/{} domains ({:.1f}s)",
+        found_count,
+        total,
+        time.time() - t0,
+    )
 
 
 def _update_records_from_scrape(

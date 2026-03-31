@@ -484,6 +484,67 @@ async def scrape_email_domains(
     return all_domains, redirect_domain, accessible
 
 
+# ── Playwright fallback ─────────────────────────────────────────────
+
+
+async def scrape_with_playwright(
+    domain: str,
+    subpages: list[str],
+    skip_domains: set[str],
+    *,
+    timeout_ms: int = 15000,
+) -> tuple[set[str], str | None]:
+    """Render pages with Chromium and extract emails from rendered DOM.
+
+    Used as a fallback for JS-rendered sites where httpx finds nothing.
+    Launches a headless Chromium, visits homepage + subpages, and runs
+    extract_email_domains() on the rendered HTML.
+
+    Returns (email_domains, redirect_target).
+    """
+    from playwright.async_api import async_playwright
+
+    bare = _normalize_domain(domain)
+    all_emails: set[str] = set()
+    redirect_domain: str | None = None
+
+    async with async_playwright() as p:
+        browser = await p.chromium.launch()
+        try:
+            page = await browser.new_page()
+            urls = [f"https://www.{bare}/"] + [f"https://www.{bare}{path}" for path in subpages]
+
+            for url in urls:
+                try:
+                    response = await page.goto(
+                        url, timeout=timeout_ms, wait_until="domcontentloaded"
+                    )
+                    if response is None:
+                        continue
+                    # Wait for JS frameworks to render
+                    await page.wait_for_timeout(2000)
+
+                    # Detect redirect
+                    if redirect_domain is None:
+                        final = url_to_domain(page.url)
+                        if final and final != bare:
+                            redirect_domain = final
+
+                    html = await page.content()
+                    found = extract_email_domains(html, skip_domains)
+                    all_emails |= found
+
+                    if all_emails:
+                        break
+                except Exception as exc:
+                    logger.debug("Playwright {} failed: {!r}", url, exc)
+                    continue
+        finally:
+            await browser.close()
+
+    return all_emails, redirect_domain
+
+
 # ── Website mismatch detection ──────────────────────────────────────
 
 
