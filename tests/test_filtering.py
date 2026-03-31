@@ -217,17 +217,18 @@ class TestFilterScrapedPool:
         assert "other.ch" not in result
         assert "junk.ch" not in result
 
-    def test_small_pool_not_pruned(self):
-        # <= 3 domains: no relevance pruning
-        pool = {"aarberg.ch", "noise.com", "other.org"}
+    def test_small_pool_still_pruned(self):
+        # Even with 2 domains, irrelevant ones are removed
+        pool = {"sisikon.ch", "reichlinzuegeln.ch"}
         result = filter_scraped_pool(
             pool,
-            municipality_name="Aarberg",
+            municipality_name="Sisikon",
             config=self.config,
             frequency_blocklist=set(),
             candidate_domains=set(),
         )
-        assert pool == result
+        assert "sisikon.ch" in result
+        assert "reichlinzuegeln.ch" not in result
 
     def test_fallback_when_all_score_low(self):
         # >3 domains all scoring below 0.4 -> fallback keeps them all

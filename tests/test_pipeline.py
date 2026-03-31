@@ -78,6 +78,17 @@ class TestDecideOne:
         assert rec.confidence == Confidence.MEDIUM
         assert "unverified" in rec.flags
 
+    def test_static_name_match_verified(self):
+        rec = _make_record(
+            name="Ebikon",
+            candidates=[DomainCandidate(domain="ebikon.de", source="wikidata")],
+        )
+        mx_valid = {"ebikon.de": True}
+        _decide_one(rec, self.config, mx_valid, self.empty_validation)
+        assert rec.emails == ["ebikon.de"]
+        assert rec.confidence == Confidence.HIGH
+        assert "unverified" not in rec.flags
+
     def test_guess_only(self):
         rec = _make_record(
             candidates=[DomainCandidate(domain="guess.de", source="guess")],

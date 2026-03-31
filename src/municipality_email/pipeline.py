@@ -516,10 +516,13 @@ def _decide_one(
     unconfirmed_static = static_pool - scraped_pool
     if unconfirmed_static:
         rec.emails = config.pick_best_email(unconfirmed_static, rec.name, static_pool)
-        rec.confidence = Confidence.MEDIUM
-        rec.flags.append("unverified")
-        # Find the source of the best email
         best = rec.emails[0] if rec.emails else ""
+        # If best domain matches municipality name, treat as verified
+        if best and config.domain_matches_name(rec.name, best):
+            rec.confidence = Confidence.HIGH
+        else:
+            rec.confidence = Confidence.MEDIUM
+            rec.flags.append("unverified")
         rec.source = _find_source(best, rec.candidates)
         _set_website(rec, validation)
         return

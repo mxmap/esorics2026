@@ -92,7 +92,7 @@ def filter_scraped_pool(
     """Apply all filtering layers to a scraped email pool for one municipality.
 
     1. Remove frequency-blocklisted domains (exempt if candidate or name-match).
-    2. When >3 domains remain, prune to those with relevance score > 0.0.
+    2. Prune to domains with relevance score >= 0.4 (name match or known candidate).
     """
     # Layer 2: frequency blocklist with exemptions
     filtered: set[str] = set()
@@ -105,9 +105,8 @@ def filter_scraped_pool(
             filtered.add(domain)  # exempt: matches municipality name
         # else: blocked by frequency filter
 
-    # Layer 3: relevance scoring (only prune when many candidates)
-    # Require score >= 0.4 (name match or known candidate), not just correct TLD
-    if len(filtered) > 3:
+    # Layer 3: relevance scoring — require name match or known candidate (score >= 0.4)
+    if len(filtered) > 1:
         scored = filtered.copy()
         filtered = set()
         for domain in scored:
