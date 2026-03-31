@@ -4,6 +4,7 @@ import json
 from datetime import datetime, timedelta, timezone
 
 from municipality_email.scraping import (
+    discover_contact_links,
     _is_valid_email,
     _slugify_name,
     build_urls,
@@ -89,8 +90,16 @@ class TestExtractEmailDomains:
         # Build a TYPO3-encrypted mailto link
         html = """<script>linkTo_UnCryptMailto('ocknvq,kphqBgzcorng0ej')</script>"""
         domains = extract_email_domains(html, set())
-        # May or may not find depending on the exact encrypted string — test the mechanism
         assert isinstance(domains, set)
+
+    def test_typo3_url_encoded(self):
+        # boudry.ch pattern: %2C is URL-encoded comma, %27 is quote delimiter
+        html = (
+            '<a href="javascript:linkTo_UnCryptMailto('
+            '%27kygjrm8amkkslc%2CzmsbpwYlc%2Caf%27);">Contact</a>'
+        )
+        domains = extract_email_domains(html, set())
+        assert "ne.ch" in domains
 
     def test_at_obfuscation_round(self):
         html = "<p>info(at)example.ch</p>"
@@ -117,6 +126,97 @@ class TestExtractEmailDomains:
         html = "<p>a@one.ch b@two.ch c@one.ch</p>"
         domains = extract_email_domains(html, set())
         assert domains == {"one.ch", "two.ch"}
+
+    def test_buildmail_js(self):
+        html = '<span><script>buildMail("buildM_abc", "info", "chalais.ch","", "" , "");</script></span>'
+        domains = extract_email_domains(html, set())
+        assert "chalais.ch" in domains
+
+    def test_html_entity_mailto(self):
+        html = '<a href="mailto:&#105;n&#102;&#111;&#64;ard&#111;&#110;&#46;c&#104;">Contact</a>'
+        domains = extract_email_domains(html, set())
+        assert "ardon.ch" in domains
+
+    def test_html_entity_plain_email(self):
+        html = "<p>&#105;&#110;&#102;&#111;&#64;&#116;&#101;&#115;&#116;&#46;&#99;&#104;</p>"
+        domains = extract_email_domains(html, set())
+        assert "test.ch" in domains
+
+    def test_data_email_link_base64(self):
+        html = (
+            '<a data-email-link="bWFpbHRvJTNBaW5mbyU0MDM3MTUlMkVjaA==" rel="nofollow">Contact</a>'
+        )
+        domains = extract_email_domains(html, set())
+        assert "3715.ch" in domains
+
+    def test_null_span_injection(self):
+        html = (
+            '<a href="#">info<span class="none" data-nosnippet="" '
+            'aria-hidden="true">NULL</span>@example.ch</a>'
+        )
+        domains = extract_email_domains(html, set())
+        assert "example.ch" in domains
+
+    def test_nanmail_span_injection(self):
+        html = (
+            '<a class="nanmail">mail@<span class="d2024-02-14" '
+            'style="display: none;">@@null</span>belmont.ch</a>'
+        )
+        domains = extract_email_domains(html, set())
+        assert "belmont.ch" in domains
+
+    def test_rot13_email(self):
+        html = "<a href='#terssr$onibvf.pu' class='email'>greffe(at)bavois.ch</a>"
+        domains = extract_email_domains(html, set())
+        assert "bavois.ch" in domains
+
+
+class TestDiscoverContactLinks:
+    def test_finds_contact_links(self):
+        html = """
+        <a href="/services/impressum.html/145">Impressum</a>
+        <a href="/de/verwaltung/kontakt.html">Kontakt</a>
+        <a href="/other/page">Other</a>
+        <a href="https://www.example.ch/fr/contact">Contact FR</a>
+        """
+        paths = discover_contact_links(html, "example.ch")
+        assert "/services/impressum.html/145" in paths
+        assert "/de/verwaltung/kontakt.html" in paths
+        assert "/fr/contact" in paths
+        assert "/other/page" not in paths
+
+    def test_skips_external_links(self):
+        html = '<a href="https://other-site.ch/kontakt">External</a>'
+        paths = discover_contact_links(html, "example.ch")
+        assert paths == []
+
+    def test_skips_asset_urls(self):
+        html = '<a href="/kontakt/flyer.pdf">PDF</a>'
+        paths = discover_contact_links(html, "example.ch")
+        assert paths == []
+
+    def test_skips_non_contact_links(self):
+        html = '<a href="/news/2026/article">News</a> <a href="/events">Events</a>'
+        paths = discover_contact_links(html, "example.ch")
+        assert paths == []
+
+    def test_relative_links(self):
+        html = '<a href="/gemeinde/verwaltung/kontakt">Kontakt</a>'
+        paths = discover_contact_links(html, "example.ch")
+        assert "/gemeinde/verwaltung/kontakt" in paths
+
+    def test_relative_no_leading_slash(self):
+        html = '<a href="IT/Il-Comune-75442900">Comune</a>'
+        paths = discover_contact_links(html, "ascona.ch")
+        assert "/IT/Il-Comune-75442900" in paths
+
+    def test_deduplicates(self):
+        html = """
+        <a href="/kontakt">Kontakt</a>
+        <a href="/kontakt">Kontakt again</a>
+        """
+        paths = discover_contact_links(html, "example.ch")
+        assert paths.count("/kontakt") == 1
 
 
 class TestBuildUrls:

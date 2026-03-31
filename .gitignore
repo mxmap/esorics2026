@@ -194,6 +194,9 @@ cython_debug/
 # Project-specific
 domains/*.json
 data/*/scrape_cache.json
+data/*/cache.db
+data/*/cache.db-wal
+data/*/cache.db-shm
 pipeline.log
 
 # Ruff stuff:

@@ -91,7 +91,7 @@ def resolve_cmd(
     ] = None,
     no_cache: Annotated[
         bool,
-        typer.Option("--no-cache", help="Ignore scrape cache"),
+        typer.Option("--no-cache", help="Disable all caching"),
     ] = False,
 ) -> None:
     """Resolve email domains for municipalities."""
@@ -137,7 +137,7 @@ def _resolve_main(
     ] = None,
     no_cache: Annotated[
         bool,
-        typer.Option("--no-cache", help="Ignore scrape cache"),
+        typer.Option("--no-cache", help="Disable all caching"),
     ] = False,
 ) -> None:
     """Resolve email domains for municipalities."""

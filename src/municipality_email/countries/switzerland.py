@@ -83,7 +83,6 @@ SKIP_DOMAINS_CH = {
     "bluewin.ch",
     "yahoo.com",
     "domain.com",
-    "pregny-chambesy.ch",
     "netconsult.ch",
     "bbf.ch",
     "dp-wired.de",

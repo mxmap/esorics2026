@@ -32,7 +32,7 @@ uv run resolve ch -v          # verbose logging
   - `cli.py` — typer CLI
   - `clients/` — API clients (BFS, OpenPLZ, Wikidata, static file loaders)
   - `countries/` — country configs (base ABC + CH/DE/AT implementations)
-- `data/{cc}/` — input data and overrides per country
+- `data/{cc}/` — input data, overrides per country and cached network data
 - `domains/` — output directory (gitignored)
 - `tests/` — pytest suite (90% coverage required)
 

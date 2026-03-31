@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import asyncio
+import contextlib
 import time
 from collections import Counter
 from datetime import datetime, timezone
@@ -11,6 +12,7 @@ from pathlib import Path
 import httpx
 from loguru import logger
 
+from municipality_email.cache import CacheDB
 from municipality_email.countries.base import CountryConfig
 from municipality_email.dns import lookup_mx
 from municipality_email.schemas import (
@@ -24,8 +26,6 @@ from municipality_email.schemas import (
 )
 from municipality_email.scraping import (
     detect_website_mismatch,
-    load_scrape_cache,
-    save_scrape_cache,
     scrape_email_domains,
     validate_domain_accessibility,
 )
@@ -34,7 +34,6 @@ _USER_AGENT = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
     "AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.10 Safari/605.1.1"
 )
-_CACHE_FLUSH_INTERVAL = 200
 
 
 # ── Phase 1: Collect candidates ─────────────────────────────────────
@@ -75,7 +74,9 @@ async def phase_collect(config: CountryConfig, data_dir: Path) -> list[Municipal
 
 
 async def phase_validate(
-    records: list[MunicipalityRecord], config: CountryConfig
+    records: list[MunicipalityRecord],
+    config: CountryConfig,
+    cache: CacheDB | None = None,
 ) -> dict[str, tuple[bool, str | None, bool]]:
     """Phase 2: HEAD requests to check domain accessibility.
 
@@ -83,13 +84,21 @@ async def phase_validate(
     """
     t0 = time.time()
     all_domains = {c.domain for r in records for c in r.candidates}
-    # Also include override domains
     for r in records:
         if r.override_domain:
             all_domains.add(r.override_domain)
 
-    results: dict[str, tuple[bool, str | None, bool]] = {}
-    total = len(all_domains)
+    # Check cache
+    cached: dict[str, tuple[bool, str | None, bool]] = {}
+    if cache is not None:
+        cached = await cache.get_head_many(all_domains)
+    to_validate = sorted(all_domains - set(cached))
+
+    if cached:
+        logger.info("HEAD cache: {} cached, {} to validate", len(cached), len(to_validate))
+
+    results: dict[str, tuple[bool, str | None, bool]] = dict(cached)
+    total = len(to_validate)
     done = 0
     sem = asyncio.Semaphore(config.concurrency)
 
@@ -102,17 +111,23 @@ async def phase_validate(
             if done % 500 == 0 or done == total:
                 logger.info("HEAD validation: {}/{}", done, total)
 
-    async with httpx.AsyncClient(
-        headers={"User-Agent": _USER_AGENT}, follow_redirects=True, timeout=10
-    ) as client:
-        tasks = [check_one(client, d) for d in sorted(all_domains)]
-        await asyncio.gather(*tasks)
+    if to_validate:
+        async with httpx.AsyncClient(
+            headers={"User-Agent": _USER_AGENT}, follow_redirects=True, timeout=10
+        ) as client:
+            tasks = [check_one(client, d) for d in to_validate]
+            await asyncio.gather(*tasks)
+
+        # Persist new results
+        new_results = {d: results[d] for d in to_validate if d in results}
+        if cache is not None and new_results:
+            await cache.put_head_many(new_results)
 
     accessible_count = sum(1 for a, _, _ in results.values() if a)
     logger.info(
         "[2/6] Validate: {}/{} accessible ({:.1f}s)",
         accessible_count,
-        total,
+        len(all_domains),
         time.time() - t0,
     )
 
@@ -135,7 +150,7 @@ async def phase_scrape(
     records: list[MunicipalityRecord],
     config: CountryConfig,
     validation: dict[str, tuple[bool, str | None, bool]],
-    cache_path: Path | None = None,
+    cache: CacheDB | None = None,
 ) -> dict[str, tuple[set[str], str | None, bool]]:
     """Phase 3: Scrape accessible domains for email addresses."""
     t0 = time.time()
@@ -144,17 +159,16 @@ async def phase_scrape(
     all_domains = {c.domain for r in records for c in r.candidates}
     accessible_domains = {d for d in all_domains if validation.get(d, (False,))[0]}
 
-    # Load cache
-    cache: dict[str, tuple[set[str], str | None, bool]] = {}
-    if cache_path:
-        cache = load_scrape_cache(cache_path)
+    # Check cache
+    cached: dict[str, tuple[set[str], str | None, bool]] = {}
+    if cache is not None:
+        cached = await cache.get_scrape_many(accessible_domains)
+    to_scrape = sorted(accessible_domains - set(cached))
 
-    cached_hits = accessible_domains & set(cache)
-    to_scrape = sorted(accessible_domains - cached_hits)
-    if cached_hits:
-        logger.info("Scrape cache: {} cached, {} to scrape", len(cached_hits), len(to_scrape))
+    if cached:
+        logger.info("Scrape cache: {} cached, {} to scrape", len(cached), len(to_scrape))
 
-    results: dict[str, tuple[set[str], str | None, bool]] = {d: cache[d] for d in cached_hits}
+    results: dict[str, tuple[set[str], str | None, bool]] = dict(cached)
     total = len(to_scrape)
     if total == 0:
         logger.info("[3/6] Scrape: all {} domains served from cache", len(results))
@@ -162,39 +176,53 @@ async def phase_scrape(
         return results
 
     done = 0
-    new_since_flush = 0
-    lock = asyncio.Lock()
     sem = asyncio.Semaphore(config.concurrency)
+    domain_timeout = 120  # max seconds per domain
 
     async def scrape_one(client: httpx.AsyncClient, domain: str) -> None:
-        nonlocal done, new_since_flush
-        # Get SSL state from Phase 2
+        nonlocal done
         _, _, ssl_failed = validation.get(domain, (False, None, False))
         async with sem:
             try:
-                email_domains, redirect, accessible = await scrape_email_domains(
-                    client,
-                    domain,
-                    config.subpages,
-                    config.skip_domains,
-                    exhaustive=True,
-                    ssl_failed=ssl_failed,
+                email_domains, redirect, accessible = await asyncio.wait_for(
+                    scrape_email_domains(
+                        client,
+                        domain,
+                        config.subpages,
+                        config.skip_domains,
+                        exhaustive=True,
+                        ssl_failed=ssl_failed,
+                    ),
+                    timeout=domain_timeout,
                 )
                 results[domain] = (email_domains, redirect, accessible)
-            except Exception:
-                logger.debug("Scrape failed for {}", domain)
+            except asyncio.TimeoutError:
+                logger.warning("Scrape timeout for {} (>{}s)", domain, domain_timeout)
+                results[domain] = (set(), None, False)
+            except Exception as exc:
+                logger.debug("Scrape failed for {}: {!r}", domain, exc)
                 results[domain] = (set(), None, False)
 
+            # Log result
+            emails, redir, acc = results[domain]
+            if emails:
+                logger.info(
+                    "[{}/{}] {} -> {} email(s): {}",
+                    done + 1,
+                    total,
+                    domain,
+                    len(emails),
+                    ", ".join(sorted(emails)),
+                )
+            else:
+                logger.debug("[{}/{}] {} -> no emails", done + 1, total, domain)
+
+            # Persist each result immediately
+            if cache is not None:
+                await cache.put_scrape(domain, emails, redir, acc)
+
             done += 1
-            new_since_flush += 1
-
-            if cache_path and new_since_flush >= _CACHE_FLUSH_INTERVAL:
-                async with lock:
-                    if new_since_flush >= _CACHE_FLUSH_INTERVAL:
-                        save_scrape_cache(cache_path, results)
-                        new_since_flush = 0
-
-            if done % 500 == 0 or done == total:
+            if done % 200 == 0 or done == total:
                 elapsed = time.time() - t0
                 rate = done / elapsed if elapsed > 0 else 0
                 eta = (total - done) / rate if rate > 0 else 0
@@ -206,15 +234,18 @@ async def phase_scrape(
                     eta,
                 )
 
+    pool = httpx.Limits(
+        max_connections=config.concurrency + 10,
+        max_keepalive_connections=config.concurrency,
+    )
     async with httpx.AsyncClient(
-        headers={"User-Agent": _USER_AGENT}, follow_redirects=True, timeout=15
+        headers={"User-Agent": _USER_AGENT},
+        follow_redirects=True,
+        timeout=15,
+        limits=pool,
     ) as client:
         tasks = [scrape_one(client, d) for d in to_scrape]
         await asyncio.gather(*tasks)
-
-    # Final cache flush
-    if cache_path:
-        save_scrape_cache(cache_path, results)
 
     scraped_with_emails = sum(1 for eds, _, _ in results.values() if eds)
     logger.info(
@@ -251,6 +282,7 @@ async def phase_mx(
     records: list[MunicipalityRecord],
     scrape_results: dict[str, tuple[set[str], str | None, bool]],
     config: CountryConfig,
+    cache: CacheDB | None = None,
 ) -> dict[str, bool]:
     """Phase 4: Batch MX validation for all relevant domains."""
     t0 = time.time()
@@ -258,24 +290,30 @@ async def phase_mx(
     # Collect all domains needing MX checks
     domains_to_validate: set[str] = set()
 
-    # All candidate domains
     for rec in records:
         for cand in rec.candidates:
             domains_to_validate.add(cand.domain)
         if rec.override_domain:
             domains_to_validate.add(rec.override_domain)
 
-    # All scraped email domains
     for emails, redirect, _ in scrape_results.values():
         domains_to_validate |= emails
         if redirect:
             domains_to_validate.add(redirect)
 
-    # Filter skip domains
     domains_to_validate = {d for d in domains_to_validate if d not in config.skip_domains}
 
-    mx_results: dict[str, bool] = {}
-    total = len(domains_to_validate)
+    # Check cache
+    cached_mx: dict[str, bool] = {}
+    if cache is not None:
+        cached_mx = await cache.get_mx_many(domains_to_validate)
+    to_lookup = sorted(domains_to_validate - set(cached_mx))
+
+    if cached_mx:
+        logger.info("MX cache: {} cached, {} to lookup", len(cached_mx), len(to_lookup))
+
+    mx_results: dict[str, bool] = dict(cached_mx)
+    total = len(to_lookup)
     done = 0
     sem = asyncio.Semaphore(20)
 
@@ -291,11 +329,22 @@ async def phase_mx(
             if done % 1000 == 0 or done == total:
                 logger.info("MX validation: {}/{}", done, total)
 
-    tasks = [check_one(d) for d in sorted(domains_to_validate)]
-    await asyncio.gather(*tasks)
+    if to_lookup:
+        tasks = [check_one(d) for d in to_lookup]
+        await asyncio.gather(*tasks)
+
+        # Persist new results
+        new_mx = {d: mx_results[d] for d in to_lookup if d in mx_results}
+        if cache is not None and new_mx:
+            await cache.put_mx_many(new_mx)
 
     valid = sum(1 for v in mx_results.values() if v)
-    logger.info("[4/6] MX: {}/{} have MX records ({:.1f}s)", valid, total, time.time() - t0)
+    logger.info(
+        "[4/6] MX: {}/{} have MX records ({:.1f}s)",
+        valid,
+        len(domains_to_validate),
+        time.time() - t0,
+    )
 
     # Update records
     for rec in records:
@@ -588,15 +637,21 @@ async def run_pipeline(
         _print_dry_run(records, config)
         return
 
-    # Phase 2: Validate
-    validation = await phase_validate(records, config)
+    # Open cache (if enabled)
+    async with contextlib.AsyncExitStack() as stack:
+        cache: CacheDB | None = None
+        if not no_cache:
+            cache = CacheDB(data_dir / "cache.db")
+            await stack.enter_async_context(cache)
 
-    # Phase 3: Scrape
-    cache_path = data_dir / "scrape_cache.json" if not no_cache else None
-    scrape_results = await phase_scrape(records, config, validation, cache_path)
+        # Phase 2: Validate
+        validation = await phase_validate(records, config, cache)
 
-    # Phase 4: MX
-    mx_valid = await phase_mx(records, scrape_results, config)
+        # Phase 3: Scrape
+        scrape_results = await phase_scrape(records, config, validation, cache)
+
+        # Phase 4: MX
+        mx_valid = await phase_mx(records, scrape_results, config, cache)
 
     # Phase 5: Decide
     phase_decide(records, config, mx_valid, validation)

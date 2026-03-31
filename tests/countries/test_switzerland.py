@@ -75,3 +75,6 @@ class TestConstants:
         assert "gmail.com" in SKIP_DOMAINS_CH
         assert "bluewin.ch" in SKIP_DOMAINS_CH
         assert "gmx.ch" in SKIP_DOMAINS_CH
+
+    def test_pregny_chambesy_not_skipped(self):
+        assert "pregny-chambesy.ch" not in SKIP_DOMAINS_CH

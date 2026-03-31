@@ -5,6 +5,7 @@ description = "Automated collection of email domains for municipalities in CH, D
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "aiosqlite>=0.20.0",
     "dnspython>=2.8.0",
     "email-validator>=2.3.0",
     "httpx>=0.28.1",

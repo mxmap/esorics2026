@@ -4,6 +4,7 @@ from pathlib import Path
 
 import respx
 
+from municipality_email.cache import CacheDB
 from municipality_email.countries.germany import GermanyConfig
 from municipality_email.pipeline import (
     _print_dry_run,
@@ -46,11 +47,9 @@ class TestPhaseCollect:
         config.collect_candidates = mock_collect
         records = await phase_collect(config, Path("data/de"))
 
-        # Record 001 should have guess domains
         r001 = next(r for r in records if r.code == "001")
         assert any(c.source == "guess" for c in r001.candidates)
 
-        # Record 002 should NOT get guess domains (has real candidate)
         r002 = next(r for r in records if r.code == "002")
         assert not any(c.source == "guess" for c in r002.candidates)
 
@@ -85,8 +84,21 @@ class TestPhaseValidate:
 
             validation = await phase_validate(records, config)
 
-        assert validation["good.de"][0] is True  # accessible
+        assert validation["good.de"][0] is True
         assert validation["bad.de"][0] is False
+
+    async def test_uses_head_cache(self, tmp_path):
+        records = [
+            _make_record(candidates=[DomainCandidate(domain="cached.de", source="livenson")])
+        ]
+        config = GermanyConfig()
+
+        async with CacheDB(tmp_path / "cache.db") as cache:
+            await cache.put_head_many({"cached.de": (True, "redir.de", False)})
+            # No HTTP mock needed — should be fully cached
+            validation = await phase_validate(records, config, cache)
+
+        assert validation["cached.de"] == (True, "redir.de", False)
 
 
 class TestPhaseScrape:
@@ -107,12 +119,8 @@ class TestPhaseScrape:
 
         with respx.mock:
             respx.get("https://www.good.de/").respond(200, html="<p>info@good.de</p>")
-            # Scrape subpages too
             for subpage in config.subpages:
                 respx.get(f"https://www.good.de{subpage}").respond(200, html="")
-            respx.get("https://good.de/").respond(200, html="")
-            for subpage in config.subpages:
-                respx.get(f"https://good.de{subpage}").respond(200, html="")
 
             results = await phase_scrape(records, config, validation)
 
@@ -120,29 +128,34 @@ class TestPhaseScrape:
         assert "bad.de" not in results
 
     async def test_uses_cache(self, tmp_path):
-        import json
-        from datetime import datetime, timezone
-
-        cache_path = tmp_path / "scrape_cache.json"
-        cache_data = {
-            "cached.de": {
-                "emails": ["cached.de"],
-                "redirect": None,
-                "accessible": True,
-                "timestamp": datetime.now(tz=timezone.utc).isoformat(),
-            }
-        }
-        cache_path.write_text(json.dumps(cache_data))
-
         records = [
             _make_record(candidates=[DomainCandidate(domain="cached.de", source="livenson")])
         ]
         config = GermanyConfig()
         validation = {"cached.de": (True, None, False)}
 
-        results = await phase_scrape(records, config, validation, cache_path)
+        async with CacheDB(tmp_path / "cache.db") as cache:
+            await cache.put_scrape("cached.de", {"cached.de"}, None, True)
+            results = await phase_scrape(records, config, validation, cache)
+
         assert "cached.de" in results
         assert results["cached.de"][0] == {"cached.de"}
+
+    async def test_persists_to_cache(self, tmp_path):
+        records = [_make_record(candidates=[DomainCandidate(domain="new.de", source="livenson")])]
+        config = GermanyConfig()
+        validation = {"new.de": (True, None, False)}
+
+        async with CacheDB(tmp_path / "cache.db") as cache:
+            with respx.mock:
+                respx.get("https://www.new.de/").respond(200, html="<p>info@new.de</p>")
+                for subpage in config.subpages:
+                    respx.get(f"https://www.new.de{subpage}").respond(200, html="")
+                await phase_scrape(records, config, validation, cache)
+
+            # Verify it was persisted
+            cached = await cache.get_scrape_many({"new.de"})
+            assert "new.de" in cached
 
 
 class TestPhaseMx:
@@ -166,6 +179,19 @@ class TestPhaseMx:
         assert mx_valid["good.de"] is True
         assert mx_valid["bad.de"] is False
         assert mx_valid["email.de"] is True
+
+    async def test_uses_mx_cache(self, tmp_path, mock_dns):
+        records = [
+            _make_record(candidates=[DomainCandidate(domain="cached.de", source="livenson")])
+        ]
+        config = GermanyConfig()
+
+        async with CacheDB(tmp_path / "cache.db") as cache:
+            await cache.put_mx_many({"cached.de": True})
+            # mock_dns has no entry for cached.de — would return [] without cache
+            mx_valid = await phase_mx(records, {}, config, cache)
+
+        assert mx_valid["cached.de"] is True
 
 
 class TestPhaseDecide:
@@ -233,4 +259,4 @@ class TestPrintDryRun:
         _print_dry_run(records, config)
         out = capsys.readouterr().out
         assert "DRY RUN" in out
-        assert "3" in out  # total municipalities
+        assert "3" in out
