@@ -47,17 +47,15 @@ async def resolve_robust(qname: str, rdtype: str) -> dns.resolver.Answer | None:
     Iterates system -> Quad9 -> Cloudflare resolvers.
     NXDOMAIN is terminal (returns None immediately).
     NoAnswer/NoNameservers retry next resolver.
-    Timeout retries next resolver with warning.
+    Timeout retries next resolver.
     """
     resolvers = get_resolvers()
-    had_timeout = False
     for i, resolver in enumerate(resolvers):
         try:
             return await resolver.resolve(qname, rdtype)
         except dns.resolver.NXDOMAIN:
             return None
         except dns.exception.Timeout:
-            had_timeout = True
             logger.debug("DNS {}/{}: Timeout on resolver {}, retrying", qname, rdtype, i)
             await asyncio.sleep(0.5)
         except (dns.resolver.NoAnswer, dns.resolver.NoNameservers) as e:
@@ -77,10 +75,7 @@ async def resolve_robust(qname: str, rdtype: str) -> dns.resolver.Answer | None:
                 i,
                 type(e).__name__,
             )
-    if had_timeout:
-        logger.warning("DNS {}/{}: all resolvers exhausted", qname, rdtype)
-    else:
-        logger.debug("DNS {}/{}: all resolvers exhausted", qname, rdtype)
+    logger.debug("DNS {}/{}: all resolvers exhausted", qname, rdtype)
     return None
 
 

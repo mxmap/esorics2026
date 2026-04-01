@@ -371,7 +371,7 @@ async def phase_scrape(
                 )
                 results[domain] = (email_domains, redirect, accessible)
             except asyncio.TimeoutError:
-                logger.warning("Scrape timeout for {} (>{}s)", domain, domain_timeout)
+                logger.debug("Scrape timeout for {} (>{}s)", domain, domain_timeout)
                 results[domain] = (set(), None, False)
                 timeout_count += 1
                 timeout_domains.add(domain)
@@ -458,6 +458,30 @@ async def _playwright_fallback(
     total = len(domains)
     logger.info("[5b/8] JS fallback: {} domains to retry with Chromium", total)
 
+    # Suppress noisy "Future exception was never retrieved" errors from Playwright.
+    # When asyncio.wait_for() cancels a task mid-navigation, Playwright's internal
+    # futures become orphaned and the event loop logs TargetClosedError / ERR_ABORTED.
+    loop = asyncio.get_running_loop()
+    _original_handler = loop.get_exception_handler()
+
+    def _quiet_playwright_handler(
+        loop: asyncio.AbstractEventLoop, context: dict[str, object]
+    ) -> None:
+        exc = context.get("exception")
+        if isinstance(exc, Exception):
+            msg = str(exc)
+            if (
+                "Target page, context or browser has been closed" in msg
+                or "net::ERR_ABORTED" in msg
+            ):
+                return
+        if _original_handler is not None:
+            _original_handler(loop, context)
+        else:
+            loop.default_exception_handler(context)
+
+    loop.set_exception_handler(_quiet_playwright_handler)
+
     sem = asyncio.Semaphore(3)
     done = 0
     found_count = 0
@@ -484,7 +508,7 @@ async def _playwright_fallback(
                     if cache is not None:
                         await cache.put_scrape(domain, emails, redirect, True)
             except asyncio.TimeoutError:
-                logger.warning("[3b] {} timed out (>{}s)", domain, domain_timeout)
+                logger.debug("[3b] {} timed out (>{}s)", domain, domain_timeout)
                 timeout_count += 1
             except Exception as exc:
                 logger.debug("[3b] {} failed: {!r}", domain, exc)
@@ -495,6 +519,8 @@ async def _playwright_fallback(
 
     tasks = [try_one(d) for d in domains]
     await asyncio.gather(*tasks)
+
+    loop.set_exception_handler(_original_handler)
 
     logger.info(
         "[5b/8] JS fallback: found emails on {}/{} domains, {} timeouts ({:.1f}s)",
