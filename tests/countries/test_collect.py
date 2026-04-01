@@ -85,7 +85,7 @@ class TestSwitzerlandCollect:
 
         with (
             patch(
-                "municipality_email.countries.switzerland.fetch_bfs_municipalities",
+                "municipality_email.countries.switzerland.fetch_openplz_ch_municipalities",
                 new_callable=AsyncMock,
                 return_value=bfs_data,
             ),
@@ -113,7 +113,7 @@ class TestSwitzerlandCollect:
 
         with (
             patch(
-                "municipality_email.countries.switzerland.fetch_bfs_municipalities",
+                "municipality_email.countries.switzerland.fetch_openplz_ch_municipalities",
                 new_callable=AsyncMock,
                 return_value={},
             ),
@@ -148,7 +148,7 @@ class TestSwitzerlandCollect:
 
         with (
             patch(
-                "municipality_email.countries.switzerland.fetch_bfs_municipalities",
+                "municipality_email.countries.switzerland.fetch_openplz_ch_municipalities",
                 new_callable=AsyncMock,
                 return_value=bfs_data,
             ),

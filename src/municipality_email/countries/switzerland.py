@@ -7,7 +7,7 @@ from pathlib import Path
 
 from loguru import logger
 
-from municipality_email.clients.bfs import fetch_bfs_municipalities
+from municipality_email.clients.openplz import fetch_openplz_ch_municipalities
 from municipality_email.clients.wikidata import fetch_wikidata
 from municipality_email.countries.base import CountryConfig
 from municipality_email.schemas import Country, DomainCandidate, MunicipalityRecord
@@ -155,8 +155,7 @@ class SwitzerlandConfig(CountryConfig):
         return [f"{abbrev}.ch"] if abbrev else []
 
     async def collect_candidates(self, data_dir: Path) -> list[MunicipalityRecord]:
-        # BFS API is canonical
-        bfs_municipalities = await fetch_bfs_municipalities()
+        bfs_municipalities = await fetch_openplz_ch_municipalities()
 
         # Wikidata provides website URLs
         wikidata = await fetch_wikidata(

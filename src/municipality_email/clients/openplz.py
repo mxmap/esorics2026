@@ -1,11 +1,42 @@
-"""Austrian OpenPLZ API client."""
+"""OpenPLZ API clients for Austria and Switzerland."""
 
 from __future__ import annotations
 
 import httpx
+import stamina
 from loguru import logger
 
 OPENPLZ_BASE_AT = "https://openplzapi.org/at/FederalProvinces"
+OPENPLZ_BASE_CH = "https://openplzapi.org/ch/Cantons"
+
+CANTON_SHORT_TO_FULL = {
+    "zh": "Kanton Zürich",
+    "be": "Kanton Bern",
+    "lu": "Kanton Luzern",
+    "ur": "Kanton Uri",
+    "sz": "Kanton Schwyz",
+    "ow": "Kanton Obwalden",
+    "nw": "Kanton Nidwalden",
+    "gl": "Kanton Glarus",
+    "zg": "Kanton Zug",
+    "fr": "Kanton Freiburg",
+    "so": "Kanton Solothurn",
+    "bs": "Kanton Basel-Stadt",
+    "bl": "Kanton Basel-Landschaft",
+    "sh": "Kanton Schaffhausen",
+    "ar": "Kanton Appenzell Ausserrhoden",
+    "ai": "Kanton Appenzell Innerrhoden",
+    "sg": "Kanton St. Gallen",
+    "gr": "Kanton Graubünden",
+    "ag": "Kanton Aargau",
+    "tg": "Kanton Thurgau",
+    "ti": "Kanton Tessin",
+    "vd": "Kanton Waadt",
+    "vs": "Kanton Wallis",
+    "ne": "Kanton Neuenburg",
+    "ge": "Kanton Genf",
+    "ju": "Kanton Jura",
+}
 
 
 async def fetch_openplz_municipalities(
@@ -48,7 +79,64 @@ async def fetch_openplz_municipalities(
                     break
                 page += 1
 
-        logger.info("OpenPLZ: {} municipalities loaded", len(municipalities))
+        logger.info("OpenPLZ AT: {} municipalities loaded", len(municipalities))
+        return municipalities
+    finally:
+        if own_client:
+            await client.aclose()
+
+
+@stamina.retry(
+    on=(httpx.HTTPStatusError, httpx.ConnectError, httpx.TimeoutException),
+    attempts=3,
+    wait_initial=2.0,
+)
+async def _fetch_ch_page(client: httpx.AsyncClient, url: str) -> list[dict]:
+    r = await client.get(url)
+    r.raise_for_status()
+    return r.json()
+
+
+async def fetch_openplz_ch_municipalities(
+    client: httpx.AsyncClient | None = None,
+) -> dict[str, dict]:
+    """Fetch all Swiss municipalities from the OpenPLZ API.
+
+    Iterates all 26 cantons and paginates to get the full list.
+    Returns dict keyed by BFS code string -> {"bfs", "name", "canton"}.
+    """
+    own_client = client is None
+    if own_client:
+        client = httpx.AsyncClient(timeout=30)
+
+    try:
+        municipalities: dict[str, dict] = {}
+
+        for canton_key in range(1, 27):
+            page = 1
+            while True:
+                url = f"{OPENPLZ_BASE_CH}/{canton_key}/Communes?page={page}&pageSize=50"
+                data = await _fetch_ch_page(client, url)
+
+                if not data:
+                    break
+
+                for entry in data:
+                    bfs_code = str(entry["key"])
+                    canton_short = entry.get("canton", {}).get("shortName", "").lower()
+                    canton = CANTON_SHORT_TO_FULL.get(canton_short, "")
+
+                    municipalities[bfs_code] = {
+                        "bfs": bfs_code,
+                        "name": entry["name"],
+                        "canton": canton,
+                    }
+
+                if len(data) < 50:
+                    break
+                page += 1
+
+        logger.info("OpenPLZ CH: {} municipalities loaded", len(municipalities))
         return municipalities
     finally:
         if own_client:

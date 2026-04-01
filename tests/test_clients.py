@@ -2,7 +2,7 @@
 
 import json
 
-from municipality_email.clients.bfs import CANTON_SHORT_TO_FULL, _parse_csv_response
+from municipality_email.clients.openplz import CANTON_SHORT_TO_FULL
 from municipality_email.clients.static import (
     load_bresu,
     load_destatis,
@@ -11,21 +11,7 @@ from municipality_email.clients.static import (
 )
 
 
-class TestBfsApi:
-    def test_parse_csv_response(self):
-        csv_text = (
-            "HistoricalCode,BfsCode,Level,Parent,Name,ShortName\n"
-            "100,1,1,,Kanton Zürich,ZH\n"
-            "200,10,2,100,Bezirk Zürich,BZH\n"
-            "300,261,3,200,Zürich,ZH\n"
-        )
-        entries = _parse_csv_response(csv_text)
-        assert len(entries) == 3
-        assert entries[2]["bfsCode"] == 261
-        assert entries[2]["name"] == "Zürich"
-        assert entries[2]["level"] == 3
-        assert entries[2]["parent"] == 200
-
+class TestCantonMapping:
     def test_canton_mapping_complete(self):
         assert len(CANTON_SHORT_TO_FULL) == 26
         assert CANTON_SHORT_TO_FULL["zh"] == "Kanton Zürich"

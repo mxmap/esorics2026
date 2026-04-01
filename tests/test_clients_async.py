@@ -1,66 +1,113 @@
-"""Tests for async API clients (BFS, OpenPLZ, Wikidata)."""
+"""Tests for async API clients (OpenPLZ, Wikidata)."""
 
 import httpx
 import respx
 
-from municipality_email.clients.bfs import fetch_bfs_municipalities
-from municipality_email.clients.openplz import OPENPLZ_BASE_AT, fetch_openplz_municipalities
+from municipality_email.clients.openplz import (
+    OPENPLZ_BASE_AT,
+    OPENPLZ_BASE_CH,
+    fetch_openplz_ch_municipalities,
+    fetch_openplz_municipalities,
+)
 from municipality_email.clients.wikidata import SPARQL_URL, fetch_wikidata
 
 
-class TestFetchBfsMunicipalities:
+class TestFetchOpenplzChMunicipalities:
     async def test_fetch_and_parse(self):
-        csv_text = (
-            "HistoricalCode,BfsCode,Level,Parent,Name,ShortName\n"
-            "100,1,1,,Kanton Zürich,ZH\n"
-            "200,10,2,100,Bezirk Zürich,BZH\n"
-            "300,261,3,200,Zürich,ZH\n"
-            "301,262,3,200,Winterthur,WI\n"
-        )
         with respx.mock:
-            respx.get("https://www.agvchapp.bfs.admin.ch/api/communes/snapshot").respond(
-                200, text=csv_text
+            respx.get(f"{OPENPLZ_BASE_CH}/1/Communes?page=1&pageSize=50").respond(
+                200,
+                json=[
+                    {
+                        "key": "261",
+                        "name": "Zürich",
+                        "shortName": "Zürich",
+                        "canton": {"key": "1", "name": "Zürich", "shortName": "ZH"},
+                        "district": {"key": "112", "name": "Zürich", "shortName": "Zürich"},
+                    },
+                    {
+                        "key": "230",
+                        "name": "Winterthur",
+                        "shortName": "Winterthur",
+                        "canton": {"key": "1", "name": "Zürich", "shortName": "ZH"},
+                        "district": {"key": "110", "name": "Winterthur", "shortName": "Winterthur"},
+                    },
+                ],
             )
-            result = await fetch_bfs_municipalities(date="01-01-2026")
+            for canton_key in range(2, 27):
+                respx.get(
+                    f"{OPENPLZ_BASE_CH}/{canton_key}/Communes?page=1&pageSize=50"
+                ).respond(200, json=[])
+
+            result = await fetch_openplz_ch_municipalities()
 
         assert "261" in result
         assert result["261"]["name"] == "Zürich"
         assert result["261"]["canton"] == "Kanton Zürich"
-        assert "262" in result
+        assert "230" in result
 
-    async def test_direct_canton_parent(self):
-        # When commune parent is directly a canton (level 1)
-        csv_text = (
-            "HistoricalCode,BfsCode,Level,Parent,Name,ShortName\n"
-            "100,1,1,,Basel-Stadt,BS\n"
-            "300,2701,3,100,Basel,BS\n"
-        )
+    async def test_canton_resolved_correctly(self):
+        """Sursee should be in Kanton Luzern, not Kanton Aargau."""
         with respx.mock:
-            respx.get("https://www.agvchapp.bfs.admin.ch/api/communes/snapshot").respond(
-                200, text=csv_text
+            respx.get(f"{OPENPLZ_BASE_CH}/3/Communes?page=1&pageSize=50").respond(
+                200,
+                json=[
+                    {
+                        "key": "1103",
+                        "name": "Sursee",
+                        "shortName": "Sursee",
+                        "canton": {"key": "3", "name": "Luzern", "shortName": "LU"},
+                        "district": {"key": "314", "name": "Wahlkreis Sursee", "shortName": "Sursee"},
+                    },
+                ],
             )
-            result = await fetch_bfs_municipalities(date="01-01-2026")
+            for canton_key in [*range(1, 3), *range(4, 27)]:
+                respx.get(
+                    f"{OPENPLZ_BASE_CH}/{canton_key}/Communes?page=1&pageSize=50"
+                ).respond(200, json=[])
 
-        assert "2701" in result
-        assert result["2701"]["canton"] == "Kanton Basel-Stadt"
+            result = await fetch_openplz_ch_municipalities()
 
-    async def test_multi_level_hierarchy(self):
-        """Walk up through multiple intermediate levels to reach canton."""
-        csv_text = (
-            "HistoricalCode,BfsCode,Level,Parent,Name,ShortName\n"
-            "100,1,1,,Kanton Graubünden,GR\n"
-            "200,10,2,100,Region Prättigau/Davos,RPD\n"
-            "250,15,2,200,Kreis Klosters,KKL\n"
-            "300,3871,3,250,Klosters,KL\n"
-        )
+        assert "1103" in result
+        assert result["1103"]["name"] == "Sursee"
+        assert result["1103"]["canton"] == "Kanton Luzern"
+
+    async def test_pagination(self):
+        """Should paginate when a canton has more than 50 municipalities."""
+        page1 = [
+            {
+                "key": str(i),
+                "name": f"Gemeinde {i}",
+                "shortName": f"G{i}",
+                "canton": {"key": "1", "name": "Zürich", "shortName": "ZH"},
+                "district": {"key": "100", "name": "Bezirk", "shortName": "B"},
+            }
+            for i in range(1, 51)
+        ]
+        page2 = [
+            {
+                "key": "51",
+                "name": "Gemeinde 51",
+                "shortName": "G51",
+                "canton": {"key": "1", "name": "Zürich", "shortName": "ZH"},
+                "district": {"key": "100", "name": "Bezirk", "shortName": "B"},
+            }
+        ]
         with respx.mock:
-            respx.get("https://www.agvchapp.bfs.admin.ch/api/communes/snapshot").respond(
-                200, text=csv_text
+            respx.get(f"{OPENPLZ_BASE_CH}/1/Communes?page=1&pageSize=50").respond(
+                200, json=page1
             )
-            result = await fetch_bfs_municipalities(date="01-01-2026")
+            respx.get(f"{OPENPLZ_BASE_CH}/1/Communes?page=2&pageSize=50").respond(
+                200, json=page2
+            )
+            for canton_key in range(2, 27):
+                respx.get(
+                    f"{OPENPLZ_BASE_CH}/{canton_key}/Communes?page=1&pageSize=50"
+                ).respond(200, json=[])
 
-        assert "3871" in result
-        assert result["3871"]["canton"] == "Kanton Graubünden"
+            result = await fetch_openplz_ch_municipalities()
+
+        assert len(result) == 51
 
 
 class TestFetchOpenplzMunicipalities:
