@@ -177,11 +177,13 @@ async def phase_scrape(
         return results
 
     done = 0
+    timeout_count = 0
+    timeout_domains: set[str] = set()
     sem = asyncio.Semaphore(config.concurrency)
     domain_timeout = 120  # max seconds per domain
 
     async def scrape_one(client: httpx.AsyncClient, domain: str) -> None:
-        nonlocal done
+        nonlocal done, timeout_count
         _, _, ssl_failed = validation.get(domain, (False, None, False))
         async with sem:
             try:
@@ -200,6 +202,8 @@ async def phase_scrape(
             except asyncio.TimeoutError:
                 logger.warning("Scrape timeout for {} (>{}s)", domain, domain_timeout)
                 results[domain] = (set(), None, False)
+                timeout_count += 1
+                timeout_domains.add(domain)
             except Exception as exc:
                 logger.debug("Scrape failed for {}: {!r}", domain, exc)
                 results[domain] = (set(), None, False)
@@ -207,7 +211,7 @@ async def phase_scrape(
             # Log result
             emails, redir, acc = results[domain]
             if emails:
-                logger.info(
+                logger.debug(
                     "[{}/{}] {} -> {} email(s): {}",
                     done + 1,
                     total,
@@ -250,16 +254,17 @@ async def phase_scrape(
 
     scraped_with_emails = sum(1 for eds, _, _ in results.values() if eds)
     logger.info(
-        "[3a/6] Scrape (httpx): {}/{} had emails ({:.1f}s)",
+        "[3a/6] Scrape (httpx): {}/{} had emails, {} timeouts ({:.1f}s)",
         scraped_with_emails,
         len(results),
+        timeout_count,
         time.time() - t0,
     )
 
     # Phase 3b: Playwright fallback for domains with no emails
     no_email_domains = sorted(d for d in to_scrape if not results.get(d, (set(),))[0])
     if no_email_domains:
-        await _playwright_fallback(no_email_domains, results, config, cache, t0)
+        await _playwright_fallback(no_email_domains, results, config, cache, t0, timeout_domains)
 
     _update_records_from_scrape(records, results)
     return results
@@ -271,9 +276,13 @@ async def _playwright_fallback(
     config: CountryConfig,
     cache: CacheDB | None,
     t0: float,
+    slow_domains: set[str] | None = None,
 ) -> None:
     """Phase 3b: Use Chromium to render JS-heavy sites that httpx missed."""
     from municipality_email.scraping import scrape_with_playwright
+
+    if slow_domains is None:
+        slow_domains = set()
 
     total = len(domains)
     logger.info("[3b/6] JS fallback: {} domains to retry with Chromium", total)
@@ -281,14 +290,16 @@ async def _playwright_fallback(
     sem = asyncio.Semaphore(3)
     done = 0
     found_count = 0
+    timeout_count = 0
 
     async def try_one(domain: str) -> None:
-        nonlocal done, found_count
+        nonlocal done, found_count, timeout_count
+        domain_timeout = 45 if domain in slow_domains else 30
         async with sem:
             try:
                 emails, redirect = await asyncio.wait_for(
                     scrape_with_playwright(domain, config.subpages, config.skip_domains),
-                    timeout=30,
+                    timeout=domain_timeout,
                 )
                 if emails:
                     results[domain] = (emails, redirect, True)
@@ -302,7 +313,8 @@ async def _playwright_fallback(
                     if cache is not None:
                         await cache.put_scrape(domain, emails, redirect, True)
             except asyncio.TimeoutError:
-                logger.debug("[3b] {} timed out", domain)
+                logger.warning("[3b] {} timed out (>{}s)", domain, domain_timeout)
+                timeout_count += 1
             except Exception as exc:
                 logger.debug("[3b] {} failed: {!r}", domain, exc)
 
@@ -314,9 +326,10 @@ async def _playwright_fallback(
     await asyncio.gather(*tasks)
 
     logger.info(
-        "[3b/6] JS fallback: found emails on {}/{} domains ({:.1f}s)",
+        "[3b/6] JS fallback: found emails on {}/{} domains, {} timeouts ({:.1f}s)",
         found_count,
         total,
+        timeout_count,
         time.time() - t0,
     )
 

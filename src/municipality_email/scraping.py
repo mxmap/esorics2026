@@ -25,6 +25,22 @@ EMAIL_RE = re.compile(r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}")
 TYPO3_RE = re.compile(r"linkTo_UnCryptMailto\((?:['\"]|%27|%22)([^'\"]+?)(?:['\"]|%27|%22)")
 SPARQL_URL = "https://query.wikidata.org/sparql"
 
+# RFC 2606 reserved domains and other well-known test/placeholder domains
+_RESERVED_DOMAINS = frozenset(
+    {"example.com", "example.org", "example.net", "test", "localhost", "invalid"}
+)
+
+# Redirect targets that indicate the municipality website is down/moved.
+# Emails scraped from these targets are irrelevant to the municipality.
+_REDIRECT_BLOCKLIST_PATTERNS = (
+    "immoscout24.",
+    "2reserve.",
+    "widgets.worldsoft",
+    "map.apps.",
+    "map.vsgis.",
+    "egov-service.",
+)
+
 _ASSET_EXTENSIONS = frozenset(
     {
         "png",
@@ -120,6 +136,8 @@ def extract_email_domains(html: str, skip_domains: set[str]) -> set[str]:
             return
         domain = email.split("@")[1].lower().rstrip("\\/.")
         if not domain or domain in skip_domains:
+            return
+        if any(domain == rd or domain.endswith("." + rd) for rd in _RESERVED_DOMAINS):
             return
         if not is_valid_tld(domain):
             return
@@ -374,6 +392,13 @@ def _process_scrape_response(
         final_domain = url_to_domain(str(r.url))
         if final_domain and final_domain != domain:
             redirect_domain = final_domain
+            if any(p in redirect_domain for p in _REDIRECT_BLOCKLIST_PATTERNS):
+                logger.warning(
+                    "Ignoring redirect to non-municipality site: {} -> {}",
+                    domain,
+                    redirect_domain,
+                )
+                return all_domains, redirect_domain
             logger.info("Redirect detected: {} -> {}", domain, redirect_domain)
 
     domains = extract_email_domains(r.text, skip_domains)
@@ -515,6 +540,7 @@ async def scrape_with_playwright(
 
     async with async_playwright() as p:
         browser = await p.chromium.launch()
+        page = None
         try:
             page = await browser.new_page()
             urls = [f"https://www.{bare}/"] + [f"https://www.{bare}{path}" for path in subpages]
@@ -545,6 +571,13 @@ async def scrape_with_playwright(
                     logger.debug("Playwright {} failed: {!r}", url, exc)
                     continue
         finally:
+            # Close page before browser to prevent orphaned navigation futures
+            # that produce "Future exception was never retrieved" errors
+            if page:
+                try:
+                    await page.close()
+                except Exception:
+                    pass
             await browser.close()
 
     return all_emails, redirect_domain

@@ -135,6 +135,9 @@ class TestIsMunicipalityDomain:
     def test_rejects_no_match(self):
         assert _is_municipality_domain("reichlinzuegeln.ch", "Sisikon", self.ch) is False
 
+    def test_empty_name(self):
+        assert _is_municipality_domain("test.ch", "", self.ch) is False
+
 
 class TestScoreDomainRelevance:
     def setup_method(self):
@@ -154,27 +157,19 @@ class TestScoreDomainRelevance:
         assert score == 1.0
 
     def test_austrian_gv_at_match(self):
-        score = score_domain_relevance(
-            "eisenstadt.gv.at", "Eisenstadt", self.at_config, set()
-        )
+        score = score_domain_relevance("eisenstadt.gv.at", "Eisenstadt", self.at_config, set())
         assert score == 1.0
 
     def test_feuerwehr_rejected(self):
-        score = score_domain_relevance(
-            "feuerwehr-baden.ch", "Baden", self.ch_config, set()
-        )
+        score = score_domain_relevance("feuerwehr-baden.ch", "Baden", self.ch_config, set())
         assert score == 0.0
 
     def test_schule_rejected(self):
-        score = score_domain_relevance(
-            "schulen-aarberg.ch", "Aarberg", self.ch_config, set()
-        )
+        score = score_domain_relevance("schulen-aarberg.ch", "Aarberg", self.ch_config, set())
         assert score == 0.0
 
     def test_static_candidate(self):
-        score = score_domain_relevance(
-            "unrelated.ch", "Aarberg", self.ch_config, {"unrelated.ch"}
-        )
+        score = score_domain_relevance("unrelated.ch", "Aarberg", self.ch_config, {"unrelated.ch"})
         assert score == 0.4
 
     def test_correct_tld_no_match(self):

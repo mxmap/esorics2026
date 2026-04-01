@@ -1,9 +1,14 @@
 """Tests for scraping module."""
 
+import httpx
 import json
 from datetime import datetime, timedelta, timezone
 
+import ssl
+
 from municipality_email.scraping import (
+    _is_ssl_error,
+    _process_scrape_response,
     discover_contact_links,
     _is_valid_email,
     _slugify_name,
@@ -170,6 +175,34 @@ class TestExtractEmailDomains:
         domains = extract_email_domains(html, set())
         assert "bavois.ch" in domains
 
+    def test_reserved_domain_filtered(self):
+        html = "<p>info@yourcompany.example.com admin@test.example.net</p>"
+        domains = extract_email_domains(html, set())
+        assert "yourcompany.example.com" not in domains
+        assert "test.example.net" not in domains
+
+    def test_reserved_domain_exact_match(self):
+        html = "<p>info@example.com admin@localhost</p>"
+        domains = extract_email_domains(html, set())
+        assert "example.com" not in domains
+
+    def test_non_reserved_domain_kept(self):
+        html = "<p>info@example.ch admin@myexample.com</p>"
+        domains = extract_email_domains(html, set())
+        assert "example.ch" in domains
+        assert "myexample.com" in domains
+
+    def test_invalid_tld_filtered(self):
+        html = "<p>user@something.invalidtld123</p>"
+        domains = extract_email_domains(html, set())
+        assert len(domains) == 0
+
+    def test_bad_base64_data_email_link(self):
+        html = '<a data-email-link="not-valid-base64!!!">Contact</a>'
+        domains = extract_email_domains(html, set())
+        # Should not crash, just skip the bad data
+        assert isinstance(domains, set)
+
 
 class TestDiscoverContactLinks:
     def test_finds_contact_links(self):
@@ -218,6 +251,36 @@ class TestDiscoverContactLinks:
         paths = discover_contact_links(html, "example.ch")
         assert paths.count("/kontakt") == 1
 
+    def test_skips_javascript_mailto_tel(self):
+        html = """
+        <a href="javascript:void(0)">JS</a>
+        <a href="mailto:info@example.ch">Email</a>
+        <a href="tel:+41000">Phone</a>
+        <a href="#">Hash</a>
+        """
+        paths = discover_contact_links(html, "example.ch")
+        assert paths == []
+
+    def test_skips_non_http_scheme(self):
+        html = '<a href="ftp://example.ch/kontakt">FTP Kontakt</a>'
+        paths = discover_contact_links(html, "example.ch")
+        assert paths == []
+
+    def test_skips_root_path(self):
+        html = '<a href="/">Home</a>'
+        paths = discover_contact_links(html, "example.ch")
+        assert paths == []
+
+    def test_skips_redirect_email_link(self):
+        html = '<a href="/redirectEmailLink/abc123">Email Redirect</a>'
+        paths = discover_contact_links(html, "example.ch")
+        assert paths == []
+
+    def test_skips_percent_encoded_paths(self):
+        html = '<a href="/kontakt/N%C3%A4her">Kontakt</a>'
+        paths = discover_contact_links(html, "example.ch")
+        assert paths == []
+
 
 class TestBuildUrls:
     def test_basic(self):
@@ -259,6 +322,18 @@ class TestDetectWebsiteMismatch:
 
     def test_word_match(self):
         assert detect_website_mismatch("Bad Hindelang", "bad-hindelang.de") is False
+
+    def test_word_match_reversed_order(self):
+        # Slug "berngraben" not in "graben-bern.ch", but word "bern" is
+        assert detect_website_mismatch("Bern Graben", "graben-bern.ch") is False
+
+    def test_stripped_domain_match(self):
+        # After stripping "gemeinde-", slug matches the stripped domain
+        assert detect_website_mismatch("Test", "gemeinde-test.ch") is False
+
+    def test_domain_base_first_match(self):
+        # slug matches domain_base_first after canton subdomain split
+        assert detect_website_mismatch("Teufen", "teufen.ar.ch") is False
 
 
 class TestSlugifyName:
@@ -322,6 +397,20 @@ class TestScrapeCache:
         assert "old.ch" not in loaded
         assert "fresh.ch" in loaded
 
+    def test_bad_timestamp(self, tmp_path):
+        path = tmp_path / "cache.json"
+        raw = {
+            "bad.ch": {
+                "emails": ["bad.ch"],
+                "redirect": None,
+                "accessible": True,
+                "timestamp": "not-a-date",
+            },
+        }
+        path.write_text(json.dumps(raw))
+        loaded = load_scrape_cache(path, ttl_days=7)
+        assert "bad.ch" in loaded  # bad timestamp is skipped, entry kept
+
     def test_missing_file(self, tmp_path):
         loaded = load_scrape_cache(tmp_path / "nope.json")
         assert loaded == {}
@@ -331,3 +420,92 @@ class TestScrapeCache:
         path.write_text("not json{{{")
         loaded = load_scrape_cache(path)
         assert loaded == {}
+
+
+class TestProcessScrapeResponse:
+    def _make_response(self, url: str, text: str, status_code: int = 200) -> httpx.Response:
+        return httpx.Response(
+            status_code=status_code,
+            text=text,
+            headers={"content-type": "text/html"},
+            request=httpx.Request("GET", url),
+        )
+
+    def test_redirect_blocklist_skips_email_extraction(self):
+        r = self._make_response(
+            "https://www.immoscout24.ch/search",
+            "<p>info@immoscout24.ch</p>",
+        )
+        domains, redirect = _process_scrape_response(r, "cornol.ch", set(), None, set())
+        assert redirect == "immoscout24.ch"
+        assert "immoscout24.ch" not in domains
+
+    def test_normal_redirect_extracts_emails(self):
+        r = self._make_response(
+            "https://www.labaroche.ch/",
+            "<p>info@labaroche.ch</p>",
+        )
+        domains, redirect = _process_scrape_response(r, "baroche.ch", set(), None, set())
+        assert redirect == "labaroche.ch"
+        assert "labaroche.ch" in domains
+
+    def test_no_redirect_extracts_emails(self):
+        r = self._make_response(
+            "https://www.example.ch/",
+            "<p>info@example.ch</p>",
+        )
+        domains, redirect = _process_scrape_response(r, "example.ch", set(), None, set())
+        assert redirect is None
+        assert "example.ch" in domains
+
+    def test_error_status_non_html_skips(self):
+        r = httpx.Response(
+            status_code=404,
+            text="Not Found",
+            headers={"content-type": "text/plain"},
+            request=httpx.Request("GET", "https://www.test.ch/kontakt"),
+        )
+        domains, redirect = _process_scrape_response(r, "test.ch", set(), None, set())
+        assert len(domains) == 0
+
+    def test_error_status_html_extracts(self):
+        r = self._make_response(
+            "https://www.test.ch/kontakt",
+            "<p>info@test.ch</p>",
+            status_code=404,
+        )
+        domains, redirect = _process_scrape_response(r, "test.ch", set(), None, set())
+        assert "test.ch" in domains
+
+    def test_preserves_existing_redirect(self):
+        r = self._make_response(
+            "https://www.other.ch/",
+            "<p>info@other.ch</p>",
+        )
+        domains, redirect = _process_scrape_response(r, "test.ch", set(), "other.ch", set())
+        assert redirect == "other.ch"
+        assert "other.ch" in domains
+
+
+class TestIsSSLError:
+    def test_ssl_cert_error(self):
+        exc = ssl.SSLCertVerificationError("certificate verify failed")
+        assert _is_ssl_error(exc) is True
+
+    def test_chained_ssl_error(self):
+        inner = ssl.SSLCertVerificationError("certificate verify failed")
+        outer = httpx.ConnectError("connect failed")
+        outer.__cause__ = inner
+        assert _is_ssl_error(outer) is True
+
+    def test_certificate_verify_failed_string(self):
+        exc = Exception("CERTIFICATE_VERIFY_FAILED")
+        assert _is_ssl_error(exc) is True
+
+    def test_non_ssl_error(self):
+        exc = ConnectionError("timeout")
+        assert _is_ssl_error(exc) is False
+
+    def test_no_cause_chain(self):
+        exc = ValueError("unrelated")
+        assert _is_ssl_error(exc) is False

@@ -36,3 +36,18 @@ class TestInterceptHandler:
         )
         # Should not raise
         handler.emit(record)
+
+    def test_emit_unknown_level(self):
+        handler = _InterceptHandler()
+        record = logging.LogRecord(
+            name="test",
+            level=99,
+            pathname="test.py",
+            lineno=1,
+            msg="test message",
+            args=(),
+            exc_info=None,
+        )
+        record.levelname = "NONEXISTENT_LEVEL"
+        # Should fall back to numeric level without raising
+        handler.emit(record)

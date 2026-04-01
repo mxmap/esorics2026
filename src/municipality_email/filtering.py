@@ -42,9 +42,7 @@ def build_frequency_blocklist(
     threshold = max(threshold_floor, int(scraped_count * threshold_pct))
     blocklist = {domain for domain, count in counts.items() if count >= threshold}
     if blocklist:
-        logger.debug(
-            "Frequency blocklist: {} domains (threshold={})", len(blocklist), threshold
-        )
+        logger.debug("Frequency blocklist: {} domains (threshold={})", len(blocklist), threshold)
     return blocklist
 
 
@@ -72,9 +70,16 @@ def _is_municipality_domain(
         return True
 
     # Standard prefixes: gemeinde-baden.ch, stadt-baden.ch, etc.
-    for prefix in ("gemeinde-", "stadt-", "commune-de-", "comune-di-",
-                    "markt-", "marktgemeinde-", "stadtgemeinde-"):
-        if base.startswith(prefix) and base[len(prefix):] in slugs:
+    for prefix in (
+        "gemeinde-",
+        "stadt-",
+        "commune-de-",
+        "comune-di-",
+        "markt-",
+        "marktgemeinde-",
+        "stadtgemeinde-",
+    ):
+        if base.startswith(prefix) and base[len(prefix) :] in slugs:
             return True
 
     # Cantonal/regional subdomain: baden.ag.ch — ext.domain is "baden",
@@ -138,9 +143,7 @@ def filter_scraped_pool(
     scored = filtered.copy()
     filtered = set()
     for domain in scored:
-        score = score_domain_relevance(
-            domain, municipality_name, config, candidate_domains
-        )
+        score = score_domain_relevance(domain, municipality_name, config, candidate_domains)
         if score >= 0.4:
             filtered.add(domain)
 
