@@ -654,6 +654,7 @@ def _decide_one(
             config=config,
             frequency_blocklist=frequency_blocklist,
             candidate_domains=candidate_domains,
+            region=rec.region,
         )
 
     static_pool: set[str] = set()

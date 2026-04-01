@@ -144,6 +144,9 @@ class TestIsMunicipalityDomain:
     def test_rejects_feuerwehr_unhyphenated(self):
         assert _is_municipality_domain("feuerwehrbaden.ch", "Baden", self.ch) is False
 
+    def test_joined_multiword_name(self):
+        assert _is_municipality_domain("uetikonamsee.ch", "Uetikon am See", self.ch) is True
+
     def test_empty_name(self):
         assert _is_municipality_domain("test.ch", "", self.ch) is False
 
@@ -188,6 +191,26 @@ class TestScoreDomainRelevance:
     def test_no_affinity(self):
         score = score_domain_relevance("randomsite.com", "Aarberg", self.ch_config, set())
         assert score == 0.0
+
+    def test_joined_multiword_name(self):
+        score = score_domain_relevance("uetikonamsee.ch", "Uetikon am See", self.ch_config, set())
+        assert score == 1.0
+
+    def test_cantonal_domain_correct_region(self):
+        score = score_domain_relevance("nw.ch", "Oberdorf", self.ch_config, set(), region="Kanton Nidwalden")
+        assert score == 0.5
+
+    def test_cantonal_domain_wrong_region(self):
+        score = score_domain_relevance("nw.ch", "Oberdorf", self.ch_config, set(), region="Kanton Zürich")
+        assert score == 0.0
+
+    def test_cantonal_domain_no_region(self):
+        score = score_domain_relevance("nw.ch", "Oberdorf", self.ch_config, set())
+        assert score == 0.0
+
+    def test_ne_ch_for_neuchatel(self):
+        score = score_domain_relevance("ne.ch", "Boudry", self.ch_config, set(), region="Kanton Neuenburg")
+        assert score == 0.5
 
 
 # ── Orchestrator: filter_scraped_pool ──────────────────────────────
@@ -289,6 +312,43 @@ class TestFilterScrapedPool:
             candidate_domains=set(),
         )
         assert result == set()
+
+    def test_cantonal_domain_kept_with_region(self):
+        pool = {"nw.ch", "schule-oberdorf.ch"}
+        result = filter_scraped_pool(
+            pool,
+            municipality_name="Oberdorf",
+            config=self.config,
+            frequency_blocklist=set(),
+            candidate_domains=set(),
+            region="Kanton Nidwalden",
+        )
+        assert "nw.ch" in result
+        assert "schule-oberdorf.ch" not in result
+
+    def test_cantonal_domain_exempt_from_frequency(self):
+        pool = {"nw.ch", "oberdorf-nw.ch"}
+        result = filter_scraped_pool(
+            pool,
+            municipality_name="Oberdorf",
+            config=self.config,
+            frequency_blocklist={"nw.ch"},
+            candidate_domains=set(),
+            region="Kanton Nidwalden",
+        )
+        assert "nw.ch" in result
+
+    def test_cantonal_domain_rejected_wrong_region(self):
+        pool = {"nw.ch"}
+        result = filter_scraped_pool(
+            pool,
+            municipality_name="Zürich",
+            config=self.config,
+            frequency_blocklist=set(),
+            candidate_domains=set(),
+            region="Kanton Zürich",
+        )
+        assert "nw.ch" not in result
 
 
 # ── Swiss regional_suffixes ────────────────────────────────────────

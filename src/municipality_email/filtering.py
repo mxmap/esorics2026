@@ -103,16 +103,21 @@ def score_domain_relevance(
     municipality_name: str,
     config: CountryConfig,
     candidate_domains: set[str],
+    region: str = "",
 ) -> float:
     """Score how relevant an email domain is to a specific municipality.
 
     Returns 0.0-1.0:
       1.0 — domain IS the municipality (strict base match with standard prefixes)
+      0.5 — domain is a cantonal/regional suffix for the municipality's region
       0.4 — domain is a known candidate from static sources
       0.0 — no affinity
     """
     if _is_municipality_domain(domain, municipality_name, config):
         return 1.0
+
+    if region and domain in set(config.regional_suffixes(region)):
+        return 0.5
 
     if domain in candidate_domains:
         return 0.4
@@ -126,13 +131,16 @@ def filter_scraped_pool(
     config: CountryConfig,
     frequency_blocklist: set[str],
     candidate_domains: set[str],
+    region: str = "",
 ) -> set[str]:
     """Apply all filtering layers to a scraped email pool for one municipality.
 
-    1. Remove frequency-blocklisted domains (exempt if candidate or name-match).
-    2. Keep only municipality domains (strict name match) or known candidates.
+    1. Remove frequency-blocklisted domains (exempt if candidate, name-match, or regional).
+    2. Keep only municipality domains (strict name match), known candidates, or regional.
        Empty result is valid — lets decide phase fall through to static/guess.
     """
+    regional_domains = set(config.regional_suffixes(region)) if region else set()
+
     # Layer 2: frequency blocklist with exemptions
     filtered: set[str] = set()
     for domain in pool:
@@ -142,13 +150,15 @@ def filter_scraped_pool(
             filtered.add(domain)  # exempt: known candidate
         elif config.domain_matches_name(municipality_name, domain):
             filtered.add(domain)  # exempt: matches municipality name
+        elif domain in regional_domains:
+            filtered.add(domain)  # exempt: cantonal/regional domain
         # else: blocked by frequency filter
 
     # Layer 3: relevance scoring — keep only municipality domains or known candidates
     scored = filtered.copy()
     filtered = set()
     for domain in scored:
-        score = score_domain_relevance(domain, municipality_name, config, candidate_domains)
+        score = score_domain_relevance(domain, municipality_name, config, candidate_domains, region=region)
         if score >= 0.4:
             filtered.add(domain)
 

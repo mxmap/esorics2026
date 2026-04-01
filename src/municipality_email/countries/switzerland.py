@@ -352,4 +352,12 @@ class SwitzerlandConfig(CountryConfig):
             s = re.sub(r"[^a-z0-9]+", "-", s)
             return s.strip("-")
 
-        return {_slug(de), _slug(fr), _slug(raw)} - {""}
+        slugs = {_slug(de), _slug(fr), _slug(raw)} - {""}
+
+        # Dashless variants (e.g. "uetikon-am-see" → "uetikonamsee")
+        for s in list(slugs):
+            joined = s.replace("-", "")
+            if joined and joined not in slugs:
+                slugs.add(joined)
+
+        return slugs

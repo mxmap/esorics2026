@@ -543,33 +543,57 @@ async def scrape_with_playwright(
         page = None
         try:
             page = await browser.new_page()
-            urls = [f"https://www.{bare}/"] + [f"https://www.{bare}{path}" for path in subpages]
 
-            for url in urls:
+            # Probe: try www then bare to find working base (mirrors httpx scraper)
+            working_base: str | None = None
+            for base in [f"https://www.{bare}", f"https://{bare}"]:
                 try:
                     response = await page.goto(
-                        url, timeout=timeout_ms, wait_until="domcontentloaded"
+                        base + "/", timeout=timeout_ms, wait_until="domcontentloaded"
                     )
-                    if response is None:
-                        continue
-                    # Wait for JS frameworks to render
-                    await page.wait_for_timeout(2000)
-
-                    # Detect redirect
-                    if redirect_domain is None:
-                        final = url_to_domain(page.url)
-                        if final and final != bare:
-                            redirect_domain = final
-
-                    html = await page.content()
-                    found = extract_email_domains(html, skip_domains)
-                    all_emails |= found
-
-                    if all_emails:
+                    if response is not None:
+                        working_base = base
                         break
-                except Exception as exc:
-                    logger.debug("Playwright {} failed: {!r}", url, exc)
+                except Exception:
+                    # Failed navigation leaves page in chrome-error state;
+                    # create a fresh page so the next probe isn't interrupted.
+                    await page.close()
+                    page = await browser.new_page()
                     continue
+
+            if working_base is None:
+                return all_emails, redirect_domain
+
+            # Wait for JS frameworks to render
+            await page.wait_for_timeout(2000)
+
+            # Detect redirect
+            final = url_to_domain(page.url)
+            if final and final != bare:
+                redirect_domain = final
+
+            # Extract emails from homepage
+            html = await page.content()
+            all_emails |= extract_email_domains(html, skip_domains)
+
+            # Scrape subpages on the working base
+            if not all_emails:
+                for path in subpages:
+                    url = working_base + path
+                    try:
+                        response = await page.goto(
+                            url, timeout=timeout_ms, wait_until="domcontentloaded"
+                        )
+                        if response is None:
+                            continue
+                        await page.wait_for_timeout(2000)
+                        html = await page.content()
+                        all_emails |= extract_email_domains(html, skip_domains)
+                        if all_emails:
+                            break
+                    except Exception as exc:
+                        logger.debug("Playwright {} failed: {!r}", url, exc)
+                        continue
         finally:
             # Close page before browser to prevent orphaned navigation futures
             # that produce "Future exception was never retrieved" errors
