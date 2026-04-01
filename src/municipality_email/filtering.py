@@ -53,7 +53,7 @@ def _is_municipality_domain(
 ) -> bool:
     """Strict check: domain base (after stripping TLD/prefix) matches a municipality slug.
 
-    Matches: baden.ch, gemeinde-baden.ch, baden.ag.ch, stadt-baden.ch
+    Matches: baden.ch, gemeinde-baden.ch, gemeindesursee.ch, baden.ag.ch, stadt-baden.ch, stadtsursee.ch
     Rejects: feuerwehr-baden.ch, schule-baden.ch, apothekedrkunz.ch
     """
     slugs = config.slugify_name(municipality_name)
@@ -72,12 +72,17 @@ def _is_municipality_domain(
     # Standard prefixes: gemeinde-baden.ch, stadt-baden.ch, etc.
     for prefix in (
         "gemeinde-",
+        "gemeinde",
         "stadt-",
+        "stadt",
         "commune-de-",
         "comune-di-",
         "markt-",
+        "markt",
         "marktgemeinde-",
+        "marktgemeinde",
         "stadtgemeinde-",
+        "stadtgemeinde",
     ):
         if base.startswith(prefix) and base[len(prefix) :] in slugs:
             return True

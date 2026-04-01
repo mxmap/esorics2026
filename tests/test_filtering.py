@@ -135,6 +135,15 @@ class TestIsMunicipalityDomain:
     def test_rejects_no_match(self):
         assert _is_municipality_domain("reichlinzuegeln.ch", "Sisikon", self.ch) is False
 
+    def test_stadt_prefix_unhyphenated(self):
+        assert _is_municipality_domain("stadtsursee.ch", "Sursee", self.ch) is True
+
+    def test_gemeinde_prefix_unhyphenated(self):
+        assert _is_municipality_domain("gemeindesursee.ch", "Sursee", self.ch) is True
+
+    def test_rejects_feuerwehr_unhyphenated(self):
+        assert _is_municipality_domain("feuerwehrbaden.ch", "Baden", self.ch) is False
+
     def test_empty_name(self):
         assert _is_municipality_domain("test.ch", "", self.ch) is False
 

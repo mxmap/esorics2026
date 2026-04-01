@@ -12,7 +12,7 @@ from municipality_email.countries.switzerland import SwitzerlandConfig
 
 def _make_ch_data(tmp_path: Path):
     """Create minimal CH data directory."""
-    overrides = {"261": {"domain": "zuerich.ch", "reason": "test"}}
+    overrides = {"261": {"email_domain": "zuerich.ch"}}
     (tmp_path / "overrides.json").write_text(json.dumps(overrides))
     return tmp_path
 
@@ -107,7 +107,7 @@ class TestSwitzerlandCollect:
         assert bern.override_domain is None
 
     async def test_override_only_municipality(self, tmp_path):
-        overrides = {"9999": {"domain": "test.ch", "name": "Ghost Town", "canton": "Kanton Bern"}}
+        overrides = {"9999": {"email_domain": "test.ch", "name": "Ghost Town", "canton": "Kanton Bern"}}
         (tmp_path / "overrides.json").write_text(json.dumps(overrides))
         config = SwitzerlandConfig()
 
@@ -297,7 +297,7 @@ class TestAustriaCollect:
 
     async def test_override_skips_gv_at(self, tmp_path):
         (tmp_path / "bresu_oe_gemeinden.json").write_text("[]")
-        overrides = {"10101": {"domain": "custom.at"}}
+        overrides = {"10101": {"email_domain": "custom.at"}}
         (tmp_path / "overrides.json").write_text(json.dumps(overrides))
 
         config = AustriaConfig()

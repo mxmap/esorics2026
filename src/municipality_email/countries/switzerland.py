@@ -190,7 +190,9 @@ class SwitzerlandConfig(CountryConfig):
             # Override
             if bfs in overrides:
                 override = overrides[bfs]
-                rec.override_domain = override.get("domain", "")
+                rec.override_domain = override.get("email_domain", "")
+                if override.get("website"):
+                    rec.website_domain = override["website"]
                 if override.get("name"):
                     rec.override_name = override["name"]
                 if override.get("canton"):
@@ -215,7 +217,7 @@ class SwitzerlandConfig(CountryConfig):
                     name=override["name"],
                     region=override.get("canton", ""),
                     country=Country.CH,
-                    override_domain=override.get("domain", ""),
+                    override_domain=override.get("email_domain", ""),
                 )
                 records.append(rec)
                 logger.info("Added override-only municipality: {} {}", bfs, override["name"])

@@ -188,7 +188,9 @@ class AustriaConfig(CountryConfig):
             # Override
             if gkz in overrides:
                 override = overrides[gkz]
-                rec.override_domain = override.get("domain", "")
+                rec.override_domain = override.get("email_domain", "")
+                if override.get("website"):
+                    rec.website_domain = override["website"]
                 if override.get("name"):
                     rec.override_name = override["name"]
 
