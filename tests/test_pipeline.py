@@ -137,15 +137,6 @@ class TestDecideOne:
         assert len(rec.emails) == 2
         assert rec.confidence == Confidence.HIGH
 
-    def test_sources_disagree_flag(self):
-        rec = _make_record(
-            candidates=[DomainCandidate(domain="static.de", source="livenson")],
-            scraped_emails={"static.de": ["different.de"]},
-        )
-        mx_valid = {"different.de": True, "static.de": True}
-        _decide_one(rec, self.config, mx_valid, self.empty_validation)
-        assert "sources_disagree" in rec.flags
-
 
 class TestPhaseExport:
     def test_creates_three_files(self, tmp_path):

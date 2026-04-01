@@ -700,10 +700,6 @@ def _decide_one(
         rec.emails = config.pick_best_email(scraped_pool, rec.name, static_pool)
         rec.confidence = Confidence.HIGH
         rec.source = Source.SCRAPE
-        # Check for disagreement with static sources
-        static_only = static_pool - scraped_pool
-        if static_only:
-            rec.flags.append("sources_disagree")
         _set_website(rec, validation)
         return
 

@@ -30,7 +30,7 @@ VALID_SOURCE_VALUES = {s.value for s in Source}
 VALID_CONFIDENCE_VALUES = {c.value for c in Confidence}
 VALID_SOURCES = {Source.OVERRIDE, Source.SCRAPE, Source.REDIRECT, Source.WIKIDATA, Source.STATIC, Source.GUESS}
 VALID_CONFIDENCES = {Confidence.HIGH, Confidence.MEDIUM, Confidence.LOW, Confidence.NONE}
-VALID_FLAGS = {"no_mx", "unverified", "guess_only", "sources_disagree", "website_mismatch", "no_municipality_keywords"}
+VALID_FLAGS = {"no_mx", "unverified", "guess_only", "website_mismatch", "no_municipality_keywords"}
 
 CH_CANTONS = {
     "Kanton Zürich", "Kanton Bern", "Kanton Luzern", "Kanton Uri",
@@ -296,15 +296,6 @@ class TestSwitzerlandOutput:
         self._decide(rec, mx_valid={"parked.ch": True})
         assert rec.emails == []
         assert rec.confidence == Confidence.NONE
-
-    def test_scraped_disagrees_with_static(self):
-        rec = _make_ch(
-            candidates=[DomainCandidate(domain="static.ch", source="livenson")],
-            scraped_emails={"static.ch": ["different.ch"]},
-        )
-        self._decide(rec, mx_valid={"different.ch": True, "static.ch": True})
-        assert "sources_disagree" in rec.flags
-        assert rec.source == Source.SCRAPE
 
     def test_multiple_scraped_emails_returned(self):
         rec = _make_ch(
