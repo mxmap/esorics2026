@@ -23,6 +23,8 @@ from municipality_email.filtering import is_valid_tld
 
 EMAIL_RE = re.compile(r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}")
 TYPO3_RE = re.compile(r"linkTo_UnCryptMailto\((?:['\"]|%27|%22)([^'\"]+?)(?:['\"]|%27|%22)")
+CLOUDFLARE_RE = re.compile(r'data-cfemail="([0-9a-fA-F]+)"')
+JOOMLA_FORM_RE = re.compile(r'name="form_id"\s+value="([^"]+)"')
 SPARQL_URL = "https://query.wikidata.org/sparql"
 
 # RFC 2606 reserved domains and other well-known test/placeholder domains
@@ -120,6 +122,16 @@ def decrypt_typo3(encoded: str, offset: int = 2) -> str:
     return "".join(result)
 
 
+def decrypt_cloudflare_email(hex_str: str) -> str:
+    """Decode a Cloudflare-obfuscated email from its data-cfemail hex string.
+
+    The first byte is the XOR key; each subsequent byte is XORed with it
+    to recover the original character.
+    """
+    key = int(hex_str[:2], 16)
+    return "".join(chr(int(hex_str[i : i + 2], 16) ^ key) for i in range(2, len(hex_str), 2))
+
+
 # ── Email extraction ────────────────────────────────────────────────
 
 
@@ -127,7 +139,9 @@ def extract_email_domains(html: str, skip_domains: set[str]) -> set[str]:
     """Extract email domains from HTML, including obfuscated emails.
 
     Handles: plain text, mailto: links, HTML-entity-encoded mailto,
-    TYPO3 linkTo_UnCryptMailto, buildMail() JS, (at)/[at] variants.
+    TYPO3 linkTo_UnCryptMailto, buildMail() JS, data-email-link base64,
+    span-injection, Cloudflare email protection, Joomla SP Page Builder
+    form_id, ROT13, (at)/[at] variants.
     """
     domains: set[str] = set()
 
@@ -194,6 +208,29 @@ def extract_email_domains(html: str, skip_domains: set[str]) -> set[str]:
     if cleaned != html:
         for email in EMAIL_RE.findall(htmlmod.unescape(cleaned)):
             _add(email)
+
+    # Cloudflare email protection: data-cfemail="HEXSTRING"
+    for encoded in CLOUDFLARE_RE.findall(html):
+        try:
+            decoded = decrypt_cloudflare_email(encoded)
+            if "@" in decoded and EMAIL_RE.search(decoded):
+                _add(decoded)
+        except Exception:
+            pass
+
+    # Joomla SP Page Builder: form_id with base64 JSON containing base64 emails
+    for encoded in JOOMLA_FORM_RE.findall(html):
+        try:
+            b64_part = encoded.split(":")[0]
+            payload = json.loads(base64.b64decode(b64_part))
+            for field in ("recipient_email", "from"):
+                value = payload.get(field, "")
+                if value:
+                    email = base64.b64decode(value).decode()
+                    if "@" in email and EMAIL_RE.search(email):
+                        _add(email)
+        except Exception:
+            pass
 
     # ROT13 email obfuscation: href='#terssr$onibvf.pu' class='email'
     # WebForge CMS uses ROT13 with $ as @ separator
@@ -332,7 +369,9 @@ async def _fetch_insecure(url: str) -> httpx.Response:
     with warnings.catch_warnings():
         warnings.filterwarnings("ignore", message="Unverified HTTPS request")
         async with httpx.AsyncClient(verify=False) as insecure_client:
-            return await insecure_client.get(url, follow_redirects=True, timeout=15)
+            return await insecure_client.get(
+                url, follow_redirects=True, timeout=httpx.Timeout(30, connect=30)
+            )
 
 
 # ── HEAD validation (Phase 2) ──────────────────────────────────────
@@ -348,7 +387,9 @@ async def validate_domain_accessibility(
     """
     for prefix in [f"https://www.{domain}", f"https://{domain}"]:
         try:
-            r = await client.head(prefix, follow_redirects=True, timeout=10)
+            r = await client.head(
+                prefix, follow_redirects=True, timeout=httpx.Timeout(10, connect=20)
+            )
             if r.status_code < 400:
                 final = url_to_domain(str(r.url))
                 redirect = final if (final and final != domain) else None
@@ -360,7 +401,11 @@ async def validate_domain_accessibility(
                     with warnings.catch_warnings():
                         warnings.filterwarnings("ignore", message="Unverified HTTPS request")
                         async with httpx.AsyncClient(verify=False) as ic:
-                            r = await ic.head(prefix, follow_redirects=True, timeout=10)
+                            r = await ic.head(
+                                prefix,
+                                follow_redirects=True,
+                                timeout=httpx.Timeout(10, connect=20),
+                            )
                     if r.status_code < 400:
                         final = url_to_domain(str(r.url))
                         redirect = final if (final and final != domain) else None
@@ -423,7 +468,9 @@ async def _try_fetch(
             return None, True
 
     try:
-        return await client.get(url, follow_redirects=True, timeout=15), False
+        return await client.get(
+            url, follow_redirects=True, timeout=httpx.Timeout(30, connect=30)
+        ), False
     except httpx.ConnectError as exc:
         if _is_ssl_error(exc):
             logger.info("SSL error on {}, retrying without verification", url)

@@ -14,6 +14,7 @@ from municipality_email.scraping import (
     _slugify_name,
     build_urls,
     build_urls_single_base,
+    decrypt_cloudflare_email,
     decrypt_typo3,
     detect_website_mismatch,
     extract_email_domains,
@@ -79,6 +80,17 @@ class TestDecryptTypo3:
         # Characters outside the 3 ranges pass through unchanged
         assert decrypt_typo3(" ", 2) == " "
         assert decrypt_typo3("!", 2) == "!"
+
+
+class TestDecryptCloudflareEmail:
+    def test_known_example(self):
+        # data-cfemail from bad-hindelang.de -> info@feratel.at
+        result = decrypt_cloudflare_email("7f161119103f191a0d1e0b1a13511e0b")
+        assert result == "info@feratel.at"
+
+    def test_empty_after_key(self):
+        result = decrypt_cloudflare_email("ff")
+        assert result == ""
 
 
 class TestExtractEmailDomains:
@@ -202,6 +214,36 @@ class TestExtractEmailDomains:
         html = '<a data-email-link="not-valid-base64!!!">Contact</a>'
         domains = extract_email_domains(html, set())
         # Should not crash, just skip the bad data
+        assert isinstance(domains, set)
+
+    def test_cloudflare_email_protection(self):
+        html = (
+            '<a href="/cdn-cgi/l/email-protection" class="__cf_email__" '
+            'data-cfemail="7f161119103f191a0d1e0b1a13511e0b">'
+            "[email&#160;protected]</a>"
+        )
+        domains = extract_email_domains(html, set())
+        assert "feratel.at" in domains
+
+    def test_cloudflare_bad_hex(self):
+        html = '<span data-cfemail="ZZZZ_not_hex"></span>'
+        domains = extract_email_domains(html, set())
+        assert isinstance(domains, set)
+
+    def test_joomla_sp_form_id(self):
+        import base64 as b64
+
+        inner_email = b64.b64encode(b"gemeinde@t-online.de").decode()
+        payload = json.dumps({"recipient_email": inner_email, "from": inner_email})
+        b64_payload = b64.b64encode(payload.encode()).decode()
+        form_value = b64_payload + ":abc123hmac"
+        html = f'<input type="hidden" name="form_id" value="{form_value}">'
+        domains = extract_email_domains(html, set())
+        assert "t-online.de" in domains
+
+    def test_joomla_sp_form_id_bad_data(self):
+        html = '<input type="hidden" name="form_id" value="not-base64!!!:hmac">'
+        domains = extract_email_domains(html, set())
         assert isinstance(domains, set)
 
 

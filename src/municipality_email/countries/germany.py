@@ -143,7 +143,7 @@ class GermanyConfig(CountryConfig):
     government_tlds: list[str] = []
     skip_domains = SKIP_DOMAINS_DE
     subpages = SUBPAGES_DE
-    concurrency = 50
+    concurrency = 60
 
     async def collect_candidates(self, data_dir: Path) -> list[MunicipalityRecord]:
         # Load static sources

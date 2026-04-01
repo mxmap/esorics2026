@@ -11,8 +11,10 @@ SPARQL_URL = "https://query.wikidata.org/sparql"
 
 @stamina.retry(
     on=(httpx.HTTPStatusError, httpx.ConnectError, httpx.TimeoutException),
-    attempts=3,
-    wait_initial=2.0,
+    attempts=10,
+    wait_initial=5.0,
+    wait_max=120.0,
+    wait_jitter=5.0,
 )
 async def fetch_sparql(
     client: httpx.AsyncClient, url: str, data: dict, headers: dict

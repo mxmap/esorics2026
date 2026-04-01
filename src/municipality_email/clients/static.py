@@ -67,7 +67,7 @@ def load_csv_alex(path: Path, skip_domains: set[str]) -> dict[str, list[tuple[st
             email = r[1].strip() if len(r) > 1 else ""
             if "@" not in email:
                 continue
-            domain = email.split("@")[1].lower()
+            domain = re.sub(r"[^\x21-\x7e]", "", email.split("@")[1]).lower()
             if domain in skip_domains:
                 continue
             bundesland = r[2].strip() if len(r) > 2 else ""

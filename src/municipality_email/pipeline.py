@@ -282,7 +282,9 @@ async def phase_content_validate(
                 logger.info("Content validation: {}/{}", done, total)
 
     async with httpx.AsyncClient(
-        headers={"User-Agent": _USER_AGENT}, follow_redirects=True, timeout=15
+        headers={"User-Agent": _USER_AGENT},
+        follow_redirects=True,
+        timeout=httpx.Timeout(30, connect=30),
     ) as client:
         tasks = [check_one(client, d) for d in to_check]
         await asyncio.gather(*tasks)
@@ -417,7 +419,7 @@ async def phase_scrape(
     async with httpx.AsyncClient(
         headers={"User-Agent": _USER_AGENT},
         follow_redirects=True,
-        timeout=15,
+        timeout=httpx.Timeout(30, connect=30),
         limits=pool,
     ) as client:
         tasks = [scrape_one(client, d) for d in to_scrape]
