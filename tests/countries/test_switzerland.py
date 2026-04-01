@@ -13,7 +13,7 @@ class TestSwitzerlandConfig:
 
     def test_country(self):
         assert self.config.country == "ch"
-        assert self.config.concurrency == 30
+        assert self.config.concurrency == 50
 
     def test_guess_domains_basic(self):
         domains = self.config.guess_domains("Zürich", "Kanton Zürich")

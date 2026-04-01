@@ -3,6 +3,7 @@
 from municipality_email.countries.austria import AustriaConfig
 from municipality_email.countries.switzerland import SwitzerlandConfig
 from municipality_email.filtering import (
+    _is_municipality_domain,
     build_frequency_blocklist,
     filter_scraped_pool,
     is_valid_tld,
@@ -92,12 +93,47 @@ class TestBuildFrequencyBlocklist:
             )
             for i in range(1000)
         ]
-        # 0.5% of 1000 = 5, shared.ch appears in all 1000
         blocklist = build_frequency_blocklist(records, threshold_pct=0.005, threshold_floor=5)
         assert "shared.ch" in blocklist
 
 
-# ── Layer 3: Relevance Scoring ─────────────────────────────────────
+# ── Layer 3: Strict Municipality Domain Check ──────────────────────
+
+
+class TestIsMunicipalityDomain:
+    def setup_method(self):
+        self.ch = SwitzerlandConfig()
+        self.at = AustriaConfig()
+
+    def test_direct_match(self):
+        assert _is_municipality_domain("baden.ch", "Baden", self.ch) is True
+
+    def test_gemeinde_prefix(self):
+        assert _is_municipality_domain("gemeinde-baden.ch", "Baden", self.ch) is True
+
+    def test_stadt_prefix(self):
+        assert _is_municipality_domain("stadt-baden.ch", "Baden", self.ch) is True
+
+    def test_cantonal_subdomain(self):
+        assert _is_municipality_domain("herisau.ar.ch", "Herisau", self.ch) is True
+
+    def test_cantonal_subdomain_baden(self):
+        assert _is_municipality_domain("baden.ag.ch", "Baden", self.ch) is True
+
+    def test_austrian_gv_at(self):
+        assert _is_municipality_domain("eisenstadt.gv.at", "Eisenstadt", self.at) is True
+
+    def test_rejects_feuerwehr(self):
+        assert _is_municipality_domain("feuerwehr-baden.ch", "Baden", self.ch) is False
+
+    def test_rejects_schule(self):
+        assert _is_municipality_domain("schule-baden.ch", "Baden", self.ch) is False
+
+    def test_rejects_unrelated(self):
+        assert _is_municipality_domain("apothekedrkunz.ch", "Baden", self.ch) is False
+
+    def test_rejects_no_match(self):
+        assert _is_municipality_domain("reichlinzuegeln.ch", "Sisikon", self.ch) is False
 
 
 class TestScoreDomainRelevance:
@@ -123,11 +159,17 @@ class TestScoreDomainRelevance:
         )
         assert score == 1.0
 
-    def test_partial_substring_match(self):
+    def test_feuerwehr_rejected(self):
+        score = score_domain_relevance(
+            "feuerwehr-baden.ch", "Baden", self.ch_config, set()
+        )
+        assert score == 0.0
+
+    def test_schule_rejected(self):
         score = score_domain_relevance(
             "schulen-aarberg.ch", "Aarberg", self.ch_config, set()
         )
-        assert score >= 0.8
+        assert score == 0.0
 
     def test_static_candidate(self):
         score = score_domain_relevance(
@@ -135,12 +177,8 @@ class TestScoreDomainRelevance:
         )
         assert score == 0.4
 
-    def test_country_tld_only(self):
+    def test_correct_tld_no_match(self):
         score = score_domain_relevance("garage-cuenot.ch", "Aarberg", self.ch_config, set())
-        assert score == 0.2
-
-    def test_foreign_tld(self):
-        score = score_domain_relevance("garage-cuenot.de", "Aarberg", self.ch_config, set())
         assert score == 0.0
 
     def test_no_affinity(self):
@@ -176,7 +214,7 @@ class TestFilterScrapedPool:
             frequency_blocklist={"bern.ch", "common.ch"},
             candidate_domains={"bern.ch"},
         )
-        assert "bern.ch" in result  # exempt: in candidates
+        assert "bern.ch" in result
         assert "common.ch" not in result
 
     def test_name_match_exempt_from_frequency(self):
@@ -188,7 +226,7 @@ class TestFilterScrapedPool:
             frequency_blocklist={"aarberg.ch"},
             candidate_domains=set(),
         )
-        assert "aarberg.ch" in result  # exempt: name match
+        assert "aarberg.ch" in result
 
     def test_cantonal_domain_kept(self):
         pool = {"herisau.ch", "herisau.ar.ch", "noise1.ch", "noise2.ch", "noise3.ch"}
@@ -201,24 +239,20 @@ class TestFilterScrapedPool:
         )
         assert "herisau.ch" in result
         assert "herisau.ar.ch" in result
+        assert "noise1.ch" not in result
 
-    def test_relevance_prune_when_many(self):
-        # >3 domains triggers relevance scoring; requires score >= 0.4 (name match or candidate)
-        pool = {"aarberg.ch", "noise.ch", "other.ch", "junk.ch"}
+    def test_irrelevant_domains_removed(self):
+        pool = {"baden.ch", "feuerwehr-baden.ch", "schule-baden.ch", "apothekedrkunz.ch"}
         result = filter_scraped_pool(
             pool,
-            municipality_name="Aarberg",
+            municipality_name="Baden",
             config=self.config,
             frequency_blocklist=set(),
             candidate_domains=set(),
         )
-        assert "aarberg.ch" in result  # score 1.0: name match
-        assert "noise.ch" not in result  # score 0.2: only correct TLD
-        assert "other.ch" not in result
-        assert "junk.ch" not in result
+        assert result == {"baden.ch"}
 
     def test_small_pool_still_pruned(self):
-        # Even with 2 domains, irrelevant ones are removed
         pool = {"sisikon.ch", "reichlinzuegeln.ch"}
         result = filter_scraped_pool(
             pool,
@@ -230,17 +264,17 @@ class TestFilterScrapedPool:
         assert "sisikon.ch" in result
         assert "reichlinzuegeln.ch" not in result
 
-    def test_fallback_when_all_score_low(self):
-        # >3 domains all scoring below 0.4 -> fallback keeps them all
-        pool = {"a.ch", "b.ch", "c.ch", "d.ch"}
+    def test_no_match_returns_empty(self):
+        # No name match -> empty pool -> decide phase falls to static/guess
+        pool = {"apothekedrkunz.ch", "randomshop.ch"}
         result = filter_scraped_pool(
             pool,
-            municipality_name="Aarberg",
+            municipality_name="Baden",
             config=self.config,
             frequency_blocklist=set(),
             candidate_domains=set(),
         )
-        assert result == pool
+        assert result == set()
 
     def test_empty_pool(self):
         result = filter_scraped_pool(

@@ -48,6 +48,46 @@ def build_frequency_blocklist(
     return blocklist
 
 
+def _is_municipality_domain(
+    domain: str,
+    municipality_name: str,
+    config: CountryConfig,
+) -> bool:
+    """Strict check: domain base (after stripping TLD/prefix) matches a municipality slug.
+
+    Matches: baden.ch, gemeinde-baden.ch, baden.ag.ch, stadt-baden.ch
+    Rejects: feuerwehr-baden.ch, schule-baden.ch, apothekedrkunz.ch
+    """
+    slugs = config.slugify_name(municipality_name)
+    if not slugs:
+        return False
+
+    ext = tldextract.extract(domain)
+    # The registered domain part (e.g. "baden" from "baden.ch", "gemeinde-baden" from
+    # "gemeinde-baden.ch", "baden" from "baden.ag.ch")
+    base = ext.domain.lower()
+
+    # Direct match: baden.ch
+    if base in slugs:
+        return True
+
+    # Standard prefixes: gemeinde-baden.ch, stadt-baden.ch, etc.
+    for prefix in ("gemeinde-", "stadt-", "commune-de-", "comune-di-",
+                    "markt-", "marktgemeinde-", "stadtgemeinde-"):
+        if base.startswith(prefix) and base[len(prefix):] in slugs:
+            return True
+
+    # Cantonal/regional subdomain: baden.ag.ch — ext.domain is "baden",
+    # ext.subdomain is "" when registered under ag.ch
+    # tldextract may parse "baden.ag.ch" as domain="baden", suffix="ag.ch"
+    # or domain="ag", subdomain="baden", suffix="ch" depending on PSL.
+    # Handle both: check if subdomain matches a slug.
+    if ext.subdomain and ext.subdomain.lower() in slugs:
+        return True
+
+    return False
+
+
 def score_domain_relevance(
     domain: str,
     municipality_name: str,
@@ -57,27 +97,15 @@ def score_domain_relevance(
     """Score how relevant an email domain is to a specific municipality.
 
     Returns 0.0-1.0:
-      1.0 — domain_matches_name (direct match, cantonal pattern like herisau.ar.ch)
-      0.8 — domain contains a name slug as substring
+      1.0 — domain IS the municipality (strict base match with standard prefixes)
       0.4 — domain is a known candidate from static sources
-      0.2 — domain has a country-appropriate TLD
       0.0 — no affinity
     """
-    if config.domain_matches_name(municipality_name, domain):
+    if _is_municipality_domain(domain, municipality_name, config):
         return 1.0
-
-    # Partial substring match
-    slugs = config.slugify_name(municipality_name)
-    domain_lower = domain.lower()
-    for slug in slugs:
-        if slug and slug in domain_lower:
-            return 0.8
 
     if domain in candidate_domains:
         return 0.4
-
-    if any(domain_lower.endswith(tld) for tld in config.tlds):
-        return 0.2
 
     return 0.0
 
@@ -92,7 +120,8 @@ def filter_scraped_pool(
     """Apply all filtering layers to a scraped email pool for one municipality.
 
     1. Remove frequency-blocklisted domains (exempt if candidate or name-match).
-    2. Prune to domains with relevance score >= 0.4 (name match or known candidate).
+    2. Keep only municipality domains (strict name match) or known candidates.
+       Empty result is valid — lets decide phase fall through to static/guess.
     """
     # Layer 2: frequency blocklist with exemptions
     filtered: set[str] = set()
@@ -105,18 +134,14 @@ def filter_scraped_pool(
             filtered.add(domain)  # exempt: matches municipality name
         # else: blocked by frequency filter
 
-    # Layer 3: relevance scoring — require name match or known candidate (score >= 0.4)
-    if len(filtered) > 1:
-        scored = filtered.copy()
-        filtered = set()
-        for domain in scored:
-            score = score_domain_relevance(
-                domain, municipality_name, config, candidate_domains
-            )
-            if score >= 0.4:
-                filtered.add(domain)
-        # Safety: if scoring removed everything, fall back to original
-        if not filtered:
-            filtered = scored
+    # Layer 3: relevance scoring — keep only municipality domains or known candidates
+    scored = filtered.copy()
+    filtered = set()
+    for domain in scored:
+        score = score_domain_relevance(
+            domain, municipality_name, config, candidate_domains
+        )
+        if score >= 0.4:
+            filtered.add(domain)
 
     return filtered
