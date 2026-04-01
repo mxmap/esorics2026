@@ -14,25 +14,39 @@ In each file, the following structure will be used:
 
 ```json
 {
-  "generated": "2026-03-30T20:46:12Z",
-  "total": 2,
-  "municipalities": {
-    "10101": {
-      "code": "10101",
-      "name": "Example municipality",
-      "region": "Example region or canton",
-      "website": "domain-used-for-website.com",
-      "email": "domain-used-for-email.com"
+  "generated": "2026-04-01T13:31:57.930979Z",
+  "total": 2115,
+  "municipalities": [
+    {
+      "code": "1",
+      "name": "Gemeinde A",
+      "region": "Kanton Zürich",
+      "website": "domain-used-for-website.ch",
+      "emails": [
+        "domain-used-for-emails.ch"
+      ]
     },
-    "10102": {
-      "code": "10102",
-      "name": "Example municipality 2",
-      "region": "Example region or canton",
-      "website": "domain-used-for-website.com",
-      "email": "domain-used-for-email.com"
+    {
+      "code": "2",
+      "name": "Gemeinde B",
+      "region": "Kanton Zürich",
+      "website": "domain-used-for-website.ch",
+      "emails": [
+        "domain-used-for-emails.ch"
+      ]
     }
-  }
+    ]
 }
 ```
 
+## Adding overrides
+
+If you find a municipality that has an incorrect domain, you can add an override for it. 
+These will then have the highest priority when generating the final list of domains.
+
+```bash
+data/ch/overrides.json
+data/at/overrides.json
+data/de/overrides.json
+```
 
