@@ -1,15 +1,66 @@
 {
+  "01053023": {
+    "email_domain": "amt-hohe-elbgeest.de"
+  },
+  "01053135": {
+    "email_domain": "amt-hohe-elbgeest.de"
+  },
+  "01055028": {
+    "email_domain": "gemeinde-malente.landsh.de"
+  },
+  "01056027": {
+    "email_domain": "amt-gums.de"
+  },
+  "01057052": {
+    "email_domain": "amt-selent-schlesen.de"
+  },
   "01057064": {
     "email_domain": "schwentinental.de"
   },
+  "01058029": {
+    "email_domain": "fockbeck.de"
+  },
+  "01058036": {
+    "email_domain": "fockbeck.de"
+  },
+  "01058046": {
+    "email_domain": "amt-nortorfer-land.de"
+  },
+  "01058074": {
+    "email_domain": "amt-mittelholstein.de"
+  },
   "01058106": {
     "email_domain": "amt-mittelholstein.de"
+  },
+  "01058156": {
+    "email_domain": "amt-mittelholstein.de"
+  },
+  "01059023": {
+    "email_domain": "amt-arensharde.de"
+  },
+  "01059157": {
+    "email_domain": "langballig.de"
+  },
+  "01061005": {
+    "email_domain": "amt-breitenburg.de"
+  },
+  "01061058": {
+    "email_domain": "amt-breitenburg.de"
+  },
+  "01061068": {
+    "email_domain": "amt-breitenburg.de"
+  },
+  "01061079": {
+    "email_domain": "amt-breitenburg.de"
   },
   "01061096": {
     "email_domain": "kellinghusen.de"
   },
   "01061099": {
     "email_domain": "schenefeld.de"
+  },
+  "01062092": {
+    "email_domain": "amt-bad-oldesloe-land.de"
   },
   "03131170": {
     "email_domain": "wagenfeld.de"
@@ -55,6 +106,9 @@
   },
   "03256027": {
     "email_domain": "heemsen.de"
+  },
+  "03352007": {
+    "email_domain": "hagen-cux.de"
   },
   "03352035": {
     "email_domain": "gwnk.de"
@@ -107,8 +161,17 @@
   "06436010": {
     "email_domain": "liederbach-taunus.de"
   },
+  "06437002": {
+    "email_domain": "stadt-oberzent.de"
+  },
+  "06437014": {
+    "email_domain": "stadt-oberzent.de"
+  },
   "06532018": {
     "email_domain": "schoeffengrund.de"
+  },
+  "06534020": {
+    "email_domain": "weimar-lahn.info"
   },
   "06535015": {
     "email_domain": "schlitz.de"
@@ -118,6 +181,9 @@
   },
   "06631006": {
     "email_domain": "eichenzell.de"
+  },
+  "06632018": {
+    "email_domain": "rotenburg.de"
   },
   "06632019": {
     "email_domain": "schenklengsfeld.de"
@@ -134,11 +200,23 @@
   "07140023": {
     "email_domain": "sim-rhb.de"
   },
+  "07140126": {
+    "email_domain": "sim-rhb.de"
+  },
   "07141100": {
     "email_domain": "vg-nastaetten.de"
   },
+  "07232067": {
+    "email_domain": "beispiel.com"
+  },
+  "07232223": {
+    "email_domain": "vg-pruem.de"
+  },
   "07233020": {
     "email_domain": "vgdaun.de"
+  },
+  "07332013": {
+    "email_domain": "ellerstadt.de"
   },
   "07333030": {
     "email_domain": "winnweiler-vg.de"
@@ -182,11 +260,26 @@
   "07339064": {
     "email_domain": "vg-rhein-selz.de"
   },
+  "07340047": {
+    "email_domain": "hauenstein.de"
+  },
+  "08125024": {
+    "email_domain": "ellhofen.de"
+  },
   "08136019": {
     "email_domain": "ellwangen.de"
   },
+  "08315030": {
+    "email_domain": "eichstetten.de"
+  },
+  "08436027": {
+    "email_domain": "t-online.de"
+  },
   "09162000": {
     "email_domain": "muenchen.de"
+  },
+  "09176123": {
+    "email_domain": "eichstaett.de"
   },
   "09182116": {
     "email_domain": "gmund.de"
@@ -194,9 +287,11 @@
   "09183147": {
     "email_domain": "gars.de"
   },
+  "09190120": {
+    "email_domain": "eberfing.bayern.de"
+  },
   "09375213": {
-    "email_domain": "edelsfeld.de",
-    "name": "Edelsfeld"
+    "email_domain": "edelsfeld.de"
   },
   "09376168": {
     "email_domain": "wackersdorf.de"
@@ -206,6 +301,9 @@
   },
   "09676119": {
     "email_domain": "eichenbuehl.de"
+  },
+  "09679188": {
+    "email_domain": "vgem-aub.bayern.de"
   },
   "09772136": {
     "email_domain": "vg-nordendorf.de"
@@ -245,6 +343,9 @@
   },
   "13071038": {
     "email_domain": "friedland-mecklenburg.de"
+  },
+  "13071054": {
+    "email_domain": "amt-woldegk.de"
   },
   "13071062": {
     "email_domain": "amt-landhagen.de"
@@ -291,6 +392,9 @@
   "13072053": {
     "email_domain": "buetzow.de"
   },
+  "13073056": {
+    "email_domain": "ostseebad-moenchgut.de"
+  },
   "13073058": {
     "email_domain": "gemeinde-niepars.de"
   },
@@ -315,8 +419,17 @@
   "13076043": {
     "email_domain": "amt-eldenburg-luebz.de"
   },
+  "13076061": {
+    "email_domain": "herzberg.de"
+  },
   "13076066": {
     "email_domain": "amt-eldenburg-luebz.de"
+  },
+  "13076104": {
+    "email_domain": "gemeinde-neuposerin.de"
+  },
+  "14521035": {
+    "email_domain": "aue.de"
   },
   "14521070": {
     "email_domain": "lauter-bernsbach.de"
@@ -329,6 +442,9 @@
   },
   "14626090": {
     "email_domain": "gemeinde-kottmar.de"
+  },
+  "14626250": {
+    "email_domain": "gemeinde-krauschwitz.de"
   },
   "14626360": {
     "email_domain": "gemeinde-kottmar.de"
@@ -495,17 +611,44 @@
   "16066083": {
     "email_domain": "wasungen.de"
   },
+  "16067003": {
+    "email_domain": "gemeinde-nessetal.de"
+  },
+  "16067005": {
+    "email_domain": "gemeinde-nessetal.de"
+  },
   "16067011": {
     "email_domain": "fahner-hoehe.de"
+  },
+  "16067021": {
+    "email_domain": "gemeinde-nessetal.de"
   },
   "16067026": {
     "email_domain": "fahner-hoehe.de"
   },
+  "16067027": {
+    "email_domain": "gemeinde-nessetal.de"
+  },
   "16067033": {
     "email_domain": "fahner-hoehe.de"
   },
+  "16067035": {
+    "email_domain": "gemeinde-nessetal.de"
+  },
+  "16067037": {
+    "email_domain": "gemeinde-nessetal.de"
+  },
+  "16067056": {
+    "email_domain": "gemeinde-nessetal.de"
+  },
   "16067067": {
     "email_domain": "fahner-hoehe.de"
+  },
+  "16067074": {
+    "email_domain": "gemeinde-nessetal.de"
+  },
+  "16067075": {
+    "email_domain": "gemeinde-nessetal.de"
   },
   "16067078": {
     "email_domain": "vg-heldburgerunterland.de"
@@ -521,6 +664,9 @@
   },
   "16069001": {
     "email_domain": "vg-feldstein.de"
+  },
+  "16069002": {
+    "email_domain": "stadt-heldburg.de"
   },
   "16069003": {
     "email_domain": "vg-feldstein.de"
@@ -567,8 +713,38 @@
   "16069059": {
     "email_domain": "schleusingen.de"
   },
+  "16071051": {
+    "email_domain": "ilmtal-weinstrasse.de"
+  },
+  "16071052": {
+    "email_domain": "ilmtal-weinstrasse.de"
+  },
+  "16071054": {
+    "email_domain": "ilmtal-weinstrasse.de"
+  },
+  "16071062": {
+    "email_domain": "ilmtal-weinstrasse.de"
+  },
+  "16071063": {
+    "email_domain": "ilmtal-weinstrasse.de"
+  },
+  "16071066": {
+    "email_domain": "ilmtal-weinstrasse.de"
+  },
+  "16071068": {
+    "email_domain": "ilmtal-weinstrasse.de"
+  },
+  "16071072": {
+    "email_domain": "ilmtal-weinstrasse.de"
+  },
+  "16071074": {
+    "email_domain": "ilmtal-weinstrasse.de"
+  },
   "16071081": {
     "email_domain": "vg-schwarzatal.de"
+  },
+  "16071096": {
+    "email_domain": "ilmtal-weinstrasse.de"
   },
   "16071099": {
     "email_domain": "bad-sulza.de"
@@ -587,6 +763,9 @@
   },
   "16073054": {
     "email_domain": "stadt-schwarzatal.com"
+  },
+  "16073079": {
+    "email_domain": "stadtsuhl.de"
   },
   "16074007": {
     "email_domain": "huegelland-taeler.de"
@@ -645,6 +824,9 @@
   "16074066": {
     "email_domain": "huegelland-taeler.de"
   },
+  "16074069": {
+    "email_domain": "stadtroda.de"
+  },
   "16074071": {
     "email_domain": "huegelland-taeler.de"
   },
@@ -690,6 +872,9 @@
   "16075018": {
     "email_domain": "neustadtanderorla.de"
   },
+  "16075049": {
+    "email_domain": "neustadtanderorla.de"
+  },
   "16075071": {
     "email_domain": "vg-seenplatte.de"
   },
@@ -713,5 +898,26 @@
   },
   "16077011": {
     "email_domain": "nobitz.de"
+  },
+  "01061001": {
+    "email_domain": "aol.de"
+  },
+  "01061011": {
+    "email_domain": "gmail.com"
+  },
+  "01061013": {
+    "email_domain": "web.de"
+  },
+  "01061021": {
+    "email_domain": "web.de"
+  },
+  "01061081": {
+    "email_domain": "freenet.de"
+  },
+  "03352012": {
+    "email_domain": "gwnk.de"
+  },
+  "16066082": {
+    "email_domain": "steinbach-hallenberg.de"
   }
 }
