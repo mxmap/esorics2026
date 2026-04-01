@@ -105,17 +105,24 @@ async def fetch_bfs_municipalities(date: str | None = None) -> dict[str, dict]:
         bfs_code = str(entry["bfsCode"])
         name = entry["name"]
 
-        # Resolve canton: commune -> district (Level 2) -> canton (Level 1)
+        # Resolve canton: walk up hierarchy until Level 1 (canton)
         canton = ""
-        parent = by_hist_code.get(entry.get("parent"))
-        if parent and parent["level"] == 2:
-            grandparent = by_hist_code.get(parent.get("parent"))
-            if grandparent and grandparent["level"] == 1:
-                canton_short = grandparent.get("shortName", "").lower()
+        current = entry
+        for _ in range(5):  # max depth guard
+            parent_code = current.get("parent")
+            if parent_code is None:
+                break
+            parent = by_hist_code.get(parent_code)
+            if parent is None:
+                break
+            if parent["level"] == 1:
+                canton_short = parent.get("shortName", "").lower()
                 canton = CANTON_SHORT_TO_FULL.get(canton_short, "")
-        elif parent and parent["level"] == 1:
-            canton_short = parent.get("shortName", "").lower()
-            canton = CANTON_SHORT_TO_FULL.get(canton_short, "")
+                break
+            current = parent
+
+        if not canton:
+            logger.warning("BFS: no canton resolved for {} ({})", bfs_code, name)
 
         municipalities[bfs_code] = {
             "bfs": bfs_code,

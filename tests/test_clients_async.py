@@ -44,6 +44,24 @@ class TestFetchBfsMunicipalities:
         assert "2701" in result
         assert result["2701"]["canton"] == "Kanton Basel-Stadt"
 
+    async def test_multi_level_hierarchy(self):
+        """Walk up through multiple intermediate levels to reach canton."""
+        csv_text = (
+            "HistoricalCode,BfsCode,Level,Parent,Name,ShortName\n"
+            "100,1,1,,Kanton Graubünden,GR\n"
+            "200,10,2,100,Region Prättigau/Davos,RPD\n"
+            "250,15,2,200,Kreis Klosters,KKL\n"
+            "300,3871,3,250,Klosters,KL\n"
+        )
+        with respx.mock:
+            respx.get("https://www.agvchapp.bfs.admin.ch/api/communes/snapshot").respond(
+                200, text=csv_text
+            )
+            result = await fetch_bfs_municipalities(date="01-01-2026")
+
+        assert "3871" in result
+        assert result["3871"]["canton"] == "Kanton Graubünden"
+
 
 class TestFetchOpenplzMunicipalities:
     async def test_fetch_paginated(self):

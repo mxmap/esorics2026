@@ -176,6 +176,11 @@ class SwitzerlandConfig(CountryConfig):
         records: list[MunicipalityRecord] = []
         for bfs, bfs_entry in sorted(bfs_municipalities.items(), key=lambda kv: int(kv[0])):
             canton = bfs_entry["canton"]
+            if not canton:
+                wiki_entry = wikidata.get(bfs)
+                if wiki_entry and wiki_entry.get("cantonLabel"):
+                    canton = wiki_entry["cantonLabel"]
+                    logger.debug("Using Wikidata canton for {} ({}): {}", bfs, bfs_entry["name"], canton)
             rec = MunicipalityRecord(
                 code=bfs,
                 name=bfs_entry["name"],

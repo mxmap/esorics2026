@@ -13,6 +13,7 @@ from municipality_email.scraping import (
     _is_valid_email,
     _slugify_name,
     build_urls,
+    build_urls_single_base,
     decrypt_typo3,
     detect_website_mismatch,
     extract_email_domains,
@@ -298,6 +299,31 @@ class TestBuildUrls:
     def test_with_scheme(self):
         urls = build_urls("https://example.de", [])
         assert "https://www.example.de/" in urls
+
+
+class TestBuildUrlsSingleBase:
+    def test_use_www(self):
+        urls = build_urls_single_base("example.ch", ["/kontakt", "/impressum"], use_www=True)
+        assert urls == [
+            "https://www.example.ch/",
+            "https://www.example.ch/kontakt",
+            "https://www.example.ch/impressum",
+        ]
+
+    def test_bare(self):
+        urls = build_urls_single_base("example.ch", ["/kontakt"], use_www=False)
+        assert urls == [
+            "https://example.ch/",
+            "https://example.ch/kontakt",
+        ]
+
+    def test_strips_www_prefix(self):
+        urls = build_urls_single_base("www.example.ch", [], use_www=True)
+        assert urls == ["https://www.example.ch/"]
+
+    def test_empty_subpages(self):
+        urls = build_urls_single_base("example.ch", [], use_www=False)
+        assert urls == ["https://example.ch/"]
 
 
 class TestDetectWebsiteMismatch:

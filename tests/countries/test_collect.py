@@ -129,6 +129,40 @@ class TestSwitzerlandCollect:
         assert records[0].code == "9999"
         assert records[0].name == "Ghost Town"
 
+    async def test_wikidata_canton_fallback(self, tmp_path):
+        """When BFS has no canton, Wikidata cantonLabel is used."""
+        data_dir = _make_ch_data(tmp_path)
+        config = SwitzerlandConfig()
+
+        bfs_data = {
+            "1001": {"bfs": "1001", "name": "Doppleschwand", "canton": ""},
+        }
+        wikidata_data = {
+            "1001": {
+                "code": "1001",
+                "name": "Doppleschwand",
+                "website": "",
+                "cantonLabel": "Kanton Luzern",
+            }
+        }
+
+        with (
+            patch(
+                "municipality_email.countries.switzerland.fetch_bfs_municipalities",
+                new_callable=AsyncMock,
+                return_value=bfs_data,
+            ),
+            patch(
+                "municipality_email.countries.switzerland.fetch_wikidata",
+                new_callable=AsyncMock,
+                return_value=wikidata_data,
+            ),
+        ):
+            records = await config.collect_candidates(data_dir)
+
+        doppleschwand = next(r for r in records if r.code == "1001")
+        assert doppleschwand.region == "Kanton Luzern"
+
 
 class TestGermanyCollect:
     async def test_basic(self, tmp_path):
