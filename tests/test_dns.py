@@ -6,7 +6,13 @@ import dns.exception
 import dns.resolver
 import pytest
 
-from municipality_email.dns import lookup_a, lookup_mx, make_resolvers, reset_resolvers, resolve_robust
+from municipality_email.dns import (
+    lookup_a,
+    lookup_mx,
+    make_resolvers,
+    reset_resolvers,
+    resolve_robust,
+)
 
 
 @pytest.fixture(autouse=True)

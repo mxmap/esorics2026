@@ -1,4 +1,4 @@
-"""Seven-phase pipeline orchestrator for municipality email domain collection."""
+"""Eight-phase pipeline orchestrator for municipality email domain collection."""
 
 from __future__ import annotations
 
@@ -24,8 +24,11 @@ from municipality_email.schemas import (
     PipelineOutput,
     Source,
 )
+from municipality_email.content import classify_homepage
 from municipality_email.filtering import build_frequency_blocklist, filter_scraped_pool
 from municipality_email.scraping import (
+    _normalize_domain,
+    _try_fetch,
     detect_website_mismatch,
     scrape_email_domains,
     validate_domain_accessibility,
@@ -63,7 +66,7 @@ async def phase_collect(config: CountryConfig, data_dir: Path) -> list[Municipal
     # Build work set statistics
     all_domains = {c.domain for r in records for c in r.candidates}
     logger.info(
-        "[1/7] Collect: {} municipalities, {} unique domains ({:.1f}s)",
+        "[1/8] Collect: {} municipalities, {} unique domains ({:.1f}s)",
         len(records),
         len(all_domains),
         time.time() - t0,
@@ -134,7 +137,7 @@ async def phase_dns_prefilter(
 
     resolved = sum(1 for v in results.values() if v)
     logger.info(
-        "[2/7] DNS pre-filter: {}/{} resolve, {} eliminated ({:.1f}s)",
+        "[2/8] DNS pre-filter: {}/{} resolve, {} eliminated ({:.1f}s)",
         resolved,
         len(all_domains),
         eliminated,
@@ -151,7 +154,7 @@ async def phase_validate(
     config: CountryConfig,
     cache: CacheDB | None = None,
 ) -> dict[str, tuple[bool, str | None, bool]]:
-    """Phase 2: HEAD requests to check domain accessibility.
+    """Phase 3: HEAD requests to check domain accessibility.
 
     Returns dict mapping domain -> (accessible, redirect_target, ssl_failed).
     """
@@ -198,7 +201,7 @@ async def phase_validate(
 
     accessible_count = sum(1 for a, _, _ in results.values() if a)
     logger.info(
-        "[3/7] Validate: {}/{} accessible ({:.1f}s)",
+        "[3/8] Validate: {}/{} accessible ({:.1f}s)",
         accessible_count,
         len(all_domains),
         time.time() - t0,
@@ -216,7 +219,95 @@ async def phase_validate(
     return results
 
 
-# ── Phase 4: Scrape emails ──────────────────────────────────────────
+# ── Phase 4: Content validation ────────────────────────────────────
+
+
+async def phase_content_validate(
+    records: list[MunicipalityRecord],
+    config: CountryConfig,
+    validation: dict[str, tuple[bool, str | None, bool]],
+    cache: CacheDB | None = None,
+) -> dict[str, list[str]]:
+    """Phase 4: Fetch homepage HTML and classify using keyword heuristics.
+
+    Returns dict mapping domain -> list of flags (e.g. ["parked"]).
+    """
+    t0 = time.time()
+
+    all_domains = {c.domain for r in records for c in r.candidates}
+    accessible_domains = {d for d in all_domains if validation.get(d, (False,))[0]}
+
+    # Check cache
+    cached: dict[str, list[str]] = {}
+    if cache is not None:
+        cached = await cache.get_content_many(accessible_domains)
+    to_check = sorted(accessible_domains - set(cached))
+
+    if cached:
+        logger.info("Content cache: {} cached, {} to check", len(cached), len(to_check))
+
+    results: dict[str, list[str]] = dict(cached)
+    total = len(to_check)
+    if total == 0:
+        logger.info("[4/8] Content: all {} domains served from cache", len(results))
+        for rec in records:
+            for cand in rec.candidates:
+                if cand.domain in results:
+                    rec.content_flags[cand.domain] = results[cand.domain]
+        return results
+
+    done = 0
+    sem = asyncio.Semaphore(config.concurrency)
+
+    async def check_one(client: httpx.AsyncClient, domain: str) -> None:
+        nonlocal done
+        bare = _normalize_domain(domain)
+        async with sem:
+            html: str | None = None
+            _, _, ssl_failed = validation.get(domain, (False, None, False))
+            for base in [f"https://www.{bare}", f"https://{bare}"]:
+                resp, ssl_failed = await _try_fetch(client, base + "/", ssl_failed)
+                if resp is not None:
+                    html = resp.text
+                    break
+            flags = classify_homepage(html) if html else ["no_municipality_keywords"]
+            results[domain] = flags
+            done += 1
+            if done % 500 == 0 or done == total:
+                logger.info("Content validation: {}/{}", done, total)
+
+    async with httpx.AsyncClient(
+        headers={"User-Agent": _USER_AGENT}, follow_redirects=True, timeout=15
+    ) as client:
+        tasks = [check_one(client, d) for d in to_check]
+        await asyncio.gather(*tasks)
+
+    # Persist new results
+    new_results = {d: results[d] for d in to_check if d in results}
+    if cache is not None and new_results:
+        await cache.put_content_many(new_results)
+
+    # Update records
+    for rec in records:
+        for cand in rec.candidates:
+            if cand.domain in results:
+                rec.content_flags[cand.domain] = results[cand.domain]
+
+    parked_count = sum(1 for f in results.values() if "parked" in f)
+    kw_count = sum(1 for f in results.values() if "has_municipality_keywords" in f)
+    no_kw_count = sum(1 for f in results.values() if "no_municipality_keywords" in f)
+    logger.info(
+        "[4/8] Content: {} parked, {} with keywords, {} without ({:.1f}s)",
+        parked_count,
+        kw_count,
+        no_kw_count,
+        time.time() - t0,
+    )
+
+    return results
+
+
+# ── Phase 5: Scrape emails ──────────────────────────────────────────
 
 
 async def phase_scrape(
@@ -224,13 +315,16 @@ async def phase_scrape(
     config: CountryConfig,
     validation: dict[str, tuple[bool, str | None, bool]],
     cache: CacheDB | None = None,
+    content_flags: dict[str, list[str]] | None = None,
 ) -> dict[str, tuple[set[str], str | None, bool]]:
-    """Phase 3: Scrape accessible domains for email addresses."""
+    """Phase 5: Scrape accessible domains for email addresses."""
     t0 = time.time()
 
-    # Only scrape accessible domains
+    # Only scrape accessible, non-parked domains
     all_domains = {c.domain for r in records for c in r.candidates}
     accessible_domains = {d for d in all_domains if validation.get(d, (False,))[0]}
+    parked = {d for d, fl in (content_flags or {}).items() if "parked" in fl}
+    accessible_domains -= parked
 
     # Check cache
     cached: dict[str, tuple[set[str], str | None, bool]] = {}
@@ -244,7 +338,7 @@ async def phase_scrape(
     results: dict[str, tuple[set[str], str | None, bool]] = dict(cached)
     total = len(to_scrape)
     if total == 0:
-        logger.info("[4/7] Scrape: all {} domains served from cache", len(results))
+        logger.info("[5/8] Scrape: all {} domains served from cache", len(results))
         _update_records_from_scrape(records, results)
         return results
 
@@ -326,7 +420,7 @@ async def phase_scrape(
 
     scraped_with_emails = sum(1 for eds, _, _ in results.values() if eds)
     logger.info(
-        "[4a/7] Scrape (httpx): {}/{} had emails, {} timeouts ({:.1f}s)",
+        "[5a/8] Scrape (httpx): {}/{} had emails, {} timeouts ({:.1f}s)",
         scraped_with_emails,
         len(results),
         timeout_count,
@@ -357,7 +451,7 @@ async def _playwright_fallback(
         slow_domains = set()
 
     total = len(domains)
-    logger.info("[4b/7] JS fallback: {} domains to retry with Chromium", total)
+    logger.info("[5b/8] JS fallback: {} domains to retry with Chromium", total)
 
     sem = asyncio.Semaphore(3)
     done = 0
@@ -398,7 +492,7 @@ async def _playwright_fallback(
     await asyncio.gather(*tasks)
 
     logger.info(
-        "[4b/7] JS fallback: found emails on {}/{} domains, {} timeouts ({:.1f}s)",
+        "[5b/8] JS fallback: found emails on {}/{} domains, {} timeouts ({:.1f}s)",
         found_count,
         total,
         timeout_count,
@@ -422,7 +516,7 @@ def _update_records_from_scrape(
                 rec.accessible[cand.domain] = accessible
 
 
-# ── Phase 5: MX validation ──────────────────────────────────────────
+# ── Phase 6: MX validation ──────────────────────────────────────────
 
 
 async def phase_mx(
@@ -431,7 +525,7 @@ async def phase_mx(
     config: CountryConfig,
     cache: CacheDB | None = None,
 ) -> dict[str, bool]:
-    """Phase 4: Batch MX validation for all relevant domains."""
+    """Phase 6: Batch MX validation for all relevant domains."""
     t0 = time.time()
 
     # Collect all domains needing MX checks
@@ -487,7 +581,7 @@ async def phase_mx(
 
     valid = sum(1 for v in mx_results.values() if v)
     logger.info(
-        "[5/7] MX: {}/{} have MX records ({:.1f}s)",
+        "[6/8] MX: {}/{} have MX records ({:.1f}s)",
         valid,
         len(domains_to_validate),
         time.time() - t0,
@@ -502,7 +596,7 @@ async def phase_mx(
     return mx_results
 
 
-# ── Phase 6: Decide ─────────────────────────────────────────────────
+# ── Phase 7: Decide ─────────────────────────────────────────────────
 
 
 def phase_decide(
@@ -511,12 +605,12 @@ def phase_decide(
     mx_valid: dict[str, bool],
     validation: dict[str, tuple[bool, str | None, bool]],
 ) -> None:
-    """Phase 5: Decide email domain(s) for each municipality."""
+    """Phase 7: Decide email domain(s) for each municipality."""
     t0 = time.time()
     frequency_blocklist = build_frequency_blocklist(records)
     for rec in records:
         _decide_one(rec, config, mx_valid, validation, frequency_blocklist)
-    logger.info("[6/7] Decide: done ({:.1f}s)", time.time() - t0)
+    logger.info("[7/8] Decide: done ({:.1f}s)", time.time() - t0)
 
 
 def _decide_one(
@@ -527,6 +621,9 @@ def _decide_one(
     frequency_blocklist: set[str] | None = None,
 ) -> None:
     """Decide email domain(s) for a single municipality."""
+    # Domains flagged as parked should be excluded from all pools
+    parked = {d for d, fl in rec.content_flags.items() if "parked" in fl}
+
     # Build source detail for provenance
     source_map: dict[str, set[str]] = {}
     for cand in rec.candidates:
@@ -556,12 +653,20 @@ def _decide_one(
 
     static_pool: set[str] = set()
     for cand in rec.candidates:
-        if cand.source not in ("guess",) and mx_valid.get(cand.domain, False):
+        if (
+            cand.source not in ("guess",)
+            and cand.domain not in parked
+            and mx_valid.get(cand.domain, False)
+        ):
             static_pool.add(cand.domain)
 
     guess_pool: set[str] = set()
     for cand in rec.candidates:
-        if cand.source == "guess" and mx_valid.get(cand.domain, False):
+        if (
+            cand.source == "guess"
+            and cand.domain not in parked
+            and mx_valid.get(cand.domain, False)
+        ):
             guess_pool.add(cand.domain)
 
     sources_detail = {k: sorted(v) for k, v in source_map.items()}
@@ -673,8 +778,14 @@ def _set_website(
     if rec.website_domain and detect_website_mismatch(rec.name, rec.website_domain):
         rec.flags.append("website_mismatch")
 
+    # Propagate content validation flags to record
+    if rec.website_domain:
+        wflags = rec.content_flags.get(rec.website_domain, [])
+        if "no_municipality_keywords" in wflags:
+            rec.flags.append("no_municipality_keywords")
 
-# ── Phase 7: Export ─────────────────────────────────────────────────
+
+# ── Phase 8: Export ─────────────────────────────────────────────────
 
 
 def phase_export(
@@ -682,7 +793,7 @@ def phase_export(
     output_dir: Path,
     cc: str,
 ) -> None:
-    """Phase 6: Write three-tier output files."""
+    """Phase 8: Write three-tier output files."""
     t0 = time.time()
     now = datetime.now(tz=timezone.utc)
 
@@ -774,7 +885,7 @@ def phase_export(
     logger.info("By source: {}", dict(source_counts.most_common()))
     logger.info("By confidence: {}", dict(confidence_counts.most_common()))
     logger.info("Review entries: {}", len(review_entries))
-    logger.info("[7/7] Export done ({:.1f}s)", time.time() - t0)
+    logger.info("[8/8] Export done ({:.1f}s)", time.time() - t0)
 
 
 # ── Main orchestrator ───────────────────────────────────────────────
@@ -788,7 +899,7 @@ async def run_pipeline(
     dry_run: bool = False,
     no_cache: bool = False,
 ) -> None:
-    """Run the full 7-phase pipeline for a country."""
+    """Run the full 8-phase pipeline for a country."""
     cc = config.country.value
     start = time.time()
     logger.info("=== Starting pipeline for {} ===", cc.upper())
@@ -813,16 +924,21 @@ async def run_pipeline(
         # Phase 3: Validate
         validation = await phase_validate(records, config, cache)
 
-        # Phase 4: Scrape
-        scrape_results = await phase_scrape(records, config, validation, cache)
+        # Phase 4: Content validation
+        content_flags = await phase_content_validate(records, config, validation, cache)
 
-        # Phase 5: MX
+        # Phase 5: Scrape
+        scrape_results = await phase_scrape(
+            records, config, validation, cache, content_flags=content_flags
+        )
+
+        # Phase 6: MX
         mx_valid = await phase_mx(records, scrape_results, config, cache)
 
-    # Phase 6: Decide
+    # Phase 7: Decide
     phase_decide(records, config, mx_valid, validation)
 
-    # Phase 7: Export
+    # Phase 8: Export
     phase_export(records, output_dir, cc)
 
     logger.info("=== Pipeline complete for {} in {:.1f}s ===", cc.upper(), time.time() - start)

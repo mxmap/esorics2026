@@ -18,6 +18,7 @@ class TestCacheDBLifecycle:
         assert "scrape_cache" in tables
         assert "mx_cache" in tables
         assert "dns_cache" in tables
+        assert "content_cache" in tables
 
     async def test_wal_mode(self, tmp_path):
         async with CacheDB(tmp_path / "cache.db") as cache:
@@ -184,6 +185,40 @@ class TestDnsCache:
     async def test_empty_db(self, tmp_path):
         async with CacheDB(tmp_path / "cache.db") as cache:
             result = await cache.get_dns_many({"anything.de"})
+        assert result == {}
+
+
+class TestContentCache:
+    async def test_put_get_roundtrip(self, tmp_path):
+        async with CacheDB(tmp_path / "cache.db") as cache:
+            await cache.put_content_many(
+                {"parked.de": ["parked"], "good.de": ["has_municipality_keywords"]}
+            )
+            result = await cache.get_content_many({"parked.de", "good.de"})
+        assert result["parked.de"] == ["parked"]
+        assert result["good.de"] == ["has_municipality_keywords"]
+
+    async def test_ttl_expiry(self, tmp_path):
+        async with CacheDB(tmp_path / "cache.db", content_ttl_days=7) as cache:
+            await cache.put_content_many({"old.de": ["parked"]})
+            await cache._db.execute(
+                "UPDATE content_cache SET updated_at = datetime('now', '-10 days') "
+                "WHERE domain = 'old.de'"
+            )
+            await cache._db.commit()
+            result = await cache.get_content_many({"old.de"})
+        assert result == {}
+
+    async def test_partial_hits(self, tmp_path):
+        async with CacheDB(tmp_path / "cache.db") as cache:
+            await cache.put_content_many({"hit.de": ["parked"]})
+            result = await cache.get_content_many({"hit.de", "miss.de"})
+        assert "hit.de" in result
+        assert "miss.de" not in result
+
+    async def test_empty_db(self, tmp_path):
+        async with CacheDB(tmp_path / "cache.db") as cache:
+            result = await cache.get_content_many({"anything.de"})
         assert result == {}
 
 

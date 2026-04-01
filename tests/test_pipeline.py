@@ -106,6 +106,26 @@ class TestDecideOne:
         assert rec.confidence == Confidence.NONE
         assert rec.source == Source.NONE
 
+    def test_parked_domain_excluded_from_static_pool(self):
+        rec = _make_record(
+            candidates=[DomainCandidate(domain="parked.de", source="livenson")],
+            content_flags={"parked.de": ["parked"]},
+        )
+        mx_valid = {"parked.de": True}
+        _decide_one(rec, self.config, mx_valid, self.empty_validation)
+        assert rec.emails == []
+        assert rec.confidence == Confidence.NONE
+
+    def test_parked_domain_excluded_from_guess_pool(self):
+        rec = _make_record(
+            candidates=[DomainCandidate(domain="parked.de", source="guess")],
+            content_flags={"parked.de": ["parked"]},
+        )
+        mx_valid = {"parked.de": True}
+        _decide_one(rec, self.config, mx_valid, self.empty_validation)
+        assert rec.emails == []
+        assert rec.confidence == Confidence.NONE
+
     def test_multiple_scraped_emails(self):
         rec = _make_record(
             name="Flensburg",

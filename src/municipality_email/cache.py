@@ -51,6 +51,12 @@ CREATE TABLE IF NOT EXISTS dns_cache (
     resolves INTEGER NOT NULL,
     updated_at TEXT NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS content_cache (
+    domain TEXT PRIMARY KEY,
+    flags TEXT NOT NULL,
+    updated_at TEXT NOT NULL
+);
 """
 
 
@@ -65,12 +71,14 @@ class CacheDB:
         scrape_ttl_days: int = 7,
         mx_ttl_days: int = 1,
         dns_ttl_days: int = 1,
+        content_ttl_days: int = 7,
     ) -> None:
         self._path = path
         self._head_ttl = head_ttl_days
         self._scrape_ttl = scrape_ttl_days
         self._mx_ttl = mx_ttl_days
         self._dns_ttl = dns_ttl_days
+        self._content_ttl = content_ttl_days
         self._db: aiosqlite.Connection | None = None
 
     async def __aenter__(self) -> CacheDB:
@@ -212,6 +220,35 @@ class CacheDB:
         rows = [(domain, int(resolves), now) for domain, resolves in entries.items()]
         await self._db.executemany(
             "INSERT OR REPLACE INTO dns_cache (domain, resolves, updated_at) VALUES (?, ?, ?)",
+            rows,
+        )
+        await self._db.commit()
+
+    # ── Content cache ──────────────────────────────────────────────
+
+    async def get_content_many(self, domains: set[str]) -> dict[str, list[str]]:
+        """Load cached content validation results, filtering expired entries."""
+        assert self._db is not None
+        result: dict[str, list[str]] = {}
+        for chunk in _chunked(sorted(domains), _CHUNK_SIZE):
+            placeholders = ",".join("?" * len(chunk))
+            sql = (
+                f"SELECT domain, flags FROM content_cache "
+                f"WHERE domain IN ({placeholders}) "
+                f"AND updated_at > datetime('now', '-{self._content_ttl} days')"
+            )
+            async with self._db.execute(sql, chunk) as cur:
+                async for row in cur:
+                    result[row[0]] = json.loads(row[1])
+        return result
+
+    async def put_content_many(self, entries: dict[str, list[str]]) -> None:
+        """Store content validation results (upsert)."""
+        assert self._db is not None
+        now = _now_utc()
+        rows = [(domain, json.dumps(flags), now) for domain, flags in entries.items()]
+        await self._db.executemany(
+            "INSERT OR REPLACE INTO content_cache (domain, flags, updated_at) VALUES (?, ?, ?)",
             rows,
         )
         await self._db.commit()

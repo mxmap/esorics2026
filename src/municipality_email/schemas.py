@@ -54,6 +54,8 @@ class MunicipalityRecord(BaseModel):
     scraped_emails: dict[str, list[str]] = {}  # domain -> list of email domains found
     redirects: dict[str, str] = {}  # domain -> redirect target
     accessible: dict[str, bool] = {}  # domain -> is accessible
+    # Populated during content validation phase
+    content_flags: dict[str, list[str]] = {}  # domain -> content validation flags
     # Populated during MX phase
     mx_valid: dict[str, bool] = {}  # domain -> has MX records
     # Populated during decision phase

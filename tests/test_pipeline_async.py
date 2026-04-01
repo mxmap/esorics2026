@@ -13,6 +13,7 @@ from municipality_email.pipeline import (
     _set_website,
     _update_records_from_scrape,
     phase_collect,
+    phase_content_validate,
     phase_decide,
     phase_dns_prefilter,
     phase_mx,
@@ -120,9 +121,7 @@ class TestPhaseDnsPrefilter:
         assert len(records[0].candidates) == 1
 
     async def test_persists_to_dns_cache(self, tmp_path):
-        records = [
-            _make_record(candidates=[DomainCandidate(domain="new.de", source="livenson")])
-        ]
+        records = [_make_record(candidates=[DomainCandidate(domain="new.de", source="livenson")])]
 
         async with CacheDB(tmp_path / "cache.db") as cache:
             with patch(
@@ -171,6 +170,104 @@ class TestPhaseValidate:
             validation = await phase_validate(records, config, cache)
 
         assert validation["cached.de"] == (True, "redir.de", False)
+
+
+class TestPhaseContentValidate:
+    async def test_classifies_parked_domain(self):
+        records = [
+            _make_record(candidates=[DomainCandidate(domain="parked.de", source="livenson")])
+        ]
+        config = GermanyConfig()
+        validation = {"parked.de": (True, None, False)}
+
+        with respx.mock:
+            respx.get("https://www.parked.de/").respond(
+                200, html="<html>This domain is parked</html>"
+            )
+            flags = await phase_content_validate(records, config, validation)
+
+        assert flags["parked.de"] == ["parked"]
+        assert records[0].content_flags["parked.de"] == ["parked"]
+
+    async def test_classifies_municipality_page(self):
+        records = [
+            _make_record(candidates=[DomainCandidate(domain="gemeinde.de", source="livenson")])
+        ]
+        config = GermanyConfig()
+        validation = {"gemeinde.de": (True, None, False)}
+
+        with respx.mock:
+            respx.get("https://www.gemeinde.de/").respond(
+                200, html="<html><h1>Gemeinde Musterstadt</h1></html>"
+            )
+            flags = await phase_content_validate(records, config, validation)
+
+        assert flags["gemeinde.de"] == ["has_municipality_keywords"]
+
+    async def test_skips_inaccessible_domains(self):
+        records = [_make_record(candidates=[DomainCandidate(domain="down.de", source="livenson")])]
+        config = GermanyConfig()
+        validation = {"down.de": (False, None, False)}
+
+        flags = await phase_content_validate(records, config, validation)
+        assert "down.de" not in flags
+
+    async def test_uses_content_cache(self, tmp_path):
+        records = [
+            _make_record(candidates=[DomainCandidate(domain="cached.de", source="livenson")])
+        ]
+        config = GermanyConfig()
+        validation = {"cached.de": (True, None, False)}
+
+        async with CacheDB(tmp_path / "cache.db") as cache:
+            await cache.put_content_many({"cached.de": ["has_municipality_keywords"]})
+            # No HTTP mock needed — should be fully cached
+            flags = await phase_content_validate(records, config, validation, cache)
+
+        assert flags["cached.de"] == ["has_municipality_keywords"]
+
+    async def test_persists_to_content_cache(self, tmp_path):
+        records = [_make_record(candidates=[DomainCandidate(domain="new.de", source="livenson")])]
+        config = GermanyConfig()
+        validation = {"new.de": (True, None, False)}
+
+        async with CacheDB(tmp_path / "cache.db") as cache:
+            with respx.mock:
+                respx.get("https://www.new.de/").respond(200, html="<html>Rathaus Info</html>")
+                await phase_content_validate(records, config, validation, cache)
+
+            cached = await cache.get_content_many({"new.de"})
+            assert "new.de" in cached
+            assert cached["new.de"] == ["has_municipality_keywords"]
+
+
+class TestPhaseScrapeSkipsParked:
+    async def test_skips_parked_domains(self):
+        records = [
+            _make_record(
+                candidates=[
+                    DomainCandidate(domain="parked.de", source="livenson"),
+                    DomainCandidate(domain="good.de", source="wikidata"),
+                ]
+            )
+        ]
+        config = GermanyConfig()
+        validation = {
+            "parked.de": (True, None, False),
+            "good.de": (True, None, False),
+        }
+        content_flags = {"parked.de": ["parked"]}
+
+        with respx.mock:
+            respx.get("https://www.good.de/").respond(200, html="<p>info@good.de</p>")
+            for subpage in config.subpages:
+                respx.get(f"https://www.good.de{subpage}").respond(200, html="")
+            # No mock for parked.de — it should not be requested
+
+            results = await phase_scrape(records, config, validation, content_flags=content_flags)
+
+        assert "good.de" in results
+        assert "parked.de" not in results
 
 
 class TestPhaseScrape:
