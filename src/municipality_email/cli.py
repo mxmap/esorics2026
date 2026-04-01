@@ -49,7 +49,11 @@ def _resolve_impl(
 
     from municipality_email.pipeline import run_pipeline
 
-    countries = ["ch", "de", "at"] if all_countries else [country]
+    if all_countries:
+        countries = ["ch", "de", "at"]
+    else:
+        assert country is not None
+        countries = [country]
     output_dir = output or Path("domains")
     data_base = Path("data")
 

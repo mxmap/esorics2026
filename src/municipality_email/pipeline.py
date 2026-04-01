@@ -842,7 +842,7 @@ def phase_export(
     )
 
     # Review: entries with low/none confidence or non-empty flags
-    review_entries = [
+    review_entries: list[MunicipalityOutput | MunicipalityDetailedOutput] = [
         MunicipalityDetailedOutput(
             code=r.code,
             name=r.override_name or r.name,

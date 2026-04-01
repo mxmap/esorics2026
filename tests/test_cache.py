@@ -22,8 +22,10 @@ class TestCacheDBLifecycle:
 
     async def test_wal_mode(self, tmp_path):
         async with CacheDB(tmp_path / "cache.db") as cache:
+            assert cache._db is not None
             async with cache._db.execute("PRAGMA journal_mode") as cur:
                 row = await cur.fetchone()
+            assert row is not None
             assert row[0] == "wal"
 
     async def test_context_manager_closes(self, tmp_path):
@@ -59,6 +61,7 @@ class TestHeadCache:
         async with CacheDB(tmp_path / "cache.db", head_ttl_days=1) as cache:
             await cache.put_head_many({"old.ch": (True, None, False)})
             # Backdate the entry to 2 days ago
+            assert cache._db is not None
             await cache._db.execute(
                 "UPDATE head_cache SET updated_at = datetime('now', '-2 days') "
                 "WHERE domain = 'old.ch'"
@@ -109,6 +112,7 @@ class TestScrapeCache:
     async def test_ttl_expiry(self, tmp_path):
         async with CacheDB(tmp_path / "cache.db", scrape_ttl_days=7) as cache:
             await cache.put_scrape("old.ch", {"old.ch"}, None, True)
+            assert cache._db is not None
             await cache._db.execute(
                 "UPDATE scrape_cache SET updated_at = datetime('now', '-10 days') "
                 "WHERE domain = 'old.ch'"
@@ -135,6 +139,7 @@ class TestMxCache:
     async def test_ttl_expiry(self, tmp_path):
         async with CacheDB(tmp_path / "cache.db", mx_ttl_days=1) as cache:
             await cache.put_mx_many({"old.ch": True})
+            assert cache._db is not None
             await cache._db.execute(
                 "UPDATE mx_cache SET updated_at = datetime('now', '-2 days') "
                 "WHERE domain = 'old.ch'"
@@ -167,6 +172,7 @@ class TestDnsCache:
     async def test_ttl_expiry(self, tmp_path):
         async with CacheDB(tmp_path / "cache.db", dns_ttl_days=1) as cache:
             await cache.put_dns_many({"old.de": True})
+            assert cache._db is not None
             await cache._db.execute(
                 "UPDATE dns_cache SET updated_at = datetime('now', '-2 days') "
                 "WHERE domain = 'old.de'"
@@ -201,6 +207,7 @@ class TestContentCache:
     async def test_ttl_expiry(self, tmp_path):
         async with CacheDB(tmp_path / "cache.db", content_ttl_days=7) as cache:
             await cache.put_content_many({"old.de": ["parked"]})
+            assert cache._db is not None
             await cache._db.execute(
                 "UPDATE content_cache SET updated_at = datetime('now', '-10 days') "
                 "WHERE domain = 'old.de'"

@@ -51,7 +51,7 @@ class TestDomainCandidate:
 
 class TestMunicipalityRecord:
     def test_defaults(self):
-        r = MunicipalityRecord(code="261", name="Zürich", region="Kanton Zürich", country="ch")
+        r = MunicipalityRecord(code="261", name="Zürich", region="Kanton Zürich", country=Country.CH)
         assert r.candidates == []
         assert r.override_domain is None
         assert r.scraped_emails == {}
@@ -95,8 +95,8 @@ class TestMunicipalityRecord:
         assert r2.source == Source.SCRAPE
 
     def test_mutable_fields_independent(self):
-        r1 = MunicipalityRecord(code="1", name="A", region="R", country="ch")
-        r2 = MunicipalityRecord(code="2", name="B", region="R", country="ch")
+        r1 = MunicipalityRecord(code="1", name="A", region="R", country=Country.CH)
+        r2 = MunicipalityRecord(code="2", name="B", region="R", country=Country.CH)
         r1.emails.append("a.ch")
         assert r2.emails == []
 

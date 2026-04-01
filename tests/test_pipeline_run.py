@@ -11,7 +11,7 @@ from municipality_email.schemas import Country, DomainCandidate, MunicipalityRec
 def _make_record(**kwargs) -> MunicipalityRecord:
     defaults = dict(code="001", name="Test", region="Region", country=Country.DE)
     defaults.update(kwargs)
-    return MunicipalityRecord(**defaults)
+    return MunicipalityRecord(**defaults)  # type: ignore[arg-type]
 
 
 class TestRunPipeline:

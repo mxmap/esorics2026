@@ -9,6 +9,7 @@ uv sync --group dev           # install all dependencies
 uv run ruff check src tests   # lint
 uv run ruff format src tests  # format
 uv run pytest --cov --cov-report=term-missing  # tests with coverage
+uv run pyright --level=warning --warnings src tests  # type check
 ```
 
 ## Running

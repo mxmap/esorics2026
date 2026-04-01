@@ -196,19 +196,19 @@ def assert_record_invariants(rec: MunicipalityRecord) -> None:
 def _make_ch(**kwargs) -> MunicipalityRecord:
     defaults = dict(code="0261", name="Zürich", region="Kanton Zürich", country=Country.CH)
     defaults.update(kwargs)
-    return MunicipalityRecord(**defaults)
+    return MunicipalityRecord(**defaults)  # type: ignore[arg-type]
 
 
 def _make_de(**kwargs) -> MunicipalityRecord:
     defaults = dict(code="01001000", name="Flensburg", region="Schleswig-Holstein", country=Country.DE)
     defaults.update(kwargs)
-    return MunicipalityRecord(**defaults)
+    return MunicipalityRecord(**defaults)  # type: ignore[arg-type]
 
 
 def _make_at(**kwargs) -> MunicipalityRecord:
     defaults = dict(code="10101", name="Eisenstadt", region="Burgenland", country=Country.AT)
     defaults.update(kwargs)
-    return MunicipalityRecord(**defaults)
+    return MunicipalityRecord(**defaults)  # type: ignore[arg-type]
 
 
 # ── Switzerland ────────────────────────────────────────────────────────

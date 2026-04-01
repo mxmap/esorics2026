@@ -31,7 +31,7 @@ from municipality_email.schemas import (
 def _make_record(**kwargs) -> MunicipalityRecord:
     defaults = dict(code="001", name="Test", region="Region", country=Country.DE)
     defaults.update(kwargs)
-    return MunicipalityRecord(**defaults)
+    return MunicipalityRecord(**defaults)  # type: ignore[arg-type]
 
 
 class TestPhaseCollect:
@@ -212,7 +212,7 @@ class TestPhaseContentValidate:
             _make_record(candidates=[DomainCandidate(domain="parked.de", source="livenson")])
         ]
         config = GermanyConfig()
-        validation = {"parked.de": (True, None, False)}
+        validation: dict[str, tuple[bool, str | None, bool]] = {"parked.de": (True, None, False)}
 
         with respx.mock:
             respx.get("https://www.parked.de/").respond(
@@ -228,7 +228,7 @@ class TestPhaseContentValidate:
             _make_record(candidates=[DomainCandidate(domain="gemeinde.de", source="livenson")])
         ]
         config = GermanyConfig()
-        validation = {"gemeinde.de": (True, None, False)}
+        validation: dict[str, tuple[bool, str | None, bool]] = {"gemeinde.de": (True, None, False)}
 
         with respx.mock:
             respx.get("https://www.gemeinde.de/").respond(
@@ -241,7 +241,7 @@ class TestPhaseContentValidate:
     async def test_skips_inaccessible_domains(self):
         records = [_make_record(candidates=[DomainCandidate(domain="down.de", source="livenson")])]
         config = GermanyConfig()
-        validation = {"down.de": (False, None, False)}
+        validation: dict[str, tuple[bool, str | None, bool]] = {"down.de": (False, None, False)}
 
         flags = await phase_content_validate(records, config, validation)
         assert "down.de" not in flags
@@ -251,7 +251,7 @@ class TestPhaseContentValidate:
             _make_record(candidates=[DomainCandidate(domain="cached.de", source="livenson")])
         ]
         config = GermanyConfig()
-        validation = {"cached.de": (True, None, False)}
+        validation: dict[str, tuple[bool, str | None, bool]] = {"cached.de": (True, None, False)}
 
         async with CacheDB(tmp_path / "cache.db") as cache:
             await cache.put_content_many({"cached.de": ["has_municipality_keywords"]})
@@ -263,7 +263,7 @@ class TestPhaseContentValidate:
     async def test_persists_to_content_cache(self, tmp_path):
         records = [_make_record(candidates=[DomainCandidate(domain="new.de", source="livenson")])]
         config = GermanyConfig()
-        validation = {"new.de": (True, None, False)}
+        validation: dict[str, tuple[bool, str | None, bool]] = {"new.de": (True, None, False)}
 
         async with CacheDB(tmp_path / "cache.db") as cache:
             with respx.mock:
@@ -286,7 +286,7 @@ class TestPhaseScrapeSkipsParked:
             )
         ]
         config = GermanyConfig()
-        validation = {
+        validation: dict[str, tuple[bool, str | None, bool]] = {
             "parked.de": (True, None, False),
             "good.de": (True, None, False),
         }
@@ -315,7 +315,7 @@ class TestPhaseScrape:
             )
         ]
         config = GermanyConfig()
-        validation = {
+        validation: dict[str, tuple[bool, str | None, bool]] = {
             "good.de": (True, None, False),
             "bad.de": (False, None, False),
         }
@@ -335,7 +335,7 @@ class TestPhaseScrape:
             _make_record(candidates=[DomainCandidate(domain="cached.de", source="livenson")])
         ]
         config = GermanyConfig()
-        validation = {"cached.de": (True, None, False)}
+        validation: dict[str, tuple[bool, str | None, bool]] = {"cached.de": (True, None, False)}
 
         async with CacheDB(tmp_path / "cache.db") as cache:
             await cache.put_scrape("cached.de", {"cached.de"}, None, True)
@@ -347,7 +347,7 @@ class TestPhaseScrape:
     async def test_persists_to_cache(self, tmp_path):
         records = [_make_record(candidates=[DomainCandidate(domain="new.de", source="livenson")])]
         config = GermanyConfig()
-        validation = {"new.de": (True, None, False)}
+        validation: dict[str, tuple[bool, str | None, bool]] = {"new.de": (True, None, False)}
 
         async with CacheDB(tmp_path / "cache.db") as cache:
             with respx.mock:
@@ -374,7 +374,7 @@ class TestPhaseMx:
                 ]
             )
         ]
-        scrape_results = {"good.de": ({"email.de"}, None, True)}
+        scrape_results: dict[str, tuple[set[str], str | None, bool]] = {"good.de": ({"email.de"}, None, True)}
         mock_dns["email.de"] = ["mx.email.de"]
         config = GermanyConfig()
 
@@ -420,7 +420,7 @@ class TestPhaseDecide:
 class TestUpdateRecordsFromScrape:
     def test_updates_scraped_emails(self):
         records = [_make_record(candidates=[DomainCandidate(domain="a.de", source="livenson")])]
-        scrape_results = {"a.de": ({"email.de"}, "redirect.de", True)}
+        scrape_results: dict[str, tuple[set[str], str | None, bool]] = {"a.de": ({"email.de"}, "redirect.de", True)}
         _update_records_from_scrape(records, scrape_results)
 
         assert records[0].scraped_emails["a.de"] == ["email.de"]
@@ -431,7 +431,7 @@ class TestUpdateRecordsFromScrape:
 class TestSetWebsite:
     def test_follows_redirect(self):
         rec = _make_record(website_domain="old.de")
-        validation = {"old.de": (True, "new.de", False)}
+        validation: dict[str, tuple[bool, str | None, bool]] = {"old.de": (True, "new.de", False)}
         _set_website(rec, validation)
         assert rec.website_domain == "new.de"
 
@@ -440,13 +440,13 @@ class TestSetWebsite:
             website_domain="dead.de",
             candidates=[DomainCandidate(domain="alive.de", source="guess")],
         )
-        validation = {"dead.de": (False, None, False), "alive.de": (True, None, False)}
+        validation: dict[str, tuple[bool, str | None, bool]] = {"dead.de": (False, None, False), "alive.de": (True, None, False)}
         _set_website(rec, validation)
         assert rec.website_domain == "alive.de"
 
     def test_no_accessible(self):
         rec = _make_record(website_domain="dead.de")
-        validation = {"dead.de": (False, None, False)}
+        validation: dict[str, tuple[bool, str | None, bool]] = {"dead.de": (False, None, False)}
         _set_website(rec, validation)
         assert rec.website_domain is None
 

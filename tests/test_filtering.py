@@ -15,7 +15,7 @@ from municipality_email.schemas import Country, MunicipalityRecord
 def _make_record(**kwargs) -> MunicipalityRecord:
     defaults = dict(code="001", name="Test", region="", country=Country.CH)
     defaults.update(kwargs)
-    return MunicipalityRecord(**defaults)
+    return MunicipalityRecord(**defaults)  # type: ignore[arg-type]
 
 
 # ── Layer 1: TLD Validation ────────────────────────────────────────
