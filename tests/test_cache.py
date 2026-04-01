@@ -17,6 +17,7 @@ class TestCacheDBLifecycle:
         assert "head_cache" in tables
         assert "scrape_cache" in tables
         assert "mx_cache" in tables
+        assert "dns_cache" in tables
 
     async def test_wal_mode(self, tmp_path):
         async with CacheDB(tmp_path / "cache.db") as cache:
@@ -151,6 +152,38 @@ class TestMxCache:
     async def test_empty_db(self, tmp_path):
         async with CacheDB(tmp_path / "cache.db") as cache:
             result = await cache.get_mx_many({"anything.ch"})
+        assert result == {}
+
+
+class TestDnsCache:
+    async def test_put_get_roundtrip(self, tmp_path):
+        async with CacheDB(tmp_path / "cache.db") as cache:
+            await cache.put_dns_many({"good.de": True, "bad.de": False})
+            result = await cache.get_dns_many({"good.de", "bad.de"})
+        assert result["good.de"] is True
+        assert result["bad.de"] is False
+
+    async def test_ttl_expiry(self, tmp_path):
+        async with CacheDB(tmp_path / "cache.db", dns_ttl_days=1) as cache:
+            await cache.put_dns_many({"old.de": True})
+            await cache._db.execute(
+                "UPDATE dns_cache SET updated_at = datetime('now', '-2 days') "
+                "WHERE domain = 'old.de'"
+            )
+            await cache._db.commit()
+            result = await cache.get_dns_many({"old.de"})
+        assert result == {}
+
+    async def test_partial_hits(self, tmp_path):
+        async with CacheDB(tmp_path / "cache.db") as cache:
+            await cache.put_dns_many({"hit.de": True})
+            result = await cache.get_dns_many({"hit.de", "miss.de"})
+        assert "hit.de" in result
+        assert "miss.de" not in result
+
+    async def test_empty_db(self, tmp_path):
+        async with CacheDB(tmp_path / "cache.db") as cache:
+            result = await cache.get_dns_many({"anything.de"})
         assert result == {}
 
 

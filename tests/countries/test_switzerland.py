@@ -21,6 +21,11 @@ class TestSwitzerlandConfig:
         assert "gemeinde-zuerich.ch" in domains
         assert "stadt-zuerich.ch" in domains
         assert "zuerich.zh.ch" in domains
+        assert "zuerich-zh.ch" in domains
+        assert "zh-zuerich.ch" in domains
+        assert "zuerichzh.ch" in domains
+        assert "zuerich-online.ch" in domains
+        assert "zuerich-info.ch" in domains
 
     def test_guess_domains_french(self):
         domains = self.config.guess_domains("Genève", "Kanton Genf")

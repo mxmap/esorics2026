@@ -6,12 +6,15 @@ import respx
 
 from municipality_email.cache import CacheDB
 from municipality_email.countries.germany import GermanyConfig
+from unittest.mock import AsyncMock, patch
+
 from municipality_email.pipeline import (
     _print_dry_run,
     _set_website,
     _update_records_from_scrape,
     phase_collect,
     phase_decide,
+    phase_dns_prefilter,
     phase_mx,
     phase_scrape,
     phase_validate,
@@ -63,6 +66,75 @@ class TestPhaseCollect:
         records = await phase_collect(config, Path("data/de"))
         r001 = records[0]
         assert not any(c.source == "guess" for c in r001.candidates)
+
+
+class TestPhaseDnsPrefilter:
+    async def test_filters_nonresolving_domains(self):
+        records = [
+            _make_record(
+                candidates=[
+                    DomainCandidate(domain="good.de", source="livenson"),
+                    DomainCandidate(domain="bad.de", source="guess"),
+                ]
+            )
+        ]
+
+        async def _lookup_a(domain):
+            return domain == "good.de"
+
+        with patch("municipality_email.pipeline.lookup_a", side_effect=_lookup_a):
+            await phase_dns_prefilter(records)
+
+        domains = [c.domain for c in records[0].candidates]
+        assert "good.de" in domains
+        assert "bad.de" not in domains
+
+    async def test_keeps_all_resolving(self):
+        records = [
+            _make_record(
+                candidates=[
+                    DomainCandidate(domain="a.de", source="livenson"),
+                    DomainCandidate(domain="b.de", source="guess"),
+                ]
+            )
+        ]
+
+        with patch(
+            "municipality_email.pipeline.lookup_a", new_callable=AsyncMock, return_value=True
+        ):
+            await phase_dns_prefilter(records)
+
+        assert len(records[0].candidates) == 2
+
+    async def test_uses_dns_cache(self, tmp_path):
+        records = [
+            _make_record(candidates=[DomainCandidate(domain="cached.de", source="livenson")])
+        ]
+
+        async with CacheDB(tmp_path / "cache.db") as cache:
+            await cache.put_dns_many({"cached.de": True})
+            # No DNS mock needed — should be fully cached
+            result = await phase_dns_prefilter(records, cache)
+
+        assert result["cached.de"] is True
+        assert len(records[0].candidates) == 1
+
+    async def test_persists_to_dns_cache(self, tmp_path):
+        records = [
+            _make_record(candidates=[DomainCandidate(domain="new.de", source="livenson")])
+        ]
+
+        async with CacheDB(tmp_path / "cache.db") as cache:
+            with patch(
+                "municipality_email.pipeline.lookup_a",
+                new_callable=AsyncMock,
+                return_value=True,
+            ):
+                await phase_dns_prefilter(records, cache)
+
+            cached = await cache.get_dns_many({"new.de"})
+            assert "new.de" in cached
+            assert cached["new.de"] is True
 
 
 class TestPhaseValidate:

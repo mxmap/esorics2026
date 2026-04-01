@@ -24,6 +24,10 @@ class TestAustriaConfig:
         assert "gemeinde-eisenstadt.at" in domains
         assert "stadt-eisenstadt.at" in domains
         assert "marktgemeinde-eisenstadt.at" in domains
+        assert "stadtgemeinde-eisenstadt.at" in domains
+        assert "eisenstadt.or.at" in domains
+        assert "eisenstadt-online.at" in domains
+        assert "eisenstadt-info.at" in domains
 
     def test_guess_domains_regional(self):
         domains = self.config.guess_domains("Eisenstadt", "Burgenland")
@@ -32,6 +36,14 @@ class TestAustriaConfig:
     def test_guess_domains_kaernten(self):
         domains = self.config.guess_domains("Klagenfurt", "Kärnten")
         assert "klagenfurt.ktn.gde.at" in domains
+
+    def test_guess_domains_regional_noe(self):
+        domains = self.config.guess_domains("Korneuburg", "Niederösterreich")
+        assert "korneuburg.noe.gv.at" in domains
+
+    def test_guess_domains_regional_stmk(self):
+        domains = self.config.guess_domains("Graz", "Steiermark")
+        assert "graz.stmk.gv.at" in domains
 
     def test_guess_domains_umlaut(self):
         domains = self.config.guess_domains("Wörgl", "Tirol")
@@ -84,6 +96,14 @@ class TestConstants:
     def test_regional_suffixes(self):
         assert "bgld.gv.at" in REGIONAL_DOMAIN_SUFFIXES_AT["1"]
         assert "ktn.gde.at" in REGIONAL_DOMAIN_SUFFIXES_AT["2"]
+        assert "noe.gv.at" in REGIONAL_DOMAIN_SUFFIXES_AT["3"]
+        assert "ooe.gv.at" in REGIONAL_DOMAIN_SUFFIXES_AT["4"]
+        assert "salzburg.gv.at" in REGIONAL_DOMAIN_SUFFIXES_AT["5"]
+        assert "stmk.gv.at" in REGIONAL_DOMAIN_SUFFIXES_AT["6"]
+        assert "tirol.gv.at" in REGIONAL_DOMAIN_SUFFIXES_AT["7"]
+        assert "vlbg.gv.at" in REGIONAL_DOMAIN_SUFFIXES_AT["8"]
+        assert "wien.gv.at" in REGIONAL_DOMAIN_SUFFIXES_AT["9"]
+        assert len(REGIONAL_DOMAIN_SUFFIXES_AT) == 9
 
     def test_skip_domains(self):
         assert "aon.at" in SKIP_DOMAINS_AT

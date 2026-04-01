@@ -56,6 +56,11 @@ class TestRunPipeline:
         # Mock all HTTP and DNS
         with (
             patch(
+                "municipality_email.pipeline.phase_dns_prefilter",
+                new_callable=AsyncMock,
+                return_value={"test.de": True},
+            ),
+            patch(
                 "municipality_email.pipeline.phase_validate",
                 new_callable=AsyncMock,
                 return_value={"test.de": (True, None, False)},

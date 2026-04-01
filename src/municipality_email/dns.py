@@ -10,7 +10,7 @@ import dns.resolver
 from loguru import logger
 
 _resolvers: list[dns.asyncresolver.Resolver] | None = None
-_dns_semaphore = asyncio.Semaphore(10)
+_dns_semaphore = asyncio.Semaphore(50)
 
 
 def make_resolvers() -> list[dns.asyncresolver.Resolver]:
@@ -82,6 +82,16 @@ async def resolve_robust(qname: str, rdtype: str) -> dns.resolver.Answer | None:
     else:
         logger.debug("DNS {}/{}: all resolvers exhausted", qname, rdtype)
     return None
+
+
+async def lookup_a(domain: str) -> bool:
+    """Check if domain resolves (A or AAAA record)."""
+    async with _dns_semaphore:
+        answer = await resolve_robust(domain, "A")
+        if answer is not None:
+            return True
+        answer = await resolve_robust(domain, "AAAA")
+        return answer is not None
 
 
 async def lookup_mx(domain: str) -> list[str]:

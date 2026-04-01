@@ -47,8 +47,12 @@ BUNDESLAND_BY_PREFIX_AT = {
 REGIONAL_DOMAIN_SUFFIXES_AT: dict[str, list[str]] = {
     "1": ["bgld.gv.at"],
     "2": ["ktn.gde.at"],
+    "3": ["noe.gv.at"],
     "4": ["ooe.gv.at"],
+    "5": ["salzburg.gv.at"],
+    "6": ["stmk.gv.at"],
     "7": ["tirol.gv.at"],
+    "8": ["vlbg.gv.at"],
     "9": ["wien.gv.at"],
 }
 
@@ -250,6 +254,10 @@ class AustriaConfig(CountryConfig):
                 candidates.add(f"gemeinde-{slug}.at")
                 candidates.add(f"stadt-{slug}.at")
                 candidates.add(f"marktgemeinde-{slug}.at")
+                candidates.add(f"stadtgemeinde-{slug}.at")
+                candidates.add(f"{slug}.or.at")
+                candidates.add(f"{slug}-online.at")
+                candidates.add(f"{slug}-info.at")
 
                 if bundesland_code:
                     for suffix in REGIONAL_DOMAIN_SUFFIXES_AT.get(bundesland_code, []):

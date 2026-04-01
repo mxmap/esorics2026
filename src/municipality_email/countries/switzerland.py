@@ -246,9 +246,16 @@ class SwitzerlandConfig(CountryConfig):
             candidates.add(f"stadt-{slug}.ch")
             if canton_abbrev:
                 candidates.add(f"{slug}.{canton_abbrev}.ch")
+                candidates.add(f"{slug}-{canton_abbrev}.ch")
+                candidates.add(f"{canton_abbrev}-{slug}.ch")
+                candidates.add(f"{slug}{canton_abbrev}.ch")
 
         for joined in all_extras:
             candidates.add(f"{joined}.ch")
+
+        for slug in all_slugs:
+            candidates.add(f"{slug}-online.ch")
+            candidates.add(f"{slug}-info.ch")
 
         return sorted(candidates)
 

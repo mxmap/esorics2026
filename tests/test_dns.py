@@ -6,7 +6,7 @@ import dns.exception
 import dns.resolver
 import pytest
 
-from municipality_email.dns import lookup_mx, make_resolvers, reset_resolvers, resolve_robust
+from municipality_email.dns import lookup_a, lookup_mx, make_resolvers, reset_resolvers, resolve_robust
 
 
 @pytest.fixture(autouse=True)
@@ -85,6 +85,36 @@ class TestResolveRobust:
             mock_get.return_value = [r1, r2]
             result = await resolve_robust("example.com", "MX")
         assert result is None
+
+
+class TestLookupA:
+    async def test_a_record_resolves(self):
+        with patch(
+            "municipality_email.dns.resolve_robust", new_callable=AsyncMock
+        ) as mock_resolve:
+            mock_resolve.return_value = MagicMock()
+            result = await lookup_a("example.com")
+        assert result is True
+        mock_resolve.assert_called_once_with("example.com", "A")
+
+    async def test_nxdomain_returns_false(self):
+        with patch(
+            "municipality_email.dns.resolve_robust", new_callable=AsyncMock
+        ) as mock_resolve:
+            mock_resolve.return_value = None
+            result = await lookup_a("nonexistent.example")
+        assert result is False
+        assert mock_resolve.call_count == 2
+
+    async def test_no_a_but_aaaa_resolves(self):
+        with patch(
+            "municipality_email.dns.resolve_robust", new_callable=AsyncMock
+        ) as mock_resolve:
+            mock_resolve.side_effect = [None, MagicMock()]
+            result = await lookup_a("ipv6only.example.com")
+        assert result is True
+        assert mock_resolve.call_args_list[0].args == ("ipv6only.example.com", "A")
+        assert mock_resolve.call_args_list[1].args == ("ipv6only.example.com", "AAAA")
 
 
 class TestLookupMx:

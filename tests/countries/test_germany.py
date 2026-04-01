@@ -22,6 +22,11 @@ class TestGermanyConfig:
         assert "stadt-flensburg.de" in domains
         assert "gemeinde-flensburg.de" in domains
         assert "markt-flensburg.de" in domains
+        assert "vg-flensburg.de" in domains
+        assert "samtgemeinde-flensburg.de" in domains
+        assert "amt-flensburg.de" in domains
+        assert "flensburg-online.de" in domains
+        assert "flensburg-info.de" in domains
 
     def test_guess_domains_umlaut(self):
         domains = self.config.guess_domains("Münsingen", "Baden-Württemberg")
@@ -51,6 +56,9 @@ class TestGermanyConfig:
     def test_domain_matches_name(self):
         assert self.config.domain_matches_name("Flensburg", "flensburg.de") is True
         assert self.config.domain_matches_name("Flensburg", "stadt-flensburg.de") is True
+        assert self.config.domain_matches_name("Flensburg", "vg-flensburg.de") is True
+        assert self.config.domain_matches_name("Flensburg", "samtgemeinde-flensburg.de") is True
+        assert self.config.domain_matches_name("Flensburg", "amt-flensburg.de") is True
         assert self.config.domain_matches_name("Flensburg", "random.de") is False
 
     def test_domain_matches_empty(self):

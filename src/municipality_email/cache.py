@@ -45,6 +45,12 @@ CREATE TABLE IF NOT EXISTS mx_cache (
     has_mx INTEGER NOT NULL,
     updated_at TEXT NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS dns_cache (
+    domain TEXT PRIMARY KEY,
+    resolves INTEGER NOT NULL,
+    updated_at TEXT NOT NULL
+);
 """
 
 
@@ -58,11 +64,13 @@ class CacheDB:
         head_ttl_days: int = 1,
         scrape_ttl_days: int = 7,
         mx_ttl_days: int = 1,
+        dns_ttl_days: int = 1,
     ) -> None:
         self._path = path
         self._head_ttl = head_ttl_days
         self._scrape_ttl = scrape_ttl_days
         self._mx_ttl = mx_ttl_days
+        self._dns_ttl = dns_ttl_days
         self._db: aiosqlite.Connection | None = None
 
     async def __aenter__(self) -> CacheDB:
@@ -175,6 +183,35 @@ class CacheDB:
         rows = [(domain, int(has_mx), now) for domain, has_mx in entries.items()]
         await self._db.executemany(
             "INSERT OR REPLACE INTO mx_cache (domain, has_mx, updated_at) VALUES (?, ?, ?)",
+            rows,
+        )
+        await self._db.commit()
+
+    # ── DNS cache ──────────────────────────────────────────────────
+
+    async def get_dns_many(self, domains: set[str]) -> dict[str, bool]:
+        """Load cached DNS resolution results, filtering expired entries."""
+        assert self._db is not None
+        result: dict[str, bool] = {}
+        for chunk in _chunked(sorted(domains), _CHUNK_SIZE):
+            placeholders = ",".join("?" * len(chunk))
+            sql = (
+                f"SELECT domain, resolves FROM dns_cache "
+                f"WHERE domain IN ({placeholders}) "
+                f"AND updated_at > datetime('now', '-{self._dns_ttl} days')"
+            )
+            async with self._db.execute(sql, chunk) as cur:
+                async for row in cur:
+                    result[row[0]] = bool(row[1])
+        return result
+
+    async def put_dns_many(self, entries: dict[str, bool]) -> None:
+        """Store DNS resolution results (upsert)."""
+        assert self._db is not None
+        now = _now_utc()
+        rows = [(domain, int(resolves), now) for domain, resolves in entries.items()]
+        await self._db.executemany(
+            "INSERT OR REPLACE INTO dns_cache (domain, resolves, updated_at) VALUES (?, ?, ?)",
             rows,
         )
         await self._db.commit()

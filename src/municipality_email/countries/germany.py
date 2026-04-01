@@ -221,6 +221,11 @@ class GermanyConfig(CountryConfig):
                 candidates.add(f"stadt-{slug}.de")
                 candidates.add(f"gemeinde-{slug}.de")
                 candidates.add(f"markt-{slug}.de")
+                candidates.add(f"vg-{slug}.de")
+                candidates.add(f"samtgemeinde-{slug}.de")
+                candidates.add(f"amt-{slug}.de")
+                candidates.add(f"{slug}-online.de")
+                candidates.add(f"{slug}-info.de")
         return sorted(candidates)
 
     def domain_matches_name(self, name: str, domain: str) -> bool:
@@ -230,7 +235,7 @@ class GermanyConfig(CountryConfig):
         domain_lower = domain.lower()
         domain_base = domain_lower.rsplit(".", 1)[0] if "." in domain_lower else domain_lower
 
-        for prefix in ("stadt-", "gemeinde-", "markt-"):
+        for prefix in ("stadt-", "gemeinde-", "markt-", "vg-", "samtgemeinde-", "amt-"):
             if domain_base.startswith(prefix):
                 domain_base = domain_base[len(prefix) :]
                 break
