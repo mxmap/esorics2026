@@ -7,6 +7,7 @@ from pathlib import Path
 
 from loguru import logger
 
+from municipality_email.clients.bfs import CANTON_SHORT_TO_FULL, fetch_bfs_municipalities
 from municipality_email.clients.openplz import fetch_openplz_ch_municipalities
 from municipality_email.clients.wikidata import fetch_wikidata
 from municipality_email.countries.base import CountryConfig
@@ -38,34 +39,7 @@ SELECT ?item ?itemLabel ?bfs ?website ?cantonLabel WHERE {
 ORDER BY xsd:integer(?bfs)
 """
 
-CANTON_ABBREVIATIONS = {
-    "Kanton Zürich": "zh",
-    "Kanton Bern": "be",
-    "Kanton Luzern": "lu",
-    "Kanton Uri": "ur",
-    "Kanton Schwyz": "sz",
-    "Kanton Obwalden": "ow",
-    "Kanton Nidwalden": "nw",
-    "Kanton Glarus": "gl",
-    "Kanton Zug": "zg",
-    "Kanton Freiburg": "fr",
-    "Kanton Solothurn": "so",
-    "Kanton Basel-Stadt": "bs",
-    "Kanton Basel-Landschaft": "bl",
-    "Kanton Schaffhausen": "sh",
-    "Kanton Appenzell Ausserrhoden": "ar",
-    "Kanton Appenzell Innerrhoden": "ai",
-    "Kanton St. Gallen": "sg",
-    "Kanton Graubünden": "gr",
-    "Kanton Aargau": "ag",
-    "Kanton Thurgau": "tg",
-    "Kanton Tessin": "ti",
-    "Kanton Waadt": "vd",
-    "Kanton Wallis": "vs",
-    "Kanton Neuenburg": "ne",
-    "Kanton Genf": "ge",
-    "Kanton Jura": "ju",
-}
+CANTON_ABBREVIATIONS = {v: k for k, v in CANTON_SHORT_TO_FULL.items()}
 
 SKIP_DOMAINS_CH = {
     # Generic / test
@@ -93,6 +67,7 @@ SKIP_DOMAINS_CH = {
     "gmx.ch",
     "gmx.net",
     "bluewin.ch",
+    "bluemail.ch",
     "yahoo.com",
     "yahoo.fr",
     "mail.com",
@@ -155,7 +130,30 @@ class SwitzerlandConfig(CountryConfig):
         return [f"{abbrev}.ch"] if abbrev else []
 
     async def collect_candidates(self, data_dir: Path) -> list[MunicipalityRecord]:
-        bfs_municipalities = await fetch_openplz_ch_municipalities()
+        bfs_municipalities = await fetch_bfs_municipalities()
+        openplz = await fetch_openplz_ch_municipalities()
+
+        # Log discrepancies between authoritative BFS and OpenPLZ
+        openplz_only = set(openplz) - set(bfs_municipalities)
+        if openplz_only:
+            details = ", ".join(
+                f"{c} ({openplz[c]['name']})" for c in sorted(openplz_only, key=int)
+            )
+            logger.warning(
+                "{} municipalities in OpenPLZ but not in BFS (excluded): {}",
+                len(openplz_only),
+                details,
+            )
+        bfs_only_codes = set(bfs_municipalities) - set(openplz)
+        if bfs_only_codes:
+            details = ", ".join(
+                f"{c} ({bfs_municipalities[c]['name']})" for c in sorted(bfs_only_codes, key=int)
+            )
+            logger.warning(
+                "{} municipalities in BFS but not in OpenPLZ: {}",
+                len(bfs_only_codes),
+                details,
+            )
 
         # Wikidata provides website URLs
         wikidata = await fetch_wikidata(
@@ -167,7 +165,7 @@ class SwitzerlandConfig(CountryConfig):
         # Load overrides
         overrides = load_overrides(data_dir / "overrides.json")
 
-        # Merge: BFS is canonical, Wikidata supplements
+        # Merge: BFS is authoritative, OpenPLZ + Wikidata enrich
         bfs_only = set(bfs_municipalities) - set(wikidata)
         if bfs_only:
             logger.warning("{} municipalities in BFS but missing from Wikidata", len(bfs_only))
@@ -175,6 +173,14 @@ class SwitzerlandConfig(CountryConfig):
         records: list[MunicipalityRecord] = []
         for bfs, bfs_entry in sorted(bfs_municipalities.items(), key=lambda kv: int(kv[0])):
             canton = bfs_entry["canton"]
+            if not canton:
+                # Try OpenPLZ for canton
+                plz_entry = openplz.get(bfs)
+                if plz_entry and plz_entry.get("canton"):
+                    canton = plz_entry["canton"]
+                    logger.debug(
+                        "Using OpenPLZ canton for {} ({}): {}", bfs, bfs_entry["name"], canton
+                    )
             if not canton:
                 wiki_entry = wikidata.get(bfs)
                 if wiki_entry and wiki_entry.get("cantonLabel"):

@@ -52,5 +52,5 @@ def setup(verbose: bool = False) -> None:
     logging.basicConfig(handlers=[_InterceptHandler()], level=0, force=True)
 
     # Suppress noisy third-party loggers
-    for name in ("httpx", "httpcore", "dns", "stamina", "aiosqlite"):
+    for name in ("httpx", "httpcore", "dns", "stamina", "aiosqlite", "tldextract"):
         logging.getLogger(name).setLevel(logging.WARNING)

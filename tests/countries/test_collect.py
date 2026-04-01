@@ -85,6 +85,11 @@ class TestSwitzerlandCollect:
 
         with (
             patch(
+                "municipality_email.countries.switzerland.fetch_bfs_municipalities",
+                new_callable=AsyncMock,
+                return_value=bfs_data,
+            ),
+            patch(
                 "municipality_email.countries.switzerland.fetch_openplz_ch_municipalities",
                 new_callable=AsyncMock,
                 return_value=bfs_data,
@@ -114,6 +119,11 @@ class TestSwitzerlandCollect:
         config = SwitzerlandConfig()
 
         with (
+            patch(
+                "municipality_email.countries.switzerland.fetch_bfs_municipalities",
+                new_callable=AsyncMock,
+                return_value={},
+            ),
             patch(
                 "municipality_email.countries.switzerland.fetch_openplz_ch_municipalities",
                 new_callable=AsyncMock,
@@ -150,6 +160,11 @@ class TestSwitzerlandCollect:
 
         with (
             patch(
+                "municipality_email.countries.switzerland.fetch_bfs_municipalities",
+                new_callable=AsyncMock,
+                return_value=bfs_data,
+            ),
+            patch(
                 "municipality_email.countries.switzerland.fetch_openplz_ch_municipalities",
                 new_callable=AsyncMock,
                 return_value=bfs_data,
@@ -164,6 +179,42 @@ class TestSwitzerlandCollect:
 
         doppleschwand = next(r for r in records if r.code == "1001")
         assert doppleschwand.region == "Kanton Luzern"
+
+    async def test_openplz_extras_excluded(self, tmp_path):
+        """Municipalities in OpenPLZ but not BFS should be excluded."""
+        data_dir = _make_ch_data(tmp_path)
+        config = SwitzerlandConfig()
+
+        bfs_data = {
+            "261": {"bfs": "261", "name": "Zürich", "canton": "Kanton Zürich"},
+        }
+        openplz_data = {
+            "261": {"bfs": "261", "name": "Zürich", "canton": "Kanton Zürich"},
+            "9998": {"bfs": "9998", "name": "Dissolved Town", "canton": "Kanton Bern"},
+        }
+
+        with (
+            patch(
+                "municipality_email.countries.switzerland.fetch_bfs_municipalities",
+                new_callable=AsyncMock,
+                return_value=bfs_data,
+            ),
+            patch(
+                "municipality_email.countries.switzerland.fetch_openplz_ch_municipalities",
+                new_callable=AsyncMock,
+                return_value=openplz_data,
+            ),
+            patch(
+                "municipality_email.countries.switzerland.fetch_wikidata",
+                new_callable=AsyncMock,
+                return_value={},
+            ),
+        ):
+            records = await config.collect_candidates(data_dir)
+
+        codes = {r.code for r in records}
+        assert "261" in codes
+        assert "9998" not in codes
 
 
 class TestGermanyCollect:

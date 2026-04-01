@@ -6,37 +6,10 @@ import httpx
 import stamina
 from loguru import logger
 
+from municipality_email.clients.bfs import CANTON_SHORT_TO_FULL
+
 OPENPLZ_BASE_AT = "https://openplzapi.org/at/FederalProvinces"
 OPENPLZ_BASE_CH = "https://openplzapi.org/ch/Cantons"
-
-CANTON_SHORT_TO_FULL = {
-    "zh": "Kanton Zürich",
-    "be": "Kanton Bern",
-    "lu": "Kanton Luzern",
-    "ur": "Kanton Uri",
-    "sz": "Kanton Schwyz",
-    "ow": "Kanton Obwalden",
-    "nw": "Kanton Nidwalden",
-    "gl": "Kanton Glarus",
-    "zg": "Kanton Zug",
-    "fr": "Kanton Freiburg",
-    "so": "Kanton Solothurn",
-    "bs": "Kanton Basel-Stadt",
-    "bl": "Kanton Basel-Landschaft",
-    "sh": "Kanton Schaffhausen",
-    "ar": "Kanton Appenzell Ausserrhoden",
-    "ai": "Kanton Appenzell Innerrhoden",
-    "sg": "Kanton St. Gallen",
-    "gr": "Kanton Graubünden",
-    "ag": "Kanton Aargau",
-    "tg": "Kanton Thurgau",
-    "ti": "Kanton Tessin",
-    "vd": "Kanton Waadt",
-    "vs": "Kanton Wallis",
-    "ne": "Kanton Neuenburg",
-    "ge": "Kanton Genf",
-    "ju": "Kanton Jura",
-}
 
 
 async def fetch_openplz_municipalities(
