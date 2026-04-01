@@ -104,6 +104,11 @@ async def phase_dns_prefilter(
         async with sem:
             try:
                 resolves = await lookup_a(domain)
+                if not resolves:
+                    www_resolves = await lookup_a(f"www.{domain}")
+                    if www_resolves:
+                        logger.debug("DNS pre-filter: {} resolves only via www", domain)
+                        resolves = True
                 results[domain] = resolves
             except Exception:
                 results[domain] = False

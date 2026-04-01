@@ -135,6 +135,40 @@ class TestPhaseDnsPrefilter:
             assert "new.de" in cached
             assert cached["new.de"] is True
 
+    async def test_www_fallback_resolves(self):
+        """Domain that only resolves via www. prefix should pass the filter."""
+        records = [
+            _make_record(
+                candidates=[DomainCandidate(domain="www-only.ch", source="wikidata")]
+            )
+        ]
+
+        async def _lookup_a(domain):
+            return domain == "www.www-only.ch"
+
+        with patch("municipality_email.pipeline.lookup_a", side_effect=_lookup_a):
+            result = await phase_dns_prefilter(records)
+
+        assert result["www-only.ch"] is True
+        assert len(records[0].candidates) == 1
+        assert records[0].candidates[0].domain == "www-only.ch"
+
+    async def test_www_fallback_both_fail(self):
+        """When neither bare nor www resolves, domain should be eliminated."""
+        records = [
+            _make_record(
+                candidates=[DomainCandidate(domain="dead.ch", source="wikidata")]
+            )
+        ]
+
+        with patch(
+            "municipality_email.pipeline.lookup_a", new_callable=AsyncMock, return_value=False
+        ):
+            result = await phase_dns_prefilter(records)
+
+        assert result["dead.ch"] is False
+        assert len(records[0].candidates) == 0
+
 
 class TestPhaseValidate:
     async def test_marks_accessible(self):
