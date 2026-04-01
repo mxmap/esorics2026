@@ -138,9 +138,7 @@ class TestPhaseDnsPrefilter:
     async def test_www_fallback_resolves(self):
         """Domain that only resolves via www. prefix should pass the filter."""
         records = [
-            _make_record(
-                candidates=[DomainCandidate(domain="www-only.ch", source="wikidata")]
-            )
+            _make_record(candidates=[DomainCandidate(domain="www-only.ch", source="wikidata")])
         ]
 
         async def _lookup_a(domain):
@@ -155,11 +153,7 @@ class TestPhaseDnsPrefilter:
 
     async def test_www_fallback_both_fail(self):
         """When neither bare nor www resolves, domain should be eliminated."""
-        records = [
-            _make_record(
-                candidates=[DomainCandidate(domain="dead.ch", source="wikidata")]
-            )
-        ]
+        records = [_make_record(candidates=[DomainCandidate(domain="dead.ch", source="wikidata")])]
 
         with patch(
             "municipality_email.pipeline.lookup_a", new_callable=AsyncMock, return_value=False
@@ -374,7 +368,9 @@ class TestPhaseMx:
                 ]
             )
         ]
-        scrape_results: dict[str, tuple[set[str], str | None, bool]] = {"good.de": ({"email.de"}, None, True)}
+        scrape_results: dict[str, tuple[set[str], str | None, bool]] = {
+            "good.de": ({"email.de"}, None, True)
+        }
         mock_dns["email.de"] = ["mx.email.de"]
         config = GermanyConfig()
 
@@ -420,7 +416,9 @@ class TestPhaseDecide:
 class TestUpdateRecordsFromScrape:
     def test_updates_scraped_emails(self):
         records = [_make_record(candidates=[DomainCandidate(domain="a.de", source="livenson")])]
-        scrape_results: dict[str, tuple[set[str], str | None, bool]] = {"a.de": ({"email.de"}, "redirect.de", True)}
+        scrape_results: dict[str, tuple[set[str], str | None, bool]] = {
+            "a.de": ({"email.de"}, "redirect.de", True)
+        }
         _update_records_from_scrape(records, scrape_results)
 
         assert records[0].scraped_emails["a.de"] == ["email.de"]
@@ -440,7 +438,10 @@ class TestSetWebsite:
             website_domain="dead.de",
             candidates=[DomainCandidate(domain="alive.de", source="guess")],
         )
-        validation: dict[str, tuple[bool, str | None, bool]] = {"dead.de": (False, None, False), "alive.de": (True, None, False)}
+        validation: dict[str, tuple[bool, str | None, bool]] = {
+            "dead.de": (False, None, False),
+            "alive.de": (True, None, False),
+        }
         _set_website(rec, validation)
         assert rec.website_domain == "alive.de"
 

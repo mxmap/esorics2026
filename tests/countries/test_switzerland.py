@@ -71,6 +71,31 @@ class TestSwitzerlandConfig:
     def test_domain_matches_name_canton_subdomain(self):
         assert self.config.domain_matches_name("Teufen", "teufen.ar.ch") is True
 
+    def test_pick_best_email_root_before_subdomain(self):
+        result = self.config.pick_best_email({"admin.fully.ch", "fully.ch"}, "Fully", set())
+        assert result[0] == "fully.ch"
+
+    def test_pick_best_email_municipality_before_canton(self):
+        result = self.config.pick_best_email(
+            {"be.ch", "busswil-bm.ch"}, "Busswil bei Melchnau", set(), region="Kanton Bern"
+        )
+        assert result[0] == "busswil-bm.ch"
+        assert result[-1] == "be.ch"
+
+    def test_pick_best_email_name_match_before_regional(self):
+        result = self.config.pick_best_email(
+            {"treyvaux.ch", "fr.ch"}, "Treyvaux", set(), region="Kanton Freiburg"
+        )
+        assert result[0] == "treyvaux.ch"
+
+    def test_pick_best_email_multiple_subdomains(self):
+        result = self.config.pick_best_email(
+            {"edu.valbirse.ch", "ssco.valbirse.ch", "tp.valbirse.ch", "valbirse.ch"},
+            "Valbirse",
+            set(),
+        )
+        assert result[0] == "valbirse.ch"
+
 
 class TestConstants:
     def test_canton_abbreviations_complete(self):

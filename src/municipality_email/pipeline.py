@@ -698,7 +698,7 @@ def _decide_one(
 
     # 2. Scraped emails with MX
     if scraped_pool:
-        rec.emails = config.pick_best_email(scraped_pool, rec.name, static_pool)
+        rec.emails = config.pick_best_email(scraped_pool, rec.name, static_pool, region=rec.region)
         rec.confidence = Confidence.HIGH
         rec.source = Source.SCRAPE
         _set_website(rec, validation)
@@ -707,7 +707,9 @@ def _decide_one(
     # 3. Static source domains with MX (unconfirmed by scraping)
     unconfirmed_static = static_pool - scraped_pool
     if unconfirmed_static:
-        rec.emails = config.pick_best_email(unconfirmed_static, rec.name, static_pool)
+        rec.emails = config.pick_best_email(
+            unconfirmed_static, rec.name, static_pool, region=rec.region
+        )
         best = rec.emails[0] if rec.emails else ""
         # If best domain matches municipality name, treat as verified
         if best and config.domain_matches_name(rec.name, best):
@@ -721,7 +723,7 @@ def _decide_one(
 
     # 4. Guess domains with MX
     if guess_pool:
-        rec.emails = config.pick_best_email(guess_pool, rec.name, set())
+        rec.emails = config.pick_best_email(guess_pool, rec.name, set(), region=rec.region)
         rec.confidence = Confidence.LOW
         rec.flags.append("guess_only")
         rec.source = Source.GUESS

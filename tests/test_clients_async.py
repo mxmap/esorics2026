@@ -30,14 +30,18 @@ class TestFetchOpenplzChMunicipalities:
                         "name": "Winterthur",
                         "shortName": "Winterthur",
                         "canton": {"key": "1", "name": "Zürich", "shortName": "ZH"},
-                        "district": {"key": "110", "name": "Winterthur", "shortName": "Winterthur"},
+                        "district": {
+                            "key": "110",
+                            "name": "Winterthur",
+                            "shortName": "Winterthur",
+                        },
                     },
                 ],
             )
             for canton_key in range(2, 27):
-                respx.get(
-                    f"{OPENPLZ_BASE_CH}/{canton_key}/Communes?page=1&pageSize=50"
-                ).respond(200, json=[])
+                respx.get(f"{OPENPLZ_BASE_CH}/{canton_key}/Communes?page=1&pageSize=50").respond(
+                    200, json=[]
+                )
 
             result = await fetch_openplz_ch_municipalities()
 
@@ -57,14 +61,18 @@ class TestFetchOpenplzChMunicipalities:
                         "name": "Sursee",
                         "shortName": "Sursee",
                         "canton": {"key": "3", "name": "Luzern", "shortName": "LU"},
-                        "district": {"key": "314", "name": "Wahlkreis Sursee", "shortName": "Sursee"},
+                        "district": {
+                            "key": "314",
+                            "name": "Wahlkreis Sursee",
+                            "shortName": "Sursee",
+                        },
                     },
                 ],
             )
             for canton_key in [*range(1, 3), *range(4, 27)]:
-                respx.get(
-                    f"{OPENPLZ_BASE_CH}/{canton_key}/Communes?page=1&pageSize=50"
-                ).respond(200, json=[])
+                respx.get(f"{OPENPLZ_BASE_CH}/{canton_key}/Communes?page=1&pageSize=50").respond(
+                    200, json=[]
+                )
 
             result = await fetch_openplz_ch_municipalities()
 
@@ -94,16 +102,12 @@ class TestFetchOpenplzChMunicipalities:
             }
         ]
         with respx.mock:
-            respx.get(f"{OPENPLZ_BASE_CH}/1/Communes?page=1&pageSize=50").respond(
-                200, json=page1
-            )
-            respx.get(f"{OPENPLZ_BASE_CH}/1/Communes?page=2&pageSize=50").respond(
-                200, json=page2
-            )
+            respx.get(f"{OPENPLZ_BASE_CH}/1/Communes?page=1&pageSize=50").respond(200, json=page1)
+            respx.get(f"{OPENPLZ_BASE_CH}/1/Communes?page=2&pageSize=50").respond(200, json=page2)
             for canton_key in range(2, 27):
-                respx.get(
-                    f"{OPENPLZ_BASE_CH}/{canton_key}/Communes?page=1&pageSize=50"
-                ).respond(200, json=[])
+                respx.get(f"{OPENPLZ_BASE_CH}/{canton_key}/Communes?page=1&pageSize=50").respond(
+                    200, json=[]
+                )
 
             result = await fetch_openplz_ch_municipalities()
 

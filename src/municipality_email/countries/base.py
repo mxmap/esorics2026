@@ -36,17 +36,38 @@ class CountryConfig(ABC):
     def slugify_name(self, name: str) -> set[str]:
         """Generate slug variants for name matching."""
 
-    def pick_best_email(self, emails: set[str], name: str, static_domains: set[str]) -> list[str]:
+    def pick_best_email(
+        self, emails: set[str], name: str, static_domains: set[str], region: str = ""
+    ) -> list[str]:
         """Pick and sort email domains by preference.
 
-        Default: government TLD > name match > alphabetical.
+        Default: government TLD > name match > non-regional > regional.
+        Within each tier: fewer dots (root > subdomain), then shorter, then alphabetical.
         """
-        gov = sorted(d for d in emails if any(d.endswith(t) for t in self.government_tlds))
-        name_match = sorted(
-            d for d in emails if self.domain_matches_name(name, d) and d not in gov
+        regional = set(self.regional_suffixes(region)) if region else set()
+
+        def _sort_key(d: str) -> tuple[int, int, str]:
+            return (d.count("."), len(d), d)
+
+        gov = sorted(
+            (d for d in emails if any(d.endswith(t) for t in self.government_tlds)),
+            key=_sort_key,
         )
-        rest = sorted(d for d in emails if d not in gov and d not in name_match)
-        return gov + name_match + rest
+        gov_set = set(gov)
+        name_match = sorted(
+            (d for d in emails if self.domain_matches_name(name, d) and d not in gov_set),
+            key=_sort_key,
+        )
+        seen = gov_set | set(name_match)
+        non_regional = sorted(
+            (d for d in emails if d not in seen and d not in regional),
+            key=_sort_key,
+        )
+        regional_rest = sorted(
+            (d for d in emails if d in regional and d not in seen),
+            key=_sort_key,
+        )
+        return gov + name_match + non_regional + regional_rest
 
     def regional_suffixes(self, region: str) -> list[str]:
         """Return regional domain suffixes. Default: empty."""

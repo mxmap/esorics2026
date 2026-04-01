@@ -126,7 +126,20 @@ def ags_to_bundesland(ags: str) -> str:
 class GermanyConfig(CountryConfig):
     country = Country.DE
     code_field = "ags"
-    tlds = [".de"]
+    tlds = [
+        ".de",
+        ".bayern",
+        ".nrw",
+        ".saarland",
+        ".berlin",
+        ".hamburg",
+        ".koeln",
+        ".cologne",
+        ".ruhr",
+        ".org",
+        ".com",
+        ".net",
+    ]
     government_tlds: list[str] = []
     skip_domains = SKIP_DOMAINS_DE
     subpages = SUBPAGES_DE

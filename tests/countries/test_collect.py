@@ -107,7 +107,9 @@ class TestSwitzerlandCollect:
         assert bern.override_domain is None
 
     async def test_override_only_municipality(self, tmp_path):
-        overrides = {"9999": {"email_domain": "test.ch", "name": "Ghost Town", "canton": "Kanton Bern"}}
+        overrides = {
+            "9999": {"email_domain": "test.ch", "name": "Ghost Town", "canton": "Kanton Bern"}
+        }
         (tmp_path / "overrides.json").write_text(json.dumps(overrides))
         config = SwitzerlandConfig()
 

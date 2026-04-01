@@ -51,7 +51,9 @@ class TestDomainCandidate:
 
 class TestMunicipalityRecord:
     def test_defaults(self):
-        r = MunicipalityRecord(code="261", name="Zürich", region="Kanton Zürich", country=Country.CH)
+        r = MunicipalityRecord(
+            code="261", name="Zürich", region="Kanton Zürich", country=Country.CH
+        )
         assert r.candidates == []
         assert r.override_domain is None
         assert r.scraped_emails == {}

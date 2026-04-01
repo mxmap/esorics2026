@@ -192,16 +192,25 @@ class TestScoreDomainRelevance:
         score = score_domain_relevance("randomsite.com", "Aarberg", self.ch_config, set())
         assert score == 0.0
 
+    def test_foreign_tld_still_scores_if_not_filtered(self):
+        """Name match with foreign TLD scores 1.0 (filtering happens in filter_scraped_pool)."""
+        score = score_domain_relevance("ipsach.be", "Ipsach", self.ch_config, set())
+        assert score == 1.0
+
     def test_joined_multiword_name(self):
         score = score_domain_relevance("uetikonamsee.ch", "Uetikon am See", self.ch_config, set())
         assert score == 1.0
 
     def test_cantonal_domain_correct_region(self):
-        score = score_domain_relevance("nw.ch", "Oberdorf", self.ch_config, set(), region="Kanton Nidwalden")
+        score = score_domain_relevance(
+            "nw.ch", "Oberdorf", self.ch_config, set(), region="Kanton Nidwalden"
+        )
         assert score == 0.5
 
     def test_cantonal_domain_wrong_region(self):
-        score = score_domain_relevance("nw.ch", "Oberdorf", self.ch_config, set(), region="Kanton Zürich")
+        score = score_domain_relevance(
+            "nw.ch", "Oberdorf", self.ch_config, set(), region="Kanton Zürich"
+        )
         assert score == 0.0
 
     def test_cantonal_domain_no_region(self):
@@ -209,7 +218,9 @@ class TestScoreDomainRelevance:
         assert score == 0.0
 
     def test_ne_ch_for_neuchatel(self):
-        score = score_domain_relevance("ne.ch", "Boudry", self.ch_config, set(), region="Kanton Neuenburg")
+        score = score_domain_relevance(
+            "ne.ch", "Boudry", self.ch_config, set(), region="Kanton Neuenburg"
+        )
         assert score == 0.5
 
 
@@ -337,6 +348,32 @@ class TestFilterScrapedPool:
             region="Kanton Nidwalden",
         )
         assert "nw.ch" in result
+
+    def test_foreign_tld_dropped(self):
+        """Foreign ccTLD like .be is dropped for Swiss municipalities."""
+        pool = {"ipsach.ch", "ipsach.be"}
+        result = filter_scraped_pool(
+            pool,
+            municipality_name="Ipsach",
+            config=self.config,
+            frequency_blocklist=set(),
+            candidate_domains=set(),
+        )
+        assert "ipsach.ch" in result
+        assert "ipsach.be" not in result
+
+    def test_generic_tld_kept(self):
+        """Generic TLDs like .org are kept."""
+        pool = {"uitikon.org", "uitikon.ch"}
+        result = filter_scraped_pool(
+            pool,
+            municipality_name="Uitikon",
+            config=self.config,
+            frequency_blocklist=set(),
+            candidate_domains=set(),
+        )
+        assert "uitikon.org" in result
+        assert "uitikon.ch" in result
 
     def test_cantonal_domain_rejected_wrong_region(self):
         pool = {"nw.ch"}

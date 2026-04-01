@@ -144,7 +144,18 @@ def _is_gov_domain(domain: str) -> bool:
 class AustriaConfig(CountryConfig):
     country = Country.AT
     code_field = "gkz"
-    tlds = [".at", ".gv.at", ".gde.at"]
+    tlds = [
+        ".at",
+        ".gv.at",
+        ".gde.at",
+        ".co.at",
+        ".or.at",
+        ".tirol",
+        ".wien",
+        ".org",
+        ".com",
+        ".net",
+    ]
     government_tlds = [".gv.at", ".gde.at"]
     skip_domains = SKIP_DOMAINS_AT
     subpages = SUBPAGES_AT
@@ -309,7 +320,9 @@ class AustriaConfig(CountryConfig):
 
         return slugs
 
-    def pick_best_email(self, emails: set[str], name: str, static_domains: set[str]) -> list[str]:
+    def pick_best_email(
+        self, emails: set[str], name: str, static_domains: set[str], region: str = ""
+    ) -> list[str]:
         """Austrian government domain preference."""
 
         def _sort_key(d: str) -> tuple[int, bool, str]:

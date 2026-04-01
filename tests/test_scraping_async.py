@@ -347,9 +347,7 @@ class TestScrapeEmailDomainsExtended:
         """Non-exhaustive mode: homepage has no email, subpage has email → returns early."""
         with respx.mock:
             respx.get("https://www.example.ch/").respond(200, html="<p>no emails</p>")
-            respx.get("https://www.example.ch/kontakt").respond(
-                200, html="<p>info@example.ch</p>"
-            )
+            respx.get("https://www.example.ch/kontakt").respond(200, html="<p>info@example.ch</p>")
             # /impressum should NOT be fetched since we stop early
             respx.get("https://www.example.ch/impressum").respond(
                 200, html="<p>other@example.ch</p>"

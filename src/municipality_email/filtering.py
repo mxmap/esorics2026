@@ -135,11 +135,18 @@ def filter_scraped_pool(
 ) -> set[str]:
     """Apply all filtering layers to a scraped email pool for one municipality.
 
-    1. Remove frequency-blocklisted domains (exempt if candidate, name-match, or regional).
-    2. Keep only municipality domains (strict name match), known candidates, or regional.
+    1. Drop domains with TLDs not in the country's allowed list.
+    2. Remove frequency-blocklisted domains (exempt if candidate, name-match, or regional).
+    3. Keep only municipality domains (strict name match), known candidates, or regional.
        Empty result is valid — lets decide phase fall through to static/guess.
     """
     regional_domains = set(config.regional_suffixes(region)) if region else set()
+
+    # Layer 1: drop domains with disallowed TLDs (e.g. .be for Swiss municipality)
+    if config.tlds:
+        pool = {
+            d for d in pool if any(d.endswith(t) for t in config.tlds) or d in candidate_domains
+        }
 
     # Layer 2: frequency blocklist with exemptions
     filtered: set[str] = set()
@@ -158,7 +165,9 @@ def filter_scraped_pool(
     scored = filtered.copy()
     filtered = set()
     for domain in scored:
-        score = score_domain_relevance(domain, municipality_name, config, candidate_domains, region=region)
+        score = score_domain_relevance(
+            domain, municipality_name, config, candidate_domains, region=region
+        )
         if score >= 0.4:
             filtered.add(domain)
 

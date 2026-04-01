@@ -28,31 +28,75 @@ DOMAINS_DIR = Path(__file__).resolve().parent.parent / "domains"
 
 VALID_SOURCE_VALUES = {s.value for s in Source}
 VALID_CONFIDENCE_VALUES = {c.value for c in Confidence}
-VALID_SOURCES = {Source.OVERRIDE, Source.SCRAPE, Source.REDIRECT, Source.WIKIDATA, Source.STATIC, Source.GUESS}
+VALID_SOURCES = {
+    Source.OVERRIDE,
+    Source.SCRAPE,
+    Source.REDIRECT,
+    Source.WIKIDATA,
+    Source.STATIC,
+    Source.GUESS,
+}
 VALID_CONFIDENCES = {Confidence.HIGH, Confidence.MEDIUM, Confidence.LOW, Confidence.NONE}
 VALID_FLAGS = {"no_mx", "unverified", "guess_only", "website_mismatch", "no_municipality_keywords"}
 
 CH_CANTONS = {
-    "Kanton Zürich", "Kanton Bern", "Kanton Luzern", "Kanton Uri",
-    "Kanton Schwyz", "Kanton Obwalden", "Kanton Nidwalden", "Kanton Glarus",
-    "Kanton Zug", "Kanton Freiburg", "Kanton Solothurn", "Kanton Basel-Stadt",
-    "Kanton Basel-Landschaft", "Kanton Schaffhausen",
-    "Kanton Appenzell Ausserrhoden", "Kanton Appenzell Innerrhoden",
-    "Kanton St. Gallen", "Kanton Graubünden", "Kanton Aargau",
-    "Kanton Thurgau", "Kanton Tessin", "Kanton Waadt", "Kanton Wallis",
-    "Kanton Neuenburg", "Kanton Genf", "Kanton Jura",
+    "Kanton Zürich",
+    "Kanton Bern",
+    "Kanton Luzern",
+    "Kanton Uri",
+    "Kanton Schwyz",
+    "Kanton Obwalden",
+    "Kanton Nidwalden",
+    "Kanton Glarus",
+    "Kanton Zug",
+    "Kanton Freiburg",
+    "Kanton Solothurn",
+    "Kanton Basel-Stadt",
+    "Kanton Basel-Landschaft",
+    "Kanton Schaffhausen",
+    "Kanton Appenzell Ausserrhoden",
+    "Kanton Appenzell Innerrhoden",
+    "Kanton St. Gallen",
+    "Kanton Graubünden",
+    "Kanton Aargau",
+    "Kanton Thurgau",
+    "Kanton Tessin",
+    "Kanton Waadt",
+    "Kanton Wallis",
+    "Kanton Neuenburg",
+    "Kanton Genf",
+    "Kanton Jura",
 }
 
 DE_BUNDESLAENDER = {
-    "Schleswig-Holstein", "Hamburg", "Niedersachsen", "Bremen",
-    "Nordrhein-Westfalen", "Hessen", "Rheinland-Pfalz", "Baden-Württemberg",
-    "Bayern", "Saarland", "Berlin", "Brandenburg",
-    "Mecklenburg-Vorpommern", "Sachsen", "Sachsen-Anhalt", "Thüringen",
+    "Schleswig-Holstein",
+    "Hamburg",
+    "Niedersachsen",
+    "Bremen",
+    "Nordrhein-Westfalen",
+    "Hessen",
+    "Rheinland-Pfalz",
+    "Baden-Württemberg",
+    "Bayern",
+    "Saarland",
+    "Berlin",
+    "Brandenburg",
+    "Mecklenburg-Vorpommern",
+    "Sachsen",
+    "Sachsen-Anhalt",
+    "Thüringen",
 }
 
 AT_BUNDESLAENDER = {
-    "Burgenland", "Kärnten", "Niederösterreich", "Oberösterreich",
-    "Salzburg", "Steiermark", "Tirol", "Vorarlberg", "Wien",
+    "Burgenland",
+    "Kärnten",
+    "Niederösterreich",
+    "Oberösterreich",
+    "Salzburg",
+    "Steiermark",
+    "Tirol",
+    "Vorarlberg",
+    "Wien",
 }
 
 
@@ -85,7 +129,9 @@ def assert_detailed_entry(m: dict, *, label: str = "") -> None:
     ctx = f"{m.get('code', '?')} {m.get('name', '?')}"
 
     assert m["source"] in VALID_SOURCE_VALUES, f"{label}{ctx}: bad source '{m['source']}'"
-    assert m["confidence"] in VALID_CONFIDENCE_VALUES, f"{label}{ctx}: bad confidence '{m['confidence']}'"
+    assert m["confidence"] in VALID_CONFIDENCE_VALUES, (
+        f"{label}{ctx}: bad confidence '{m['confidence']}'"
+    )
     assert isinstance(m["flags"], list)
     assert isinstance(m["sources_detail"], dict)
 
@@ -96,7 +142,9 @@ def assert_detailed_entry(m: dict, *, label: str = "") -> None:
     if m["confidence"] == "none":
         assert m["emails"] == [], f"{label}{ctx}: confidence=none but has emails"
     if m["source"] == "none":
-        assert m["confidence"] == "none", f"{label}{ctx}: source=none but confidence={m['confidence']}"
+        assert m["confidence"] == "none", (
+            f"{label}{ctx}: source=none but confidence={m['confidence']}"
+        )
         assert m["emails"] == [], f"{label}{ctx}: source=none but has emails"
 
     # Flag ↔ source/confidence rules
@@ -104,12 +152,16 @@ def assert_detailed_entry(m: dict, *, label: str = "") -> None:
         assert m["source"] == "override", f"{label}{ctx}: no_mx but source={m['source']}"
     if "guess_only" in m["flags"]:
         assert m["source"] == "guess", f"{label}{ctx}: guess_only but source={m['source']}"
-        assert m["confidence"] == "low", f"{label}{ctx}: guess_only but confidence={m['confidence']}"
+        assert m["confidence"] == "low", (
+            f"{label}{ctx}: guess_only but confidence={m['confidence']}"
+        )
     if "unverified" in m["flags"]:
         assert m["source"] not in ("scrape", "override", "guess", "none"), (
             f"{label}{ctx}: unverified but source={m['source']}"
         )
-        assert m["confidence"] == "medium", f"{label}{ctx}: unverified but confidence={m['confidence']}"
+        assert m["confidence"] == "medium", (
+            f"{label}{ctx}: unverified but confidence={m['confidence']}"
+        )
     if m["source"] == "scrape":
         assert m["confidence"] == "high", f"{label}{ctx}: scrape but confidence={m['confidence']}"
 
@@ -131,22 +183,16 @@ def assert_record_invariants(rec: MunicipalityRecord) -> None:
         assert rec.confidence != Confidence.NONE, (
             f"{rec.code} {rec.name}: has emails {rec.emails} but confidence=NONE"
         )
-        assert rec.source != Source.NONE, (
-            f"{rec.code} {rec.name}: has emails but source=NONE"
-        )
+        assert rec.source != Source.NONE, f"{rec.code} {rec.name}: has emails but source=NONE"
     if rec.confidence == Confidence.NONE:
-        assert rec.emails == [], (
-            f"{rec.code} {rec.name}: confidence=NONE but emails={rec.emails}"
-        )
+        assert rec.emails == [], f"{rec.code} {rec.name}: confidence=NONE but emails={rec.emails}"
 
     # Source ↔ confidence consistency
     if rec.source == Source.NONE:
         assert rec.confidence == Confidence.NONE, (
             f"{rec.code} {rec.name}: source=NONE but confidence={rec.confidence}"
         )
-        assert rec.emails == [], (
-            f"{rec.code} {rec.name}: source=NONE but emails={rec.emails}"
-        )
+        assert rec.emails == [], f"{rec.code} {rec.name}: source=NONE but emails={rec.emails}"
 
     # Flag ↔ source/confidence consistency
     if "no_mx" in rec.flags:
@@ -178,7 +224,9 @@ def assert_record_invariants(rec: MunicipalityRecord) -> None:
     for email in rec.emails:
         assert "." in email, f"{rec.code} {rec.name}: email '{email}' missing TLD"
         assert " " not in email, f"{rec.code} {rec.name}: email '{email}' contains space"
-        assert "@" not in email, f"{rec.code} {rec.name}: email '{email}' contains @ (should be domain only)"
+        assert "@" not in email, (
+            f"{rec.code} {rec.name}: email '{email}' contains @ (should be domain only)"
+        )
 
     # Website domain should look like a domain if set
     if rec.website_domain:
@@ -188,9 +236,7 @@ def assert_record_invariants(rec: MunicipalityRecord) -> None:
 
     # All flags should be known
     for flag in rec.flags:
-        assert flag in VALID_FLAGS, (
-            f"{rec.code} {rec.name}: unknown flag '{flag}'"
-        )
+        assert flag in VALID_FLAGS, f"{rec.code} {rec.name}: unknown flag '{flag}'"
 
 
 def _make_ch(**kwargs) -> MunicipalityRecord:
@@ -200,7 +246,9 @@ def _make_ch(**kwargs) -> MunicipalityRecord:
 
 
 def _make_de(**kwargs) -> MunicipalityRecord:
-    defaults = dict(code="01001000", name="Flensburg", region="Schleswig-Holstein", country=Country.DE)
+    defaults = dict(
+        code="01001000", name="Flensburg", region="Schleswig-Holstein", country=Country.DE
+    )
     defaults.update(kwargs)
     return MunicipalityRecord(**defaults)  # type: ignore[arg-type]
 
@@ -604,7 +652,9 @@ class TestExportMultiCountry:
         assert by_code["003"].emails == []
         assert by_code["003"].source == Source.OVERRIDE
         assert by_code["004"].confidence in (Confidence.HIGH, Confidence.MEDIUM)
-        assert "unverified" in by_code["004"].flags or config.domain_matches_name("StaticTown", static_domain)
+        assert "unverified" in by_code["004"].flags or config.domain_matches_name(
+            "StaticTown", static_domain
+        )
         assert by_code["005"].confidence == Confidence.LOW
         assert "guess_only" in by_code["005"].flags
         assert by_code["006"].confidence == Confidence.NONE
@@ -702,20 +752,21 @@ class TestRealOutputFiles:
         for m in data["municipalities"]:
             assert m["name"].strip(), f"[{cc}] {m['code']}: empty name"
 
-    @pytest.mark.parametrize("cc,expected_regions", [
-        ("ch", CH_CANTONS),
-        ("de", DE_BUNDESLAENDER),
-        ("at", AT_BUNDESLAENDER),
-    ])
+    @pytest.mark.parametrize(
+        "cc,expected_regions",
+        [
+            ("ch", CH_CANTONS),
+            ("de", DE_BUNDESLAENDER),
+            ("at", AT_BUNDESLAENDER),
+        ],
+    )
     def test_regions_are_valid(self, cc, expected_regions):
         data = _load_output(cc)
         if data is None:
             pytest.skip(f"domains/{cc}.json not found")
 
         for m in data["municipalities"]:
-            assert m["region"], (
-                f"[{cc}] {m['code']} {m['name']}: region is empty"
-            )
+            assert m["region"], f"[{cc}] {m['code']} {m['name']}: region is empty"
             assert m["region"] in expected_regions, (
                 f"[{cc}] {m['code']} {m['name']}: unknown region '{m['region']}'"
             )

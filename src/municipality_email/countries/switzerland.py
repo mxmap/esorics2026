@@ -144,7 +144,7 @@ SUBPAGES_CH = [
 class SwitzerlandConfig(CountryConfig):
     country = Country.CH
     code_field = "bfs"
-    tlds = [".ch"]
+    tlds = [".ch", ".swiss", ".zuerich", ".org", ".com", ".net"]
     government_tlds: list[str] = []
     skip_domains = SKIP_DOMAINS_CH
     subpages = SUBPAGES_CH
@@ -179,7 +179,9 @@ class SwitzerlandConfig(CountryConfig):
                 wiki_entry = wikidata.get(bfs)
                 if wiki_entry and wiki_entry.get("cantonLabel"):
                     canton = wiki_entry["cantonLabel"]
-                    logger.debug("Using Wikidata canton for {} ({}): {}", bfs, bfs_entry["name"], canton)
+                    logger.debug(
+                        "Using Wikidata canton for {} ({}): {}", bfs, bfs_entry["name"], canton
+                    )
             rec = MunicipalityRecord(
                 code=bfs,
                 name=bfs_entry["name"],
