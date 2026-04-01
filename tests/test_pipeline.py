@@ -89,6 +89,33 @@ class TestDecideOne:
         assert rec.confidence == Confidence.HIGH
         assert "unverified" not in rec.flags
 
+    def test_static_single_source_stays_medium(self):
+        """Static candidate from one source without name match stays MEDIUM."""
+        rec = _make_record(
+            candidates=[
+                DomainCandidate(domain="amt-eider.de", source="livenson", is_email_domain=True)
+            ],
+        )
+        mx_valid = {"amt-eider.de": True}
+        _decide_one(rec, self.config, mx_valid, self.empty_validation)
+        assert rec.emails == ["amt-eider.de"]
+        assert rec.confidence == Confidence.MEDIUM
+        assert "unverified" in rec.flags
+
+    def test_static_multi_source_gets_high(self):
+        """Static candidate confirmed by multiple sources gets HIGH confidence."""
+        rec = _make_record(
+            candidates=[
+                DomainCandidate(domain="amt-eider.de", source="livenson", is_email_domain=True),
+                DomainCandidate(domain="amt-eider.de", source="b42labs", is_email_domain=True),
+            ],
+        )
+        mx_valid = {"amt-eider.de": True}
+        _decide_one(rec, self.config, mx_valid, self.empty_validation)
+        assert rec.emails == ["amt-eider.de"]
+        assert rec.confidence == Confidence.HIGH
+        assert "unverified" not in rec.flags
+
     def test_guess_only(self):
         rec = _make_record(
             candidates=[DomainCandidate(domain="guess.de", source="guess")],

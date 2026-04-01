@@ -1,1 +1,324 @@
-{}
+{
+  "09162000": {
+    "email_domain": "muenchen.de"
+  },
+  "03360016": {
+    "email_domain": "samtgemeinde-rosche.de"
+  },
+  "09375213": {
+    "email_domain": "edelsfeld.de",
+    "name": "Edelsfeld"
+  },
+  "01057064": {
+    "email_domain": "schwentinental.de"
+  },
+  "01058106": {
+    "email_domain": "amt-mittelholstein.de"
+  },
+  "01061096": {
+    "email_domain": "kellinghusen.de"
+  },
+  "01061099": {
+    "email_domain": "schenefeld.de"
+  },
+  "03131170": {
+    "email_domain": "wagenfeld.de"
+  },
+  "03156001": {
+    "email_domain": "gemeinde-bad-grund.de"
+  },
+  "03254006": {
+    "email_domain": "sg-leinebergland.de"
+  },
+  "03352035": {
+    "email_domain": "gwnk.de"
+  },
+  "03352037": {
+    "email_domain": "gwnk.de"
+  },
+  "03352040": {
+    "email_domain": "gwnk.de"
+  },
+  "03352047": {
+    "email_domain": "gwnk.de"
+  },
+  "03352049": {
+    "email_domain": "hagen-cux.de"
+  },
+  "07134090": {
+    "email_domain": "og.vg-hr.de"
+  },
+  "07140023": {
+    "email_domain": "sim-rhb.de"
+  },
+  "07141100": {
+    "email_domain": "vg-nastaetten.de"
+  },
+  "07233020": {
+    "email_domain": "vgdaun.de"
+  },
+  "07333030": {
+    "email_domain": "winnweiler-vg.de"
+  },
+  "07336002": {
+    "email_domain": "vgka.de"
+  },
+  "07336018": {
+    "email_domain": "vgka.de"
+  },
+  "07336051": {
+    "email_domain": "vgka.de"
+  },
+  "07336065": {
+    "email_domain": "vg-lw.de"
+  },
+  "07336070": {
+    "email_domain": "vgka.de"
+  },
+  "07336096": {
+    "email_domain": "vgog.de"
+  },
+  "07336097": {
+    "email_domain": "vgka.de"
+  },
+  "07336098": {
+    "email_domain": "vgka.de"
+  },
+  "07338010": {
+    "email_domain": "vgrd.de"
+  },
+  "07338022": {
+    "email_domain": "vg-dannstadt-schauernheim.de"
+  },
+  "07339015": {
+    "email_domain": "vg-rhein-selz.de"
+  },
+  "07339058": {
+    "email_domain": "trths.de"
+  },
+  "07339064": {
+    "email_domain": "vg-rhein-selz.de"
+  },
+  "09182116": {
+    "email_domain": "gmund.de"
+  },
+  "09672135": {
+    "email_domain": "muennerstadt.de"
+  },
+  "09779178": {
+    "email_domain": "gemeinde-marxheim.de"
+  },
+  "12067324": {
+    "email_domain": "amt-schlaubetal.de"
+  },
+  "12067338": {
+    "email_domain": "neuzelle.de"
+  },
+  "12069460": {
+    "email_domain": "amt-beetzsee.de"
+  },
+  "13071009": {
+    "email_domain": "amtneverin.de"
+  },
+  "13071010": {
+    "email_domain": "amtneverin.de"
+  },
+  "13071017": {
+    "email_domain": "altentreptow.de"
+  },
+  "13071038": {
+    "email_domain": "friedland-mecklenburg.de"
+  },
+  "13071062": {
+    "email_domain": "amt-landhagen.de"
+  },
+  "13071104": {
+    "email_domain": "amtneverin.de"
+  },
+  "13071140": {
+    "email_domain": "amtneverin.de"
+  },
+  "13071170": {
+    "email_domain": "amtneverin.de"
+  },
+  "13071171": {
+    "email_domain": "amtneverin.de"
+  },
+  "13071172": {
+    "email_domain": "amtneverin.de"
+  },
+  "13071173": {
+    "email_domain": "amtneverin.de"
+  },
+  "13071174": {
+    "email_domain": "amtneverin.de"
+  },
+  "13071175": {
+    "email_domain": "amtneverin.de"
+  },
+  "13071176": {
+    "email_domain": "amtneverin.de"
+  },
+  "13071177": {
+    "email_domain": "amtneverin.de"
+  },
+  "13071178": {
+    "email_domain": "amtneverin.de"
+  },
+  "13071179": {
+    "email_domain": "amtneverin.de"
+  },
+  "13072025": {
+    "email_domain": "stadt-laage.de"
+  },
+  "13072053": {
+    "email_domain": "buetzow.de"
+  },
+  "13073058": {
+    "email_domain": "gemeinde-niepars.de"
+  },
+  "13073094": {
+    "email_domain": "amt-barth.de"
+  },
+  "13074016": {
+    "email_domain": "kluetzer-winkel.de"
+  },
+  "13074029": {
+    "email_domain": "schoenberger-land.de"
+  },
+  "13074058": {
+    "email_domain": "schoenberger-land.de"
+  },
+  "13075004": {
+    "email_domain": "torgelow.de"
+  },
+  "13075152": {
+    "email_domain": "amtusedom.de"
+  },
+  "13076043": {
+    "email_domain": "amt-eldenburg-luebz.de"
+  },
+  "13076066": {
+    "email_domain": "amt-eldenburg-luebz.de"
+  },
+  "14521070": {
+    "email_domain": "lauter-bernsbach.de"
+  },
+  "14521470": {
+    "email_domain": "olbernhau.de"
+  },
+  "14626090": {
+    "email_domain": "gemeinde-kottmar.de"
+  },
+  "14626360": {
+    "email_domain": "gemeinde-kottmar.de"
+  },
+  "14627160": {
+    "email_domain": "groeditz.de"
+  },
+  "14628180": {
+    "email_domain": "gemeinde-klingenberg.de"
+  },
+  "14729130": {
+    "email_domain": "lossatal.eu"
+  },
+  "14730260": {
+    "email_domain": "belgernschildau.de"
+  },
+  "16061054": {
+    "email_domain": "leinefelde-worbis.de"
+  },
+  "16062014": {
+    "email_domain": "gemeinde-suedharz.de"
+  },
+  "16062022": {
+    "email_domain": "harztor.de"
+  },
+  "16063007": {
+    "email_domain": "stadt-werra-suhl-tal.de"
+  },
+  "16063009": {
+    "email_domain": "dermbach.de"
+  },
+  "16063018": {
+    "email_domain": "krayenberggemeinde.de"
+  },
+  "16063024": {
+    "email_domain": "badsalzungen.de"
+  },
+  "16063054": {
+    "email_domain": "krayenberggemeinde.de"
+  },
+  "16064036": {
+    "email_domain": "bad-langensalza.de"
+  },
+  "16064066": {
+    "email_domain": "muehlhausen.de"
+  },
+  "16065003": {
+    "email_domain": "bad-frankenhausen.de"
+  },
+  "16065035": {
+    "email_domain": "artern.de"
+  },
+  "16065039": {
+    "email_domain": "bad-frankenhausen.de"
+  },
+  "16065076": {
+    "email_domain": "artern.de"
+  },
+  "16066008": {
+    "email_domain": "steinbach-hallenberg.de"
+  },
+  "16066033": {
+    "email_domain": "wasungen.de"
+  },
+  "16066051": {
+    "email_domain": "steinbach-hallenberg.de"
+  },
+  "16066075": {
+    "email_domain": "wasungen.de"
+  },
+  "16066083": {
+    "email_domain": "wasungen.de"
+  },
+  "16067083": {
+    "email_domain": "georgenthal.de"
+  },
+  "16068003": {
+    "email_domain": "koelleda.de"
+  },
+  "16069059": {
+    "email_domain": "schleusingen.de"
+  },
+  "16071099": {
+    "email_domain": "bad-sulza.de"
+  },
+  "16072022": {
+    "email_domain": "sonneberg.de"
+  },
+  "16073036": {
+    "email_domain": "unterwellenborn.de"
+  },
+  "16073054": {
+    "email_domain": "stadt-schwarzatal.com"
+  },
+  "16075002": {
+    "email_domain": "rosenthal-am-rennsteig.de"
+  },
+  "16075003": {
+    "email_domain": "rosenthal-am-rennsteig.de"
+  },
+  "16075018": {
+    "email_domain": "neustadtanderorla.de"
+  },
+  "16075097": {
+    "email_domain": "rosenthal-am-rennsteig.de"
+  },
+  "16076038": {
+    "email_domain": "langenwetzendorf.de"
+  },
+  "16077002": {
+    "email_domain": "schmoelln.de"
+  }
+}

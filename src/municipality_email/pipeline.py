@@ -333,6 +333,21 @@ async def phase_scrape(
     parked = {d for d, fl in (content_flags or {}).items() if "parked" in fl}
     accessible_domains -= parked
 
+    # Skip scraping for domains where municipality already has email domain data
+    skip_scrape_domains: set[str] = set()
+    for rec in records:
+        has_email_candidate = any(c.is_email_domain for c in rec.candidates)
+        if has_email_candidate:
+            for cand in rec.candidates:
+                if cand.domain in accessible_domains:
+                    skip_scrape_domains.add(cand.domain)
+    if skip_scrape_domains:
+        logger.info(
+            "Skipping scrape for {} domains (static email data available)",
+            len(skip_scrape_domains),
+        )
+        accessible_domains -= skip_scrape_domains
+
     # Check cache
     cached: dict[str, tuple[set[str], str | None, bool]] = {}
     if cache is not None:
@@ -739,8 +754,11 @@ def _decide_one(
             unconfirmed_static, rec.name, static_pool, region=rec.region
         )
         best = rec.emails[0] if rec.emails else ""
-        # If best domain matches municipality name, treat as verified
-        if best and config.domain_matches_name(rec.name, best):
+        # Count how many distinct sources agree on the best domain
+        sources_for_best = {c.source for c in rec.candidates if c.domain == best}
+        multi_source = len(sources_for_best) >= 2
+        name_match = best and config.domain_matches_name(rec.name, best)
+        if name_match or multi_source:
             rec.confidence = Confidence.HIGH
         else:
             rec.confidence = Confidence.MEDIUM
@@ -996,4 +1014,9 @@ def _print_dry_run(records: list[MunicipalityRecord], config: CountryConfig) -> 
 
     print(f"  Unique domains to process: {len(all_domains)}")
     print(f"  Overrides: {sum(1 for r in records if r.override_domain is not None)}")
+
+    email_domain_count = sum(
+        1 for r in records if any(c.is_email_domain for c in r.candidates)
+    )
+    print(f"  With static email domain (skip scrape): {email_domain_count}")
     print()

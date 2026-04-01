@@ -246,6 +246,12 @@ class TestGermanyCollect:
         assert "livenson" in sources
         assert "wikidata" in sources
 
+        # livenson and b42labs should be marked as email domain sources
+        liv_cands = [c for c in fl.candidates if c.source == "livenson"]
+        assert all(c.is_email_domain for c in liv_cands)
+        b42_cands = [c for c in fl.candidates if c.source == "b42labs"]
+        assert all(c.is_email_domain for c in b42_cands)
+
     async def test_csv_bundesland_mismatch(self, tmp_path):
         """CSV entry should be skipped if Bundesland doesn't match."""
         livenson = [
