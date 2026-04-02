@@ -14,6 +14,7 @@ from pathlib import Path
 from urllib.parse import unquote, urlparse
 
 import httpx
+import stamina
 from email_validator import EmailNotValidError, validate_email
 from loguru import logger
 
@@ -364,6 +365,10 @@ def _is_ssl_error(exc: BaseException) -> bool:
     return False
 
 
+_TRANSIENT_ERRORS = (httpx.TimeoutException, httpx.RemoteProtocolError)
+
+
+@stamina.retry(on=_TRANSIENT_ERRORS, attempts=2, wait_initial=2.0)
 async def _fetch_insecure(url: str) -> httpx.Response:
     """Fetch a URL with SSL verification disabled (single request)."""
     with warnings.catch_warnings():
@@ -372,6 +377,14 @@ async def _fetch_insecure(url: str) -> httpx.Response:
             return await insecure_client.get(
                 url, follow_redirects=True, timeout=httpx.Timeout(30, connect=30)
             )
+
+
+@stamina.retry(on=_TRANSIENT_ERRORS, attempts=2, wait_initial=2.0)
+async def _fetch_standard(client: httpx.AsyncClient, url: str) -> httpx.Response:
+    """Fetch a URL with the shared client, retrying on transient errors."""
+    return await client.get(
+        url, follow_redirects=True, timeout=httpx.Timeout(30, connect=30)
+    )
 
 
 # ── HEAD validation (Phase 2) ──────────────────────────────────────
@@ -468,9 +481,7 @@ async def _try_fetch(
             return None, True
 
     try:
-        return await client.get(
-            url, follow_redirects=True, timeout=httpx.Timeout(30, connect=30)
-        ), False
+        return await _fetch_standard(client, url), False
     except httpx.ConnectError as exc:
         if _is_ssl_error(exc):
             logger.info("SSL error on {}, retrying without verification", url)

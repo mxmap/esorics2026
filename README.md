@@ -44,13 +44,18 @@ All network results are cached in a per-country SQLite database (`data/{cc}/cach
 
 ```bash
 uv sync                       # install dependencies
+uv run resolve --help         # see CLI options
+
 uv run resolve ch             # resolve Swiss municipalities
 uv run resolve de             # resolve German municipalities
 uv run resolve at             # resolve Austrian municipalities
 uv run resolve --all          # resolve all three countries
+
 uv run resolve ch --dry-run   # statistics only, no scraping
 uv run resolve ch -v          # verbose logging
+
 uv run resolve ch --no-cache  # ignore cached network results
+
 uv run resolve ch -o /tmp/out # custom output directory
 ```
 

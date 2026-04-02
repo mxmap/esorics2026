@@ -1,5 +1,6 @@
 """Tests for pipeline orchestrator."""
 
+from municipality_email.countries.austria import AustriaConfig
 from municipality_email.countries.germany import GermanyConfig
 from municipality_email.pipeline import _decide_one, phase_export
 from municipality_email.schemas import (
@@ -163,6 +164,55 @@ class TestDecideOne:
         _decide_one(rec, self.config, mx_valid, self.empty_validation)
         assert len(rec.emails) == 2
         assert rec.confidence == Confidence.HIGH
+
+
+def _make_at_record(**kwargs) -> MunicipalityRecord:
+    defaults = dict(code="20604", name="Dellach im Drautal", region="Kärnten", country=Country.AT)
+    defaults.update(kwargs)
+    return MunicipalityRecord(**defaults)  # type: ignore[arg-type]
+
+
+class TestDecideOneAustria:
+    def setup_method(self):
+        self.config = AustriaConfig()
+        self.empty_validation: dict[str, tuple[bool, str | None, bool]] = {}
+
+    def test_regional_domain_gets_high(self):
+        """Regional email domain (ktn.gde.at) for matching region → HIGH."""
+        rec = _make_at_record(
+            candidates=[DomainCandidate(domain="ktn.gde.at", source="bresu_email")],
+        )
+        mx_valid = {"ktn.gde.at": True}
+        _decide_one(rec, self.config, mx_valid, self.empty_validation)
+        assert rec.confidence == Confidence.HIGH
+        assert "unverified" not in rec.flags
+
+    def test_name_match_on_secondary_email_gets_high(self):
+        """Gov domain first + name-matching domain second → HIGH."""
+        rec = _make_at_record(
+            candidates=[
+                DomainCandidate(domain="ktn.gde.at", source="bresu_email"),
+                DomainCandidate(domain="dellach-drau.at", source="wikidata"),
+            ],
+        )
+        mx_valid = {"ktn.gde.at": True, "dellach-drau.at": True}
+        _decide_one(rec, self.config, mx_valid, self.empty_validation)
+        assert rec.confidence == Confidence.HIGH
+        assert "unverified" not in rec.flags
+
+    def test_multi_source_on_secondary_email_gets_high(self):
+        """Best email single-source, but secondary has 2+ sources → HIGH."""
+        rec = _make_at_record(
+            candidates=[
+                DomainCandidate(domain="ktn.gde.at", source="bresu_email"),
+                DomainCandidate(domain="dellach-drau.at", source="bresu"),
+                DomainCandidate(domain="dellach-drau.at", source="wikidata"),
+            ],
+        )
+        mx_valid = {"ktn.gde.at": True, "dellach-drau.at": True}
+        _decide_one(rec, self.config, mx_valid, self.empty_validation)
+        assert rec.confidence == Confidence.HIGH
+        assert "unverified" not in rec.flags
 
 
 class TestPhaseExport:

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-02T07:53:16.718040Z",
+  "generated": "2026-04-02T11:05:28.056103Z",
   "total": 2092,
   "municipalities": [
     {
@@ -15,11 +15,10 @@
       "code": "10201",
       "name": "Rust",
       "region": "Burgenland",
-      "website": "freistadt-rust.at",
+      "website": "",
       "emails": [
         "rust.bgld.gv.at",
-        "freistadt-rust.at",
-        "rust.at"
+        "freistadt-rust.at"
       ]
     },
     {
@@ -38,7 +37,7 @@
       "website": "donnerskirchen.at",
       "emails": [
         "donnerskirchen.bgld.gv.at",
-        "bgld.gv.at"
+        "donnerskirchen.at"
       ]
     },
     {
@@ -47,7 +46,8 @@
       "region": "Burgenland",
       "website": "grosshoeflein.at",
       "emails": [
-        "grosshoeflein.bgld.gv.at"
+        "grosshoeflein.bgld.gv.at",
+        "grosshoeflein.at"
       ]
     },
     {
@@ -66,6 +66,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "klingenbach.bgld.gv.at",
         "klingenbach.at",
         "klingenbach.info"
       ]
@@ -76,7 +77,6 @@
       "region": "Burgenland",
       "website": "leithaprodersdorf.at",
       "emails": [
-        "leithaprodersdorf.bgld.gv.at",
         "leithaprodersdorf.at"
       ]
     },
@@ -86,7 +86,7 @@
       "region": "Burgenland",
       "website": "moerbisch.com",
       "emails": [
-        "moerbisch.com"
+        "moerbisch.bgld.gv.at"
       ]
     },
     {
@@ -95,7 +95,8 @@
       "region": "Burgenland",
       "website": "muellendorf.at",
       "emails": [
-        "muellendorf.bgld.gv.at"
+        "muellendorf.bgld.gv.at",
+        "muellendorf.at"
       ]
     },
     {
@@ -104,6 +105,7 @@
       "region": "Burgenland",
       "website": "neufeld-leitha.at",
       "emails": [
+        "neufeld-leitha.bgld.gv.at",
         "neufeld-leitha.at"
       ]
     },
@@ -113,6 +115,7 @@
       "region": "Burgenland",
       "website": "oggau.at",
       "emails": [
+        "oggau-neusiedler-see.bgld.gv.at",
         "oggau.at"
       ]
     },
@@ -120,8 +123,9 @@
       "code": "10311",
       "name": "Oslip",
       "region": "Burgenland",
-      "website": "",
+      "website": "oslip.at",
       "emails": [
+        "oslip.bgld.gv.at",
         "oslip.at"
       ]
     },
@@ -129,7 +133,7 @@
       "code": "10312",
       "name": "Purbach am Neusiedler See",
       "region": "Burgenland",
-      "website": "purbach.gv.at",
+      "website": "",
       "emails": [
         "purbach.gv.at"
       ]
@@ -147,8 +151,9 @@
       "code": "10314",
       "name": "Schützen am Gebirge",
       "region": "Burgenland",
-      "website": "schuetzen-am-gebirge.at",
+      "website": "schuetzen-am-gebirge.com",
       "emails": [
+        "schuetzen-am-gebirge.bgld.gv.at",
         "schuetzen-am-gebirge.at"
       ]
     },
@@ -158,7 +163,8 @@
       "region": "Burgenland",
       "website": "siegendorf.gv.at",
       "emails": [
-        "siegendorf.bgld.gv.at"
+        "siegendorf.bgld.gv.at",
+        "siegendorf.gv.at"
       ]
     },
     {
@@ -167,7 +173,8 @@
       "region": "Burgenland",
       "website": "steinbrunn.at",
       "emails": [
-        "steinbrunn.bgld.gv.at"
+        "steinbrunn.bgld.gv.at",
+        "steinbrunn.at"
       ]
     },
     {
@@ -176,6 +183,7 @@
       "region": "Burgenland",
       "website": "trausdorf-wulka.gv.at",
       "emails": [
+        "trausdorf-wulka.bgld.gv.at",
         "trausdorf-wulka.gv.at"
       ]
     },
@@ -185,6 +193,7 @@
       "region": "Burgenland",
       "website": "wimpassing-leitha.at",
       "emails": [
+        "wimpassing-leitha.bgld.gv.at",
         "wimpassing-leitha.at"
       ]
     },
@@ -204,7 +213,8 @@
       "region": "Burgenland",
       "website": "gemeinde-loretto.at",
       "emails": [
-        "loretto.bgld.gv.at"
+        "loretto.bgld.gv.at",
+        "gemeinde-loretto.at"
       ]
     },
     {
@@ -213,7 +223,8 @@
       "region": "Burgenland",
       "website": "stotzing.at",
       "emails": [
-        "stotzing.bgld.gv.at"
+        "stotzing.bgld.gv.at",
+        "stotzing.at"
       ]
     },
     {
@@ -231,7 +242,8 @@
       "region": "Burgenland",
       "website": "zagersdorf.at",
       "emails": [
-        "zagersdorf.bgld.gv.at"
+        "zagersdorf.bgld.gv.at",
+        "zagersdorf.at"
       ]
     },
     {
@@ -240,7 +252,8 @@
       "region": "Burgenland",
       "website": "bocksdorf.at",
       "emails": [
-        "bocksdorf.bgld.gv.at"
+        "bocksdorf.bgld.gv.at",
+        "bocksdorf.at"
       ]
     },
     {
@@ -259,15 +272,18 @@
       "region": "Burgenland",
       "website": "eberau.at",
       "emails": [
-        "eberau.bgld.gv.at"
+        "eberau.bgld.gv.at",
+        "eberau.at"
       ]
     },
     {
       "code": "10404",
       "name": "Gerersdorf-Sulz",
       "region": "Burgenland",
-      "website": "gerersdorf-sulz.at",
-      "emails": []
+      "website": "",
+      "emails": [
+        "gerersdorf-sulz.bgld.gv.at"
+      ]
     },
     {
       "code": "10405",
@@ -275,7 +291,9 @@
       "region": "Burgenland",
       "website": "guessing.co.at",
       "emails": [
-        "guessing.bgld.gv.at"
+        "guessing.bgld.gv.at",
+        "guessing.co.at",
+        "gussing.at"
       ]
     },
     {
@@ -284,7 +302,8 @@
       "region": "Burgenland",
       "website": "guettenbach.at",
       "emails": [
-        "guettenbach.bgld.gv.at"
+        "guettenbach.bgld.gv.at",
+        "guettenbach.at"
       ]
     },
     {
@@ -293,15 +312,18 @@
       "region": "Burgenland",
       "website": "heiligenbrunn.at",
       "emails": [
-        "heiligenbrunn.bgld.gv.at"
+        "heiligenbrunn.bgld.gv.at",
+        "heiligenbrunn.at"
       ]
     },
     {
       "code": "10408",
       "name": "Kukmirn",
       "region": "Burgenland",
-      "website": "kukmirn.at",
-      "emails": []
+      "website": "",
+      "emails": [
+        "kukmirn.bgld.gv.at"
+      ]
     },
     {
       "code": "10409",
@@ -309,7 +331,8 @@
       "region": "Burgenland",
       "website": "neuberg-bgld.at",
       "emails": [
-        "bgld.gv.at"
+        "neuberg.bgld.gv.at",
+        "neuberg-bgld.at"
       ]
     },
     {
@@ -318,6 +341,7 @@
       "region": "Burgenland",
       "website": "xn--neustift-bei-gssing-jbc.at",
       "emails": [
+        "neustift-guessing.bgld.gv.at",
         "neustift-bei-güssing.at"
       ]
     },
@@ -325,15 +349,18 @@
       "code": "10411",
       "name": "Olbendorf",
       "region": "Burgenland",
-      "website": "olbendorf.at",
-      "emails": []
+      "website": "",
+      "emails": [
+        "olbendorf.bgld.gv.at"
+      ]
     },
     {
       "code": "10412",
       "name": "Ollersdorf im Burgenland",
       "region": "Burgenland",
-      "website": "ollersdorf-burgenland.at",
+      "website": "",
       "emails": [
+        "ollersdorf.bgld.gv.at",
         "ollersdorf-burgenland.at"
       ]
     },
@@ -343,6 +370,7 @@
       "region": "Burgenland",
       "website": "st.michael-bgld.at",
       "emails": [
+        "st-michael.bgld.gv.at",
         "st.michael-bgld.at"
       ]
     },
@@ -370,7 +398,8 @@
       "region": "Burgenland",
       "website": "strem.co.at",
       "emails": [
-        "strem.bgld.gv.at"
+        "strem.bgld.gv.at",
+        "strem.co.at"
       ]
     },
     {
@@ -386,8 +415,9 @@
       "code": "10418",
       "name": "Hackerberg",
       "region": "Burgenland",
-      "website": "hackerberg.at",
+      "website": "",
       "emails": [
+        "hackerberg.bgld.gv.at",
         "hackerberg.at"
       ]
     },
@@ -397,7 +427,7 @@
       "region": "Burgenland",
       "website": "woerterberg.at",
       "emails": [
-        "woerterberg.bgld.gv.at"
+        "woerterberg.at"
       ]
     },
     {
@@ -406,7 +436,8 @@
       "region": "Burgenland",
       "website": "grossmuerbisch.at",
       "emails": [
-        "grossmuerbisch.bgld.gv.at"
+        "grossmuerbisch.bgld.gv.at",
+        "grossmuerbisch.at"
       ]
     },
     {
@@ -415,7 +446,8 @@
       "region": "Burgenland",
       "website": "inzenhof.at",
       "emails": [
-        "inzenhof.bgld.gv.at"
+        "inzenhof.bgld.gv.at",
+        "inzenhof.at"
       ]
     },
     {
@@ -424,7 +456,8 @@
       "region": "Burgenland",
       "website": "kleinmuerbisch.at",
       "emails": [
-        "kleinmuerbisch.bgld.gv.at"
+        "kleinmuerbisch.bgld.gv.at",
+        "kleinmuerbisch.at"
       ]
     },
     {
@@ -433,15 +466,18 @@
       "region": "Burgenland",
       "website": "tschanigraben.at",
       "emails": [
-        "tschanigraben.bgld.gv.at"
+        "tschanigraben.bgld.gv.at",
+        "tschanigraben.at"
       ]
     },
     {
       "code": "10424",
       "name": "Heugraben",
       "region": "Burgenland",
-      "website": "heugraben.gv.at",
-      "emails": []
+      "website": "",
+      "emails": [
+        "heugraben.bgld.gv.at"
+      ]
     },
     {
       "code": "10425",
@@ -449,7 +485,8 @@
       "region": "Burgenland",
       "website": "rohr-bgld.at",
       "emails": [
-        "bgld.gv.at"
+        "rohr.bgld.gv.at",
+        "rohr-bgld.at"
       ]
     },
     {
@@ -458,7 +495,8 @@
       "region": "Burgenland",
       "website": "bildein.at",
       "emails": [
-        "bildein.bgld.gv.at"
+        "bildein.bgld.gv.at",
+        "bildein.at"
       ]
     },
     {
@@ -467,7 +505,8 @@
       "region": "Burgenland",
       "website": "rauchwart.at",
       "emails": [
-        "rauchwart.bgld.gv.at"
+        "rauchwart.bgld.gv.at",
+        "rauchwart.at"
       ]
     },
     {
@@ -475,7 +514,9 @@
       "name": "Moschendorf",
       "region": "Burgenland",
       "website": "moschendorf.at",
-      "emails": []
+      "emails": [
+        "moschendorf.bgld.gv.at"
+      ]
     },
     {
       "code": "10501",
@@ -483,43 +524,47 @@
       "region": "Burgenland",
       "website": "deutschkaltenbrunn.eu",
       "emails": [
-        "deutsch-kaltenbrunn.bgld.gv.at"
+        "deutsch-kaltenbrunn.bgld.gv.at",
+        "deutschkaltenbrunn.eu"
       ]
     },
     {
       "code": "10502",
       "name": "Eltendorf",
       "region": "Burgenland",
-      "website": "eltendorf.at",
+      "website": "",
       "emails": [
-        "eltendorf.bgld.gv.at"
+        "eltendorf.bgld.gv.at",
+        "eltendorf.at"
       ]
     },
     {
       "code": "10503",
       "name": "Heiligenkreuz im Lafnitztal",
       "region": "Burgenland",
-      "website": "heiligenkreuz-lafnitztal.at",
+      "website": "heiligenkreuz.at",
       "emails": [
-        "heiligenkreuz-lafnitztal.at"
+        "heiligenkreuz.at"
       ]
     },
     {
       "code": "10504",
       "name": "Jennersdorf",
       "region": "Burgenland",
-      "website": "jennersdorf.eu",
+      "website": "",
       "emails": [
         "jennersdorf.bgld.gv.at",
-        "bgld.gv.at"
+        "jennersdorf.eu"
       ]
     },
     {
       "code": "10505",
       "name": "Minihof-Liebau",
       "region": "Burgenland",
-      "website": "minihof-liebau.at",
+      "website": "",
       "emails": [
+        "minihof-liebau.bgld.gv.at",
+        "minihof-liebau.gv.at",
         "minihof-liebau.at"
       ]
     },
@@ -529,6 +574,7 @@
       "region": "Burgenland",
       "website": "mogersdorf.gv.at",
       "emails": [
+        "mogersdorf.bgld.gv.at",
         "mogersdorf.at"
       ]
     },
@@ -536,8 +582,9 @@
       "code": "10507",
       "name": "Neuhaus am Klausenbach",
       "region": "Burgenland",
-      "website": "neuhaus-klausenbach.at",
+      "website": "",
       "emails": [
+        "neuhaus-klausenbach.bgld.gv.at",
         "neuhaus-klausenbach.at"
       ]
     },
@@ -545,8 +592,9 @@
       "code": "10508",
       "name": "Rudersdorf",
       "region": "Burgenland",
-      "website": "rudersdorf.at",
+      "website": "",
       "emails": [
+        "rudersdorf.bgld.gv.at",
         "rudersdorf.at"
       ]
     },
@@ -554,8 +602,10 @@
       "code": "10509",
       "name": "Sankt Martin an der Raab",
       "region": "Burgenland",
-      "website": "st-martin-raab.at",
+      "website": "",
       "emails": [
+        "st-martin-raab.bgld.gv.at",
+        "sankt-martin-raab.at",
         "st-martin-raab.at"
       ]
     },
@@ -563,7 +613,7 @@
       "code": "10510",
       "name": "Weichselbaum",
       "region": "Burgenland",
-      "website": "gemeinde-weichselbaum.at",
+      "website": "",
       "emails": [
         "weichselbaum.bgld.gv.at"
       ]
@@ -572,8 +622,9 @@
       "code": "10511",
       "name": "Königsdorf",
       "region": "Burgenland",
-      "website": "koenigsdorf.at",
+      "website": "",
       "emails": [
+        "koenigsdorf.bgld.gv.at",
         "koenigsdorf.at"
       ]
     },
@@ -581,8 +632,9 @@
       "code": "10512",
       "name": "Mühlgraben",
       "region": "Burgenland",
-      "website": "muehlgraben.at",
+      "website": "a1.net",
       "emails": [
+        "muehlgraben.bgld.gv.at",
         "muehlgraben.at"
       ]
     },
@@ -590,18 +642,21 @@
       "code": "10601",
       "name": "Draßburg",
       "region": "Burgenland",
-      "website": "drassburg.gv.at",
+      "website": "drassburg.at",
       "emails": [
-        "drassburg.bgld.gv.at"
+        "drassburg.bgld.gv.at",
+        "drassburg.gv.at",
+        "drassburg.at"
       ]
     },
     {
       "code": "10602",
       "name": "Forchtenstein",
       "region": "Burgenland",
-      "website": "forchtenstein.at",
+      "website": "",
       "emails": [
-        "forchtenstein.bgld.gv.at"
+        "forchtenstein.bgld.gv.at",
+        "forchtenstein.at"
       ]
     },
     {
@@ -610,7 +665,9 @@
       "region": "Burgenland",
       "website": "hirm.gv.at",
       "emails": [
-        "hirm.bgld.gv.at"
+        "hirm.bgld.gv.at",
+        "hirm.gv.at",
+        "gemeinde-hirm.at"
       ]
     },
     {
@@ -619,6 +676,7 @@
       "region": "Burgenland",
       "website": "loipersbach.info",
       "emails": [
+        "loipersbach.bgld.gv.at",
         "loipersbach.info"
       ]
     },
@@ -628,7 +686,6 @@
       "region": "Burgenland",
       "website": "marz.gv.at",
       "emails": [
-        "marz.bgld.gv.at",
         "marz.gv.at"
       ]
     },
@@ -647,15 +704,18 @@
       "region": "Burgenland",
       "website": "neudoerfl.gv.at",
       "emails": [
-        "neudoerfl.bgld.gv.at"
+        "neudoerfl.bgld.gv.at",
+        "neudoerfl.gv.at"
       ]
     },
     {
       "code": "10608",
       "name": "Pöttelsdorf",
       "region": "Burgenland",
-      "website": "xn--pttelsdorf-ecb.at",
-      "emails": []
+      "website": "",
+      "emails": [
+        "poettelsdorf.bgld.gv.at"
+      ]
     },
     {
       "code": "10609",
@@ -664,7 +724,7 @@
       "website": "poettsching.gv.at",
       "emails": [
         "poettsching.bgld.gv.at",
-        "bgld.gv.at"
+        "poettsching.info"
       ]
     },
     {
@@ -673,6 +733,7 @@
       "region": "Burgenland",
       "website": "rohrbach-bm.at",
       "emails": [
+        "rohrbach-mattersburg.bgld.gv.at",
         "rohrbach-bm.at"
       ]
     },
@@ -682,7 +743,8 @@
       "region": "Burgenland",
       "website": "bad-sauerbrunn.at",
       "emails": [
-        "bad-sauerbrunn.bgld.gv.at"
+        "bad-sauerbrunn.bgld.gv.at",
+        "bad-sauerbrunn.at"
       ]
     },
     {
@@ -691,15 +753,17 @@
       "region": "Burgenland",
       "website": "schattendorf.at",
       "emails": [
-        "schattendorf.bgld.gv.at"
+        "schattendorf.bgld.gv.at",
+        "schattendorf.at"
       ]
     },
     {
       "code": "10613",
       "name": "Sieggraben",
       "region": "Burgenland",
-      "website": "sieggraben.at",
+      "website": "",
       "emails": [
+        "sieggraben.bgld.gv.at",
         "sieggraben.at"
       ]
     },
@@ -709,7 +773,8 @@
       "region": "Burgenland",
       "website": "sigless.at",
       "emails": [
-        "sigless.bgld.gv.at"
+        "sigless.bgld.gv.at",
+        "sigless.at"
       ]
     },
     {
@@ -718,7 +783,6 @@
       "region": "Burgenland",
       "website": "wiesen.gv.at",
       "emails": [
-        "wiesen.bgld.gv.at",
         "wiesen.gv.at"
       ]
     },
@@ -737,7 +801,8 @@
       "region": "Burgenland",
       "website": "baumgarten.gv.at",
       "emails": [
-        "baumgarten.bgld.gv.at"
+        "baumgarten.bgld.gv.at",
+        "baumgarten.gv.at"
       ]
     },
     {
@@ -747,7 +812,6 @@
       "website": "zemendorf-stoettera.at",
       "emails": [
         "zemendorf-stoettera.bgld.gv.at",
-        "bgld.gv.at",
         "zemendorf-stoettera.at"
       ]
     },
@@ -755,15 +819,18 @@
       "code": "10619",
       "name": "Krensdorf",
       "region": "Burgenland",
-      "website": "",
-      "emails": []
+      "website": "citiesapps.com",
+      "emails": [
+        "krensdorf.bgld.gv.at"
+      ]
     },
     {
       "code": "10701",
       "name": "Andau",
       "region": "Burgenland",
-      "website": "andau-gemeinde.at",
+      "website": "",
       "emails": [
+        "andau.bgld.gv.at",
         "andau-gemeinde.at"
       ]
     },
@@ -783,7 +850,8 @@
       "region": "Burgenland",
       "website": "bruckneudorf.eu",
       "emails": [
-        "bruckneudorf.bgld.gv.at"
+        "bruckneudorf.bgld.gv.at",
+        "bruckneudorf.eu"
       ]
     },
     {
@@ -792,7 +860,8 @@
       "region": "Burgenland",
       "website": "deutsch-jahrndorf.gv.at",
       "emails": [
-        "deutsch-jahrndorf.bgld.gv.at"
+        "deutsch-jahrndorf.bgld.gv.at",
+        "deutsch-jahrndorf.at"
       ]
     },
     {
@@ -802,16 +871,17 @@
       "website": "frauenkirchen.at",
       "emails": [
         "frauenkirchen.bgld.gv.at",
-        "bgld.gv.at"
+        "frauenkirchen.at"
       ]
     },
     {
       "code": "10706",
       "name": "Gattendorf",
       "region": "Burgenland",
-      "website": "gattendorf.at",
+      "website": "",
       "emails": [
-        "gattendorf.bgld.gv.at"
+        "gattendorf.bgld.gv.at",
+        "gattendorf.at"
       ]
     },
     {
@@ -821,7 +891,8 @@
       "website": "gols.co.at",
       "emails": [
         "gols.bgld.gv.at",
-        "gols.at"
+        "gols.at",
+        "gols.co.at"
       ]
     },
     {
@@ -839,7 +910,9 @@
       "region": "Burgenland",
       "website": "gemeinde-illmitz.at",
       "emails": [
-        "illmitz.bgld.gv.at"
+        "illmitz.bgld.gv.at",
+        "gemeinde-illmitz.at",
+        "illmitz.co.at"
       ]
     },
     {
@@ -858,7 +931,6 @@
       "region": "Burgenland",
       "website": "kittsee.at",
       "emails": [
-        "kittsee.bgld.gv.at",
         "kittsee.at"
       ]
     },
@@ -866,10 +938,10 @@
       "code": "10712",
       "name": "Mönchhof",
       "region": "Burgenland",
-      "website": "moenchhof.at",
+      "website": "",
       "emails": [
         "moenchhof.bgld.gv.at",
-        "bgld.gv.at"
+        "moenchhof.at"
       ]
     },
     {
@@ -894,9 +966,10 @@
       "code": "10715",
       "name": "Pama",
       "region": "Burgenland",
-      "website": "gemeinde-pama.at",
+      "website": "",
       "emails": [
-        "pama.bgld.gv.at"
+        "pama.bgld.gv.at",
+        "gemeinde-pama.at"
       ]
     },
     {
@@ -905,7 +978,8 @@
       "region": "Burgenland",
       "website": "gemeinde-pamhagen.at",
       "emails": [
-        "pamhagen.bgld.gv.at"
+        "pamhagen.bgld.gv.at",
+        "gemeinde-pamhagen.at"
       ]
     },
     {
@@ -914,6 +988,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "parndorf.bgld.gv.at",
         "gemeinde-parndorf.at"
       ]
     },
@@ -924,16 +999,17 @@
       "website": "podersdorf.at",
       "emails": [
         "gemeindepodersdorfamsee.at",
-        "podersdorfamsee.at",
-        "podersdorf.at"
+        "podersdorf.at",
+        "podersdorfamsee.at"
       ]
     },
     {
       "code": "10719",
       "name": "Sankt Andrä am Zicksee",
       "region": "Burgenland",
-      "website": "gemeinde-standrae.at",
+      "website": "st-andrae.gv.at",
       "emails": [
+        "st-andrae-zicksee.bgld.gv.at",
         "standraezicksee.at",
         "xn--gemeinde-standr-flb.at"
       ]
@@ -945,7 +1021,7 @@
       "website": "tadten.at",
       "emails": [
         "tadten.bgld.gv.at",
-        "bgld.gv.at"
+        "tadten.at"
       ]
     },
     {
@@ -954,7 +1030,7 @@
       "region": "Burgenland",
       "website": "marktgemeinde-wallern-im-burgenland.at",
       "emails": [
-        "bgld.gv.at"
+        "wallern.bgld.gv.at"
       ]
     },
     {
@@ -963,6 +1039,7 @@
       "region": "Burgenland",
       "website": "weiden-see.at",
       "emails": [
+        "weiden-see.bgld.gv.at",
         "weiden-see.at"
       ]
     },
@@ -972,6 +1049,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "winden.bgld.gv.at",
         "winden.at"
       ]
     },
@@ -990,7 +1068,8 @@
       "region": "Burgenland",
       "website": "neudorfbeiparndorf.at",
       "emails": [
-        "neudorf.bgld.gv.at"
+        "neudorf.bgld.gv.at",
+        "neudorfbeiparndorf.at"
       ]
     },
     {
@@ -999,7 +1078,8 @@
       "region": "Burgenland",
       "website": "potzneusiedl.at",
       "emails": [
-        "potzneusiedl.bgld.gv.at"
+        "potzneusiedl.bgld.gv.at",
+        "potzneusiedl.at"
       ]
     },
     {
@@ -1008,7 +1088,8 @@
       "region": "Burgenland",
       "website": "edelstal.gv.at",
       "emails": [
-        "edelstal.bgld.gv.at"
+        "edelstal.bgld.gv.at",
+        "gemeinde-edelstal.at"
       ]
     },
     {
@@ -1027,7 +1108,8 @@
       "region": "Burgenland",
       "website": "drassmarkt.at",
       "emails": [
-        "drassmarkt.bgld.gv.at"
+        "drassmarkt.bgld.gv.at",
+        "drassmarkt.at"
       ]
     },
     {
@@ -1036,7 +1118,8 @@
       "region": "Burgenland",
       "website": "frankenau-unterpullendorf.gv.at",
       "emails": [
-        "frankenau-unterpullendorf.bgld.gv.at"
+        "frankenau-unterpullendorf.bgld.gv.at",
+        "frankenau-unterpullendorf.gv.at"
       ]
     },
     {
@@ -1055,7 +1138,7 @@
       "website": "horitschon.at",
       "emails": [
         "horitschon.bgld.gv.at",
-        "horitschon.com"
+        "horitschon.at"
       ]
     },
     {
@@ -1064,6 +1147,7 @@
       "region": "Burgenland",
       "website": "kaisersdorf.com",
       "emails": [
+        "kaisersdorf.bgld.gv.at",
         "kaisersdorf.com"
       ]
     },
@@ -1071,9 +1155,10 @@
       "code": "10807",
       "name": "Kobersdorf",
       "region": "Burgenland",
-      "website": "kobersdorf.at",
+      "website": "",
       "emails": [
-        "kobersdorf.bgld.gv.at"
+        "kobersdorf.bgld.gv.at",
+        "kobersdorf.at"
       ]
     },
     {
@@ -1082,7 +1167,8 @@
       "region": "Burgenland",
       "website": "gemeinde-lackenbach.at",
       "emails": [
-        "lackenbach.bgld.gv.at"
+        "lackenbach.bgld.gv.at",
+        "gemeinde-lackenbach.at"
       ]
     },
     {
@@ -1091,7 +1177,8 @@
       "region": "Burgenland",
       "website": "lockenhaus.at",
       "emails": [
-        "lockenhaus.bgld.gv.at"
+        "lockenhaus.bgld.gv.at",
+        "lockenhaus.at"
       ]
     },
     {
@@ -1101,7 +1188,7 @@
       "website": "lutzmannsburg.info",
       "emails": [
         "lutzmannsburg.bgld.gv.at",
-        "bgld.gv.at"
+        "lutzmannsburg.info"
       ]
     },
     {
@@ -1110,6 +1197,7 @@
       "region": "Burgenland",
       "website": "mannersdorf-adr.at",
       "emails": [
+        "mannersdorf.bgld.gv.at",
         "mannersdorf-adr.at"
       ]
     },
@@ -1119,6 +1207,7 @@
       "region": "Burgenland",
       "website": "marktstmartin.at",
       "emails": [
+        "markt-st-martin.bgld.gv.at",
         "marktstmartin.at"
       ]
     },
@@ -1126,9 +1215,10 @@
       "code": "10813",
       "name": "Neckenmarkt",
       "region": "Burgenland",
-      "website": "neckenmarkt.net",
+      "website": "",
       "emails": [
         "neckenmarkt.bgld.gv.at",
+        "neckenmarkt.eu",
         "neckenmarkt.net"
       ]
     },
@@ -1148,7 +1238,8 @@
       "website": "nikitsch.gv.at",
       "emails": [
         "nikitsch.bgld.gv.at",
-        "bgld.gv.at"
+        "nikitsch.gv.at",
+        "gemeinde-nikitsch.at"
       ]
     },
     {
@@ -1157,9 +1248,7 @@
       "region": "Burgenland",
       "website": "oberpullendorf.gv.at",
       "emails": [
-        "oberpullendorf.bgld.gv.at",
-        "oberpullendorf.gv.at",
-        "bgld.gv.at"
+        "oberpullendorf.gv.at"
       ]
     },
     {
@@ -1168,7 +1257,8 @@
       "region": "Burgenland",
       "website": "pilgersdorf.at",
       "emails": [
-        "pilgersdorf.bgld.gv.at"
+        "pilgersdorf.bgld.gv.at",
+        "pilgersdorf.at"
       ]
     },
     {
@@ -1177,6 +1267,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "piringsdorf.bgld.gv.at",
         "piringsdorf.at"
       ]
     },
@@ -1186,7 +1277,8 @@
       "region": "Burgenland",
       "website": "raiding-online.at",
       "emails": [
-        "raiding.bgld.gv.at"
+        "raiding.bgld.gv.at",
+        "raiding.at"
       ]
     },
     {
@@ -1206,7 +1298,7 @@
       "website": "xn--steinberg-drfl-5pb.at",
       "emails": [
         "steinberg-doerfl.bgld.gv.at",
-        "bgld.gv.at"
+        "steinberg-dörfl.at"
       ]
     },
     {
@@ -1225,7 +1317,8 @@
       "region": "Burgenland",
       "website": "weppersdorf.at",
       "emails": [
-        "weppersdorf.bgld.gv.at"
+        "weppersdorf.bgld.gv.at",
+        "weppersdorf.at"
       ]
     },
     {
@@ -1234,7 +1327,8 @@
       "region": "Burgenland",
       "website": "lackendorf.at",
       "emails": [
-        "lackendorf.bgld.gv.at"
+        "lackendorf.bgld.gv.at",
+        "lackendorf.at"
       ]
     },
     {
@@ -1243,7 +1337,8 @@
       "region": "Burgenland",
       "website": "unterfrauenhaid.at",
       "emails": [
-        "unterfrauenhaid.bgld.gv.at"
+        "unterfrauenhaid.bgld.gv.at",
+        "unterfrauenhaid.at"
       ]
     },
     {
@@ -1252,8 +1347,7 @@
       "region": "Burgenland",
       "website": "unterrabnitz.at",
       "emails": [
-        "unterrabnitz-schwendgraben.bgld.gv.at",
-        "bgld.gv.at"
+        "unterrabnitz-schwendgraben.bgld.gv.at"
       ]
     },
     {
@@ -1261,7 +1355,9 @@
       "name": "Weingraben",
       "region": "Burgenland",
       "website": "",
-      "emails": []
+      "emails": [
+        "weingraben.bgld.gv.at"
+      ]
     },
     {
       "code": "10828",
@@ -1269,7 +1365,8 @@
       "region": "Burgenland",
       "website": "oberloisdorf.at",
       "emails": [
-        "oberloisdorf.bgld.gv.at"
+        "oberloisdorf.bgld.gv.at",
+        "oberloisdorf.at"
       ]
     },
     {
@@ -1278,7 +1375,8 @@
       "region": "Burgenland",
       "website": "bad-tatzmannsdorf.at",
       "emails": [
-        "bad-tatzmannsdorf.bgld.gv.at"
+        "bad-tatzmannsdorf.bgld.gv.at",
+        "bad-tatzmannsdorf.at"
       ]
     },
     {
@@ -1287,7 +1385,8 @@
       "region": "Burgenland",
       "website": "bernstein.gv.at",
       "emails": [
-        "bernstein.bgld.gv.at"
+        "bernstein.bgld.gv.at",
+        "bernstein.gv.at"
       ]
     },
     {
@@ -1297,7 +1396,7 @@
       "website": "eisenberg.at",
       "emails": [
         "deutsch-schuetzen-eisenberg.bgld.gv.at",
-        "bgld.gv.at"
+        "eisenberg.at"
       ]
     },
     {
@@ -1306,6 +1405,7 @@
       "region": "Burgenland",
       "website": "grafenschachen.at",
       "emails": [
+        "grafenschachen.bgld.gv.at",
         "grafenschachen.at"
       ]
     },
@@ -1323,7 +1423,7 @@
       "code": "10906",
       "name": "Hannersdorf",
       "region": "Burgenland",
-      "website": "hannersdorf.at",
+      "website": "",
       "emails": [
         "hannersdorf.bgld.gv.at",
         "hannersdorf.at"
@@ -1344,7 +1444,8 @@
       "region": "Burgenland",
       "website": "kohfidisch.at",
       "emails": [
-        "kohfidisch.bgld.gv.at"
+        "kohfidisch.bgld.gv.at",
+        "kohfidisch.at"
       ]
     },
     {
@@ -1363,7 +1464,8 @@
       "region": "Burgenland",
       "website": "gemeinde.loipersdorf.at",
       "emails": [
-        "loipersdorf-kitzladen.bgld.gv.at"
+        "bad-loipersdorf.gv.at",
+        "loipersdorf-kitzladen.at"
       ]
     },
     {
@@ -1372,7 +1474,8 @@
       "region": "Burgenland",
       "website": "mariasdorf.at",
       "emails": [
-        "mariasdorf.bgld.gv.at"
+        "mariasdorf.bgld.gv.at",
+        "mariasdorf.at"
       ]
     },
     {
@@ -1381,7 +1484,8 @@
       "region": "Burgenland",
       "website": "marktallhau.gv.at",
       "emails": [
-        "markt-allhau.bgld.gv.at"
+        "markt-allhau.bgld.gv.at",
+        "marktallhau.at"
       ]
     },
     {
@@ -1390,7 +1494,8 @@
       "region": "Burgenland",
       "website": "markt-neuhodis.at",
       "emails": [
-        "markt-neuhodis.bgld.gv.at"
+        "markt-neuhodis.bgld.gv.at",
+        "markt-neuhodis.at"
       ]
     },
     {
@@ -1399,6 +1504,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "mischendorf.bgld.gv.at",
         "mischendorf.at"
       ]
     },
@@ -1408,6 +1514,7 @@
       "region": "Burgenland",
       "website": "oberdorf.at",
       "emails": [
+        "oberdorf.bgld.gv.at",
         "oberdorf.at"
       ]
     },
@@ -1417,7 +1524,8 @@
       "region": "Burgenland",
       "website": "oberschuetzen.at",
       "emails": [
-        "oberschuetzen.bgld.gv.at"
+        "oberschuetzen.bgld.gv.at",
+        "oberschuetzen.at"
       ]
     },
     {
@@ -1436,7 +1544,8 @@
       "website": "pinkafeld.gv.at",
       "emails": [
         "pinkafeld.bgld.gv.at",
-        "pinkafeld.gv.at"
+        "pinkafeld.gv.at",
+        "pinkafeld-online.at"
       ]
     },
     {
@@ -1445,8 +1554,6 @@
       "region": "Burgenland",
       "website": "rechnitz.at",
       "emails": [
-        "rechnitz.bgld.gv.at",
-        "bgld.gv.at",
         "rechnitz.at"
       ]
     },
@@ -1456,8 +1563,7 @@
       "region": "Burgenland",
       "website": "riedlingsdorf.at",
       "emails": [
-        "riedlingsdorf.bgld.gv.at",
-        "bgld.gv.at"
+        "riedlingsdorf.bgld.gv.at"
       ]
     },
     {
@@ -1475,7 +1581,8 @@
       "region": "Burgenland",
       "website": "schachendorf.at",
       "emails": [
-        "schachendorf.bgld.gv.at"
+        "schachendorf.bgld.gv.at",
+        "schachendorf.at"
       ]
     },
     {
@@ -1484,8 +1591,7 @@
       "region": "Burgenland",
       "website": "stadtschlaining.at",
       "emails": [
-        "stadtschlaining.bgld.gv.at",
-        "bgld.gv.at"
+        "stadtschlaining.bgld.gv.at"
       ]
     },
     {
@@ -1494,15 +1600,17 @@
       "region": "Burgenland",
       "website": "unterkohlstaetten.at",
       "emails": [
-        "unterkohlstaetten.bgld.gv.at"
+        "unterkohlstaetten.bgld.gv.at",
+        "unterkohlstaetten.at"
       ]
     },
     {
       "code": "10925",
       "name": "Unterwart",
       "region": "Burgenland",
-      "website": "unterwart.at",
+      "website": "",
       "emails": [
+        "unterwart.bgld.gv.at",
         "unterwart.at"
       ]
     },
@@ -1510,8 +1618,10 @@
       "code": "10926",
       "name": "Weiden bei Rechnitz",
       "region": "Burgenland",
-      "website": "weiden-rechnitz.at",
-      "emails": []
+      "website": "",
+      "emails": [
+        "weiden-rechnitz.bgld.gv.at"
+      ]
     },
     {
       "code": "10927",
@@ -1519,6 +1629,7 @@
       "region": "Burgenland",
       "website": "wiesfleck.at",
       "emails": [
+        "wiesfleck.bgld.gv.at",
         "gemeinde-wiesfleck.at"
       ]
     },
@@ -1528,8 +1639,6 @@
       "region": "Burgenland",
       "website": "gemeinde-wolfau.at",
       "emails": [
-        "wolfau.bgld.gv.at",
-        "bgld.gv.at",
         "gemeinde-wolfau.at"
       ]
     },
@@ -1539,6 +1648,7 @@
       "region": "Burgenland",
       "website": "neustift-lafnitz.at",
       "emails": [
+        "neustift-lafnitz.bgld.gv.at",
         "neustift-lafnitz.at"
       ]
     },
@@ -1548,6 +1658,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "jabing.bgld.gv.at",
         "gemeinde-jabing.at"
       ]
     },
@@ -1566,7 +1677,8 @@
       "region": "Burgenland",
       "website": "schandorf.at",
       "emails": [
-        "schandorf.bgld.gv.at"
+        "schandorf.bgld.gv.at",
+        "schandorf.at"
       ]
     },
     {
@@ -1594,7 +1706,6 @@
       "region": "Kärnten",
       "website": "dellach.at",
       "emails": [
-        "ktn.gde.at",
         "dellach.at"
       ]
     },
@@ -1613,7 +1724,8 @@
       "region": "Kärnten",
       "website": "kirchbach.gv.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "kirchbach-kaernten.at"
       ]
     },
     {
@@ -1640,7 +1752,8 @@
       "region": "Kärnten",
       "website": "gitschtal.gv.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "gitschtal.at"
       ]
     },
     {
@@ -1659,7 +1772,8 @@
       "region": "Kärnten",
       "website": "ebenthal-kaernten.gv.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "ebenthal.co.at"
       ]
     },
     {
@@ -1668,7 +1782,8 @@
       "region": "Kärnten",
       "website": "feistritz-rosental.gv.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "rosengemeinde.at"
       ]
     },
     {
@@ -1677,7 +1792,8 @@
       "region": "Kärnten",
       "website": "ferlach.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "ferlach.at"
       ]
     },
     {
@@ -1686,7 +1802,8 @@
       "region": "Kärnten",
       "website": "grafenstein.gv.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "grafenstein.co.at"
       ]
     },
     {
@@ -1722,7 +1839,8 @@
       "region": "Kärnten",
       "website": "ludmannsdorf.gv.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "ludmannsdorf.at"
       ]
     },
     {
@@ -1749,6 +1867,7 @@
       "region": "Kärnten",
       "website": "maria-woerth.info",
       "emails": [
+        "ktn.gde.at",
         "maria-woerth.at",
         "maria-woerth.info"
       ]
@@ -1759,6 +1878,7 @@
       "region": "Kärnten",
       "website": "moosburg.gv.at",
       "emails": [
+        "moosburg.gv.at",
         "ktn.gde.at"
       ]
     },
@@ -1777,7 +1897,6 @@
       "region": "Kärnten",
       "website": "gemeinde-poggersdorf.at",
       "emails": [
-        "ktn.gde.at",
         "gemeinde-poggersdorf.at"
       ]
     },
@@ -1806,6 +1925,7 @@
       "region": "Kärnten",
       "website": "techelsberg.gv.at",
       "emails": [
+        "techelsberg.gv.at",
         "ktn.gde.at"
       ]
     },
@@ -1815,7 +1935,8 @@
       "region": "Kärnten",
       "website": "zell-sele.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "zell-sele.at"
       ]
     },
     {
@@ -1842,7 +1963,8 @@
       "region": "Kärnten",
       "website": "brueckl.gv.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "brueckl.at"
       ]
     },
     {
@@ -1851,7 +1973,8 @@
       "region": "Kärnten",
       "website": "deutsch-griffen.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "deutsch-griffen.at"
       ]
     },
     {
@@ -1860,7 +1983,8 @@
       "region": "Kärnten",
       "website": "eberstein.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "eberstein.at"
       ]
     },
     {
@@ -1869,7 +1993,8 @@
       "region": "Kärnten",
       "website": "friesach.gv.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "friesach.at"
       ]
     },
     {
@@ -1878,7 +2003,6 @@
       "region": "Kärnten",
       "website": "gloednitz.com",
       "emails": [
-        "ktn.gde.at",
         "gloednitz.com"
       ]
     },
@@ -1888,7 +2012,8 @@
       "region": "Kärnten",
       "website": "gurk.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "gurk.at"
       ]
     },
     {
@@ -1916,7 +2041,8 @@
       "region": "Kärnten",
       "website": "kappel-am-krappfeld.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "kappel-am-krappfeld.at"
       ]
     },
     {
@@ -1925,7 +2051,8 @@
       "region": "Kärnten",
       "website": "klein-st-paul.gv.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "klein-st-paul.at"
       ]
     },
     {
@@ -1934,7 +2061,8 @@
       "region": "Kärnten",
       "website": "liebenfels.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "liebenfels.at"
       ]
     },
     {
@@ -1952,7 +2080,9 @@
       "name": "Micheldorf",
       "region": "Kärnten",
       "website": "",
-      "emails": []
+      "emails": [
+        "ktn.gde.at"
+      ]
     },
     {
       "code": "20520",
@@ -1960,7 +2090,8 @@
       "region": "Kärnten",
       "website": "moelbling.gv.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "moelbling.at"
       ]
     },
     {
@@ -1969,7 +2100,8 @@
       "region": "Kärnten",
       "website": "st-georgen-laengsee.gv.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "stgeorgen-laengsee.at"
       ]
     },
     {
@@ -1987,7 +2119,8 @@
       "region": "Kärnten",
       "website": "strassburg.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "strassburg.at"
       ]
     },
     {
@@ -2005,7 +2138,8 @@
       "region": "Kärnten",
       "website": "frauenstein.gv.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "frauenstein.at"
       ]
     },
     {
@@ -2030,7 +2164,7 @@
       "code": "20603",
       "name": "Berg im Drautal",
       "region": "Kärnten",
-      "website": "berg-drautal.gv.at",
+      "website": "bergimdrautal.at",
       "emails": [
         "ktn.gde.at",
         "bergimdrautal.at"
@@ -2042,6 +2176,7 @@
       "region": "Kärnten",
       "website": "",
       "emails": [
+        "ktn.gde.at",
         "dellach-drau.at"
       ]
     },
@@ -2051,7 +2186,8 @@
       "region": "Kärnten",
       "website": "grosskirchheim.gv.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "riskommunal.at"
       ]
     },
     {
@@ -2070,7 +2206,9 @@
       "region": "Kärnten",
       "website": "stadtgmuend.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "stadt-gmuend.at",
+        "stadtgmuend.at"
       ]
     },
     {
@@ -2079,7 +2217,8 @@
       "region": "Kärnten",
       "website": "greifenburg.gv.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "greifenburg.com"
       ]
     },
     {
@@ -2098,7 +2237,8 @@
       "region": "Kärnten",
       "website": "irschen.gv.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "irschen.at"
       ]
     },
     {
@@ -2107,7 +2247,9 @@
       "region": "Kärnten",
       "website": "kleblach-lind.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "kleblach-lind.at",
+        "riskommunal.at"
       ]
     },
     {
@@ -2116,14 +2258,15 @@
       "region": "Kärnten",
       "website": "lendorf.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "lendorf.at"
       ]
     },
     {
       "code": "20618",
       "name": "Mallnitz",
       "region": "Kärnten",
-      "website": "visitmoelltal.at",
+      "website": "mallnitz.gv.at",
       "emails": [
         "mallnitz.at"
       ]
@@ -2134,7 +2277,8 @@
       "region": "Kärnten",
       "website": "malta.gv.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "maltatal.com"
       ]
     },
     {
@@ -2181,9 +2325,7 @@
       "region": "Kärnten",
       "website": "obervellach.gv.at",
       "emails": [
-        "ktn.gde.at",
-        "obervellach.at",
-        "obervellach.net"
+        "ktn.gde.at"
       ]
     },
     {
@@ -2199,8 +2341,9 @@
       "code": "20631",
       "name": "Rangersdorf",
       "region": "Kärnten",
-      "website": "rangersdorf.gv.at",
+      "website": "nationalpark-hohetauern.at",
       "emails": [
+        "ktn.gde.at",
         "rangersdorf.at"
       ]
     },
@@ -2219,7 +2362,8 @@
       "region": "Kärnten",
       "website": "sachsenburg.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "sachsenburg.at"
       ]
     },
     {
@@ -2247,6 +2391,7 @@
       "region": "Kärnten",
       "website": "",
       "emails": [
+        "ktn.gde.at",
         "gemeinde-stall.at"
       ]
     },
@@ -2256,7 +2401,8 @@
       "region": "Kärnten",
       "website": "steinfeld.gv.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "steinfeld.at"
       ]
     },
     {
@@ -2272,9 +2418,10 @@
       "code": "20639",
       "name": "Weißensee",
       "region": "Kärnten",
-      "website": "gemeinde-weissensee.at",
+      "website": "",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "gemeinde-weissensee.at"
       ]
     },
     {
@@ -2283,7 +2430,8 @@
       "region": "Kärnten",
       "website": "winklern.gv.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "winklern.at"
       ]
     },
     {
@@ -2292,7 +2440,8 @@
       "region": "Kärnten",
       "website": "krems-kaernten.gv.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "krems-in-kaernten.at"
       ]
     },
     {
@@ -2301,7 +2450,8 @@
       "region": "Kärnten",
       "website": "lurnfeld.gv.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "lurnfeld.at"
       ]
     },
     {
@@ -2310,7 +2460,8 @@
       "region": "Kärnten",
       "website": "reisseck.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "reisseck.at"
       ]
     },
     {
@@ -2346,7 +2497,8 @@
       "region": "Kärnten",
       "website": "bad-bleiberg.gv.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "bad-bleiberg.at"
       ]
     },
     {
@@ -2409,7 +2561,8 @@
       "region": "Kärnten",
       "website": "noetsch.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "noetsch.at"
       ]
     },
     {
@@ -2445,7 +2598,8 @@
       "region": "Kärnten",
       "website": "stockenboi.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "stockenboi.at"
       ]
     },
     {
@@ -2454,6 +2608,7 @@
       "region": "Kärnten",
       "website": "treffen.at",
       "emails": [
+        "ktn.gde.at",
         "treffen.at"
       ]
     },
@@ -2463,6 +2618,7 @@
       "region": "Kärnten",
       "website": "velden.gv.at",
       "emails": [
+        "velden.gv.at",
         "ktn.gde.at"
       ]
     },
@@ -2488,7 +2644,7 @@
       "code": "20801",
       "name": "Bleiburg",
       "region": "Kärnten",
-      "website": "bleiburg.gv.at",
+      "website": "",
       "emails": [
         "ktn.gde.at"
       ]
@@ -2508,7 +2664,6 @@
       "region": "Kärnten",
       "website": "eberndorf.at",
       "emails": [
-        "ktn.gde.at",
         "eberndorf.at"
       ]
     },
@@ -2527,7 +2682,8 @@
       "region": "Kärnten",
       "website": "feistritz-bleiburg.gv.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "riskommunal.at"
       ]
     },
     {
@@ -2536,7 +2692,8 @@
       "region": "Kärnten",
       "website": "gallizien.gv.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "gallizien.at"
       ]
     },
     {
@@ -2545,7 +2702,8 @@
       "region": "Kärnten",
       "website": "globasnitz.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "globasnitz.at"
       ]
     },
     {
@@ -2554,7 +2712,8 @@
       "region": "Kärnten",
       "website": "griffen.gv.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "griffen.at"
       ]
     },
     {
@@ -2563,6 +2722,7 @@
       "region": "Kärnten",
       "website": "",
       "emails": [
+        "ktn.gde.at",
         "neuhaus.at"
       ]
     },
@@ -2572,7 +2732,8 @@
       "region": "Kärnten",
       "website": "ruden.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "ruden.at"
       ]
     },
     {
@@ -2581,7 +2742,8 @@
       "region": "Kärnten",
       "website": "kanzian.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "kanzian.at"
       ]
     },
     {
@@ -2590,7 +2752,8 @@
       "region": "Kärnten",
       "website": "sittersdorf.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "sittersdorf.at"
       ]
     },
     {
@@ -2608,7 +2771,8 @@
       "region": "Kärnten",
       "website": "bad-st-leonhard-i-lav.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "bad-st-leonhard-i-lav.at"
       ]
     },
     {
@@ -2626,7 +2790,8 @@
       "region": "Kärnten",
       "website": "lavamuend.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "lavamuend.at"
       ]
     },
     {
@@ -2635,6 +2800,7 @@
       "region": "Kärnten",
       "website": "preitenegg.gv.at",
       "emails": [
+        "preitenegg.gv.at",
         "ktn.gde.at"
       ]
     },
@@ -2644,7 +2810,8 @@
       "region": "Kärnten",
       "website": "reichenfels.gv.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "marktgemeinde-reichenfels.at"
       ]
     },
     {
@@ -2662,7 +2829,6 @@
       "region": "Kärnten",
       "website": "sankt-georgen.at",
       "emails": [
-        "ktn.gde.at",
         "sankt-georgen.at"
       ]
     },
@@ -2672,7 +2838,8 @@
       "region": "Kärnten",
       "website": "sanktpaul.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "sanktpaul.at"
       ]
     },
     {
@@ -2717,7 +2884,8 @@
       "region": "Kärnten",
       "website": "gnesau.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "gnesau.at"
       ]
     },
     {
@@ -2726,7 +2894,8 @@
       "region": "Kärnten",
       "website": "himmelberg.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "himmelberg.at"
       ]
     },
     {
@@ -2753,7 +2922,8 @@
       "region": "Kärnten",
       "website": "sturban.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "sturban.at"
       ]
     },
     {
@@ -2762,7 +2932,8 @@
       "region": "Kärnten",
       "website": "steindorf.gv.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "steindorf.at"
       ]
     },
     {
@@ -2771,7 +2942,8 @@
       "region": "Kärnten",
       "website": "steuerberg.at",
       "emails": [
-        "ktn.gde.at"
+        "ktn.gde.at",
+        "steuerberg.at"
       ]
     },
     {
@@ -3062,7 +3234,7 @@
       "code": "30536",
       "name": "Viehdorf",
       "region": "Niederösterreich",
-      "website": "viehdorf.gv.at",
+      "website": "",
       "emails": [
         "viehdorf.gv.at"
       ]
@@ -3191,7 +3363,7 @@
       "region": "Niederösterreich",
       "website": "furth-triesting.at",
       "emails": [
-        "furth-triesting.at"
+        "furth.at"
       ]
     },
     {
@@ -3610,9 +3782,10 @@
       "code": "30732",
       "name": "Himberg",
       "region": "Niederösterreich",
-      "website": "himberg.gv.at",
+      "website": "",
       "emails": [
-        "himberg.gv.at"
+        "himberg.gv.at",
+        "gemeinde-himberg.at"
       ]
     },
     {
@@ -3892,7 +4065,8 @@
       "region": "Niederösterreich",
       "website": "lassee.at",
       "emails": [
-        "lassee.gv.at"
+        "lassee.gv.at",
+        "lassee.at"
       ]
     },
     {
@@ -3908,7 +4082,7 @@
       "code": "30834",
       "name": "Mannsdorf an der Donau",
       "region": "Niederösterreich",
-      "website": "mannsdorf.at",
+      "website": "",
       "emails": [
         "mannsdorf.gv.at",
         "mannsdorf.at"
@@ -3982,7 +4156,7 @@
       "code": "30846",
       "name": "Parbasdorf",
       "region": "Niederösterreich",
-      "website": "parbasdorf.gv.at",
+      "website": "",
       "emails": [
         "parbasdorf.gv.at"
       ]
@@ -4010,8 +4184,9 @@
       "code": "30850",
       "name": "Ringelsdorf-Niederabsdorf",
       "region": "Niederösterreich",
-      "website": "ringelsdorf.at",
+      "website": "",
       "emails": [
+        "ringelsdorf-niederabsdorf.gv.at",
         "ringelsdorf.at"
       ]
     },
@@ -4092,7 +4267,7 @@
       "code": "30865",
       "name": "Weiden an der March",
       "region": "Niederösterreich",
-      "website": "weiden-march.at",
+      "website": "",
       "emails": [
         "weiden-march.at"
       ]
@@ -4324,7 +4499,7 @@
       "region": "Niederösterreich",
       "website": "guntersdorf.gv.at",
       "emails": [
-        "guntersdorf.gv.at"
+        "guntersdorf.at"
       ]
     },
     {
@@ -4693,7 +4868,7 @@
       "code": "31201",
       "name": "Bisamberg",
       "region": "Niederösterreich",
-      "website": "bisamberg.at",
+      "website": "",
       "emails": [
         "bisamberg.gv.at",
         "bisamberg.at"
@@ -4908,7 +5083,7 @@
       "code": "31304",
       "name": "Dürnstein",
       "region": "Niederösterreich",
-      "website": "duernstein.at",
+      "website": "",
       "emails": [
         "duernstein.gv.at",
         "duernstein.at"
@@ -5081,6 +5256,7 @@
       "region": "Niederösterreich",
       "website": "sankt-leonhard.at",
       "emails": [
+        "st-leonhard-hornerwald.gv.at",
         "sankt-leonhard.at"
       ]
     },
@@ -5125,7 +5301,7 @@
       "code": "31350",
       "name": "Weinzierl am Walde",
       "region": "Niederösterreich",
-      "website": "weinzierl-walde.gv.at",
+      "website": "",
       "emails": [
         "weinzierl-walde.gv.at"
       ]
@@ -5143,7 +5319,7 @@
       "code": "31355",
       "name": "Schönberg am Kamp",
       "region": "Niederösterreich",
-      "website": "schoenberg.gv.at",
+      "website": "",
       "emails": [
         "schoenberg.gv.at"
       ]
@@ -5227,7 +5403,7 @@
       "region": "Niederösterreich",
       "website": "mitterbach.at",
       "emails": [
-        "mitterbach.at"
+        "mitterbach.gv.at"
       ]
     },
     {
@@ -5245,8 +5421,7 @@
       "region": "Niederösterreich",
       "website": "rohrbach-goelsen.gv.at",
       "emails": [
-        "rohrbach-goelsen.gv.at",
-        "kabelweb.at"
+        "rohrbach-goelsen.gv.at"
       ]
     },
     {
@@ -5422,7 +5597,8 @@
       "region": "Niederösterreich",
       "website": "leiben.gv.at",
       "emails": [
-        "leiben.gv.at"
+        "leiben.gv.at",
+        "leiben.at"
       ]
     },
     {
@@ -5736,7 +5912,8 @@
       "region": "Niederösterreich",
       "website": "gaweinstal.at",
       "emails": [
-        "gaweinstal.gv.at"
+        "gaweinstal.gv.at",
+        "gaweinstal.at"
       ]
     },
     {
@@ -5902,7 +6079,8 @@
       "region": "Niederösterreich",
       "website": "rabensburg.at",
       "emails": [
-        "rabensburg.gv.at"
+        "rabensburg.gv.at",
+        "rabensburg.at"
       ]
     },
     {
@@ -6021,7 +6199,8 @@
       "region": "Niederösterreich",
       "website": "brunnamgebirge.at",
       "emails": [
-        "brunnamgebirge.gv.at"
+        "brunnamgebirge.gv.at",
+        "brunnamgebirge.at"
       ]
     },
     {
@@ -6055,7 +6234,7 @@
       "code": "31710",
       "name": "Guntramsdorf",
       "region": "Niederösterreich",
-      "website": "guntramsdorf.at",
+      "website": "",
       "emails": [
         "guntramsdorf.at"
       ]
@@ -6094,8 +6273,7 @@
       "region": "Niederösterreich",
       "website": "laab.gv.at",
       "emails": [
-        "laab.gv.at",
-        "laab.at"
+        "laab.gv.at"
       ]
     },
     {
@@ -6158,7 +6336,7 @@
       "code": "31725",
       "name": "Wiener Neudorf",
       "region": "Niederösterreich",
-      "website": "wiener-neudorf.gv.at",
+      "website": "",
       "emails": [
         "wiener-neudorf.gv.at",
         "wr-neudorf.at"
@@ -6399,7 +6577,9 @@
       "name": "St. Corona am Wechsel",
       "region": "Niederösterreich",
       "website": "st-corona-wechsel.gv.at",
-      "emails": []
+      "emails": [
+        "st-corona-wechsel.at"
+      ]
     },
     {
       "code": "31831",
@@ -6624,9 +6804,8 @@
       "code": "31906",
       "name": "Frankenfels",
       "region": "Niederösterreich",
-      "website": "frankenfels.at",
+      "website": "",
       "emails": [
-        "frankenfels.gv.at",
         "frankenfels.at"
       ]
     },
@@ -6672,7 +6851,8 @@
       "region": "Niederösterreich",
       "website": "herzogenburg.gv.at",
       "emails": [
-        "herzogenburg.gv.at"
+        "herzogenburg.gv.at",
+        "gde.herzogenburg.at"
       ]
     },
     {
@@ -6717,7 +6897,8 @@
       "region": "Niederösterreich",
       "website": "kirchberg-pielach.at",
       "emails": [
-        "kirchberg-pielach.at"
+        "kirchberg-pielach.at",
+        "kirchbergpielach.at"
       ]
     },
     {
@@ -6828,7 +7009,8 @@
       "region": "Niederösterreich",
       "website": "prinzersdorf.gem2go.page",
       "emails": [
-        "prinzersdorf.gv.at"
+        "prinzersdorf.gv.at",
+        "prinzersdorf.at"
       ]
     },
     {
@@ -6862,9 +7044,8 @@
       "code": "31939",
       "name": "Schwarzenbach an der Pielach",
       "region": "Niederösterreich",
-      "website": "schwarzenbach-pielach.at",
+      "website": "",
       "emails": [
-        "schwarzenbach-pielach.gv.at",
         "schwarzenbach-pielach.at"
       ]
     },
@@ -7049,7 +7230,8 @@
       "region": "Niederösterreich",
       "website": "puchenstuben.at",
       "emails": [
-        "puchenstuben.gv.at"
+        "puchenstuben.gv.at",
+        "puchenstuben.at"
       ]
     },
     {
@@ -7315,6 +7497,7 @@
       "region": "Niederösterreich",
       "website": "zeiselmauer-wolfpassing.gv.at",
       "emails": [
+        "zeiselmauer.gv.at",
         "zeiselmauer-wolfpassing.at"
       ]
     },
@@ -7389,6 +7572,7 @@
       "region": "Niederösterreich",
       "website": "gross-siegharts.gv.at",
       "emails": [
+        "gde.siegharts.at",
         "siegharts.at"
       ]
     },
@@ -7675,7 +7859,7 @@
       "code": "32321",
       "name": "Miesenbach",
       "region": "Niederösterreich",
-      "website": "",
+      "website": "miesenbach.at",
       "emails": [
         "miesenbach.at"
       ]
@@ -7776,6 +7960,7 @@
       "region": "Niederösterreich",
       "website": "weikersdorf.gv.at",
       "emails": [
+        "weikersdorf-steinfelde.gv.at",
         "weikersdorf.at"
       ]
     },
@@ -7941,7 +8126,8 @@
       "region": "Niederösterreich",
       "website": "ottenschlag.com",
       "emails": [
-        "ottenschlag.com"
+        "ottenschlag.com",
+        "ottenschlag.eu"
       ]
     },
     {
@@ -8040,6 +8226,8 @@
       "region": "Oberösterreich",
       "website": "linz.at",
       "emails": [
+        "linz.gv.at",
+        "linz.at",
         "mag.linz.at"
       ]
     },
@@ -8153,7 +8341,8 @@
       "region": "Oberösterreich",
       "website": "gilgenberg.at",
       "emails": [
-        "ooe.gv.at"
+        "gilgenberg.ooe.gv.at",
+        "gilgenberg.at"
       ]
     },
     {
@@ -8235,6 +8424,7 @@
       "region": "Oberösterreich",
       "website": "lochen.at",
       "emails": [
+        "lochen.ooe.gv.at",
         "lochen.at"
       ]
     },
@@ -8336,7 +8526,9 @@
       "name": "Perwang am Grabensee",
       "region": "Oberösterreich",
       "website": "perwang.gem2go.page",
-      "emails": []
+      "emails": [
+        "perwang.ooe.gv.at"
+      ]
     },
     {
       "code": "40431",
@@ -8372,7 +8564,7 @@
       "website": "rossbach.at",
       "emails": [
         "rossbach.ooe.gv.at",
-        "ooe.gv.at"
+        "rossbach.at"
       ]
     },
     {
@@ -8381,6 +8573,7 @@
       "region": "Oberösterreich",
       "website": "st-georgen-fillmannsbach.at",
       "emails": [
+        "st-georgen-fillmannsbach.ooe.gv.at",
         "handenberg.ooe.gv.at"
       ]
     },
@@ -8401,7 +8594,7 @@
       "website": "stpantaleon.at",
       "emails": [
         "st-pantaleon.ooe.gv.at",
-        "ooe.gv.at"
+        "stpantaleon.at"
       ]
     },
     {
@@ -8428,6 +8621,7 @@
       "region": "Oberösterreich",
       "website": "st-veit-innkreis.at",
       "emails": [
+        "st-veit-innkreis.ooe.gv.at",
         "st-veit-innkreis.at"
       ]
     },
@@ -8437,7 +8631,8 @@
       "region": "Oberösterreich",
       "website": "schalchen.at",
       "emails": [
-        "schalchen.ooe.gv.at"
+        "schalchen.ooe.gv.at",
+        "schalchen.at"
       ]
     },
     {
@@ -8446,7 +8641,7 @@
       "region": "Oberösterreich",
       "website": "schwand.at",
       "emails": [
-        "ooe.gv.at"
+        "schwand.ooe.gv.at"
       ]
     },
     {
@@ -8455,7 +8650,8 @@
       "region": "Oberösterreich",
       "website": "tarsdorf.at",
       "emails": [
-        "tarsdorf.ooe.gv.at"
+        "tarsdorf.ooe.gv.at",
+        "tarsdorf.at"
       ]
     },
     {
@@ -8502,6 +8698,7 @@
       "region": "Oberösterreich",
       "website": "aschach.at",
       "emails": [
+        "aschach-donau.ooe.gv.at",
         "aschach.at"
       ]
     },
@@ -8585,7 +8782,8 @@
       "region": "Oberösterreich",
       "website": "scharten.at",
       "emails": [
-        "scharten.ooe.gv.at"
+        "scharten.ooe.gv.at",
+        "scharten.at"
       ]
     },
     {
@@ -8619,8 +8817,9 @@
       "code": "40603",
       "name": "Gutau",
       "region": "Oberösterreich",
-      "website": "gutau.at",
+      "website": "",
       "emails": [
+        "gutau.ooe.gv.at",
         "gutau.at"
       ]
     },
@@ -8648,7 +8847,8 @@
       "region": "Oberösterreich",
       "website": "kaltenberg.at",
       "emails": [
-        "kaltenberg.ooe.gv.at"
+        "kaltenberg.ooe.gv.at",
+        "kaltenberg.at"
       ]
     },
     {
@@ -8711,7 +8911,8 @@
       "region": "Oberösterreich",
       "website": "pierbach.at",
       "emails": [
-        "pierbach.ooe.gv.at"
+        "pierbach.ooe.gv.at",
+        "pierbach.at"
       ]
     },
     {
@@ -8729,6 +8930,7 @@
       "region": "Oberösterreich",
       "website": "rainbach.at",
       "emails": [
+        "rainbach-muehlkreis.ooe.gv.at",
         "rainbach.at"
       ]
     },
@@ -8738,6 +8940,7 @@
       "region": "Oberösterreich",
       "website": "sandl.at",
       "emails": [
+        "sandl.ooe.gv.at",
         "sandl.at"
       ]
     },
@@ -8747,6 +8950,7 @@
       "region": "Oberösterreich",
       "website": "stleonhard.at",
       "emails": [
+        "st-leonhard.ooe.gv.at",
         "stleonhard.at"
       ]
     },
@@ -8784,7 +8988,8 @@
       "region": "Oberösterreich",
       "website": "unterweissenbach.at",
       "emails": [
-        "unterweissenbach.ooe.gv.at"
+        "unterweissenbach.ooe.gv.at",
+        "unterweissenbach.at"
       ]
     },
     {
@@ -8978,6 +9183,7 @@
       "region": "Oberösterreich",
       "website": "roitham.at",
       "emails": [
+        "roitham.ooe.gv.at",
         "roitham.at"
       ]
     },
@@ -9007,8 +9213,7 @@
       "region": "Oberösterreich",
       "website": "traunkirchen.at",
       "emails": [
-        "traunkirchen.ooe.gv.at",
-        "ooe.gv.at"
+        "traunkirchen.ooe.gv.at"
       ]
     },
     {
@@ -9099,6 +9304,7 @@
       "region": "Oberösterreich",
       "website": "haag-hausruck.at",
       "emails": [
+        "haag-hausruck.ooe.gv.at",
         "haag-hausruck.at"
       ]
     },
@@ -9144,7 +9350,8 @@
       "region": "Oberösterreich",
       "website": "meggenhofen.at",
       "emails": [
-        "meggenhofen.ooe.gv.at"
+        "meggenhofen.ooe.gv.at",
+        "meggenhofen.at"
       ]
     },
     {
@@ -9180,7 +9387,8 @@
       "region": "Oberösterreich",
       "website": "neumarkt-hausruckkreis.at",
       "emails": [
-        "ooe.gv.at"
+        "neumarkt-hausruck.ooe.gv.at",
+        "neumarkt-hausruckkreis.at"
       ]
     },
     {
@@ -9225,7 +9433,8 @@
       "region": "Oberösterreich",
       "website": "st-agatha.at",
       "emails": [
-        "st-agatha.ooe.gv.at"
+        "st-agatha.ooe.gv.at",
+        "st-agatha.at"
       ]
     },
     {
@@ -9243,7 +9452,8 @@
       "region": "Oberösterreich",
       "website": "sankt-thomas.at",
       "emails": [
-        "st-thomas.ooe.gv.at"
+        "st-thomas.ooe.gv.at",
+        "sankt-thomas.at"
       ]
     },
     {
@@ -9261,8 +9471,7 @@
       "region": "Oberösterreich",
       "website": "steegen.at",
       "emails": [
-        "steegen.ooe.gv.at",
-        "ooe.gv.at"
+        "steegen.ooe.gv.at"
       ]
     },
     {
@@ -9373,7 +9582,8 @@
       "region": "Oberösterreich",
       "website": "kirchdorf.at",
       "emails": [
-        "ooe.gv.at"
+        "kirchdorf-krems.ooe.gv.at",
+        "kirchdorf.at"
       ]
     },
     {
@@ -9410,7 +9620,8 @@
       "region": "Oberösterreich",
       "website": "molln.at",
       "emails": [
-        "molln.ooe.gv.at"
+        "molln.ooe.gv.at",
+        "molln.at"
       ]
     },
     {
@@ -9426,9 +9637,10 @@
       "code": "40911",
       "name": "Oberschlierbach",
       "region": "Oberösterreich",
-      "website": "gemeinde-oberschlierbach.at",
+      "website": "",
       "emails": [
-        "oberschlierbach.ooe.gv.at"
+        "oberschlierbach.ooe.gv.at",
+        "gemeinde-oberschlierbach.at"
       ]
     },
     {
@@ -9437,8 +9649,7 @@
       "region": "Oberösterreich",
       "website": "pettenbach.at",
       "emails": [
-        "pettenbach.ooe.gv.at",
-        "ooe.gv.at"
+        "pettenbach.ooe.gv.at"
       ]
     },
     {
@@ -9447,6 +9658,7 @@
       "region": "Oberösterreich",
       "website": "ried-traunkreis.at",
       "emails": [
+        "ried-traunkreis.ooe.gv.at",
         "ried-traunkreis.at"
       ]
     },
@@ -9475,7 +9687,8 @@
       "region": "Oberösterreich",
       "website": "st-pankraz.at",
       "emails": [
-        "st-pankraz.ooe.gv.at"
+        "st-pankraz.ooe.gv.at",
+        "st-pankraz.at"
       ]
     },
     {
@@ -9493,6 +9706,7 @@
       "region": "Oberösterreich",
       "website": "spital-pyhrn.at",
       "emails": [
+        "spital-pyhrn.ooe.gv.at",
         "spital-pyhrn.at"
       ]
     },
@@ -9512,6 +9726,7 @@
       "region": "Oberösterreich",
       "website": "steinbachsteyr.at",
       "emails": [
+        "steinbach-steyr.ooe.gv.at",
         "steinbachsteyr.at"
       ]
     },
@@ -9577,6 +9792,7 @@
       "region": "Oberösterreich",
       "website": "eggendorf.at",
       "emails": [
+        "eggendorf.ooe.gv.at",
         "eggendorf.at"
       ]
     },
@@ -9586,7 +9802,8 @@
       "region": "Oberösterreich",
       "website": "enns.at",
       "emails": [
-        "enns.ooe.gv.at"
+        "enns.ooe.gv.at",
+        "enns.at"
       ]
     },
     {
@@ -9613,6 +9830,7 @@
       "region": "Oberösterreich",
       "website": "hofkirchen.info",
       "emails": [
+        "hofkirchen-traunkreis.ooe.gv.at",
         "hofkirchen.info"
       ]
     },
@@ -9704,8 +9922,7 @@
       "region": "Oberösterreich",
       "website": "piberbach.ooe.gv.at",
       "emails": [
-        "piberbach.ooe.gv.at",
-        "piberbach.at"
+        "piberbach.ooe.gv.at"
       ]
     },
     {
@@ -9714,15 +9931,17 @@
       "region": "Oberösterreich",
       "website": "pucking.at",
       "emails": [
-        "pucking.ooe.gv.at"
+        "pucking.ooe.gv.at",
+        "pucking.at"
       ]
     },
     {
       "code": "41020",
       "name": "St. Marien",
       "region": "Oberösterreich",
-      "website": "st-marien.at",
+      "website": "",
       "emails": [
+        "st-marien.ooe.gv.at",
         "st-marien.at"
       ]
     },
@@ -9760,7 +9979,8 @@
       "region": "Oberösterreich",
       "website": "arbing.at",
       "emails": [
-        "arbing.ooe.gv.at"
+        "arbing.ooe.gv.at",
+        "arbing.at"
       ]
     },
     {
@@ -9833,6 +10053,7 @@
       "region": "Oberösterreich",
       "website": "luftenberg.at",
       "emails": [
+        "luftenberg.ooe.gv.at",
         "luftenberg.at"
       ]
     },
@@ -9887,7 +10108,6 @@
       "region": "Oberösterreich",
       "website": "perg.at",
       "emails": [
-        "ooe.gv.at",
         "perg.at",
         "stadt.perg.at"
       ]
@@ -9991,7 +10211,8 @@
       "region": "Oberösterreich",
       "website": "andrichsfurt.at",
       "emails": [
-        "andrichsfurt.ooe.gv.at"
+        "andrichsfurt.ooe.gv.at",
+        "andrichsfurt.at"
       ]
     },
     {
@@ -10000,7 +10221,8 @@
       "region": "Oberösterreich",
       "website": "antiesenhofen.at",
       "emails": [
-        "antiesenhofen.ooe.gv.at"
+        "antiesenhofen.ooe.gv.at",
+        "antiesenhofen.at"
       ]
     },
     {
@@ -10019,7 +10241,7 @@
       "website": "eberschwang.at",
       "emails": [
         "eberschwang.ooe.gv.at",
-        "ooe.gv.at"
+        "eberschwang.at"
       ]
     },
     {
@@ -10028,7 +10250,8 @@
       "region": "Oberösterreich",
       "website": "eitzing.at",
       "emails": [
-        "eitzing.ooe.gv.at"
+        "eitzing.ooe.gv.at",
+        "eitzing.at"
       ]
     },
     {
@@ -10037,6 +10260,7 @@
       "region": "Oberösterreich",
       "website": "geiersberg.at",
       "emails": [
+        "geiersberg.ooe.gv.at",
         "geiersberg.at",
         "oberoesterreich.at"
       ]
@@ -10045,7 +10269,7 @@
       "code": "41207",
       "name": "Geinberg",
       "region": "Oberösterreich",
-      "website": "geinberg.at",
+      "website": "geinberg.ooe.gv.at",
       "emails": [
         "geinberg.ooe.gv.at",
         "geinberg.at"
@@ -10057,7 +10281,8 @@
       "region": "Oberösterreich",
       "website": "gemeinde-gurten.at",
       "emails": [
-        "gurten.ooe.gv.at"
+        "gurten.ooe.gv.at",
+        "gemeinde-gurten.at"
       ]
     },
     {
@@ -10075,6 +10300,7 @@
       "region": "Oberösterreich",
       "website": "kirchdorfaminn.at",
       "emails": [
+        "kirchdorf-inn.ooe.gv.at",
         "kirchdorfaminn.at"
       ]
     },
@@ -10113,7 +10339,8 @@
       "region": "Oberösterreich",
       "website": "mehrnbach.at",
       "emails": [
-        "mehrnbach.ooe.gv.at"
+        "mehrnbach.ooe.gv.at",
+        "mehrnbach.at"
       ]
     },
     {
@@ -10131,7 +10358,8 @@
       "region": "Oberösterreich",
       "website": "moerschwang.at",
       "emails": [
-        "moerschwang.ooe.gv.at"
+        "moerschwang.ooe.gv.at",
+        "moerschwang.at"
       ]
     },
     {
@@ -10158,6 +10386,7 @@
       "region": "Oberösterreich",
       "website": "obernberg.at",
       "emails": [
+        "obernberg-inn.ooe.gv.at",
         "obernberg.at"
       ]
     },
@@ -10198,7 +10427,8 @@
       "website": "pramet.at",
       "emails": [
         "pramet.ooe.gv.at",
-        "pramet.at"
+        "pramet.at",
+        "schildorn-pramet.at"
       ]
     },
     {
@@ -10225,7 +10455,9 @@
       "name": "St. Georgen bei Obernberg am Inn",
       "region": "Oberösterreich",
       "website": "st-georgen-bei-obernberg.at",
-      "emails": []
+      "emails": [
+        "st-georgen-obernberg.ooe.gv.at"
+      ]
     },
     {
       "code": "41227",
@@ -10233,6 +10465,7 @@
       "region": "Oberösterreich",
       "website": "st-marienkirchen-hausruck.at",
       "emails": [
+        "st-marienkirchen-hausruck.ooe.gv.at",
         "st-marienkirchen-hausruck.at"
       ]
     },
@@ -10252,6 +10485,7 @@
       "region": "Oberösterreich",
       "website": "schildorn.at",
       "emails": [
+        "schildorn-pramet.at",
         "schildorn.at"
       ]
     },
@@ -10289,7 +10523,8 @@
       "region": "Oberösterreich",
       "website": "utzenaich.at",
       "emails": [
-        "utzenaich.ooe.gv.at"
+        "utzenaich.ooe.gv.at",
+        "utzenaich.at"
       ]
     },
     {
@@ -10316,7 +10551,8 @@
       "region": "Oberösterreich",
       "website": "wippenham.at",
       "emails": [
-        "wippenham.ooe.gv.at"
+        "wippenham.ooe.gv.at",
+        "wippenham.at"
       ]
     },
     {
@@ -10463,7 +10699,8 @@
       "region": "Oberösterreich",
       "website": "neufelden.at",
       "emails": [
-        "neufelden.ooe.gv.at"
+        "neufelden.ooe.gv.at",
+        "neufelden.at"
       ]
     },
     {
@@ -10637,7 +10874,8 @@
       "region": "Oberösterreich",
       "website": "rohrbach-berg.at",
       "emails": [
-        "rohrbach-berg.ooe.gv.at"
+        "rohrbach-berg.ooe.gv.at",
+        "rohrbach-berg.at"
       ]
     },
     {
@@ -10646,7 +10884,8 @@
       "region": "Oberösterreich",
       "website": "helfenberg.at",
       "emails": [
-        "helfenberg.ooe.gv.at"
+        "helfenberg.ooe.gv.at",
+        "helfenberg.at"
       ]
     },
     {
@@ -10701,6 +10940,7 @@
       "region": "Oberösterreich",
       "website": "dorf.at",
       "emails": [
+        "dorf.ooe.gv.at",
         "dorf.at"
       ]
     },
@@ -10710,7 +10950,8 @@
       "region": "Oberösterreich",
       "website": "eggerding.at",
       "emails": [
-        "eggerding.ooe.gv.at"
+        "eggerding.ooe.gv.at",
+        "eggerding.at"
       ]
     },
     {
@@ -10719,8 +10960,7 @@
       "region": "Oberösterreich",
       "website": "engelhartszell.gv.at",
       "emails": [
-        "engelhartszell.ooe.gv.at",
-        "ooe.gv.at"
+        "engelhartszell.ooe.gv.at"
       ]
     },
     {
@@ -10830,7 +11070,6 @@
       "region": "Oberösterreich",
       "website": "st-marienkirchen.at",
       "emails": [
-        "st-marienkirchen.ooe.gv.at",
         "st-marienkirchen.at"
       ]
     },
@@ -10840,7 +11079,8 @@
       "region": "Oberösterreich",
       "website": "st-roman.at",
       "emails": [
-        "st-roman.ooe.gv.at"
+        "st-roman.ooe.gv.at",
+        "st-roman.at"
       ]
     },
     {
@@ -10876,7 +11116,8 @@
       "region": "Oberösterreich",
       "website": "sigharting.at",
       "emails": [
-        "sigharting.ooe.gv.at"
+        "sigharting.ooe.gv.at",
+        "sigharting.at"
       ]
     },
     {
@@ -10921,6 +11162,7 @@
       "region": "Oberösterreich",
       "website": "wernstein.at",
       "emails": [
+        "wernstein-inn.ooe.gv.at",
         "wernstein.at"
       ]
     },
@@ -10949,6 +11191,7 @@
       "region": "Oberösterreich",
       "website": "aschach-steyr.at",
       "emails": [
+        "aschach-steyr.ooe.gv.at",
         "aschach-steyr.at"
       ]
     },
@@ -11153,7 +11396,7 @@
       "code": "41604",
       "name": "Eidenberg",
       "region": "Oberösterreich",
-      "website": "eidenberg.at",
+      "website": "eidenberg.ooe.gv.at",
       "emails": [
         "eidenberg.ooe.gv.at",
         "eidenberg.at"
@@ -11238,6 +11481,7 @@
       "region": "Oberösterreich",
       "website": "kirchschlag.net",
       "emails": [
+        "kirchschlag.ooe.gv.at",
         "kirchschlag.net"
       ]
     },
@@ -11321,7 +11565,8 @@
       "region": "Oberösterreich",
       "website": "schenkenfelden.at",
       "emails": [
-        "schenkenfelden.ooe.gv.at"
+        "schenkenfelden.ooe.gv.at",
+        "schenkenfelden.at"
       ]
     },
     {
@@ -11431,7 +11676,8 @@
       "region": "Oberösterreich",
       "website": "desselbrunn.at",
       "emails": [
-        "desselbrunn.ooe.gv.at"
+        "desselbrunn.ooe.gv.at",
+        "desselbrunn.at"
       ]
     },
     {
@@ -11543,6 +11789,7 @@
       "region": "Oberösterreich",
       "website": "oberhofen-irrsee.at",
       "emails": [
+        "oberhofen-irrsee.ooe.gv.at",
         "oberhofen-irrsee.at"
       ]
     },
@@ -11588,7 +11835,8 @@
       "region": "Oberösterreich",
       "website": "pilsbach.at",
       "emails": [
-        "pilsbach.ooe.gv.at"
+        "pilsbach.ooe.gv.at",
+        "pilsbach.at"
       ]
     },
     {
@@ -11605,7 +11853,7 @@
       "code": "41726",
       "name": "Pöndorf",
       "region": "Oberösterreich",
-      "website": "poendorf.at",
+      "website": "",
       "emails": [
         "poendorf.at"
       ]
@@ -11663,7 +11911,8 @@
       "region": "Oberösterreich",
       "website": "ruestorf.at",
       "emails": [
-        "ruestorf.ooe.gv.at"
+        "ruestorf.ooe.gv.at",
+        "ruestorf.at"
       ]
     },
     {
@@ -11700,7 +11949,8 @@
       "region": "Oberösterreich",
       "website": "schlatt.at",
       "emails": [
-        "schlatt.ooe.gv.at"
+        "schlatt.ooe.gv.at",
+        "schlatt.at"
       ]
     },
     {
@@ -11774,7 +12024,8 @@
       "region": "Oberösterreich",
       "website": "ungenach.at",
       "emails": [
-        "ungenach.ooe.gv.at"
+        "ungenach.ooe.gv.at",
+        "ungenach.at"
       ]
     },
     {
@@ -11895,7 +12146,7 @@
       "website": "eberstalzell.at",
       "emails": [
         "eberstalzell.ooe.gv.at",
-        "ooe.gv.at"
+        "eberstalzell.at"
       ]
     },
     {
@@ -11932,7 +12183,8 @@
       "region": "Oberösterreich",
       "website": "gemeinde-holzhausen.at",
       "emails": [
-        "holzhausen.ooe.gv.at"
+        "holzhausen.ooe.gv.at",
+        "gemeinde-holzhausen.at"
       ]
     },
     {
@@ -11967,7 +12219,9 @@
       "name": "Neukirchen bei Lambach",
       "region": "Oberösterreich",
       "website": "gemeindeneukirchen.at",
-      "emails": []
+      "emails": [
+        "neukirchen-lambach.ooe.gv.at"
+      ]
     },
     {
       "code": "41814",
@@ -11976,7 +12230,7 @@
       "website": "offenhausen.at",
       "emails": [
         "offenhausen.ooe.gv.at",
-        "ooe.gv.at"
+        "offenhausen.at"
       ]
     },
     {
@@ -12071,6 +12325,7 @@
       "region": "Oberösterreich",
       "website": "weisskirchen.at",
       "emails": [
+        "weisskirchen.ooe.gv.at",
         "weisskirchen.at"
       ]
     },
@@ -12189,8 +12444,10 @@
       "code": "50212",
       "name": "Scheffau am Tennengebirge",
       "region": "Salzburg",
-      "website": "",
-      "emails": []
+      "website": "scheffau.gv.at",
+      "emails": [
+        "scheffau.gv.at"
+      ]
     },
     {
       "code": "50213",
@@ -13192,8 +13449,7 @@
       "region": "Steiermark",
       "website": "graz.at",
       "emails": [
-        "graz.at",
-        "stadt.graz.at"
+        "graz.at"
       ]
     },
     {
@@ -13462,8 +13718,8 @@
       "region": "Steiermark",
       "website": "sanktoswald.net",
       "emails": [
-        "sanktoswald.net",
-        "st-oswald-plankenwarth.steiermark.at"
+        "st-oswald-plankenwarth.steiermark.at",
+        "sanktoswald.net"
       ]
     },
     {
@@ -13490,15 +13746,17 @@
       "region": "Steiermark",
       "website": "stattegg.eu",
       "emails": [
-        "stattegg.gv.at"
+        "stattegg.gv.at",
+        "stattegg.eu"
       ]
     },
     {
       "code": "60647",
       "name": "Stiwoll",
       "region": "Steiermark",
-      "website": "stiwoll.at",
+      "website": "",
       "emails": [
+        "stiwoll.gv.at",
         "stiwoll.at",
         "stiwoll.steiermark.at"
       ]
@@ -13592,7 +13850,7 @@
       "code": "60662",
       "name": "Fernitz-Mellach",
       "region": "Steiermark",
-      "website": "fernitz-mellach.gv.at",
+      "website": "",
       "emails": [
         "fernitz-mellach.gv.at"
       ]
@@ -13739,7 +13997,7 @@
       "code": "61017",
       "name": "Hengsberg",
       "region": "Steiermark",
-      "website": "hengsberg.at",
+      "website": "",
       "emails": [
         "hengsberg.at"
       ]
@@ -13817,10 +14075,10 @@
       "code": "61033",
       "name": "Sankt Nikolai im Sausal",
       "region": "Steiermark",
-      "website": "nikolai-sausal.at",
+      "website": "",
       "emails": [
-        "nikolai-sausal.at",
-        "st-nikolai-sausal.steiermark.at"
+        "st-nikolai-sausal.steiermark.at",
+        "nikolai-sausal.at"
       ]
     },
     {
@@ -13829,7 +14087,8 @@
       "region": "Steiermark",
       "website": "tillmitsch.at",
       "emails": [
-        "tillmitsch.gv.at"
+        "tillmitsch.gv.at",
+        "tillmitsch.at"
       ]
     },
     {
@@ -13856,6 +14115,7 @@
       "region": "Steiermark",
       "website": "gamlitz.eu",
       "emails": [
+        "gamlitz.gv.at",
         "gamlitz.at"
       ]
     },
@@ -13874,7 +14134,7 @@
       "region": "Steiermark",
       "website": "heiligenkreuz-waasen.gv.at",
       "emails": [
-        "heiligenkreuz-waasen.gv.at"
+        "heiligenkreuz.at"
       ]
     },
     {
@@ -13919,7 +14179,7 @@
       "code": "61059",
       "name": "Wildon",
       "region": "Steiermark",
-      "website": "wildon.gv.at",
+      "website": "",
       "emails": [
         "wildon.gv.at"
       ]
@@ -13955,7 +14215,7 @@
       "code": "61105",
       "name": "Kalwang",
       "region": "Steiermark",
-      "website": "kalwang.gv.at",
+      "website": "kalwang.at",
       "emails": [
         "kalwang.gv.at"
       ]
@@ -13966,7 +14226,7 @@
       "region": "Steiermark",
       "website": "kammern-liesingtal.gv.at",
       "emails": [
-        "kammern.net"
+        "kammern-liesingtal.gv.at"
       ]
     },
     {
@@ -13991,7 +14251,7 @@
       "code": "61109",
       "name": "Mautern in Steiermark",
       "region": "Steiermark",
-      "website": "mautern.com",
+      "website": "",
       "emails": [
         "mautern.com",
         "mautern.steiermark.at"
@@ -14012,7 +14272,7 @@
       "code": "61111",
       "name": "Proleb",
       "region": "Steiermark",
-      "website": "proleb.net",
+      "website": "",
       "emails": [
         "proleb.at",
         "proleb.net",
@@ -14033,7 +14293,7 @@
       "code": "61113",
       "name": "Sankt Michael in Obersteiermark",
       "region": "Steiermark",
-      "website": "gemeinde-stmichael.at",
+      "website": "info.gem2go.page",
       "emails": [
         "gemeinde-stmichael.at",
         "st-michael.steiermark.at"
@@ -14044,13 +14304,15 @@
       "name": "Sankt Peter-Freienstein",
       "region": "Steiermark",
       "website": "",
-      "emails": []
+      "emails": [
+        "st-peter-freienstein.gv.at"
+      ]
     },
     {
       "code": "61115",
       "name": "Sankt Stefan ob Leoben",
       "region": "Steiermark",
-      "website": "st-stefan-leoben.at",
+      "website": "stefan-leoben.at",
       "emails": [
         "stefan-leoben.at"
       ]
@@ -14059,7 +14321,7 @@
       "code": "61116",
       "name": "Traboch",
       "region": "Steiermark",
-      "website": "traboch.at",
+      "website": "traboch.gv.at",
       "emails": [
         "traboch.at",
         "traboch.steiermark.at"
@@ -14078,7 +14340,7 @@
       "code": "61119",
       "name": "Wald am Schoberpaß",
       "region": "Steiermark",
-      "website": "schoberpass.at",
+      "website": "",
       "emails": [
         "schoberpass.at"
       ]
@@ -14087,7 +14349,7 @@
       "code": "61120",
       "name": "Trofaiach",
       "region": "Steiermark",
-      "website": "trofaiach.gv.at",
+      "website": "",
       "emails": [
         "trofaiach.gv.at",
         "trofaiach.steiermark.at"
@@ -14116,7 +14378,9 @@
       "name": "Altenmarkt bei Sankt Gallen",
       "region": "Steiermark",
       "website": "altenmarkt-enns.at",
-      "emails": []
+      "emails": [
+        "altenmarkt-st-gallen.gv.at"
+      ]
     },
     {
       "code": "61206",
@@ -14167,7 +14431,7 @@
       "code": "61222",
       "name": "Lassing",
       "region": "Steiermark",
-      "website": "lassing.at",
+      "website": "",
       "emails": [
         "lassing.at"
       ]
@@ -14203,7 +14467,7 @@
       "code": "61251",
       "name": "Wildalpen",
       "region": "Steiermark",
-      "website": "wildalpen.gv.at",
+      "website": "",
       "emails": [
         "wildalpen.gv.at"
       ]
@@ -14212,8 +14476,9 @@
       "code": "61252",
       "name": "Wörschach",
       "region": "Steiermark",
-      "website": "woerschach.at",
+      "website": "",
       "emails": [
+        "woerschach.gv.at",
         "woerschach.at"
       ]
     },
@@ -14231,7 +14496,7 @@
       "code": "61254",
       "name": "Aich",
       "region": "Steiermark",
-      "website": "aich.at",
+      "website": "",
       "emails": [
         "aich.at"
       ]
@@ -14251,7 +14516,7 @@
       "code": "61256",
       "name": "Gaishorn am See",
       "region": "Steiermark",
-      "website": "gaishorn-see.gv.at",
+      "website": "gaishornamsee.at",
       "emails": [
         "gaishorn-see.gv.at"
       ]
@@ -14260,7 +14525,7 @@
       "code": "61257",
       "name": "Irdning-Donnersbachtal",
       "region": "Steiermark",
-      "website": "irdning-donnersbachtal.at",
+      "website": "",
       "emails": [
         "irdning.at"
       ]
@@ -14271,7 +14536,8 @@
       "region": "Steiermark",
       "website": "landl.at",
       "emails": [
-        "landl.gv.at"
+        "landl.gv.at",
+        "landl.at"
       ]
     },
     {
@@ -14289,6 +14555,7 @@
       "region": "Steiermark",
       "website": "",
       "emails": [
+        "michaelerberg-pruggern.gv.at",
         "michaelerberg-pruggern.at"
       ]
     },
@@ -14326,13 +14593,15 @@
       "name": "Sankt Gallen",
       "region": "Steiermark",
       "website": "istsuper.com",
-      "emails": []
+      "emails": [
+        "st-gallen.gv.at"
+      ]
     },
     {
       "code": "61265",
       "name": "Schladming",
       "region": "Steiermark",
-      "website": "gemeinde.schladming.at",
+      "website": "",
       "emails": [
         "schladming.at"
       ]
@@ -14350,7 +14619,7 @@
       "code": "61267",
       "name": "Stainach-Pürgg",
       "region": "Steiermark",
-      "website": "stainach-puergg.gv.at",
+      "website": "",
       "emails": [
         "stainach-puergg.gv.at"
       ]
@@ -14368,7 +14637,7 @@
       "code": "61413",
       "name": "Niederwölz",
       "region": "Steiermark",
-      "website": "niederwoelz.gv.at",
+      "website": "",
       "emails": [
         "niederwoelz.gv.at",
         "niederwoelz.steiermark.at"
@@ -14378,16 +14647,17 @@
       "code": "61425",
       "name": "St. Peter am Kammersberg",
       "region": "Steiermark",
-      "website": "st-peter-kammersberg.gv.at",
+      "website": "",
       "emails": [
-        "st-peter-kammersberg.gv.at"
+        "st-peter-kammersberg.gv.at",
+        "st-peter-kammersberg.at"
       ]
     },
     {
       "code": "61428",
       "name": "Schöder",
       "region": "Steiermark",
-      "website": "schoeder.gv.at",
+      "website": "",
       "emails": [
         "schoeder.gv.at",
         "schoeder.steiermark.at"
@@ -14406,7 +14676,7 @@
       "code": "61438",
       "name": "Murau",
       "region": "Steiermark",
-      "website": "murau.gv.at",
+      "website": "",
       "emails": [
         "murau.gv.at"
       ]
@@ -14433,7 +14703,7 @@
       "code": "61441",
       "name": "Ranten",
       "region": "Steiermark",
-      "website": "ranten.gv.at",
+      "website": "",
       "emails": [
         "ranten.gv.at"
       ]
@@ -14442,7 +14712,7 @@
       "code": "61442",
       "name": "Sankt Georgen am Kreischberg",
       "region": "Steiermark",
-      "website": "st-georgen-kreischberg.gv.at",
+      "website": "",
       "emails": [
         "st-georgen-kreischberg.gv.at"
       ]
@@ -14451,8 +14721,9 @@
       "code": "61443",
       "name": "Sankt Lambrecht",
       "region": "Steiermark",
-      "website": "stlambrecht.at",
+      "website": "",
       "emails": [
+        "st-lambrecht.gv.at",
         "stlambrecht.at"
       ]
     },
@@ -14460,7 +14731,7 @@
       "code": "61444",
       "name": "Scheifling",
       "region": "Steiermark",
-      "website": "scheifling.gv.at",
+      "website": "",
       "emails": [
         "scheifling.gv.at",
         "scheifling.steiermark.at"
@@ -14470,7 +14741,7 @@
       "code": "61445",
       "name": "Stadl-Predlitz",
       "region": "Steiermark",
-      "website": "stadl-predlitz.gv.at",
+      "website": "",
       "emails": [
         "stadl-predlitz.gv.at"
       ]
@@ -14479,7 +14750,7 @@
       "code": "61446",
       "name": "Teufenbach-Katsch",
       "region": "Steiermark",
-      "website": "teufenbach-katsch.gv.at",
+      "website": "",
       "emails": [
         "teufenbach-katsch.gv.at"
       ]
@@ -14581,7 +14852,7 @@
       "website": "geistthal-soedingberg.at",
       "emails": [
         "geistthal-soedingberg.gv.at",
-        "stmk.gv.at"
+        "geistthal-soedingberg.at"
       ]
     },
     {
@@ -14600,6 +14871,7 @@
       "region": "Steiermark",
       "website": "kainach.at",
       "emails": [
+        "kainach-voitsberg.gv.at",
         "kainach.at"
       ]
     },
@@ -14619,7 +14891,7 @@
       "website": "maria-lankowitz.at",
       "emails": [
         "maria-lankowitz.gv.at",
-        "stmk.gv.at"
+        "maria-lankowitz.at"
       ]
     },
     {
@@ -14665,8 +14937,9 @@
       "code": "61711",
       "name": "Gasen",
       "region": "Steiermark",
-      "website": "gasen.at",
+      "website": "",
       "emails": [
+        "gasen.gv.at",
         "gasen.at"
       ]
     },
@@ -14685,6 +14958,7 @@
       "region": "Steiermark",
       "website": "hofstaetten.at",
       "emails": [
+        "hofstaetten-raab.gv.at",
         "hofstaetten.at"
       ]
     },
@@ -14692,7 +14966,7 @@
       "code": "61727",
       "name": "Ludersdorf-Wilfersdorf",
       "region": "Steiermark",
-      "website": "lu-wi.at",
+      "website": "",
       "emails": [
         "ludersdorf-wilfersdorf.at",
         "lu-wi.at"
@@ -14704,6 +14978,7 @@
       "region": "Steiermark",
       "website": "miesenbach.com",
       "emails": [
+        "miesenbach-birkfeld.gv.at",
         "miesenbach-birkfeld.steiermark.at",
         "miesenbach.com"
       ]
@@ -14781,6 +15056,7 @@
       "region": "Steiermark",
       "website": "st-kathrein.at",
       "emails": [
+        "st-kathrein-offenegg.gv.at",
         "stmk.gv.at",
         "st-kathrein.at"
       ]
@@ -14849,6 +15125,7 @@
       "region": "Steiermark",
       "website": "fladnitz.at",
       "emails": [
+        "fladnitz-teichalm.gv.at",
         "fladnitz.at"
       ]
     },
@@ -14885,7 +15162,9 @@
       "region": "Steiermark",
       "website": "ilztal.at",
       "emails": [
-        "ilztal.gv.at"
+        "ilztal.gv.at",
+        "ilztal.at",
+        "ilztal.steiermark.at"
       ]
     },
     {
@@ -14948,7 +15227,8 @@
       "region": "Steiermark",
       "website": "hohentauern.at",
       "emails": [
-        "hohentauern.gv.at"
+        "hohentauern.gv.at",
+        "hohentauern.at"
       ]
     },
     {
@@ -14975,7 +15255,9 @@
       "name": "Sankt Georgen ob Judenburg",
       "region": "Steiermark",
       "website": "st-georgen-judenburg.at",
-      "emails": []
+      "emails": [
+        "st-georgen-judenburg.gv.at"
+      ]
     },
     {
       "code": "62032",
@@ -15066,7 +15348,7 @@
       "code": "62044",
       "name": "Pölstal",
       "region": "Steiermark",
-      "website": "poelstal.gv.at",
+      "website": "",
       "emails": [
         "poelstal.gv.at"
       ]
@@ -15075,7 +15357,7 @@
       "code": "62045",
       "name": "Sankt Marein-Feistritz",
       "region": "Steiermark",
-      "website": "st-marein-feistritz.gv.at",
+      "website": "",
       "emails": [
         "st-marein-feistritz.gv.at"
       ]
@@ -15084,7 +15366,7 @@
       "code": "62046",
       "name": "Sankt Margarethen bei Knittelfeld",
       "region": "Steiermark",
-      "website": "st-margarethen-knittelfeld.gv.at",
+      "website": "",
       "emails": [
         "st-margarethen-knittelfeld.gv.at"
       ]
@@ -15149,7 +15431,7 @@
       "code": "62128",
       "name": "Sankt Lorenzen im Mürztal",
       "region": "Steiermark",
-      "website": "stlorenzen.at",
+      "website": "",
       "emails": [
         "stlorenzen.at"
       ]
@@ -15160,7 +15442,8 @@
       "region": "Steiermark",
       "website": "spitalamsemmering.com",
       "emails": [
-        "stmk.gv.at"
+        "spital-semmering.gv.at",
+        "spitalamsemmering.com"
       ]
     },
     {
@@ -15197,7 +15480,7 @@
       "code": "62139",
       "name": "Bruck an der Mur",
       "region": "Steiermark",
-      "website": "bruckmur.at",
+      "website": "",
       "emails": [
         "bruck-mur.gv.at",
         "bruckmur.at"
@@ -15264,6 +15547,7 @@
       "region": "Steiermark",
       "website": "stmarein-mzt.at",
       "emails": [
+        "st-marein-muerztal.gv.at",
         "st-marein-muerztal.steiermark.at",
         "stmarein-mzt.at"
       ]
@@ -15318,7 +15602,7 @@
       "code": "62209",
       "name": "Ebersdorf",
       "region": "Steiermark",
-      "website": "ebersdorf.eu",
+      "website": "",
       "emails": [
         "ebersdorf.eu",
         "ebersdorf.steiermark.at"
@@ -15570,7 +15854,6 @@
       "region": "Steiermark",
       "website": "marktgemeinde-poellau.at",
       "emails": [
-        "poellau.gv.at",
         "marktgemeinde-poellau.at"
       ]
     },
@@ -15634,9 +15917,10 @@
       "code": "62314",
       "name": "Eichkögl",
       "region": "Steiermark",
-      "website": "eichkoegl.gv.at",
+      "website": "",
       "emails": [
-        "eichkoegl.gv.at"
+        "eichkoegl.gv.at",
+        "eichkoegl.at"
       ]
     },
     {
@@ -15752,7 +16036,7 @@
       "code": "62380",
       "name": "Gnas",
       "region": "Steiermark",
-      "website": "gnas.gv.at",
+      "website": "",
       "emails": [
         "gnas.gv.at",
         "gnas.at"
@@ -15765,6 +16049,7 @@
       "website": "kirchbach-zerlach.at",
       "emails": [
         "kirchbach-zerlach.gv.at",
+        "kirchbach-zerlach.at",
         "kirchbach.at"
       ]
     },
@@ -15792,7 +16077,8 @@
       "region": "Steiermark",
       "website": "paldau.gv.at",
       "emails": [
-        "paldau.gv.at"
+        "paldau.gv.at",
+        "paldau.at"
       ]
     },
     {
@@ -15839,7 +16125,6 @@
       "region": "Steiermark",
       "website": "rosental.at",
       "emails": [
-        "rosental.at",
         "st.stefan.at"
       ]
     },
@@ -15865,7 +16150,7 @@
       "code": "70201",
       "name": "Arzl im Pitztal",
       "region": "Tirol",
-      "website": "",
+      "website": "arzl-pitztal.gv.at",
       "emails": [
         "arzl-pitztal.at"
       ]
@@ -15929,10 +16214,7 @@
       "name": "Längenfeld",
       "region": "Tirol",
       "website": "xn--lngenfeld-v2a.at",
-      "emails": [
-        "laengenfeld.gv.at",
-        "tirol.gv.at"
-      ]
+      "emails": []
     },
     {
       "code": "70209",
@@ -15947,8 +16229,10 @@
       "code": "70210",
       "name": "Mils bei Imst",
       "region": "Tirol",
-      "website": "",
-      "emails": []
+      "website": "mils-imst.gv.at",
+      "emails": [
+        "mils-imst.gv.at"
+      ]
     },
     {
       "code": "70211",
@@ -16000,16 +16284,16 @@
       "name": "Roppen",
       "region": "Tirol",
       "website": "roppen.at",
-      "emails": [
-        "roppen.gv.at"
-      ]
+      "emails": []
     },
     {
       "code": "70217",
       "name": "St. Leonhard im Pitztal",
       "region": "Tirol",
       "website": "gem2go.info",
-      "emails": []
+      "emails": [
+        "st-leonhard-pitztal.gv.at"
+      ]
     },
     {
       "code": "70218",
@@ -16090,7 +16374,6 @@
       "region": "Tirol",
       "website": "aldrans.at",
       "emails": [
-        "aldrans.gv.at",
         "aldrans.at"
       ]
     },
@@ -16136,7 +16419,7 @@
       "region": "Tirol",
       "website": "ellboegen.at",
       "emails": [
-        "ellboegen.gv.at"
+        "ellboegen.at"
       ]
     },
     {
@@ -16188,15 +16471,19 @@
       "code": "70313",
       "name": "Gries am Brenner",
       "region": "Tirol",
-      "website": "",
-      "emails": []
+      "website": "gries-brenner.gv.at",
+      "emails": [
+        "gries-brenner.gv.at"
+      ]
     },
     {
       "code": "70314",
       "name": "Gries im Sellrain",
       "region": "Tirol",
-      "website": "",
-      "emails": []
+      "website": "gries-sellrain.gv.at",
+      "emails": [
+        "gries-sellrain.gv.at"
+      ]
     },
     {
       "code": "70315",
@@ -16222,7 +16509,6 @@
       "region": "Tirol",
       "website": "hatting.at",
       "emails": [
-        "hatting.gv.at",
         "hatting.at"
       ]
     },
@@ -16295,7 +16581,7 @@
       "region": "Tirol",
       "website": "mils-tirol.at",
       "emails": [
-        "mils.gv.at"
+        "mils-tirol.at"
       ]
     },
     {
@@ -16329,22 +16615,28 @@
       "code": "70334",
       "name": "Neustift im Stubaital",
       "region": "Tirol",
-      "website": "",
-      "emails": []
+      "website": "neustift-stubaital.gv.at",
+      "emails": [
+        "neustift-stubaital.gv.at"
+      ]
     },
     {
       "code": "70335",
       "name": "Oberhofen im Inntal",
       "region": "Tirol",
-      "website": "",
-      "emails": []
+      "website": "oberhofen-inntal.gv.at",
+      "emails": [
+        "oberhofen-inntal.gv.at"
+      ]
     },
     {
       "code": "70336",
       "name": "Obernberg am Brenner",
       "region": "Tirol",
-      "website": "",
-      "emails": []
+      "website": "obernberg-brenner.gv.at",
+      "emails": [
+        "obernberg-brenner.gv.at"
+      ]
     },
     {
       "code": "70337",
@@ -16352,7 +16644,7 @@
       "region": "Tirol",
       "website": "gemeinde-oberperfuss.at",
       "emails": [
-        "oberperfuss.gv.at"
+        "gemeinde-oberperfuss.at"
       ]
     },
     {
@@ -16431,8 +16723,10 @@
       "code": "70347",
       "name": "St. Sigmund im Sellrain",
       "region": "Tirol",
-      "website": "",
-      "emails": []
+      "website": "st-sigmund.gv.at",
+      "emails": [
+        "st-sigmund.gv.at"
+      ]
     },
     {
       "code": "70348",
@@ -16456,8 +16750,11 @@
       "code": "70350",
       "name": "Schönberg im Stubaital",
       "region": "Tirol",
-      "website": "",
-      "emails": []
+      "website": "schoenberg-stubaital.gv.at",
+      "emails": [
+        "schoenberg-stubaital.gv.at",
+        "schoenberg.gv.at"
+      ]
     },
     {
       "code": "70351",
@@ -16499,8 +16796,10 @@
       "code": "70355",
       "name": "Steinach am Brenner",
       "region": "Tirol",
-      "website": "",
-      "emails": []
+      "website": "steinach.gv.at",
+      "emails": [
+        "steinach.gv.at"
+      ]
     },
     {
       "code": "70356",
@@ -16573,7 +16872,6 @@
       "region": "Tirol",
       "website": "voels.at",
       "emails": [
-        "voels.gv.at",
         "voels.at"
       ]
     },
@@ -16592,7 +16890,7 @@
       "region": "Tirol",
       "website": "wattenberg.at",
       "emails": [
-        "wattenberg.gv.at"
+        "wattenberg.at"
       ]
     },
     {
@@ -16635,15 +16933,19 @@
       "code": "70401",
       "name": "Aurach bei Kitzbühel",
       "region": "Tirol",
-      "website": "",
-      "emails": []
+      "website": "aurach-kitzbuehel.gv.at",
+      "emails": [
+        "aurach-kitzbuehel.gv.at"
+      ]
     },
     {
       "code": "70402",
       "name": "Brixen im Thale",
       "region": "Tirol",
-      "website": "",
-      "emails": []
+      "website": "brixen-thale.gv.at",
+      "emails": [
+        "brixen-thale.gv.at"
+      ]
     },
     {
       "code": "70403",
@@ -16669,15 +16971,17 @@
       "region": "Tirol",
       "website": "hochfilzen.at",
       "emails": [
-        "hochfilzen.gv.at"
+        "hochfilzen.at"
       ]
     },
     {
       "code": "70406",
       "name": "Hopfgarten im Brixental",
       "region": "Tirol",
-      "website": "",
-      "emails": []
+      "website": "hopfgarten-brixental.gv.at",
+      "emails": [
+        "hopfgarten-brixental.gv.at"
+      ]
     },
     {
       "code": "70407",
@@ -16767,8 +17071,10 @@
       "code": "70417",
       "name": "St. Ulrich am Pillersee",
       "region": "Tirol",
-      "website": "",
-      "emails": []
+      "website": "st-ulrich-pillersee.gv.at",
+      "emails": [
+        "st-ulrich-pillersee.gv.at"
+      ]
     },
     {
       "code": "70418",
@@ -16785,7 +17091,7 @@
       "region": "Tirol",
       "website": "waidring.at",
       "emails": [
-        "waidring.gv.at"
+        "waidring.at"
       ]
     },
     {
@@ -16812,7 +17118,6 @@
       "region": "Tirol",
       "website": "angath.at",
       "emails": [
-        "angath.gv.at",
         "angath.at"
       ]
     },
@@ -16822,7 +17127,6 @@
       "region": "Tirol",
       "website": "badhaering.at",
       "emails": [
-        "bad-haering.gv.at",
         "badhaering.at"
       ]
     },
@@ -16841,7 +17145,7 @@
       "region": "Tirol",
       "website": "breitenbach-inn.gv.at",
       "emails": [
-        "breitenbach.at"
+        "breitenbach-inn.gv.at"
       ]
     },
     {
@@ -16850,7 +17154,7 @@
       "region": "Tirol",
       "website": "brixlegg.at",
       "emails": [
-        "brixlegg.gv.at"
+        "brixlegg.at"
       ]
     },
     {
@@ -16877,7 +17181,7 @@
       "region": "Tirol",
       "website": "erl.gv.at",
       "emails": [
-        "erl.gv.at"
+        "erl.at"
       ]
     },
     {
@@ -16976,7 +17280,6 @@
       "region": "Tirol",
       "website": "rattenberg.at",
       "emails": [
-        "rattenberg.gv.at",
         "rattenberg.at"
       ]
     },
@@ -16995,7 +17298,7 @@
       "region": "Tirol",
       "website": "rettenschoess.at",
       "emails": [
-        "rettenschoess.gv.at"
+        "rettenschoess.at"
       ]
     },
     {
@@ -17041,7 +17344,8 @@
       "region": "Tirol",
       "website": "angerberg.at",
       "emails": [
-        "angerberg.gv.at"
+        "angerberg.gv.at",
+        "angerberg.at"
       ]
     },
     {
@@ -17104,7 +17408,7 @@
       "region": "Tirol",
       "website": "fliess.gv.at",
       "emails": [
-        "fliess.gv.at"
+        "fliess.at"
       ]
     },
     {
@@ -17165,7 +17469,7 @@
       "code": "70611",
       "name": "Kaunertal",
       "region": "Tirol",
-      "website": "kaunertal-ferien.com",
+      "website": "kaunertal.gv.at",
       "emails": [
         "kaunertal.gv.at"
       ]
@@ -17210,7 +17514,7 @@
       "code": "70616",
       "name": "Pettneu am Arlberg",
       "region": "Tirol",
-      "website": "",
+      "website": "pettneu.gv.at",
       "emails": [
         "pettneu.at"
       ]
@@ -17247,7 +17551,10 @@
       "name": "Ried im Oberinntal",
       "region": "Tirol",
       "website": "gem2go.info",
-      "emails": []
+      "emails": [
+        "ried-oberinntal.gv.at",
+        "ried.gv.at"
+      ]
     },
     {
       "code": "70621",
@@ -17291,16 +17598,17 @@
       "region": "Tirol",
       "website": "spiss.gv.at",
       "emails": [
-        "spiss.gv.at",
-        "tirol.gv.at"
+        "spiss.gv.at"
       ]
     },
     {
       "code": "70626",
       "name": "Stanz bei Landeck",
       "region": "Tirol",
-      "website": "",
-      "emails": []
+      "website": "stanz-landeck.gv.at",
+      "emails": [
+        "stanz-landeck.gv.at"
+      ]
     },
     {
       "code": "70627",
@@ -17360,8 +17668,10 @@
       "code": "70703",
       "name": "Amlach",
       "region": "Tirol",
-      "website": "amlacherhof.at",
+      "website": "amlach.at",
       "emails": [
+        "amlach.at",
+        "amlach.net",
         "amlacherhof.at"
       ]
     },
@@ -17635,7 +17945,7 @@
       "code": "70735",
       "name": "Heinfels",
       "region": "Tirol",
-      "website": "heinfels.at",
+      "website": "",
       "emails": [
         "heinfels.at"
       ]
@@ -17646,7 +17956,6 @@
       "region": "Tirol",
       "website": "gemeinde-bach.at",
       "emails": [
-        "bach.gv.at",
         "gemeinde-bach.at"
       ]
     },
@@ -17656,7 +17965,8 @@
       "region": "Tirol",
       "website": "gemeinde-berwang.at",
       "emails": [
-        "berwang.gv.at"
+        "berwang.at",
+        "gemeinde-berwang.at"
       ]
     },
     {
@@ -17673,9 +17983,7 @@
       "name": "Bichlbach",
       "region": "Tirol",
       "website": "gemeinde-bichlbach.at",
-      "emails": [
-        "bichlbach.gv.at"
-      ]
+      "emails": []
     },
     {
       "code": "70805",
@@ -17719,8 +18027,7 @@
       "region": "Tirol",
       "website": "elmen.at",
       "emails": [
-        "elmen.at",
-        "lechtal.at"
+        "elmen.at"
       ]
     },
     {
@@ -17774,7 +18081,7 @@
       "region": "Tirol",
       "website": "hinterhornbach-lechtal.at",
       "emails": [
-        "hinterhornbach.gv.at"
+        "hinterhornbach-lechtal.at"
       ]
     },
     {
@@ -17810,7 +18117,7 @@
       "region": "Tirol",
       "website": "kaisers-lechtal.at",
       "emails": [
-        "kaisers.gv.at"
+        "kaisers-lechtal.at"
       ]
     },
     {
@@ -17873,7 +18180,7 @@
       "region": "Tirol",
       "website": "pflach.at",
       "emails": [
-        "pflach.gv.at"
+        "pflach.at"
       ]
     },
     {
@@ -17934,7 +18241,6 @@
       "region": "Tirol",
       "website": "vils.at",
       "emails": [
-        "vils.gv.at",
         "vils.at"
       ]
     },
@@ -17944,7 +18250,7 @@
       "region": "Tirol",
       "website": "vorderhornbach.at",
       "emails": [
-        "vorderhornbach.gv.at"
+        "vorderhornbach.at"
       ]
     },
     {
@@ -17960,8 +18266,10 @@
       "code": "70836",
       "name": "Weißenbach am Lech",
       "region": "Tirol",
-      "website": "",
-      "emails": []
+      "website": "weissenbach-lech.gv.at",
+      "emails": [
+        "weissenbach-lech.gv.at"
+      ]
     },
     {
       "code": "70837",
@@ -17983,7 +18291,7 @@
       "code": "70902",
       "name": "Aschau im Zillertal",
       "region": "Tirol",
-      "website": "aschauimzillertal.com",
+      "website": "",
       "emails": [
         "aschauimzillertal.com"
       ]
@@ -18003,8 +18311,7 @@
       "region": "Tirol",
       "website": "bruck-ziller.gv.at",
       "emails": [
-        "bruck-am-ziller.at",
-        "bruck-im-zillertal.at"
+        "bruck-ziller.gv.at"
       ]
     },
     {
@@ -18018,8 +18325,10 @@
       "code": "70907",
       "name": "Eben am Achensee",
       "region": "Tirol",
-      "website": "",
-      "emails": []
+      "website": "eben-achensee.gv.at",
+      "emails": [
+        "eben-achensee.gv.at"
+      ]
     },
     {
       "code": "70908",
@@ -18036,7 +18345,6 @@
       "region": "Tirol",
       "website": "fuegen.at",
       "emails": [
-        "fuegen.gv.at",
         "fuegen.at"
       ]
     },
@@ -18046,7 +18354,6 @@
       "region": "Tirol",
       "website": "gemeinde-fuegenberg.at",
       "emails": [
-        "fuegenberg.gv.at",
         "gemeinde-fuegenberg.at"
       ]
     },
@@ -18074,8 +18381,7 @@
       "region": "Tirol",
       "website": "gemeinde-gerlosberg.at",
       "emails": [
-        "gerlosberg.gv.at",
-        "tirol.gv.at"
+        "gemeinde-gerlosberg.at"
       ]
     },
     {
@@ -18120,8 +18426,7 @@
       "region": "Tirol",
       "website": "kaltenbach.at",
       "emails": [
-        "kaltenbach.gv.at",
-        "tirol.gv.at"
+        "kaltenbach.at"
       ]
     },
     {
@@ -18146,15 +18451,20 @@
       "code": "70922",
       "name": "Ramsau im Zillertal",
       "region": "Tirol",
-      "website": "",
-      "emails": []
+      "website": "ramsau.gv.at",
+      "emails": [
+        "ramsau-zillertal.gv.at",
+        "ramsau.gv.at"
+      ]
     },
     {
       "code": "70923",
       "name": "Ried im Zillertal",
       "region": "Tirol",
       "website": "gem2go.info",
-      "emails": []
+      "emails": [
+        "ried.gv.at"
+      ]
     },
     {
       "code": "70924",
@@ -18169,7 +18479,7 @@
       "region": "Tirol",
       "website": "schlitters.at",
       "emails": [
-        "schlitters.gv.at"
+        "schlitters.at"
       ]
     },
     {
@@ -18203,15 +18513,19 @@
       "code": "70929",
       "name": "Steinberg am Rofan",
       "region": "Tirol",
-      "website": "",
-      "emails": []
+      "website": "steinberg-rofan.gv.at",
+      "emails": [
+        "steinberg-rofan.gv.at"
+      ]
     },
     {
       "code": "70930",
       "name": "Strass im Zillertal",
       "region": "Tirol",
-      "website": "",
-      "emails": []
+      "website": "strass-zillertal.gv.at",
+      "emails": [
+        "strass-zillertal.gv.at"
+      ]
     },
     {
       "code": "70931",
@@ -18272,7 +18586,7 @@
       "code": "70937",
       "name": "Weer",
       "region": "Tirol",
-      "website": "weer.at",
+      "website": "",
       "emails": [
         "weer.at"
       ]
@@ -18489,7 +18803,9 @@
       "name": "St. Gallenkirch",
       "region": "Vorarlberg",
       "website": "gemeinde.stgallenkirch.at",
-      "emails": []
+      "emails": [
+        "st.gallenkirch.at"
+      ]
     },
     {
       "code": "80121",
@@ -18588,6 +18904,7 @@
       "region": "Vorarlberg",
       "website": "andelsbuch.at",
       "emails": [
+        "andelsbuch.at",
         "andelsbuch.cnv.at"
       ]
     },
@@ -18606,7 +18923,8 @@
       "region": "Vorarlberg",
       "website": "bezau.at",
       "emails": [
-        "bezau.at"
+        "bezau.at",
+        "bezau.cnv.at"
       ]
     },
     {
@@ -18642,7 +18960,8 @@
       "region": "Vorarlberg",
       "website": "gemeinde-buch.at",
       "emails": [
-        "buch.cnv.at"
+        "buch.cnv.at",
+        "gemeinde-buch.at"
       ]
     },
     {
@@ -18896,6 +19215,7 @@
       "region": "Vorarlberg",
       "website": "gemeinde-schwarzenberg.at",
       "emails": [
+        "gemeinde-schwarzenberg.at",
         "schwarzenberg.at",
         "schwarzenberg.cnv.at"
       ]
@@ -19044,8 +19364,8 @@
       "region": "Vorarlberg",
       "website": "klaus.at",
       "emails": [
-        "kiga.klaus.at",
-        "klaus.at"
+        "klaus.at",
+        "klaus.cnv.at"
       ]
     },
     {
@@ -19061,7 +19381,7 @@
       "code": "80411",
       "name": "Laterns",
       "region": "Vorarlberg",
-      "website": "",
+      "website": "laterns.at",
       "emails": [
         "laterns.at",
         "laternsertal.at"

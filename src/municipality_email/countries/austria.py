@@ -218,7 +218,7 @@ class AustriaConfig(CountryConfig):
             if bresu_ed and bresu_ed.lower() not in self.skip_domains:
                 d = bresu_ed.lower()
                 rec.candidates.append(
-                    DomainCandidate(domain=d, source="bresu_email", is_email_domain=True)
+                    DomainCandidate(domain=d, source="bresu_email")
                 )
 
             # Wikidata website domain
@@ -301,6 +301,8 @@ class AustriaConfig(CountryConfig):
                 return True
         return False
 
+    _AT_PREPOSITIONS = re.compile(r"\s+(?:an der|ob der|in der|am|im|bei)\s+")
+
     def slugify_name(self, name: str) -> set[str]:
         raw = name.lower().strip()
         raw = re.sub(r"\s*\(.*?\)\s*", "", raw)
@@ -317,6 +319,25 @@ class AustriaConfig(CountryConfig):
         joined = _slug(de).replace("-", "")
         if joined and joined not in slugs:
             slugs.add(joined)
+
+        # Strip German prepositions commonly dropped in domain names
+        # e.g. "Neufeld an der Leitha" → "neufeld-leitha"
+        stripped = self._AT_PREPOSITIONS.sub(" ", de).strip()
+        if stripped != de:
+            s = _slug(stripped)
+            if s:
+                slugs.add(s)
+            # Part before first preposition (e.g. "neuberg" from "Neuberg im Burgenland")
+            first_part = _slug(self._AT_PREPOSITIONS.split(de, maxsplit=1)[0])
+            if first_part and first_part != s:
+                slugs.add(first_part)
+
+        # "Sankt" → "st" abbreviation (common in domain names)
+        if "sankt" in de:
+            for slug in list(slugs):
+                abbrev = slug.replace("sankt-", "st-").replace("sankt", "st")
+                if abbrev != slug:
+                    slugs.add(abbrev)
 
         return slugs
 

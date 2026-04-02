@@ -1,1 +1,545 @@
-{}
+{
+  "10910": {
+    "email_domain": "loipersdorf-kitzladen.at",
+    "website_domain": "gemeinde.loipersdorf.at"
+  },
+  "20306": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "kirchbach.gv.at"
+  },
+  "20307": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "koetschach-mauthen.gv.at"
+  },
+  "20316": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "st-stefan-gailtal.gv.at"
+  },
+  "20320": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "gitschtal.gv.at"
+  },
+  "20321": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "lesachtal.gv.at"
+  },
+  "20402": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "ebenthal-kaernten.gv.at"
+  },
+  "20403": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "feistritz-rosental.gv.at"
+  },
+  "20405": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "ferlach.at"
+  },
+  "20409": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "grafenstein.gv.at"
+  },
+  "20412": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "keutschach.gv.at"
+  },
+  "20414": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "koettmannsdorf.at"
+  },
+  "20415": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "krumpendorf.gv.at"
+  },
+  "20416": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "ludmannsdorf.gv.at"
+  },
+  "20417": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "maria-rain.gv.at"
+  },
+  "20418": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "maria-saal.gv.at"
+  },
+  "20419": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "maria-woerth.info"
+  },
+  "20424": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "poertschach.gv.at"
+  },
+  "20428": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "st-margareten-rosental.gv.at"
+  },
+  "20432": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "schiefling.gv.at"
+  },
+  "20441": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "zell-sele.at"
+  },
+  "20442": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "magdalensberg.gv.at"
+  },
+  "20501": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "althofen.gv.at"
+  },
+  "20502": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "brueckl.gv.at"
+  },
+  "20503": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "deutsch-griffen.at"
+  },
+  "20504": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "eberstein.at"
+  },
+  "20505": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "friesach.gv.at"
+  },
+  "20508": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "gurk.at"
+  },
+  "20509": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "guttaring.at"
+  },
+  "20511": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "huettenberg.at"
+  },
+  "20512": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "kappel-am-krappfeld.at"
+  },
+  "20513": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "klein-st-paul.gv.at"
+  },
+  "20515": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "liebenfels.at"
+  },
+  "20518": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "metnitz.gv.at"
+  },
+  "20519": {
+    "email_domain": "ktn.gde.at"
+  },
+  "20520": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "moelbling.gv.at"
+  },
+  "20523": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "st-georgen-laengsee.gv.at"
+  },
+  "20530": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "strassburg.at"
+  },
+  "20531": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "weitensfeld.at"
+  },
+  "20534": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "frauenstein.gv.at"
+  },
+  "20601": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "bad-kleinkirchheim.gv.at"
+  },
+  "20602": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "baldramsdorf.gv.at"
+  },
+  "20603": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "bergimdrautal.at"
+  },
+  "20604": {
+    "email_domain": "ktn.gde.at"
+  },
+  "20605": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "grosskirchheim.gv.at"
+  },
+  "20607": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "flattach.gv.at"
+  },
+  "20608": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "stadtgmuend.at"
+  },
+  "20609": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "greifenburg.gv.at"
+  },
+  "20610": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "heiligenblut.gv.at"
+  },
+  "20611": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "irschen.gv.at"
+  },
+  "20613": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "kleblach-lind.at"
+  },
+  "20616": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "lendorf.at"
+  },
+  "20619": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "malta.gv.at"
+  },
+  "20622": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "moertschach.gv.at"
+  },
+  "20625": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "oberdrauburg.at"
+  },
+  "20627": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "obervellach.gv.at"
+  },
+  "20631": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "nationalpark-hohetauern.at"
+  },
+  "20632": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "rennweg-katschberg.gv.at"
+  },
+  "20633": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "sachsenburg.at"
+  },
+  "20634": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "seeboden.at"
+  },
+  "20636": {
+    "email_domain": "ktn.gde.at"
+  },
+  "20637": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "steinfeld.gv.at"
+  },
+  "20638": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "trebesing.at"
+  },
+  "20639": {
+    "email_domain": "ktn.gde.at"
+  },
+  "20640": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "winklern.gv.at"
+  },
+  "20642": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "krems-kaernten.gv.at"
+  },
+  "20643": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "lurnfeld.gv.at"
+  },
+  "20644": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "reisseck.at"
+  },
+  "20702": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "arnoldstein.gv.at"
+  },
+  "20703": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "arriach.gv.at"
+  },
+  "20705": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "bad-bleiberg.gv.at"
+  },
+  "20707": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "feistritz-gail.gv.at"
+  },
+  "20708": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "feld-am-see.gv.at"
+  },
+  "20710": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "ferndorf.gv.at"
+  },
+  "20711": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "finkenstein.gv.at"
+  },
+  "20712": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "fresach.gv.at"
+  },
+  "20713": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "hohenthurn.gv.at"
+  },
+  "20719": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "noetsch.at"
+  },
+  "20720": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "paternion.gv.at"
+  },
+  "20721": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "rosegg.gv.at"
+  },
+  "20722": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "st-jakob-rosental.gv.at"
+  },
+  "20723": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "stockenboi.at"
+  },
+  "20724": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "treffen.at"
+  },
+  "20726": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "weissenstein.gv.at"
+  },
+  "20727": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "wernberg.gv.at"
+  },
+  "20801": {
+    "email_domain": "ktn.gde.at"
+  },
+  "20802": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "diex.gv.at"
+  },
+  "20805": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "feistritz-bleiburg.gv.at"
+  },
+  "20806": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "gallizien.gv.at"
+  },
+  "20807": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "globasnitz.at"
+  },
+  "20808": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "griffen.gv.at"
+  },
+  "20810": {
+    "email_domain": "ktn.gde.at"
+  },
+  "20812": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "ruden.at"
+  },
+  "20813": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "kanzian.at"
+  },
+  "20815": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "sittersdorf.at"
+  },
+  "20817": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "voelkermarkt.gv.at"
+  },
+  "20901": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "bad-st-leonhard-i-lav.at"
+  },
+  "20905": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "frantschach.gv.at"
+  },
+  "20909": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "lavamuend.at"
+  },
+  "20912": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "reichenfels.gv.at"
+  },
+  "20918": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "sanktpaul.at"
+  },
+  "21001": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "albeck.gv.at"
+  },
+  "21003": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "glanegg.gv.at"
+  },
+  "21004": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "gnesau.at"
+  },
+  "21005": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "himmelberg.at"
+  },
+  "21006": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "ossiach.gv.at"
+  },
+  "21007": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "reichenau.gv.at"
+  },
+  "21008": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "sturban.at"
+  },
+  "21009": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "steindorf.gv.at"
+  },
+  "21010": {
+    "email_domain": "ktn.gde.at",
+    "website_domain": "steuerberg.at"
+  },
+  "31524": {
+    "email_domain": "melk.gv.at",
+    "website_domain": "melk.gv.at"
+  },
+  "32140": {
+    "email_domain": "zeiselmauer-wolfpassing.at",
+    "website_domain": "zeiselmauer-wolfpassing.gv.at"
+  },
+  "70208": {
+    "email_domain": "laengenfeld.tirol.gv.at",
+    "website_domain": "xn--lngenfeld-v2a.at"
+  },
+  "70216": {
+    "email_domain": "roppen.tirol.gv.at",
+    "website_domain": "roppen.at"
+  },
+  "70311": {
+    "email_domain": "gnadenwald.at",
+    "website_domain": "gnadenwald.gv.at"
+  },
+  "70409": {
+    "email_domain": "kirchberg.tirol.gv.at"
+  },
+  "70410": {
+    "email_domain": "kirchdorf.tirol.gv.at"
+  },
+  "70415": {
+    "email_domain": "st-jakob-haus.tirol.gv.at"
+  },
+  "70717": {
+    "email_domain": "matrei-ost.tirol.gv.at"
+  },
+  "70804": {
+    "email_domain": "bichlbach.tirol.gv.at",
+    "website_domain": "gemeinde-bichlbach.at"
+  },
+  "70829": {
+    "email_domain": "schattwald.tirol.gv.at"
+  },
+  "70837": {
+    "email_domain": "zoeblen.tirol.gv.at",
+    "website_domain": "gem2go.info"
+  },
+  "70905": {
+    "email_domain": "buch.tirol.gv.at"
+  },
+  "70924": {
+    "email_domain": "rohrberg.tirol.gv.at"
+  },
+  "80119": {
+    "email_domain": "st.anton.i.m.cnv.at",
+    "website_domain": "stantonim.at"
+  },
+  "80120": {
+    "email_domain": "gemeinde.stgallenkirch.at",
+    "website_domain": "gemeinde.stgallenkirch.at"
+  },
+  "10307": {
+    "email_domain": "moerbisch.bgld.gv.at",
+    "website_domain": "moerbisch.gv.at"
+  },
+  "10424": {
+    "email_domain": "heugraben.bgld.gv.at",
+    "website_domain": "heugraben.gv.at"
+  },
+  "30531": {
+    "email_domain": "st-valentin.at",
+    "website_domain": "sanktvalentin.at"
+  },
+  "30846": {
+    "email_domain": "parbasdorf.gv.at",
+    "website_domain": "parbasdorf.gv.at"
+  },
+  "30865": {
+    "email_domain": "weiden-march.at",
+    "website_domain": "weiden-march.at"
+  },
+  "31014": {
+    "website_domain": "guntersdorf.gv.at",
+    "email_domain": "guntersdorf.at"
+  },
+  "31410": {
+    "website_domain": "rohrbach-goelsen.gv.at",
+    "email_domain": "rohrbach-goelsen.gv.at"
+  },
+  "31633": {
+    "website_domain": "mistelbach.at",
+    "email_domain": "mistelbach.at"
+  },
+  "31710": {
+    "website_domain": "guntramsdorf.at",
+    "email_domain": "guntramsdorf.at"
+  },
+  "31906": {
+    "website_domain": "frankenfels.at",
+    "email_domain": "frankenfels.at"
+  },
+  "31939": {
+    "website_domain": "schwarzenbach-pielach.at",
+    "email_domain": "schwarzenbach-pielach.at"
+  },
+  "32210": {
+    "website_domain": "kautzen.com",
+    "email_domain": "kautzen.com"
+  },
+  "32322": {
+    "website_domain": "muggendorf.gv.at",
+    "email_domain": "muggendorf.gv.at"
+  }
+}

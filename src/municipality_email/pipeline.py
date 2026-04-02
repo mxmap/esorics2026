@@ -132,6 +132,13 @@ async def phase_dns_prefilter(
         for cand in rec.candidates:
             if results.get(cand.domain, False):
                 kept.append(cand)
+            elif cand.is_email_domain:
+                kept.append(cand)
+                logger.debug(
+                    "DNS pre-filter: keeping {} ({}) — email-only domain",
+                    cand.domain,
+                    cand.source,
+                )
             else:
                 if cand.source != "guess":
                     logger.debug(
@@ -368,7 +375,7 @@ async def phase_scrape(
     timeout_count = 0
     timeout_domains: set[str] = set()
     sem = asyncio.Semaphore(config.concurrency)
-    domain_timeout = 120  # max seconds per domain
+    domain_timeout = 60  # max seconds per domain
 
     async def scrape_one(client: httpx.AsyncClient, domain: str) -> None:
         nonlocal done, timeout_count
@@ -754,11 +761,15 @@ def _decide_one(
             unconfirmed_static, rec.name, static_pool, region=rec.region
         )
         best = rec.emails[0] if rec.emails else ""
-        # Count how many distinct sources agree on the best domain
-        sources_for_best = {c.source for c in rec.candidates if c.domain == best}
-        multi_source = len(sources_for_best) >= 2
-        name_match = best and config.domain_matches_name(rec.name, best)
-        if name_match or multi_source:
+        # Check name match, multi-source, or regional across ALL selected emails
+        any_name_match = any(config.domain_matches_name(rec.name, e) for e in rec.emails)
+        any_multi_source = any(
+            len({c.source for c in rec.candidates if c.domain == e}) >= 2
+            for e in rec.emails
+        )
+        regional = set(config.regional_suffixes(rec.region))
+        any_regional = any(e in regional for e in rec.emails)
+        if any_name_match or any_multi_source or any_regional:
             rec.confidence = Confidence.HIGH
         else:
             rec.confidence = Confidence.MEDIUM

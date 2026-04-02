@@ -66,7 +66,6 @@ async def resolve_robust(qname: str, rdtype: str) -> dns.resolver.Answer | None:
                 type(e).__name__,
                 i,
             )
-            await asyncio.sleep(0.5)
         except Exception as e:
             logger.warning(
                 "DNS {}/{}: unexpected error on resolver {}: {}",

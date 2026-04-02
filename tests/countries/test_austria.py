@@ -71,6 +71,40 @@ class TestAustriaConfig:
         assert self.config.domain_matches_name("Klagenfurt", "klagenfurt.gv.at") is True
         assert self.config.domain_matches_name("Villach", "villach.gde.at") is True
 
+    def test_slugify_strips_prepositions(self):
+        slugs = self.config.slugify_name("Neufeld an der Leitha")
+        assert "neufeld-leitha" in slugs
+        assert "neufeld" in slugs
+
+        slugs = self.config.slugify_name("Neuberg im Burgenland")
+        assert "neuberg-burgenland" in slugs
+        assert "neuberg" in slugs
+
+        slugs = self.config.slugify_name("Neustift bei Güssing")
+        assert "neustift-guessing" in slugs
+
+    def test_slugify_sankt_abbreviation(self):
+        slugs = self.config.slugify_name("Sankt Michael im Burgenland")
+        assert "st-michael" in slugs
+        assert "st-michael-burgenland" in slugs
+
+        slugs = self.config.slugify_name("Groß Sankt Florian")
+        assert "gross-st-florian" in slugs
+
+    def test_domain_matches_name_prepositions(self):
+        assert self.config.domain_matches_name(
+            "Neufeld an der Leitha", "neufeld-leitha.bgld.gv.at"
+        )
+        assert self.config.domain_matches_name(
+            "Neuberg im Burgenland", "neuberg.bgld.gv.at"
+        )
+        assert self.config.domain_matches_name(
+            "Oggau am Neusiedler See", "oggau-neusiedler-see.bgld.gv.at"
+        )
+        assert self.config.domain_matches_name(
+            "Weiden bei Rechnitz", "weiden-rechnitz.at"
+        )
+
     def test_pick_best_email_gov_preference(self):
         emails = {"eisenstadt.at", "eisenstadt.gv.at", "other.at"}
         result = self.config.pick_best_email(emails, "Eisenstadt", set())

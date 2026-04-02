@@ -1,74 +1,27 @@
 {
-  "generated": "2026-04-02T07:53:16.718040Z",
-  "total": 144,
+  "generated": "2026-04-02T11:05:28.056103Z",
+  "total": 257,
   "municipalities": [
     {
-      "code": "10404",
-      "name": "Gerersdorf-Sulz",
+      "code": "10910",
+      "name": "Loipersdorf-Kitzladen",
       "region": "Burgenland",
-      "website": "gerersdorf-sulz.at",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
-      "sources_detail": {
-        "bresu": [
-          "gerersdorf-sulz.at"
-        ],
-        "wikidata": [
-          "gerersdorf-sulz.at"
-        ]
-      },
-      "flags": []
-    },
-    {
-      "code": "10408",
-      "name": "Kukmirn",
-      "region": "Burgenland",
-      "website": "kukmirn.at",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
-      "sources_detail": {
-        "bresu": [
-          "kukmirn.at"
-        ],
-        "wikidata": [
-          "kukmirn.at"
-        ]
-      },
-      "flags": []
-    },
-    {
-      "code": "10411",
-      "name": "Olbendorf",
-      "region": "Burgenland",
-      "website": "olbendorf.at",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
-      "sources_detail": {
-        "bresu": [
-          "olbendorf.at"
-        ],
-        "wikidata": [
-          "olbendorf.at"
-        ]
-      },
-      "flags": []
-    },
-    {
-      "code": "10413",
-      "name": "Sankt Michael im Burgenland",
-      "region": "Burgenland",
-      "website": "st.michael-bgld.at",
+      "website": "gemeinde.loipersdorf.at",
       "emails": [
-        "st.michael-bgld.at"
+        "bad-loipersdorf.gv.at",
+        "loipersdorf-kitzladen.at"
       ],
       "source": "static",
       "confidence": "medium",
       "sources_detail": {
         "bresu": [
-          "st.michael-bgld.at"
+          "gemeinde.loipersdorf.at"
+        ],
+        "bresu_email": [
+          "bad-loipersdorf.gv.at"
+        ],
+        "wikidata": [
+          "loipersdorf-kitzladen.at"
         ]
       },
       "flags": [
@@ -76,100 +29,208 @@
       ]
     },
     {
-      "code": "10424",
-      "name": "Heugraben",
-      "region": "Burgenland",
-      "website": "heugraben.gv.at",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
+      "code": "20306",
+      "name": "Kirchbach",
+      "region": "Kärnten",
+      "website": "kirchbach.gv.at",
+      "emails": [
+        "ktn.gde.at",
+        "kirchbach-kaernten.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
       "sources_detail": {
         "bresu": [
-          "heugraben.at"
+          "kirchbach.gv.at"
         ],
         "bresu_email": [
-          "heugraben.at"
+          "ktn.gde.at"
         ],
         "wikidata": [
-          "heugraben.at"
+          "kirchbach-kaernten.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20307",
+      "name": "Kötschach-Mauthen",
+      "region": "Kärnten",
+      "website": "koetschach-mauthen.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "koetschach-mauthen.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "koetschach-mauthen.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20316",
+      "name": "St. Stefan im Gailtal",
+      "region": "Kärnten",
+      "website": "st-stefan-gailtal.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "st-stefan-gailtal.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "st.stefan-gailtal.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20320",
+      "name": "Gitschtal",
+      "region": "Kärnten",
+      "website": "gitschtal.gv.at",
+      "emails": [
+        "ktn.gde.at",
+        "gitschtal.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "gitschtal.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "gitschtal.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20321",
+      "name": "Lesachtal",
+      "region": "Kärnten",
+      "website": "lesachtal.gv.at",
+      "emails": [
+        "ktn.gde.at",
+        "lesachtal.com"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "lesachtal.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "lesachtal.com"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20402",
+      "name": "Ebenthal in Kärnten",
+      "region": "Kärnten",
+      "website": "ebenthal-kaernten.gv.at",
+      "emails": [
+        "ktn.gde.at",
+        "ebenthal.co.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "ebenthal-kaernten.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "ebenthal.co.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20403",
+      "name": "Feistritz im Rosental",
+      "region": "Kärnten",
+      "website": "feistritz-rosental.gv.at",
+      "emails": [
+        "ktn.gde.at",
+        "rosengemeinde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "feistritz-rosental.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "rosengemeinde.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20405",
+      "name": "Ferlach",
+      "region": "Kärnten",
+      "website": "ferlach.at",
+      "emails": [
+        "ktn.gde.at",
+        "ferlach.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "ferlach.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "ferlach.at"
         ],
         "guess": [
-          "heugraben.gv.at"
-        ]
-      },
-      "flags": []
-    },
-    {
-      "code": "10428",
-      "name": "Moschendorf",
-      "region": "Burgenland",
-      "website": "moschendorf.at",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
-      "sources_detail": {
-        "bresu": [
-          "moschendorf.at"
-        ],
-        "wikidata": [
-          "moschendorf.at"
-        ]
-      },
-      "flags": []
-    },
-    {
-      "code": "10608",
-      "name": "Pöttelsdorf",
-      "region": "Burgenland",
-      "website": "xn--pttelsdorf-ecb.at",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
-      "sources_detail": {
-        "bresu": [
-          "gemeindepoettelsdorf.at"
-        ],
-        "wikidata": [
-          "gemeindepoettelsdorf.at"
-        ]
-      },
-      "flags": []
-    },
-    {
-      "code": "10619",
-      "name": "Krensdorf",
-      "region": "Burgenland",
-      "website": "",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
-      "sources_detail": {
-        "bresu": [
-          "krensdorf.at"
-        ],
-        "wikidata": [
-          "krensdorf.at"
-        ]
-      },
-      "flags": []
-    },
-    {
-      "code": "10719",
-      "name": "Sankt Andrä am Zicksee",
-      "region": "Burgenland",
-      "website": "gemeinde-standrae.at",
-      "emails": [
-        "standraezicksee.at",
-        "xn--gemeinde-standr-flb.at"
-      ],
-      "source": "wikidata",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "xn--gemeinde-standr-flb.at"
-        ],
-        "wikidata": [
-          "standraezicksee.at"
+          "ferlach.gv.at"
         ]
       },
       "flags": [
@@ -177,73 +238,670 @@
       ]
     },
     {
-      "code": "10827",
-      "name": "Weingraben",
-      "region": "Burgenland",
-      "website": "",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
-      "sources_detail": {},
-      "flags": []
-    },
-    {
-      "code": "10921",
-      "name": "Rotenturm an der Pinka",
-      "region": "Burgenland",
-      "website": "rotenturm-pinka.bgld.gv.at",
-      "emails": [
-        "rotenturm-pinka.bgld.gv.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu_email": [
-          "rotenturm-pinka.bgld.gv.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "10926",
-      "name": "Weiden bei Rechnitz",
-      "region": "Burgenland",
-      "website": "weiden-rechnitz.at",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
-      "sources_detail": {
-        "bresu": [
-          "weiden-rechnitz.at"
-        ],
-        "wikidata": [
-          "weiden-rechnitz.at"
-        ]
-      },
-      "flags": []
-    },
-    {
-      "code": "20101",
-      "name": "Klagenfurt am Wörthersee",
+      "code": "20409",
+      "name": "Grafenstein",
       "region": "Kärnten",
-      "website": "klagenfurt.gv.at",
+      "website": "grafenstein.gv.at",
       "emails": [
-        "klagenfurt.gv.at",
-        "klagenfurt.at"
+        "ktn.gde.at",
+        "grafenstein.co.at"
       ],
       "source": "static",
       "confidence": "medium",
       "sources_detail": {
         "bresu": [
-          "klagenfurt.gv.at"
+          "grafenstein.gv.at"
         ],
         "bresu_email": [
-          "klagenfurt.at"
+          "ktn.gde.at"
         ],
         "wikidata": [
-          "klagenfurt.at"
+          "grafenstein.co.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20412",
+      "name": "Keutschach am See",
+      "region": "Kärnten",
+      "website": "keutschach.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "keutschach.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "keutschach-see.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20414",
+      "name": "Köttmannsdorf",
+      "region": "Kärnten",
+      "website": "koettmannsdorf.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "koettmannsdorf.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "koettmannsdorf.at"
+        ],
+        "guess": [
+          "koettmannsdorf.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20415",
+      "name": "Krumpendorf am Wörthersee",
+      "region": "Kärnten",
+      "website": "krumpendorf.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "krumpendorf.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "krumpendorf.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20416",
+      "name": "Ludmannsdorf",
+      "region": "Kärnten",
+      "website": "ludmannsdorf.gv.at",
+      "emails": [
+        "ktn.gde.at",
+        "ludmannsdorf.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "ludmannsdorf.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "ludmannsdorf.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20417",
+      "name": "Maria Rain",
+      "region": "Kärnten",
+      "website": "maria-rain.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "maria-rain.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "maria-rain.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20418",
+      "name": "Maria Saal",
+      "region": "Kärnten",
+      "website": "maria-saal.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "maria-saal.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20419",
+      "name": "Maria Wörth",
+      "region": "Kärnten",
+      "website": "maria-woerth.info",
+      "emails": [
+        "ktn.gde.at",
+        "maria-woerth.at",
+        "maria-woerth.info"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "maria-woerth.info"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "maria-woerth.at"
+        ],
+        "guess": [
+          "maria-woerth.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20424",
+      "name": "Pörtschach am Wörther See",
+      "region": "Kärnten",
+      "website": "poertschach.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "poertschach.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "poertschach.net"
+        ],
+        "guess": [
+          "poertschach-woerther-see.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20428",
+      "name": "St. Margareten im Rosental",
+      "region": "Kärnten",
+      "website": "st-margareten-rosental.gv.at",
+      "emails": [
+        "ktn.gde.at",
+        "st-margareten.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "st-margareten-rosental.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "st-margareten.at"
+        ],
+        "guess": [
+          "st-margareten.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20432",
+      "name": "Schiefling am Wörthersee",
+      "region": "Kärnten",
+      "website": "schiefling.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "schiefling.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "schiefling.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20441",
+      "name": "Zell",
+      "region": "Kärnten",
+      "website": "zell-sele.at",
+      "emails": [
+        "ktn.gde.at",
+        "zell-sele.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "zell-sele.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "zell-sele.at"
+        ],
+        "guess": [
+          "zell.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20442",
+      "name": "Magdalensberg",
+      "region": "Kärnten",
+      "website": "magdalensberg.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "magdalensberg.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "magdalensberg.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20501",
+      "name": "Althofen",
+      "region": "Kärnten",
+      "website": "althofen.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "althofen.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "althofen-treibach.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20502",
+      "name": "Brückl",
+      "region": "Kärnten",
+      "website": "brueckl.gv.at",
+      "emails": [
+        "ktn.gde.at",
+        "brueckl.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "brueckl.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "brueckl.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20503",
+      "name": "Deutsch-Griffen",
+      "region": "Kärnten",
+      "website": "deutsch-griffen.at",
+      "emails": [
+        "ktn.gde.at",
+        "deutsch-griffen.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "deutsch-griffen.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "deutsch-griffen.at"
+        ],
+        "guess": [
+          "deutsch-griffen.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20504",
+      "name": "Eberstein",
+      "region": "Kärnten",
+      "website": "eberstein.at",
+      "emails": [
+        "ktn.gde.at",
+        "eberstein.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "eberstein.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "eberstein.at"
+        ],
+        "guess": [
+          "eberstein.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20505",
+      "name": "Friesach",
+      "region": "Kärnten",
+      "website": "friesach.gv.at",
+      "emails": [
+        "ktn.gde.at",
+        "friesach.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "friesach.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "friesach.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20508",
+      "name": "Gurk",
+      "region": "Kärnten",
+      "website": "gurk.at",
+      "emails": [
+        "ktn.gde.at",
+        "gurk.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "gurk.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "gurk.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20509",
+      "name": "Guttaring",
+      "region": "Kärnten",
+      "website": "guttaring.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "guttaring.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "guttaring.at"
+        ],
+        "guess": [
+          "guttaring.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20511",
+      "name": "Hüttenberg",
+      "region": "Kärnten",
+      "website": "huettenberg.at",
+      "emails": [
+        "ktn.gde.at",
+        "huettenberg.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "huettenberg.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "huettenberg.at"
+        ],
+        "guess": [
+          "huettenberg.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20512",
+      "name": "Kappel am Krappfeld",
+      "region": "Kärnten",
+      "website": "kappel-am-krappfeld.at",
+      "emails": [
+        "ktn.gde.at",
+        "kappel-am-krappfeld.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "kappel-am-krappfeld.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "kappel-am-krappfeld.at"
+        ],
+        "guess": [
+          "kappel-krappfeld.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20513",
+      "name": "Klein St. Paul",
+      "region": "Kärnten",
+      "website": "klein-st-paul.gv.at",
+      "emails": [
+        "ktn.gde.at",
+        "klein-st-paul.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "klein-st-paul.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "klein-st-paul.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20515",
+      "name": "Liebenfels",
+      "region": "Kärnten",
+      "website": "liebenfels.at",
+      "emails": [
+        "ktn.gde.at",
+        "liebenfels.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "liebenfels.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "liebenfels.at"
+        ],
+        "guess": [
+          "liebenfels.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20518",
+      "name": "Metnitz",
+      "region": "Kärnten",
+      "website": "metnitz.gv.at",
+      "emails": [
+        "ktn.gde.at",
+        "metnitz.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "metnitz.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "metnitz.at"
         ]
       },
       "flags": [
@@ -255,36 +913,17 @@
       "name": "Micheldorf",
       "region": "Kärnten",
       "website": "",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
       "sources_detail": {
         "bresu": [
           "micheldorf.gv.at"
-        ]
-      },
-      "flags": []
-    },
-    {
-      "code": "30301",
-      "name": "Waidhofen an der Ybbs",
-      "region": "Niederösterreich",
-      "website": "waidhofen-ybbs.gv.at",
-      "emails": [
-        "waidhofen-ybbs.gv.at",
-        "waidhofen.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "waidhofen-ybbs.gv.at"
         ],
         "bresu_email": [
-          "waidhofen.at"
-        ],
-        "wikidata": [
-          "waidhofen.at"
+          "ktn.gde.at"
         ]
       },
       "flags": [
@@ -292,25 +931,25 @@
       ]
     },
     {
-      "code": "30530",
-      "name": "St. Peter in der Au",
-      "region": "Niederösterreich",
-      "website": "st-peter-au.gv.at",
+      "code": "20520",
+      "name": "Mölbling",
+      "region": "Kärnten",
+      "website": "moelbling.gv.at",
       "emails": [
-        "st-peter-au.gv.at",
-        "stpeterau.at"
+        "ktn.gde.at",
+        "moelbling.at"
       ],
       "source": "static",
       "confidence": "medium",
       "sources_detail": {
         "bresu": [
-          "st-peter-au.gv.at"
+          "moelbling.gv.at"
         ],
         "bresu_email": [
-          "stpeterau.at"
+          "ktn.gde.at"
         ],
         "wikidata": [
-          "stpeterau.at"
+          "moelbling.at"
         ]
       },
       "flags": [
@@ -318,24 +957,25 @@
       ]
     },
     {
-      "code": "30645",
-      "name": "Weissenbach an der Triesting",
-      "region": "Niederösterreich",
-      "website": "weissenbach-triesting.gv.at",
+      "code": "20523",
+      "name": "St. Georgen am Längsee",
+      "region": "Kärnten",
+      "website": "st-georgen-laengsee.gv.at",
       "emails": [
-        "weissenbach-triesting.at"
+        "ktn.gde.at",
+        "stgeorgen-laengsee.at"
       ],
       "source": "static",
       "confidence": "medium",
       "sources_detail": {
         "bresu": [
-          "weissenbach-triesting.gv.at"
+          "st-georgen-laengsee.gv.at"
         ],
         "bresu_email": [
-          "weissenbach-triesting.at"
+          "ktn.gde.at"
         ],
         "wikidata": [
-          "weissenbach-triesting.gv.at"
+          "stgeorgen-laengsee.at"
         ]
       },
       "flags": [
@@ -343,25 +983,1944 @@
       ]
     },
     {
-      "code": "30704",
-      "name": "Bruck an der Leitha",
-      "region": "Niederösterreich",
-      "website": "bruck-leitha.gv.at",
+      "code": "20530",
+      "name": "Straßburg",
+      "region": "Kärnten",
+      "website": "strassburg.at",
       "emails": [
-        "bruck-leitha.gv.at",
-        "bruckleitha.at"
+        "ktn.gde.at",
+        "strassburg.at"
       ],
       "source": "static",
       "confidence": "medium",
       "sources_detail": {
         "bresu": [
-          "bruck-leitha.gv.at"
+          "strassburg.at"
         ],
         "bresu_email": [
-          "bruckleitha.at"
+          "ktn.gde.at"
         ],
         "wikidata": [
-          "bruckleitha.at"
+          "strassburg.at"
+        ],
+        "guess": [
+          "strassburg.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20531",
+      "name": "Weitensfeld im Gurktal",
+      "region": "Kärnten",
+      "website": "weitensfeld.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "weitensfeld.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "guess": [
+          "weitensfeld-gurktal.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20534",
+      "name": "Frauenstein",
+      "region": "Kärnten",
+      "website": "frauenstein.gv.at",
+      "emails": [
+        "ktn.gde.at",
+        "frauenstein.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "frauenstein.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "frauenstein.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20601",
+      "name": "Bad Kleinkirchheim",
+      "region": "Kärnten",
+      "website": "bad-kleinkirchheim.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "bad-kleinkirchheim.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "bad-kleinkirchheim.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20602",
+      "name": "Baldramsdorf",
+      "region": "Kärnten",
+      "website": "baldramsdorf.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "baldramsdorf.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "baldramsdorf.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20603",
+      "name": "Berg im Drautal",
+      "region": "Kärnten",
+      "website": "bergimdrautal.at",
+      "emails": [
+        "ktn.gde.at",
+        "bergimdrautal.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "berg-drautal.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "bergimdrautal.at"
+        ],
+        "guess": [
+          "berg-im-drautal.gv.at",
+          "berg.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20604",
+      "name": "Dellach im Drautal",
+      "region": "Kärnten",
+      "website": "",
+      "emails": [
+        "ktn.gde.at",
+        "dellach-drau.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "dellach-drau.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "dellach-drau.at"
+        ],
+        "guess": [
+          "dellach.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20605",
+      "name": "Großkirchheim",
+      "region": "Kärnten",
+      "website": "grosskirchheim.gv.at",
+      "emails": [
+        "ktn.gde.at",
+        "riskommunal.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "grosskirchheim.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "riskommunal.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20607",
+      "name": "Flattach",
+      "region": "Kärnten",
+      "website": "flattach.gv.at",
+      "emails": [
+        "ktn.gde.at",
+        "flattach.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "flattach.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "flattach.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20608",
+      "name": "Gmünd in Kärnten",
+      "region": "Kärnten",
+      "website": "stadtgmuend.at",
+      "emails": [
+        "ktn.gde.at",
+        "stadt-gmuend.at",
+        "stadtgmuend.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "stadtgmuend.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "stadt-gmuend.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20609",
+      "name": "Greifenburg",
+      "region": "Kärnten",
+      "website": "greifenburg.gv.at",
+      "emails": [
+        "ktn.gde.at",
+        "greifenburg.com"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "greifenburg.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "greifenburg.com"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20610",
+      "name": "Heiligenblut am Großglockner",
+      "region": "Kärnten",
+      "website": "heiligenblut.gv.at",
+      "emails": [
+        "ktn.gde.at",
+        "heiligenblut.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "heiligenblut.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "heiligenblut.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20611",
+      "name": "Irschen",
+      "region": "Kärnten",
+      "website": "irschen.gv.at",
+      "emails": [
+        "ktn.gde.at",
+        "irschen.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "irschen.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "irschen.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20613",
+      "name": "Kleblach-Lind",
+      "region": "Kärnten",
+      "website": "kleblach-lind.at",
+      "emails": [
+        "ktn.gde.at",
+        "kleblach-lind.at",
+        "riskommunal.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "kleblach-lind.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "riskommunal.at"
+        ],
+        "guess": [
+          "kleblach-lind.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20616",
+      "name": "Lendorf",
+      "region": "Kärnten",
+      "website": "lendorf.at",
+      "emails": [
+        "ktn.gde.at",
+        "lendorf.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "lendorf.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "lendorf.at"
+        ],
+        "guess": [
+          "lendorf.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20619",
+      "name": "Malta",
+      "region": "Kärnten",
+      "website": "malta.gv.at",
+      "emails": [
+        "ktn.gde.at",
+        "maltatal.com"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "malta.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "maltatal.com"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20622",
+      "name": "Mörtschach",
+      "region": "Kärnten",
+      "website": "moertschach.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "moertschach.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "nationalparkgemeinde-moertschach.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20625",
+      "name": "Oberdrauburg",
+      "region": "Kärnten",
+      "website": "oberdrauburg.at",
+      "emails": [
+        "ktn.gde.at",
+        "oberdrauburg.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "oberdrauburg.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "oberdrauburg.at"
+        ],
+        "guess": [
+          "oberdrauburg.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20627",
+      "name": "Obervellach",
+      "region": "Kärnten",
+      "website": "obervellach.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "obervellach.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "obervellach.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20631",
+      "name": "Rangersdorf",
+      "region": "Kärnten",
+      "website": "nationalpark-hohetauern.at",
+      "emails": [
+        "ktn.gde.at",
+        "rangersdorf.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "rangersdorf.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "rangersdorf.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20632",
+      "name": "Rennweg am Katschberg",
+      "region": "Kärnten",
+      "website": "rennweg-katschberg.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "rennweg-katschberg.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "rennweg-katschberg.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20633",
+      "name": "Sachsenburg",
+      "region": "Kärnten",
+      "website": "sachsenburg.at",
+      "emails": [
+        "ktn.gde.at",
+        "sachsenburg.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "sachsenburg.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "sachsenburg.at"
+        ],
+        "guess": [
+          "sachsenburg.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20634",
+      "name": "Seeboden am Millstätter See",
+      "region": "Kärnten",
+      "website": "seeboden.at",
+      "emails": [
+        "ktn.gde.at",
+        "seeboden.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "seeboden.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "seeboden.at"
+        ],
+        "guess": [
+          "seeboden.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20636",
+      "name": "Stall",
+      "region": "Kärnten",
+      "website": "",
+      "emails": [
+        "ktn.gde.at",
+        "gemeinde-stall.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "stall.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "gemeinde-stall.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20637",
+      "name": "Steinfeld",
+      "region": "Kärnten",
+      "website": "steinfeld.gv.at",
+      "emails": [
+        "ktn.gde.at",
+        "steinfeld.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "steinfeld.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "steinfeld.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20638",
+      "name": "Trebesing",
+      "region": "Kärnten",
+      "website": "trebesing.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "trebesing.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "trebesing.at"
+        ],
+        "guess": [
+          "trebesing.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20639",
+      "name": "Weißensee",
+      "region": "Kärnten",
+      "website": "",
+      "emails": [
+        "ktn.gde.at",
+        "gemeinde-weissensee.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "gemeinde-weissensee.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "guess": [
+          "weissensee.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20640",
+      "name": "Winklern",
+      "region": "Kärnten",
+      "website": "winklern.gv.at",
+      "emails": [
+        "ktn.gde.at",
+        "winklern.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "winklern.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "winklern.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20642",
+      "name": "Krems in Kärnten",
+      "region": "Kärnten",
+      "website": "krems-kaernten.gv.at",
+      "emails": [
+        "ktn.gde.at",
+        "krems-in-kaernten.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "krems-kaernten.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "krems-in-kaernten.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20643",
+      "name": "Lurnfeld",
+      "region": "Kärnten",
+      "website": "lurnfeld.gv.at",
+      "emails": [
+        "ktn.gde.at",
+        "lurnfeld.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "lurnfeld.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "lurnfeld.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20644",
+      "name": "Reißeck",
+      "region": "Kärnten",
+      "website": "reisseck.at",
+      "emails": [
+        "ktn.gde.at",
+        "reisseck.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "reisseck.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "reisseck.at"
+        ],
+        "guess": [
+          "reisseck.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20702",
+      "name": "Arnoldstein",
+      "region": "Kärnten",
+      "website": "arnoldstein.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "arnoldstein.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "arnoldstein.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20703",
+      "name": "Arriach",
+      "region": "Kärnten",
+      "website": "arriach.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "arriach.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "arriach.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20705",
+      "name": "Bad Bleiberg",
+      "region": "Kärnten",
+      "website": "bad-bleiberg.gv.at",
+      "emails": [
+        "ktn.gde.at",
+        "bad-bleiberg.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "bad-bleiberg.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "bad-bleiberg.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20707",
+      "name": "Feistritz an der Gail",
+      "region": "Kärnten",
+      "website": "feistritz-gail.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "feistritz-gail.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "feistritz-gail.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20708",
+      "name": "Feld am See",
+      "region": "Kärnten",
+      "website": "feld-am-see.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "feld-am-see.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "feld-am-see.gv.at"
+        ],
+        "guess": [
+          "feld-see.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20710",
+      "name": "Ferndorf",
+      "region": "Kärnten",
+      "website": "ferndorf.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "ferndorf.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "ferndorf.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20711",
+      "name": "Finkenstein am Faaker See",
+      "region": "Kärnten",
+      "website": "finkenstein.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "finkenstein.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "finkenstein.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20712",
+      "name": "Fresach",
+      "region": "Kärnten",
+      "website": "fresach.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "fresach.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "fresach.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20713",
+      "name": "Hohenthurn",
+      "region": "Kärnten",
+      "website": "hohenthurn.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "hohenthurn.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "hohenthurn.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20719",
+      "name": "Nötsch im Gailtal",
+      "region": "Kärnten",
+      "website": "noetsch.at",
+      "emails": [
+        "ktn.gde.at",
+        "noetsch.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "noetsch.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "noetsch.at"
+        ],
+        "guess": [
+          "noetsch-gailtal.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20720",
+      "name": "Paternion",
+      "region": "Kärnten",
+      "website": "paternion.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "paternion.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "paternion.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20721",
+      "name": "Rosegg",
+      "region": "Kärnten",
+      "website": "rosegg.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "rosegg.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "rosegg.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20722",
+      "name": "St. Jakob im Rosental",
+      "region": "Kärnten",
+      "website": "st-jakob-rosental.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "st-jakob-rosental.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "st-jakob-rosental.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20723",
+      "name": "Stockenboi",
+      "region": "Kärnten",
+      "website": "stockenboi.at",
+      "emails": [
+        "ktn.gde.at",
+        "stockenboi.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "stockenboi.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "stockenboi.at"
+        ],
+        "guess": [
+          "stockenboi.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20724",
+      "name": "Treffen am Ossiacher See",
+      "region": "Kärnten",
+      "website": "treffen.at",
+      "emails": [
+        "ktn.gde.at",
+        "treffen.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "treffen.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "treffen.at"
+        ],
+        "guess": [
+          "treffen.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20726",
+      "name": "Weißenstein",
+      "region": "Kärnten",
+      "website": "weissenstein.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "weissenstein.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "weissenstein.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20727",
+      "name": "Wernberg",
+      "region": "Kärnten",
+      "website": "wernberg.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "wernberg.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "wernberg.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20801",
+      "name": "Bleiburg",
+      "region": "Kärnten",
+      "website": "",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "bleiburg.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "bleiburg.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20802",
+      "name": "Diex",
+      "region": "Kärnten",
+      "website": "diex.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "diex.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20805",
+      "name": "Feistritz ob Bleiburg",
+      "region": "Kärnten",
+      "website": "feistritz-bleiburg.gv.at",
+      "emails": [
+        "ktn.gde.at",
+        "riskommunal.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "feistritz-bleiburg.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "riskommunal.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20806",
+      "name": "Gallizien",
+      "region": "Kärnten",
+      "website": "gallizien.gv.at",
+      "emails": [
+        "ktn.gde.at",
+        "gallizien.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "gallizien.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "gallizien.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20807",
+      "name": "Globasnitz",
+      "region": "Kärnten",
+      "website": "globasnitz.at",
+      "emails": [
+        "ktn.gde.at",
+        "globasnitz.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "globasnitz.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "globasnitz.at"
+        ],
+        "guess": [
+          "globasnitz.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20808",
+      "name": "Griffen",
+      "region": "Kärnten",
+      "website": "griffen.gv.at",
+      "emails": [
+        "ktn.gde.at",
+        "griffen.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "griffen.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "griffen.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20810",
+      "name": "Neuhaus",
+      "region": "Kärnten",
+      "website": "",
+      "emails": [
+        "ktn.gde.at",
+        "neuhaus.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "neuhaus.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "neuhaus.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20812",
+      "name": "Ruden",
+      "region": "Kärnten",
+      "website": "ruden.at",
+      "emails": [
+        "ktn.gde.at",
+        "ruden.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "ruden.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "ruden.at"
+        ],
+        "guess": [
+          "ruden.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20813",
+      "name": "St. Kanzian am Klopeiner See",
+      "region": "Kärnten",
+      "website": "kanzian.at",
+      "emails": [
+        "ktn.gde.at",
+        "kanzian.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "kanzian.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "st.kanzian.at"
+        ],
+        "guess": [
+          "st-kanzian-klopeiner-see.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20815",
+      "name": "Sittersdorf",
+      "region": "Kärnten",
+      "website": "sittersdorf.at",
+      "emails": [
+        "ktn.gde.at",
+        "sittersdorf.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "sittersdorf.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "sittersdorf.at"
+        ],
+        "guess": [
+          "sittersdorf.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20817",
+      "name": "Völkermarkt",
+      "region": "Kärnten",
+      "website": "voelkermarkt.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "voelkermarkt.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "voelkermarkt.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20901",
+      "name": "Bad St. Leonhard im Lavanttal",
+      "region": "Kärnten",
+      "website": "bad-st-leonhard-i-lav.at",
+      "emails": [
+        "ktn.gde.at",
+        "bad-st-leonhard-i-lav.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "bad-st-leonhard-i-lav.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "bad-st-leonhard-i-lav.at"
+        ],
+        "guess": [
+          "bad-st-leonhard-lavanttal.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20905",
+      "name": "Frantschach-St. Gertraud",
+      "region": "Kärnten",
+      "website": "frantschach.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "frantschach.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "frantschach-st-gertraud.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20909",
+      "name": "Lavamünd",
+      "region": "Kärnten",
+      "website": "lavamuend.at",
+      "emails": [
+        "ktn.gde.at",
+        "lavamuend.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "lavamuend.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "lavamuend.at"
+        ],
+        "guess": [
+          "lavamuend.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20912",
+      "name": "Reichenfels",
+      "region": "Kärnten",
+      "website": "reichenfels.gv.at",
+      "emails": [
+        "ktn.gde.at",
+        "marktgemeinde-reichenfels.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "reichenfels.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "marktgemeinde-reichenfels.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20918",
+      "name": "St. Paul im Lavanttal",
+      "region": "Kärnten",
+      "website": "sanktpaul.at",
+      "emails": [
+        "ktn.gde.at",
+        "sanktpaul.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "sanktpaul.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "sanktpaul.at"
+        ],
+        "guess": [
+          "st-paul-lavanttal.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "21001",
+      "name": "Albeck",
+      "region": "Kärnten",
+      "website": "albeck.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "albeck.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "albeck.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "21003",
+      "name": "Glanegg",
+      "region": "Kärnten",
+      "website": "glanegg.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "glanegg.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "glanegg.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "21004",
+      "name": "Gnesau",
+      "region": "Kärnten",
+      "website": "gnesau.at",
+      "emails": [
+        "ktn.gde.at",
+        "gnesau.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "gnesau.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "gnesau.at"
+        ],
+        "guess": [
+          "gnesau.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "21005",
+      "name": "Himmelberg",
+      "region": "Kärnten",
+      "website": "himmelberg.at",
+      "emails": [
+        "ktn.gde.at",
+        "himmelberg.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "himmelberg.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "himmelberg.at"
+        ],
+        "guess": [
+          "himmelberg.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "21006",
+      "name": "Ossiach",
+      "region": "Kärnten",
+      "website": "ossiach.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "ossiach.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "ossiach.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "21007",
+      "name": "Reichenau",
+      "region": "Kärnten",
+      "website": "reichenau.gv.at",
+      "emails": [
+        "ktn.gde.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "reichenau.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "ebene-reichenau.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "21008",
+      "name": "St. Urban",
+      "region": "Kärnten",
+      "website": "sturban.at",
+      "emails": [
+        "ktn.gde.at",
+        "sturban.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "sturban.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "sturban.at"
+        ],
+        "guess": [
+          "st-urban.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "21009",
+      "name": "Steindorf am Ossiacher See",
+      "region": "Kärnten",
+      "website": "steindorf.gv.at",
+      "emails": [
+        "ktn.gde.at",
+        "steindorf.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "steindorf.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "steindorf.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "21010",
+      "name": "Steuerberg",
+      "region": "Kärnten",
+      "website": "steuerberg.at",
+      "emails": [
+        "ktn.gde.at",
+        "steuerberg.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "steuerberg.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
+        "wikidata": [
+          "steuerberg.at"
+        ],
+        "guess": [
+          "steuerberg.gv.at"
         ]
       },
       "flags": [
@@ -382,58 +2941,6 @@
         ]
       },
       "flags": []
-    },
-    {
-      "code": "30834",
-      "name": "Mannsdorf an der Donau",
-      "region": "Niederösterreich",
-      "website": "mannsdorf.at",
-      "emails": [
-        "mannsdorf.gv.at",
-        "mannsdorf.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "mannsdorf.at"
-        ],
-        "bresu_email": [
-          "mannsdorf.gv.at"
-        ],
-        "wikidata": [
-          "mannsdorf.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "31326",
-      "name": "Maria Laach am Jauerling",
-      "region": "Niederösterreich",
-      "website": "marialaach.at",
-      "emails": [
-        "maria-laach.gv.at",
-        "marialaach.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "marialaach.at"
-        ],
-        "bresu_email": [
-          "maria-laach.gv.at"
-        ],
-        "wikidata": [
-          "marialaach.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
     },
     {
       "code": "31524",
@@ -487,117 +2994,25 @@
       ]
     },
     {
-      "code": "31553",
-      "name": "Emmersdorf an der Donau",
+      "code": "32140",
+      "name": "Zeiselmauer-Wolfpassing",
       "region": "Niederösterreich",
-      "website": "emmersdorf.gv.at",
+      "website": "zeiselmauer-wolfpassing.gv.at",
       "emails": [
-        "emmersdorf.at"
+        "zeiselmauer.gv.at",
+        "zeiselmauer-wolfpassing.at"
       ],
       "source": "static",
       "confidence": "medium",
       "sources_detail": {
         "bresu": [
-          "emmersdorf.gv.at"
+          "zeiselmauer-wolfpassing.gv.at"
         ],
         "bresu_email": [
-          "emmersdorf.at"
+          "zeiselmauer.gv.at"
         ],
         "wikidata": [
-          "emmersdorf.gv.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "31830",
-      "name": "St. Corona am Wechsel",
-      "region": "Niederösterreich",
-      "website": "st-corona-wechsel.gv.at",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
-      "sources_detail": {
-        "bresu": [
-          "st-corona-wechsel.gv.at"
-        ],
-        "wikidata": [
-          "st-corona-wechsel.gv.at"
-        ]
-      },
-      "flags": []
-    },
-    {
-      "code": "31939",
-      "name": "Schwarzenbach an der Pielach",
-      "region": "Niederösterreich",
-      "website": "schwarzenbach-pielach.at",
-      "emails": [
-        "schwarzenbach-pielach.gv.at",
-        "schwarzenbach-pielach.at"
-      ],
-      "source": "wikidata",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "schwarzenbach-pielach.at"
-        ],
-        "bresu_email": [
-          "schwarzenbach-pielach.at"
-        ],
-        "wikidata": [
-          "schwarzenbach-pielach.gv.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "32008",
-      "name": "Purgstall an der Erlauf",
-      "region": "Niederösterreich",
-      "website": "purgstall-erlauf.gv.at",
-      "emails": [
-        "purgstall-erlauf.gv.at",
-        "purgstall.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "purgstall-erlauf.gv.at"
-        ],
-        "bresu_email": [
-          "purgstall.at"
-        ],
-        "wikidata": [
-          "purgstall.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "32114",
-      "name": "Kirchberg am Wagram",
-      "region": "Niederösterreich",
-      "website": "kirchberg-wagram.at",
-      "emails": [
-        "kirchberg-wagram.gv.at",
-        "kirchberg-wagram.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu_email": [
-          "kirchberg-wagram.gv.at"
-        ],
-        "wikidata": [
-          "kirchberg-wagram.at"
+          "zeiselmauer-wolfpassing.at"
         ]
       },
       "flags": [
@@ -610,999 +3025,20 @@
       "region": "Niederösterreich",
       "website": "gross-siegharts.gv.at",
       "emails": [
+        "gde.siegharts.at",
         "siegharts.at"
       ],
-      "source": "wikidata",
+      "source": "static",
       "confidence": "medium",
       "sources_detail": {
         "bresu": [
           "gross-siegharts.gv.at"
         ],
+        "bresu_email": [
+          "gde.siegharts.at"
+        ],
         "wikidata": [
           "siegharts.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "32221",
-      "name": "Waidhofen an der Thaya-Land",
-      "region": "Niederösterreich",
-      "website": "waidhofen-thaya-land.gv.at",
-      "emails": [
-        "waidhofen-land.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "waidhofen-thaya-land.gv.at"
-        ],
-        "bresu_email": [
-          "waidhofen-land.at"
-        ],
-        "wikidata": [
-          "waidhofen-thaya-land.gv.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "32314",
-      "name": "Kirchschlag in der Buckligen Welt",
-      "region": "Niederösterreich",
-      "website": "kirchschlag-bw.gv.at",
-      "emails": [
-        "kirchschlag-bw.gv.at",
-        "kirchschlag.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "kirchschlag-bw.gv.at"
-        ],
-        "bresu_email": [
-          "kirchschlag.at"
-        ],
-        "wikidata": [
-          "kirchschlag.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "40404",
-      "name": "Braunau am Inn",
-      "region": "Oberösterreich",
-      "website": "braunau.at",
-      "emails": [
-        "braunau.ooe.gv.at",
-        "braunau.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "braunau.at"
-        ],
-        "bresu_email": [
-          "braunau.ooe.gv.at"
-        ],
-        "wikidata": [
-          "braunau.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "40430",
-      "name": "Perwang am Grabensee",
-      "region": "Oberösterreich",
-      "website": "perwang.gem2go.page",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
-      "sources_detail": {
-        "bresu": [
-          "perwang.at"
-        ],
-        "wikidata": [
-          "perwang.at"
-        ]
-      },
-      "flags": []
-    },
-    {
-      "code": "40436",
-      "name": "St. Johann am Walde",
-      "region": "Oberösterreich",
-      "website": "saigahans.at",
-      "emails": [
-        "st-johann-walde.ooe.gv.at",
-        "saigahans.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "saigahans.at"
-        ],
-        "bresu_email": [
-          "st-johann-walde.ooe.gv.at"
-        ],
-        "wikidata": [
-          "saigahans.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "40446",
-      "name": "Weng im Innkreis",
-      "region": "Oberösterreich",
-      "website": "weng-innkreis.gv.at",
-      "emails": [
-        "weng-innkreis.ooe.gv.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "weng-innkreis.gv.at"
-        ],
-        "bresu_email": [
-          "weng-innkreis.ooe.gv.at"
-        ],
-        "wikidata": [
-          "weng-innkreis.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "40624",
-      "name": "Wartberg ob der Aist",
-      "region": "Oberösterreich",
-      "website": "wartberg-aist.at",
-      "emails": [
-        "wartberg-aist.ooe.gv.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "wartberg-aist.at"
-        ],
-        "bresu_email": [
-          "wartberg-aist.ooe.gv.at"
-        ],
-        "wikidata": [
-          "wartberg-aist.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "40704",
-      "name": "Ebensee am Traunsee",
-      "region": "Oberösterreich",
-      "website": "ebensee.at",
-      "emails": [
-        "ebensee.ooe.gv.at",
-        "ebensee.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "ebensee.at"
-        ],
-        "bresu_email": [
-          "ebensee.ooe.gv.at"
-        ],
-        "wikidata": [
-          "ebensee.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "40717",
-      "name": "St. Wolfgang im Salzkammergut",
-      "region": "Oberösterreich",
-      "website": "stwolfgang.at",
-      "emails": [
-        "st-wolfgang.ooe.gv.at",
-        "stwolfgang.at",
-        "wolfgangsee.at"
-      ],
-      "source": "wikidata",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "stwolfgang.at"
-        ],
-        "bresu_email": [
-          "wolfgangsee.at"
-        ],
-        "wikidata": [
-          "st-wolfgang.ooe.gv.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "40813",
-      "name": "Kematen am Innbach",
-      "region": "Oberösterreich",
-      "website": "kematen-innbach.at",
-      "emails": [
-        "kematen-innbach.ooe.gv.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "kematen-innbach.at"
-        ],
-        "bresu_email": [
-          "kematen-innbach.ooe.gv.at"
-        ],
-        "wikidata": [
-          "kematen-innbach.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "40825",
-      "name": "St. Georgen bei Grieskirchen",
-      "region": "Oberösterreich",
-      "website": "st-georgen-bei-grieskirchen.gem2go.page",
-      "emails": [
-        "st-georgen-grieskirchen.ooe.gv.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "st-georgen-bei-grieskirchen.riskommunal.net"
-        ],
-        "bresu_email": [
-          "st-georgen-grieskirchen.ooe.gv.at"
-        ],
-        "wikidata": [
-          "st.georgen.co.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "40829",
-      "name": "Taufkirchen an der Trattnach",
-      "region": "Oberösterreich",
-      "website": "taufkirchen.at",
-      "emails": [
-        "taufkirchen-trattnach.ooe.gv.at",
-        "taufkirchen.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "taufkirchen.at"
-        ],
-        "bresu_email": [
-          "taufkirchen-trattnach.ooe.gv.at"
-        ],
-        "wikidata": [
-          "taufkirchen.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "40914",
-      "name": "Rosenau am Hengstpaß",
-      "region": "Oberösterreich",
-      "website": "rosenau-hp.at",
-      "emails": [
-        "rosenau.ooe.gv.at",
-        "rosenau.at"
-      ],
-      "source": "wikidata",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "rosenau.at"
-        ],
-        "bresu_email": [
-          "rosenau.at"
-        ],
-        "wikidata": [
-          "rosenau.ooe.gv.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "40919",
-      "name": "Steinbach am Ziehberg",
-      "region": "Oberösterreich",
-      "website": "steinbach-ziehberg.at",
-      "emails": [
-        "steinbach-ziehberg.ooe.gv.at",
-        "steinbach-ziehberg.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "steinbach-ziehberg.at"
-        ],
-        "bresu_email": [
-          "steinbach-ziehberg.ooe.gv.at"
-        ],
-        "wikidata": [
-          "steinbach-ziehberg.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "40922",
-      "name": "Wartberg an der Krems",
-      "region": "Oberösterreich",
-      "website": "wartberg.at",
-      "emails": [
-        "wartberg-krems.ooe.gv.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "wartberg.at"
-        ],
-        "bresu_email": [
-          "wartberg-krems.ooe.gv.at"
-        ],
-        "wikidata": [
-          "wartberg.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "41118",
-      "name": "Ried in der Riedmark",
-      "region": "Oberösterreich",
-      "website": "ried-riedmark.at",
-      "emails": [
-        "ried-riedmark.ooe.gv.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "ried-riedmark.at"
-        ],
-        "bresu_email": [
-          "ried-riedmark.ooe.gv.at"
-        ],
-        "wikidata": [
-          "ried-riedmark.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "41125",
-      "name": "Waldhausen im Strudengau",
-      "region": "Oberösterreich",
-      "website": "waldhausen.at",
-      "emails": [
-        "waldhausen.ooe.gv.at",
-        "waldhausen.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "waldhausen.at"
-        ],
-        "bresu_email": [
-          "waldhausen.ooe.gv.at"
-        ],
-        "wikidata": [
-          "waldhausen.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "41211",
-      "name": "Kirchheim im Innkreis",
-      "region": "Oberösterreich",
-      "website": "kirchheim.at",
-      "emails": [
-        "kirchheim.ooe.gv.at",
-        "kirchheim.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "kirchheim.at"
-        ],
-        "bresu_email": [
-          "kirchheim.ooe.gv.at"
-        ],
-        "wikidata": [
-          "kirchheim.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "41217",
-      "name": "Mühlheim am Inn",
-      "region": "Oberösterreich",
-      "website": "muehlheim.at",
-      "emails": [
-        "muehlheim-inn.ooe.gv.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "muehlheim.at"
-        ],
-        "bresu_email": [
-          "muehlheim-inn.ooe.gv.at"
-        ],
-        "wikidata": [
-          "muehlheim.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "41226",
-      "name": "St. Georgen bei Obernberg am Inn",
-      "region": "Oberösterreich",
-      "website": "st-georgen-bei-obernberg.at",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
-      "sources_detail": {
-        "bresu": [
-          "st-georgen-bei-obernberg.at"
-        ],
-        "wikidata": [
-          "st-georgen-bei-obernberg.at"
-        ]
-      },
-      "flags": []
-    },
-    {
-      "code": "41231",
-      "name": "Taiskirchen im Innkreis",
-      "region": "Oberösterreich",
-      "website": "taiskirchen.at",
-      "emails": [
-        "taiskirchen.ooe.gv.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "taiskirchen.at"
-        ],
-        "bresu_email": [
-          "taiskirchen.ooe.gv.at"
-        ],
-        "wikidata": [
-          "taiskirchen.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "41316",
-      "name": "Kleinzell im Mühlkreis",
-      "region": "Oberösterreich",
-      "website": "kleinzell.at",
-      "emails": [
-        "kleinzell.ooe.gv.at",
-        "kleinzell.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "kleinzell.at"
-        ],
-        "bresu_email": [
-          "kleinzell.ooe.gv.at"
-        ],
-        "wikidata": [
-          "kleinzell.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "41318",
-      "name": "Lembach im Mühlkreis",
-      "region": "Oberösterreich",
-      "website": "lembach-hoerbich.at",
-      "emails": [
-        "lembach.ooe.gv.at",
-        "gemeinde-lembach.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "gemeinde-lembach.at"
-        ],
-        "bresu_email": [
-          "lembach.ooe.gv.at"
-        ],
-        "wikidata": [
-          "gemeinde-lembach.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "41327",
-      "name": "Pfarrkirchen im Mühlkreis",
-      "region": "Oberösterreich",
-      "website": "pfarrkirchen-muehlkreis.ooe.gv.at",
-      "emails": [
-        "pfarrkirchen-muehlkreis.ooe.gv.at",
-        "pfarrkirchen.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "pfarrkirchen-muehlkreis.ooe.gv.at"
-        ],
-        "bresu_email": [
-          "pfarrkirchen.at"
-        ],
-        "wikidata": [
-          "pfarrkirchen.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "41411",
-      "name": "Kopfing im Innkreis",
-      "region": "Oberösterreich",
-      "website": "kopfing.at",
-      "emails": [
-        "kopfing.ooe.gv.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "kopfing.at"
-        ],
-        "bresu_email": [
-          "kopfing.ooe.gv.at"
-        ],
-        "wikidata": [
-          "kopfing.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "41418",
-      "name": "St. Florian am Inn",
-      "region": "Oberösterreich",
-      "website": "st-florian-inn.at",
-      "emails": [
-        "st-florian-inn.ooe.gv.at",
-        "st-florian-inn.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "st-florian-inn.at"
-        ],
-        "bresu_email": [
-          "st-florian-inn.ooe.gv.at"
-        ],
-        "wikidata": [
-          "st-florian-inn.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "41419",
-      "name": "St. Marienkirchen bei Schärding",
-      "region": "Oberösterreich",
-      "website": "st-marienkirchen.at",
-      "emails": [
-        "st-marienkirchen.ooe.gv.at",
-        "st-marienkirchen.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "st-marienkirchen.at"
-        ],
-        "bresu_email": [
-          "st-marienkirchen.ooe.gv.at"
-        ],
-        "wikidata": [
-          "st-marienkirchen.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "41511",
-      "name": "Pfarrkirchen bei Bad Hall",
-      "region": "Oberösterreich",
-      "website": "pfarrkirchen-badhall.at",
-      "emails": [
-        "pfarrkirchen-badhall.ooe.gv.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "pfarrkirchen-badhall.at"
-        ],
-        "bresu_email": [
-          "pfarrkirchen-badhall.ooe.gv.at"
-        ],
-        "wikidata": [
-          "pfarrkirchen-badhall.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "41514",
-      "name": "St. Ulrich bei Steyr",
-      "region": "Oberösterreich",
-      "website": "st-ulrich.at",
-      "emails": [
-        "st-ulrich-steyr.ooe.gv.at",
-        "st-ulrich.at"
-      ],
-      "source": "wikidata",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "st-ulrich.at"
-        ],
-        "bresu_email": [
-          "st-ulrich.at"
-        ],
-        "wikidata": [
-          "st-ulrich-steyr.ooe.gv.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "41601",
-      "name": "Alberndorf in der Riedmark",
-      "region": "Oberösterreich",
-      "website": "alberndorf.at",
-      "emails": [
-        "alberndorf.ooe.gv.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "alberndorf.at"
-        ],
-        "bresu_email": [
-          "alberndorf.ooe.gv.at"
-        ],
-        "wikidata": [
-          "alberndorf.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "41621",
-      "name": "St. Gotthard im Mühlkreis",
-      "region": "Oberösterreich",
-      "website": "sanktgotthard.at",
-      "emails": [
-        "st-gotthard.ooe.gv.at",
-        "sanktgotthard.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "sanktgotthard.at"
-        ],
-        "bresu_email": [
-          "st-gotthard.ooe.gv.at"
-        ],
-        "wikidata": [
-          "sanktgotthard.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "41701",
-      "name": "Ampflwang im Hausruckwald",
-      "region": "Oberösterreich",
-      "website": "ampflwang.at",
-      "emails": [
-        "ampflwang.ooe.gv.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "ampflwang.at"
-        ],
-        "bresu_email": [
-          "ampflwang.ooe.gv.at"
-        ],
-        "wikidata": [
-          "ampflwang.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "41702",
-      "name": "Attersee am Attersee",
-      "region": "Oberösterreich",
-      "website": "attersee-attergau.salzkammergut.at",
-      "emails": [
-        "attersee.ooe.gv.at",
-        "attersee.at"
-      ],
-      "source": "wikidata",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "attersee.at"
-        ],
-        "bresu_email": [
-          "attersee.at"
-        ],
-        "wikidata": [
-          "attersee.ooe.gv.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "41716",
-      "name": "Neukirchen an der Vöckla",
-      "region": "Oberösterreich",
-      "website": "neukirchen-voeckla.at",
-      "emails": [
-        "neukirchen-voeckla.ooe.gv.at",
-        "neukirchen-voeckla.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "neukirchen-voeckla.at"
-        ],
-        "bresu_email": [
-          "neukirchen-voeckla.ooe.gv.at"
-        ],
-        "wikidata": [
-          "neukirchen-voeckla.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "41727",
-      "name": "Puchkirchen am Trattberg",
-      "region": "Oberösterreich",
-      "website": "puchkirchen.at",
-      "emails": [
-        "puchkirchen.ooe.gv.at",
-        "puchkirchen.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "puchkirchen.at"
-        ],
-        "bresu_email": [
-          "puchkirchen.ooe.gv.at"
-        ],
-        "wikidata": [
-          "puchkirchen.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "41740",
-      "name": "Steinbach am Attersee",
-      "region": "Oberösterreich",
-      "website": "steinbach-attersee.at",
-      "emails": [
-        "steinbach-attersee.ooe.gv.at",
-        "steinbach-attersee.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "steinbach-attersee.at"
-        ],
-        "bresu_email": [
-          "steinbach-attersee.ooe.gv.at"
-        ],
-        "wikidata": [
-          "steinbach-attersee.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "41741",
-      "name": "Straß im Attergau",
-      "region": "Oberösterreich",
-      "website": "strassimattergau.at",
-      "emails": [
-        "strass.ooe.gv.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "strassimattergau.at"
-        ],
-        "bresu_email": [
-          "strass.ooe.gv.at"
-        ],
-        "wikidata": [
-          "strassimattergau.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "41749",
-      "name": "Weyregg am Attersee",
-      "region": "Oberösterreich",
-      "website": "weyregg.at",
-      "emails": [
-        "weyregg.ooe.gv.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "weyregg.at"
-        ],
-        "bresu_email": [
-          "weyregg.ooe.gv.at"
-        ],
-        "wikidata": [
-          "weyregg.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "41751",
-      "name": "Zell am Moos",
-      "region": "Oberösterreich",
-      "website": "zell-moos.at",
-      "emails": [
-        "zell-moos.ooe.gv.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "zell-moos.at"
-        ],
-        "bresu_email": [
-          "zell-moos.ooe.gv.at"
-        ],
-        "wikidata": [
-          "zell-moos.at"
         ]
       },
       "flags": [
@@ -1636,211 +3072,25 @@
       ]
     },
     {
-      "code": "41813",
-      "name": "Neukirchen bei Lambach",
-      "region": "Oberösterreich",
-      "website": "gemeindeneukirchen.at",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
-      "sources_detail": {
-        "bresu": [
-          "gemeindeneukirchen.at"
-        ],
-        "wikidata": [
-          "gemeindeneukirchen.at"
-        ]
-      },
-      "flags": []
-    },
-    {
-      "code": "41816",
-      "name": "Pichl bei Wels",
-      "region": "Oberösterreich",
-      "website": "pichl-medaillen.com",
-      "emails": [
-        "pichl.ooe.gv.at",
-        "pichl.co.at",
-        "pichl.com"
-      ],
-      "source": "wikidata",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "pichl.co.at"
-        ],
-        "bresu_email": [
-          "pichl.com"
-        ],
-        "wikidata": [
-          "pichl.ooe.gv.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "41823",
-      "name": "Thalheim bei Wels",
-      "region": "Oberösterreich",
-      "website": "thalheim.at",
-      "emails": [
-        "thalheim.ooe.gv.at",
-        "thalheim.at"
-      ],
-      "source": "wikidata",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "thalheim.at"
-        ],
-        "bresu_email": [
-          "thalheim.at"
-        ],
-        "wikidata": [
-          "thalheim.ooe.gv.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
       "code": "50212",
       "name": "Scheffau am Tennengebirge",
       "region": "Salzburg",
-      "website": "",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
-      "sources_detail": {},
-      "flags": []
-    },
-    {
-      "code": "50319",
-      "name": "Hof bei Salzburg",
-      "region": "Salzburg",
-      "website": "hof-partner.at",
+      "website": "scheffau.gv.at",
       "emails": [
-        "hof-partner.at",
-        "hofonline.at"
+        "scheffau.gv.at"
       ],
-      "source": "static",
-      "confidence": "medium",
+      "source": "guess",
+      "confidence": "low",
       "sources_detail": {
         "bresu_email": [
-          "hof-partner.at"
+          "scheffau.salzburg.at"
         ],
-        "wikidata": [
-          "hofonline.at"
+        "guess": [
+          "scheffau.gv.at"
         ]
       },
       "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "50421",
-      "name": "Schwarzach im Pongau",
-      "region": "Salzburg",
-      "website": "schwarzach-pongau.gv.at",
-      "emails": [
-        "schwarzach-pongau.gv.at",
-        "gde-schwarzach.at",
-        "gde-schwarzach.salzburg.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "schwarzach-pongau.gv.at"
-        ],
-        "bresu_email": [
-          "gde-schwarzach.at"
-        ],
-        "wikidata": [
-          "gde-schwarzach.salzburg.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "50508",
-      "name": "St. Margarethen im Lungau",
-      "region": "Salzburg",
-      "website": "st.margarethen.salzburg.at",
-      "emails": [
-        "gde-st-margarethen.salzburg.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "st.margarethen.salzburg.at"
-        ],
-        "bresu_email": [
-          "gde-st-margarethen.salzburg.at"
-        ],
-        "wikidata": [
-          "st.margarethen.salzburg.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "50601",
-      "name": "Bramberg am Wildkogel",
-      "region": "Salzburg",
-      "website": "bramberg.salzburg.at",
-      "emails": [
-        "bramberg.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "bramberg.salzburg.at"
-        ],
-        "bresu_email": [
-          "bramberg.at"
-        ],
-        "wikidata": [
-          "bramberg.salzburg.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "50614",
-      "name": "Neukirchen am Großvenediger",
-      "region": "Salzburg",
-      "website": "neukirchen.salzburg.at",
-      "emails": [
-        "neukirchen.at",
-        "neukirchen.salzburg.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "neukirchen.salzburg.at"
-        ],
-        "bresu_email": [
-          "neukirchen.at"
-        ],
-        "wikidata": [
-          "neukirchen.salzburg.at"
-        ]
-      },
-      "flags": [
-        "unverified"
+        "guess_only"
       ]
     },
     {
@@ -1870,165 +3120,10 @@
       ]
     },
     {
-      "code": "50626",
-      "name": "Wald im Pinzgau",
-      "region": "Salzburg",
-      "website": "wald.salzburg.at",
-      "emails": [
-        "wald-pzg.at",
-        "wald.salzburg.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "wald.salzburg.at"
-        ],
-        "bresu_email": [
-          "wald-pzg.at"
-        ],
-        "wikidata": [
-          "wald.salzburg.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "60305",
-      "name": "Frauental an der Laßnitz",
-      "region": "Steiermark",
-      "website": "gde-frauental.at",
-      "emails": [
-        "frauental-lassnitz.steiermark.at",
-        "gde-frauental.at"
-      ],
-      "source": "wikidata",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "gde-frauental.at"
-        ],
-        "bresu_email": [
-          "gde-frauental.at"
-        ],
-        "wikidata": [
-          "frauental-lassnitz.steiermark.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "60326",
-      "name": "Sankt Josef (Weststeiermark)",
-      "region": "Steiermark",
-      "website": "st-josef-weststeiermark.gv.at",
-      "emails": [
-        "st-josef-weststeiermark.gv.at",
-        "st-josef.steiermark.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "st-josef-weststeiermark.gv.at"
-        ],
-        "bresu_email": [
-          "st-josef.steiermark.at"
-        ],
-        "wikidata": [
-          "st-josef.steiermark.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "60608",
-      "name": "Feldkirchen bei Graz",
-      "region": "Steiermark",
-      "website": "feldkirchen-graz.at",
-      "emails": [
-        "feldkirchen-graz.gv.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "feldkirchen-graz.at"
-        ],
-        "bresu_email": [
-          "feldkirchen-graz.gv.at"
-        ],
-        "wikidata": [
-          "feldkirchen-graz.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "61021",
-      "name": "Lebring-Sankt Margarethen",
-      "region": "Steiermark",
-      "website": "lebring.gv.at",
-      "emails": [
-        "lebring-st-margarethen.gv.at",
-        "lebring.gv.at",
-        "lebring-st-margarethen.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "lebring.gv.at"
-        ],
-        "bresu_email": [
-          "lebring-st-margarethen.gv.at"
-        ],
-        "wikidata": [
-          "lebring-st-margarethen.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "61106",
-      "name": "Kammern im Liesingtal",
-      "region": "Steiermark",
-      "website": "kammern-liesingtal.gv.at",
-      "emails": [
-        "kammern.net"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "kammern-liesingtal.at"
-        ],
-        "bresu_email": [
-          "kammern.net"
-        ],
-        "wikidata": [
-          "kammern-liesingtal.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
       "code": "61113",
       "name": "Sankt Michael in Obersteiermark",
       "region": "Steiermark",
-      "website": "gemeinde-stmichael.at",
+      "website": "info.gem2go.page",
       "emails": [
         "gemeinde-stmichael.at",
         "st-michael.steiermark.at"
@@ -2055,9 +3150,11 @@
       "name": "Sankt Peter-Freienstein",
       "region": "Steiermark",
       "website": "",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
+      "emails": [
+        "st-peter-freienstein.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
       "sources_detail": {
         "bresu": [
           "stpfrst.at"
@@ -2067,15 +3164,20 @@
         ],
         "wikidata": [
           "stpfrst.at"
+        ],
+        "guess": [
+          "st-peter-freienstein.gv.at"
         ]
       },
-      "flags": []
+      "flags": [
+        "guess_only"
+      ]
     },
     {
       "code": "61115",
       "name": "Sankt Stefan ob Leoben",
       "region": "Steiermark",
-      "website": "st-stefan-leoben.at",
+      "website": "stefan-leoben.at",
       "emails": [
         "stefan-leoben.at"
       ],
@@ -2097,28 +3199,10 @@
       ]
     },
     {
-      "code": "61205",
-      "name": "Altenmarkt bei Sankt Gallen",
-      "region": "Steiermark",
-      "website": "altenmarkt-enns.at",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
-      "sources_detail": {
-        "bresu": [
-          "altenmarkt.istsuper.com"
-        ],
-        "wikidata": [
-          "altenmarkt.istsuper.com"
-        ]
-      },
-      "flags": []
-    },
-    {
       "code": "61257",
       "name": "Irdning-Donnersbachtal",
       "region": "Steiermark",
-      "website": "irdning-donnersbachtal.at",
+      "website": "",
       "emails": [
         "irdning.at"
       ],
@@ -2140,48 +3224,25 @@
       ]
     },
     {
-      "code": "61264",
-      "name": "Sankt Gallen",
+      "code": "61761",
+      "name": "Gutenberg",
       "region": "Steiermark",
-      "website": "istsuper.com",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
-      "sources_detail": {
-        "bresu": [
-          "st-gallen.istsuper.com"
-        ],
-        "wikidata": [
-          "st-gallen.istsuper.com"
-        ]
-      },
-      "flags": []
-    },
-    {
-      "code": "61621",
-      "name": "Sankt Martin am Wöllmißberg",
-      "region": "Steiermark",
-      "website": "st-martin-woellmissberg.gv.at",
+      "website": "gutenberg.gv.at",
       "emails": [
-        "st-martin-woellmissberg.gv.at",
-        "st-martin-woellmissberg.at",
-        "st-martin-wöllmissberg.at"
+        "gutenberg.gv.at"
       ],
-      "source": "static",
-      "confidence": "medium",
+      "source": "guess",
+      "confidence": "low",
       "sources_detail": {
-        "bresu": [
-          "st-martin-woellmissberg.at"
-        ],
         "bresu_email": [
-          "st-martin-woellmissberg.gv.at"
+          "gutenberg-stenzengreith.gv.at"
         ],
-        "wikidata": [
-          "st-martin-wöllmissberg.at"
+        "guess": [
+          "gutenberg.gv.at"
         ]
       },
       "flags": [
-        "unverified"
+        "guess_only"
       ]
     },
     {
@@ -2189,227 +3250,261 @@
       "name": "Sankt Georgen ob Judenburg",
       "region": "Steiermark",
       "website": "st-georgen-judenburg.at",
+      "emails": [
+        "st-georgen-judenburg.gv.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "st-georgen-judenburg.at"
+        ],
+        "bresu_email": [
+          "st-georgen-judenburg.gv.at"
+        ],
+        "wikidata": [
+          "st-georgen-judenburg.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "70202",
+      "name": "Haiming",
+      "region": "Tirol",
+      "website": "haiming.gv.at",
+      "emails": [
+        "haiming.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "haiming.tirol.gv.at"
+        ],
+        "guess": [
+          "haiming.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70204",
+      "name": "Imsterberg",
+      "region": "Tirol",
+      "website": "imsterberg.gv.at",
+      "emails": [
+        "imsterberg.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "imsterberg.tirol.gv.at"
+        ],
+        "guess": [
+          "imsterberg.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70205",
+      "name": "Jerzens",
+      "region": "Tirol",
+      "website": "jerzens.gv.at",
+      "emails": [
+        "jerzens.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "jerzens.tirol.gv.at"
+        ],
+        "guess": [
+          "jerzens.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70206",
+      "name": "Karres",
+      "region": "Tirol",
+      "website": "karres.gv.at",
+      "emails": [
+        "karres.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "karres.tirol.gv.at"
+        ],
+        "guess": [
+          "karres.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70207",
+      "name": "Karrösten",
+      "region": "Tirol",
+      "website": "karroesten.gv.at",
+      "emails": [
+        "karroesten.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "karroesten.tirol.gv.at"
+        ],
+        "guess": [
+          "karroesten.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70208",
+      "name": "Längenfeld",
+      "region": "Tirol",
+      "website": "xn--lngenfeld-v2a.at",
       "emails": [],
       "source": "none",
       "confidence": "none",
       "sources_detail": {
         "bresu": [
-          "st-georgen-judenburg.at"
+          "gemeinde-laengenfeld.at"
         ],
-        "wikidata": [
-          "st-georgen-judenburg.at"
+        "bresu_email": [
+          "laengenfeld.tirol.gv.at"
         ]
       },
       "flags": []
     },
     {
-      "code": "62139",
-      "name": "Bruck an der Mur",
-      "region": "Steiermark",
-      "website": "bruckmur.at",
-      "emails": [
-        "bruck-mur.gv.at",
-        "bruckmur.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "bruck-mur.gv.at"
-        ],
-        "bresu_email": [
-          "bruckmur.at"
-        ],
-        "wikidata": [
-          "bruckmur.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "62146",
-      "name": "Sankt Marein im Mürztal",
-      "region": "Steiermark",
-      "website": "stmarein-mzt.at",
-      "emails": [
-        "st-marein-muerztal.steiermark.at",
-        "stmarein-mzt.at"
-      ],
-      "source": "wikidata",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "stmarein-mzt.at"
-        ],
-        "wikidata": [
-          "st-marein-muerztal.steiermark.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "62232",
-      "name": "Ottendorf an der Rittschein",
-      "region": "Steiermark",
-      "website": "ottendorf.at",
-      "emails": [
-        "ottendorf.gv.at",
-        "ottendorf-rittschein.steiermark.at",
-        "ottendorf.com"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "ottendorf-rittschein.steiermark.at"
-        ],
-        "bresu_email": [
-          "ottendorf.gv.at"
-        ],
-        "wikidata": [
-          "ottendorf.com"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "62244",
-      "name": "Sankt Johann in der Haide",
-      "region": "Steiermark",
-      "website": "st-johann-haide.gv.at",
-      "emails": [
-        "st-johann-haide.gv.at",
-        "st-johann-haide.steiermark.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "st-johann-haide.steiermark.at"
-        ],
-        "bresu_email": [
-          "st-johann-haide.gv.at"
-        ],
-        "wikidata": [
-          "st-johann-haide.steiermark.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "62245",
-      "name": "Sankt Lorenzen am Wechsel",
-      "region": "Steiermark",
-      "website": "st-lorenzen-wechsel.at",
-      "emails": [
-        "st-lorenzen-wechsel.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "st-lorenzen-wechsel.at"
-        ],
-        "bresu_email": [
-          "st-lorenzen-wechsel.steiermark.at"
-        ],
-        "wikidata": [
-          "st-lorenzen-wechsel.steiermark.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "62388",
-      "name": "Sankt Peter am Ottersbach",
-      "region": "Steiermark",
-      "website": "st-peter-ottersbach.gv.at",
-      "emails": [
-        "st-peter-ottersbach.gv.at",
-        "kd-gmbh.at",
-        "stpeter-weindorf.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "st-peter-ottersbach.gv.at"
-        ],
-        "bresu_email": [
-          "kd-gmbh.at"
-        ],
-        "wikidata": [
-          "stpeter-weindorf.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "62389",
-      "name": "Sankt Stefan im Rosental",
-      "region": "Steiermark",
-      "website": "rosental.at",
-      "emails": [
-        "rosental.at",
-        "st.stefan.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "rosental.at"
-        ],
-        "bresu_email": [
-          "st.stefan.at"
-        ],
-        "wikidata": [
-          "st.stefan.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "70201",
-      "name": "Arzl im Pitztal",
-      "region": "Tirol",
-      "website": "",
-      "emails": [
-        "arzl-pitztal.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "arzl-pitztal.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
       "code": "70210",
       "name": "Mils bei Imst",
       "region": "Tirol",
-      "website": "",
+      "website": "mils-imst.gv.at",
+      "emails": [
+        "mils-imst.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "mils-bei-imst.tirol.gv.at"
+        ],
+        "guess": [
+          "mils-imst.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70211",
+      "name": "Mötz",
+      "region": "Tirol",
+      "website": "moetz.gv.at",
+      "emails": [
+        "moetz.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "moetz.tirol.gv.at"
+        ],
+        "guess": [
+          "moetz.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70212",
+      "name": "Nassereith",
+      "region": "Tirol",
+      "website": "nassereith.at",
+      "emails": [
+        "nassereith.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu": [
+          "nassereith.at"
+        ],
+        "bresu_email": [
+          "nassereith.tirol.gv.at"
+        ],
+        "guess": [
+          "nassereith.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70214",
+      "name": "Oetz",
+      "region": "Tirol",
+      "website": "oetz.gv.at",
+      "emails": [
+        "oetz.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "oetz.tirol.gv.at"
+        ],
+        "guess": [
+          "oetz.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70216",
+      "name": "Roppen",
+      "region": "Tirol",
+      "website": "roppen.at",
       "emails": [],
       "source": "none",
       "confidence": "none",
-      "sources_detail": {},
+      "sources_detail": {
+        "bresu": [
+          "roppen.at"
+        ],
+        "bresu_email": [
+          "roppen.tirol.gv.at"
+        ]
+      },
       "flags": []
     },
     {
@@ -2417,15 +3512,213 @@
       "name": "St. Leonhard im Pitztal",
       "region": "Tirol",
       "website": "gem2go.info",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
+      "emails": [
+        "st-leonhard-pitztal.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
       "sources_detail": {
+        "bresu_email": [
+          "st-leonhard-pitztal.tirol.gv.at"
+        ],
         "wikidata": [
           "www2.riskommunal.net"
+        ],
+        "guess": [
+          "st-leonhard-pitztal.gv.at"
         ]
       },
-      "flags": []
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70220",
+      "name": "Sölden",
+      "region": "Tirol",
+      "website": "soelden.gv.at",
+      "emails": [
+        "soelden.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "soelden.tirol.gv.at"
+        ],
+        "guess": [
+          "soelden.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70222",
+      "name": "Tarrenz",
+      "region": "Tirol",
+      "website": "tarrenz.at",
+      "emails": [
+        "tarrenz.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu": [
+          "tarrenz.at"
+        ],
+        "bresu_email": [
+          "tarrenz.tirol.gv.at"
+        ],
+        "wikidata": [
+          "tarrenz.at"
+        ],
+        "guess": [
+          "tarrenz.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70224",
+      "name": "Wenns",
+      "region": "Tirol",
+      "website": "gem2go.info",
+      "emails": [
+        "wenns.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "wenns.tirol.gv.at"
+        ],
+        "wikidata": [
+          "www2.riskommunal.net"
+        ],
+        "guess": [
+          "wenns.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70303",
+      "name": "Ampass",
+      "region": "Tirol",
+      "website": "ampass.gv.at",
+      "emails": [
+        "ampass.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "ampass.tirol.gv.at"
+        ],
+        "guess": [
+          "ampass.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70305",
+      "name": "Baumkirchen",
+      "region": "Tirol",
+      "website": "baumkirchen.at",
+      "emails": [
+        "baumkirchen.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu": [
+          "baumkirchen.at"
+        ],
+        "bresu_email": [
+          "baumkirchen.tirol.gv.at"
+        ],
+        "guess": [
+          "baumkirchen.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70306",
+      "name": "Birgitz",
+      "region": "Tirol",
+      "website": "birgitz.gv.at",
+      "emails": [
+        "birgitz.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "birgitz.tirol.gv.at"
+        ],
+        "guess": [
+          "birgitz.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70308",
+      "name": "Flaurling",
+      "region": "Tirol",
+      "website": "flaurling.gv.at",
+      "emails": [
+        "flaurling.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "flaurling.tirol.gv.at"
+        ],
+        "guess": [
+          "flaurling.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70309",
+      "name": "Fritzens",
+      "region": "Tirol",
+      "website": "fritzens.gv.at",
+      "emails": [
+        "fritzens.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "fritzens.tirol.gv.at"
+        ],
+        "guess": [
+          "fritzens.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
     },
     {
       "code": "70311",
@@ -2456,78 +3749,464 @@
       "code": "70313",
       "name": "Gries am Brenner",
       "region": "Tirol",
-      "website": "",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
-      "sources_detail": {},
-      "flags": []
+      "website": "gries-brenner.gv.at",
+      "emails": [
+        "gries-brenner.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "griesambrenner.tirol.gv.at"
+        ],
+        "guess": [
+          "gries-brenner.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
     },
     {
       "code": "70314",
       "name": "Gries im Sellrain",
       "region": "Tirol",
-      "website": "",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
-      "sources_detail": {},
-      "flags": []
+      "website": "gries-sellrain.gv.at",
+      "emails": [
+        "gries-sellrain.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "gries-im-sellrain.tirol.gv.at"
+        ],
+        "guess": [
+          "gries-sellrain.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70315",
+      "name": "Grinzens",
+      "region": "Tirol",
+      "website": "grinzens.gv.at",
+      "emails": [
+        "grinzens.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "grinzens.tirol.gv.at"
+        ],
+        "guess": [
+          "grinzens.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70317",
+      "name": "Gschnitz",
+      "region": "Tirol",
+      "website": "gschnitz.gem2go.page",
+      "emails": [
+        "gschnitz.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu": [
+          "gschnitz.riskommunal.net"
+        ],
+        "bresu_email": [
+          "gschnitz.tirol.gv.at"
+        ],
+        "guess": [
+          "gschnitz.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70319",
+      "name": "Inzing",
+      "region": "Tirol",
+      "website": "inzing.gv.at",
+      "emails": [
+        "inzing.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "inzing.tirol.gv.at"
+        ],
+        "guess": [
+          "inzing.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70326",
+      "name": "Leutasch",
+      "region": "Tirol",
+      "website": "leutasch.at",
+      "emails": [
+        "leutasch.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu": [
+          "leutasch.at"
+        ],
+        "bresu_email": [
+          "leutasch.tirol.gv.at"
+        ],
+        "wikidata": [
+          "leutasch.at"
+        ],
+        "guess": [
+          "leutasch.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70331",
+      "name": "Mutters",
+      "region": "Tirol",
+      "website": "mutters.gv.at",
+      "emails": [
+        "mutters.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "mutters.tirol.gv.at"
+        ],
+        "guess": [
+          "mutters.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70332",
+      "name": "Natters",
+      "region": "Tirol",
+      "website": "natters.gv.at",
+      "emails": [
+        "natters.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "natters.tirol.gv.at"
+        ],
+        "guess": [
+          "natters.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70333",
+      "name": "Navis",
+      "region": "Tirol",
+      "website": "navis.gv.at",
+      "emails": [
+        "navis.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "navis.tirol.gv.at"
+        ],
+        "guess": [
+          "navis.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
     },
     {
       "code": "70334",
       "name": "Neustift im Stubaital",
       "region": "Tirol",
-      "website": "",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
-      "sources_detail": {},
-      "flags": []
+      "website": "neustift-stubaital.gv.at",
+      "emails": [
+        "neustift-stubaital.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "neustift.tirol.gv.at"
+        ],
+        "guess": [
+          "neustift-stubaital.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
     },
     {
       "code": "70335",
       "name": "Oberhofen im Inntal",
       "region": "Tirol",
-      "website": "",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
-      "sources_detail": {},
-      "flags": []
+      "website": "oberhofen-inntal.gv.at",
+      "emails": [
+        "oberhofen-inntal.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "oberhofen.tirol.gv.at"
+        ],
+        "guess": [
+          "oberhofen-inntal.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
     },
     {
       "code": "70336",
       "name": "Obernberg am Brenner",
       "region": "Tirol",
-      "website": "",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
-      "sources_detail": {},
-      "flags": []
+      "website": "obernberg-brenner.gv.at",
+      "emails": [
+        "obernberg-brenner.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "obernberg-brenner.tirol.gv.at"
+        ],
+        "guess": [
+          "obernberg-brenner.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70339",
+      "name": "Pettnau",
+      "region": "Tirol",
+      "website": "pettnau.at",
+      "emails": [
+        "pettnau.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu": [
+          "pettnau.at"
+        ],
+        "bresu_email": [
+          "pettnau.tirol.gv.at"
+        ],
+        "wikidata": [
+          "pettnau.at"
+        ],
+        "guess": [
+          "pettnau.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70340",
+      "name": "Pfaffenhofen",
+      "region": "Tirol",
+      "website": "pfaffenhofen.gv.at",
+      "emails": [
+        "pfaffenhofen.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "pfaffenhofen.tirol.gv.at"
+        ],
+        "guess": [
+          "pfaffenhofen.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70343",
+      "name": "Ranggen",
+      "region": "Tirol",
+      "website": "ranggen.at",
+      "emails": [
+        "ranggen.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu": [
+          "ranggen.at"
+        ],
+        "bresu_email": [
+          "ranggen.tirol.gv.at"
+        ],
+        "wikidata": [
+          "ranggen.at"
+        ],
+        "guess": [
+          "ranggen.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70345",
+      "name": "Rinn",
+      "region": "Tirol",
+      "website": "rinn.gv.at",
+      "emails": [
+        "rinn.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "rinn.tirol.gv.at"
+        ],
+        "guess": [
+          "rinn.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
     },
     {
       "code": "70347",
       "name": "St. Sigmund im Sellrain",
       "region": "Tirol",
-      "website": "",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
-      "sources_detail": {},
-      "flags": []
+      "website": "st-sigmund.gv.at",
+      "emails": [
+        "st-sigmund.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "st-sigmund-sellrain.tirol.gv.at"
+        ],
+        "guess": [
+          "st-sigmund.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70348",
+      "name": "Scharnitz",
+      "region": "Tirol",
+      "website": "scharnitz.gv.at",
+      "emails": [
+        "scharnitz.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "scharnitz.tirol.gv.at"
+        ],
+        "guess": [
+          "scharnitz.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70349",
+      "name": "Schmirn",
+      "region": "Tirol",
+      "website": "schmirn.gv.at",
+      "emails": [
+        "schmirn.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "schmirn.tirol.gv.at"
+        ],
+        "guess": [
+          "schmirn.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
     },
     {
       "code": "70350",
       "name": "Schönberg im Stubaital",
       "region": "Tirol",
-      "website": "",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
-      "sources_detail": {},
-      "flags": []
+      "website": "schoenberg-stubaital.gv.at",
+      "emails": [
+        "schoenberg-stubaital.gv.at",
+        "schoenberg.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "schoenberg.tirol.gv.at"
+        ],
+        "guess": [
+          "schoenberg-stubaital.gv.at",
+          "schoenberg.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
     },
     {
       "code": "70351",
@@ -2555,48 +4234,299 @@
       ]
     },
     {
+      "code": "70352",
+      "name": "Sellrain",
+      "region": "Tirol",
+      "website": "sellrain.gv.at",
+      "emails": [
+        "sellrain.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "sellrain.tirol.gv.at"
+        ],
+        "guess": [
+          "sellrain.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
       "code": "70355",
       "name": "Steinach am Brenner",
       "region": "Tirol",
-      "website": "",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
-      "sources_detail": {},
-      "flags": []
+      "website": "steinach.gv.at",
+      "emails": [
+        "steinach.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "steinach-am-brenner.tirol.gv.at"
+        ],
+        "guess": [
+          "steinach.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70359",
+      "name": "Trins",
+      "region": "Tirol",
+      "website": "trins.gv.at",
+      "emails": [
+        "trins.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "trins.tirol.gv.at"
+        ],
+        "guess": [
+          "trins.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70360",
+      "name": "Tulfes",
+      "region": "Tirol",
+      "website": "tulfes.gv.at",
+      "emails": [
+        "tulfes.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "tulfes.tirol.gv.at"
+        ],
+        "guess": [
+          "tulfes.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70361",
+      "name": "Unterperfuss",
+      "region": "Tirol",
+      "website": "unterperfuss.gv.at",
+      "emails": [
+        "unterperfuss.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "unterperfuss.tirol.gv.at"
+        ],
+        "guess": [
+          "unterperfuss.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70362",
+      "name": "Vals",
+      "region": "Tirol",
+      "website": "vals.at",
+      "emails": [
+        "vals.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu": [
+          "vals.at"
+        ],
+        "bresu_email": [
+          "vals.tirol.gv.at"
+        ],
+        "wikidata": [
+          "vals.at"
+        ],
+        "guess": [
+          "vals.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70365",
+      "name": "Volders",
+      "region": "Tirol",
+      "website": "volders.gv.at",
+      "emails": [
+        "volders.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "volders.tirol.gv.at"
+        ],
+        "guess": [
+          "volders.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70368",
+      "name": "Wildermieming",
+      "region": "Tirol",
+      "website": "wildermieming.gv.at",
+      "emails": [
+        "wildermieming.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "wildermieming.tirol.gv.at"
+        ],
+        "guess": [
+          "wildermieming.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
     },
     {
       "code": "70401",
       "name": "Aurach bei Kitzbühel",
       "region": "Tirol",
-      "website": "",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
-      "sources_detail": {},
-      "flags": []
+      "website": "aurach-kitzbuehel.gv.at",
+      "emails": [
+        "aurach-kitzbuehel.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "aurach.tirol.gv.at"
+        ],
+        "guess": [
+          "aurach-kitzbuehel.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
     },
     {
       "code": "70402",
       "name": "Brixen im Thale",
       "region": "Tirol",
-      "website": "",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
-      "sources_detail": {},
-      "flags": []
+      "website": "brixen-thale.gv.at",
+      "emails": [
+        "brixen-thale.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "brixen-im-thale.tirol.gv.at"
+        ],
+        "guess": [
+          "brixen-thale.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
     },
     {
       "code": "70406",
       "name": "Hopfgarten im Brixental",
       "region": "Tirol",
-      "website": "",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
-      "sources_detail": {},
-      "flags": []
+      "website": "hopfgarten-brixental.gv.at",
+      "emails": [
+        "hopfgarten-brixental.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "hopfgarten.tirol.gv.at"
+        ],
+        "guess": [
+          "hopfgarten-brixental.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70407",
+      "name": "Itter",
+      "region": "Tirol",
+      "website": "gem2go.info",
+      "emails": [
+        "itter.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "itter.tirol.gv.at"
+        ],
+        "wikidata": [
+          "www2.riskommunal.net"
+        ],
+        "guess": [
+          "itter.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70408",
+      "name": "Jochberg",
+      "region": "Tirol",
+      "website": "jochberg.gv.at",
+      "emails": [
+        "jochberg.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "jochberg.tirol.gv.at"
+        ],
+        "guess": [
+          "jochberg.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
     },
     {
       "code": "70409",
@@ -2606,7 +4536,11 @@
       "emails": [],
       "source": "none",
       "confidence": "none",
-      "sources_detail": {},
+      "sources_detail": {
+        "bresu_email": [
+          "kirchberg.tirol.gv.at"
+        ]
+      },
       "flags": []
     },
     {
@@ -2617,7 +4551,11 @@
       "emails": [],
       "source": "none",
       "confidence": "none",
-      "sources_detail": {},
+      "sources_detail": {
+        "bresu_email": [
+          "kirchdorf.tirol.gv.at"
+        ]
+      },
       "flags": []
     },
     {
@@ -2628,98 +4566,482 @@
       "emails": [],
       "source": "none",
       "confidence": "none",
-      "sources_detail": {},
+      "sources_detail": {
+        "bresu_email": [
+          "st-jakob-haus.tirol.gv.at"
+        ]
+      },
       "flags": []
     },
     {
       "code": "70417",
       "name": "St. Ulrich am Pillersee",
       "region": "Tirol",
-      "website": "",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
-      "sources_detail": {},
-      "flags": []
-    },
-    {
-      "code": "70505",
-      "name": "Breitenbach am Inn",
-      "region": "Tirol",
-      "website": "breitenbach-inn.gv.at",
+      "website": "st-ulrich-pillersee.gv.at",
       "emails": [
-        "breitenbach.at"
+        "st-ulrich-pillersee.gv.at"
       ],
-      "source": "static",
-      "confidence": "medium",
-      "sources_detail": {
-        "bresu": [
-          "breitenbach.at"
-        ]
-      },
-      "flags": [
-        "unverified"
-      ]
-    },
-    {
-      "code": "70522",
-      "name": "Reith im Alpbachtal",
-      "region": "Tirol",
-      "website": "reithia.at",
-      "emails": [
-        "reithia.at"
-      ],
-      "source": "static",
-      "confidence": "medium",
+      "source": "guess",
+      "confidence": "low",
       "sources_detail": {
         "bresu_email": [
-          "reithia.at"
+          "st-ulrich.tirol.gv.at"
+        ],
+        "guess": [
+          "st-ulrich-pillersee.gv.at"
         ]
       },
       "flags": [
-        "unverified"
+        "guess_only"
       ]
     },
     {
-      "code": "70524",
-      "name": "Scheffau am Wilden Kaiser",
+      "code": "70418",
+      "name": "Schwendt",
       "region": "Tirol",
-      "website": "scheffau.eu",
+      "website": "gem2go.info",
       "emails": [
-        "gemeinde.scheffau.net",
-        "scheffau.eu"
+        "schwendt.gv.at"
       ],
-      "source": "wikidata",
-      "confidence": "medium",
+      "source": "guess",
+      "confidence": "low",
       "sources_detail": {
-        "bresu": [
-          "scheffau.eu"
+        "bresu_email": [
+          "schwendt.tirol.gv.at"
         ],
         "wikidata": [
-          "gemeinde.scheffau.net"
+          "www2.riskommunal.net"
+        ],
+        "guess": [
+          "schwendt.gv.at"
         ]
       },
       "flags": [
-        "unverified"
+        "guess_only"
       ]
     },
     {
-      "code": "70616",
-      "name": "Pettneu am Arlberg",
+      "code": "70501",
+      "name": "Alpbach",
       "region": "Tirol",
-      "website": "",
+      "website": "alpbach.gv.at",
       "emails": [
-        "pettneu.at"
+        "alpbach.gv.at"
       ],
-      "source": "static",
-      "confidence": "medium",
+      "source": "guess",
+      "confidence": "low",
       "sources_detail": {
-        "bresu": [
-          "pettneu.at"
+        "bresu_email": [
+          "alpbach.tirol.gv.at"
+        ],
+        "guess": [
+          "alpbach.gv.at"
         ]
       },
       "flags": [
-        "unverified"
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70504",
+      "name": "Brandenberg",
+      "region": "Tirol",
+      "website": "brandenberg.gv.at",
+      "emails": [
+        "brandenberg.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "brandenberg.tirol.gv.at"
+        ],
+        "guess": [
+          "brandenberg.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70508",
+      "name": "Ebbs",
+      "region": "Tirol",
+      "website": "ebbs.gv.at",
+      "emails": [
+        "ebbs.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "ebbs.tirol.gv.at"
+        ],
+        "guess": [
+          "ebbs.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70509",
+      "name": "Ellmau",
+      "region": "Tirol",
+      "website": "ellmau.gv.at",
+      "emails": [
+        "ellmau.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "ellmau.tirol.gv.at"
+        ],
+        "guess": [
+          "ellmau.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70514",
+      "name": "Kundl",
+      "region": "Tirol",
+      "website": "kundl.gv.at",
+      "emails": [
+        "kundl.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "kundl.tirol.gv.at"
+        ],
+        "guess": [
+          "kundl.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70519",
+      "name": "Niederndorferberg",
+      "region": "Tirol",
+      "website": "gem2go.info",
+      "emails": [
+        "niederndorferberg.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "niederndorferberg.tirol.gv.at"
+        ],
+        "wikidata": [
+          "www2.riskommunal.net"
+        ],
+        "guess": [
+          "niederndorferberg.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70520",
+      "name": "Radfeld",
+      "region": "Tirol",
+      "website": "radfeld.gv.at",
+      "emails": [
+        "radfeld.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "radfeld.tirol.gv.at"
+        ],
+        "guess": [
+          "radfeld.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70529",
+      "name": "Walchsee",
+      "region": "Tirol",
+      "website": "walchsee.gv.at",
+      "emails": [
+        "walchsee.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "walchsee.tirol.gv.at"
+        ],
+        "guess": [
+          "walchsee.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70602",
+      "name": "Fendels",
+      "region": "Tirol",
+      "website": "fendels.gv.at",
+      "emails": [
+        "fendels.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "fendels.tirol.gv.at"
+        ],
+        "guess": [
+          "fendels.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70603",
+      "name": "Fiss",
+      "region": "Tirol",
+      "website": "fiss.co.at",
+      "emails": [
+        "fiss.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu": [
+          "fiss.co.at"
+        ],
+        "bresu_email": [
+          "fiss.tirol.gv.at"
+        ],
+        "guess": [
+          "fiss.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70605",
+      "name": "Flirsch",
+      "region": "Tirol",
+      "website": "flirsch.gv.at",
+      "emails": [
+        "flirsch.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "flirsch.tirol.gv.at"
+        ],
+        "guess": [
+          "flirsch.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70607",
+      "name": "Grins",
+      "region": "Tirol",
+      "website": "grins.gv.at",
+      "emails": [
+        "grins.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "grins.tirol.gv.at"
+        ],
+        "guess": [
+          "grins.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70610",
+      "name": "Kaunerberg",
+      "region": "Tirol",
+      "website": "kaunerberg.gv.at",
+      "emails": [
+        "kaunerberg.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "kaunerberg.tirol.gv.at"
+        ],
+        "guess": [
+          "kaunerberg.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70612",
+      "name": "Kauns",
+      "region": "Tirol",
+      "website": "kauns.gv.at",
+      "emails": [
+        "kauns.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "kauns.tirol.gv.at"
+        ],
+        "guess": [
+          "kauns.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70613",
+      "name": "Ladis",
+      "region": "Tirol",
+      "website": "ladis.gv.at",
+      "emails": [
+        "ladis.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "ladis.tirol.gv.at"
+        ],
+        "guess": [
+          "ladis.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70615",
+      "name": "Nauders",
+      "region": "Tirol",
+      "website": "nauders.gv.at",
+      "emails": [
+        "nauders.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "nauders.tirol.gv.at"
+        ],
+        "guess": [
+          "nauders.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70617",
+      "name": "Pfunds",
+      "region": "Tirol",
+      "website": "pfunds.gv.at",
+      "emails": [
+        "pfunds.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "pfunds.tirol.gv.at"
+        ],
+        "guess": [
+          "pfunds.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70618",
+      "name": "Pians",
+      "region": "Tirol",
+      "website": "pians.gv.at",
+      "emails": [
+        "pians.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "pians.tirol.gv.at"
+        ],
+        "guess": [
+          "pians.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70619",
+      "name": "Prutz",
+      "region": "Tirol",
+      "website": "prutz.gv.at",
+      "emails": [
+        "prutz.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "prutz.tirol.gv.at"
+        ],
+        "guess": [
+          "prutz.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
       ]
     },
     {
@@ -2727,26 +5049,159 @@
       "name": "Ried im Oberinntal",
       "region": "Tirol",
       "website": "gem2go.info",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
+      "emails": [
+        "ried-oberinntal.gv.at",
+        "ried.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
       "sources_detail": {
+        "bresu_email": [
+          "ried-oberinntal.tirol.gv.at"
+        ],
         "wikidata": [
           "www2.riskommunal.net"
+        ],
+        "guess": [
+          "ried-oberinntal.gv.at",
+          "ried.gv.at"
         ]
       },
-      "flags": []
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70622",
+      "name": "Schönwies",
+      "region": "Tirol",
+      "website": "schoenwies.gv.at",
+      "emails": [
+        "schoenwies.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "schoenwies.tirol.gv.at"
+        ],
+        "guess": [
+          "schoenwies.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70623",
+      "name": "See",
+      "region": "Tirol",
+      "website": "see.gv.at",
+      "emails": [
+        "see.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "see.tirol.gv.at"
+        ],
+        "guess": [
+          "see.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70625",
+      "name": "Spiss",
+      "region": "Tirol",
+      "website": "spiss.gv.at",
+      "emails": [
+        "spiss.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "spiss.tirol.gv.at"
+        ],
+        "guess": [
+          "spiss.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
     },
     {
       "code": "70626",
       "name": "Stanz bei Landeck",
       "region": "Tirol",
-      "website": "",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
-      "sources_detail": {},
-      "flags": []
+      "website": "stanz-landeck.gv.at",
+      "emails": [
+        "stanz-landeck.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "stanz.tirol.gv.at"
+        ],
+        "guess": [
+          "stanz-landeck.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70628",
+      "name": "Tobadill",
+      "region": "Tirol",
+      "website": "tobadill.gv.at",
+      "emails": [
+        "tobadill.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "tobadill.tirol.gv.at"
+        ],
+        "guess": [
+          "tobadill.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70629",
+      "name": "Tösens",
+      "region": "Tirol",
+      "website": "toesens.gv.at",
+      "emails": [
+        "toesens.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "toesens.tirol.gv.at"
+        ],
+        "guess": [
+          "toesens.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
     },
     {
       "code": "70709",
@@ -2783,7 +5238,11 @@
       "emails": [],
       "source": "none",
       "confidence": "none",
-      "sources_detail": {},
+      "sources_detail": {
+        "bresu_email": [
+          "matrei-ost.tirol.gv.at"
+        ]
+      },
       "flags": []
     },
     {
@@ -2836,6 +5295,115 @@
       ]
     },
     {
+      "code": "70803",
+      "name": "Biberwier",
+      "region": "Tirol",
+      "website": "biberwier.gv.at",
+      "emails": [
+        "biberwier.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "biberwier.tirol.gv.at"
+        ],
+        "guess": [
+          "biberwier.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70804",
+      "name": "Bichlbach",
+      "region": "Tirol",
+      "website": "gemeinde-bichlbach.at",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "bresu": [
+          "gemeinde-bichlbach.at"
+        ],
+        "bresu_email": [
+          "bichlbach.tirol.gv.at"
+        ],
+        "wikidata": [
+          "www2.riskommunal.net"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "70805",
+      "name": "Breitenwang",
+      "region": "Tirol",
+      "website": "breitenwang.gv.at",
+      "emails": [
+        "breitenwang.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "breitenwang.tirol.gv.at"
+        ],
+        "guess": [
+          "breitenwang.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70806",
+      "name": "Ehenbichl",
+      "region": "Tirol",
+      "website": "ehenbichl.gv.at",
+      "emails": [
+        "ehenbichl.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "ehenbichl.tirol.gv.at"
+        ],
+        "guess": [
+          "ehenbichl.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70807",
+      "name": "Ehrwald",
+      "region": "Tirol",
+      "website": "ehrwald.gv.at",
+      "emails": [
+        "ehrwald.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "ehrwald.tirol.gv.at"
+        ],
+        "guess": [
+          "ehrwald.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
       "code": "70808",
       "name": "Elbigenalp",
       "region": "Tirol",
@@ -2846,8 +5414,252 @@
       "source": "guess",
       "confidence": "low",
       "sources_detail": {
+        "bresu_email": [
+          "elbigenalp.tirol.gv.at"
+        ],
         "guess": [
           "elbigenalp.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70810",
+      "name": "Forchach",
+      "region": "Tirol",
+      "website": "forchach.at",
+      "emails": [
+        "forchach.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu": [
+          "forchach.at"
+        ],
+        "bresu_email": [
+          "forchach.tirol.gv.at"
+        ],
+        "wikidata": [
+          "www2.riskommunal.net"
+        ],
+        "guess": [
+          "forchach.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70811",
+      "name": "Grän",
+      "region": "Tirol",
+      "website": "gem2go.info",
+      "emails": [
+        "graen.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "graen.tirol.gv.at"
+        ],
+        "wikidata": [
+          "www2.riskommunal.net"
+        ],
+        "guess": [
+          "graen.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70813",
+      "name": "Häselgehr",
+      "region": "Tirol",
+      "website": "haeselgehr.gv.at",
+      "emails": [
+        "haeselgehr.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "haeselgehr.tirol.gv.at"
+        ],
+        "guess": [
+          "haeselgehr.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70814",
+      "name": "Heiterwang",
+      "region": "Tirol",
+      "website": "heiterwang.gv.at",
+      "emails": [
+        "heiterwang.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "heiterwang.tirol.gv.at"
+        ],
+        "guess": [
+          "heiterwang.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70817",
+      "name": "Holzgau",
+      "region": "Tirol",
+      "website": "holzgau.gv.at",
+      "emails": [
+        "holzgau.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "holzgau.tirol.gv.at"
+        ],
+        "guess": [
+          "holzgau.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70820",
+      "name": "Lechaschau",
+      "region": "Tirol",
+      "website": "lechaschau.at",
+      "emails": [
+        "lechaschau.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu": [
+          "lechaschau.at"
+        ],
+        "bresu_email": [
+          "lechaschau.tirol.gv.at"
+        ],
+        "wikidata": [
+          "members.aon.at"
+        ],
+        "guess": [
+          "lechaschau.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70821",
+      "name": "Lermoos",
+      "region": "Tirol",
+      "website": "lermoos.gv.at",
+      "emails": [
+        "lermoos.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "lermoos.tirol.gv.at"
+        ],
+        "guess": [
+          "lermoos.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70823",
+      "name": "Namlos",
+      "region": "Tirol",
+      "website": "namlos.at",
+      "emails": [
+        "namlos.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu": [
+          "namlos.at"
+        ],
+        "bresu_email": [
+          "namlos.tirol.gv.at"
+        ],
+        "wikidata": [
+          "namlos.at"
+        ],
+        "guess": [
+          "namlos.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70824",
+      "name": "Nesselwängle",
+      "region": "Tirol",
+      "website": "nesselwaengle.gv.at",
+      "emails": [
+        "nesselwaengle.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "nesselwaengle.tirol.gv.at"
+        ],
+        "guess": [
+          "nesselwaengle.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70827",
+      "name": "Pinswang",
+      "region": "Tirol",
+      "website": "pinswang.gv.at",
+      "emails": [
+        "pinswang.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "pinswang.tirol.gv.at"
+        ],
+        "guess": [
+          "pinswang.gv.at"
         ]
       },
       "flags": [
@@ -2862,19 +5674,106 @@
       "emails": [],
       "source": "none",
       "confidence": "none",
-      "sources_detail": {},
+      "sources_detail": {
+        "bresu_email": [
+          "schattwald.tirol.gv.at"
+        ]
+      },
       "flags": []
+    },
+    {
+      "code": "70830",
+      "name": "Stanzach",
+      "region": "Tirol",
+      "website": "stanzach.at",
+      "emails": [
+        "stanzach.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu": [
+          "stanzach.at"
+        ],
+        "bresu_email": [
+          "stanzach.tirol.gv.at"
+        ],
+        "wikidata": [
+          "www2.riskommunal.net"
+        ],
+        "guess": [
+          "stanzach.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70831",
+      "name": "Steeg",
+      "region": "Tirol",
+      "website": "steeg.gv.at",
+      "emails": [
+        "steeg.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "steeg.tirol.gv.at"
+        ],
+        "guess": [
+          "steeg.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70832",
+      "name": "Tannheim",
+      "region": "Tirol",
+      "website": "tannheim.gv.at",
+      "emails": [
+        "tannheim.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "tannheim.tirol.gv.at"
+        ],
+        "guess": [
+          "tannheim.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
     },
     {
       "code": "70836",
       "name": "Weißenbach am Lech",
       "region": "Tirol",
-      "website": "",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
-      "sources_detail": {},
-      "flags": []
+      "website": "weissenbach-lech.gv.at",
+      "emails": [
+        "weissenbach-lech.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "weissenbach.tirol.gv.at"
+        ],
+        "guess": [
+          "weissenbach-lech.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
     },
     {
       "code": "70837",
@@ -2885,11 +5784,58 @@
       "source": "none",
       "confidence": "none",
       "sources_detail": {
+        "bresu_email": [
+          "zoeblen.tirol.gv.at"
+        ],
         "wikidata": [
           "www2.riskommunal.net"
         ]
       },
       "flags": []
+    },
+    {
+      "code": "70901",
+      "name": "Achenkirch",
+      "region": "Tirol",
+      "website": "achenkirch.gv.at",
+      "emails": [
+        "achenkirch.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "achenkirch.tirol.gv.at"
+        ],
+        "guess": [
+          "achenkirch.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70903",
+      "name": "Brandberg",
+      "region": "Tirol",
+      "website": "brandberg.gv.at",
+      "emails": [
+        "brandberg.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "brandberg.tirol.gv.at"
+        ],
+        "guess": [
+          "brandberg.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
     },
     {
       "code": "70905",
@@ -2899,19 +5845,100 @@
       "emails": [],
       "source": "none",
       "confidence": "none",
-      "sources_detail": {},
+      "sources_detail": {
+        "bresu_email": [
+          "buch.tirol.gv.at"
+        ]
+      },
       "flags": []
     },
     {
       "code": "70907",
       "name": "Eben am Achensee",
       "region": "Tirol",
-      "website": "",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
-      "sources_detail": {},
-      "flags": []
+      "website": "eben-achensee.gv.at",
+      "emails": [
+        "eben-achensee.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "eben-achensee.tirol.gv.at"
+        ],
+        "guess": [
+          "eben-achensee.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70908",
+      "name": "Finkenberg",
+      "region": "Tirol",
+      "website": "finkenberg.gv.at",
+      "emails": [
+        "finkenberg.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "finkenberg.tirol.gv.at"
+        ],
+        "guess": [
+          "finkenberg.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70911",
+      "name": "Gallzein",
+      "region": "Tirol",
+      "website": "gallzein.gv.at",
+      "emails": [
+        "gallzein.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "gallzein.tirol.gv.at"
+        ],
+        "guess": [
+          "gallzein.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70912",
+      "name": "Gerlos",
+      "region": "Tirol",
+      "website": "gerlos.gv.at",
+      "emails": [
+        "gerlos.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "gerlos.tirol.gv.at"
+        ],
+        "guess": [
+          "gerlos.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
     },
     {
       "code": "70914",
@@ -2924,8 +5951,55 @@
       "source": "guess",
       "confidence": "low",
       "sources_detail": {
+        "bresu_email": [
+          "hainzenberg.tirol.gv.at"
+        ],
         "guess": [
           "hainzenberg.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70920",
+      "name": "Mayrhofen",
+      "region": "Tirol",
+      "website": "mayrhofen.gv.at",
+      "emails": [
+        "mayrhofen.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "mayrhofen.tirol.gv.at"
+        ],
+        "guess": [
+          "mayrhofen.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70921",
+      "name": "Pill",
+      "region": "Tirol",
+      "website": "pill.gv.at",
+      "emails": [
+        "pill.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "pill.tirol.gv.at"
+        ],
+        "guess": [
+          "pill.gv.at"
         ]
       },
       "flags": [
@@ -2936,27 +6010,50 @@
       "code": "70922",
       "name": "Ramsau im Zillertal",
       "region": "Tirol",
-      "website": "",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
-      "sources_detail": {},
-      "flags": []
+      "website": "ramsau.gv.at",
+      "emails": [
+        "ramsau-zillertal.gv.at",
+        "ramsau.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "ramsau.tirol.gv.at"
+        ],
+        "guess": [
+          "ramsau-zillertal.gv.at",
+          "ramsau.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
     },
     {
       "code": "70923",
       "name": "Ried im Zillertal",
       "region": "Tirol",
       "website": "gem2go.info",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
+      "emails": [
+        "ried.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
       "sources_detail": {
+        "bresu_email": [
+          "ried-zillertal.tirol.gv.at"
+        ],
         "wikidata": [
           "www2.riskommunal.net"
+        ],
+        "guess": [
+          "ried.gv.at"
         ]
       },
-      "flags": []
+      "flags": [
+        "guess_only"
+      ]
     },
     {
       "code": "70924",
@@ -2966,30 +6063,144 @@
       "emails": [],
       "source": "none",
       "confidence": "none",
-      "sources_detail": {},
+      "sources_detail": {
+        "bresu_email": [
+          "rohrberg.tirol.gv.at"
+        ]
+      },
       "flags": []
     },
     {
       "code": "70929",
       "name": "Steinberg am Rofan",
       "region": "Tirol",
-      "website": "",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
-      "sources_detail": {},
-      "flags": []
+      "website": "steinberg-rofan.gv.at",
+      "emails": [
+        "steinberg-rofan.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "steinberg-rofan.tirol.gv.at"
+        ],
+        "guess": [
+          "steinberg-rofan.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
     },
     {
       "code": "70930",
       "name": "Strass im Zillertal",
       "region": "Tirol",
-      "website": "",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
-      "sources_detail": {},
-      "flags": []
+      "website": "strass-zillertal.gv.at",
+      "emails": [
+        "strass-zillertal.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "strass.tirol.gv.at"
+        ],
+        "guess": [
+          "strass-zillertal.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70931",
+      "name": "Stumm",
+      "region": "Tirol",
+      "website": "stumm.gv.at",
+      "emails": [
+        "stumm.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "stumm.tirol.gv.at"
+        ],
+        "guess": [
+          "stumm.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70932",
+      "name": "Stummerberg",
+      "region": "Tirol",
+      "website": "stummerberg.gv.at",
+      "emails": [
+        "stummerberg.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "stummerberg.tirol.gv.at"
+        ],
+        "guess": [
+          "stummerberg.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70935",
+      "name": "Uderns",
+      "region": "Tirol",
+      "website": "uderns.gv.at",
+      "emails": [
+        "uderns.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "uderns.tirol.gv.at"
+        ],
+        "guess": [
+          "uderns.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70936",
+      "name": "Vomp",
+      "region": "Tirol",
+      "website": "vomp.gv.at",
+      "emails": [
+        "vomp.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu_email": [
+          "vomp.tirol.gv.at"
+        ],
+        "guess": [
+          "vomp.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
     },
     {
       "code": "80119",
@@ -3003,6 +6214,9 @@
         "bresu": [
           "sanktantonimmontafon.at"
         ],
+        "bresu_email": [
+          "st.anton.i.m.cnv.at"
+        ],
         "wikidata": [
           "sankt-anton-im-montafon.at"
         ]
@@ -3014,18 +6228,25 @@
       "name": "St. Gallenkirch",
       "region": "Vorarlberg",
       "website": "gemeinde.stgallenkirch.at",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
+      "emails": [
+        "st.gallenkirch.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
       "sources_detail": {
         "bresu": [
           "gemeinde.stgallenkirch.at"
+        ],
+        "bresu_email": [
+          "st.gallenkirch.at"
         ],
         "wikidata": [
           "gemeinde.stgallenkirch.at"
         ]
       },
-      "flags": []
+      "flags": [
+        "unverified"
+      ]
     }
   ]
 }

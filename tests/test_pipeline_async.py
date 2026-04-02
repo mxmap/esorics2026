@@ -163,6 +163,34 @@ class TestPhaseDnsPrefilter:
         assert result["dead.ch"] is False
         assert len(records[0].candidates) == 0
 
+    async def test_preserves_email_only_domains(self):
+        """Email-only domains (is_email_domain=True) survive DNS pre-filter
+        even when they have no A/AAAA records."""
+        records = [
+            _make_record(
+                candidates=[
+                    DomainCandidate(domain="kukmirn.at", source="bresu"),
+                    DomainCandidate(
+                        domain="kukmirn.bgld.gv.at",
+                        source="bresu_email",
+                        is_email_domain=True,
+                    ),
+                    DomainCandidate(domain="dead.at", source="wikidata"),
+                ]
+            )
+        ]
+
+        async def _lookup_a(domain):
+            return domain == "kukmirn.at"
+
+        with patch("municipality_email.pipeline.lookup_a", side_effect=_lookup_a):
+            await phase_dns_prefilter(records)
+
+        domains = [c.domain for c in records[0].candidates]
+        assert "kukmirn.at" in domains
+        assert "kukmirn.bgld.gv.at" in domains
+        assert "dead.at" not in domains
+
 
 class TestPhaseValidate:
     async def test_marks_accessible(self):

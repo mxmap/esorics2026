@@ -192,7 +192,6 @@ cython_debug/
 # .vscode/
 
 # Project-specific
-domains/*.json
 data/*/scrape_cache.json
 data/*/cache.db
 data/*/cache.db-wal
