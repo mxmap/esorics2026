@@ -1,7 +1,7 @@
 [project]
-name = "municipality-email"
-version = "0.1.0"
-description = "Automated collection of email domains for municipalities in CH, DE, AT"
+name = "mail-municipalities"
+version = "0.2.0"
+description = "Domain resolution, provider classification, and security analysis for municipality email in CH, DE, AT"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
@@ -25,6 +25,7 @@ dev = [
     "pytest-cov>=7.1.0",
     "respx>=0.22.0",
     "ruff>=0.15.8",
+    "pyright>=1.1",
 ]
 
 [build-system]
@@ -32,11 +33,12 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/municipality_email"]
+packages = ["src/mail_municipalities"]
 
 [project.scripts]
-resolve = "municipality_email.cli:resolve"
-classify = "municipality_email.cli:classify"
+resolve = "mail_municipalities.cli:resolve"
+classify = "mail_municipalities.cli:classify"
+analyze = "mail_municipalities.cli:analyze"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -44,7 +46,7 @@ asyncio_mode = "auto"
 markers = ["mx: tests that perform live DNS MX lookups (may be slow)"]
 
 [tool.coverage.run]
-source = ["municipality_email"]
+source = ["mail_municipalities"]
 
 [tool.coverage.report]
 show_missing = true
@@ -52,4 +54,4 @@ fail_under = 90
 exclude_lines = ["pragma: no cover"]
 
 [tool.ruff]
-line-length = 99
+line-length = 120
