@@ -42,6 +42,8 @@ All network results are cached in a per-country SQLite database (`data/{cc}/cach
 
 ## How to run
 
+Install [`uv`](https://docs.astral.sh/uv/getting-started/installation/) then:
+
 ```bash
 uv sync                       # install dependencies
 uv run resolve --help         # see CLI options

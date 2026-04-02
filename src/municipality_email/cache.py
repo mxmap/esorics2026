@@ -114,12 +114,17 @@ class CacheDB:
         return result
 
     async def put_head_many(self, entries: dict[str, tuple[bool, str | None, bool]]) -> None:
-        """Store HEAD results (upsert)."""
+        """Store HEAD results (upsert).
+
+        Only caches accessible results — inaccessible domains are re-checked
+        every run since they may come back online.
+        """
         assert self._db is not None
         now = _now_utc()
         rows = [
             (domain, int(accessible), redirect, int(ssl_failed), now)
             for domain, (accessible, redirect, ssl_failed) in entries.items()
+            if accessible
         ]
         await self._db.executemany(
             "INSERT OR REPLACE INTO head_cache "

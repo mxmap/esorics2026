@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-02T14:03:51.662014Z",
+  "generated": "2026-04-02T15:28:03.505804Z",
   "total": 2,
   "municipalities": [
     {
@@ -31,7 +31,11 @@
       ],
       "source": "override",
       "confidence": "medium",
-      "sources_detail": {},
+      "sources_detail": {
+        "bresu_email": [
+          "schattwald.tirol.gv.at"
+        ]
+      },
       "flags": [
         "no_mx"
       ]

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-02T14:03:51.662014Z",
+  "generated": "2026-04-02T15:28:03.505804Z",
   "total": 2092,
   "municipalities": [
     {
@@ -31,6 +31,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "rust.bgld.gv.at",
         "freistadt-rust.at"
       ],
       "source": "static",
@@ -38,6 +39,9 @@
       "sources_detail": {
         "bresu": [
           "freistadt-rust.at"
+        ],
+        "bresu_email": [
+          "rust.bgld.gv.at"
         ],
         "wikidata": [
           "freistadt-rust.at"
@@ -84,6 +88,9 @@
         "bresu": [
           "donnerskirchen.at"
         ],
+        "bresu_email": [
+          "donnerskirchen.bgld.gv.at"
+        ],
         "wikidata": [
           "donnerskirchen.at"
         ]
@@ -103,6 +110,9 @@
       "sources_detail": {
         "bresu": [
           "grosshoeflein.at"
+        ],
+        "bresu_email": [
+          "grosshoeflein.bgld.gv.at"
         ],
         "wikidata": [
           "grosshoeflein.at"
@@ -125,6 +135,9 @@
         "bresu": [
           "hornstein.at"
         ],
+        "bresu_email": [
+          "hornstein.bgld.gv.at"
+        ],
         "wikidata": [
           "hornstein.at"
         ]
@@ -137,6 +150,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "klingenbach.bgld.gv.at",
         "klingenbach.at",
         "klingenbach.info"
       ],
@@ -145,6 +159,9 @@
       "sources_detail": {
         "bresu": [
           "klingenbach.at"
+        ],
+        "bresu_email": [
+          "klingenbach.bgld.gv.at"
         ],
         "wikidata": [
           "klingenbach.info"
@@ -167,6 +184,9 @@
         "bresu": [
           "leithaprodersdorf.at"
         ],
+        "bresu_email": [
+          "leithaprodersdorf.bgld.gv.at"
+        ],
         "wikidata": [
           "leithaprodersdorf.gv.at"
         ]
@@ -186,6 +206,9 @@
       "sources_detail": {
         "bresu": [
           "moerbisch.at"
+        ],
+        "bresu_email": [
+          "moerbisch.bgld.gv.at"
         ],
         "wikidata": [
           "moerbisch.com"
@@ -207,6 +230,9 @@
         "bresu": [
           "muellendorf.at"
         ],
+        "bresu_email": [
+          "muellendorf.bgld.gv.at"
+        ],
         "wikidata": [
           "muellendorf.at"
         ]
@@ -226,6 +252,9 @@
       "sources_detail": {
         "bresu": [
           "neufeld-leitha.at"
+        ],
+        "bresu_email": [
+          "neufeld-leitha.bgld.gv.at"
         ],
         "wikidata": [
           "neufeld-leitha.at"
@@ -247,6 +276,9 @@
         "bresu": [
           "oggau.at"
         ],
+        "bresu_email": [
+          "oggau-neusiedler-see.bgld.gv.at"
+        ],
         "wikidata": [
           "oggau.at"
         ]
@@ -266,6 +298,9 @@
       "sources_detail": {
         "bresu": [
           "oslip.at"
+        ],
+        "bresu_email": [
+          "oslip.bgld.gv.at"
         ],
         "wikidata": [
           "oslip.at"
@@ -322,6 +357,7 @@
       "region": "Burgenland",
       "website": "schuetzen-am-gebirge.com",
       "emails": [
+        "schuetzen-am-gebirge.bgld.gv.at",
         "schuetzen-am-gebirge.at"
       ],
       "source": "static",
@@ -329,6 +365,9 @@
       "sources_detail": {
         "bresu": [
           "schuetzen-am-gebirge.at"
+        ],
+        "bresu_email": [
+          "schuetzen-am-gebirge.bgld.gv.at"
         ],
         "wikidata": [
           "schuetzen-am-gebirge.com"
@@ -350,6 +389,9 @@
         "bresu": [
           "siegendorf.gv.at"
         ],
+        "bresu_email": [
+          "siegendorf.bgld.gv.at"
+        ],
         "wikidata": [
           "siegendorf.info"
         ]
@@ -369,6 +411,9 @@
       "sources_detail": {
         "bresu": [
           "steinbrunn.at"
+        ],
+        "bresu_email": [
+          "steinbrunn.bgld.gv.at"
         ],
         "wikidata": [
           "steinbrunn.at"
@@ -390,6 +435,9 @@
         "bresu": [
           "trausdorf-wulka.gv.at"
         ],
+        "bresu_email": [
+          "trausdorf-wulka.bgld.gv.at"
+        ],
         "wikidata": [
           "trausdorf-wulka.gv.at"
         ]
@@ -409,6 +457,9 @@
       "sources_detail": {
         "bresu": [
           "wimpassing-leitha.at"
+        ],
+        "bresu_email": [
+          "wimpassing-leitha.bgld.gv.at"
         ],
         "wikidata": [
           "wimpassing-leitha.at"
@@ -431,6 +482,9 @@
         "bresu": [
           "wulkaprodersdorf.at"
         ],
+        "bresu_email": [
+          "wulkaprodersdorf.bgld.gv.at"
+        ],
         "wikidata": [
           "wulkaprodersdorf.at"
         ]
@@ -451,6 +505,9 @@
         "bresu": [
           "gemeinde-loretto.at"
         ],
+        "bresu_email": [
+          "loretto.bgld.gv.at"
+        ],
         "wikidata": [
           "gemeinde-loretto.at"
         ]
@@ -470,6 +527,9 @@
       "sources_detail": {
         "bresu": [
           "stotzing.at"
+        ],
+        "bresu_email": [
+          "stotzing.bgld.gv.at"
         ],
         "wikidata": [
           "stotzing.at"
@@ -514,6 +574,9 @@
         "bresu": [
           "zagersdorf.at"
         ],
+        "bresu_email": [
+          "zagersdorf.bgld.gv.at"
+        ],
         "wikidata": [
           "zagersdorf.at"
         ]
@@ -533,6 +596,9 @@
       "sources_detail": {
         "bresu": [
           "bocksdorf.at"
+        ],
+        "bresu_email": [
+          "bocksdorf.bgld.gv.at"
         ],
         "wikidata": [
           "bocksdorf.at"
@@ -555,6 +621,9 @@
         "bresu": [
           "burgauberg-neudauberg.at"
         ],
+        "bresu_email": [
+          "burgauberg-neudauberg.bgld.gv.at"
+        ],
         "wikidata": [
           "burgauberg-neudauberg.at"
         ]
@@ -574,6 +643,9 @@
       "sources_detail": {
         "bresu": [
           "eberau.at"
+        ],
+        "bresu_email": [
+          "eberau.bgld.gv.at"
         ],
         "wikidata": [
           "eberau.at"
@@ -595,6 +667,9 @@
         "bresu": [
           "gerersdorf-sulz.at"
         ],
+        "bresu_email": [
+          "gerersdorf-sulz.bgld.gv.at"
+        ],
         "wikidata": [
           "gerersdorf-sulz.at"
         ]
@@ -614,6 +689,9 @@
       "sources_detail": {
         "bresu": [
           "guessing.co.at"
+        ],
+        "bresu_email": [
+          "guessing.bgld.gv.at"
         ],
         "wikidata": [
           "gussing.at"
@@ -635,6 +713,9 @@
         "bresu": [
           "guettenbach.at"
         ],
+        "bresu_email": [
+          "guettenbach.bgld.gv.at"
+        ],
         "wikidata": [
           "guettenbach.at"
         ]
@@ -655,6 +736,9 @@
         "bresu": [
           "heiligenbrunn.at"
         ],
+        "bresu_email": [
+          "heiligenbrunn.bgld.gv.at"
+        ],
         "wikidata": [
           "heiligenbrunn.at"
         ]
@@ -674,6 +758,9 @@
       "sources_detail": {
         "bresu": [
           "kukmirn.at"
+        ],
+        "bresu_email": [
+          "kukmirn.bgld.gv.at"
         ],
         "wikidata": [
           "kukmirn.at"
@@ -696,6 +783,9 @@
         "bresu": [
           "neuberg-bgld.at"
         ],
+        "bresu_email": [
+          "neuberg.bgld.gv.at"
+        ],
         "wikidata": [
           "neuberg-bgld.at"
         ]
@@ -715,6 +805,9 @@
       "sources_detail": {
         "bresu": [
           "neustift-bei-güssing.at"
+        ],
+        "bresu_email": [
+          "neustift-guessing.bgld.gv.at"
         ],
         "wikidata": [
           "neustift-bei-güssing.at"
@@ -736,6 +829,9 @@
         "bresu": [
           "olbendorf.at"
         ],
+        "bresu_email": [
+          "olbendorf.bgld.gv.at"
+        ],
         "wikidata": [
           "olbendorf.at"
         ]
@@ -748,6 +844,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "ollersdorf.bgld.gv.at",
         "ollersdorf-burgenland.at"
       ],
       "source": "static",
@@ -755,6 +852,9 @@
       "sources_detail": {
         "bresu": [
           "ollersdorf-burgenland.at"
+        ],
+        "bresu_email": [
+          "ollersdorf.bgld.gv.at"
         ],
         "wikidata": [
           "ollersdorf-burgenland.at"
@@ -775,6 +875,9 @@
       "sources_detail": {
         "bresu": [
           "st.michael-bgld.at"
+        ],
+        "bresu_email": [
+          "st-michael.bgld.gv.at"
         ]
       },
       "flags": []
@@ -816,6 +919,9 @@
         "bresu": [
           "stinatz.gv.at"
         ],
+        "bresu_email": [
+          "stinatz.bgld.gv.at"
+        ],
         "wikidata": [
           "stinatz.gv.at"
         ]
@@ -835,6 +941,9 @@
       "sources_detail": {
         "bresu": [
           "strem.co.at"
+        ],
+        "bresu_email": [
+          "strem.bgld.gv.at"
         ],
         "wikidata": [
           "strem.co.at"
@@ -856,6 +965,9 @@
         "bresu": [
           "tobaj.gv.at"
         ],
+        "bresu_email": [
+          "tobaj.bgld.gv.at"
+        ],
         "wikidata": [
           "tobaj.gv.at"
         ]
@@ -868,6 +980,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "hackerberg.bgld.gv.at",
         "hackerberg.at"
       ],
       "source": "static",
@@ -875,6 +988,9 @@
       "sources_detail": {
         "bresu": [
           "hackerberg.at"
+        ],
+        "bresu_email": [
+          "hackerberg.bgld.gv.at"
         ],
         "wikidata": [
           "hackerberg.at"
@@ -896,6 +1012,9 @@
         "bresu": [
           "woerterberg.at"
         ],
+        "bresu_email": [
+          "woerterberg.bgld.gv.a"
+        ],
         "wikidata": [
           "woerterberg.at"
         ]
@@ -915,6 +1034,9 @@
       "sources_detail": {
         "bresu": [
           "grossmuerbisch.at"
+        ],
+        "bresu_email": [
+          "grossmuerbisch.bgld.gv.at"
         ],
         "wikidata": [
           "grossmuerbisch.at"
@@ -936,6 +1058,9 @@
         "bresu": [
           "inzenhof.at"
         ],
+        "bresu_email": [
+          "inzenhof.bgld.gv.at"
+        ],
         "wikidata": [
           "inzenhof.at"
         ]
@@ -956,6 +1081,9 @@
         "bresu": [
           "kleinmuerbisch.at"
         ],
+        "bresu_email": [
+          "kleinmuerbisch.bgld.gv.at"
+        ],
         "wikidata": [
           "kleinmuerbisch.at"
         ]
@@ -975,6 +1103,9 @@
       "sources_detail": {
         "bresu": [
           "tschanigraben.at"
+        ],
+        "bresu_email": [
+          "tschanigraben.bgld.gv.at"
         ],
         "wikidata": [
           "tschanigraben.at"
@@ -1020,6 +1151,9 @@
         "bresu": [
           "rohr-bgld.at"
         ],
+        "bresu_email": [
+          "rohr.bgld.gv.at"
+        ],
         "wikidata": [
           "rohr-bgld.at"
         ]
@@ -1040,6 +1174,9 @@
         "bresu": [
           "bildein.at"
         ],
+        "bresu_email": [
+          "bildein.bgld.gv.at"
+        ],
         "wikidata": [
           "bildein.at"
         ]
@@ -1057,6 +1194,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "rauchwart.bgld.gv.at"
+        ],
         "wikidata": [
           "rauchwart.at"
         ]
@@ -1077,6 +1217,9 @@
         "bresu": [
           "moschendorf.at"
         ],
+        "bresu_email": [
+          "moschendorf.bgld.gv.at"
+        ],
         "wikidata": [
           "moschendorf.at"
         ]
@@ -1089,6 +1232,7 @@
       "region": "Burgenland",
       "website": "deutschkaltenbrunn.eu",
       "emails": [
+        "deutsch-kaltenbrunn.bgld.gv.at",
         "deutschkaltenbrunn.eu"
       ],
       "source": "static",
@@ -1096,6 +1240,9 @@
       "sources_detail": {
         "bresu": [
           "deutschkaltenbrunn.eu"
+        ],
+        "bresu_email": [
+          "deutsch-kaltenbrunn.bgld.gv.at"
         ],
         "wikidata": [
           "deutschkaltenbrunn.eu"
@@ -1109,6 +1256,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "eltendorf.bgld.gv.at",
         "eltendorf.at"
       ],
       "source": "static",
@@ -1116,6 +1264,9 @@
       "sources_detail": {
         "bresu": [
           "eltendorf.at"
+        ],
+        "bresu_email": [
+          "eltendorf.bgld.gv.at"
         ],
         "wikidata": [
           "eltendorf.at"
@@ -1137,6 +1288,9 @@
         "bresu": [
           "heiligenkreuz-lafnitztal.at"
         ],
+        "bresu_email": [
+          "heiligenkreuz-lafnitztal.bgld.gv.at"
+        ],
         "wikidata": [
           "heiligenkreuz-lafnitztal.at"
         ],
@@ -1152,6 +1306,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "jennersdorf.bgld.gv.at",
         "jennersdorf.eu"
       ],
       "source": "static",
@@ -1159,6 +1314,9 @@
       "sources_detail": {
         "bresu": [
           "jennersdorf.eu"
+        ],
+        "bresu_email": [
+          "jennersdorf.bgld.gv.at"
         ],
         "wikidata": [
           "jennersdorf.eu"
@@ -1172,6 +1330,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "minihof-liebau.bgld.gv.at",
         "minihof-liebau.gv.at",
         "minihof-liebau.at"
       ],
@@ -1180,6 +1339,9 @@
       "sources_detail": {
         "bresu": [
           "minihof-liebau.gv.at"
+        ],
+        "bresu_email": [
+          "minihof-liebau.bgld.gv.at"
         ],
         "wikidata": [
           "minihof-liebau.at"
@@ -1193,13 +1355,17 @@
       "region": "Burgenland",
       "website": "mogersdorf.gv.at",
       "emails": [
+        "mogersdorf.bgld.gv.at",
         "mogersdorf.at"
       ],
-      "source": "wikidata",
+      "source": "static",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
           "mogersdorf.gv.at"
+        ],
+        "bresu_email": [
+          "mogersdorf.bgld.gv.at"
         ],
         "wikidata": [
           "mogersdorf.at"
@@ -1213,6 +1379,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "neuhaus-klausenbach.bgld.gv.at",
         "neuhaus-klausenbach.at"
       ],
       "source": "static",
@@ -1220,6 +1387,9 @@
       "sources_detail": {
         "bresu": [
           "neuhaus-klausenbach.at"
+        ],
+        "bresu_email": [
+          "neuhaus-klausenbach.bgld.gv.at"
         ],
         "wikidata": [
           "neuhaus-klausenbach.at"
@@ -1236,6 +1406,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "rudersdorf.bgld.gv.at",
         "rudersdorf.at"
       ],
       "source": "static",
@@ -1243,6 +1414,9 @@
       "sources_detail": {
         "bresu": [
           "rudersdorf.at"
+        ],
+        "bresu_email": [
+          "rudersdorf.bgld.gv.at"
         ],
         "wikidata": [
           "rudersdorf.at"
@@ -1256,6 +1430,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "st-martin-raab.bgld.gv.at",
         "sankt-martin-raab.at",
         "st-martin-raab.at"
       ],
@@ -1264,6 +1439,9 @@
       "sources_detail": {
         "bresu": [
           "sankt-martin-raab.at"
+        ],
+        "bresu_email": [
+          "st-martin-raab.bgld.gv.at"
         ],
         "wikidata": [
           "st-martin-raab.at"
@@ -1288,6 +1466,9 @@
         "bresu": [
           "weichselbaum.gv.at"
         ],
+        "bresu_email": [
+          "weichselbaum.bgld.gv.at"
+        ],
         "wikidata": [
           "gemeinde-weichselbaum.at"
         ]
@@ -1300,6 +1481,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "koenigsdorf.bgld.gv.at",
         "koenigsdorf.at"
       ],
       "source": "static",
@@ -1307,6 +1489,9 @@
       "sources_detail": {
         "bresu": [
           "koenigsdorf.at"
+        ],
+        "bresu_email": [
+          "koenigsdorf.bgld.gv.at"
         ],
         "wikidata": [
           "koenigsdorf.at"
@@ -1320,6 +1505,7 @@
       "region": "Burgenland",
       "website": "a1.net",
       "emails": [
+        "muehlgraben.bgld.gv.at",
         "muehlgraben.at"
       ],
       "source": "static",
@@ -1327,6 +1513,9 @@
       "sources_detail": {
         "bresu": [
           "muehlgraben.at"
+        ],
+        "bresu_email": [
+          "muehlgraben.bgld.gv.at"
         ],
         "wikidata": [
           "members.aon.at"
@@ -1340,6 +1529,7 @@
       "region": "Burgenland",
       "website": "drassburg.at",
       "emails": [
+        "drassburg.bgld.gv.at",
         "drassburg.gv.at",
         "drassburg.at"
       ],
@@ -1348,6 +1538,9 @@
       "sources_detail": {
         "bresu": [
           "drassburg.gv.at"
+        ],
+        "bresu_email": [
+          "drassburg.bgld.gv.at"
         ],
         "wikidata": [
           "drassburg.at"
@@ -1361,6 +1554,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "forchtenstein.bgld.gv.at",
         "forchtenstein.at"
       ],
       "source": "static",
@@ -1368,6 +1562,9 @@
       "sources_detail": {
         "bresu": [
           "forchtenstein.at"
+        ],
+        "bresu_email": [
+          "forchtenstein.bgld.gv.at"
         ],
         "wikidata": [
           "forchtenstein.at"
@@ -1381,6 +1578,7 @@
       "region": "Burgenland",
       "website": "hirm.gv.at",
       "emails": [
+        "hirm.bgld.gv.at",
         "hirm.gv.at",
         "gemeinde-hirm.at"
       ],
@@ -1389,6 +1587,9 @@
       "sources_detail": {
         "bresu": [
           "hirm.gv.at"
+        ],
+        "bresu_email": [
+          "hirm.bgld.gv.at"
         ],
         "wikidata": [
           "gemeinde-hirm.at"
@@ -1411,6 +1612,9 @@
         "bresu": [
           "loipersbach.info"
         ],
+        "bresu_email": [
+          "loipersbach.bgld.gv.at"
+        ],
         "wikidata": [
           "loipersbach.info"
         ]
@@ -1431,6 +1635,9 @@
       "sources_detail": {
         "bresu": [
           "marz.gv.at"
+        ],
+        "bresu_email": [
+          "marz.bgld.gv.at"
         ],
         "wikidata": [
           "marz.at"
@@ -1477,6 +1684,9 @@
         "bresu": [
           "neudoerfl.gv.at"
         ],
+        "bresu_email": [
+          "neudoerfl.bgld.gv.at"
+        ],
         "wikidata": [
           "neudoerfl.gv.at"
         ]
@@ -1496,6 +1706,9 @@
       "sources_detail": {
         "bresu": [
           "gemeindepoettelsdorf.at"
+        ],
+        "bresu_email": [
+          "poettelsdorf.bgld.gv.at"
         ],
         "wikidata": [
           "gemeindepoettelsdorf.at"
@@ -1518,6 +1731,9 @@
         "bresu": [
           "poettsching.gv.at"
         ],
+        "bresu_email": [
+          "poettsching.bgld.gv.at"
+        ],
         "wikidata": [
           "poettsching.info"
         ]
@@ -1538,6 +1754,9 @@
         "bresu": [
           "rohrbach-bm.at"
         ],
+        "bresu_email": [
+          "rohrbach-mattersburg.bgld.gv.at"
+        ],
         "wikidata": [
           "rohrbach-bm.at"
         ]
@@ -1557,6 +1776,9 @@
       "sources_detail": {
         "bresu": [
           "bad-sauerbrunn.at"
+        ],
+        "bresu_email": [
+          "bad-sauerbrunn.bgld.gv.at"
         ],
         "wikidata": [
           "bad-sauerbrunn.at"
@@ -1581,6 +1803,9 @@
         "bresu": [
           "schattendorf.at"
         ],
+        "bresu_email": [
+          "schattendorf.bgld.gv.at"
+        ],
         "wikidata": [
           "schattendorf.at"
         ]
@@ -1593,6 +1818,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "sieggraben.bgld.gv.at",
         "sieggraben.at"
       ],
       "source": "static",
@@ -1600,6 +1826,9 @@
       "sources_detail": {
         "bresu": [
           "sieggraben.at"
+        ],
+        "bresu_email": [
+          "sieggraben.bgld.gv.at"
         ],
         "wikidata": [
           "sieggraben.at"
@@ -1621,6 +1850,9 @@
         "bresu": [
           "sigless.at"
         ],
+        "bresu_email": [
+          "sigless.bgld.gv.at"
+        ],
         "wikidata": [
           "sigless.at"
         ]
@@ -1641,6 +1873,9 @@
       "sources_detail": {
         "bresu": [
           "wiesen.gv.at"
+        ],
+        "bresu_email": [
+          "wiesen.bgld.gv.at"
         ],
         "wikidata": [
           "wiesen.eu"
@@ -1687,6 +1922,9 @@
         "bresu": [
           "baumgarten.gv.at"
         ],
+        "bresu_email": [
+          "baumgarten.bgld.gv.at"
+        ],
         "wikidata": [
           "baumgarten.gv.at"
         ]
@@ -1709,6 +1947,9 @@
         "bresu": [
           "zemendorf-stoettera.at"
         ],
+        "bresu_email": [
+          "zemendorf-stoettera.bgld.gv.at"
+        ],
         "wikidata": [
           "zemendorf-stoettera.at"
         ]
@@ -1729,6 +1970,9 @@
         "bresu": [
           "krensdorf.at"
         ],
+        "bresu_email": [
+          "krensdorf.bgld.gv.at"
+        ],
         "wikidata": [
           "krensdorf.at"
         ]
@@ -1741,6 +1985,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "andau.bgld.gv.at",
         "andau-gemeinde.at"
       ],
       "source": "static",
@@ -1748,6 +1993,9 @@
       "sources_detail": {
         "bresu": [
           "andau-gemeinde.at"
+        ],
+        "bresu_email": [
+          "andau.bgld.gv.at"
         ],
         "wikidata": [
           "andau-gemeinde.at"
@@ -1784,6 +2032,7 @@
       "region": "Burgenland",
       "website": "bruckneudorf.eu",
       "emails": [
+        "bruckneudorf.bgld.gv.at",
         "bruckneudorf.eu"
       ],
       "source": "static",
@@ -1791,6 +2040,9 @@
       "sources_detail": {
         "bresu": [
           "bruckneudorf.eu"
+        ],
+        "bresu_email": [
+          "bruckneudorf.bgld.gv.at"
         ],
         "wikidata": [
           "bruckneudorf.eu"
@@ -1811,6 +2063,9 @@
       "sources_detail": {
         "bresu": [
           "deutsch-jahrndorf.at"
+        ],
+        "bresu_email": [
+          "deutsch-jahrndorf.bgld.gv.at"
         ],
         "wikidata": [
           "deutsch-jahrndorf.at"
@@ -1836,6 +2091,9 @@
         "bresu": [
           "frauenkirchen.at"
         ],
+        "bresu_email": [
+          "frauenkirchen.bgld.gv.at"
+        ],
         "wikidata": [
           "frauenkirchen.at"
         ]
@@ -1848,6 +2106,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "gattendorf.bgld.gv.at",
         "gattendorf.at"
       ],
       "source": "static",
@@ -1855,6 +2114,9 @@
       "sources_detail": {
         "bresu": [
           "gattendorf.at"
+        ],
+        "bresu_email": [
+          "gattendorf.bgld.gv.at"
         ],
         "wikidata": [
           "gattendorf.at"
@@ -1868,14 +2130,18 @@
       "region": "Burgenland",
       "website": "gols.co.at",
       "emails": [
+        "gols.bgld.gv.at",
         "gols.at",
         "gols.co.at"
       ],
-      "source": "wikidata",
+      "source": "static",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
           "gols.co.at"
+        ],
+        "bresu_email": [
+          "gols.bgld.gv.at"
         ],
         "wikidata": [
           "gols.at"
@@ -1920,6 +2186,9 @@
         "bresu": [
           "gemeinde-illmitz.at"
         ],
+        "bresu_email": [
+          "illmitz.bgld.gv.at"
+        ],
         "wikidata": [
           "illmitz.co.at"
         ]
@@ -1940,6 +2209,9 @@
       "sources_detail": {
         "bresu": [
           "jois.at"
+        ],
+        "bresu_email": [
+          "jois.bgld.gv.at"
         ],
         "wikidata": [
           "jois.at"
@@ -1962,6 +2234,9 @@
         "bresu": [
           "kittsee.at"
         ],
+        "bresu_email": [
+          "kittsee.bgld.gv.at"
+        ],
         "wikidata": [
           "kittsee.at"
         ],
@@ -1977,6 +2252,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "moenchhof.bgld.gv.at",
         "moenchhof.at"
       ],
       "source": "static",
@@ -1984,6 +2260,9 @@
       "sources_detail": {
         "bresu": [
           "moenchhof.at"
+        ],
+        "bresu_email": [
+          "moenchhof.bgld.gv.at"
         ],
         "wikidata": [
           "moenchhof.at"
@@ -2044,6 +2323,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "pama.bgld.gv.at",
         "gemeinde-pama.at"
       ],
       "source": "static",
@@ -2051,6 +2331,9 @@
       "sources_detail": {
         "bresu": [
           "gemeinde-pama.at"
+        ],
+        "bresu_email": [
+          "pama.bgld.gv.at"
         ],
         "wikidata": [
           "gemeinde-pama.at"
@@ -2072,6 +2355,9 @@
         "bresu": [
           "gemeinde-pamhagen.at"
         ],
+        "bresu_email": [
+          "pamhagen.bgld.gv.at"
+        ],
         "wikidata": [
           "gemeinde-pamhagen.at"
         ]
@@ -2084,6 +2370,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "parndorf.bgld.gv.at",
         "gemeinde-parndorf.at"
       ],
       "source": "static",
@@ -2091,6 +2378,9 @@
       "sources_detail": {
         "bresu": [
           "gemeinde-parndorf.at"
+        ],
+        "bresu_email": [
+          "parndorf.bgld.gv.at"
         ],
         "wikidata": [
           "gemeinde-parndorf.at"
@@ -2136,6 +2426,9 @@
         "bresu": [
           "xn--gemeinde-standr-flb.at"
         ],
+        "bresu_email": [
+          "st-andrae-zicksee.bgld.gv.at"
+        ],
         "wikidata": [
           "standraezicksee.at"
         ],
@@ -2160,6 +2453,9 @@
         "bresu": [
           "tadten.at"
         ],
+        "bresu_email": [
+          "tadten.bgld.gv.at"
+        ],
         "wikidata": [
           "tadten.eu"
         ]
@@ -2181,6 +2477,9 @@
         "bresu": [
           "marktgemeinde-wallern-im-burgenland.at"
         ],
+        "bresu_email": [
+          "wallern.bgld.gv.at"
+        ],
         "wikidata": [
           "marktgemeinde-wallern-im-burgenland.at"
         ]
@@ -2201,6 +2500,9 @@
         "bresu": [
           "weiden-see.at"
         ],
+        "bresu_email": [
+          "weiden-see.bgld.gv.at"
+        ],
         "wikidata": [
           "weiden-see.at"
         ]
@@ -2213,6 +2515,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "winden.bgld.gv.at",
         "winden.at"
       ],
       "source": "static",
@@ -2220,6 +2523,9 @@
       "sources_detail": {
         "bresu": [
           "winden.at"
+        ],
+        "bresu_email": [
+          "winden.bgld.gv.at"
         ],
         "wikidata": [
           "winden.at"
@@ -2264,6 +2570,9 @@
         "bresu": [
           "neudorfbeiparndorf.at"
         ],
+        "bresu_email": [
+          "neudorf.bgld.gv.at"
+        ],
         "wikidata": [
           "neudorfbeiparndorf.at"
         ]
@@ -2284,6 +2593,9 @@
         "bresu": [
           "potzneusiedl.at"
         ],
+        "bresu_email": [
+          "potzneusiedl.bgld.gv.at"
+        ],
         "wikidata": [
           "potzneusiedl.at"
         ]
@@ -2303,6 +2615,9 @@
       "sources_detail": {
         "bresu": [
           "edelstal.gv.at"
+        ],
+        "bresu_email": [
+          "edelstal.bgld.gv.at"
         ],
         "wikidata": [
           "gemeinde-edelstal.at"
@@ -2325,6 +2640,9 @@
         "bresu": [
           "deutschkreutz.at"
         ],
+        "bresu_email": [
+          "deutschkreutz.bgld.gv.at"
+        ],
         "wikidata": [
           "deutschkreutz.at"
         ]
@@ -2337,6 +2655,7 @@
       "region": "Burgenland",
       "website": "drassmarkt.at",
       "emails": [
+        "drassmarkt.bgld.gv.at",
         "drassmarkt.at"
       ],
       "source": "static",
@@ -2344,6 +2663,9 @@
       "sources_detail": {
         "bresu": [
           "drassmarkt.at"
+        ],
+        "bresu_email": [
+          "drassmarkt.bgld.gv.at"
         ],
         "wikidata": [
           "drassmarkt.at"
@@ -2364,6 +2686,9 @@
       "sources_detail": {
         "bresu": [
           "frankenau-unterpullendorf.gv.at"
+        ],
+        "bresu_email": [
+          "frankenau-unterpullendorf.bgld.gv.at"
         ],
         "wikidata": [
           "frankenau-unterpullendorf.gv.at"
@@ -2410,6 +2735,9 @@
         "bresu": [
           "horitschon.at"
         ],
+        "bresu_email": [
+          "horitschon.bgld.gv.at"
+        ],
         "wikidata": [
           "horitschon.at"
         ]
@@ -2422,6 +2750,7 @@
       "region": "Burgenland",
       "website": "kaisersdorf.com",
       "emails": [
+        "kaisersdorf.bgld.gv.at",
         "kaisersdorf.com"
       ],
       "source": "static",
@@ -2429,6 +2758,9 @@
       "sources_detail": {
         "bresu": [
           "kaisersdorf.com"
+        ],
+        "bresu_email": [
+          "kaisersdorf.bgld.gv.at"
         ],
         "wikidata": [
           "kaisersdorf.com"
@@ -2442,6 +2774,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "kobersdorf.bgld.gv.at",
         "kobersdorf.at"
       ],
       "source": "static",
@@ -2449,6 +2782,9 @@
       "sources_detail": {
         "bresu": [
           "kobersdorf.at"
+        ],
+        "bresu_email": [
+          "kobersdorf.bgld.gv.at"
         ],
         "wikidata": [
           "kobersdorf.at"
@@ -2470,6 +2806,9 @@
         "bresu": [
           "gemeinde-lackenbach.at"
         ],
+        "bresu_email": [
+          "lackenbach.bgld.gv.at"
+        ],
         "wikidata": [
           "gemeinde-lackenbach.at"
         ]
@@ -2489,6 +2828,9 @@
       "sources_detail": {
         "bresu": [
           "lockenhaus.at"
+        ],
+        "bresu_email": [
+          "lockenhaus.bgld.gv.at"
         ],
         "wikidata": [
           "lockenhaus.at"
@@ -2511,6 +2853,9 @@
         "bresu": [
           "lutzmannsburg.at"
         ],
+        "bresu_email": [
+          "lutzmannsburg.bgld.gv.at"
+        ],
         "wikidata": [
           "lutzmannsburg.info"
         ]
@@ -2530,6 +2875,9 @@
       "sources_detail": {
         "bresu": [
           "mannersdorf-adr.at"
+        ],
+        "bresu_email": [
+          "mannersdorf.bgld.gv.at"
         ],
         "wikidata": [
           "mannersdorf-adr.at"
@@ -2552,6 +2900,9 @@
         "bresu": [
           "marktstmartin.at"
         ],
+        "bresu_email": [
+          "markt-st-martin.bgld.gv.at"
+        ],
         "wikidata": [
           "marktstmartin.at"
         ]
@@ -2564,14 +2915,18 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "neckenmarkt.bgld.gv.at",
         "neckenmarkt.eu",
         "neckenmarkt.net"
       ],
-      "source": "wikidata",
+      "source": "static",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
           "neckenmarkt.net"
+        ],
+        "bresu_email": [
+          "neckenmarkt.bgld.gv.at"
         ],
         "wikidata": [
           "neckenmarkt.eu"
@@ -2617,6 +2972,9 @@
         "bresu": [
           "nikitsch.gv.at"
         ],
+        "bresu_email": [
+          "nikitsch.bgld.gv.at"
+        ],
         "wikidata": [
           "gemeinde-nikitsch.at"
         ]
@@ -2638,6 +2996,9 @@
         "bresu": [
           "oberpullendorf.gv.at"
         ],
+        "bresu_email": [
+          "oberpullendorf.bgld.gv.at"
+        ],
         "wikidata": [
           "oberpullendorf.at"
         ]
@@ -2658,6 +3019,9 @@
         "bresu": [
           "pilgersdorf.at"
         ],
+        "bresu_email": [
+          "pilgersdorf.bgld.gv.at"
+        ],
         "wikidata": [
           "pilgersdorf.at"
         ]
@@ -2670,6 +3034,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "piringsdorf.bgld.gv.at",
         "piringsdorf.at"
       ],
       "source": "static",
@@ -2677,6 +3042,9 @@
       "sources_detail": {
         "bresu": [
           "piringsdorf.at"
+        ],
+        "bresu_email": [
+          "piringsdorf.bgld.gv.at"
         ],
         "wikidata": [
           "piringsdorf.at"
@@ -2690,13 +3058,17 @@
       "region": "Burgenland",
       "website": "raiding-online.at",
       "emails": [
+        "raiding.bgld.gv.at",
         "raiding.at"
       ],
-      "source": "wikidata",
+      "source": "static",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
           "gemeinde-raiding.at"
+        ],
+        "bresu_email": [
+          "raiding.bgld.gv.at"
         ],
         "wikidata": [
           "raiding.at"
@@ -2719,6 +3091,9 @@
         "bresu": [
           "ritzing.at"
         ],
+        "bresu_email": [
+          "ritzing.bgld.gv.at"
+        ],
         "wikidata": [
           "ritzing.at"
         ]
@@ -2737,6 +3112,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "steinberg-doerfl.bgld.gv.at"
+        ],
         "wikidata": [
           "steinberg-dörfl.at"
         ]
@@ -2758,6 +3136,9 @@
         "bresu": [
           "stoob.at"
         ],
+        "bresu_email": [
+          "stoob.bgld.gv.at"
+        ],
         "wikidata": [
           "stoob.at"
         ]
@@ -2777,6 +3158,9 @@
       "sources_detail": {
         "bresu": [
           "weppersdorf.at"
+        ],
+        "bresu_email": [
+          "weppersdorf.bgld.gv.at"
         ],
         "wikidata": [
           "weppersdorf.at"
@@ -2798,6 +3182,9 @@
         "bresu": [
           "lackendorf.at"
         ],
+        "bresu_email": [
+          "lackendorf.bgld.gv.at"
+        ],
         "wikidata": [
           "lackendorf.at"
         ]
@@ -2817,6 +3204,9 @@
       "sources_detail": {
         "bresu": [
           "unterfrauenhaid.at"
+        ],
+        "bresu_email": [
+          "unterfrauenhaid.bgld.gv.at"
         ],
         "wikidata": [
           "unterfrauenhaid.at"
@@ -2839,6 +3229,9 @@
         "bresu": [
           "unterrabnitz.at"
         ],
+        "bresu_email": [
+          "unterrabnitz-schwendgraben.bgld.gv.at"
+        ],
         "wikidata": [
           "unterrabnitz.at"
         ]
@@ -2855,7 +3248,11 @@
       ],
       "source": "override",
       "confidence": "high",
-      "sources_detail": {},
+      "sources_detail": {
+        "bresu_email": [
+          "weingraben.bgld.gv.at"
+        ]
+      },
       "flags": []
     },
     {
@@ -2871,6 +3268,9 @@
       "sources_detail": {
         "bresu": [
           "oberloisdorf.at"
+        ],
+        "bresu_email": [
+          "oberloisdorf.bgld.gv.at"
         ],
         "wikidata": [
           "oberloisdorf.at"
@@ -2892,6 +3292,9 @@
         "bresu": [
           "bad-tatzmannsdorf.at"
         ],
+        "bresu_email": [
+          "bad-tatzmannsdorf.bgld.gv.at"
+        ],
         "wikidata": [
           "bad-tatzmannsdorf.at"
         ]
@@ -2904,6 +3307,7 @@
       "region": "Burgenland",
       "website": "bernstein.gv.at",
       "emails": [
+        "bernstein.bgld.gv.at",
         "bernstein.gv.at"
       ],
       "source": "static",
@@ -2911,6 +3315,9 @@
       "sources_detail": {
         "bresu": [
           "bernstein.gv.at"
+        ],
+        "bresu_email": [
+          "bernstein.bgld.gv.at"
         ],
         "wikidata": [
           "bernstein.gv.at"
@@ -2924,6 +3331,7 @@
       "region": "Burgenland",
       "website": "eisenberg.at",
       "emails": [
+        "deutsch-schuetzen-eisenberg.bgld.gv.at",
         "eisenberg.at"
       ],
       "source": "static",
@@ -2931,6 +3339,9 @@
       "sources_detail": {
         "bresu": [
           "eisenberg.at"
+        ],
+        "bresu_email": [
+          "deutsch-schuetzen-eisenberg.bgld.gv.at"
         ],
         "wikidata": [
           "eisenberg.at"
@@ -2944,6 +3355,7 @@
       "region": "Burgenland",
       "website": "grafenschachen.at",
       "emails": [
+        "grafenschachen.bgld.gv.at",
         "grafenschachen.at"
       ],
       "source": "static",
@@ -2951,6 +3363,9 @@
       "sources_detail": {
         "bresu": [
           "grafenschachen.at"
+        ],
+        "bresu_email": [
+          "grafenschachen.bgld.gv.at"
         ],
         "wikidata": [
           "grafenschachen.at"
@@ -2973,6 +3388,9 @@
         "bresu": [
           "grosspetersdorf.at"
         ],
+        "bresu_email": [
+          "grosspetersdorf.bgld.gv.at"
+        ],
         "wikidata": [
           "grosspetersdorf.at"
         ]
@@ -2985,6 +3403,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "hannersdorf.bgld.gv.at",
         "hannersdorf.at"
       ],
       "source": "static",
@@ -2992,6 +3411,9 @@
       "sources_detail": {
         "bresu": [
           "hannersdorf.at"
+        ],
+        "bresu_email": [
+          "hannersdorf.bgld.gv.at"
         ],
         "wikidata": [
           "hannersdorf.at"
@@ -3013,6 +3435,9 @@
         "bresu": [
           "kemeten.gv.at"
         ],
+        "bresu_email": [
+          "kemeten.bgld.gv.at"
+        ],
         "wikidata": [
           "kemeten.at"
         ]
@@ -3032,6 +3457,9 @@
       "sources_detail": {
         "bresu": [
           "kohfidisch.at"
+        ],
+        "bresu_email": [
+          "kohfidisch.bgld.gv.at"
         ],
         "wikidata": [
           "kohfidisch.at"
@@ -3054,6 +3482,9 @@
         "bresu": [
           "litzelsdorf.at"
         ],
+        "bresu_email": [
+          "litzelsdorf.bgld.gv.at"
+        ],
         "wikidata": [
           "litzelsdorf.at"
         ]
@@ -3073,6 +3504,9 @@
       "sources_detail": {
         "bresu": [
           "gemeinde.loipersdorf.at"
+        ],
+        "bresu_email": [
+          "bad-loipersdorf.gv.at"
         ],
         "wikidata": [
           "loipersdorf-kitzladen.at"
@@ -3094,6 +3528,9 @@
         "bresu": [
           "mariasdorf.at"
         ],
+        "bresu_email": [
+          "mariasdorf.bgld.gv.at"
+        ],
         "wikidata": [
           "mariasdorf.at"
         ]
@@ -3114,6 +3551,9 @@
         "bresu": [
           "marktallhau.gv.at"
         ],
+        "bresu_email": [
+          "markt-allhau.bgld.gv.at"
+        ],
         "wikidata": [
           "marktallhau.at"
         ]
@@ -3133,6 +3573,9 @@
       "sources_detail": {
         "bresu": [
           "markt-neuhodis.at"
+        ],
+        "bresu_email": [
+          "markt-neuhodis.bgld.gv.at"
         ]
       },
       "flags": []
@@ -3143,6 +3586,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "mischendorf.bgld.gv.at",
         "mischendorf.at"
       ],
       "source": "static",
@@ -3150,6 +3594,9 @@
       "sources_detail": {
         "bresu": [
           "mischendorf.at"
+        ],
+        "bresu_email": [
+          "mischendorf.bgld.gv.at"
         ],
         "wikidata": [
           "mischendorf.at"
@@ -3171,6 +3618,9 @@
         "bresu": [
           "oberdorf.at"
         ],
+        "bresu_email": [
+          "oberdorf.bgld.gv.at"
+        ],
         "wikidata": [
           "oberdorf.at"
         ]
@@ -3190,6 +3640,9 @@
       "sources_detail": {
         "bresu": [
           "oberschuetzen.at"
+        ],
+        "bresu_email": [
+          "oberschuetzen.bgld.gv.at"
         ],
         "wikidata": [
           "oberschuetzen.at"
@@ -3235,6 +3688,9 @@
         "bresu": [
           "pinkafeld.gv.at"
         ],
+        "bresu_email": [
+          "pinkafeld.bgld.gv.at"
+        ],
         "wikidata": [
           "pinkafeld-online.at"
         ]
@@ -3257,6 +3713,9 @@
         "bresu": [
           "rechnitz.at"
         ],
+        "bresu_email": [
+          "rechnitz.bgld.gv.at"
+        ],
         "wikidata": [
           "rechnitz.com"
         ]
@@ -3277,6 +3736,9 @@
       "sources_detail": {
         "bresu": [
           "riedlingsdorf.at"
+        ],
+        "bresu_email": [
+          "riedlingsdorf.bgld.gv.at"
         ],
         "wikidata": [
           "riedlingsdorf.at"
@@ -3315,6 +3777,9 @@
         "bresu": [
           "schachendorf.at"
         ],
+        "bresu_email": [
+          "schachendorf.bgld.gv.at"
+        ],
         "wikidata": [
           "schachendorf.at"
         ]
@@ -3335,6 +3800,9 @@
       "sources_detail": {
         "bresu": [
           "stadtschlaining.at"
+        ],
+        "bresu_email": [
+          "stadtschlaining.bgld.gv.at"
         ],
         "wikidata": [
           "stadtschlaining.co.at"
@@ -3359,6 +3827,9 @@
         "bresu": [
           "unterkohlstaetten.at"
         ],
+        "bresu_email": [
+          "unterkohlstaetten.bgld.gv.at"
+        ],
         "wikidata": [
           "unterkohlstaetten.at"
         ]
@@ -3371,6 +3842,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "unterwart.bgld.gv.at",
         "unterwart.at"
       ],
       "source": "static",
@@ -3378,6 +3850,9 @@
       "sources_detail": {
         "bresu": [
           "unterwart.at"
+        ],
+        "bresu_email": [
+          "unterwart.bgld.gv.at"
         ],
         "wikidata": [
           "unterwart.at"
@@ -3399,6 +3874,9 @@
         "bresu": [
           "weiden-rechnitz.at"
         ],
+        "bresu_email": [
+          "weiden-rechnitz.bgld.gv.at"
+        ],
         "wikidata": [
           "weiden-rechnitz.at"
         ]
@@ -3411,6 +3889,7 @@
       "region": "Burgenland",
       "website": "wiesfleck.at",
       "emails": [
+        "wiesfleck.bgld.gv.at",
         "gemeinde-wiesfleck.at"
       ],
       "source": "static",
@@ -3418,6 +3897,9 @@
       "sources_detail": {
         "bresu": [
           "gemeinde-wiesfleck.at"
+        ],
+        "bresu_email": [
+          "wiesfleck.bgld.gv.at"
         ],
         "wikidata": [
           "wiesfleck.at"
@@ -3441,6 +3923,9 @@
         "bresu": [
           "gemeinde-wolfau.at"
         ],
+        "bresu_email": [
+          "wolfau.bgld.gv.at"
+        ],
         "wikidata": [
           "wolfau.at"
         ]
@@ -3461,6 +3946,9 @@
         "bresu": [
           "neustift-lafnitz.at"
         ],
+        "bresu_email": [
+          "neustift-lafnitz.bgld.gv.at"
+        ],
         "wikidata": [
           "neustift-lafnitz.at"
         ]
@@ -3473,6 +3961,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "jabing.bgld.gv.at",
         "gemeinde-jabing.at"
       ],
       "source": "static",
@@ -3480,6 +3969,9 @@
       "sources_detail": {
         "bresu": [
           "gemeinde-jabing.at"
+        ],
+        "bresu_email": [
+          "jabing.bgld.gv.at"
         ],
         "wikidata": [
           "gemeinde-jabing.at"
@@ -3501,6 +3993,9 @@
         "bresu": [
           "badersdorf.at"
         ],
+        "bresu_email": [
+          "badersdorf.bgld.gv.at%0a"
+        ],
         "wikidata": [
           "badersdorf.at"
         ]
@@ -3520,6 +4015,9 @@
       "sources_detail": {
         "bresu": [
           "schandorf.at"
+        ],
+        "bresu_email": [
+          "schandorf.bgld.gv.at"
         ],
         "wikidata": [
           "schandorf.at"
@@ -3591,6 +4089,9 @@
         "bresu": [
           "dellach.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "gemeinde.dellach.at"
         ],
@@ -3640,6 +4141,9 @@
         "bresu": [
           "kirchbach.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "kirchbach-kaernten.at"
         ]
@@ -3659,6 +4163,9 @@
       "sources_detail": {
         "bresu": [
           "koetschach-mauthen.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "koetschach-mauthen.gv.at"
@@ -3680,6 +4187,9 @@
         "bresu": [
           "st-stefan-gailtal.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "st.stefan-gailtal.at"
         ]
@@ -3699,6 +4209,9 @@
       "sources_detail": {
         "bresu": [
           "gitschtal.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "gitschtal.at"
@@ -3720,6 +4233,9 @@
         "bresu": [
           "lesachtal.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "lesachtal.com"
         ]
@@ -3739,6 +4255,9 @@
       "sources_detail": {
         "bresu": [
           "ebenthal-kaernten.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "ebenthal.co.at"
@@ -3760,6 +4279,9 @@
         "bresu": [
           "feistritz-rosental.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "rosengemeinde.at"
         ]
@@ -3779,6 +4301,9 @@
       "sources_detail": {
         "bresu": [
           "ferlach.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "ferlach.at"
@@ -3800,6 +4325,9 @@
         "bresu": [
           "grafenstein.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "grafenstein.co.at"
         ]
@@ -3819,6 +4347,9 @@
       "sources_detail": {
         "bresu": [
           "keutschach.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "keutschach-see.gv.at"
@@ -3840,6 +4371,9 @@
         "bresu": [
           "koettmannsdorf.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "koettmannsdorf.at"
         ]
@@ -3859,6 +4393,9 @@
       "sources_detail": {
         "bresu": [
           "krumpendorf.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "krumpendorf.at"
@@ -3880,6 +4417,9 @@
         "bresu": [
           "ludmannsdorf.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "ludmannsdorf.at"
         ]
@@ -3900,6 +4440,9 @@
         "bresu": [
           "maria-rain.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "maria-rain.gv.at"
         ]
@@ -3919,6 +4462,9 @@
       "sources_detail": {
         "bresu": [
           "maria-saal.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ]
       },
       "flags": []
@@ -3936,6 +4482,9 @@
       "sources_detail": {
         "bresu": [
           "maria-woerth.info"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "maria-woerth.at"
@@ -3957,6 +4506,9 @@
         "bresu": [
           "moosburg.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "moosburg.gv.at"
         ]
@@ -3976,6 +4528,9 @@
       "sources_detail": {
         "bresu": [
           "poertschach.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "poertschach.net"
@@ -3997,6 +4552,9 @@
       "sources_detail": {
         "bresu": [
           "gemeinde-poggersdorf.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "poggersdorf.at"
@@ -4021,6 +4579,9 @@
         "bresu": [
           "st-margareten-rosental.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "st-margareten.at"
         ]
@@ -4040,6 +4601,9 @@
       "sources_detail": {
         "bresu": [
           "schiefling.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "schiefling.gv.at"
@@ -4061,6 +4625,9 @@
         "bresu": [
           "techelsberg.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "techelsberg.gv.at"
         ]
@@ -4080,6 +4647,9 @@
       "sources_detail": {
         "bresu": [
           "zell-sele.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "zell-sele.at"
@@ -4101,6 +4671,9 @@
         "bresu": [
           "magdalensberg.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "magdalensberg.gv.at"
         ]
@@ -4120,6 +4693,9 @@
       "sources_detail": {
         "bresu": [
           "althofen.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "althofen-treibach.at"
@@ -4141,6 +4717,9 @@
         "bresu": [
           "brueckl.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "brueckl.at"
         ]
@@ -4160,6 +4739,9 @@
       "sources_detail": {
         "bresu": [
           "deutsch-griffen.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "deutsch-griffen.at"
@@ -4181,6 +4763,9 @@
         "bresu": [
           "eberstein.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "eberstein.at"
         ]
@@ -4200,6 +4785,9 @@
       "sources_detail": {
         "bresu": [
           "friesach.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "friesach.at"
@@ -4222,6 +4810,9 @@
         "bresu": [
           "gloednitz.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "gloednitz.com"
         ]
@@ -4241,6 +4832,9 @@
       "sources_detail": {
         "bresu": [
           "gurk.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "gurk.at"
@@ -4262,6 +4856,9 @@
         "bresu": [
           "guttaring.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "guttaring.at"
         ]
@@ -4281,6 +4878,9 @@
       "sources_detail": {
         "bresu": [
           "huettenberg.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "huettenberg.at"
@@ -4302,6 +4902,9 @@
         "bresu": [
           "kappel-am-krappfeld.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "kappel-am-krappfeld.at"
         ]
@@ -4321,6 +4924,9 @@
       "sources_detail": {
         "bresu": [
           "klein-st-paul.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "klein-st-paul.at"
@@ -4342,6 +4948,9 @@
         "bresu": [
           "liebenfels.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "liebenfels.at"
         ]
@@ -4362,6 +4971,9 @@
         "bresu": [
           "metnitz.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "metnitz.at"
         ]
@@ -4381,6 +4993,9 @@
       "sources_detail": {
         "bresu": [
           "micheldorf.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ]
       },
       "flags": []
@@ -4398,6 +5013,9 @@
       "sources_detail": {
         "bresu": [
           "moelbling.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "moelbling.at"
@@ -4418,6 +5036,9 @@
       "sources_detail": {
         "bresu": [
           "st-georgen-laengsee.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "stgeorgen-laengsee.at"
@@ -4465,6 +5086,9 @@
         "bresu": [
           "strassburg.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "strassburg.at"
         ]
@@ -4484,6 +5108,9 @@
       "sources_detail": {
         "bresu": [
           "weitensfeld.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ]
       },
       "flags": []
@@ -4501,6 +5128,9 @@
       "sources_detail": {
         "bresu": [
           "frauenstein.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "frauenstein.at"
@@ -4522,6 +5152,9 @@
         "bresu": [
           "bad-kleinkirchheim.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "bad-kleinkirchheim.gv.at"
         ]
@@ -4541,6 +5174,9 @@
       "sources_detail": {
         "bresu": [
           "baldramsdorf.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "baldramsdorf.at"
@@ -4562,6 +5198,9 @@
         "bresu": [
           "berg-drautal.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "bergimdrautal.at"
         ]
@@ -4581,6 +5220,9 @@
       "sources_detail": {
         "bresu": [
           "dellach-drau.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "dellach-drau.at"
@@ -4602,6 +5244,9 @@
         "bresu": [
           "grosskirchheim.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "riskommunal.at"
         ]
@@ -4621,6 +5266,9 @@
       "sources_detail": {
         "bresu": [
           "flattach.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "flattach.at"
@@ -4642,6 +5290,9 @@
         "bresu": [
           "stadtgmuend.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "stadt-gmuend.at"
         ]
@@ -4661,6 +5312,9 @@
       "sources_detail": {
         "bresu": [
           "greifenburg.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "greifenburg.com"
@@ -4682,6 +5336,9 @@
         "bresu": [
           "heiligenblut.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "heiligenblut.at"
         ]
@@ -4701,6 +5358,9 @@
       "sources_detail": {
         "bresu": [
           "irschen.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "irschen.at"
@@ -4722,6 +5382,9 @@
         "bresu": [
           "kleblach-lind.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "riskommunal.at"
         ]
@@ -4741,6 +5404,9 @@
       "sources_detail": {
         "bresu": [
           "lendorf.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "lendorf.at"
@@ -4785,6 +5451,9 @@
       "sources_detail": {
         "bresu": [
           "malta.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "maltatal.com"
@@ -4832,6 +5501,9 @@
         "bresu": [
           "moertschach.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "nationalparkgemeinde-moertschach.at"
         ]
@@ -4877,6 +5549,9 @@
         "bresu": [
           "oberdrauburg.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "oberdrauburg.at"
         ]
@@ -4896,6 +5571,9 @@
       "sources_detail": {
         "bresu": [
           "obervellach.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "obervellach.gv.at"
@@ -4940,6 +5618,9 @@
         "bresu": [
           "rangersdorf.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "rangersdorf.at"
         ]
@@ -4959,6 +5640,9 @@
       "sources_detail": {
         "bresu": [
           "rennweg-katschberg.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "rennweg-katschberg.gv.at"
@@ -4980,6 +5664,9 @@
         "bresu": [
           "sachsenburg.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "sachsenburg.at"
         ]
@@ -4999,6 +5686,9 @@
       "sources_detail": {
         "bresu": [
           "seeboden.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "seeboden.at"
@@ -5046,6 +5736,9 @@
         "bresu": [
           "stall.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "gemeinde-stall.at"
         ]
@@ -5065,6 +5758,9 @@
       "sources_detail": {
         "bresu": [
           "steinfeld.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "steinfeld.at"
@@ -5086,6 +5782,9 @@
         "bresu": [
           "trebesing.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "trebesing.at"
         ]
@@ -5105,6 +5804,9 @@
       "sources_detail": {
         "bresu": [
           "gemeinde-weissensee.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ]
       },
       "flags": []
@@ -5122,6 +5824,9 @@
       "sources_detail": {
         "bresu": [
           "winklern.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "winklern.at"
@@ -5143,6 +5848,9 @@
         "bresu": [
           "krems-kaernten.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "krems-in-kaernten.at"
         ]
@@ -5163,6 +5871,9 @@
         "bresu": [
           "lurnfeld.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "lurnfeld.at"
         ]
@@ -5182,6 +5893,9 @@
       "sources_detail": {
         "bresu": [
           "reisseck.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "reisseck.at"
@@ -5226,6 +5940,9 @@
         "bresu": [
           "arnoldstein.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "arnoldstein.gv.at"
         ]
@@ -5245,6 +5962,9 @@
       "sources_detail": {
         "bresu": [
           "arriach.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "arriach.gv.at"
@@ -5266,6 +5986,9 @@
         "bresu": [
           "bad-bleiberg.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "bad-bleiberg.at"
         ]
@@ -5285,6 +6008,9 @@
       "sources_detail": {
         "bresu": [
           "feistritz-gail.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "feistritz-gail.gv.at"
@@ -5306,6 +6032,9 @@
         "bresu": [
           "feld-am-see.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "feld-am-see.gv.at"
         ]
@@ -5325,6 +6054,9 @@
       "sources_detail": {
         "bresu": [
           "ferndorf.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "ferndorf.gv.at"
@@ -5346,6 +6078,9 @@
         "bresu": [
           "finkenstein.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "finkenstein.gv.at"
         ]
@@ -5365,6 +6100,9 @@
       "sources_detail": {
         "bresu": [
           "fresach.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "fresach.gv.at"
@@ -5386,6 +6124,9 @@
         "bresu": [
           "hohenthurn.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "hohenthurn.gv.at"
         ]
@@ -5405,6 +6146,9 @@
       "sources_detail": {
         "bresu": [
           "noetsch.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "noetsch.at"
@@ -5426,6 +6170,9 @@
         "bresu": [
           "paternion.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "paternion.gv.at"
         ]
@@ -5445,6 +6192,9 @@
       "sources_detail": {
         "bresu": [
           "rosegg.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "rosegg.gv.at"
@@ -5466,6 +6216,9 @@
         "bresu": [
           "st-jakob-rosental.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "st-jakob-rosental.gv.at"
         ]
@@ -5485,6 +6238,9 @@
       "sources_detail": {
         "bresu": [
           "stockenboi.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "stockenboi.at"
@@ -5506,6 +6262,9 @@
         "bresu": [
           "treffen.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "treffen.at"
         ]
@@ -5525,6 +6284,9 @@
       "sources_detail": {
         "bresu": [
           "velden.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "velden.gv.at"
@@ -5549,6 +6311,9 @@
         "bresu": [
           "weissenstein.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "weissenstein.gv.at"
         ]
@@ -5568,6 +6333,9 @@
       "sources_detail": {
         "bresu": [
           "wernberg.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "wernberg.gv.at"
@@ -5589,6 +6357,9 @@
         "bresu": [
           "bleiburg.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "bleiburg.gv.at"
         ]
@@ -5608,6 +6379,9 @@
       "sources_detail": {
         "bresu": [
           "diex.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ]
       },
       "flags": []
@@ -5625,6 +6399,9 @@
       "sources_detail": {
         "bresu": [
           "eberndorf.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "eberndorf.at"
@@ -5676,6 +6453,9 @@
         "bresu": [
           "feistritz-bleiburg.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "riskommunal.at"
         ]
@@ -5695,6 +6475,9 @@
       "sources_detail": {
         "bresu": [
           "gallizien.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "gallizien.at"
@@ -5716,6 +6499,9 @@
         "bresu": [
           "globasnitz.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "globasnitz.at"
         ]
@@ -5735,6 +6521,9 @@
       "sources_detail": {
         "bresu": [
           "griffen.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "griffen.at"
@@ -5756,6 +6545,9 @@
         "bresu": [
           "neuhaus.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "neuhaus.at"
         ]
@@ -5775,6 +6567,9 @@
       "sources_detail": {
         "bresu": [
           "ruden.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "ruden.at"
@@ -5796,6 +6591,9 @@
         "bresu": [
           "kanzian.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "st.kanzian.at"
         ]
@@ -5815,6 +6613,9 @@
       "sources_detail": {
         "bresu": [
           "sittersdorf.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "sittersdorf.at"
@@ -5836,6 +6637,9 @@
         "bresu": [
           "voelkermarkt.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "voelkermarkt.gv.at"
         ]
@@ -5855,6 +6659,9 @@
       "sources_detail": {
         "bresu": [
           "bad-st-leonhard-i-lav.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "bad-st-leonhard-i-lav.at"
@@ -5876,6 +6683,9 @@
         "bresu": [
           "frantschach.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "frantschach-st-gertraud.gv.at"
         ]
@@ -5895,6 +6705,9 @@
       "sources_detail": {
         "bresu": [
           "lavamuend.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "lavamuend.at"
@@ -5916,6 +6729,9 @@
         "bresu": [
           "preitenegg.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "preitenegg.at"
         ]
@@ -5935,6 +6751,9 @@
       "sources_detail": {
         "bresu": [
           "reichenfels.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "marktgemeinde-reichenfels.at"
@@ -5980,6 +6799,9 @@
         "bresu": [
           "sankt-georgen.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "st-georgen-lav.at"
         ],
@@ -6002,6 +6824,9 @@
       "sources_detail": {
         "bresu": [
           "sanktpaul.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "sanktpaul.at"
@@ -6049,6 +6874,9 @@
         "bresu": [
           "albeck.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "albeck.gv.at"
         ]
@@ -6092,6 +6920,9 @@
         "bresu": [
           "glanegg.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "glanegg.gv.at"
         ]
@@ -6111,6 +6942,9 @@
       "sources_detail": {
         "bresu": [
           "gnesau.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "gnesau.at"
@@ -6132,6 +6966,9 @@
         "bresu": [
           "himmelberg.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "himmelberg.at"
         ]
@@ -6151,6 +6988,9 @@
       "sources_detail": {
         "bresu": [
           "ossiach.gv.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "ossiach.at"
@@ -6172,6 +7012,9 @@
         "bresu": [
           "reichenau.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "ebene-reichenau.at"
         ]
@@ -6191,6 +7034,9 @@
       "sources_detail": {
         "bresu": [
           "sturban.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "sturban.at"
@@ -6212,6 +7058,9 @@
         "bresu": [
           "steindorf.gv.at"
         ],
+        "bresu_email": [
+          "ktn.gde.at"
+        ],
         "wikidata": [
           "steindorf.at"
         ]
@@ -6231,6 +7080,9 @@
       "sources_detail": {
         "bresu": [
           "steuerberg.at"
+        ],
+        "bresu_email": [
+          "ktn.gde.at"
         ],
         "wikidata": [
           "steuerberg.at"
@@ -7277,6 +8129,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "enzesfeld-lindabrunn.a"
+        ],
         "wikidata": [
           "enzesfeld-lindabrunn.at"
         ]
@@ -9091,6 +9946,9 @@
         "bresu": [
           "lassee.at"
         ],
+        "bresu_email": [
+          "lassee.gv.at"
+        ],
         "wikidata": [
           "lassee.at"
         ]
@@ -9373,6 +10231,7 @@
       "region": "Niederösterreich",
       "website": "",
       "emails": [
+        "ringelsdorf-niederabsdorf.gv.at",
         "ringelsdorf.at"
       ],
       "source": "static",
@@ -9380,6 +10239,9 @@
       "sources_detail": {
         "bresu": [
           "ringelsdorf.at"
+        ],
+        "bresu_email": [
+          "ringelsdorf-niederabsdorf.gv.at"
         ],
         "wikidata": [
           "ringelsdorf.at"
@@ -12088,6 +12950,9 @@
         "bresu": [
           "sankt-leonhard.at"
         ],
+        "bresu_email": [
+          "st-leonhard-hornerwald.gv.at"
+        ],
         "wikidata": [
           "sankt-leonhard.at"
         ]
@@ -13152,6 +14017,9 @@
         "bresu": [
           "persenbeug-gottsdorf.gv.at"
         ],
+        "bresu_email": [
+          "persenbeug-gottsdorf.at"
+        ],
         "wikidata": [
           "persenbeug-gottsdorf.gv.at"
         ]
@@ -13718,6 +14586,7 @@
       "region": "Niederösterreich",
       "website": "gaweinstal.at",
       "emails": [
+        "gaweinstal.gv.at",
         "gaweinstal.at"
       ],
       "source": "static",
@@ -13725,6 +14594,9 @@
       "sources_detail": {
         "bresu": [
           "gaweinstal.at"
+        ],
+        "bresu_email": [
+          "gaweinstal.gv.at"
         ],
         "wikidata": [
           "gaweinstal.at"
@@ -14040,6 +14912,9 @@
         "bresu": [
           "neudorf-weinviertel.gv.at"
         ],
+        "bresu_email": [
+          "neudorf.co.at"
+        ],
         "wikidata": [
           "neudorf-weinviertel.gv.at"
         ]
@@ -14128,6 +15003,9 @@
       "sources_detail": {
         "bresu": [
           "rabensburg.at"
+        ],
+        "bresu_email": [
+          "rabensburg.gv.at"
         ],
         "wikidata": [
           "rabensburg.at"
@@ -14421,6 +15299,7 @@
       "region": "Niederösterreich",
       "website": "brunnamgebirge.at",
       "emails": [
+        "brunnamgebirge.gv.at",
         "brunnamgebirge.at"
       ],
       "source": "static",
@@ -14428,6 +15307,9 @@
       "sources_detail": {
         "bresu": [
           "brunnamgebirge.at"
+        ],
+        "bresu_email": [
+          "brunnamgebirge.gv.at"
         ],
         "wikidata": [
           "brunnamgebirge.at"
@@ -15396,6 +16278,9 @@
         "bresu": [
           "st-corona-wechsel.gv.at"
         ],
+        "bresu_email": [
+          "st-corona-wechsel.at"
+        ],
         "wikidata": [
           "st-corona-wechsel.gv.at"
         ]
@@ -15578,6 +16463,9 @@
       "sources_detail": {
         "bresu": [
           "semmering.at"
+        ],
+        "bresu_email": [
+          "semmering.gv.at"
         ],
         "wikidata": [
           "semmering.at"
@@ -16085,6 +16973,9 @@
         "bresu": [
           "herzogenburg.gv.at"
         ],
+        "bresu_email": [
+          "gde.herzogenburg.at"
+        ],
         "wikidata": [
           "herzogenburg.at"
         ]
@@ -16190,13 +17081,16 @@
       "region": "Niederösterreich",
       "website": "kirchberg-pielach.at",
       "emails": [
-        "kirchberg-pielach.at"
+        "kirchbergpielach.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
           "kirchberg-pielach.at"
+        ],
+        "bresu_email": [
+          "kirchbergpielach.at"
         ],
         "wikidata": [
           "kirchberg-pielach.at"
@@ -16479,6 +17373,9 @@
       "sources_detail": {
         "bresu": [
           "prinzersdorf.at"
+        ],
+        "bresu_email": [
+          "prinzersdorf.gv.at"
         ],
         "wikidata": [
           "prinzersdorf.at"
@@ -17040,6 +17937,9 @@
       "sources_detail": {
         "bresu": [
           "puchenstuben.at"
+        ],
+        "bresu_email": [
+          "puchenstuben.gv.at"
         ],
         "wikidata": [
           "puchenstuben.at"
@@ -17704,6 +18604,9 @@
         "bresu": [
           "zeiselmauer-wolfpassing.gv.at"
         ],
+        "bresu_email": [
+          "zeiselmauer.gv.at"
+        ],
         "wikidata": [
           "zeiselmauer-wolfpassing.at"
         ]
@@ -17882,6 +18785,9 @@
       "sources_detail": {
         "bresu": [
           "gross-siegharts.gv.at"
+        ],
+        "bresu_email": [
+          "gde.siegharts.at"
         ],
         "wikidata": [
           "siegharts.at"
@@ -18870,6 +19776,9 @@
         "bresu": [
           "weikersdorf.at"
         ],
+        "bresu_email": [
+          "weikersdorf-steinfelde.gv.at"
+        ],
         "wikidata": [
           "weikersdorf.at"
         ],
@@ -19277,13 +20186,16 @@
       "region": "Niederösterreich",
       "website": "ottenschlag.com",
       "emails": [
-        "ottenschlag.com"
+        "ottenschlag.eu"
       ],
-      "source": "wikidata",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
           "ottenschlag.gv.at"
+        ],
+        "bresu_email": [
+          "ottenschlag.eu"
         ],
         "wikidata": [
           "ottenschlag.com"
@@ -19537,6 +20449,9 @@
       "sources_detail": {
         "bresu": [
           "linz.gv.at"
+        ],
+        "bresu_email": [
+          "mag.linz.at"
         ],
         "wikidata": [
           "linz.at"
@@ -19815,6 +20730,9 @@
         "bresu": [
           "gilgenberg.at"
         ],
+        "bresu_email": [
+          "gilgenberg.ooe.gv.at"
+        ],
         "wikidata": [
           "gilgenberg.at"
         ]
@@ -19834,6 +20752,9 @@
       "sources_detail": {
         "bresu": [
           "haigermoos.at"
+        ],
+        "bresu_email": [
+          "haigermoos.ooe.gv.at"
         ],
         "wikidata": [
           "haigermoos.at"
@@ -19949,6 +20870,9 @@
         "bresu": [
           "jeging.at"
         ],
+        "bresu_email": [
+          "jeging.ooe.gv.at"
+        ],
         "wikidata": [
           "jeging.at"
         ]
@@ -20014,6 +20938,9 @@
       "sources_detail": {
         "bresu": [
           "lochen.at"
+        ],
+        "bresu_email": [
+          "lochen.ooe.gv.at"
         ],
         "wikidata": [
           "lochen.at"
@@ -20244,6 +21171,9 @@
         "bresu": [
           "palting.at"
         ],
+        "bresu_email": [
+          "palting.ooe.gv.at"
+        ],
         "wikidata": [
           "palting.at"
         ]
@@ -20263,6 +21193,9 @@
       "sources_detail": {
         "bresu": [
           "perwang.at"
+        ],
+        "bresu_email": [
+          "perwang.ooe.gv.at"
         ],
         "wikidata": [
           "perwang.at"
@@ -20355,6 +21288,9 @@
         "bresu": [
           "rossbach.at"
         ],
+        "bresu_email": [
+          "rossbach.ooe.gv.at"
+        ],
         "wikidata": [
           "rossbach.at"
         ]
@@ -20376,6 +21312,9 @@
       "sources_detail": {
         "bresu": [
           "st-georgen-fillmannsbach.at"
+        ],
+        "bresu_email": [
+          "st-georgen-fillmannsbach.ooe.gv.at"
         ],
         "wikidata": [
           "handenberg.ooe.gv.at"
@@ -20421,6 +21360,9 @@
       "sources_detail": {
         "bresu": [
           "stpantaleon.at"
+        ],
+        "bresu_email": [
+          "st-pantaleon.ooe.gv.at"
         ],
         "wikidata": [
           "stpantaleon.at"
@@ -20489,6 +21431,9 @@
         "bresu": [
           "st-veit-innkreis.at"
         ],
+        "bresu_email": [
+          "st-veit-innkreis.ooe.gv.at"
+        ],
         "wikidata": [
           "st-veit-innkreis.at"
         ]
@@ -20508,6 +21453,9 @@
       "sources_detail": {
         "bresu": [
           "schalchen.at"
+        ],
+        "bresu_email": [
+          "schalchen.ooe.gv.at"
         ],
         "wikidata": [
           "schalchen.at"
@@ -20530,6 +21478,9 @@
         "bresu": [
           "schwand.at"
         ],
+        "bresu_email": [
+          "schwand.ooe.gv.at"
+        ],
         "wikidata": [
           "schwand.at"
         ]
@@ -20549,6 +21500,9 @@
       "sources_detail": {
         "bresu": [
           "tarsdorf.at"
+        ],
+        "bresu_email": [
+          "tarsdorf.ooe.gv.at"
         ],
         "wikidata": [
           "tarsdorf.at"
@@ -20663,6 +21617,9 @@
       "sources_detail": {
         "bresu": [
           "aschach.at"
+        ],
+        "bresu_email": [
+          "aschach-donau.ooe.gv.at"
         ],
         "wikidata": [
           "aschach.at"
@@ -20874,6 +21831,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "scharten.ooe.gv.at"
+        ],
         "wikidata": [
           "scharten.at"
         ]
@@ -20893,6 +21853,9 @@
       "sources_detail": {
         "bresu": [
           "stroheim.at"
+        ],
+        "bresu_email": [
+          "stroheim.ooe.gv.at"
         ],
         "wikidata": [
           "stroheim.at"
@@ -20949,6 +21912,7 @@
       "region": "Oberösterreich",
       "website": "",
       "emails": [
+        "gutau.ooe.gv.at",
         "gutau.at"
       ],
       "source": "static",
@@ -20956,6 +21920,9 @@
       "sources_detail": {
         "bresu": [
           "gutau.at"
+        ],
+        "bresu_email": [
+          "gutau.ooe.gv.at"
         ],
         "wikidata": [
           "gutau.at"
@@ -21026,6 +21993,9 @@
       "sources_detail": {
         "bresu": [
           "kaltenberg.at"
+        ],
+        "bresu_email": [
+          "kaltenberg.ooe.gv.at"
         ],
         "wikidata": [
           "kaltenberg.at"
@@ -21188,6 +22158,9 @@
         "bresu": [
           "pierbach.at"
         ],
+        "bresu_email": [
+          "pierbach.ooe.gv.at"
+        ],
         "wikidata": [
           "pierbach.at"
         ]
@@ -21233,6 +22206,9 @@
         "bresu": [
           "rainbach.at"
         ],
+        "bresu_email": [
+          "rainbach-muehlkreis.ooe.gv.at"
+        ],
         "wikidata": [
           "rainbach.at"
         ]
@@ -21245,6 +22221,7 @@
       "region": "Oberösterreich",
       "website": "sandl.at",
       "emails": [
+        "sandl.ooe.gv.at",
         "sandl.at"
       ],
       "source": "static",
@@ -21252,6 +22229,9 @@
       "sources_detail": {
         "bresu": [
           "sandl.at"
+        ],
+        "bresu_email": [
+          "sandl.ooe.gv.at"
         ],
         "wikidata": [
           "sandl.at"
@@ -21272,6 +22252,9 @@
       "sources_detail": {
         "bresu": [
           "stleonhard.at"
+        ],
+        "bresu_email": [
+          "st-leonhard.ooe.gv.at"
         ],
         "wikidata": [
           "stleonhard.at"
@@ -21369,6 +22352,9 @@
       "sources_detail": {
         "bresu": [
           "unterweissenbach.at"
+        ],
+        "bresu_email": [
+          "unterweissenbach.ooe.gv.at"
         ],
         "wikidata": [
           "unterweissenbach.at"
@@ -21694,6 +22680,9 @@
         "bresu": [
           "gschwandt.at"
         ],
+        "bresu_email": [
+          "gschwandt.ooe.gv.at"
+        ],
         "wikidata": [
           "gschwandt.at"
         ]
@@ -21855,6 +22844,9 @@
         "bresu": [
           "roitham.at"
         ],
+        "bresu_email": [
+          "roitham.ooe.gv.at"
+        ],
         "wikidata": [
           "roitham.at"
         ]
@@ -21874,6 +22866,9 @@
       "sources_detail": {
         "bresu": [
           "st-konrad.at"
+        ],
+        "bresu_email": [
+          "st-konrad.ooe.gv.at"
         ],
         "wikidata": [
           "st-konrad.at"
@@ -21919,6 +22914,9 @@
       "sources_detail": {
         "bresu": [
           "traunkirchen.at"
+        ],
+        "bresu_email": [
+          "traunkirchen.ooe.gv.at"
         ],
         "wikidata": [
           "traunkirchen.at"
@@ -22152,6 +23150,9 @@
         "bresu": [
           "haag-hausruck.at"
         ],
+        "bresu_email": [
+          "haag-hausruck.ooe.gv.at"
+        ],
         "wikidata": [
           "haag-hausruck.at"
         ],
@@ -22272,6 +23273,9 @@
         "bresu": [
           "meggenhofen.at"
         ],
+        "bresu_email": [
+          "meggenhofen.ooe.gv.at"
+        ],
         "wikidata": [
           "meggenhofen.at"
         ]
@@ -22292,6 +23296,9 @@
         "bresu": [
           "michaelnbach.at"
         ],
+        "bresu_email": [
+          "michaelnbach.ooe.gv.at"
+        ],
         "wikidata": [
           "michaelnbach.at"
         ]
@@ -22311,6 +23318,9 @@
       "sources_detail": {
         "bresu": [
           "natternbach.at"
+        ],
+        "bresu_email": [
+          "natternbach.ooe.gv.at"
         ],
         "wikidata": [
           "natternbach.at"
@@ -22347,6 +23357,7 @@
       "region": "Oberösterreich",
       "website": "neumarkt-hausruckkreis.at",
       "emails": [
+        "neumarkt-hausruck.ooe.gv.at",
         "ooe.gv.at"
       ],
       "source": "scrape",
@@ -22354,6 +23365,9 @@
       "sources_detail": {
         "bresu": [
           "neumarkt-hausruckkreis.at"
+        ],
+        "bresu_email": [
+          "neumarkt-hausruck.ooe.gv.at"
         ],
         "wikidata": [
           "neumarkt-hausruckkreis.at"
@@ -22397,6 +23411,9 @@
       "sources_detail": {
         "bresu": [
           "pollham.at"
+        ],
+        "bresu_email": [
+          "pollham.ooe.gv.at"
         ],
         "wikidata": [
           "pollham.at"
@@ -22442,6 +23459,9 @@
         "bresu": [
           "rottenbach.gv.at"
         ],
+        "bresu_email": [
+          "rottenbach.ooe.gv.at"
+        ],
         "wikidata": [
           "rottenbach.gv.at"
         ]
@@ -22461,6 +23481,9 @@
       "sources_detail": {
         "bresu": [
           "st-agatha.at"
+        ],
+        "bresu_email": [
+          "st-agatha.ooe.gv.at"
         ],
         "wikidata": [
           "st-agatha.at"
@@ -22505,6 +23528,9 @@
         "bresu": [
           "sankt-thomas.at"
         ],
+        "bresu_email": [
+          "st-thomas.ooe.gv.at"
+        ],
         "wikidata": [
           "sankt-thomas.at"
         ]
@@ -22548,6 +23574,9 @@
       "sources_detail": {
         "bresu": [
           "steegen.at"
+        ],
+        "bresu_email": [
+          "steegen.ooe.gv.at"
         ],
         "wikidata": [
           "steegen.at"
@@ -22734,6 +23763,9 @@
         "bresu": [
           "edlbach.at"
         ],
+        "bresu_email": [
+          "edlbach.ooe.gv.at"
+        ],
         "wikidata": [
           "edlbach.at"
         ]
@@ -22825,6 +23857,9 @@
       "sources_detail": {
         "bresu": [
           "kirchdorf.at"
+        ],
+        "bresu_email": [
+          "kirchdorf-krems.ooe.gv.at"
         ],
         "wikidata": [
           "kirchdorf.at"
@@ -22918,6 +23953,9 @@
         "bresu": [
           "molln.at"
         ],
+        "bresu_email": [
+          "molln.ooe.gv.at"
+        ],
         "wikidata": [
           "molln.at"
         ]
@@ -22947,6 +23985,7 @@
       "region": "Oberösterreich",
       "website": "",
       "emails": [
+        "oberschlierbach.ooe.gv.at",
         "gemeinde-oberschlierbach.at"
       ],
       "source": "static",
@@ -22954,6 +23993,9 @@
       "sources_detail": {
         "bresu": [
           "gemeinde-oberschlierbach.at"
+        ],
+        "bresu_email": [
+          "oberschlierbach.ooe.gv.at"
         ],
         "wikidata": [
           "www2.land-oberoesterreich.gv.at"
@@ -22976,6 +24018,9 @@
         "bresu": [
           "pettenbach.at"
         ],
+        "bresu_email": [
+          "pettenbach.ooe.gv.at"
+        ],
         "wikidata": [
           "pettenbach.at"
         ]
@@ -22997,6 +24042,9 @@
       "sources_detail": {
         "bresu": [
           "ried-traunkreis.at"
+        ],
+        "bresu_email": [
+          "ried-traunkreis.ooe.gv.at"
         ],
         "wikidata": [
           "ried-traunkreis.at"
@@ -23067,6 +24115,9 @@
         "bresu": [
           "st-pankraz.at"
         ],
+        "bresu_email": [
+          "st-pankraz.ooe.gv.at"
+        ],
         "wikidata": [
           "st-pankraz.at"
         ]
@@ -23109,6 +24160,9 @@
       "sources_detail": {
         "bresu": [
           "spital-pyhrn.at"
+        ],
+        "bresu_email": [
+          "spital-pyhrn.ooe.gv.at"
         ],
         "wikidata": [
           "spital-pyhrn.at"
@@ -23153,6 +24207,9 @@
       "sources_detail": {
         "bresu": [
           "steinbachsteyr.at"
+        ],
+        "bresu_email": [
+          "steinbach-steyr.ooe.gv.at"
         ],
         "wikidata": [
           "steinbachsteyr.at"
@@ -23219,6 +24276,9 @@
       "sources_detail": {
         "bresu": [
           "windischgarsten.at"
+        ],
+        "bresu_email": [
+          "windischgarsten.ooe.gv.at"
         ],
         "wikidata": [
           "windischgarsten.at"
@@ -23309,6 +24369,9 @@
         "bresu": [
           "eggendorf.at"
         ],
+        "bresu_email": [
+          "eggendorf.ooe.gv.at"
+        ],
         "wikidata": [
           "eggendorf.at"
         ],
@@ -23331,6 +24394,9 @@
       "sources_detail": {
         "bresu": [
           "enns.at"
+        ],
+        "bresu_email": [
+          "enns.ooe.gv.at"
         ],
         "wikidata": [
           "enns.at"
@@ -23390,6 +24456,7 @@
       "region": "Oberösterreich",
       "website": "hofkirchen.info",
       "emails": [
+        "hofkirchen-traunkreis.ooe.gv.at",
         "hofkirchen.info"
       ],
       "source": "static",
@@ -23397,6 +24464,9 @@
       "sources_detail": {
         "bresu": [
           "hofkirchen.info"
+        ],
+        "bresu_email": [
+          "hofkirchen-traunkreis.ooe.gv.at"
         ],
         "wikidata": [
           "hofkirchen.info"
@@ -23510,6 +24580,9 @@
       "sources_detail": {
         "bresu": [
           "st-florian.at"
+        ],
+        "bresu_email": [
+          "st-florian.ooe.gv.at"
         ],
         "wikidata": [
           "st-florian.at"
@@ -23625,6 +24698,9 @@
         "bresu": [
           "piberbach.at"
         ],
+        "bresu_email": [
+          "piberbach.ooe.gv.at "
+        ],
         "wikidata": [
           "piberbach.ooe.gv.at"
         ]
@@ -23644,6 +24720,9 @@
       "sources_detail": {
         "bresu": [
           "pucking.at"
+        ],
+        "bresu_email": [
+          "pucking.ooe.gv.at"
         ],
         "wikidata": [
           "pucking.at"
@@ -23757,6 +24836,9 @@
       "sources_detail": {
         "bresu": [
           "arbing.at"
+        ],
+        "bresu_email": [
+          "arbing.ooe.gv.at"
         ],
         "wikidata": [
           "arbing.at"
@@ -23952,6 +25034,9 @@
         "bresu": [
           "luftenberg.at"
         ],
+        "bresu_email": [
+          "luftenberg.ooe.gv.at"
+        ],
         "wikidata": [
           "luftenberg.at"
         ]
@@ -24091,6 +25176,9 @@
       "sources_detail": {
         "bresu": [
           "perg.at"
+        ],
+        "bresu_email": [
+          "stadt.perg.at"
         ],
         "wikidata": [
           "perg.at"
@@ -24348,6 +25436,9 @@
         "bresu": [
           "andrichsfurt.at"
         ],
+        "bresu_email": [
+          "andrichsfurt.ooe.gv.at"
+        ],
         "wikidata": [
           "andrichsfurt.at"
         ]
@@ -24367,6 +25458,9 @@
       "sources_detail": {
         "bresu": [
           "antiesenhofen.at"
+        ],
+        "bresu_email": [
+          "antiesenhofen.ooe.gv.at"
         ],
         "wikidata": [
           "antiesenhofen.at"
@@ -24412,6 +25506,9 @@
         "bresu": [
           "eberschwang.at"
         ],
+        "bresu_email": [
+          "eberschwang.ooe.gv.at"
+        ],
         "wikidata": [
           "eberschwang.at"
         ]
@@ -24432,6 +25529,9 @@
         "bresu": [
           "eitzing.at"
         ],
+        "bresu_email": [
+          "eitzing.ooe.gv.at"
+        ],
         "wikidata": [
           "eitzing.at"
         ]
@@ -24451,6 +25551,9 @@
       "sources_detail": {
         "bresu": [
           "geiersberg.at"
+        ],
+        "bresu_email": [
+          "geiersberg.ooe.gv.at"
         ],
         "wikidata": [
           "oberoesterreich.at"
@@ -24488,6 +25591,7 @@
       "region": "Oberösterreich",
       "website": "gemeinde-gurten.at",
       "emails": [
+        "gurten.ooe.gv.at",
         "gemeinde-gurten.at"
       ],
       "source": "static",
@@ -24495,6 +25599,9 @@
       "sources_detail": {
         "bresu": [
           "gemeinde-gurten.at"
+        ],
+        "bresu_email": [
+          "gurten.ooe.gv.at"
         ],
         "wikidata": [
           "gemeinde-gurten.at"
@@ -24539,6 +25646,9 @@
       "sources_detail": {
         "bresu": [
           "kirchdorfaminn.at"
+        ],
+        "bresu_email": [
+          "kirchdorf-inn.ooe.gv.at"
         ],
         "wikidata": [
           "www2.land-oberoesterreich.gv.at"
@@ -24629,6 +25739,9 @@
         "bresu": [
           "mehrnbach.at"
         ],
+        "bresu_email": [
+          "mehrnbach.ooe.gv.at"
+        ],
         "wikidata": [
           "mehrnbach.at"
         ]
@@ -24671,6 +25784,9 @@
       "sources_detail": {
         "bresu": [
           "moerschwang.at"
+        ],
+        "bresu_email": [
+          "moerschwang.ooe.gv.at"
         ],
         "wikidata": [
           "moerschwang.at"
@@ -24738,6 +25854,9 @@
         "bresu": [
           "obernberg.at"
         ],
+        "bresu_email": [
+          "obernberg-inn.ooe.gv.at"
+        ],
         "wikidata": [
           "obernberg.at"
         ]
@@ -24782,6 +25901,9 @@
         "bresu": [
           "pattigham.at"
         ],
+        "bresu_email": [
+          "pattigham.ooe.gv.at"
+        ],
         "wikidata": [
           "pattigham.at"
         ]
@@ -24819,14 +25941,16 @@
       "region": "Oberösterreich",
       "website": "pramet.at",
       "emails": [
-        "pramet.ooe.gv.at",
-        "pramet.at"
+        "schildorn-pramet.at"
       ],
-      "source": "wikidata",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
           "pramet.at"
+        ],
+        "bresu_email": [
+          "schildorn-pramet.at"
         ],
         "wikidata": [
           "pramet.ooe.gv.at"
@@ -24895,6 +26019,9 @@
         "bresu": [
           "st-georgen-bei-obernberg.at"
         ],
+        "bresu_email": [
+          "st-georgen-obernberg.ooe.gv.at"
+        ],
         "wikidata": [
           "st-georgen-bei-obernberg.at"
         ]
@@ -24914,6 +26041,9 @@
       "sources_detail": {
         "bresu": [
           "st-marienkirchen-hausruck.at"
+        ],
+        "bresu_email": [
+          "st-marienkirchen-hausruck.ooe.gv.at"
         ],
         "wikidata": [
           "st-marienkirchen-hausruck.at"
@@ -24953,13 +26083,16 @@
       "region": "Oberösterreich",
       "website": "schildorn.at",
       "emails": [
-        "schildorn.at"
+        "schildorn-pramet.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
           "schildorn.at"
+        ],
+        "bresu_email": [
+          "schildorn-pramet.at"
         ],
         "wikidata": [
           "schildorn.at"
@@ -25052,6 +26185,9 @@
         "bresu": [
           "utzenaich.at"
         ],
+        "bresu_email": [
+          "utzenaich.ooe.gv.at"
+        ],
         "wikidata": [
           "utzenaich.at"
         ]
@@ -25118,6 +26254,9 @@
       "sources_detail": {
         "bresu": [
           "wippenham.at"
+        ],
+        "bresu_email": [
+          "wippenham.ooe.gv.at"
         ],
         "wikidata": [
           "wippenham.at"
@@ -25492,6 +26631,9 @@
       "sources_detail": {
         "bresu": [
           "neufelden.at"
+        ],
+        "bresu_email": [
+          "neufelden.ooe.gv.at"
         ],
         "wikidata": [
           "neufelden.at"
@@ -25940,6 +27082,9 @@
         "bresu": [
           "rohrbach-berg.at"
         ],
+        "bresu_email": [
+          "rohrbach-berg.ooe.gv.at"
+        ],
         "wikidata": [
           "rohrbach-berg.at"
         ]
@@ -25959,6 +27104,9 @@
       "sources_detail": {
         "bresu": [
           "helfenberg.at"
+        ],
+        "bresu_email": [
+          "helfenberg.ooe.gv.at"
         ],
         "wikidata": [
           "helfenberg.at"
@@ -26002,6 +27150,9 @@
       "sources_detail": {
         "bresu": [
           "altschwendt.at"
+        ],
+        "bresu_email": [
+          "altschwendt.ooe.gv.at"
         ],
         "wikidata": [
           "altschwendt.at"
@@ -26093,6 +27244,9 @@
         "bresu": [
           "dorf.at"
         ],
+        "bresu_email": [
+          "dorf.ooe.gv.at"
+        ],
         "wikidata": [
           "dorf.at"
         ]
@@ -26112,6 +27266,9 @@
       "sources_detail": {
         "bresu": [
           "eggerding.at"
+        ],
+        "bresu_email": [
+          "eggerding.ooe.gv.at"
         ],
         "wikidata": [
           "eggerding.at"
@@ -26133,6 +27290,9 @@
       "sources_detail": {
         "bresu": [
           "engelhartszell.gv.at"
+        ],
+        "bresu_email": [
+          "engelhartszell.ooe.gv.at"
         ],
         "wikidata": [
           "engelhartszell.at"
@@ -26433,6 +27593,9 @@
         "bresu": [
           "st-roman.at"
         ],
+        "bresu_email": [
+          "st-roman.ooe.gv.at"
+        ],
         "wikidata": [
           "st-roman.at"
         ]
@@ -26522,6 +27685,9 @@
       "sources_detail": {
         "bresu": [
           "sigharting.at"
+        ],
+        "bresu_email": [
+          "sigharting.ooe.gv.at"
         ],
         "wikidata": [
           "sigharting.at"
@@ -26637,6 +27803,9 @@
         "bresu": [
           "wernstein.at"
         ],
+        "bresu_email": [
+          "wernstein-inn.ooe.gv.at"
+        ],
         "wikidata": [
           "wernstein.at"
         ]
@@ -26707,6 +27876,9 @@
         "bresu": [
           "aschach-steyr.at"
         ],
+        "bresu_email": [
+          "aschach-steyr.ooe.gv.at"
+        ],
         "wikidata": [
           "aschach-steyr.at"
         ]
@@ -26776,6 +27948,9 @@
         "bresu": [
           "gaflenz.at"
         ],
+        "bresu_email": [
+          "gaflenz.ooe.gv.at"
+        ],
         "wikidata": [
           "gaflenz.at"
         ]
@@ -26819,6 +27994,9 @@
       "sources_detail": {
         "bresu": [
           "grossraming.at"
+        ],
+        "bresu_email": [
+          "grossraming.ooe.gv.at"
         ],
         "wikidata": [
           "grossraming.at"
@@ -27100,6 +28278,9 @@
         "bresu": [
           "wolfern.at"
         ],
+        "bresu_email": [
+          "wolfern.ooe.gv.at"
+        ],
         "wikidata": [
           "wolfern.at"
         ]
@@ -27119,6 +28300,9 @@
       "sources_detail": {
         "bresu": [
           "weyer.eu"
+        ],
+        "bresu_email": [
+          "weyer.ooe.gv.at"
         ],
         "wikidata": [
           "weyer.eu"
@@ -27419,6 +28603,9 @@
         "bresu": [
           "kirchschlag.net"
         ],
+        "bresu_email": [
+          "kirchschlag.ooe.gv.at"
+        ],
         "wikidata": [
           "kirchschlag.net"
         ],
@@ -27637,6 +28824,9 @@
       "sources_detail": {
         "bresu": [
           "schenkenfelden.at"
+        ],
+        "bresu_email": [
+          "schenkenfelden.ooe.gv.at"
         ],
         "wikidata": [
           "schenkenfelden.at"
@@ -27922,6 +29112,9 @@
         "bresu": [
           "desselbrunn.at"
         ],
+        "bresu_email": [
+          "desselbrunn.ooe.gv.at"
+        ],
         "wikidata": [
           "desselbrunn.at"
         ]
@@ -28108,6 +29301,9 @@
         "bresu": [
           "gemeinde-mondsee.at"
         ],
+        "bresu_email": [
+          "mondsee.ooe.gv.at"
+        ],
         "wikidata": [
           "gemeinde-mondsee.at"
         ]
@@ -28196,6 +29392,9 @@
       "sources_detail": {
         "bresu": [
           "oberhofen-irrsee.at"
+        ],
+        "bresu_email": [
+          "oberhofen-irrsee.ooe.gv.at"
         ],
         "wikidata": [
           "oberhofen-irrsee.at"
@@ -28309,6 +29508,9 @@
       "sources_detail": {
         "bresu": [
           "pilsbach.at"
+        ],
+        "bresu_email": [
+          "pilsbach.ooe.gv.at"
         ],
         "wikidata": [
           "pilsbach.at"
@@ -28491,6 +29693,9 @@
         "bresu": [
           "ruestorf.at"
         ],
+        "bresu_email": [
+          "ruestorf.ooe.gv.at"
+        ],
         "wikidata": [
           "ruestorf.at"
         ]
@@ -28576,6 +29781,9 @@
       "sources_detail": {
         "bresu": [
           "schlatt.at"
+        ],
+        "bresu_email": [
+          "schlatt.ooe.gv.at"
         ],
         "wikidata": [
           "schlatt.at"
@@ -28762,6 +29970,9 @@
       "sources_detail": {
         "bresu": [
           "ungenach.at"
+        ],
+        "bresu_email": [
+          "ungenach.ooe.gv.at"
         ],
         "wikidata": [
           "ungenach.at"
@@ -29069,6 +30280,9 @@
         "bresu": [
           "eberstalzell.at"
         ],
+        "bresu_email": [
+          "eberstalzell.ooe.gv.at"
+        ],
         "wikidata": [
           "eberstalzell.at"
         ]
@@ -29152,6 +30366,7 @@
       "region": "Oberösterreich",
       "website": "gemeinde-holzhausen.at",
       "emails": [
+        "holzhausen.ooe.gv.at",
         "gemeinde-holzhausen.at"
       ],
       "source": "static",
@@ -29159,6 +30374,9 @@
       "sources_detail": {
         "bresu": [
           "gemeinde-holzhausen.at"
+        ],
+        "bresu_email": [
+          "holzhausen.ooe.gv.at"
         ],
         "wikidata": [
           "gemeinde-holzhausen.at"
@@ -29249,6 +30467,9 @@
         "bresu": [
           "gemeindeneukirchen.at"
         ],
+        "bresu_email": [
+          "neukirchen-lambach.ooe.gv.at"
+        ],
         "wikidata": [
           "gemeindeneukirchen.at"
         ]
@@ -29268,6 +30489,9 @@
       "sources_detail": {
         "bresu": [
           "offenhausen.at"
+        ],
+        "bresu_email": [
+          "offenhausen.ooe.gv.at"
         ],
         "wikidata": [
           "offenhausen.at"
@@ -29499,6 +30723,9 @@
       "sources_detail": {
         "bresu": [
           "weisskirchen.at"
+        ],
+        "bresu_email": [
+          "weisskirchen.ooe.gv.at"
         ],
         "wikidata": [
           "weisskirchen.at"
@@ -29802,6 +31029,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "scheffau.salzburg.at"
+        ],
         "guess": [
           "scheffau.gv.at"
         ]
@@ -32319,6 +33549,9 @@
         "bresu": [
           "graz.gv.at"
         ],
+        "bresu_email": [
+          "stadt.graz.at"
+        ],
         "wikidata": [
           "graz.at"
         ]
@@ -33085,6 +34318,9 @@
         "bresu": [
           "stattegg.eu"
         ],
+        "bresu_email": [
+          "stattegg.gv.at"
+        ],
         "wikidata": [
           "stattegg.eu"
         ]
@@ -33097,6 +34333,7 @@
       "region": "Steiermark",
       "website": "",
       "emails": [
+        "stiwoll.gv.at",
         "stiwoll.at",
         "stiwoll.steiermark.at"
       ],
@@ -33105,6 +34342,9 @@
       "sources_detail": {
         "bresu": [
           "stiwoll.at"
+        ],
+        "bresu_email": [
+          "stiwoll.gv.at"
         ],
         "wikidata": [
           "stiwoll.steiermark.at"
@@ -33242,6 +34482,9 @@
       "sources_detail": {
         "bresu": [
           "wundschuh.at"
+        ],
+        "bresu_email": [
+          "wundschuh.gv.at"
         ],
         "wikidata": [
           "wundschuh.at"
@@ -33914,6 +35157,9 @@
         "bresu": [
           "tillmitsch.at"
         ],
+        "bresu_email": [
+          "tillmitsch.gv.at"
+        ],
         "wikidata": [
           "tillmitsch.at"
         ]
@@ -33972,6 +35218,7 @@
       "region": "Steiermark",
       "website": "gamlitz.eu",
       "emails": [
+        "gamlitz.gv.at",
         "gamlitz.at"
       ],
       "source": "static",
@@ -33979,6 +35226,9 @@
       "sources_detail": {
         "bresu": [
           "gamlitz.at"
+        ],
+        "bresu_email": [
+          "gamlitz.gv.at"
         ],
         "wikidata": [
           "gamlitz.at"
@@ -34649,6 +35899,9 @@
         "bresu": [
           "altenmarkt.istsuper.com"
         ],
+        "bresu_email": [
+          "altenmarkt-st-gallen.gv.at"
+        ],
         "wikidata": [
           "altenmarkt.istsuper.com"
         ]
@@ -34897,6 +36150,7 @@
       "region": "Steiermark",
       "website": "",
       "emails": [
+        "woerschach.gv.at",
         "woerschach.at"
       ],
       "source": "static",
@@ -34904,6 +36158,9 @@
       "sources_detail": {
         "bresu": [
           "woerschach.at"
+        ],
+        "bresu_email": [
+          "woerschach.gv.at"
         ],
         "wikidata": [
           "woerschach.at"
@@ -35042,6 +36299,9 @@
         "bresu": [
           "landl.at"
         ],
+        "bresu_email": [
+          "landl.gv.at"
+        ],
         "wikidata": [
           "landl.at"
         ]
@@ -35081,6 +36341,7 @@
       "region": "Steiermark",
       "website": "",
       "emails": [
+        "michaelerberg-pruggern.gv.at",
         "michaelerberg-pruggern.at"
       ],
       "source": "static",
@@ -35088,6 +36349,9 @@
       "sources_detail": {
         "bresu": [
           "michaelerberg-pruggern.at"
+        ],
+        "bresu_email": [
+          "michaelerberg-pruggern.gv.at"
         ],
         "wikidata": [
           "michaelerberg-pruggern.at"
@@ -35177,6 +36441,9 @@
       "sources_detail": {
         "bresu": [
           "st-gallen.istsuper.com"
+        ],
+        "bresu_email": [
+          "st-gallen.gv.at"
         ],
         "wikidata": [
           "st-gallen.istsuper.com"
@@ -35496,6 +36763,7 @@
       "region": "Steiermark",
       "website": "",
       "emails": [
+        "st-lambrecht.gv.at",
         "stlambrecht.at"
       ],
       "source": "static",
@@ -35503,6 +36771,9 @@
       "sources_detail": {
         "bresu": [
           "stlambrecht.at"
+        ],
+        "bresu_email": [
+          "st-lambrecht.gv.at"
         ],
         "wikidata": [
           "stlambrecht.at"
@@ -35802,6 +37073,7 @@
       "region": "Steiermark",
       "website": "geistthal-soedingberg.at",
       "emails": [
+        "geistthal-soedingberg.gv.at",
         "geistthal-soedingberg.at"
       ],
       "source": "static",
@@ -35809,6 +37081,9 @@
       "sources_detail": {
         "bresu": [
           "geistthal-soedingberg.at"
+        ],
+        "bresu_email": [
+          "geistthal-soedingberg.gv.at"
         ],
         "wikidata": [
           "geistthal-soedingberg.at"
@@ -35845,6 +37120,7 @@
       "region": "Steiermark",
       "website": "kainach.at",
       "emails": [
+        "kainach-voitsberg.gv.at",
         "kainach.at"
       ],
       "source": "static",
@@ -35852,6 +37128,9 @@
       "sources_detail": {
         "bresu": [
           "kainach.at"
+        ],
+        "bresu_email": [
+          "kainach-voitsberg.gv.at"
         ],
         "wikidata": [
           "kainach.at"
@@ -35899,6 +37178,9 @@
       "sources_detail": {
         "bresu": [
           "maria-lankowitz.at"
+        ],
+        "bresu_email": [
+          "maria-lankowitz.gv.at"
         ],
         "wikidata": [
           "maria-lankowitz.at"
@@ -36005,6 +37287,7 @@
       "region": "Steiermark",
       "website": "",
       "emails": [
+        "gasen.gv.at",
         "gasen.at"
       ],
       "source": "static",
@@ -36012,6 +37295,9 @@
       "sources_detail": {
         "bresu": [
           "gasen.at"
+        ],
+        "bresu_email": [
+          "gasen.gv.at"
         ],
         "wikidata": [
           "gasen.at"
@@ -36059,6 +37345,9 @@
         "bresu": [
           "hofstaetten.at"
         ],
+        "bresu_email": [
+          "hofstaetten-raab.gv.at"
+        ],
         "wikidata": [
           "hofstaetten.at"
         ]
@@ -36104,6 +37393,9 @@
       "sources_detail": {
         "bresu": [
           "miesenbach.com"
+        ],
+        "bresu_email": [
+          "miesenbach-birkfeld.gv.at"
         ],
         "wikidata": [
           "miesenbach-birkfeld.steiermark.at"
@@ -36174,6 +37466,9 @@
       "sources_detail": {
         "bresu": [
           "naas.at"
+        ],
+        "bresu_email": [
+          "naas.gv.at"
         ],
         "wikidata": [
           "naas.at"
@@ -36459,6 +37754,9 @@
         "bresu": [
           "fladnitz.at"
         ],
+        "bresu_email": [
+          "fladnitz-teichalm.gv.at"
+        ],
         "wikidata": [
           "fladnitz.at"
         ]
@@ -36524,7 +37822,11 @@
       ],
       "source": "override",
       "confidence": "high",
-      "sources_detail": {},
+      "sources_detail": {
+        "bresu_email": [
+          "gutenberg-stenzengreith.gv.at"
+        ]
+      },
       "flags": []
     },
     {
@@ -36540,6 +37842,9 @@
       "sources_detail": {
         "bresu": [
           "ilztal.at"
+        ],
+        "bresu_email": [
+          "ilztal.gv.at"
         ],
         "wikidata": [
           "ilztal.steiermark.at"
@@ -36707,6 +38012,9 @@
         "bresu": [
           "hohentauern.at"
         ],
+        "bresu_email": [
+          "hohentauern.gv.at"
+        ],
         "wikidata": [
           "hohentauern.at"
         ]
@@ -36772,6 +38080,9 @@
       "sources_detail": {
         "bresu": [
           "st-georgen-judenburg.at"
+        ],
+        "bresu_email": [
+          "st-georgen-judenburg.gv.at"
         ],
         "wikidata": [
           "st-georgen-judenburg.at"
@@ -37241,6 +38552,9 @@
         "bresu": [
           "spitalamsemmering.com"
         ],
+        "bresu_email": [
+          "spital-semmering.gv.at"
+        ],
         "wikidata": [
           "spitalamsemmering.com"
         ]
@@ -37498,6 +38812,9 @@
         "bresu": [
           "stmarein-mzt.at"
         ],
+        "bresu_email": [
+          "st-marein-muerztal.gv.at"
+        ],
         "wikidata": [
           "st-marein-muerztal.steiermark.at"
         ]
@@ -37697,6 +39014,9 @@
       "sources_detail": {
         "bresu": [
           "gemeinde-grosssteinbach.at"
+        ],
+        "bresu_email": [
+          "grosssteinbach.gv.at"
         ],
         "wikidata": [
           "gemeinde-grosssteinbach.at"
@@ -38193,6 +39513,9 @@
         "bresu": [
           "gemeinde.loipersdorf.at"
         ],
+        "bresu_email": [
+          "bad-loipersdorf.gv.at"
+        ],
         "wikidata": [
           "gemeinde.loipersdorf.at"
         ]
@@ -38233,6 +39556,9 @@
       "sources_detail": {
         "bresu": [
           "poellau.at"
+        ],
+        "bresu_email": [
+          "poellau.gv.at"
         ],
         "wikidata": [
           "marktgemeinde-poellau.at"
@@ -38726,6 +40052,9 @@
         "bresu": [
           "kirchbach-zerlach.at"
         ],
+        "bresu_email": [
+          "kirchbach-zerlach.gv.at"
+        ],
         "wikidata": [
           "kirchbach.at"
         ]
@@ -38981,6 +40310,9 @@
         "bresu": [
           "arzl-pitztal.at"
         ],
+        "bresu_email": [
+          "arzl-pitztal.tirol.gv.at"
+        ],
         "guess": [
           "arzl-pitztal.gv.at"
         ]
@@ -38998,6 +40330,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "haiming.tirol.gv.at"
+        ],
         "guess": [
           "haiming.gv.at"
         ]
@@ -39035,6 +40370,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "imsterberg.tirol.gv.at"
+        ],
         "guess": [
           "imsterberg.gv.at"
         ]
@@ -39052,6 +40390,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "jerzens.tirol.gv.at"
+        ],
         "guess": [
           "jerzens.gv.at"
         ]
@@ -39069,6 +40410,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "karres.tirol.gv.at"
+        ],
         "guess": [
           "karres.gv.at"
         ]
@@ -39086,6 +40430,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "karroesten.tirol.gv.at"
+        ],
         "guess": [
           "karroesten.gv.at"
         ]
@@ -39105,6 +40452,9 @@
       "sources_detail": {
         "bresu": [
           "gemeinde-laengenfeld.at"
+        ],
+        "bresu_email": [
+          "laengenfeld.tirol.gv.at"
         ]
       },
       "flags": []
@@ -39140,6 +40490,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "mils-bei-imst.tirol.gv.at"
+        ],
         "guess": [
           "mils-imst.gv.at"
         ]
@@ -39157,6 +40510,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "moetz.tirol.gv.at"
+        ],
         "guess": [
           "moetz.gv.at"
         ]
@@ -39176,6 +40532,9 @@
       "sources_detail": {
         "bresu": [
           "nassereith.at"
+        ],
+        "bresu_email": [
+          "nassereith.tirol.gv.at"
         ],
         "guess": [
           "nassereith.gv.at"
@@ -39197,6 +40556,9 @@
         "bresu": [
           "obsteig.gv.at"
         ],
+        "bresu_email": [
+          "obsteig.tirol.gv.at"
+        ],
         "wikidata": [
           "www2.riskommunal.net"
         ]
@@ -39214,6 +40576,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "oetz.tirol.gv.at"
+        ],
         "guess": [
           "oetz.gv.at"
         ]
@@ -39256,6 +40621,9 @@
       "sources_detail": {
         "bresu": [
           "roppen.at"
+        ],
+        "bresu_email": [
+          "roppen.tirol.gv.at"
         ]
       },
       "flags": []
@@ -39272,6 +40640,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "st-leonhard-pitztal.tirol.gv.at"
+        ],
         "wikidata": [
           "www2.riskommunal.net"
         ],
@@ -39295,6 +40666,9 @@
         "bresu": [
           "sautens.at"
         ],
+        "bresu_email": [
+          "sautens.tirol.gv.at"
+        ],
         "guess": [
           "sautens.gv.at"
         ]
@@ -39315,6 +40689,9 @@
         "bresu": [
           "silz.at"
         ],
+        "bresu_email": [
+          "silz.tirol.gv.at"
+        ],
         "guess": [
           "silz.gv.at"
         ]
@@ -39332,6 +40709,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "soelden.tirol.gv.at"
+        ],
         "guess": [
           "soelden.gv.at"
         ]
@@ -39352,6 +40732,9 @@
       "sources_detail": {
         "bresu": [
           "stams.co.at"
+        ],
+        "bresu_email": [
+          "stams.tirol.gv.at"
         ],
         "wikidata": [
           "stams.co.at"
@@ -39375,6 +40758,9 @@
       "sources_detail": {
         "bresu": [
           "tarrenz.at"
+        ],
+        "bresu_email": [
+          "tarrenz.tirol.gv.at"
         ],
         "wikidata": [
           "tarrenz.at"
@@ -39420,6 +40806,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "wenns.tirol.gv.at"
+        ],
         "wikidata": [
           "www2.riskommunal.net"
         ],
@@ -39467,6 +40856,9 @@
         "bresu": [
           "aldrans.at"
         ],
+        "bresu_email": [
+          "aldrans.tirol.gv.at"
+        ],
         "wikidata": [
           "aldrans.at"
         ],
@@ -39487,6 +40879,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "ampass.tirol.gv.at"
+        ],
         "guess": [
           "ampass.gv.at"
         ]
@@ -39506,6 +40901,9 @@
       "sources_detail": {
         "bresu": [
           "axams.gv.at"
+        ],
+        "bresu_email": [
+          "axams.tirol.gv.at"
         ]
       },
       "flags": []
@@ -39524,6 +40922,9 @@
         "bresu": [
           "baumkirchen.at"
         ],
+        "bresu_email": [
+          "baumkirchen.tirol.gv.at"
+        ],
         "guess": [
           "baumkirchen.gv.at"
         ]
@@ -39541,6 +40942,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "birgitz.tirol.gv.at"
+        ],
         "guess": [
           "birgitz.gv.at"
         ]
@@ -39561,6 +40965,9 @@
         "bresu": [
           "ellboegen.at"
         ],
+        "bresu_email": [
+          "ellboegen.tirol.gv.at"
+        ],
         "wikidata": [
           "ellboegen.at"
         ]
@@ -39578,6 +40985,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "flaurling.tirol.gv.at"
+        ],
         "guess": [
           "flaurling.gv.at"
         ]
@@ -39595,6 +41005,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "fritzens.tirol.gv.at"
+        ],
         "guess": [
           "fritzens.gv.at"
         ]
@@ -39612,6 +41025,9 @@
       "source": "wikidata",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "fulpmes.tirol.gv.at"
+        ],
         "wikidata": [
           "fulpmes.gv.at"
         ]
@@ -39651,6 +41067,9 @@
       "sources_detail": {
         "bresu": [
           "goetzens.gv.at"
+        ],
+        "bresu_email": [
+          "goetzens.tirol.gv.at"
         ]
       },
       "flags": []
@@ -39666,6 +41085,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "griesambrenner.tirol.gv.at"
+        ],
         "guess": [
           "gries-brenner.gv.at"
         ]
@@ -39683,6 +41105,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "gries-im-sellrain.tirol.gv.at"
+        ],
         "guess": [
           "gries-sellrain.gv.at"
         ]
@@ -39700,6 +41125,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "grinzens.tirol.gv.at"
+        ],
         "guess": [
           "grinzens.gv.at"
         ]
@@ -39719,6 +41147,9 @@
       "sources_detail": {
         "bresu": [
           "gschnitz.riskommunal.net"
+        ],
+        "bresu_email": [
+          "gschnitz.tirol.gv.at"
         ],
         "guess": [
           "gschnitz.gv.at"
@@ -39741,6 +41172,9 @@
         "bresu": [
           "hatting.at"
         ],
+        "bresu_email": [
+          "hatting.tirol.gv.at"
+        ],
         "wikidata": [
           "hatting.at"
         ],
@@ -39761,6 +41195,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "inzing.tirol.gv.at"
+        ],
         "guess": [
           "inzing.gv.at"
         ]
@@ -39780,6 +41217,9 @@
       "sources_detail": {
         "bresu": [
           "kematenintirol.at"
+        ],
+        "bresu_email": [
+          "kematen.tirol.gv.at"
         ],
         "wikidata": [
           "kematen.org"
@@ -39825,6 +41265,9 @@
         "bresu": [
           "kolsassberg.com"
         ],
+        "bresu_email": [
+          "kolsassberg.tirol.gv.at"
+        ],
         "guess": [
           "kolsassberg.gv.at"
         ]
@@ -39865,6 +41308,9 @@
       "sources_detail": {
         "bresu": [
           "leutasch.at"
+        ],
+        "bresu_email": [
+          "leutasch.tirol.gv.at"
         ],
         "wikidata": [
           "leutasch.at"
@@ -39909,6 +41355,9 @@
         "bresu": [
           "mils-tirol.at"
         ],
+        "bresu_email": [
+          "mils.tirol.gv.at"
+        ],
         "wikidata": [
           "mils-tirol.at"
         ]
@@ -39926,6 +41375,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "mutters.tirol.gv.at"
+        ],
         "guess": [
           "mutters.gv.at"
         ]
@@ -39943,6 +41395,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "natters.tirol.gv.at"
+        ],
         "guess": [
           "natters.gv.at"
         ]
@@ -39960,6 +41415,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "navis.tirol.gv.at"
+        ],
         "guess": [
           "navis.gv.at"
         ]
@@ -39977,6 +41435,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "neustift.tirol.gv.at"
+        ],
         "guess": [
           "neustift-stubaital.gv.at"
         ]
@@ -39994,6 +41455,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "oberhofen.tirol.gv.at"
+        ],
         "guess": [
           "oberhofen-inntal.gv.at"
         ]
@@ -40011,6 +41475,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "obernberg-brenner.tirol.gv.at"
+        ],
         "guess": [
           "obernberg-brenner.gv.at"
         ]
@@ -40031,6 +41498,9 @@
         "bresu": [
           "gemeinde-oberperfuss.at"
         ],
+        "bresu_email": [
+          "oberperfuss.tirol.gv.at"
+        ],
         "wikidata": [
           "gemeinde-oberperfuss.at"
         ]
@@ -40050,6 +41520,9 @@
       "sources_detail": {
         "bresu": [
           "patsch.gv.at"
+        ],
+        "bresu_email": [
+          "patsch.tirol.gv.at"
         ]
       },
       "flags": []
@@ -40067,6 +41540,9 @@
       "sources_detail": {
         "bresu": [
           "pettnau.at"
+        ],
+        "bresu_email": [
+          "pettnau.tirol.gv.at"
         ],
         "wikidata": [
           "pettnau.at"
@@ -40088,6 +41564,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "pfaffenhofen.tirol.gv.at"
+        ],
         "guess": [
           "pfaffenhofen.gv.at"
         ]
@@ -40108,6 +41587,9 @@
         "bresu": [
           "polling.at"
         ],
+        "bresu_email": [
+          "polling.tirol.gv.at"
+        ],
         "wikidata": [
           "polling.at"
         ]
@@ -40127,6 +41609,9 @@
       "sources_detail": {
         "bresu": [
           "ranggen.at"
+        ],
+        "bresu_email": [
+          "ranggen.tirol.gv.at"
         ],
         "wikidata": [
           "ranggen.at"
@@ -40150,6 +41635,9 @@
       "sources_detail": {
         "bresu": [
           "reith-seefeld.at"
+        ],
+        "bresu_email": [
+          "reith-seefeld.at%20"
         ]
       },
       "flags": []
@@ -40165,6 +41653,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "rinn.tirol.gv.at"
+        ],
         "guess": [
           "rinn.gv.at"
         ]
@@ -40207,6 +41698,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "st-sigmund-sellrain.tirol.gv.at"
+        ],
         "guess": [
           "st-sigmund.gv.at"
         ]
@@ -40224,6 +41718,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "scharnitz.tirol.gv.at"
+        ],
         "guess": [
           "scharnitz.gv.at"
         ]
@@ -40241,6 +41738,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "schmirn.tirol.gv.at"
+        ],
         "guess": [
           "schmirn.gv.at"
         ]
@@ -40258,6 +41758,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "schoenberg.tirol.gv.at"
+        ],
         "guess": [
           "schoenberg-stubaital.gv.at",
           "schoenberg.gv.at"
@@ -40299,6 +41802,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "sellrain.tirol.gv.at"
+        ],
         "guess": [
           "sellrain.gv.at"
         ]
@@ -40360,6 +41866,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "steinach-am-brenner.tirol.gv.at"
+        ],
         "guess": [
           "steinach.gv.at"
         ]
@@ -40424,6 +41933,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "thaur.co.at"
+        ],
         "guess": [
           "thaur.gv.at"
         ]
@@ -40441,6 +41953,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "trins.tirol.gv.at"
+        ],
         "guess": [
           "trins.gv.at"
         ]
@@ -40458,6 +41973,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "tulfes.tirol.gv.at"
+        ],
         "guess": [
           "tulfes.gv.at"
         ]
@@ -40475,6 +41993,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "unterperfuss.tirol.gv.at"
+        ],
         "guess": [
           "unterperfuss.gv.at"
         ]
@@ -40494,6 +42015,9 @@
       "sources_detail": {
         "bresu": [
           "vals.at"
+        ],
+        "bresu_email": [
+          "vals.tirol.gv.at"
         ],
         "wikidata": [
           "vals.at"
@@ -40519,6 +42043,9 @@
         "bresu": [
           "voels.at"
         ],
+        "bresu_email": [
+          "voels.tirol.gv.at"
+        ],
         "wikidata": [
           "voels.at"
         ],
@@ -40539,6 +42066,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "volders.tirol.gv.at"
+        ],
         "guess": [
           "volders.gv.at"
         ]
@@ -40558,6 +42088,9 @@
       "sources_detail": {
         "bresu": [
           "wattenberg.at"
+        ],
+        "bresu_email": [
+          "wattenberg.tirol.gv.at"
         ],
         "guess": [
           "wattenberg.gv.at"
@@ -40596,6 +42129,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "wildermieming.tirol.gv.at"
+        ],
         "guess": [
           "wildermieming.gv.at"
         ]
@@ -40653,6 +42189,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "aurach.tirol.gv.at"
+        ],
         "guess": [
           "aurach-kitzbuehel.gv.at"
         ]
@@ -40671,6 +42210,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "brixen-im-thale.tirol.gv.at"
+        ],
         "guess": [
           "brixen-thale.gv.at"
         ]
@@ -40739,6 +42281,9 @@
         "bresu": [
           "hochfilzen.at"
         ],
+        "bresu_email": [
+          "hochfilzen.tirol.gv.at"
+        ],
         "guess": [
           "hochfilzen.gv.at"
         ]
@@ -40756,6 +42301,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "hopfgarten.tirol.gv.at"
+        ],
         "guess": [
           "hopfgarten-brixental.gv.at"
         ]
@@ -40773,6 +42321,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "itter.tirol.gv.at"
+        ],
         "wikidata": [
           "www2.riskommunal.net"
         ],
@@ -40793,6 +42344,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "jochberg.tirol.gv.at"
+        ],
         "guess": [
           "jochberg.gv.at"
         ]
@@ -40809,7 +42363,11 @@
       ],
       "source": "override",
       "confidence": "high",
-      "sources_detail": {},
+      "sources_detail": {
+        "bresu_email": [
+          "kirchberg.tirol.gv.at"
+        ]
+      },
       "flags": []
     },
     {
@@ -40822,7 +42380,11 @@
       ],
       "source": "override",
       "confidence": "high",
-      "sources_detail": {},
+      "sources_detail": {
+        "bresu_email": [
+          "kirchdorf.tirol.gv.at"
+        ]
+      },
       "flags": []
     },
     {
@@ -40861,6 +42423,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "koessen.tirol.gv.at"
+        ],
         "wikidata": [
           "koessen.gv.at"
         ]
@@ -40880,6 +42445,9 @@
       "sources_detail": {
         "bresu": [
           "oberndorf-tirol.at"
+        ],
+        "bresu_email": [
+          "oberndorf.tirol.gv.at"
         ],
         "wikidata": [
           "oberndorf-tirol.at"
@@ -40920,7 +42488,11 @@
       ],
       "source": "override",
       "confidence": "high",
-      "sources_detail": {},
+      "sources_detail": {
+        "bresu_email": [
+          "st-jakob-haus.tirol.gv.at"
+        ]
+      },
       "flags": []
     },
     {
@@ -40958,6 +42530,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "st-ulrich.tirol.gv.at"
+        ],
         "guess": [
           "st-ulrich-pillersee.gv.at"
         ]
@@ -40975,6 +42550,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "schwendt.tirol.gv.at"
+        ],
         "wikidata": [
           "www2.riskommunal.net"
         ],
@@ -40995,6 +42573,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "waidring.tirol.gv.at"
+        ],
         "wikidata": [
           "waidring.at"
         ],
@@ -41017,6 +42598,9 @@
       "sources_detail": {
         "bresu": [
           "westendorf.gv.at"
+        ],
+        "bresu_email": [
+          "westendorf.tirol.gv.at"
         ]
       },
       "flags": []
@@ -41032,6 +42616,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "alpbach.tirol.gv.at"
+        ],
         "guess": [
           "alpbach.gv.at"
         ]
@@ -41052,6 +42639,9 @@
       "sources_detail": {
         "bresu": [
           "angath.at"
+        ],
+        "bresu_email": [
+          "angath.tirol.gv.at"
         ],
         "wikidata": [
           "angath.at"
@@ -41077,6 +42667,9 @@
         "bresu": [
           "badhaering.at"
         ],
+        "bresu_email": [
+          "bad-haering.tirol.gv.at"
+        ],
         "wikidata": [
           "badhaering.at"
         ],
@@ -41097,6 +42690,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "brandenberg.tirol.gv.at"
+        ],
         "guess": [
           "brandenberg.gv.at"
         ]
@@ -41118,6 +42714,9 @@
         "bresu": [
           "breitenbach.at"
         ],
+        "bresu_email": [
+          "breitenbach.tirol.gv.at"
+        ],
         "guess": [
           "breitenbach-inn.gv.at"
         ]
@@ -41138,6 +42737,9 @@
         "bresu": [
           "brixlegg.at"
         ],
+        "bresu_email": [
+          "brixlegg.tirol.gv.at"
+        ],
         "guess": [
           "brixlegg.gv.at"
         ]
@@ -41155,6 +42757,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "ebbs.tirol.gv.at"
+        ],
         "guess": [
           "ebbs.gv.at"
         ]
@@ -41171,7 +42776,11 @@
       ],
       "source": "override",
       "confidence": "high",
-      "sources_detail": {},
+      "sources_detail": {
+        "bresu_email": [
+          "ellmau.tirol.gv.at"
+        ]
+      },
       "flags": []
     },
     {
@@ -41185,6 +42794,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "erl.tirol.gv.at"
+        ],
         "wikidata": [
           "erl.at"
         ],
@@ -41278,6 +42890,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "kundl.tirol.gv.at"
+        ],
         "guess": [
           "kundl.gv.at"
         ]
@@ -41297,6 +42912,9 @@
       "sources_detail": {
         "bresu": [
           "langkampfen.at"
+        ],
+        "bresu_email": [
+          "langkampfen.tirol.gv.at"
         ]
       },
       "flags": []
@@ -41314,6 +42932,9 @@
       "sources_detail": {
         "bresu": [
           "mariastein.gv.at"
+        ],
+        "bresu_email": [
+          "mariastein.tirol.gv.at"
         ],
         "wikidata": [
           "mariastein.gv.at"
@@ -41362,6 +42983,9 @@
         "bresu": [
           "niederndorf.at"
         ],
+        "bresu_email": [
+          "niederndorf.tirol.gv.at"
+        ],
         "guess": [
           "niederndorf.gv.at"
         ]
@@ -41379,6 +43003,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "niederndorferberg.tirol.gv.at"
+        ],
         "wikidata": [
           "www2.riskommunal.net"
         ],
@@ -41399,6 +43026,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "radfeld.tirol.gv.at"
+        ],
         "guess": [
           "radfeld.gv.at"
         ]
@@ -41419,6 +43049,9 @@
       "sources_detail": {
         "bresu": [
           "rattenberg.at"
+        ],
+        "bresu_email": [
+          "rattenberg.tirol.gv.at"
         ],
         "wikidata": [
           "rattenberg.at"
@@ -41457,6 +43090,9 @@
         "bresu": [
           "rettenschoess.at"
         ],
+        "bresu_email": [
+          "rettenschoess.tirol.gv.at"
+        ],
         "wikidata": [
           "rettenschoess.at"
         ],
@@ -41479,6 +43115,9 @@
       "sources_detail": {
         "bresu": [
           "scheffau.eu"
+        ],
+        "bresu_email": [
+          "scheffau.tirol.gv.at"
         ],
         "wikidata": [
           "gemeinde.scheffau.net"
@@ -41520,6 +43159,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "soell.tirol.gv.at"
+        ],
         "wikidata": [
           "soell.gv.at"
         ]
@@ -41539,6 +43181,9 @@
       "sources_detail": {
         "bresu": [
           "thiersee.gv.at"
+        ],
+        "bresu_email": [
+          "thiersee.tirol.gv.at"
         ]
       },
       "flags": []
@@ -41556,6 +43201,9 @@
       "sources_detail": {
         "bresu": [
           "angerberg.at"
+        ],
+        "bresu_email": [
+          "angerberg.gv.at"
         ],
         "wikidata": [
           "angerberg.at"
@@ -41575,6 +43223,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "walchsee.tirol.gv.at"
+        ],
         "guess": [
           "walchsee.gv.at"
         ]
@@ -41659,6 +43310,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "fendels.tirol.gv.at"
+        ],
         "guess": [
           "fendels.gv.at"
         ]
@@ -41678,6 +43332,9 @@
       "sources_detail": {
         "bresu": [
           "fiss.co.at"
+        ],
+        "bresu_email": [
+          "fiss.tirol.gv.at"
         ]
       },
       "flags": []
@@ -41696,6 +43353,9 @@
         "bresu": [
           "fliess.at"
         ],
+        "bresu_email": [
+          "fliess.tirol.gv.at"
+        ],
         "guess": [
           "fliess.gv.at"
         ]
@@ -41713,6 +43373,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "flirsch.tirol.gv.at"
+        ],
         "guess": [
           "flirsch.gv.at"
         ]
@@ -41754,6 +43417,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "grins.tirol.gv.at"
+        ],
         "guess": [
           "grins.gv.at"
         ]
@@ -41771,6 +43437,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "ischgl.tirol.gv.at"
+        ],
         "wikidata": [
           "ischgl.gv.at"
         ]
@@ -41791,6 +43460,9 @@
         "bresu": [
           "kappl.gv.at"
         ],
+        "bresu_email": [
+          "kappl.tirol.gv.at"
+        ],
         "wikidata": [
           "gemeinde.kappl.at"
         ]
@@ -41808,6 +43480,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "kaunerberg.tirol.gv.at"
+        ],
         "guess": [
           "kaunerberg.gv.at"
         ]
@@ -41850,7 +43525,11 @@
       ],
       "source": "override",
       "confidence": "high",
-      "sources_detail": {},
+      "sources_detail": {
+        "bresu_email": [
+          "kauns.tirol.gv.at"
+        ]
+      },
       "flags": []
     },
     {
@@ -41864,6 +43543,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "ladis.tirol.gv.at"
+        ],
         "guess": [
           "ladis.gv.at"
         ]
@@ -41881,6 +43563,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "landeck.tirol.gv.at"
+        ],
         "wikidata": [
           "landeck.gv.at"
         ]
@@ -41898,6 +43583,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "nauders.tirol.gv.at"
+        ],
         "guess": [
           "nauders.gv.at"
         ]
@@ -41918,6 +43606,9 @@
         "bresu": [
           "pettneu.at"
         ],
+        "bresu_email": [
+          "pettneu.tirol.gv.at"
+        ],
         "guess": [
           "pettneu.gv.at"
         ]
@@ -41935,6 +43626,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "pfunds.tirol.gv.at"
+        ],
         "guess": [
           "pfunds.gv.at"
         ]
@@ -41952,6 +43646,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "pians.tirol.gv.at"
+        ],
         "guess": [
           "pians.gv.at"
         ]
@@ -41969,6 +43666,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "prutz.tirol.gv.at"
+        ],
         "guess": [
           "prutz.gv.at"
         ]
@@ -41988,6 +43688,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "ried-oberinntal.tirol.gv.at"
+        ],
         "wikidata": [
           "www2.riskommunal.net"
         ],
@@ -42033,6 +43736,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "schoenwies.tirol.gv.at"
+        ],
         "guess": [
           "schoenwies.gv.at"
         ]
@@ -42050,6 +43756,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "see.tirol.gv.at"
+        ],
         "guess": [
           "see.gv.at"
         ]
@@ -42091,6 +43800,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "spiss.tirol.gv.at"
+        ],
         "guess": [
           "spiss.gv.at"
         ]
@@ -42108,6 +43820,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "stanz.tirol.gv.at"
+        ],
         "guess": [
           "stanz-landeck.gv.at"
         ]
@@ -42148,6 +43863,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "tobadill.tirol.gv.at"
+        ],
         "guess": [
           "tobadill.gv.at"
         ]
@@ -42165,6 +43883,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "toesens.tirol.gv.at"
+        ],
         "guess": [
           "toesens.gv.at"
         ]
@@ -42531,6 +44252,9 @@
       "sources_detail": {
         "bresu": [
           "leisach.gv.at"
+        ],
+        "bresu_email": [
+          "leisach.tirol.gv.at"
         ]
       },
       "flags": []
@@ -42568,7 +44292,11 @@
       ],
       "source": "override",
       "confidence": "high",
-      "sources_detail": {},
+      "sources_detail": {
+        "bresu_email": [
+          "matrei-ost.tirol.gv.at"
+        ]
+      },
       "flags": []
     },
     {
@@ -42959,6 +44687,9 @@
         "bresu": [
           "gemeinde-bach.at"
         ],
+        "bresu_email": [
+          "bach.tirol.gv.at"
+        ],
         "guess": [
           "bach.gv.at"
         ]
@@ -42978,6 +44709,9 @@
       "sources_detail": {
         "bresu": [
           "gemeinde-berwang.at"
+        ],
+        "bresu_email": [
+          "berwang.tirol.gv.at"
         ],
         "wikidata": [
           "berwang.at"
@@ -42999,6 +44733,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "biberwier.tirol.gv.at"
+        ],
         "guess": [
           "biberwier.gv.at"
         ]
@@ -43019,6 +44756,9 @@
         "bresu": [
           "gemeinde-bichlbach.at"
         ],
+        "bresu_email": [
+          "bichlbach.tirol.gv.at"
+        ],
         "wikidata": [
           "www2.riskommunal.net"
         ]
@@ -43036,6 +44776,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "breitenwang.tirol.gv.at"
+        ],
         "guess": [
           "breitenwang.gv.at"
         ]
@@ -43053,6 +44796,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "ehenbichl.tirol.gv.at"
+        ],
         "guess": [
           "ehenbichl.gv.at"
         ]
@@ -43070,6 +44816,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "ehrwald.tirol.gv.at"
+        ],
         "guess": [
           "ehrwald.gv.at"
         ]
@@ -43087,6 +44836,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "elbigenalp.tirol.gv.at"
+        ],
         "guess": [
           "elbigenalp.gv.at"
         ]
@@ -43107,6 +44859,9 @@
       "sources_detail": {
         "bresu": [
           "elmen.at"
+        ],
+        "bresu_email": [
+          "elmen.tirol.gv.at"
         ],
         "wikidata": [
           "lechtal.at"
@@ -43131,6 +44886,9 @@
         "bresu": [
           "forchach.at"
         ],
+        "bresu_email": [
+          "forchach.tirol.gv.at"
+        ],
         "wikidata": [
           "www2.riskommunal.net"
         ],
@@ -43151,6 +44909,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "graen.tirol.gv.at"
+        ],
         "wikidata": [
           "www2.riskommunal.net"
         ],
@@ -43191,6 +44952,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "haeselgehr.tirol.gv.at"
+        ],
         "guess": [
           "haeselgehr.gv.at"
         ]
@@ -43208,6 +44972,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "heiterwang.tirol.gv.at"
+        ],
         "guess": [
           "heiterwang.gv.at"
         ]
@@ -43227,6 +44994,9 @@
       "sources_detail": {
         "bresu": [
           "hinterhornbach-lechtal.at"
+        ],
+        "bresu_email": [
+          "hinterhornbach.tirol.gv.at"
         ],
         "wikidata": [
           "hinterhornbach-lechtal.at"
@@ -43248,6 +45018,9 @@
         "bresu": [
           "hoefen.gv.at"
         ],
+        "bresu_email": [
+          "hoefen.tirol.gv.at"
+        ],
         "wikidata": [
           "hoefen.gv.at"
         ]
@@ -43265,6 +45038,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "holzgau.tirol.gv.at"
+        ],
         "guess": [
           "holzgau.gv.at"
         ]
@@ -43282,6 +45058,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "jungholz.tirol.gv.at"
+        ],
         "wikidata": [
           "jungholz.gv.at"
         ]
@@ -43302,6 +45081,9 @@
         "bresu": [
           "kaisers-lechtal.at"
         ],
+        "bresu_email": [
+          "kaisers.tirol.gv.at"
+        ],
         "wikidata": [
           "kaisers-lechtal.at"
         ]
@@ -43321,6 +45103,9 @@
       "sources_detail": {
         "bresu": [
           "lechaschau.at"
+        ],
+        "bresu_email": [
+          "lechaschau.tirol.gv.at"
         ],
         "wikidata": [
           "members.aon.at"
@@ -43343,6 +45128,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "lermoos.tirol.gv.at"
+        ],
         "guess": [
           "lermoos.gv.at"
         ]
@@ -43360,6 +45148,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "musau.tirol.gv.at"
+        ],
         "wikidata": [
           "musau.gv.at"
         ]
@@ -43379,6 +45170,9 @@
       "sources_detail": {
         "bresu": [
           "namlos.at"
+        ],
+        "bresu_email": [
+          "namlos.tirol.gv.at"
         ],
         "wikidata": [
           "namlos.at"
@@ -43400,6 +45194,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "nesselwaengle.tirol.gv.at"
+        ],
         "guess": [
           "nesselwaengle.gv.at"
         ]
@@ -43419,6 +45216,9 @@
       "sources_detail": {
         "bresu": [
           "pfafflar.eu"
+        ],
+        "bresu_email": [
+          "pfafflar.tirol.gv.at"
         ],
         "wikidata": [
           "pfafflar.eu"
@@ -43440,6 +45240,9 @@
         "bresu": [
           "pflach.at"
         ],
+        "bresu_email": [
+          "pflach.tirol.gv.at"
+        ],
         "wikidata": [
           "pflach.at"
         ],
@@ -43460,6 +45263,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "pinswang.tirol.gv.at"
+        ],
         "guess": [
           "pinswang.gv.at"
         ]
@@ -43499,7 +45305,11 @@
       ],
       "source": "override",
       "confidence": "medium",
-      "sources_detail": {},
+      "sources_detail": {
+        "bresu_email": [
+          "schattwald.tirol.gv.at"
+        ]
+      },
       "flags": [
         "no_mx"
       ]
@@ -43517,6 +45327,9 @@
       "sources_detail": {
         "bresu": [
           "stanzach.at"
+        ],
+        "bresu_email": [
+          "stanzach.tirol.gv.at"
         ],
         "wikidata": [
           "www2.riskommunal.net"
@@ -43538,6 +45351,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "steeg.tirol.gv.at"
+        ],
         "guess": [
           "steeg.gv.at"
         ]
@@ -43555,6 +45371,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "tannheim.tirol.gv.at"
+        ],
         "guess": [
           "tannheim.gv.at"
         ]
@@ -43575,6 +45394,9 @@
       "sources_detail": {
         "bresu": [
           "vils.at"
+        ],
+        "bresu_email": [
+          "vils.tirol.gv.at"
         ],
         "wikidata": [
           "vils.at"
@@ -43598,6 +45420,9 @@
       "sources_detail": {
         "bresu": [
           "vorderhornbach.at"
+        ],
+        "bresu_email": [
+          "vorderhornbach.tirol.gv.at"
         ],
         "guess": [
           "vorderhornbach.gv.at"
@@ -43639,6 +45464,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "weissenbach.tirol.gv.at"
+        ],
         "guess": [
           "weissenbach-lech.gv.at"
         ]
@@ -43656,6 +45484,9 @@
       "source": "override",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "zoeblen.tirol.gv.at"
+        ],
         "wikidata": [
           "www2.riskommunal.net"
         ]
@@ -43672,7 +45503,11 @@
       ],
       "source": "override",
       "confidence": "high",
-      "sources_detail": {},
+      "sources_detail": {
+        "bresu_email": [
+          "achenkirch.tirol.gv.at"
+        ]
+      },
       "flags": []
     },
     {
@@ -43688,6 +45523,9 @@
       "sources_detail": {
         "bresu": [
           "aschauimzillertal.com"
+        ],
+        "bresu_email": [
+          "aschauzillertal.tirol.gv.at"
         ],
         "guess": [
           "aschau-zillertal.gv.at"
@@ -43706,6 +45544,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "brandberg.tirol.gv.at"
+        ],
         "guess": [
           "brandberg.gv.at"
         ]
@@ -43726,6 +45567,9 @@
         "bresu": [
           "bruck-am-ziller.at"
         ],
+        "bresu_email": [
+          "bruck.tirol.gv.at"
+        ],
         "wikidata": [
           "bruck-im-zillertal.at"
         ],
@@ -43745,7 +45589,11 @@
       ],
       "source": "override",
       "confidence": "high",
-      "sources_detail": {},
+      "sources_detail": {
+        "bresu_email": [
+          "buch.tirol.gv.at"
+        ]
+      },
       "flags": []
     },
     {
@@ -43759,6 +45607,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "eben-achensee.tirol.gv.at"
+        ],
         "guess": [
           "eben-achensee.gv.at"
         ]
@@ -43776,6 +45627,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "finkenberg.tirol.gv.at"
+        ],
         "guess": [
           "finkenberg.gv.at"
         ]
@@ -43796,6 +45650,9 @@
       "sources_detail": {
         "bresu": [
           "fuegen.at"
+        ],
+        "bresu_email": [
+          "fuegen.tirol.gv.at"
         ],
         "wikidata": [
           "fuegen.at"
@@ -43821,6 +45678,9 @@
         "bresu": [
           "gemeinde-fuegenberg.at"
         ],
+        "bresu_email": [
+          "fuegenberg.tirol.gv.at"
+        ],
         "guess": [
           "fuegenberg.gv.at"
         ]
@@ -43837,7 +45697,11 @@
       ],
       "source": "override",
       "confidence": "high",
-      "sources_detail": {},
+      "sources_detail": {
+        "bresu_email": [
+          "gallzein.tirol.gv.at"
+        ]
+      },
       "flags": []
     },
     {
@@ -43851,6 +45715,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "gerlos.tirol.gv.at"
+        ],
         "guess": [
           "gerlos.gv.at"
         ]
@@ -43872,6 +45739,9 @@
         "bresu": [
           "gemeinde-gerlosberg.at"
         ],
+        "bresu_email": [
+          "gerlosberg.tirol.gv.at"
+        ],
         "wikidata": [
           "www2.riskommunal.net"
         ]
@@ -43888,7 +45758,11 @@
       ],
       "source": "override",
       "confidence": "high",
-      "sources_detail": {},
+      "sources_detail": {
+        "bresu_email": [
+          "hainzenberg.tirol.gv.at"
+        ]
+      },
       "flags": []
     },
     {
@@ -43927,6 +45801,9 @@
       "sources_detail": {
         "bresu": [
           "gemeinde-hippach.at"
+        ],
+        "bresu_email": [
+          "hippach.tirol.gv.at"
         ],
         "wikidata": [
           "gemeinde-hippach.at"
@@ -43971,6 +45848,9 @@
       "sources_detail": {
         "bresu": [
           "kaltenbach.at"
+        ],
+        "bresu_email": [
+          "kaltenbach.tirol.gv.at"
         ]
       },
       "flags": []
@@ -43986,6 +45866,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "mayrhofen.tirol.gv.at"
+        ],
         "guess": [
           "mayrhofen.gv.at"
         ]
@@ -44003,6 +45886,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "pill.tirol.gv.at"
+        ],
         "guess": [
           "pill.gv.at"
         ]
@@ -44021,6 +45907,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "ramsau.tirol.gv.at"
+        ],
         "guess": [
           "ramsau-zillertal.gv.at",
           "ramsau.gv.at"
@@ -44040,6 +45929,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "ried-zillertal.tirol.gv.at"
+        ],
         "wikidata": [
           "www2.riskommunal.net"
         ],
@@ -44059,7 +45951,11 @@
       ],
       "source": "override",
       "confidence": "high",
-      "sources_detail": {},
+      "sources_detail": {
+        "bresu_email": [
+          "rohrberg.tirol.gv.at"
+        ]
+      },
       "flags": []
     },
     {
@@ -44075,6 +45971,9 @@
       "sources_detail": {
         "bresu": [
           "schlitters.at"
+        ],
+        "bresu_email": [
+          "schlitters.tirol.gv.at"
         ],
         "wikidata": [
           "schlitters.at"
@@ -44163,6 +46062,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "steinberg-rofan.tirol.gv.at"
+        ],
         "guess": [
           "steinberg-rofan.gv.at"
         ]
@@ -44180,6 +46082,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "strass.tirol.gv.at"
+        ],
         "guess": [
           "strass-zillertal.gv.at"
         ]
@@ -44197,6 +46102,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "stumm.tirol.gv.at"
+        ],
         "guess": [
           "stumm.gv.at"
         ]
@@ -44214,6 +46122,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "stummerberg.tirol.gv.at"
+        ],
         "guess": [
           "stummerberg.gv.at"
         ]
@@ -44275,6 +46186,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "uderns.tirol.gv.at"
+        ],
         "guess": [
           "uderns.gv.at"
         ]
@@ -44292,6 +46206,9 @@
       "source": "scrape",
       "confidence": "high",
       "sources_detail": {
+        "bresu_email": [
+          "vomp.tirol.gv.at"
+        ],
         "guess": [
           "vomp.gv.at"
         ]
@@ -44357,6 +46274,9 @@
       "sources_detail": {
         "bresu": [
           "wiesing.at"
+        ],
+        "bresu_email": [
+          "wiesing.tirol.gv.at"
         ],
         "guess": [
           "wiesing.gv.at"
@@ -44840,6 +46760,9 @@
         "bresu": [
           "sanktantonimmontafon.at"
         ],
+        "bresu_email": [
+          "st.anton.i.m.cnv.at"
+        ],
         "wikidata": [
           "sankt-anton-im-montafon.at"
         ]
@@ -44859,6 +46782,9 @@
       "sources_detail": {
         "bresu": [
           "gemeinde.stgallenkirch.at"
+        ],
+        "bresu_email": [
+          "st.gallenkirch.at"
         ],
         "wikidata": [
           "gemeinde.stgallenkirch.at"
@@ -45110,6 +47036,9 @@
         "bresu": [
           "andelsbuch.at"
         ],
+        "bresu_email": [
+          "andelsbuch.cnv.at"
+        ],
         "wikidata": [
           "andelsbuch.at"
         ]
@@ -45152,6 +47081,9 @@
       "sources_detail": {
         "bresu": [
           "bezau.at"
+        ],
+        "bresu_email": [
+          "bezau.cnv.at"
         ],
         "wikidata": [
           "bezau.at"
@@ -45237,6 +47169,9 @@
         "bresu": [
           "gemeinde-buch.at"
         ],
+        "bresu_email": [
+          "buch.cnv.at"
+        ],
         "wikidata": [
           "gemeinde-buch.at"
         ]
@@ -45303,6 +47238,9 @@
       "sources_detail": {
         "bresu": [
           "egg.at"
+        ],
+        "bresu_email": [
+          "egg.cnv.at"
         ],
         "wikidata": [
           "egg.at"
@@ -45738,6 +47676,9 @@
         "bresu": [
           "reuthe.at"
         ],
+        "bresu_email": [
+          "reuthe.cnv.at"
+        ],
         "wikidata": [
           "reuthe.at"
         ]
@@ -45873,6 +47814,9 @@
       "sources_detail": {
         "bresu": [
           "gemeinde-schwarzenberg.at"
+        ],
+        "bresu_email": [
+          "schwarzenberg.cnv.at"
         ],
         "wikidata": [
           "schwarzenberg.at"
@@ -46109,6 +48053,9 @@
         "bresu": [
           "duenserberg.at"
         ],
+        "bresu_email": [
+          "duenserberg.cnv.at"
+        ],
         "wikidata": [
           "duenserberg.at"
         ]
@@ -46244,6 +48191,9 @@
       "sources_detail": {
         "bresu": [
           "klaus.at"
+        ],
+        "bresu_email": [
+          "klaus.cnv.at"
         ],
         "wikidata": [
           "klaus.at"

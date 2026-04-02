@@ -344,7 +344,11 @@ async def phase_scrape(
     # Skip scraping for domains where municipality already has email domain data
     skip_scrape_domains: set[str] = set()
     for rec in records:
-        has_email_candidate = any(c.is_email_domain for c in rec.candidates)
+        has_email_candidate = any(
+            c.is_email_domain
+            and c.source not in ("bresu_email", "guess")  # unverified email domain
+            for c in rec.candidates
+        )
         if has_email_candidate:
             for cand in rec.candidates:
                 if cand.domain in accessible_domains:

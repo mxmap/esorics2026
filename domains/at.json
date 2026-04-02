@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-02T14:03:51.662014Z",
+  "generated": "2026-04-02T15:28:03.505804Z",
   "total": 2092,
   "municipalities": [
     {
@@ -17,6 +17,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "rust.bgld.gv.at",
         "freistadt-rust.at"
       ]
     },
@@ -65,6 +66,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "klingenbach.bgld.gv.at",
         "klingenbach.at",
         "klingenbach.info"
       ]
@@ -148,6 +150,7 @@
       "region": "Burgenland",
       "website": "schuetzen-am-gebirge.com",
       "emails": [
+        "schuetzen-am-gebirge.bgld.gv.at",
         "schuetzen-am-gebirge.at"
       ]
     },
@@ -340,6 +343,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "ollersdorf.bgld.gv.at",
         "ollersdorf-burgenland.at"
       ]
     },
@@ -394,6 +398,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "hackerberg.bgld.gv.at",
         "hackerberg.at"
       ]
     },
@@ -494,6 +499,7 @@
       "region": "Burgenland",
       "website": "deutschkaltenbrunn.eu",
       "emails": [
+        "deutsch-kaltenbrunn.bgld.gv.at",
         "deutschkaltenbrunn.eu"
       ]
     },
@@ -503,6 +509,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "eltendorf.bgld.gv.at",
         "eltendorf.at"
       ]
     },
@@ -521,6 +528,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "jennersdorf.bgld.gv.at",
         "jennersdorf.eu"
       ]
     },
@@ -530,6 +538,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "minihof-liebau.bgld.gv.at",
         "minihof-liebau.gv.at",
         "minihof-liebau.at"
       ]
@@ -540,6 +549,7 @@
       "region": "Burgenland",
       "website": "mogersdorf.gv.at",
       "emails": [
+        "mogersdorf.bgld.gv.at",
         "mogersdorf.at"
       ]
     },
@@ -549,6 +559,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "neuhaus-klausenbach.bgld.gv.at",
         "neuhaus-klausenbach.at"
       ]
     },
@@ -558,6 +569,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "rudersdorf.bgld.gv.at",
         "rudersdorf.at"
       ]
     },
@@ -567,6 +579,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "st-martin-raab.bgld.gv.at",
         "sankt-martin-raab.at",
         "st-martin-raab.at"
       ]
@@ -586,6 +599,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "koenigsdorf.bgld.gv.at",
         "koenigsdorf.at"
       ]
     },
@@ -595,6 +609,7 @@
       "region": "Burgenland",
       "website": "a1.net",
       "emails": [
+        "muehlgraben.bgld.gv.at",
         "muehlgraben.at"
       ]
     },
@@ -604,6 +619,7 @@
       "region": "Burgenland",
       "website": "drassburg.at",
       "emails": [
+        "drassburg.bgld.gv.at",
         "drassburg.gv.at",
         "drassburg.at"
       ]
@@ -614,6 +630,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "forchtenstein.bgld.gv.at",
         "forchtenstein.at"
       ]
     },
@@ -623,6 +640,7 @@
       "region": "Burgenland",
       "website": "hirm.gv.at",
       "emails": [
+        "hirm.bgld.gv.at",
         "hirm.gv.at",
         "gemeinde-hirm.at"
       ]
@@ -719,6 +737,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "sieggraben.bgld.gv.at",
         "sieggraben.at"
       ]
     },
@@ -787,6 +806,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "andau.bgld.gv.at",
         "andau-gemeinde.at"
       ]
     },
@@ -805,6 +825,7 @@
       "region": "Burgenland",
       "website": "bruckneudorf.eu",
       "emails": [
+        "bruckneudorf.bgld.gv.at",
         "bruckneudorf.eu"
       ]
     },
@@ -833,6 +854,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "gattendorf.bgld.gv.at",
         "gattendorf.at"
       ]
     },
@@ -842,6 +864,7 @@
       "region": "Burgenland",
       "website": "gols.co.at",
       "emails": [
+        "gols.bgld.gv.at",
         "gols.at",
         "gols.co.at"
       ]
@@ -890,6 +913,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "moenchhof.bgld.gv.at",
         "moenchhof.at"
       ]
     },
@@ -918,6 +942,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "pama.bgld.gv.at",
         "gemeinde-pama.at"
       ]
     },
@@ -936,6 +961,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "parndorf.bgld.gv.at",
         "gemeinde-parndorf.at"
       ]
     },
@@ -993,6 +1019,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "winden.bgld.gv.at",
         "winden.at"
       ]
     },
@@ -1048,6 +1075,7 @@
       "region": "Burgenland",
       "website": "drassmarkt.at",
       "emails": [
+        "drassmarkt.bgld.gv.at",
         "drassmarkt.at"
       ]
     },
@@ -1086,6 +1114,7 @@
       "region": "Burgenland",
       "website": "kaisersdorf.com",
       "emails": [
+        "kaisersdorf.bgld.gv.at",
         "kaisersdorf.com"
       ]
     },
@@ -1095,6 +1124,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "kobersdorf.bgld.gv.at",
         "kobersdorf.at"
       ]
     },
@@ -1151,6 +1181,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "neckenmarkt.bgld.gv.at",
         "neckenmarkt.eu",
         "neckenmarkt.net"
       ]
@@ -1199,6 +1230,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "piringsdorf.bgld.gv.at",
         "piringsdorf.at"
       ]
     },
@@ -1208,6 +1240,7 @@
       "region": "Burgenland",
       "website": "raiding-online.at",
       "emails": [
+        "raiding.bgld.gv.at",
         "raiding.at"
       ]
     },
@@ -1311,6 +1344,7 @@
       "region": "Burgenland",
       "website": "bernstein.gv.at",
       "emails": [
+        "bernstein.bgld.gv.at",
         "bernstein.gv.at"
       ]
     },
@@ -1320,6 +1354,7 @@
       "region": "Burgenland",
       "website": "eisenberg.at",
       "emails": [
+        "deutsch-schuetzen-eisenberg.bgld.gv.at",
         "eisenberg.at"
       ]
     },
@@ -1329,6 +1364,7 @@
       "region": "Burgenland",
       "website": "grafenschachen.at",
       "emails": [
+        "grafenschachen.bgld.gv.at",
         "grafenschachen.at"
       ]
     },
@@ -1348,6 +1384,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "hannersdorf.bgld.gv.at",
         "hannersdorf.at"
       ]
     },
@@ -1421,6 +1458,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "mischendorf.bgld.gv.at",
         "mischendorf.at"
       ]
     },
@@ -1525,6 +1563,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "unterwart.bgld.gv.at",
         "unterwart.at"
       ]
     },
@@ -1543,6 +1582,7 @@
       "region": "Burgenland",
       "website": "wiesfleck.at",
       "emails": [
+        "wiesfleck.bgld.gv.at",
         "gemeinde-wiesfleck.at"
       ]
     },
@@ -1572,6 +1612,7 @@
       "region": "Burgenland",
       "website": "",
       "emails": [
+        "jabing.bgld.gv.at",
         "gemeinde-jabing.at"
       ]
     },
@@ -4030,6 +4071,7 @@
       "region": "Niederösterreich",
       "website": "",
       "emails": [
+        "ringelsdorf-niederabsdorf.gv.at",
         "ringelsdorf.at"
       ]
     },
@@ -5747,6 +5789,7 @@
       "region": "Niederösterreich",
       "website": "gaweinstal.at",
       "emails": [
+        "gaweinstal.gv.at",
         "gaweinstal.at"
       ]
     },
@@ -6028,6 +6071,7 @@
       "region": "Niederösterreich",
       "website": "brunnamgebirge.at",
       "emails": [
+        "brunnamgebirge.gv.at",
         "brunnamgebirge.at"
       ]
     },
@@ -6726,7 +6770,7 @@
       "region": "Niederösterreich",
       "website": "kirchberg-pielach.at",
       "emails": [
-        "kirchberg-pielach.at"
+        "kirchbergpielach.at"
       ]
     },
     {
@@ -7944,7 +7988,7 @@
       "region": "Niederösterreich",
       "website": "ottenschlag.com",
       "emails": [
-        "ottenschlag.com"
+        "ottenschlag.eu"
       ]
     },
     {
@@ -8634,6 +8678,7 @@
       "region": "Oberösterreich",
       "website": "",
       "emails": [
+        "gutau.ooe.gv.at",
         "gutau.at"
       ]
     },
@@ -8757,6 +8802,7 @@
       "region": "Oberösterreich",
       "website": "sandl.at",
       "emails": [
+        "sandl.ooe.gv.at",
         "sandl.at"
       ]
     },
@@ -9211,6 +9257,7 @@
       "region": "Oberösterreich",
       "website": "neumarkt-hausruckkreis.at",
       "emails": [
+        "neumarkt-hausruck.ooe.gv.at",
         "ooe.gv.at"
       ]
     },
@@ -9466,6 +9513,7 @@
       "region": "Oberösterreich",
       "website": "",
       "emails": [
+        "oberschlierbach.ooe.gv.at",
         "gemeinde-oberschlierbach.at"
       ]
     },
@@ -9650,6 +9698,7 @@
       "region": "Oberösterreich",
       "website": "hofkirchen.info",
       "emails": [
+        "hofkirchen-traunkreis.ooe.gv.at",
         "hofkirchen.info"
       ]
     },
@@ -10106,6 +10155,7 @@
       "region": "Oberösterreich",
       "website": "gemeinde-gurten.at",
       "emails": [
+        "gurten.ooe.gv.at",
         "gemeinde-gurten.at"
       ]
     },
@@ -10245,8 +10295,7 @@
       "region": "Oberösterreich",
       "website": "pramet.at",
       "emails": [
-        "pramet.ooe.gv.at",
-        "pramet.at"
+        "schildorn-pramet.at"
       ]
     },
     {
@@ -10301,7 +10350,7 @@
       "region": "Oberösterreich",
       "website": "schildorn.at",
       "emails": [
-        "schildorn.at"
+        "schildorn-pramet.at"
       ]
     },
     {
@@ -12006,6 +12055,7 @@
       "region": "Oberösterreich",
       "website": "gemeinde-holzhausen.at",
       "emails": [
+        "holzhausen.ooe.gv.at",
         "gemeinde-holzhausen.at"
       ]
     },
@@ -13583,6 +13633,7 @@
       "region": "Steiermark",
       "website": "",
       "emails": [
+        "stiwoll.gv.at",
         "stiwoll.at",
         "stiwoll.steiermark.at"
       ]
@@ -13935,6 +13986,7 @@
       "region": "Steiermark",
       "website": "gamlitz.eu",
       "emails": [
+        "gamlitz.gv.at",
         "gamlitz.at"
       ]
     },
@@ -14302,6 +14354,7 @@
       "region": "Steiermark",
       "website": "",
       "emails": [
+        "woerschach.gv.at",
         "woerschach.at"
       ]
     },
@@ -14377,6 +14430,7 @@
       "region": "Steiermark",
       "website": "",
       "emails": [
+        "michaelerberg-pruggern.gv.at",
         "michaelerberg-pruggern.at"
       ]
     },
@@ -14549,6 +14603,7 @@
       "region": "Steiermark",
       "website": "",
       "emails": [
+        "st-lambrecht.gv.at",
         "stlambrecht.at"
       ]
     },
@@ -14673,6 +14728,7 @@
       "region": "Steiermark",
       "website": "geistthal-soedingberg.at",
       "emails": [
+        "geistthal-soedingberg.gv.at",
         "geistthal-soedingberg.at"
       ]
     },
@@ -14691,6 +14747,7 @@
       "region": "Steiermark",
       "website": "kainach.at",
       "emails": [
+        "kainach-voitsberg.gv.at",
         "kainach.at"
       ]
     },
@@ -14756,6 +14813,7 @@
       "region": "Steiermark",
       "website": "",
       "emails": [
+        "gasen.gv.at",
         "gasen.at"
       ]
     },

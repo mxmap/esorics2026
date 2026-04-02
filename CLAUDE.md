@@ -44,3 +44,5 @@ uv run resolve ch -v          # verbose logging
 - Scraping is always exhaustive (all subpages)
 - Decision algorithm is scraping-first, unified across countries
 - Output: three tiers per country (minimal, detailed, review)
+
+If you do not know or have no evidence, rather say so.
