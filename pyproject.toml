@@ -1,7 +1,57 @@
 [project]
-name = "paper-municipality-emails"
-version = "0.1.0"
-description = "Add your description here"
+name = "mail-municipalities"
+version = "0.2.0"
+description = "Domain resolution, provider classification, and security analysis for municipality email in CH, DE, AT"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "aiosqlite>=0.20.0",
+    "dnspython>=2.8.0",
+    "playwright>=1.50",
+    "email-validator>=2.3.0",
+    "httpx[http2]>=0.28.1",
+    "loguru>=0.7.3",
+    "pydantic>=2.12.5",
+    "python-slugify>=8.0.4",
+    "stamina>=25.2.0",
+    "tldextract>=5.3.1",
+    "typer>=0.24.1",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+    "pytest-asyncio>=1.3.0",
+    "pytest-cov>=7.1.0",
+    "respx>=0.22.0",
+    "ruff>=0.15.8",
+    "pyright>=1.1",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/mail_municipalities"]
+
+[project.scripts]
+resolve = "mail_municipalities.cli:resolve"
+classify = "mail_municipalities.cli:classify"
+analyze = "mail_municipalities.cli:analyze"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+markers = ["mx: tests that perform live DNS MX lookups (may be slow)"]
+
+[tool.coverage.run]
+source = ["mail_municipalities"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 90
+exclude_lines = ["pragma: no cover"]
+
+[tool.ruff]
+line-length = 120

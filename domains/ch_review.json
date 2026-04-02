@@ -1,0 +1,100 @@
+{
+  "generated": "2026-04-01T14:57:10.807954Z",
+  "total": 6,
+  "municipalities": [
+    {
+      "code": "2549",
+      "name": "Kammersrohr",
+      "region": "Kanton Solothurn",
+      "website": "",
+      "emails": [
+        "bluewin.ch"
+      ],
+      "source": "override",
+      "confidence": "medium",
+      "sources_detail": {},
+      "flags": [
+        "no_mx"
+      ]
+    },
+    {
+      "code": "2790",
+      "name": "Roggenburg",
+      "region": "Kanton Basel-Landschaft",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {},
+      "flags": []
+    },
+    {
+      "code": "5471",
+      "name": "Bettens",
+      "region": "Kanton Waadt",
+      "website": "commune-bettens.ch",
+      "emails": [
+        "bluewin.ch"
+      ],
+      "source": "override",
+      "confidence": "medium",
+      "sources_detail": {
+        "wikidata": [
+          "commune-bettens.ch"
+        ]
+      },
+      "flags": [
+        "no_mx"
+      ]
+    },
+    {
+      "code": "5640",
+      "name": "Lussy-sur-Morges",
+      "region": "Kanton Waadt",
+      "website": "lussy-sur-morges.ch",
+      "emails": [
+        "bluewin.ch"
+      ],
+      "source": "override",
+      "confidence": "medium",
+      "sources_detail": {
+        "wikidata": [
+          "lussy-sur-morges.ch"
+        ]
+      },
+      "flags": [
+        "no_mx"
+      ]
+    },
+    {
+      "code": "5934",
+      "name": "Valeyres-sous-Ursins",
+      "region": "Kanton Waadt",
+      "website": "valeyres-sous-ursins.ch",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "wikidata": [
+          "valeyres-sous-ursins.ch"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "715",
+      "name": "Rebévelier",
+      "region": "Kanton Bern",
+      "website": "",
+      "emails": [
+        "bluewin.ch"
+      ],
+      "source": "override",
+      "confidence": "medium",
+      "sources_detail": {},
+      "flags": [
+        "no_mx"
+      ]
+    }
+  ]
+}
