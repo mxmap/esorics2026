@@ -1,0 +1,3031 @@
+{
+  "generated": "2026-04-02T07:53:16.718040Z",
+  "total": 144,
+  "municipalities": [
+    {
+      "code": "10404",
+      "name": "Gerersdorf-Sulz",
+      "region": "Burgenland",
+      "website": "gerersdorf-sulz.at",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "bresu": [
+          "gerersdorf-sulz.at"
+        ],
+        "wikidata": [
+          "gerersdorf-sulz.at"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "10408",
+      "name": "Kukmirn",
+      "region": "Burgenland",
+      "website": "kukmirn.at",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "bresu": [
+          "kukmirn.at"
+        ],
+        "wikidata": [
+          "kukmirn.at"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "10411",
+      "name": "Olbendorf",
+      "region": "Burgenland",
+      "website": "olbendorf.at",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "bresu": [
+          "olbendorf.at"
+        ],
+        "wikidata": [
+          "olbendorf.at"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "10413",
+      "name": "Sankt Michael im Burgenland",
+      "region": "Burgenland",
+      "website": "st.michael-bgld.at",
+      "emails": [
+        "st.michael-bgld.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "st.michael-bgld.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "10424",
+      "name": "Heugraben",
+      "region": "Burgenland",
+      "website": "heugraben.gv.at",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "bresu": [
+          "heugraben.at"
+        ],
+        "bresu_email": [
+          "heugraben.at"
+        ],
+        "wikidata": [
+          "heugraben.at"
+        ],
+        "guess": [
+          "heugraben.gv.at"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "10428",
+      "name": "Moschendorf",
+      "region": "Burgenland",
+      "website": "moschendorf.at",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "bresu": [
+          "moschendorf.at"
+        ],
+        "wikidata": [
+          "moschendorf.at"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "10608",
+      "name": "Pöttelsdorf",
+      "region": "Burgenland",
+      "website": "xn--pttelsdorf-ecb.at",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "bresu": [
+          "gemeindepoettelsdorf.at"
+        ],
+        "wikidata": [
+          "gemeindepoettelsdorf.at"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "10619",
+      "name": "Krensdorf",
+      "region": "Burgenland",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "bresu": [
+          "krensdorf.at"
+        ],
+        "wikidata": [
+          "krensdorf.at"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "10719",
+      "name": "Sankt Andrä am Zicksee",
+      "region": "Burgenland",
+      "website": "gemeinde-standrae.at",
+      "emails": [
+        "standraezicksee.at",
+        "xn--gemeinde-standr-flb.at"
+      ],
+      "source": "wikidata",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "xn--gemeinde-standr-flb.at"
+        ],
+        "wikidata": [
+          "standraezicksee.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "10827",
+      "name": "Weingraben",
+      "region": "Burgenland",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {},
+      "flags": []
+    },
+    {
+      "code": "10921",
+      "name": "Rotenturm an der Pinka",
+      "region": "Burgenland",
+      "website": "rotenturm-pinka.bgld.gv.at",
+      "emails": [
+        "rotenturm-pinka.bgld.gv.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu_email": [
+          "rotenturm-pinka.bgld.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "10926",
+      "name": "Weiden bei Rechnitz",
+      "region": "Burgenland",
+      "website": "weiden-rechnitz.at",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "bresu": [
+          "weiden-rechnitz.at"
+        ],
+        "wikidata": [
+          "weiden-rechnitz.at"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "20101",
+      "name": "Klagenfurt am Wörthersee",
+      "region": "Kärnten",
+      "website": "klagenfurt.gv.at",
+      "emails": [
+        "klagenfurt.gv.at",
+        "klagenfurt.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "klagenfurt.gv.at"
+        ],
+        "bresu_email": [
+          "klagenfurt.at"
+        ],
+        "wikidata": [
+          "klagenfurt.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "20519",
+      "name": "Micheldorf",
+      "region": "Kärnten",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "bresu": [
+          "micheldorf.gv.at"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "30301",
+      "name": "Waidhofen an der Ybbs",
+      "region": "Niederösterreich",
+      "website": "waidhofen-ybbs.gv.at",
+      "emails": [
+        "waidhofen-ybbs.gv.at",
+        "waidhofen.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "waidhofen-ybbs.gv.at"
+        ],
+        "bresu_email": [
+          "waidhofen.at"
+        ],
+        "wikidata": [
+          "waidhofen.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "30530",
+      "name": "St. Peter in der Au",
+      "region": "Niederösterreich",
+      "website": "st-peter-au.gv.at",
+      "emails": [
+        "st-peter-au.gv.at",
+        "stpeterau.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "st-peter-au.gv.at"
+        ],
+        "bresu_email": [
+          "stpeterau.at"
+        ],
+        "wikidata": [
+          "stpeterau.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "30645",
+      "name": "Weissenbach an der Triesting",
+      "region": "Niederösterreich",
+      "website": "weissenbach-triesting.gv.at",
+      "emails": [
+        "weissenbach-triesting.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "weissenbach-triesting.gv.at"
+        ],
+        "bresu_email": [
+          "weissenbach-triesting.at"
+        ],
+        "wikidata": [
+          "weissenbach-triesting.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "30704",
+      "name": "Bruck an der Leitha",
+      "region": "Niederösterreich",
+      "website": "bruck-leitha.gv.at",
+      "emails": [
+        "bruck-leitha.gv.at",
+        "bruckleitha.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "bruck-leitha.gv.at"
+        ],
+        "bresu_email": [
+          "bruckleitha.at"
+        ],
+        "wikidata": [
+          "bruckleitha.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "30802",
+      "name": "Andlersdorf",
+      "region": "Niederösterreich",
+      "website": "noe.gv.at",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "bresu": [
+          "noe.gv.at"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "30834",
+      "name": "Mannsdorf an der Donau",
+      "region": "Niederösterreich",
+      "website": "mannsdorf.at",
+      "emails": [
+        "mannsdorf.gv.at",
+        "mannsdorf.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "mannsdorf.at"
+        ],
+        "bresu_email": [
+          "mannsdorf.gv.at"
+        ],
+        "wikidata": [
+          "mannsdorf.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "31326",
+      "name": "Maria Laach am Jauerling",
+      "region": "Niederösterreich",
+      "website": "marialaach.at",
+      "emails": [
+        "maria-laach.gv.at",
+        "marialaach.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "marialaach.at"
+        ],
+        "bresu_email": [
+          "maria-laach.gv.at"
+        ],
+        "wikidata": [
+          "marialaach.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "31524",
+      "name": "Melk",
+      "region": "Niederösterreich",
+      "website": "melk.gv.at",
+      "emails": [
+        "donau.com"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "melk.gv.at"
+        ],
+        "bresu_email": [
+          "donau.com"
+        ],
+        "wikidata": [
+          "melk.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "31542",
+      "name": "Schönbühel-Aggsbach",
+      "region": "Niederösterreich",
+      "website": "schoenbuehel.at",
+      "emails": [
+        "aggsbach-dorf.at",
+        "schoenbuehel.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "schoenbuehel.at"
+        ],
+        "bresu_email": [
+          "aggsbach-dorf.at"
+        ],
+        "wikidata": [
+          "schoenbuehel.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "31553",
+      "name": "Emmersdorf an der Donau",
+      "region": "Niederösterreich",
+      "website": "emmersdorf.gv.at",
+      "emails": [
+        "emmersdorf.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "emmersdorf.gv.at"
+        ],
+        "bresu_email": [
+          "emmersdorf.at"
+        ],
+        "wikidata": [
+          "emmersdorf.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "31830",
+      "name": "St. Corona am Wechsel",
+      "region": "Niederösterreich",
+      "website": "st-corona-wechsel.gv.at",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "bresu": [
+          "st-corona-wechsel.gv.at"
+        ],
+        "wikidata": [
+          "st-corona-wechsel.gv.at"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "31939",
+      "name": "Schwarzenbach an der Pielach",
+      "region": "Niederösterreich",
+      "website": "schwarzenbach-pielach.at",
+      "emails": [
+        "schwarzenbach-pielach.gv.at",
+        "schwarzenbach-pielach.at"
+      ],
+      "source": "wikidata",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "schwarzenbach-pielach.at"
+        ],
+        "bresu_email": [
+          "schwarzenbach-pielach.at"
+        ],
+        "wikidata": [
+          "schwarzenbach-pielach.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "32008",
+      "name": "Purgstall an der Erlauf",
+      "region": "Niederösterreich",
+      "website": "purgstall-erlauf.gv.at",
+      "emails": [
+        "purgstall-erlauf.gv.at",
+        "purgstall.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "purgstall-erlauf.gv.at"
+        ],
+        "bresu_email": [
+          "purgstall.at"
+        ],
+        "wikidata": [
+          "purgstall.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "32114",
+      "name": "Kirchberg am Wagram",
+      "region": "Niederösterreich",
+      "website": "kirchberg-wagram.at",
+      "emails": [
+        "kirchberg-wagram.gv.at",
+        "kirchberg-wagram.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu_email": [
+          "kirchberg-wagram.gv.at"
+        ],
+        "wikidata": [
+          "kirchberg-wagram.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "32207",
+      "name": "Groß-Siegharts",
+      "region": "Niederösterreich",
+      "website": "gross-siegharts.gv.at",
+      "emails": [
+        "siegharts.at"
+      ],
+      "source": "wikidata",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "gross-siegharts.gv.at"
+        ],
+        "wikidata": [
+          "siegharts.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "32221",
+      "name": "Waidhofen an der Thaya-Land",
+      "region": "Niederösterreich",
+      "website": "waidhofen-thaya-land.gv.at",
+      "emails": [
+        "waidhofen-land.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "waidhofen-thaya-land.gv.at"
+        ],
+        "bresu_email": [
+          "waidhofen-land.at"
+        ],
+        "wikidata": [
+          "waidhofen-thaya-land.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "32314",
+      "name": "Kirchschlag in der Buckligen Welt",
+      "region": "Niederösterreich",
+      "website": "kirchschlag-bw.gv.at",
+      "emails": [
+        "kirchschlag-bw.gv.at",
+        "kirchschlag.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "kirchschlag-bw.gv.at"
+        ],
+        "bresu_email": [
+          "kirchschlag.at"
+        ],
+        "wikidata": [
+          "kirchschlag.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "40404",
+      "name": "Braunau am Inn",
+      "region": "Oberösterreich",
+      "website": "braunau.at",
+      "emails": [
+        "braunau.ooe.gv.at",
+        "braunau.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "braunau.at"
+        ],
+        "bresu_email": [
+          "braunau.ooe.gv.at"
+        ],
+        "wikidata": [
+          "braunau.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "40430",
+      "name": "Perwang am Grabensee",
+      "region": "Oberösterreich",
+      "website": "perwang.gem2go.page",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "bresu": [
+          "perwang.at"
+        ],
+        "wikidata": [
+          "perwang.at"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "40436",
+      "name": "St. Johann am Walde",
+      "region": "Oberösterreich",
+      "website": "saigahans.at",
+      "emails": [
+        "st-johann-walde.ooe.gv.at",
+        "saigahans.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "saigahans.at"
+        ],
+        "bresu_email": [
+          "st-johann-walde.ooe.gv.at"
+        ],
+        "wikidata": [
+          "saigahans.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "40446",
+      "name": "Weng im Innkreis",
+      "region": "Oberösterreich",
+      "website": "weng-innkreis.gv.at",
+      "emails": [
+        "weng-innkreis.ooe.gv.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "weng-innkreis.gv.at"
+        ],
+        "bresu_email": [
+          "weng-innkreis.ooe.gv.at"
+        ],
+        "wikidata": [
+          "weng-innkreis.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "40624",
+      "name": "Wartberg ob der Aist",
+      "region": "Oberösterreich",
+      "website": "wartberg-aist.at",
+      "emails": [
+        "wartberg-aist.ooe.gv.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "wartberg-aist.at"
+        ],
+        "bresu_email": [
+          "wartberg-aist.ooe.gv.at"
+        ],
+        "wikidata": [
+          "wartberg-aist.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "40704",
+      "name": "Ebensee am Traunsee",
+      "region": "Oberösterreich",
+      "website": "ebensee.at",
+      "emails": [
+        "ebensee.ooe.gv.at",
+        "ebensee.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "ebensee.at"
+        ],
+        "bresu_email": [
+          "ebensee.ooe.gv.at"
+        ],
+        "wikidata": [
+          "ebensee.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "40717",
+      "name": "St. Wolfgang im Salzkammergut",
+      "region": "Oberösterreich",
+      "website": "stwolfgang.at",
+      "emails": [
+        "st-wolfgang.ooe.gv.at",
+        "stwolfgang.at",
+        "wolfgangsee.at"
+      ],
+      "source": "wikidata",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "stwolfgang.at"
+        ],
+        "bresu_email": [
+          "wolfgangsee.at"
+        ],
+        "wikidata": [
+          "st-wolfgang.ooe.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "40813",
+      "name": "Kematen am Innbach",
+      "region": "Oberösterreich",
+      "website": "kematen-innbach.at",
+      "emails": [
+        "kematen-innbach.ooe.gv.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "kematen-innbach.at"
+        ],
+        "bresu_email": [
+          "kematen-innbach.ooe.gv.at"
+        ],
+        "wikidata": [
+          "kematen-innbach.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "40825",
+      "name": "St. Georgen bei Grieskirchen",
+      "region": "Oberösterreich",
+      "website": "st-georgen-bei-grieskirchen.gem2go.page",
+      "emails": [
+        "st-georgen-grieskirchen.ooe.gv.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "st-georgen-bei-grieskirchen.riskommunal.net"
+        ],
+        "bresu_email": [
+          "st-georgen-grieskirchen.ooe.gv.at"
+        ],
+        "wikidata": [
+          "st.georgen.co.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "40829",
+      "name": "Taufkirchen an der Trattnach",
+      "region": "Oberösterreich",
+      "website": "taufkirchen.at",
+      "emails": [
+        "taufkirchen-trattnach.ooe.gv.at",
+        "taufkirchen.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "taufkirchen.at"
+        ],
+        "bresu_email": [
+          "taufkirchen-trattnach.ooe.gv.at"
+        ],
+        "wikidata": [
+          "taufkirchen.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "40914",
+      "name": "Rosenau am Hengstpaß",
+      "region": "Oberösterreich",
+      "website": "rosenau-hp.at",
+      "emails": [
+        "rosenau.ooe.gv.at",
+        "rosenau.at"
+      ],
+      "source": "wikidata",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "rosenau.at"
+        ],
+        "bresu_email": [
+          "rosenau.at"
+        ],
+        "wikidata": [
+          "rosenau.ooe.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "40919",
+      "name": "Steinbach am Ziehberg",
+      "region": "Oberösterreich",
+      "website": "steinbach-ziehberg.at",
+      "emails": [
+        "steinbach-ziehberg.ooe.gv.at",
+        "steinbach-ziehberg.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "steinbach-ziehberg.at"
+        ],
+        "bresu_email": [
+          "steinbach-ziehberg.ooe.gv.at"
+        ],
+        "wikidata": [
+          "steinbach-ziehberg.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "40922",
+      "name": "Wartberg an der Krems",
+      "region": "Oberösterreich",
+      "website": "wartberg.at",
+      "emails": [
+        "wartberg-krems.ooe.gv.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "wartberg.at"
+        ],
+        "bresu_email": [
+          "wartberg-krems.ooe.gv.at"
+        ],
+        "wikidata": [
+          "wartberg.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "41118",
+      "name": "Ried in der Riedmark",
+      "region": "Oberösterreich",
+      "website": "ried-riedmark.at",
+      "emails": [
+        "ried-riedmark.ooe.gv.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "ried-riedmark.at"
+        ],
+        "bresu_email": [
+          "ried-riedmark.ooe.gv.at"
+        ],
+        "wikidata": [
+          "ried-riedmark.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "41125",
+      "name": "Waldhausen im Strudengau",
+      "region": "Oberösterreich",
+      "website": "waldhausen.at",
+      "emails": [
+        "waldhausen.ooe.gv.at",
+        "waldhausen.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "waldhausen.at"
+        ],
+        "bresu_email": [
+          "waldhausen.ooe.gv.at"
+        ],
+        "wikidata": [
+          "waldhausen.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "41211",
+      "name": "Kirchheim im Innkreis",
+      "region": "Oberösterreich",
+      "website": "kirchheim.at",
+      "emails": [
+        "kirchheim.ooe.gv.at",
+        "kirchheim.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "kirchheim.at"
+        ],
+        "bresu_email": [
+          "kirchheim.ooe.gv.at"
+        ],
+        "wikidata": [
+          "kirchheim.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "41217",
+      "name": "Mühlheim am Inn",
+      "region": "Oberösterreich",
+      "website": "muehlheim.at",
+      "emails": [
+        "muehlheim-inn.ooe.gv.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "muehlheim.at"
+        ],
+        "bresu_email": [
+          "muehlheim-inn.ooe.gv.at"
+        ],
+        "wikidata": [
+          "muehlheim.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "41226",
+      "name": "St. Georgen bei Obernberg am Inn",
+      "region": "Oberösterreich",
+      "website": "st-georgen-bei-obernberg.at",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "bresu": [
+          "st-georgen-bei-obernberg.at"
+        ],
+        "wikidata": [
+          "st-georgen-bei-obernberg.at"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "41231",
+      "name": "Taiskirchen im Innkreis",
+      "region": "Oberösterreich",
+      "website": "taiskirchen.at",
+      "emails": [
+        "taiskirchen.ooe.gv.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "taiskirchen.at"
+        ],
+        "bresu_email": [
+          "taiskirchen.ooe.gv.at"
+        ],
+        "wikidata": [
+          "taiskirchen.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "41316",
+      "name": "Kleinzell im Mühlkreis",
+      "region": "Oberösterreich",
+      "website": "kleinzell.at",
+      "emails": [
+        "kleinzell.ooe.gv.at",
+        "kleinzell.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "kleinzell.at"
+        ],
+        "bresu_email": [
+          "kleinzell.ooe.gv.at"
+        ],
+        "wikidata": [
+          "kleinzell.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "41318",
+      "name": "Lembach im Mühlkreis",
+      "region": "Oberösterreich",
+      "website": "lembach-hoerbich.at",
+      "emails": [
+        "lembach.ooe.gv.at",
+        "gemeinde-lembach.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "gemeinde-lembach.at"
+        ],
+        "bresu_email": [
+          "lembach.ooe.gv.at"
+        ],
+        "wikidata": [
+          "gemeinde-lembach.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "41327",
+      "name": "Pfarrkirchen im Mühlkreis",
+      "region": "Oberösterreich",
+      "website": "pfarrkirchen-muehlkreis.ooe.gv.at",
+      "emails": [
+        "pfarrkirchen-muehlkreis.ooe.gv.at",
+        "pfarrkirchen.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "pfarrkirchen-muehlkreis.ooe.gv.at"
+        ],
+        "bresu_email": [
+          "pfarrkirchen.at"
+        ],
+        "wikidata": [
+          "pfarrkirchen.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "41411",
+      "name": "Kopfing im Innkreis",
+      "region": "Oberösterreich",
+      "website": "kopfing.at",
+      "emails": [
+        "kopfing.ooe.gv.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "kopfing.at"
+        ],
+        "bresu_email": [
+          "kopfing.ooe.gv.at"
+        ],
+        "wikidata": [
+          "kopfing.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "41418",
+      "name": "St. Florian am Inn",
+      "region": "Oberösterreich",
+      "website": "st-florian-inn.at",
+      "emails": [
+        "st-florian-inn.ooe.gv.at",
+        "st-florian-inn.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "st-florian-inn.at"
+        ],
+        "bresu_email": [
+          "st-florian-inn.ooe.gv.at"
+        ],
+        "wikidata": [
+          "st-florian-inn.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "41419",
+      "name": "St. Marienkirchen bei Schärding",
+      "region": "Oberösterreich",
+      "website": "st-marienkirchen.at",
+      "emails": [
+        "st-marienkirchen.ooe.gv.at",
+        "st-marienkirchen.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "st-marienkirchen.at"
+        ],
+        "bresu_email": [
+          "st-marienkirchen.ooe.gv.at"
+        ],
+        "wikidata": [
+          "st-marienkirchen.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "41511",
+      "name": "Pfarrkirchen bei Bad Hall",
+      "region": "Oberösterreich",
+      "website": "pfarrkirchen-badhall.at",
+      "emails": [
+        "pfarrkirchen-badhall.ooe.gv.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "pfarrkirchen-badhall.at"
+        ],
+        "bresu_email": [
+          "pfarrkirchen-badhall.ooe.gv.at"
+        ],
+        "wikidata": [
+          "pfarrkirchen-badhall.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "41514",
+      "name": "St. Ulrich bei Steyr",
+      "region": "Oberösterreich",
+      "website": "st-ulrich.at",
+      "emails": [
+        "st-ulrich-steyr.ooe.gv.at",
+        "st-ulrich.at"
+      ],
+      "source": "wikidata",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "st-ulrich.at"
+        ],
+        "bresu_email": [
+          "st-ulrich.at"
+        ],
+        "wikidata": [
+          "st-ulrich-steyr.ooe.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "41601",
+      "name": "Alberndorf in der Riedmark",
+      "region": "Oberösterreich",
+      "website": "alberndorf.at",
+      "emails": [
+        "alberndorf.ooe.gv.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "alberndorf.at"
+        ],
+        "bresu_email": [
+          "alberndorf.ooe.gv.at"
+        ],
+        "wikidata": [
+          "alberndorf.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "41621",
+      "name": "St. Gotthard im Mühlkreis",
+      "region": "Oberösterreich",
+      "website": "sanktgotthard.at",
+      "emails": [
+        "st-gotthard.ooe.gv.at",
+        "sanktgotthard.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "sanktgotthard.at"
+        ],
+        "bresu_email": [
+          "st-gotthard.ooe.gv.at"
+        ],
+        "wikidata": [
+          "sanktgotthard.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "41701",
+      "name": "Ampflwang im Hausruckwald",
+      "region": "Oberösterreich",
+      "website": "ampflwang.at",
+      "emails": [
+        "ampflwang.ooe.gv.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "ampflwang.at"
+        ],
+        "bresu_email": [
+          "ampflwang.ooe.gv.at"
+        ],
+        "wikidata": [
+          "ampflwang.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "41702",
+      "name": "Attersee am Attersee",
+      "region": "Oberösterreich",
+      "website": "attersee-attergau.salzkammergut.at",
+      "emails": [
+        "attersee.ooe.gv.at",
+        "attersee.at"
+      ],
+      "source": "wikidata",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "attersee.at"
+        ],
+        "bresu_email": [
+          "attersee.at"
+        ],
+        "wikidata": [
+          "attersee.ooe.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "41716",
+      "name": "Neukirchen an der Vöckla",
+      "region": "Oberösterreich",
+      "website": "neukirchen-voeckla.at",
+      "emails": [
+        "neukirchen-voeckla.ooe.gv.at",
+        "neukirchen-voeckla.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "neukirchen-voeckla.at"
+        ],
+        "bresu_email": [
+          "neukirchen-voeckla.ooe.gv.at"
+        ],
+        "wikidata": [
+          "neukirchen-voeckla.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "41727",
+      "name": "Puchkirchen am Trattberg",
+      "region": "Oberösterreich",
+      "website": "puchkirchen.at",
+      "emails": [
+        "puchkirchen.ooe.gv.at",
+        "puchkirchen.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "puchkirchen.at"
+        ],
+        "bresu_email": [
+          "puchkirchen.ooe.gv.at"
+        ],
+        "wikidata": [
+          "puchkirchen.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "41740",
+      "name": "Steinbach am Attersee",
+      "region": "Oberösterreich",
+      "website": "steinbach-attersee.at",
+      "emails": [
+        "steinbach-attersee.ooe.gv.at",
+        "steinbach-attersee.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "steinbach-attersee.at"
+        ],
+        "bresu_email": [
+          "steinbach-attersee.ooe.gv.at"
+        ],
+        "wikidata": [
+          "steinbach-attersee.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "41741",
+      "name": "Straß im Attergau",
+      "region": "Oberösterreich",
+      "website": "strassimattergau.at",
+      "emails": [
+        "strass.ooe.gv.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "strassimattergau.at"
+        ],
+        "bresu_email": [
+          "strass.ooe.gv.at"
+        ],
+        "wikidata": [
+          "strassimattergau.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "41749",
+      "name": "Weyregg am Attersee",
+      "region": "Oberösterreich",
+      "website": "weyregg.at",
+      "emails": [
+        "weyregg.ooe.gv.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "weyregg.at"
+        ],
+        "bresu_email": [
+          "weyregg.ooe.gv.at"
+        ],
+        "wikidata": [
+          "weyregg.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "41751",
+      "name": "Zell am Moos",
+      "region": "Oberösterreich",
+      "website": "zell-moos.at",
+      "emails": [
+        "zell-moos.ooe.gv.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "zell-moos.at"
+        ],
+        "bresu_email": [
+          "zell-moos.ooe.gv.at"
+        ],
+        "wikidata": [
+          "zell-moos.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "41803",
+      "name": "Bad Wimsbach-Neydharting",
+      "region": "Oberösterreich",
+      "website": "bad-wimsbach.at",
+      "emails": [
+        "bad-wimsbach.ooe.gv.at",
+        "bad-wimsbach.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "bad-wimsbach.at"
+        ],
+        "bresu_email": [
+          "bad-wimsbach.ooe.gv.at"
+        ],
+        "wikidata": [
+          "bad-wimsbach.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "41813",
+      "name": "Neukirchen bei Lambach",
+      "region": "Oberösterreich",
+      "website": "gemeindeneukirchen.at",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "bresu": [
+          "gemeindeneukirchen.at"
+        ],
+        "wikidata": [
+          "gemeindeneukirchen.at"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "41816",
+      "name": "Pichl bei Wels",
+      "region": "Oberösterreich",
+      "website": "pichl-medaillen.com",
+      "emails": [
+        "pichl.ooe.gv.at",
+        "pichl.co.at",
+        "pichl.com"
+      ],
+      "source": "wikidata",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "pichl.co.at"
+        ],
+        "bresu_email": [
+          "pichl.com"
+        ],
+        "wikidata": [
+          "pichl.ooe.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "41823",
+      "name": "Thalheim bei Wels",
+      "region": "Oberösterreich",
+      "website": "thalheim.at",
+      "emails": [
+        "thalheim.ooe.gv.at",
+        "thalheim.at"
+      ],
+      "source": "wikidata",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "thalheim.at"
+        ],
+        "bresu_email": [
+          "thalheim.at"
+        ],
+        "wikidata": [
+          "thalheim.ooe.gv.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "50212",
+      "name": "Scheffau am Tennengebirge",
+      "region": "Salzburg",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {},
+      "flags": []
+    },
+    {
+      "code": "50319",
+      "name": "Hof bei Salzburg",
+      "region": "Salzburg",
+      "website": "hof-partner.at",
+      "emails": [
+        "hof-partner.at",
+        "hofonline.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu_email": [
+          "hof-partner.at"
+        ],
+        "wikidata": [
+          "hofonline.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "50421",
+      "name": "Schwarzach im Pongau",
+      "region": "Salzburg",
+      "website": "schwarzach-pongau.gv.at",
+      "emails": [
+        "schwarzach-pongau.gv.at",
+        "gde-schwarzach.at",
+        "gde-schwarzach.salzburg.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "schwarzach-pongau.gv.at"
+        ],
+        "bresu_email": [
+          "gde-schwarzach.at"
+        ],
+        "wikidata": [
+          "gde-schwarzach.salzburg.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "50508",
+      "name": "St. Margarethen im Lungau",
+      "region": "Salzburg",
+      "website": "st.margarethen.salzburg.at",
+      "emails": [
+        "gde-st-margarethen.salzburg.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "st.margarethen.salzburg.at"
+        ],
+        "bresu_email": [
+          "gde-st-margarethen.salzburg.at"
+        ],
+        "wikidata": [
+          "st.margarethen.salzburg.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "50601",
+      "name": "Bramberg am Wildkogel",
+      "region": "Salzburg",
+      "website": "bramberg.salzburg.at",
+      "emails": [
+        "bramberg.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "bramberg.salzburg.at"
+        ],
+        "bresu_email": [
+          "bramberg.at"
+        ],
+        "wikidata": [
+          "bramberg.salzburg.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "50614",
+      "name": "Neukirchen am Großvenediger",
+      "region": "Salzburg",
+      "website": "neukirchen.salzburg.at",
+      "emails": [
+        "neukirchen.at",
+        "neukirchen.salzburg.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "neukirchen.salzburg.at"
+        ],
+        "bresu_email": [
+          "neukirchen.at"
+        ],
+        "wikidata": [
+          "neukirchen.salzburg.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "50618",
+      "name": "Saalbach-Hinterglemm",
+      "region": "Salzburg",
+      "website": "saalbach.or.at",
+      "emails": [
+        "saalbach.at",
+        "saalbach.or.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "saalbach.or.at"
+        ],
+        "bresu_email": [
+          "saalbach.at"
+        ],
+        "wikidata": [
+          "saalbach.or.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "50626",
+      "name": "Wald im Pinzgau",
+      "region": "Salzburg",
+      "website": "wald.salzburg.at",
+      "emails": [
+        "wald-pzg.at",
+        "wald.salzburg.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "wald.salzburg.at"
+        ],
+        "bresu_email": [
+          "wald-pzg.at"
+        ],
+        "wikidata": [
+          "wald.salzburg.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "60305",
+      "name": "Frauental an der Laßnitz",
+      "region": "Steiermark",
+      "website": "gde-frauental.at",
+      "emails": [
+        "frauental-lassnitz.steiermark.at",
+        "gde-frauental.at"
+      ],
+      "source": "wikidata",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "gde-frauental.at"
+        ],
+        "bresu_email": [
+          "gde-frauental.at"
+        ],
+        "wikidata": [
+          "frauental-lassnitz.steiermark.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "60326",
+      "name": "Sankt Josef (Weststeiermark)",
+      "region": "Steiermark",
+      "website": "st-josef-weststeiermark.gv.at",
+      "emails": [
+        "st-josef-weststeiermark.gv.at",
+        "st-josef.steiermark.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "st-josef-weststeiermark.gv.at"
+        ],
+        "bresu_email": [
+          "st-josef.steiermark.at"
+        ],
+        "wikidata": [
+          "st-josef.steiermark.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "60608",
+      "name": "Feldkirchen bei Graz",
+      "region": "Steiermark",
+      "website": "feldkirchen-graz.at",
+      "emails": [
+        "feldkirchen-graz.gv.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "feldkirchen-graz.at"
+        ],
+        "bresu_email": [
+          "feldkirchen-graz.gv.at"
+        ],
+        "wikidata": [
+          "feldkirchen-graz.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "61021",
+      "name": "Lebring-Sankt Margarethen",
+      "region": "Steiermark",
+      "website": "lebring.gv.at",
+      "emails": [
+        "lebring-st-margarethen.gv.at",
+        "lebring.gv.at",
+        "lebring-st-margarethen.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "lebring.gv.at"
+        ],
+        "bresu_email": [
+          "lebring-st-margarethen.gv.at"
+        ],
+        "wikidata": [
+          "lebring-st-margarethen.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "61106",
+      "name": "Kammern im Liesingtal",
+      "region": "Steiermark",
+      "website": "kammern-liesingtal.gv.at",
+      "emails": [
+        "kammern.net"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "kammern-liesingtal.at"
+        ],
+        "bresu_email": [
+          "kammern.net"
+        ],
+        "wikidata": [
+          "kammern-liesingtal.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "61113",
+      "name": "Sankt Michael in Obersteiermark",
+      "region": "Steiermark",
+      "website": "gemeinde-stmichael.at",
+      "emails": [
+        "gemeinde-stmichael.at",
+        "st-michael.steiermark.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "gemeinde-stmichael.at"
+        ],
+        "bresu_email": [
+          "st-michael.steiermark.at"
+        ],
+        "wikidata": [
+          "st-michael.steiermark.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "61114",
+      "name": "Sankt Peter-Freienstein",
+      "region": "Steiermark",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "bresu": [
+          "stpfrst.at"
+        ],
+        "bresu_email": [
+          "stpfrst.at"
+        ],
+        "wikidata": [
+          "stpfrst.at"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "61115",
+      "name": "Sankt Stefan ob Leoben",
+      "region": "Steiermark",
+      "website": "st-stefan-leoben.at",
+      "emails": [
+        "stefan-leoben.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "st-stefan-leoben.at"
+        ],
+        "bresu_email": [
+          "stefan-leoben.at"
+        ],
+        "wikidata": [
+          "st-stefan-leoben.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "61205",
+      "name": "Altenmarkt bei Sankt Gallen",
+      "region": "Steiermark",
+      "website": "altenmarkt-enns.at",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "bresu": [
+          "altenmarkt.istsuper.com"
+        ],
+        "wikidata": [
+          "altenmarkt.istsuper.com"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "61257",
+      "name": "Irdning-Donnersbachtal",
+      "region": "Steiermark",
+      "website": "irdning-donnersbachtal.at",
+      "emails": [
+        "irdning.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "irdning-donnersbachtal.gv.at"
+        ],
+        "bresu_email": [
+          "irdning.at"
+        ],
+        "wikidata": [
+          "irdning-donnersbachtal.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "61264",
+      "name": "Sankt Gallen",
+      "region": "Steiermark",
+      "website": "istsuper.com",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "bresu": [
+          "st-gallen.istsuper.com"
+        ],
+        "wikidata": [
+          "st-gallen.istsuper.com"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "61621",
+      "name": "Sankt Martin am Wöllmißberg",
+      "region": "Steiermark",
+      "website": "st-martin-woellmissberg.gv.at",
+      "emails": [
+        "st-martin-woellmissberg.gv.at",
+        "st-martin-woellmissberg.at",
+        "st-martin-wöllmissberg.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "st-martin-woellmissberg.at"
+        ],
+        "bresu_email": [
+          "st-martin-woellmissberg.gv.at"
+        ],
+        "wikidata": [
+          "st-martin-wöllmissberg.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "62026",
+      "name": "Sankt Georgen ob Judenburg",
+      "region": "Steiermark",
+      "website": "st-georgen-judenburg.at",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "bresu": [
+          "st-georgen-judenburg.at"
+        ],
+        "wikidata": [
+          "st-georgen-judenburg.at"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "62139",
+      "name": "Bruck an der Mur",
+      "region": "Steiermark",
+      "website": "bruckmur.at",
+      "emails": [
+        "bruck-mur.gv.at",
+        "bruckmur.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "bruck-mur.gv.at"
+        ],
+        "bresu_email": [
+          "bruckmur.at"
+        ],
+        "wikidata": [
+          "bruckmur.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "62146",
+      "name": "Sankt Marein im Mürztal",
+      "region": "Steiermark",
+      "website": "stmarein-mzt.at",
+      "emails": [
+        "st-marein-muerztal.steiermark.at",
+        "stmarein-mzt.at"
+      ],
+      "source": "wikidata",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "stmarein-mzt.at"
+        ],
+        "wikidata": [
+          "st-marein-muerztal.steiermark.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "62232",
+      "name": "Ottendorf an der Rittschein",
+      "region": "Steiermark",
+      "website": "ottendorf.at",
+      "emails": [
+        "ottendorf.gv.at",
+        "ottendorf-rittschein.steiermark.at",
+        "ottendorf.com"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "ottendorf-rittschein.steiermark.at"
+        ],
+        "bresu_email": [
+          "ottendorf.gv.at"
+        ],
+        "wikidata": [
+          "ottendorf.com"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "62244",
+      "name": "Sankt Johann in der Haide",
+      "region": "Steiermark",
+      "website": "st-johann-haide.gv.at",
+      "emails": [
+        "st-johann-haide.gv.at",
+        "st-johann-haide.steiermark.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "st-johann-haide.steiermark.at"
+        ],
+        "bresu_email": [
+          "st-johann-haide.gv.at"
+        ],
+        "wikidata": [
+          "st-johann-haide.steiermark.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "62245",
+      "name": "Sankt Lorenzen am Wechsel",
+      "region": "Steiermark",
+      "website": "st-lorenzen-wechsel.at",
+      "emails": [
+        "st-lorenzen-wechsel.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "st-lorenzen-wechsel.at"
+        ],
+        "bresu_email": [
+          "st-lorenzen-wechsel.steiermark.at"
+        ],
+        "wikidata": [
+          "st-lorenzen-wechsel.steiermark.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "62388",
+      "name": "Sankt Peter am Ottersbach",
+      "region": "Steiermark",
+      "website": "st-peter-ottersbach.gv.at",
+      "emails": [
+        "st-peter-ottersbach.gv.at",
+        "kd-gmbh.at",
+        "stpeter-weindorf.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "st-peter-ottersbach.gv.at"
+        ],
+        "bresu_email": [
+          "kd-gmbh.at"
+        ],
+        "wikidata": [
+          "stpeter-weindorf.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "62389",
+      "name": "Sankt Stefan im Rosental",
+      "region": "Steiermark",
+      "website": "rosental.at",
+      "emails": [
+        "rosental.at",
+        "st.stefan.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "rosental.at"
+        ],
+        "bresu_email": [
+          "st.stefan.at"
+        ],
+        "wikidata": [
+          "st.stefan.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "70201",
+      "name": "Arzl im Pitztal",
+      "region": "Tirol",
+      "website": "",
+      "emails": [
+        "arzl-pitztal.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "arzl-pitztal.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "70210",
+      "name": "Mils bei Imst",
+      "region": "Tirol",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {},
+      "flags": []
+    },
+    {
+      "code": "70217",
+      "name": "St. Leonhard im Pitztal",
+      "region": "Tirol",
+      "website": "gem2go.info",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "wikidata": [
+          "www2.riskommunal.net"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "70311",
+      "name": "Gnadenwald",
+      "region": "Tirol",
+      "website": "gnadenwald.gv.at",
+      "emails": [
+        "gnadenwald.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "bresu": [
+          "gnadenwald.at"
+        ],
+        "bresu_email": [
+          "gnadenwald.at"
+        ],
+        "guess": [
+          "gnadenwald.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70313",
+      "name": "Gries am Brenner",
+      "region": "Tirol",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {},
+      "flags": []
+    },
+    {
+      "code": "70314",
+      "name": "Gries im Sellrain",
+      "region": "Tirol",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {},
+      "flags": []
+    },
+    {
+      "code": "70334",
+      "name": "Neustift im Stubaital",
+      "region": "Tirol",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {},
+      "flags": []
+    },
+    {
+      "code": "70335",
+      "name": "Oberhofen im Inntal",
+      "region": "Tirol",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {},
+      "flags": []
+    },
+    {
+      "code": "70336",
+      "name": "Obernberg am Brenner",
+      "region": "Tirol",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {},
+      "flags": []
+    },
+    {
+      "code": "70347",
+      "name": "St. Sigmund im Sellrain",
+      "region": "Tirol",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {},
+      "flags": []
+    },
+    {
+      "code": "70350",
+      "name": "Schönberg im Stubaital",
+      "region": "Tirol",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {},
+      "flags": []
+    },
+    {
+      "code": "70351",
+      "name": "Seefeld in Tirol",
+      "region": "Tirol",
+      "website": "gemeinde-seefeld.eu",
+      "emails": [
+        "seefeld.eu"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "gemeinde-seefeld.eu"
+        ],
+        "bresu_email": [
+          "seefeld.eu"
+        ],
+        "wikidata": [
+          "gemeinde-seefeld.eu"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "70355",
+      "name": "Steinach am Brenner",
+      "region": "Tirol",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {},
+      "flags": []
+    },
+    {
+      "code": "70401",
+      "name": "Aurach bei Kitzbühel",
+      "region": "Tirol",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {},
+      "flags": []
+    },
+    {
+      "code": "70402",
+      "name": "Brixen im Thale",
+      "region": "Tirol",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {},
+      "flags": []
+    },
+    {
+      "code": "70406",
+      "name": "Hopfgarten im Brixental",
+      "region": "Tirol",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {},
+      "flags": []
+    },
+    {
+      "code": "70409",
+      "name": "Kirchberg in Tirol",
+      "region": "Tirol",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {},
+      "flags": []
+    },
+    {
+      "code": "70410",
+      "name": "Kirchdorf in Tirol",
+      "region": "Tirol",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {},
+      "flags": []
+    },
+    {
+      "code": "70415",
+      "name": "St. Jakob in Haus",
+      "region": "Tirol",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {},
+      "flags": []
+    },
+    {
+      "code": "70417",
+      "name": "St. Ulrich am Pillersee",
+      "region": "Tirol",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {},
+      "flags": []
+    },
+    {
+      "code": "70505",
+      "name": "Breitenbach am Inn",
+      "region": "Tirol",
+      "website": "breitenbach-inn.gv.at",
+      "emails": [
+        "breitenbach.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "breitenbach.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "70522",
+      "name": "Reith im Alpbachtal",
+      "region": "Tirol",
+      "website": "reithia.at",
+      "emails": [
+        "reithia.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu_email": [
+          "reithia.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "70524",
+      "name": "Scheffau am Wilden Kaiser",
+      "region": "Tirol",
+      "website": "scheffau.eu",
+      "emails": [
+        "gemeinde.scheffau.net",
+        "scheffau.eu"
+      ],
+      "source": "wikidata",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "scheffau.eu"
+        ],
+        "wikidata": [
+          "gemeinde.scheffau.net"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "70616",
+      "name": "Pettneu am Arlberg",
+      "region": "Tirol",
+      "website": "",
+      "emails": [
+        "pettneu.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "pettneu.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "70620",
+      "name": "Ried im Oberinntal",
+      "region": "Tirol",
+      "website": "gem2go.info",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "wikidata": [
+          "www2.riskommunal.net"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "70626",
+      "name": "Stanz bei Landeck",
+      "region": "Tirol",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {},
+      "flags": []
+    },
+    {
+      "code": "70709",
+      "name": "Hopfgarten in Defereggen",
+      "region": "Tirol",
+      "website": "defereggental.eu",
+      "emails": [
+        "defereggental.eu",
+        "defnet.at",
+        "innervillgraten.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "defereggental.eu"
+        ],
+        "bresu_email": [
+          "defnet.at"
+        ],
+        "wikidata": [
+          "innervillgraten.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "70717",
+      "name": "Matrei in Osttirol",
+      "region": "Tirol",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {},
+      "flags": []
+    },
+    {
+      "code": "70724",
+      "name": "St. Jakob in Defereggen",
+      "region": "Tirol",
+      "website": "defereggental.eu",
+      "emails": [
+        "defereggental.eu",
+        "stjakob.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "defereggental.eu"
+        ],
+        "bresu_email": [
+          "stjakob.at"
+        ],
+        "wikidata": [
+          "stjakob.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "70726",
+      "name": "St. Veit in Defereggen",
+      "region": "Tirol",
+      "website": "defereggental.eu",
+      "emails": [
+        "defereggental.eu",
+        "st-veit-def.at"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "defereggental.eu"
+        ],
+        "bresu_email": [
+          "st-veit-def.at"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "70808",
+      "name": "Elbigenalp",
+      "region": "Tirol",
+      "website": "elbigenalp.at",
+      "emails": [
+        "elbigenalp.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "guess": [
+          "elbigenalp.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70829",
+      "name": "Schattwald",
+      "region": "Tirol",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {},
+      "flags": []
+    },
+    {
+      "code": "70836",
+      "name": "Weißenbach am Lech",
+      "region": "Tirol",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {},
+      "flags": []
+    },
+    {
+      "code": "70837",
+      "name": "Zöblen",
+      "region": "Tirol",
+      "website": "gem2go.info",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "wikidata": [
+          "www2.riskommunal.net"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "70905",
+      "name": "Buch in Tirol",
+      "region": "Tirol",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {},
+      "flags": []
+    },
+    {
+      "code": "70907",
+      "name": "Eben am Achensee",
+      "region": "Tirol",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {},
+      "flags": []
+    },
+    {
+      "code": "70914",
+      "name": "Hainzenberg",
+      "region": "Tirol",
+      "website": "hainzenberg.gv.at",
+      "emails": [
+        "hainzenberg.gv.at"
+      ],
+      "source": "guess",
+      "confidence": "low",
+      "sources_detail": {
+        "guess": [
+          "hainzenberg.gv.at"
+        ]
+      },
+      "flags": [
+        "guess_only"
+      ]
+    },
+    {
+      "code": "70922",
+      "name": "Ramsau im Zillertal",
+      "region": "Tirol",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {},
+      "flags": []
+    },
+    {
+      "code": "70923",
+      "name": "Ried im Zillertal",
+      "region": "Tirol",
+      "website": "gem2go.info",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "wikidata": [
+          "www2.riskommunal.net"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "70924",
+      "name": "Rohrberg",
+      "region": "Tirol",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {},
+      "flags": []
+    },
+    {
+      "code": "70929",
+      "name": "Steinberg am Rofan",
+      "region": "Tirol",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {},
+      "flags": []
+    },
+    {
+      "code": "70930",
+      "name": "Strass im Zillertal",
+      "region": "Tirol",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {},
+      "flags": []
+    },
+    {
+      "code": "80119",
+      "name": "St. Anton im Montafon",
+      "region": "Vorarlberg",
+      "website": "stantonim.at",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "bresu": [
+          "sanktantonimmontafon.at"
+        ],
+        "wikidata": [
+          "sankt-anton-im-montafon.at"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "80120",
+      "name": "St. Gallenkirch",
+      "region": "Vorarlberg",
+      "website": "gemeinde.stgallenkirch.at",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "bresu": [
+          "gemeinde.stgallenkirch.at"
+        ],
+        "wikidata": [
+          "gemeinde.stgallenkirch.at"
+        ]
+      },
+      "flags": []
+    }
+  ]
+}
