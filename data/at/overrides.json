@@ -1,7 +1,37 @@
 {
+  "10404": {
+    "email_domain": "gerersdorf-sulz.bgld.gv.at",
+    "website_domain": "gerersdorf-sulz.at"
+  },
+  "10408": {
+    "email_domain": "kukmirn.bgld.gv.at",
+    "website_domain": "kukmirn.at"
+  },
+  "10411": {
+    "email_domain": "olbendorf.bgld.gv.at",
+    "website_domain": "olbendorf.at"
+  },
+  "10428": {
+    "email_domain": "moschendorf.bgld.gv.at"
+  },
+  "10510": {
+    "email_domain": "weichselbaum.bgld.gv.at",
+    "website_domain": "gemeinde-weichselbaum.at"
+  },
+  "10608": {
+    "email_domain": "poettelsdorf.bgld.gv.at",
+    "website_domain": "pöttelsdorf.at"
+  },
+  "10827": {
+    "email_domain": "weingraben.bgld.gv.at"
+  },
   "10910": {
     "email_domain": "loipersdorf-kitzladen.at",
     "website_domain": "gemeinde.loipersdorf.at"
+  },
+  "10926": {
+    "email_domain": "weiden-rechnitz.bgld.gv.at",
+    "website_domain": "weiden-rechnitz.at"
   },
   "20306": {
     "email_domain": "ktn.gde.at",
@@ -433,61 +463,151 @@
     "email_domain": "ktn.gde.at",
     "website_domain": "steuerberg.at"
   },
+  "30802": {
+    "email_domain": "aon.at"
+  },
   "31524": {
-    "email_domain": "melk.gv.at",
+    "email_domain": "stadt-melk.at",
     "website_domain": "melk.gv.at"
+  },
+  "32207": {
+    "email_domain": "gde.siegharts.at",
+    "website_domain": "gross-siegharts.gv.at"
   },
   "32140": {
     "email_domain": "zeiselmauer-wolfpassing.at",
     "website_domain": "zeiselmauer-wolfpassing.gv.at"
   },
+  "41226": {
+    "email_domain": "st-georgen-obernberg.ooe.gv.at",
+    "website_domain": "st-georgen-bei-obernberg.at"
+  },
+  "41505": {
+    "email_domain": "gaflenz.ooe.gv.at",
+    "website_domain": "gaflenz.at"
+  },
+  "41715": {
+    "email_domain": "mondsee.ooe.gv.at",
+    "website_domain": "gemeinde-mondsee.at"
+  },
+  "61114": {
+    "email_domain": "st-peter-freienstein.gv.at",
+    "website_domain": "st-peter-freienstein.gv.at"
+  },
+  "61115": {
+    "email_domain": "stefan-leoben.at",
+    "website_domain": "st-stefan-leoben.at"
+  },
+  "61205": {
+    "email_domain": "altenmarkt-st-gallen.gv.at",
+    "website_domain": "https://altenmarkt-enns.at"
+  },
+  "61257": {
+    "email_domain": "irdning.at",
+    "website_domain": "irdning-donnersbachtal.at"
+  },
+  "61264": {
+    "email_domain": "st-gallen.gv.at",
+    "website_domain": "stgallen.at"
+  },
+  "61761": {
+    "email_domain": "gutenberg.gv.at",
+    "website_domain": "gutenberg.gv.at"
+  },
+  "62026": {
+    "email_domain": "st-georgen-judenburg.gv.at",
+    "website_domain": "st-georgen-judenburg.at"
+  },
+  "62216": {
+    "email_domain": "grosssteinbach.gv.at",
+    "website_domain": "gemeinde-grosssteinbach.at"
+  },
+  "62273": {
+    "email_domain": "bad-loipersdorf.gv.at",
+    "website_domain": "gemeinde.loipersdorf.at"
+  },
   "70208": {
-    "email_domain": "laengenfeld.tirol.gv.at",
-    "website_domain": "xn--lngenfeld-v2a.at"
+    "email_domain": "laengenfeld.gv.at",
+    "website_domain": "längenfeld.at"
   },
   "70216": {
-    "email_domain": "roppen.tirol.gv.at",
+    "email_domain": "roppen.gv.at",
     "website_domain": "roppen.at"
   },
   "70311": {
-    "email_domain": "gnadenwald.at",
+    "email_domain": "gnadenwald-tirol.at",
     "website_domain": "gnadenwald.gv.at"
   },
   "70409": {
-    "email_domain": "kirchberg.tirol.gv.at"
+    "website_domain": "kirchberg-tirol.gv.at",
+    "email_domain": "kirchberg-tirol.gv.at"
   },
   "70410": {
-    "email_domain": "kirchdorf.tirol.gv.at"
+    "website_domain": "kirchdorf.tirol",
+    "email_domain": "kirchdorf.tirol"
   },
   "70415": {
-    "email_domain": "st-jakob-haus.tirol.gv.at"
+    "website_domain": "st-jakob-haus.gv.at",
+    "email_domain": "st-jakob-haus.gv.at"
+  },
+  "70509": {
+    "email_domain": "ellmau.gv.at",
+    "website_domain": "ellmau.gv.at"
+  },
+  "70603": {
+    "email_domain": "fiss.gv.at",
+    "website_domain": "fiss.gv.at"
+  },
+  "70612": {
+    "email_domain": "kauns.gv.at",
+    "website_domain": "kauns.gv.at"
   },
   "70717": {
-    "email_domain": "matrei-ost.tirol.gv.at"
+    "website_domain": "matrei-osttirol.gv.at",
+    "email_domain": "matrei-osttirol.gv.at"
+  },
+  "70726": {
+    "email_domain": "st-veit-def.at",
+    "website_domain": "defereggental.eu"
   },
   "70804": {
-    "email_domain": "bichlbach.tirol.gv.at",
+    "email_domain": "bichlbach.gv.at",
     "website_domain": "gemeinde-bichlbach.at"
   },
   "70829": {
+    "website_domain": "gemeinde-schattwald.at",
     "email_domain": "schattwald.tirol.gv.at"
   },
   "70837": {
-    "email_domain": "zoeblen.tirol.gv.at",
-    "website_domain": "gem2go.info"
+    "email_domain": "zoeblen.gv.at",
+    "website_domain": "zöblen.at"
+  },
+  "70901": {
+    "email_domain": "achenkirch.gv.at",
+    "website_domain": "achenkirch.gv.at"
   },
   "70905": {
-    "email_domain": "buch.tirol.gv.at"
+    "email_domain": "buch-tirol.gv.at",
+    "website_domain": "buch-tirol.gv.at"
+  },
+  "70911": {
+    "email_domain": "gallzein.gv.at",
+    "website_domain": "gallzein.gv.at"
+  },
+  "70914": {
+    "email_domain": "hainzenberg.gv.at",
+    "website_domain": "hainzenberg.gv.at"
   },
   "70924": {
-    "email_domain": "rohrberg.tirol.gv.at"
+    "email_domain": "rohrberg.gv.at",
+    "website_domain": "rohrberg.at"
   },
   "80119": {
-    "email_domain": "st.anton.i.m.cnv.at",
+    "email_domain": "stantonim.at",
     "website_domain": "stantonim.at"
   },
   "80120": {
-    "email_domain": "gemeinde.stgallenkirch.at",
+    "email_domain": "st.gallenkirch.at",
     "website_domain": "gemeinde.stgallenkirch.at"
   },
   "10307": {

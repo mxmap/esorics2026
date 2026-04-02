@@ -191,13 +191,17 @@ class GermanyConfig(CountryConfig):
             liv_domain = livenson.get(ags, {}).get("domain", "")
             if liv_domain and liv_domain.lower() not in self.skip_domains:
                 d = liv_domain.lower()
-                rec.candidates.append(DomainCandidate(domain=d, source="livenson", is_email_domain=True))
+                rec.candidates.append(
+                    DomainCandidate(domain=d, source="livenson", is_email_domain=True)
+                )
 
             # b42labs domain
             b42_domain = b42labs.get(ags, {}).get("domain", "")
             if b42_domain and b42_domain.lower() not in self.skip_domains:
                 d = b42_domain.lower()
-                rec.candidates.append(DomainCandidate(domain=d, source="b42labs", is_email_domain=True))
+                rec.candidates.append(
+                    DomainCandidate(domain=d, source="b42labs", is_email_domain=True)
+                )
 
             # Wikidata website domain
             wiki_entry = wikidata.get(ags)

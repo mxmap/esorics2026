@@ -85,7 +85,7 @@ async def fetch_bfs_municipalities(date: str | None = None) -> dict[str, dict]:
 
     logger.info("Fetching municipalities from BFS (date={})...", date)
 
-    async with httpx.AsyncClient(timeout=60) as client:
+    async with httpx.AsyncClient(timeout=60, http2=True) as client:
         t0 = time.monotonic()
         r = await _fetch(client, BFS_API_URL, {"date": date})
         logger.debug("BFS API response: {} bytes in {:.1f}s", len(r.text), time.monotonic() - t0)

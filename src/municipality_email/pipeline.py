@@ -201,7 +201,7 @@ async def phase_validate(
 
     if to_validate:
         async with httpx.AsyncClient(
-            headers={"User-Agent": _USER_AGENT}, follow_redirects=True, timeout=10
+            headers={"User-Agent": _USER_AGENT}, follow_redirects=True, timeout=10, http2=True
         ) as client:
             tasks = [check_one(client, d) for d in to_validate]
             await asyncio.gather(*tasks)
@@ -292,6 +292,7 @@ async def phase_content_validate(
         headers={"User-Agent": _USER_AGENT},
         follow_redirects=True,
         timeout=httpx.Timeout(30, connect=30),
+        http2=True,
     ) as client:
         tasks = [check_one(client, d) for d in to_check]
         await asyncio.gather(*tasks)
@@ -443,6 +444,7 @@ async def phase_scrape(
         follow_redirects=True,
         timeout=httpx.Timeout(30, connect=30),
         limits=pool,
+        http2=True,
     ) as client:
         tasks = [scrape_one(client, d) for d in to_scrape]
         await asyncio.gather(*tasks)
@@ -764,8 +766,7 @@ def _decide_one(
         # Check name match, multi-source, or regional across ALL selected emails
         any_name_match = any(config.domain_matches_name(rec.name, e) for e in rec.emails)
         any_multi_source = any(
-            len({c.source for c in rec.candidates if c.domain == e}) >= 2
-            for e in rec.emails
+            len({c.source for c in rec.candidates if c.domain == e}) >= 2 for e in rec.emails
         )
         regional = set(config.regional_suffixes(rec.region))
         any_regional = any(e in regional for e in rec.emails)
@@ -1026,8 +1027,6 @@ def _print_dry_run(records: list[MunicipalityRecord], config: CountryConfig) -> 
     print(f"  Unique domains to process: {len(all_domains)}")
     print(f"  Overrides: {sum(1 for r in records if r.override_domain is not None)}")
 
-    email_domain_count = sum(
-        1 for r in records if any(c.is_email_domain for c in r.candidates)
-    )
+    email_domain_count = sum(1 for r in records if any(c.is_email_domain for c in r.candidates))
     print(f"  With static email domain (skip scrape): {email_domain_count}")
     print()

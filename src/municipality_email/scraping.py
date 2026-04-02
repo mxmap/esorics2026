@@ -373,7 +373,7 @@ async def _fetch_insecure(url: str) -> httpx.Response:
     """Fetch a URL with SSL verification disabled (single request)."""
     with warnings.catch_warnings():
         warnings.filterwarnings("ignore", message="Unverified HTTPS request")
-        async with httpx.AsyncClient(verify=False) as insecure_client:
+        async with httpx.AsyncClient(verify=False, http2=True) as insecure_client:
             return await insecure_client.get(
                 url, follow_redirects=True, timeout=httpx.Timeout(30, connect=30)
             )
@@ -382,9 +382,7 @@ async def _fetch_insecure(url: str) -> httpx.Response:
 @stamina.retry(on=_TRANSIENT_ERRORS, attempts=2, wait_initial=2.0)
 async def _fetch_standard(client: httpx.AsyncClient, url: str) -> httpx.Response:
     """Fetch a URL with the shared client, retrying on transient errors."""
-    return await client.get(
-        url, follow_redirects=True, timeout=httpx.Timeout(30, connect=30)
-    )
+    return await client.get(url, follow_redirects=True, timeout=httpx.Timeout(30, connect=30))
 
 
 # ── HEAD validation (Phase 2) ──────────────────────────────────────
@@ -413,7 +411,7 @@ async def validate_domain_accessibility(
                 try:
                     with warnings.catch_warnings():
                         warnings.filterwarnings("ignore", message="Unverified HTTPS request")
-                        async with httpx.AsyncClient(verify=False) as ic:
+                        async with httpx.AsyncClient(verify=False, http2=True) as ic:
                             r = await ic.head(
                                 prefix,
                                 follow_redirects=True,

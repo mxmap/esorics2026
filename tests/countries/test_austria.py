@@ -95,15 +95,11 @@ class TestAustriaConfig:
         assert self.config.domain_matches_name(
             "Neufeld an der Leitha", "neufeld-leitha.bgld.gv.at"
         )
-        assert self.config.domain_matches_name(
-            "Neuberg im Burgenland", "neuberg.bgld.gv.at"
-        )
+        assert self.config.domain_matches_name("Neuberg im Burgenland", "neuberg.bgld.gv.at")
         assert self.config.domain_matches_name(
             "Oggau am Neusiedler See", "oggau-neusiedler-see.bgld.gv.at"
         )
-        assert self.config.domain_matches_name(
-            "Weiden bei Rechnitz", "weiden-rechnitz.at"
-        )
+        assert self.config.domain_matches_name("Weiden bei Rechnitz", "weiden-rechnitz.at")
 
     def test_pick_best_email_gov_preference(self):
         emails = {"eisenstadt.at", "eisenstadt.gv.at", "other.at"}

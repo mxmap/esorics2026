@@ -22,7 +22,7 @@ async def fetch_openplz_municipalities(
     """
     own_client = client is None
     if own_client:
-        client = httpx.AsyncClient(timeout=30)
+        client = httpx.AsyncClient(timeout=30, http2=True)
 
     try:
         municipalities: dict[str, dict] = {}
@@ -80,7 +80,7 @@ async def fetch_openplz_ch_municipalities(
     """
     own_client = client is None
     if own_client:
-        client = httpx.AsyncClient(timeout=30)
+        client = httpx.AsyncClient(timeout=30, http2=True)
 
     try:
         municipalities: dict[str, dict] = {}

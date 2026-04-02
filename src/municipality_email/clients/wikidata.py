@@ -47,7 +47,7 @@ async def fetch_wikidata(
         "Accept": "application/sparql-results+json",
         "User-Agent": "MunicipalityEmail/1.0 usage=academic repo=https://github.com/davidhuser",
     }
-    async with httpx.AsyncClient(timeout=120) as client:
+    async with httpx.AsyncClient(timeout=120, http2=True) as client:
         r = await fetch_sparql(client, SPARQL_URL, {"query": sparql_query}, headers)
         data = r.json()
 

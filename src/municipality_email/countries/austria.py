@@ -217,9 +217,7 @@ class AustriaConfig(CountryConfig):
             bresu_ed = bresu.get(gkz, {}).get("email_domain")
             if bresu_ed and bresu_ed.lower() not in self.skip_domains:
                 d = bresu_ed.lower()
-                rec.candidates.append(
-                    DomainCandidate(domain=d, source="bresu_email")
-                )
+                rec.candidates.append(DomainCandidate(domain=d, source="bresu_email"))
 
             # Wikidata website domain
             wiki_entry = wikidata.get(gkz)
