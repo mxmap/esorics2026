@@ -76,6 +76,7 @@ GATEWAY_KEYWORDS: dict[str, list[str]] = {
     "barracuda": ["barracudanetworks.com", "barracuda.com"],
     "trendmicro": ["tmes.trendmicro.eu", "tmes.trendmicro.com"],
     "hornetsecurity": ["hornetsecurity.com", "hornetsecurity.ch"],
+    "antispameurope": ["antispameurope.com"],
     "proofpoint": ["ppe-hosted.com", "pphosted.com"],
     "sophos": ["hydra.sophos.com"],
     "cisco": ["iphmx.com"],
@@ -83,6 +84,15 @@ GATEWAY_KEYWORDS: dict[str, list[str]] = {
     "spamvor": ["spamvor.com"],
     "abxsec": ["abxsec.com"],
     "messagelabs": ["messagelabs.com"],
+    "fortimail": ["fortimail.", "fortimailcloud.com"],
+    "nospamproxy": ["nospamproxy.de", "nospamproxy.com", "as-scan.de"],
+    "retarus": ["retarus.com"],
+    "spamexperts": ["spamexperts.eu", "spamexperts.net", "spamexperts.com"],
+    "ikarus": ["mymailwall.com", "mymailwall.at"],
+    "secureshield": ["secure-shield.at"],
+    "secumail": ["secumail.de"],
+    "securemailgate": ["secure-mailgate.com"],
+    "europeanmx": ["europeanmx.eu"],
 }
 
 
