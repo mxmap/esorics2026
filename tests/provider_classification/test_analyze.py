@@ -24,8 +24,13 @@ from mail_municipalities.provider_classification.analyze import (
 # Synthetic test data
 # ---------------------------------------------------------------------------
 
-_CATEGORY_MAP = {"microsoft": "us-cloud", "google": "us-cloud", "aws": "us-cloud",
-                  "domestic-isp": "ch-based", "independent": "ch-based"}
+_CATEGORY_MAP = {
+    "microsoft": "us-cloud",
+    "google": "us-cloud",
+    "aws": "us-cloud",
+    "domestic-isp": "ch-based",
+    "independent": "ch-based",
+}
 _DOMESTIC_LABEL = "ch-based"
 _REGION_LOOKUP = {
     "Kanton Zürich": "ZH",

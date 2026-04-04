@@ -37,18 +37,16 @@ MAX_ZERO_CONFIDENCE_SHARE: float = 0.05
 
 # ── Derived valid-value sets (from enums + runner maps) ───────────────
 
-VALID_PROVIDERS = {
-    PROVIDER_OUTPUT_NAMES.get(p.value, p.value) for p in Provider
-} | {"unknown"}
+VALID_PROVIDERS = {PROVIDER_OUTPUT_NAMES.get(p.value, p.value) for p in Provider} | {"unknown"}
+
 
 def _valid_categories(country_code: str = "ch") -> set[str]:
     return set(_build_category_map(country_code).values()) | {"unknown"}
 
+
 VALID_SIGNAL_KINDS = {k.value for k in SignalKind}
 
-VALID_SIGNAL_PROVIDERS = {
-    PROVIDER_OUTPUT_NAMES.get(p.value, p.value) for p in Provider
-}
+VALID_SIGNAL_PROVIDERS = {PROVIDER_OUTPUT_NAMES.get(p.value, p.value) for p in Provider}
 
 # ── Rich console ──────────────────────────────────────────────────────
 
@@ -130,13 +128,20 @@ def _check_metadata(data: dict, r: ValidationResult) -> None:
         r.ok("counts keys sorted")
 
 
-def _check_entry(
-    entry: dict, r: ValidationResult, category_map: dict[str, str], valid_cats: set[str]
-) -> None:
+def _check_entry(entry: dict, r: ValidationResult, category_map: dict[str, str], valid_cats: set[str]) -> None:
     code = entry.get("code", "?")
-    required = ("code", "name", "region", "domain", "mx", "spf",
-                "provider", "category", "classification_confidence",
-                "classification_signals")
+    required = (
+        "code",
+        "name",
+        "region",
+        "domain",
+        "mx",
+        "spf",
+        "provider",
+        "category",
+        "classification_confidence",
+        "classification_signals",
+    )
     for field in required:
         if field not in entry:
             r.error(f"{code}: missing field '{field}'")
@@ -230,14 +235,14 @@ def validate_structure(data: dict, *, country_code: str = "ch") -> ValidationRes
     zero = sum(1 for c in confs if c == 0.0)
     if high / total < MIN_HIGH_CONFIDENCE_SHARE:
         r.warn(
-            f"only {high}/{total} ({high/total:.0%}) entries have confidence >= 50 "
+            f"only {high}/{total} ({high / total:.0%}) entries have confidence >= 50 "
             f"(threshold: {MIN_HIGH_CONFIDENCE_SHARE:.0%})"
         )
     else:
-        r.ok(f"{high/total:.0%} entries have confidence >= 50")
+        r.ok(f"{high / total:.0%} entries have confidence >= 50")
     if zero / total > MAX_ZERO_CONFIDENCE_SHARE:
         r.warn(
-            f"{zero}/{total} ({zero/total:.1%}) entries have 0 confidence "
+            f"{zero}/{total} ({zero / total:.1%}) entries have 0 confidence "
             f"(threshold: {MAX_ZERO_CONFIDENCE_SHARE:.0%})"
         )
     else:
@@ -294,15 +299,17 @@ def validate_regression(
         bp = base_munis[key].get("provider", "?")
         cp = cur_munis[key].get("provider", "?")
         if bp != cp:
-            provider_changes.append({
-                "code": key,
-                "name": cur_munis[key].get("name", "?"),
-                "domain": cur_munis[key].get("domain", "?"),
-                "old": bp,
-                "new": cp,
-                "old_conf": base_munis[key].get("classification_confidence", 0.0),
-                "new_conf": cur_munis[key].get("classification_confidence", 0.0),
-            })
+            provider_changes.append(
+                {
+                    "code": key,
+                    "name": cur_munis[key].get("name", "?"),
+                    "domain": cur_munis[key].get("domain", "?"),
+                    "old": bp,
+                    "new": cp,
+                    "old_conf": base_munis[key].get("classification_confidence", 0.0),
+                    "new_conf": cur_munis[key].get("classification_confidence", 0.0),
+                }
+            )
 
     change_pct = len(provider_changes) / len(common) * 100
     if change_pct > MAX_PROVIDER_CHANGES_PCT:
@@ -334,20 +341,19 @@ def validate_regression(
             delta = cc - bc
             deltas.append(delta)
             if delta < -CONFIDENCE_DROP_THRESHOLD:
-                big_drops.append({
-                    "code": key,
-                    "name": cur_munis[key].get("name", "?"),
-                    "provider": cp,
-                    "old_conf": bc,
-                    "new_conf": cc,
-                    "delta": delta,
-                })
+                big_drops.append(
+                    {
+                        "code": key,
+                        "name": cur_munis[key].get("name", "?"),
+                        "provider": cp,
+                        "old_conf": bc,
+                        "new_conf": cc,
+                        "delta": delta,
+                    }
+                )
 
     if big_drops:
-        r.warn(
-            f"{len(big_drops)} entries dropped confidence by "
-            f">{CONFIDENCE_DROP_THRESHOLD:.0f} points"
-        )
+        r.warn(f"{len(big_drops)} entries dropped confidence by >{CONFIDENCE_DROP_THRESHOLD:.0f} points")
     elif deltas:
         r.ok(f"no confidence drops >{CONFIDENCE_DROP_THRESHOLD:.0f} points")
 
@@ -429,9 +435,12 @@ def print_regression_report(r: ValidationResult) -> None:
         ct.add_column("New Conf", justify="right")
         for c in changes[:30]:
             ct.add_row(
-                c["code"], c["name"], c["domain"],
+                c["code"],
+                c["name"],
+                c["domain"],
                 f"{c['old']} -> {c['new']}",
-                f"{c['old_conf']:.0f}%", f"{c['new_conf']:.0f}%",
+                f"{c['old_conf']:.0f}%",
+                f"{c['new_conf']:.0f}%",
             )
         console.print(ct)
         if len(changes) > 30:

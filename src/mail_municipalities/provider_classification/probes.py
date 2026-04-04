@@ -326,9 +326,7 @@ async def probe_tenant(domain: str) -> list[Evidence]:
     return results
 
 
-async def probe_asn(
-    mx_hosts: list[str], *, country_code: str | None = None
-) -> list[Evidence]:
+async def probe_asn(mx_hosts: list[str], *, country_code: str | None = None) -> list[Evidence]:
     """Resolve MX IPs, query Team Cymru for ASN, match against providers and domestic ISPs."""
     results: list[Evidence] = []
 
@@ -419,9 +417,7 @@ async def probe_txt_verification(domain: str) -> list[Evidence]:
     return results
 
 
-async def probe_spf_ip(
-    domain: str, *, country_code: str | None = None
-) -> list[Evidence]:
+async def probe_spf_ip(domain: str, *, country_code: str | None = None) -> list[Evidence]:
     """Parse SPF ip4: and a: entries, resolve IPs to ASN, match against providers and domestic ISPs."""
     results: list[Evidence] = []
     answer = await resolve_robust(domain, "TXT")

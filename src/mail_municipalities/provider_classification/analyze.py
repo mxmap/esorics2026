@@ -168,9 +168,7 @@ def report_overall_summary(
 # ---------------------------------------------------------------------------
 
 
-def report_regional(
-    munis: dict[str, Any], category_map: dict[str, str], region_lookup: dict[str, str]
-) -> None:
+def report_regional(munis: dict[str, Any], category_map: dict[str, str], region_lookup: dict[str, str]) -> None:
     _header("REGIONAL BREAKDOWN (sorted by US-Cloud %)")
 
     # Group by region
@@ -183,19 +181,14 @@ def report_regional(
     for abbr, entries in by_region.items():
         total = len(entries)
         prov_counts: Counter[str] = Counter(e["provider"] for e in entries)
-        us_cloud = sum(
-            prov_counts.get(p, 0)
-            for p in _PROVIDERS_ORDERED
-            if _category(p, category_map) == "us-cloud"
-        )
+        us_cloud = sum(prov_counts.get(p, 0) for p in _PROVIDERS_ORDERED if _category(p, category_map) == "us-cloud")
         us_pct = us_cloud / total * 100 if total else 0
         rows.append((abbr, total, dict(prov_counts), us_pct))
 
     rows.sort(key=lambda r: r[3], reverse=True)
 
     hdr = (
-        f"  {'Region':<8}{'Total':>5}{'MSFT':>6}{'Goog':>6}{'AWS':>5}"
-        f"{'Domst':>6}{'Indep':>6}  {'US%':>6}  {'Dom%':>6}"
+        f"  {'Region':<8}{'Total':>5}{'MSFT':>6}{'Goog':>6}{'AWS':>5}{'Domst':>6}{'Indep':>6}  {'US%':>6}  {'Dom%':>6}"
     )
     print(hdr)
     _sep()

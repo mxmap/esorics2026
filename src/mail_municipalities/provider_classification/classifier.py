@@ -233,9 +233,7 @@ def _aggregate(
     ), rule_name
 
 
-async def classify(
-    domain: str, *, country_code: str | None = None
-) -> ClassificationResult:
+async def classify(domain: str, *, country_code: str | None = None) -> ClassificationResult:
     """Classify a single domain: resolve MX, run probes concurrently, aggregate."""
     # Lookup ALL MX hosts first (robust, multi-resolver), then pattern-match
     all_mx_hosts = await lookup_mx(domain)

@@ -33,10 +33,7 @@ class TestRealProviderOutputFiles:
             pytest.skip(f"providers_{cc}.json not found")
 
         result = validate_structure(data, country_code=cc)
-        assert result.success, (
-            f"[{cc}] structural validation failed:\n"
-            + "\n".join(f"  - {e}" for e in result.errors)
-        )
+        assert result.success, f"[{cc}] structural validation failed:\n" + "\n".join(f"  - {e}" for e in result.errors)
 
     @pytest.mark.parametrize("cc", ["ch", "de", "at"])
     def test_minified_consistent_with_full(self, cc):
@@ -49,9 +46,7 @@ class TestRealProviderOutputFiles:
 
         full_codes = {m["code"] for m in full["municipalities"]}
         mini_codes = {m["code"] for m in mini["municipalities"]}
-        assert full_codes == mini_codes, (
-            f"[{cc}] code sets differ between full and minified"
-        )
+        assert full_codes == mini_codes, f"[{cc}] code sets differ between full and minified"
 
         full_by_code = {m["code"]: m for m in full["municipalities"]}
         mini_by_code = {m["code"]: m for m in mini["municipalities"]}
@@ -59,17 +54,12 @@ class TestRealProviderOutputFiles:
             f_entry = full_by_code[code]
             m_entry = mini_by_code[code]
 
-            for field in ("name", "domain", "region", "provider", "category",
-                          "classification_confidence", "mx", "spf"):
-                assert f_entry[field] == m_entry[field], (
-                    f"[{cc}] {code}: {field} mismatch"
-                )
+            for field in ("name", "domain", "region", "provider", "category", "classification_confidence", "mx", "spf"):
+                assert f_entry[field] == m_entry[field], f"[{cc}] {code}: {field} mismatch"
 
-            assert len(f_entry["classification_signals"]) == len(
-                m_entry["classification_signals"]
-            ), f"[{cc}] {code}: signal count mismatch"
+            assert len(f_entry["classification_signals"]) == len(m_entry["classification_signals"]), (
+                f"[{cc}] {code}: signal count mismatch"
+            )
 
             for sig in m_entry["classification_signals"]:
-                assert set(sig.keys()) == {"kind", "detail"}, (
-                    f"[{cc}] {code}: minified signal has extra keys"
-                )
+                assert set(sig.keys()) == {"kind", "detail"}, f"[{cc}] {code}: minified signal has extra keys"

@@ -18,6 +18,7 @@ PROVIDER_OUTPUT_NAMES: dict[str, str] = {
     "ms365": "microsoft",
 }
 
+
 def _build_category_map(country_code: str) -> dict[str, str]:
     """Build provider → category mapping for a given country."""
     domestic = f"{country_code}-based"
@@ -169,9 +170,7 @@ async def run(domains_path: Path, output_path: Path, *, country_code: str = "ch"
             results[entry["code"]]["resolve_flags"] = entry["flags"]
 
     # Classify domains
-    async for domain, classification in classify_many(
-        unique_domains, country_code=country_code
-    ):
+    async for domain, classification in classify_many(unique_domains, country_code=country_code):
         for entry in domain_to_entries[domain]:
             serialized = _serialize_result(entry, classification, category_map)
             results[entry["code"]] = serialized

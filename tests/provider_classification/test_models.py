@@ -166,9 +166,7 @@ class TestClassificationResult:
 
 class TestCymruResult:
     def test_valid_parse(self):
-        result = CymruResult.from_txt(
-            "3303 | 195.186.1.1 | 195.186.0.0/16 | CH | ripencc"
-        )
+        result = CymruResult.from_txt("3303 | 195.186.1.1 | 195.186.0.0/16 | CH | ripencc")
         assert result is not None
         assert result.asn == 3303
         assert result.country_code == "ch"

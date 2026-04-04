@@ -149,5 +149,3 @@ class TestGatewayKeywords:
     def test_all_gateways_have_patterns(self):
         for gw, patterns in GATEWAY_KEYWORDS.items():
             assert len(patterns) > 0, f"Gateway {gw} has no patterns"
-
-
