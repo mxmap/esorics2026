@@ -418,6 +418,8 @@ def main(data_path: Path | None = None) -> None:
     data = load_data(path)
     munis = data["municipalities"]
 
+    #     munis = {m["code"]: m for m in data["municipalities"]}
+
     report_overall_summary(data, munis)
     report_regional(munis)
     report_confidence(munis)

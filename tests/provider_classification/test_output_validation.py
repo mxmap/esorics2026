@@ -47,15 +47,17 @@ class TestRealProviderOutputFiles:
 
         assert mini["generated"] == full["generated"]
 
-        full_codes = set(full["municipalities"].keys())
-        mini_codes = set(mini["municipalities"].keys())
+        full_codes = {m["code"] for m in full["municipalities"]}
+        mini_codes = {m["code"] for m in mini["municipalities"]}
         assert full_codes == mini_codes, (
             f"[{cc}] code sets differ between full and minified"
         )
 
+        full_by_code = {m["code"]: m for m in full["municipalities"]}
+        mini_by_code = {m["code"]: m for m in mini["municipalities"]}
         for code in full_codes:
-            f_entry = full["municipalities"][code]
-            m_entry = mini["municipalities"][code]
+            f_entry = full_by_code[code]
+            m_entry = mini_by_code[code]
 
             for field in ("name", "domain", "region", "provider", "category",
                           "classification_confidence", "mx", "spf"):

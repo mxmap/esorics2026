@@ -212,13 +212,14 @@ class TestPipelineRun:
         assert output_path.exists()
         data = json.loads(output_path.read_text())
         assert data["total"] == 2
-        assert "351" in data["municipalities"]
-        assert "9999" in data["municipalities"]
-        assert data["municipalities"]["351"]["provider"] == "microsoft"
-        assert data["municipalities"]["351"]["category"] == "us-cloud"
-        assert data["municipalities"]["9999"]["provider"] == "unknown"
-        assert data["municipalities"]["9999"]["category"] == "unknown"
-        assert data["municipalities"]["9999"]["classification_confidence"] == 0.0
+        munis = {m["code"]: m for m in data["municipalities"]}
+        assert "351" in munis
+        assert "9999" in munis
+        assert munis["351"]["provider"] == "microsoft"
+        assert munis["351"]["category"] == "us-cloud"
+        assert munis["9999"]["provider"] == "unknown"
+        assert munis["9999"]["category"] == "unknown"
+        assert munis["9999"]["classification_confidence"] == 0.0
 
     async def test_run_no_domain_entry(self, domains_json, tmp_path):
         ms_result = ClassificationResult(
@@ -240,7 +241,8 @@ class TestPipelineRun:
             await run(domains_json, output_path)
 
         data = json.loads(output_path.read_text())
-        no_domain = data["municipalities"]["9999"]
+        munis = {m["code"]: m for m in data["municipalities"]}
+        no_domain = munis["9999"]
         assert no_domain["domain"] == ""
         assert no_domain["mx"] == []
 
@@ -279,7 +281,8 @@ class TestPipelineRun:
             await run(path, output_path)
 
         out = json.loads(output_path.read_text())
-        entry = out["municipalities"]["100"]
+        munis = {m["code"]: m for m in out["municipalities"]}
+        entry = munis["100"]
         assert entry["sources_detail"] == {"scrape": ["town.ch"]}
         assert entry["resolve_flags"] == ["test_flag"]
 
@@ -353,8 +356,8 @@ class TestMinifyForFrontend:
             "generated": "2026-01-01T00:00:00Z",
             "total": 1,
             "counts": {"microsoft": 1},
-            "municipalities": {
-                "351": {
+            "municipalities": [
+                {
                     "code": "351",
                     "name": "Bern",
                     "region": "Kanton Bern",
@@ -376,15 +379,14 @@ class TestMinifyForFrontend:
                     "sources_detail": {"scrape": ["bern.ch"]},
                     "resolve_flags": ["test_flag"],
                 }
-            },
+            ],
         }
 
     def test_minify_strips_unused_fields(self):
         full = self._make_full_output()
         mini = _minify_for_frontend(full)
 
-        entry = mini["municipalities"]["351"]
-        assert "code" not in entry
+        entry = mini["municipalities"][0]
         assert "sources_detail" not in entry
         assert "resolve_flags" not in entry
 
@@ -400,7 +402,7 @@ class TestMinifyForFrontend:
         mini = _minify_for_frontend(full)
 
         assert mini["generated"] == "2026-01-01T00:00:00Z"
-        entry = mini["municipalities"]["351"]
+        entry = mini["municipalities"][0]
         assert entry["name"] == "Bern"
         assert entry["domain"] == "bern.ch"
         assert entry["mx"] == ["bern-ch.mail.protection.outlook.com"]

@@ -29,6 +29,7 @@ _CATEGORY_MAP: dict[str, str] = {
 
 
 _FRONTEND_FIELDS = {
+    "code",
     "name",
     "domain",
     "region",
@@ -44,13 +45,13 @@ _FRONTEND_FIELDS = {
 
 def _minify_for_frontend(full_output: dict[str, Any]) -> dict[str, Any]:
     """Strip fields the frontend doesn't use, producing a compact payload."""
-    municipalities = {}
-    for code, entry in full_output["municipalities"].items():
+    municipalities = []
+    for entry in full_output["municipalities"]:
         mini = {k: v for k, v in entry.items() if k in _FRONTEND_FIELDS}
         mini["classification_signals"] = [
             {"kind": s["kind"], "detail": s["detail"]} for s in entry.get("classification_signals", [])
         ]
-        municipalities[code] = mini
+        municipalities.append(mini)
     return {
         "generated": full_output["generated"],
         "commit": full_output.get("commit"),
@@ -206,7 +207,7 @@ async def run(domains_path: Path, output_path: Path) -> None:
     logger.info("  Unknown/No MX    {:>5}", cat_counts.get("unknown", 0))
 
     sorted_counts = dict(sorted(counts.items()))
-    sorted_munis = dict(sorted(results.items(), key=lambda kv: int(kv[0])))
+    sorted_munis = sorted(results.values(), key=lambda m: int(m["code"]))
 
     commit = (
         subprocess.run(

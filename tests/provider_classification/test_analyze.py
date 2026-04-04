@@ -144,12 +144,14 @@ _MUNIS = {
     },
 }
 
+_MUNIS_LIST = list(_MUNIS.values())
+
 _DATA = {
     "generated": "2026-03-24T00:00:00Z",
     "commit": "abc1234",
     "total": 5,
     "counts": {"microsoft": 1, "independent": 2, "infomaniak": 2},
-    "municipalities": _MUNIS,
+    "municipalities": _MUNIS_LIST,
 }
 
 

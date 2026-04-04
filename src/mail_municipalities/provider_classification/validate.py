@@ -99,8 +99,8 @@ def _check_metadata(data: dict, r: ValidationResult) -> None:
         return
 
     munis = data["municipalities"]
-    if not isinstance(munis, dict):
-        r.error("'municipalities' must be a dict")
+    if not isinstance(munis, list):
+        r.error("'municipalities' must be a list")
         return
 
     if len(munis) != data["total"]:
@@ -115,7 +115,7 @@ def _check_metadata(data: dict, r: ValidationResult) -> None:
         r.ok("counts sum matches total")
 
     actual: dict[str, int] = Counter()  # type: ignore[assignment]
-    for entry in munis.values():
+    for entry in munis:
         actual[entry.get("provider", "?")] += 1
     if dict(sorted(actual.items())) != dict(sorted(counts.items())):
         r.error("counts header doesn't match actual distribution")
@@ -128,7 +128,8 @@ def _check_metadata(data: dict, r: ValidationResult) -> None:
         r.ok("counts keys sorted")
 
 
-def _check_entry(code: str, entry: dict, r: ValidationResult) -> None:
+def _check_entry(entry: dict, r: ValidationResult) -> None:
+    code = entry.get("code", "?")
     required = ("code", "name", "region", "domain", "mx", "spf",
                 "provider", "category", "classification_confidence",
                 "classification_signals")
@@ -136,9 +137,6 @@ def _check_entry(code: str, entry: dict, r: ValidationResult) -> None:
         if field not in entry:
             r.error(f"{code}: missing field '{field}'")
             return
-
-    if entry["code"] != code:
-        r.error(f"key '{code}' != entry code '{entry['code']}'")
 
     provider = entry["provider"]
     if provider not in VALID_PROVIDERS:
@@ -210,17 +208,17 @@ def validate_structure(data: dict) -> ValidationResult:
 
     munis = data["municipalities"]
 
-    codes = list(munis.keys())
+    codes = [m["code"] for m in munis]
     if codes != sorted(codes, key=int):
         r.warn("municipality codes not sorted numerically")
     else:
         r.ok("codes sorted numerically")
 
-    for code, entry in munis.items():
-        _check_entry(code, entry, r)
+    for entry in munis:
+        _check_entry(entry, r)
 
     # Confidence distribution sanity
-    confs = [e["classification_confidence"] for e in munis.values()]
+    confs = [e["classification_confidence"] for e in munis]
     total = len(confs)
     high = sum(1 for c in confs if c >= 50.0)
     zero = sum(1 for c in confs if c == 0.0)
@@ -265,7 +263,7 @@ def validate_regression(
     """Compare current output against a baseline for regressions."""
     r = ValidationResult()
 
-    cur_munis = current["municipalities"]
+    cur_munis = _normalize_baseline(current)
     base_munis = _normalize_baseline(baseline)
 
     cur_keys = set(cur_munis.keys())
