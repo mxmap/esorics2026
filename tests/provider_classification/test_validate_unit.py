@@ -240,11 +240,21 @@ class TestCheckEntry:
         _check_entry(entry, r, cat_map, valid_cats)
         assert r.success
 
-    @pytest.mark.parametrize("field", [
-        "code", "name", "region", "domain", "mx", "spf",
-        "provider", "category", "classification_confidence",
-        "classification_signals",
-    ])
+    @pytest.mark.parametrize(
+        "field",
+        [
+            "code",
+            "name",
+            "region",
+            "domain",
+            "mx",
+            "spf",
+            "provider",
+            "category",
+            "classification_confidence",
+            "classification_signals",
+        ],
+    )
     def test_missing_required_field(self, ctx, field):
         cat_map, valid_cats = ctx
         entry = _make_entry()
@@ -439,10 +449,16 @@ class TestValidateStructure:
         for i in range(10):
             entries.append(_make_entry(str(i + 1)))
         # Make 2 out of 12 (>5%) unknown with confidence 0
-        entries.append(_make_entry("11", provider="unknown", category="unknown",
-                                   classification_confidence=0, classification_signals=[]))
-        entries.append(_make_entry("12", provider="unknown", category="unknown",
-                                   classification_confidence=0, classification_signals=[]))
+        entries.append(
+            _make_entry(
+                "11", provider="unknown", category="unknown", classification_confidence=0, classification_signals=[]
+            )
+        )
+        entries.append(
+            _make_entry(
+                "12", provider="unknown", category="unknown", classification_confidence=0, classification_signals=[]
+            )
+        )
         data = _make_output(entries=entries)
         r = validate_structure(data)
         assert any("0 confidence" in w for w in r.warnings)
@@ -497,10 +513,7 @@ def _make_regression_data(
     provider: str = "microsoft",
     confidence: float = 80.0,
 ) -> dict[str, Any]:
-    entries = [
-        _make_entry(str(i + 1), provider=provider, classification_confidence=confidence)
-        for i in range(n)
-    ]
+    entries = [_make_entry(str(i + 1), provider=provider, classification_confidence=confidence) for i in range(n)]
     return _make_output(entries=entries)
 
 
@@ -590,8 +603,11 @@ class TestValidateRegression:
         base_entries = [_make_entry(str(i + 1)) for i in range(20)]
         cur_entries = [_make_entry(str(i + 1)) for i in range(20)]
         cur_entries[0] = _make_entry(
-            "1", provider="unknown", category="unknown",
-            classification_confidence=0, classification_signals=[],
+            "1",
+            provider="unknown",
+            category="unknown",
+            classification_confidence=0,
+            classification_signals=[],
         )
         current = _make_output(entries=cur_entries)
         baseline = _make_output(entries=base_entries)
