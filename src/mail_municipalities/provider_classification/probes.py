@@ -297,7 +297,7 @@ async def probe_smtp(mx_hosts: list[str]) -> list[Evidence]:
     wait_initial=1.0,
 )
 async def _fetch_tenant(client: httpx.AsyncClient, url: str, params: dict) -> httpx.Response:
-    r = await client.get(url, params=params, timeout=10)
+    r = await client.get(url, params=params, timeout=6)
     r.raise_for_status()
     return r
 
