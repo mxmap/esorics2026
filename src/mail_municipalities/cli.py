@@ -41,8 +41,6 @@ def _resolve_impl(
     no_cache: bool = False,
 ) -> None:
     """Shared resolve implementation."""
-    setup_logging(verbose)
-
     if not country and not all_countries:
         typer.echo("Provide a country code (ch, de, at) or use --all", err=True)
         raise typer.Exit(code=1)
@@ -58,6 +56,7 @@ def _resolve_impl(
     data_base = Path("data")
 
     for cc in countries:
+        setup_logging(verbose, log_path=output_dir / f"resolve_{cc}.log")
         config = _get_config(cc)
         data_dir = data_base / cc
         asyncio.run(
@@ -130,9 +129,9 @@ def classify_cmd(
     ] = None,
 ) -> None:
     """Classify email providers for municipalities."""
-    setup_logging(verbose, log_filename="classification.log")
-
     output_dir = output or Path("output/providers")
+    setup_logging(verbose, log_path=output_dir / f"classify_{country}.log")
+
     output_path = output_dir / f"providers_{country}.json"
 
     if validate:
@@ -228,9 +227,9 @@ def _classify_main(
     ] = None,
 ) -> None:
     """Classify email providers for municipalities."""
-    setup_logging(verbose, log_filename="classification.log")
-
     output_dir = output or Path("output/providers")
+    setup_logging(verbose, log_path=output_dir / f"classify_{country}.log")
+
     output_path = output_dir / f"providers_{country}.json"
 
     if validate:
