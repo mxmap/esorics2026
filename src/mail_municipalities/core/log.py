@@ -2,6 +2,7 @@
 
 import logging
 import sys
+from pathlib import Path
 
 from loguru import logger
 
@@ -21,7 +22,7 @@ class _InterceptHandler(logging.Handler):
         logger.opt(depth=depth, exception=record.exc_info).log(level, record.getMessage())
 
 
-def setup(verbose: bool = False, log_filename: str = "pipeline.log") -> None:
+def setup(verbose: bool = False, log_path: Path = Path("pipeline.log")) -> None:
     """Configure loguru as the sole logging backend."""
     logger.remove()
 
@@ -35,14 +36,13 @@ def setup(verbose: bool = False, log_filename: str = "pipeline.log") -> None:
         fmt = "<green>{time:HH:mm:ss}</green> | <level>{level:<7}</level> | <level>{message}</level>"
     logger.add(sys.stderr, format=fmt, level=level, colorize=True)
 
-    # Log everything to a rotating file (always DEBUG regardless of verbosity)
+    # Log everything to file (always DEBUG regardless of verbosity)
     file_fmt = "{time:YYYY-MM-DD HH:mm:ss} | {level:<7} | {name}:{function}:{line} | {message}"
     logger.add(
-        log_filename,
+        log_path,
         format=file_fmt,
         level="DEBUG",
-        rotation="5 MB",
-        retention=3,
+        mode="w",
         encoding="utf-8",
     )
 

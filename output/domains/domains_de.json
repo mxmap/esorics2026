@@ -1,12 +1,12 @@
 {
-  "generated": "2026-04-01T20:59:13.733352Z",
+  "generated": "2026-04-02T22:47:33.314895Z",
   "total": 11129,
   "municipalities": [
     {
       "code": "01001000",
       "name": "Flensburg",
       "region": "Schleswig-Holstein",
-      "website": "flensburg.de",
+      "website": "",
       "emails": [
         "flensburg.de"
       ]
@@ -114,7 +114,7 @@
       "code": "01051011",
       "name": "Brunsbüttel",
       "region": "Schleswig-Holstein",
-      "website": "stadt.brunsbuettel.de",
+      "website": "",
       "emails": [
         "stadt.brunsbuettel.de"
       ]
@@ -168,7 +168,7 @@
       "code": "01051017",
       "name": "Busenwurth",
       "region": "Schleswig-Holstein",
-      "website": "mitteldithmarschen.de",
+      "website": "",
       "emails": [
         "busenwurth.de"
       ]
@@ -375,7 +375,7 @@
       "code": "01051047",
       "name": "Hemme",
       "region": "Schleswig-Holstein",
-      "website": "gemeinde-hemme.de",
+      "website": "",
       "emails": [
         "gemeinde-hemme.de"
       ]
@@ -537,7 +537,7 @@
       "code": "01051069",
       "name": "Lohe-Rickelshof",
       "region": "Schleswig-Holstein",
-      "website": "amt-heider-umland.de",
+      "website": "",
       "emails": [
         "lohe-rickelshof.de"
       ]
@@ -951,7 +951,7 @@
       "code": "01051127",
       "name": "Wesselburen",
       "region": "Schleswig-Holstein",
-      "website": "",
+      "website": "wesselburen.de",
       "emails": [
         "wesselburen.de"
       ]
@@ -1050,7 +1050,7 @@
       "code": "01051138",
       "name": "Tensbüttel-Röst",
       "region": "Schleswig-Holstein",
-      "website": "mitteldithmarschen.de",
+      "website": "",
       "emails": [
         "tensbuettel-roest.de"
       ]
@@ -1491,7 +1491,7 @@
       "code": "01053046",
       "name": "Gudow",
       "region": "Schleswig-Holstein",
-      "website": "",
+      "website": "gemeinde-gudow.de",
       "emails": [
         "gemeinde-gudow.de"
       ]
@@ -3102,7 +3102,7 @@
       "code": "01054119",
       "name": "Seeth",
       "region": "Schleswig-Holstein",
-      "website": "seeth.de",
+      "website": "",
       "emails": [
         "seeth.de"
       ]
@@ -3237,7 +3237,7 @@
       "code": "01054138",
       "name": "Tönning",
       "region": "Schleswig-Holstein",
-      "website": "toenning.de",
+      "website": "",
       "emails": [
         "toenning.de"
       ]
@@ -3579,7 +3579,7 @@
       "code": "01055018",
       "name": "Grube",
       "region": "Schleswig-Holstein",
-      "website": "",
+      "website": "gemeinde-grube.de",
       "emails": [
         "gemeinde-grube.de"
       ]
@@ -3858,7 +3858,7 @@
       "code": "01056009",
       "name": "Borstel-Hohenraden",
       "region": "Schleswig-Holstein",
-      "website": "",
+      "website": "amt-pinnau.de",
       "emails": [
         "amt-pinnau.de"
       ]
@@ -4029,7 +4029,7 @@
       "code": "01056029",
       "name": "Klein Nordende",
       "region": "Schleswig-Holstein",
-      "website": "klein-nordende.de",
+      "website": "",
       "emails": [
         "klein-nordende.de"
       ]
@@ -4056,7 +4056,7 @@
       "code": "01056032",
       "name": "Kummerfeld",
       "region": "Schleswig-Holstein",
-      "website": "",
+      "website": "amt-pinnau.de",
       "emails": [
         "amt-pinnau.de"
       ]
@@ -4128,7 +4128,7 @@
       "code": "01056040",
       "name": "Prisdorf",
       "region": "Schleswig-Holstein",
-      "website": "",
+      "website": "amt-pinnau.de",
       "emails": [
         "amt-pinnau.de"
       ]
@@ -4146,7 +4146,7 @@
       "code": "01056042",
       "name": "Raa-Besenbek",
       "region": "Schleswig-Holstein",
-      "website": "",
+      "website": "raa-besenbek.de",
       "emails": [
         "raa-besenbek.de"
       ]
@@ -4191,7 +4191,7 @@
       "code": "01056047",
       "name": "Tangstedt",
       "region": "Schleswig-Holstein",
-      "website": "",
+      "website": "amt-pinnau.de",
       "emails": [
         "amt-pinnau.de"
       ]
@@ -4308,7 +4308,7 @@
       "code": "01057009",
       "name": "Bösdorf",
       "region": "Schleswig-Holstein",
-      "website": "boesdorf-holstein.de",
+      "website": "",
       "emails": [
         "boesdorf-holstein.de"
       ]
@@ -4362,7 +4362,7 @@
       "code": "01057016",
       "name": "Dobersdorf",
       "region": "Schleswig-Holstein",
-      "website": "dobersdorf.de",
+      "website": "",
       "emails": [
         "dobersdorf.de"
       ]
@@ -4740,7 +4740,7 @@
       "code": "01057060",
       "name": "Prasdorf",
       "region": "Schleswig-Holstein",
-      "website": "prasdorf.de",
+      "website": "",
       "emails": [
         "prasdorf.de"
       ]
@@ -4758,7 +4758,7 @@
       "code": "01057063",
       "name": "Probsteierhagen",
       "region": "Schleswig-Holstein",
-      "website": "probsteierhagen.de",
+      "website": "",
       "emails": [
         "probsteierhagen.de"
       ]
@@ -4983,7 +4983,7 @@
       "code": "01057089",
       "name": "Wittmoldt",
       "region": "Schleswig-Holstein",
-      "website": "",
+      "website": "wittmoldt.de",
       "emails": [
         "wittmoldt.de"
       ]
@@ -5953,7 +5953,7 @@
       "code": "01058115",
       "name": "Nindorf",
       "region": "Schleswig-Holstein",
-      "website": "amt-mittelholstein.de",
+      "website": "gemeinde-nindorf.de",
       "emails": [
         "gemeinde-nindorf.de"
       ]
@@ -6086,7 +6086,7 @@
       "code": "01058130",
       "name": "Quarnbek",
       "region": "Schleswig-Holstein",
-      "website": "amt-achterwehr.de",
+      "website": "",
       "emails": [
         "amt-achterwehr.de"
       ]
@@ -6293,7 +6293,7 @@
       "code": "01058154",
       "name": "Sophienhamm",
       "region": "Schleswig-Holstein",
-      "website": "sophienhamm.de",
+      "website": "",
       "emails": [
         "sophienhamm.de"
       ]
@@ -6329,7 +6329,7 @@
       "code": "01058158",
       "name": "Tackesdorf",
       "region": "Schleswig-Holstein",
-      "website": "tackesdorf.de",
+      "website": "amt-mittelholstein.de",
       "emails": [
         "tackesdorf.de"
       ]
@@ -7095,7 +7095,9 @@
       "name": "Ahneby",
       "region": "Schleswig-Holstein",
       "website": "",
-      "emails": []
+      "emails": [
+        "gemeinde-ahneby.de"
+      ]
     },
     {
       "code": "01059103",
@@ -7209,7 +7211,7 @@
       "code": "01059123",
       "name": "Hörup",
       "region": "Schleswig-Holstein",
-      "website": "hoerup.de",
+      "website": "",
       "emails": [
         "hoerup.de"
       ]
@@ -7263,7 +7265,7 @@
       "code": "01059131",
       "name": "Jerrishoe",
       "region": "Schleswig-Holstein",
-      "website": "jerrishoe.de",
+      "website": "",
       "emails": [
         "jerrishoe.de"
       ]
@@ -7389,7 +7391,7 @@
       "code": "01059154",
       "name": "Rabel",
       "region": "Schleswig-Holstein",
-      "website": "",
+      "website": "rabel-ostsee.de",
       "emails": [
         "rabel-ostsee.de"
       ]
@@ -7776,7 +7778,7 @@
       "code": "01060019",
       "name": "Ellerau",
       "region": "Schleswig-Holstein",
-      "website": "ellerau.de",
+      "website": "",
       "emails": [
         "ellerau.de"
       ]
@@ -7875,7 +7877,7 @@
       "code": "01060030",
       "name": "Groß Rönnau",
       "region": "Schleswig-Holstein",
-      "website": "amt-trave-land.de",
+      "website": "",
       "emails": [
         "gross-roennau.de"
       ]
@@ -7902,7 +7904,7 @@
       "code": "01060034",
       "name": "Hartenholm",
       "region": "Schleswig-Holstein",
-      "website": "",
+      "website": "hartenholm.de",
       "emails": [
         "hartenholm.de"
       ]
@@ -7974,7 +7976,7 @@
       "code": "01060042",
       "name": "Hüttblek",
       "region": "Schleswig-Holstein",
-      "website": "",
+      "website": "huettblek.de",
       "emails": [
         "huettblek.de"
       ]
@@ -8469,7 +8471,7 @@
       "code": "01060100",
       "name": "Winsen (Holstein)",
       "region": "Schleswig-Holstein",
-      "website": "",
+      "website": "winsen-holstein.de",
       "emails": [
         "winsen-holstein.de"
       ]
@@ -8496,7 +8498,7 @@
       "code": "01061002",
       "name": "Aebtissinwisch",
       "region": "Schleswig-Holstein",
-      "website": "wilster.de",
+      "website": "",
       "emails": [
         "wilster.de"
       ]
@@ -8541,7 +8543,7 @@
       "code": "01061007",
       "name": "Beidenfleth",
       "region": "Schleswig-Holstein",
-      "website": "wilster.de",
+      "website": "",
       "emails": [
         "wilster.de"
       ]
@@ -8649,7 +8651,7 @@
       "code": "01061020",
       "name": "Büttel",
       "region": "Schleswig-Holstein",
-      "website": "wilster.de",
+      "website": "",
       "emails": [
         "wilster.de"
       ]
@@ -8676,7 +8678,7 @@
       "code": "01061023",
       "name": "Dammfleth",
       "region": "Schleswig-Holstein",
-      "website": "wilster.de",
+      "website": "",
       "emails": [
         "wilster.de"
       ]
@@ -8730,7 +8732,7 @@
       "code": "01061029",
       "name": "Glückstadt",
       "region": "Schleswig-Holstein",
-      "website": "",
+      "website": "glueckstadt.de",
       "emails": [
         "glueckstadt.de"
       ]
@@ -8991,7 +8993,7 @@
       "code": "01061060",
       "name": "Kudensee",
       "region": "Schleswig-Holstein",
-      "website": "wilster.de",
+      "website": "",
       "emails": [
         "wilster.de"
       ]
@@ -9009,7 +9011,7 @@
       "code": "01061062",
       "name": "Landrecht",
       "region": "Schleswig-Holstein",
-      "website": "wilster.de",
+      "website": "",
       "emails": [
         "wilster.de"
       ]
@@ -9018,7 +9020,7 @@
       "code": "01061063",
       "name": "Landscheide",
       "region": "Schleswig-Holstein",
-      "website": "",
+      "website": "flethsee.de",
       "emails": [
         "flethsee.de"
       ]
@@ -9124,7 +9126,7 @@
       "code": "01061077",
       "name": "Nortorf",
       "region": "Schleswig-Holstein",
-      "website": "wilster.de",
+      "website": "",
       "emails": [
         "wilster.de"
       ]
@@ -9268,7 +9270,7 @@
       "code": "01061095",
       "name": "Sankt Margarethen",
       "region": "Schleswig-Holstein",
-      "website": "wilster.de",
+      "website": "",
       "emails": [
         "wilster.de"
       ]
@@ -9331,7 +9333,7 @@
       "code": "01061102",
       "name": "Stördorf",
       "region": "Schleswig-Holstein",
-      "website": "wilster.de",
+      "website": "",
       "emails": [
         "wilster.de"
       ]
@@ -9394,7 +9396,7 @@
       "code": "01061109",
       "name": "Westermoor",
       "region": "Schleswig-Holstein",
-      "website": "",
+      "website": "gemeinde-westermoor.de",
       "emails": [
         "westermoor.de"
       ]
@@ -9403,7 +9405,7 @@
       "code": "01061110",
       "name": "Wewelsfleth",
       "region": "Schleswig-Holstein",
-      "website": "wilster.de",
+      "website": "",
       "emails": [
         "wilster.de"
       ]
@@ -9430,7 +9432,7 @@
       "code": "01061113",
       "name": "Wilster",
       "region": "Schleswig-Holstein",
-      "website": "wilster.de",
+      "website": "",
       "emails": [
         "wilster.de"
       ]
@@ -9484,7 +9486,7 @@
       "code": "01061119",
       "name": "Neuendorf-Sachsenbande",
       "region": "Schleswig-Holstein",
-      "website": "wilster.de",
+      "website": "",
       "emails": [
         "wilster.de"
       ]
@@ -9628,7 +9630,7 @@
       "code": "01062023",
       "name": "Großhansdorf",
       "region": "Schleswig-Holstein",
-      "website": "grosshansdorf.de",
+      "website": "",
       "emails": [
         "grosshansdorf.de"
       ]
@@ -9700,7 +9702,7 @@
       "code": "01062036",
       "name": "Jersbek",
       "region": "Schleswig-Holstein",
-      "website": "",
+      "website": "jersbek.de",
       "emails": [
         "jersbek.de"
       ]
@@ -9844,7 +9846,7 @@
       "code": "01062069",
       "name": "Siek",
       "region": "Schleswig-Holstein",
-      "website": "siek.orts.app",
+      "website": "",
       "emails": [
         "gemeindesiek.de"
       ]
@@ -9961,7 +9963,7 @@
       "code": "01062092",
       "name": "Travenbrück",
       "region": "Schleswig-Holstein",
-      "website": "amt-bad-oldesloe-land.de",
+      "website": "xn--gemeinde-travenbrck-mbc.de",
       "emails": [
         "amt-bad-oldesloe-land.de"
       ]
@@ -10007,9 +10009,10 @@
       "code": "03102000",
       "name": "Salzgitter",
       "region": "Niedersachsen",
-      "website": "salzgitter.de",
+      "website": "",
       "emails": [
-        "salzgitter.de"
+        "salzgitter.de",
+        "stadt.salzgitter.de"
       ]
     },
     {
@@ -10074,7 +10077,7 @@
       "code": "03151005",
       "name": "Brome",
       "region": "Niedersachsen",
-      "website": "brome.de",
+      "website": "samtgemeinde-brome.de",
       "emails": [
         "brome.de",
         "samtgemeinde-brome.de"
@@ -10122,7 +10125,7 @@
       "code": "03151010",
       "name": "Groß Oesingen",
       "region": "Niedersachsen",
-      "website": "wesendorf.de",
+      "website": "gemeinde-oesingen.de",
       "emails": [
         "sg-wesendorf.de"
       ]
@@ -10433,7 +10436,7 @@
       "code": "03153004",
       "name": "Clausthal-Zellerfeld",
       "region": "Niedersachsen",
-      "website": "clausthal-zellerfeld.de",
+      "website": "",
       "emails": [
         "clausthal-zellerfeld.de"
       ]
@@ -10524,7 +10527,7 @@
       "code": "03153018",
       "name": "Clausthal-Zellerfeld",
       "region": "Niedersachsen",
-      "website": "clausthal-zellerfeld.de",
+      "website": "",
       "emails": [
         "clausthal-zellerfeld.de"
       ]
@@ -10617,7 +10620,7 @@
       "code": "03154010",
       "name": "Helmstedt",
       "region": "Niedersachsen",
-      "website": "landkreis-helmstedt.de",
+      "website": "stadt-helmstedt.de",
       "emails": [
         "stadt-helmstedt.de",
         "landkreis-helmstedt.de"
@@ -10764,7 +10767,7 @@
       "code": "03154028",
       "name": "Helmstedt",
       "region": "Niedersachsen",
-      "website": "landkreis-helmstedt.de",
+      "website": "stadt-helmstedt.de",
       "emails": [
         "stadt-helmstedt.de",
         "landkreis-helmstedt.de"
@@ -11003,7 +11006,7 @@
       "code": "03158007",
       "name": "Dahlum",
       "region": "Niedersachsen",
-      "website": "elm-asse.de",
+      "website": "",
       "emails": [
         "elm-asse.de"
       ]
@@ -11012,7 +11015,7 @@
       "code": "03158008",
       "name": "Denkte",
       "region": "Niedersachsen",
-      "website": "elm-asse.de",
+      "website": "",
       "emails": [
         "elm-asse.de"
       ]
@@ -11094,7 +11097,7 @@
       "code": "03158017",
       "name": "Hedeper",
       "region": "Niedersachsen",
-      "website": "elm-asse.de",
+      "website": "",
       "emails": [
         "elm-asse.de"
       ]
@@ -11121,7 +11124,7 @@
       "code": "03158021",
       "name": "Kissenbrück",
       "region": "Niedersachsen",
-      "website": "elm-asse.de",
+      "website": "",
       "emails": [
         "elm-asse.de"
       ]
@@ -11130,7 +11133,7 @@
       "code": "03158022",
       "name": "Kneitlingen",
       "region": "Niedersachsen",
-      "website": "elm-asse.de",
+      "website": "",
       "emails": [
         "elm-asse.de"
       ]
@@ -11149,7 +11152,7 @@
       "code": "03158025",
       "name": "Roklum",
       "region": "Niedersachsen",
-      "website": "elm-asse.de",
+      "website": "",
       "emails": [
         "elm-asse.de"
       ]
@@ -11167,7 +11170,7 @@
       "code": "03158027",
       "name": "Schöppenstedt",
       "region": "Niedersachsen",
-      "website": "elm-asse.de",
+      "website": "",
       "emails": [
         "elm-asse.de"
       ]
@@ -11204,7 +11207,7 @@
       "code": "03158032",
       "name": "Vahlberg",
       "region": "Niedersachsen",
-      "website": "elm-asse.de",
+      "website": "",
       "emails": [
         "elm-asse.de"
       ]
@@ -11241,7 +11244,7 @@
       "code": "03158036",
       "name": "Wittmar",
       "region": "Niedersachsen",
-      "website": "elm-asse.de",
+      "website": "",
       "emails": [
         "elm-asse.de"
       ]
@@ -11279,7 +11282,7 @@
       "code": "03158040",
       "name": "Remlingen-Semmenstedt",
       "region": "Niedersachsen",
-      "website": "elm-asse.de",
+      "website": "",
       "emails": [
         "elm-asse.de"
       ]
@@ -11324,7 +11327,7 @@
       "code": "03159005",
       "name": "Bilshausen",
       "region": "Niedersachsen",
-      "website": "bilshausen.de",
+      "website": "",
       "emails": [
         "bilshausen.de",
         "sg-gieboldehausen.de"
@@ -11495,7 +11498,7 @@
       "code": "03159023",
       "name": "Landolfshausen",
       "region": "Niedersachsen",
-      "website": "radolfshausen.de",
+      "website": "landolfshausen.de",
       "emails": [
         "landolfshausen.de",
         "radolfshausen.de"
@@ -11987,7 +11990,6 @@
       "region": "Niedersachsen",
       "website": "eydelstedt.de",
       "emails": [
-        "eydelstedt.de",
         "barnstorf.de"
       ]
     },
@@ -12488,7 +12490,7 @@
       "code": "03254021",
       "name": "Hildesheim",
       "region": "Niedersachsen",
-      "website": "",
+      "website": "stadt-hildesheim.de",
       "emails": [
         "stadt-hildesheim.de",
         "landkreishildesheim.de"
@@ -12525,7 +12527,7 @@
       "code": "03254029",
       "name": "Schellerten",
       "region": "Niedersachsen",
-      "website": "schellerten.info",
+      "website": "",
       "emails": [
         "schellerten.info"
       ]
@@ -12570,7 +12572,7 @@
       "code": "03254039",
       "name": "Marienhagen",
       "region": "Niedersachsen",
-      "website": "",
+      "website": "nolis.de",
       "emails": [
         "duingen.de"
       ]
@@ -12579,7 +12581,7 @@
       "code": "03254041",
       "name": "Duingen",
       "region": "Niedersachsen",
-      "website": "sg-leinebergland.de",
+      "website": "nolis.de",
       "emails": [
         "duingen.de",
         "sg-leinebergland.de"
@@ -13362,7 +13364,7 @@
       "code": "03257011",
       "name": "Haste",
       "region": "Niedersachsen",
-      "website": "nenndorf.de",
+      "website": "haste.de",
       "emails": [
         "haste.de",
         "bad-nenndorf.de"
@@ -13850,9 +13852,10 @@
       "code": "03352004",
       "name": "Belum",
       "region": "Niedersachsen",
-      "website": "samtgemeinde-land-hadeln.de",
+      "website": "",
       "emails": [
-        "samtgemeinde-land-hadeln.de"
+        "samtgemeinde-land-hadeln.de",
+        "land.hadeln.de"
       ]
     },
     {
@@ -13868,9 +13871,10 @@
       "code": "03352008",
       "name": "Bülkau",
       "region": "Niedersachsen",
-      "website": "samtgemeinde-land-hadeln.de",
+      "website": "",
       "emails": [
-        "samtgemeinde-land-hadeln.de"
+        "samtgemeinde-land-hadeln.de",
+        "land.hadeln.de"
       ]
     },
     {
@@ -13953,7 +13957,8 @@
       "region": "Niedersachsen",
       "website": "ihlienworth.de",
       "emails": [
-        "ihlienworth.de"
+        "ihlienworth.de",
+        "land.hadeln.de"
       ]
     },
     {
@@ -14017,7 +14022,7 @@
       "code": "03352038",
       "name": "Neuenkirchen",
       "region": "Niedersachsen",
-      "website": "samtgemeinde-land-hadeln.de",
+      "website": "schwafoerden.de",
       "emails": [
         "schwafoerden.de"
       ]
@@ -14026,9 +14031,10 @@
       "code": "03352039",
       "name": "Neuhaus",
       "region": "Niedersachsen",
-      "website": "samtgemeinde-land-hadeln.de",
+      "website": "",
       "emails": [
-        "samtgemeinde-land-hadeln.de"
+        "samtgemeinde-land-hadeln.de",
+        "land.hadeln.de"
       ]
     },
     {
@@ -14046,7 +14052,8 @@
       "region": "Niedersachsen",
       "website": "nordleda.de",
       "emails": [
-        "nordleda.de"
+        "nordleda.de",
+        "land.hadeln.de"
       ]
     },
     {
@@ -14055,16 +14062,18 @@
       "region": "Niedersachsen",
       "website": "",
       "emails": [
-        "oberndorf-oste.de"
+        "oberndorf-oste.de",
+        "land.hadeln.de"
       ]
     },
     {
       "code": "03352043",
       "name": "Odisheim",
       "region": "Niedersachsen",
-      "website": "samtgemeinde-land-hadeln.de",
+      "website": "",
       "emails": [
-        "samtgemeinde-land-hadeln.de"
+        "samtgemeinde-land-hadeln.de",
+        "land.hadeln.de"
       ]
     },
     {
@@ -14081,18 +14090,20 @@
       "code": "03352045",
       "name": "Osterbruch",
       "region": "Niedersachsen",
-      "website": "samtgemeinde-land-hadeln.de",
+      "website": "",
       "emails": [
-        "samtgemeinde-land-hadeln.de"
+        "samtgemeinde-land-hadeln.de",
+        "land.hadeln.de"
       ]
     },
     {
       "code": "03352046",
       "name": "Otterndorf",
       "region": "Niedersachsen",
-      "website": "samtgemeinde-land-hadeln.de",
+      "website": "",
       "emails": [
-        "samtgemeinde-land-hadeln.de"
+        "samtgemeinde-land-hadeln.de",
+        "land.hadeln.de"
       ]
     },
     {
@@ -14128,7 +14139,8 @@
       "region": "Niedersachsen",
       "website": "steinau-niedersachsen.de",
       "emails": [
-        "steinau-niedersachsen.de"
+        "steinau-niedersachsen.de",
+        "land.hadeln.de"
       ]
     },
     {
@@ -14156,16 +14168,18 @@
       "region": "Niedersachsen",
       "website": "wanna.de",
       "emails": [
-        "wanna.de"
+        "wanna.de",
+        "land.hadeln.de"
       ]
     },
     {
       "code": "03352056",
       "name": "Wingst",
       "region": "Niedersachsen",
-      "website": "samtgemeinde-land-hadeln.de",
+      "website": "",
       "emails": [
-        "samtgemeinde-land-hadeln.de"
+        "samtgemeinde-land-hadeln.de",
+        "land.hadeln.de"
       ]
     },
     {
@@ -14208,9 +14222,10 @@
       "code": "03352063",
       "name": "Cadenberge",
       "region": "Niedersachsen",
-      "website": "samtgemeinde-land-hadeln.de",
+      "website": "",
       "emails": [
-        "samtgemeinde-land-hadeln.de"
+        "samtgemeinde-land-hadeln.de",
+        "land.hadeln.de"
       ]
     },
     {
@@ -14553,7 +14568,7 @@
       "code": "03353036",
       "name": "Undeloh",
       "region": "Niedersachsen",
-      "website": "hanstedt.de",
+      "website": "undeloh.de",
       "emails": [
         "undeloh.de",
         "hanstedt.de"
@@ -14733,6 +14748,7 @@
       "region": "Niedersachsen",
       "website": "luechow-wendland.de",
       "emails": [
+        "luechow.de",
         "luechow-wendland.de"
       ]
     },
@@ -14769,6 +14785,7 @@
       "region": "Niedersachsen",
       "website": "luechow-wendland.de",
       "emails": [
+        "luechow.de",
         "luechow-wendland.de"
       ]
     },
@@ -14816,6 +14833,7 @@
       "region": "Niedersachsen",
       "website": "luechow-wendland.de",
       "emails": [
+        "luechow.de",
         "luechow-wendland.de"
       ]
     },
@@ -14845,6 +14863,7 @@
       "region": "Niedersachsen",
       "website": "luechow-wendland.de",
       "emails": [
+        "luechow.de",
         "luechow-wendland.de"
       ]
     },
@@ -15533,7 +15552,7 @@
       "code": "03357017",
       "name": "Groß Meckelsen",
       "region": "Niedersachsen",
-      "website": "",
+      "website": "sg.sittensen.de",
       "emails": [
         "gross-meckelsen.de",
         "sg.sittensen.de"
@@ -15978,7 +15997,7 @@
       "code": "03358008",
       "name": "Bad Fallingbostel",
       "region": "Niedersachsen",
-      "website": "",
+      "website": "badfallingbostel.de",
       "emails": [
         "badfallingbostel.de"
       ]
@@ -16192,7 +16211,7 @@
       "code": "03359009",
       "name": "Burweg",
       "region": "Niedersachsen",
-      "website": "burweg.de",
+      "website": "oldendorf-himmelpforten.de",
       "emails": [
         "burweg.de",
         "oldendorf-himmelpforten.de"
@@ -16550,7 +16569,7 @@
       "code": "03360011",
       "name": "Himbergen",
       "region": "Niedersachsen",
-      "website": "bevensen-ebstorf.de",
+      "website": "gemeinde-himbergen.de",
       "emails": [
         "gemeinde-himbergen.de",
         "bevensen-ebstorf.de"
@@ -17002,7 +17021,7 @@
       "code": "03452013",
       "name": "Juist",
       "region": "Niedersachsen",
-      "website": "gemeinde-juist.de",
+      "website": "oc.gemeinde-juist.de",
       "emails": [
         "juist.de",
         "gemeinde-juist.de"
@@ -17382,7 +17401,7 @@
       "code": "03454015",
       "name": "Gersten",
       "region": "Niedersachsen",
-      "website": "lengerich-emsland.de",
+      "website": "",
       "emails": [
         "gersten.de",
         "lengerich-emsland.de"
@@ -17503,7 +17522,7 @@
       "code": "03454028",
       "name": "Langen",
       "region": "Niedersachsen",
-      "website": "lengerich.de",
+      "website": "",
       "emails": [
         "lengerich.de",
         "lengerich-emsland.de"
@@ -17532,7 +17551,7 @@
       "code": "03454031",
       "name": "Lengerich",
       "region": "Niedersachsen",
-      "website": "lengerich-emsland.de",
+      "website": "",
       "emails": [
         "lengerich-emsland.de"
       ]
@@ -17749,7 +17768,7 @@
       "code": "03454054",
       "name": "Twist",
       "region": "Niedersachsen",
-      "website": "twist-emsland.de",
+      "website": "",
       "emails": [
         "twist-emsland.de"
       ]
@@ -18153,6 +18172,7 @@
       "region": "Niedersachsen",
       "website": "juemme.de",
       "emails": [
+        "filsum.de",
         "juemme.de"
       ]
     },
@@ -18224,7 +18244,7 @@
       "code": "03457016",
       "name": "Nortmoor",
       "region": "Niedersachsen",
-      "website": "nortmoor.de",
+      "website": "juemme.de",
       "emails": [
         "nortmoor.de",
         "juemme.de"
@@ -18243,7 +18263,7 @@
       "code": "03457018",
       "name": "Rhauderfehn",
       "region": "Niedersachsen",
-      "website": "rhauderfehn.de",
+      "website": "",
       "emails": [
         "rhauderfehn.de"
       ]
@@ -18373,7 +18393,7 @@
       "code": "03458009",
       "name": "Hatten",
       "region": "Niedersachsen",
-      "website": "",
+      "website": "hatten.de",
       "emails": [
         "hatten.de"
       ]
@@ -18979,7 +18999,7 @@
       "code": "03462006",
       "name": "Holtgast",
       "region": "Niedersachsen",
-      "website": "holtgast.de",
+      "website": "esens.de",
       "emails": [
         "holtgast.de",
         "esens.de"
@@ -19087,7 +19107,7 @@
       "code": "03462017",
       "name": "Werdum",
       "region": "Niedersachsen",
-      "website": "werdum.de",
+      "website": "esens.de",
       "emails": [
         "werdum.de",
         "esens.de"
@@ -19126,9 +19146,9 @@
       "code": "04012000",
       "name": "Bremerhaven",
       "region": "Bremen",
-      "website": "",
+      "website": "bremerhaven.de",
       "emails": [
-        "bremerhaven.de"
+        "magistrat.bremerhaven.de"
       ]
     },
     {
@@ -19220,7 +19240,8 @@
       "region": "Nordrhein-Westfalen",
       "website": "",
       "emails": [
-        "wuppertal.de"
+        "wuppertal.de",
+        "stadt.wuppertal.de"
       ]
     },
     {
@@ -19290,7 +19311,7 @@
       "code": "05154032",
       "name": "Kevelaer",
       "region": "Nordrhein-Westfalen",
-      "website": "kevelaer.de",
+      "website": "",
       "emails": [
         "kevelaer.de"
       ]
@@ -19327,7 +19348,7 @@
       "code": "05154048",
       "name": "Rheurdt",
       "region": "Nordrhein-Westfalen",
-      "website": "rheurdt.de",
+      "website": "",
       "emails": [
         "rheurdt.de"
       ]
@@ -19467,8 +19488,7 @@
       "region": "Nordrhein-Westfalen",
       "website": "dormagen.de",
       "emails": [
-        "dormagen.de",
-        "stadt-dormagen.de"
+        "dormagen.de"
       ]
     },
     {
@@ -19522,7 +19542,8 @@
       "region": "Nordrhein-Westfalen",
       "website": "neuss.de",
       "emails": [
-        "neuss.de"
+        "neuss.de",
+        "stadt.neuss.de"
       ]
     },
     {
@@ -19574,7 +19595,7 @@
       "code": "05166020",
       "name": "Niederkrüchten",
       "region": "Nordrhein-Westfalen",
-      "website": "niederkruechten.de",
+      "website": "",
       "emails": [
         "niederkruechten.de"
       ]
@@ -19758,7 +19779,8 @@
       "region": "Nordrhein-Westfalen",
       "website": "leverkusen.de",
       "emails": [
-        "leverkusen.de"
+        "leverkusen.de",
+        "stadt.leverkusen.de"
       ]
     },
     {
@@ -19767,7 +19789,8 @@
       "region": "Nordrhein-Westfalen",
       "website": "aachen.de",
       "emails": [
-        "aachen.de"
+        "aachen.de",
+        "mail.aachen.de"
       ]
     },
     {
@@ -19785,7 +19808,8 @@
       "region": "Nordrhein-Westfalen",
       "website": "baesweiler.de",
       "emails": [
-        "baesweiler.de"
+        "baesweiler.de",
+        "stadt.baesweiler.de"
       ]
     },
     {
@@ -19810,7 +19834,7 @@
       "code": "05334020",
       "name": "Monschau",
       "region": "Nordrhein-Westfalen",
-      "website": "monschau.de",
+      "website": "",
       "emails": [
         "monschau.de"
       ]
@@ -19821,7 +19845,8 @@
       "region": "Nordrhein-Westfalen",
       "website": "roetgen.de",
       "emails": [
-        "roetgen.de"
+        "roetgen.de",
+        "gemeinde.roetgen.de"
       ]
     },
     {
@@ -20055,7 +20080,7 @@
       "code": "05362032",
       "name": "Kerpen",
       "region": "Nordrhein-Westfalen",
-      "website": "stadt-kerpen.de",
+      "website": "",
       "emails": [
         "stadt-kerpen.de"
       ]
@@ -20264,7 +20289,7 @@
       "code": "05370040",
       "name": "Wegberg",
       "region": "Nordrhein-Westfalen",
-      "website": "wegberg.de",
+      "website": "",
       "emails": [
         "wegberg.de",
         "stadt.wegberg.de"
@@ -20377,7 +20402,7 @@
       "code": "05374048",
       "name": "Wiehl",
       "region": "Nordrhein-Westfalen",
-      "website": "wiehl.de",
+      "website": "",
       "emails": [
         "wiehl.de"
       ]
@@ -20422,7 +20447,7 @@
       "code": "05378016",
       "name": "Leichlingen",
       "region": "Nordrhein-Westfalen",
-      "website": "leichlingen.de",
+      "website": "",
       "emails": [
         "leichlingen.de"
       ]
@@ -20540,7 +20565,7 @@
       "code": "05382036",
       "name": "Much",
       "region": "Nordrhein-Westfalen",
-      "website": "much.de",
+      "website": "",
       "emails": [
         "much.de"
       ]
@@ -20677,7 +20702,8 @@
       "region": "Nordrhein-Westfalen",
       "website": "",
       "emails": [
-        "bocholt.de"
+        "bocholt.de",
+        "mail.bocholt.de"
       ]
     },
     {
@@ -20802,7 +20828,7 @@
       "code": "05554064",
       "name": "Velen",
       "region": "Nordrhein-Westfalen",
-      "website": "",
+      "website": "velen.de",
       "emails": [
         "velen.de"
       ]
@@ -20912,7 +20938,7 @@
       "code": "05558044",
       "name": "Senden",
       "region": "Nordrhein-Westfalen",
-      "website": "senden-westfalen.de",
+      "website": "",
       "emails": [
         "senden-westfalen.de"
       ]
@@ -20994,7 +21020,7 @@
       "code": "05562032",
       "name": "Recklinghausen",
       "region": "Nordrhein-Westfalen",
-      "website": "kreis-re.de",
+      "website": "recklinghausen.de",
       "emails": [
         "recklinghausen.de",
         "kreis-re.de"
@@ -21033,7 +21059,8 @@
       "region": "Nordrhein-Westfalen",
       "website": "greven.net",
       "emails": [
-        "greven.net"
+        "greven.net",
+        "stadt-greven.de"
       ]
     },
     {
@@ -21094,7 +21121,7 @@
       "code": "05566040",
       "name": "Lengerich",
       "region": "Nordrhein-Westfalen",
-      "website": "lengerich.de",
+      "website": "",
       "emails": [
         "lengerich.de"
       ]
@@ -21232,7 +21259,8 @@
       "region": "Nordrhein-Westfalen",
       "website": "ahlen.de",
       "emails": [
-        "ahlen.de"
+        "ahlen.de",
+        "stadt.ahlen.de"
       ]
     },
     {
@@ -21293,7 +21321,7 @@
       "code": "05570032",
       "name": "Ostbevern",
       "region": "Nordrhein-Westfalen",
-      "website": "",
+      "website": "ostbevern.de",
       "emails": [
         "ostbevern.de"
       ]
@@ -21412,7 +21440,7 @@
       "code": "05754028",
       "name": "Rheda-Wiedenbrück",
       "region": "Nordrhein-Westfalen",
-      "website": "rheda-wiedenbrueck.de",
+      "website": "",
       "emails": [
         "rheda-wiedenbrueck.de",
         "rh-wd.de"
@@ -21431,7 +21459,7 @@
       "code": "05754036",
       "name": "Schloß Holte-Stukenbrock",
       "region": "Nordrhein-Westfalen",
-      "website": "stadt-shs.de",
+      "website": "beteiligung.nrw.de",
       "emails": [
         "schloss-holte-stukenbrock.de",
         "stadt-shs.de"
@@ -21450,7 +21478,7 @@
       "code": "05754044",
       "name": "Verl",
       "region": "Nordrhein-Westfalen",
-      "website": "verl.de",
+      "website": "",
       "emails": [
         "verl.de"
       ]
@@ -21523,7 +21551,7 @@
       "code": "05758024",
       "name": "Löhne",
       "region": "Nordrhein-Westfalen",
-      "website": "loehne.de",
+      "website": "",
       "emails": [
         "loehne.de"
       ]
@@ -21541,7 +21569,7 @@
       "code": "05758032",
       "name": "Spenge",
       "region": "Nordrhein-Westfalen",
-      "website": "",
+      "website": "spenge.de",
       "emails": [
         "spenge.de"
       ]
@@ -21839,7 +21867,7 @@
       "code": "05770024",
       "name": "Minden",
       "region": "Nordrhein-Westfalen",
-      "website": "",
+      "website": "minden.de",
       "emails": [
         "minden.de"
       ]
@@ -21884,7 +21912,7 @@
       "code": "05770044",
       "name": "Stemwede",
       "region": "Nordrhein-Westfalen",
-      "website": "stemwede.de",
+      "website": "",
       "emails": [
         "stemwede.de"
       ]
@@ -21920,7 +21948,7 @@
       "code": "05774016",
       "name": "Büren",
       "region": "Nordrhein-Westfalen",
-      "website": "bueren.de",
+      "website": "",
       "emails": [
         "bueren.de"
       ]
@@ -22013,7 +22041,8 @@
       "region": "Nordrhein-Westfalen",
       "website": "hamm.de",
       "emails": [
-        "hamm.de"
+        "hamm.de",
+        "stadt.hamm.de"
       ]
     },
     {
@@ -22075,7 +22104,7 @@
       "code": "05954024",
       "name": "Schwelm",
       "region": "Nordrhein-Westfalen",
-      "website": "schwelm.de",
+      "website": "",
       "emails": [
         "schwelm.de"
       ]
@@ -22094,7 +22123,7 @@
       "code": "05954032",
       "name": "Wetter (Ruhr)",
       "region": "Nordrhein-Westfalen",
-      "website": "",
+      "website": "stadt-wetter.de",
       "emails": [
         "stadt-wetter.de"
       ]
@@ -22185,7 +22214,7 @@
       "code": "05958036",
       "name": "Olsberg",
       "region": "Nordrhein-Westfalen",
-      "website": "olsberg.de",
+      "website": "",
       "emails": [
         "olsberg.de"
       ]
@@ -22556,7 +22585,7 @@
       "code": "05974020",
       "name": "Geseke",
       "region": "Nordrhein-Westfalen",
-      "website": "",
+      "website": "geseke.de",
       "emails": [
         "geseke.de"
       ]
@@ -22713,7 +22742,7 @@
       "code": "05978032",
       "name": "Selm",
       "region": "Nordrhein-Westfalen",
-      "website": "stadtselm.de",
+      "website": "selm.de",
       "emails": [
         "selm.de",
         "stadtselm.de"
@@ -22842,7 +22871,7 @@
       "code": "06431009",
       "name": "Grasellenbach",
       "region": "Hessen",
-      "website": "",
+      "website": "gemeinde-grasellenbach.de",
       "emails": [
         "gemeinde-grasellenbach.de"
       ]
@@ -22906,7 +22935,7 @@
       "code": "06431016",
       "name": "Lorsch",
       "region": "Hessen",
-      "website": "lorsch.de",
+      "website": "",
       "emails": [
         "lorsch.de"
       ]
@@ -23016,7 +23045,7 @@
       "code": "06432006",
       "name": "Erzhausen",
       "region": "Hessen",
-      "website": "",
+      "website": "erzhausen.de",
       "emails": [
         "erzhausen.de"
       ]
@@ -23107,7 +23136,7 @@
       "code": "06432016",
       "name": "Ober-Ramstadt",
       "region": "Hessen",
-      "website": "",
+      "website": "ober-ramstadt.de",
       "emails": [
         "ober-ramstadt.de"
       ]
@@ -23134,7 +23163,7 @@
       "code": "06432019",
       "name": "Reinheim",
       "region": "Hessen",
-      "website": "",
+      "website": "reinheim.de",
       "emails": [
         "reinheim.de"
       ]
@@ -23179,7 +23208,7 @@
       "code": "06433001",
       "name": "Biebesheim am Rhein",
       "region": "Hessen",
-      "website": "",
+      "website": "biebesheim-am-rhein.de",
       "emails": [
         "biebesheim.de"
       ]
@@ -23432,7 +23461,7 @@
       "code": "06435002",
       "name": "Bad Soden-Salmünster",
       "region": "Hessen",
-      "website": "badsoden-salmuenster.de",
+      "website": "",
       "emails": [
         "badsoden-salmuenster.de"
       ]
@@ -23577,7 +23606,7 @@
       "code": "06435018",
       "name": "Linsengericht",
       "region": "Hessen",
-      "website": "linsengericht.de",
+      "website": "",
       "emails": [
         "linsengericht.de"
       ]
@@ -23613,7 +23642,7 @@
       "code": "06435022",
       "name": "Niederdorfelden",
       "region": "Hessen",
-      "website": "",
+      "website": "niederdorfelden.de",
       "emails": [
         "niederdorfelden.de"
       ]
@@ -23649,7 +23678,7 @@
       "code": "06435026",
       "name": "Schöneck",
       "region": "Hessen",
-      "website": "schoeneck.de",
+      "website": "",
       "emails": [
         "schoeneck.de"
       ]
@@ -23687,7 +23716,8 @@
       "region": "Hessen",
       "website": "bad-soden.de",
       "emails": [
-        "bad-soden.de"
+        "bad-soden.de",
+        "stadt-bad-soden.de"
       ]
     },
     {
@@ -23712,7 +23742,7 @@
       "code": "06436004",
       "name": "Flörsheim am Main",
       "region": "Hessen",
-      "website": "",
+      "website": "floersheim-main.de",
       "emails": [
         "floersheim-main.de"
       ]
@@ -23793,7 +23823,7 @@
       "code": "06437001",
       "name": "Bad König",
       "region": "Hessen",
-      "website": "",
+      "website": "badkoenig.de",
       "emails": [
         "badkoenig.de"
       ]
@@ -23957,7 +23987,7 @@
       "code": "06438005",
       "name": "Heusenstamm",
       "region": "Hessen",
-      "website": "",
+      "website": "heusenstamm.de",
       "emails": [
         "heusenstamm.de"
       ]
@@ -24050,7 +24080,8 @@
       "region": "Hessen",
       "website": "bad-schwalbach.de",
       "emails": [
-        "bad-schwalbach.de"
+        "bad-schwalbach.de",
+        "rheingau-taunus.de"
       ]
     },
     {
@@ -24139,7 +24170,7 @@
       "code": "06439012",
       "name": "Oestrich-Winkel",
       "region": "Hessen",
-      "website": "oestrich-winkel.de",
+      "website": "",
       "emails": [
         "oestrich-winkel.de"
       ]
@@ -24277,7 +24308,8 @@
       "region": "Hessen",
       "website": "glauburg.de",
       "emails": [
-        "glauburg.de"
+        "glauburg.de",
+        "gemeinde-glauburg.de"
       ]
     },
     {
@@ -24656,7 +24688,7 @@
       "code": "06532009",
       "name": "Eschenburg",
       "region": "Hessen",
-      "website": "",
+      "website": "gemeinde-eschenburg.de",
       "emails": [
         "eschenburg.de",
         "gemeinde-eschenburg.de"
@@ -24842,7 +24874,8 @@
       "region": "Hessen",
       "website": "elz.de",
       "emails": [
-        "elz.de"
+        "elz.de",
+        "elz-ww.de"
       ]
     },
     {
@@ -24986,7 +25019,7 @@
       "code": "06534003",
       "name": "Bad Endbach",
       "region": "Hessen",
-      "website": "bad-endbach.de",
+      "website": "",
       "emails": [
         "bad-endbach.de",
         "bad-endbach.info"
@@ -25150,7 +25183,7 @@
       "code": "06534021",
       "name": "Wetter",
       "region": "Hessen",
-      "website": "",
+      "website": "wetter-hessen.de",
       "emails": [
         "wetter-hessen.de"
       ]
@@ -25279,7 +25312,7 @@
       "code": "06535013",
       "name": "Mücke",
       "region": "Hessen",
-      "website": "gemeinde-muecke.de",
+      "website": "",
       "emails": [
         "gemeinde-muecke.de"
       ]
@@ -25460,7 +25493,7 @@
       "code": "06631014",
       "name": "Hosenfeld",
       "region": "Hessen",
-      "website": "",
+      "website": "gemeinde-hosenfeld.de",
       "emails": [
         "gemeinde-hosenfeld.de"
       ]
@@ -25524,7 +25557,7 @@
       "code": "06631021",
       "name": "Poppenhausen (Wasserkuppe)",
       "region": "Hessen",
-      "website": "",
+      "website": "poppenhausen-wasserkuppe.de",
       "emails": [
         "poppenhausen-wasserkuppe.de"
       ]
@@ -25655,7 +25688,6 @@
       "region": "Hessen",
       "website": "gemeinde-ludwigsau.de",
       "emails": [
-        "ludwigsau.de",
         "gemeinde-ludwigsau.de"
       ]
     },
@@ -25726,7 +25758,7 @@
       "code": "06632020",
       "name": "Wildeck",
       "region": "Hessen",
-      "website": "wildeck.de",
+      "website": "",
       "emails": [
         "wildeck.de"
       ]
@@ -25772,7 +25804,7 @@
       "code": "06633005",
       "name": "Calden",
       "region": "Hessen",
-      "website": "calden.de",
+      "website": "",
       "emails": [
         "calden.de"
       ]
@@ -26022,7 +26054,8 @@
       "region": "Hessen",
       "website": "edermuende.de",
       "emails": [
-        "edermuende.de"
+        "edermuende.de",
+        "gemeinde.edermuende.de"
       ]
     },
     {
@@ -26339,7 +26372,7 @@
       "code": "06635011",
       "name": "Frankenberg (Eder)",
       "region": "Hessen",
-      "website": "",
+      "website": "frankenberg.de",
       "emails": [
         "frankenberg.de"
       ]
@@ -26507,7 +26540,7 @@
       "code": "06636007",
       "name": "Meinhard",
       "region": "Hessen",
-      "website": "gemeinde-meinhard.de",
+      "website": "",
       "emails": [
         "meinhard.de",
         "gemeinde-meinhard.de"
@@ -26599,7 +26632,7 @@
       "code": "07111000",
       "name": "Koblenz",
       "region": "Rheinland-Pfalz",
-      "website": "koblenz.de",
+      "website": "",
       "emails": [
         "koblenz.de",
         "stadt.koblenz.de"
@@ -26935,7 +26968,7 @@
       "code": "07131051",
       "name": "Müllenbach",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "muellenbach.info",
       "emails": [
         "muellenbach.info"
       ]
@@ -27214,7 +27247,7 @@
       "code": "07131206",
       "name": "Hohenleimbach",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "hohenleimbach.de",
       "emails": [
         "hohenleimbach.de"
       ]
@@ -27304,7 +27337,7 @@
       "code": "07132005",
       "name": "Berzhausen",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "berzhausen.de",
       "emails": [
         "berzhausen.de"
       ]
@@ -27385,7 +27418,7 @@
       "code": "07132014",
       "name": "Bruchertseifen",
       "region": "Rheinland-Pfalz",
-      "website": "og-bruchertseifen.de",
+      "website": "",
       "emails": [
         "og-bruchertseifen.de"
       ]
@@ -28287,7 +28320,8 @@
       "region": "Rheinland-Pfalz",
       "website": "wissen.eu",
       "emails": [
-        "stadt-wissen.de"
+        "stadt-wissen.de",
+        "rathaus-wissen.de"
       ]
     },
     {
@@ -28349,7 +28383,7 @@
       "code": "07133002",
       "name": "Allenfeld",
       "region": "Rheinland-Pfalz",
-      "website": "vg-ruedesheim.de",
+      "website": "",
       "emails": [
         "vg-ruedesheim.de"
       ]
@@ -28548,7 +28582,7 @@
       "code": "07133025",
       "name": "Dörrebach",
       "region": "Rheinland-Pfalz",
-      "website": "casino.smartbonus.at",
+      "website": "smartbonus.at",
       "emails": []
     },
     {
@@ -28609,7 +28643,7 @@
       "code": "07133033",
       "name": "Gebroth",
       "region": "Rheinland-Pfalz",
-      "website": "vg-ruedesheim.de",
+      "website": "",
       "emails": [
         "vg-ruedesheim.de"
       ]
@@ -28627,7 +28661,7 @@
       "code": "07133036",
       "name": "Gutenberg",
       "region": "Rheinland-Pfalz",
-      "website": "gutenberg-nahe.de",
+      "website": "",
       "emails": [
         "gutenberg-nahe.de"
       ]
@@ -28978,7 +29012,7 @@
       "code": "07133075",
       "name": "Oberstreit",
       "region": "Rheinland-Pfalz",
-      "website": "vg-ruedesheim.de",
+      "website": "",
       "emails": [
         "vg-ruedesheim.de"
       ]
@@ -29086,7 +29120,7 @@
       "code": "07133088",
       "name": "Sankt Katharinen",
       "region": "Rheinland-Pfalz",
-      "website": "vg-ruedesheim.de",
+      "website": "",
       "emails": [
         "vg-ruedesheim.de"
       ]
@@ -29167,7 +29201,7 @@
       "code": "07133098",
       "name": "Sommerloch",
       "region": "Rheinland-Pfalz",
-      "website": "vg-ruedesheim.de",
+      "website": "",
       "emails": [
         "vg-ruedesheim.de"
       ]
@@ -29657,7 +29691,7 @@
       "code": "07134029",
       "name": "Gimbweiler",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "gimbweiler.de",
       "emails": [
         "gimbweiler.de"
       ]
@@ -29927,7 +29961,7 @@
       "code": "07134059",
       "name": "Niederhosenbach",
       "region": "Rheinland-Pfalz",
-      "website": "niederhosenbach.de",
+      "website": "",
       "emails": [
         "niederhosenbach.de"
       ]
@@ -29982,7 +30016,9 @@
       "name": "Oberkirn",
       "region": "Rheinland-Pfalz",
       "website": "",
-      "emails": []
+      "emails": [
+        "oberkirn.de"
+      ]
     },
     {
       "code": "07134066",
@@ -30087,7 +30123,7 @@
       "code": "07134077",
       "name": "Schmidthachenbach",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "schmidthachenbach.de",
       "emails": [
         "schmidthachenbach.de"
       ]
@@ -30177,7 +30213,7 @@
       "code": "07134087",
       "name": "Stipshausen",
       "region": "Rheinland-Pfalz",
-      "website": "stipshausen-idarkopf.de",
+      "website": "",
       "emails": [
         "stipshausen-idarkopf.de"
       ]
@@ -30294,7 +30330,7 @@
       "code": "07135004",
       "name": "Altstrimmig",
       "region": "Rheinland-Pfalz",
-      "website": "zell-mosel.de",
+      "website": "",
       "emails": [
         "zell-mosel.de"
       ]
@@ -30475,7 +30511,7 @@
       "code": "07135025",
       "name": "Ellenz-Poltersdorf",
       "region": "Rheinland-Pfalz",
-      "website": "ellenz-poltersdorf.de",
+      "website": "",
       "emails": [
         "ellenz-poltersdorf.de"
       ]
@@ -30538,7 +30574,7 @@
       "code": "07135032",
       "name": "Forst",
       "region": "Rheinland-Pfalz",
-      "website": "zell-mosel.de",
+      "website": "",
       "emails": [
         "zell-mosel.de"
       ]
@@ -30583,7 +30619,7 @@
       "code": "07135037",
       "name": "Grenderich",
       "region": "Rheinland-Pfalz",
-      "website": "zell-mosel.de",
+      "website": "",
       "emails": [
         "zell-mosel.de"
       ]
@@ -30619,7 +30655,7 @@
       "code": "07135041",
       "name": "Hesweiler",
       "region": "Rheinland-Pfalz",
-      "website": "zell-mosel.de",
+      "website": "",
       "emails": [
         "zell-mosel.de"
       ]
@@ -30657,7 +30693,8 @@
       "region": "Rheinland-Pfalz",
       "website": "stadt-kaisersesch.de",
       "emails": [
-        "kaisersesch.de"
+        "kaisersesch.org",
+        "vg.kaisersesch.de"
       ]
     },
     {
@@ -30763,7 +30800,7 @@
       "code": "07135061",
       "name": "Mittelstrimmig",
       "region": "Rheinland-Pfalz",
-      "website": "zell-mosel.de",
+      "website": "",
       "emails": [
         "zell-mosel.de"
       ]
@@ -30781,7 +30818,7 @@
       "code": "07135064",
       "name": "Moritzheim",
       "region": "Rheinland-Pfalz",
-      "website": "zell-mosel.de",
+      "website": "",
       "emails": [
         "zell-mosel.de"
       ]
@@ -30835,7 +30872,7 @@
       "code": "07135070",
       "name": "Panzweiler",
       "region": "Rheinland-Pfalz",
-      "website": "zell-mosel.de",
+      "website": "",
       "emails": [
         "zell-mosel.de"
       ]
@@ -30844,7 +30881,7 @@
       "code": "07135071",
       "name": "Peterswald-Löffelscheid",
       "region": "Rheinland-Pfalz",
-      "website": "zell-mosel.de",
+      "website": "",
       "emails": [
         "zell-mosel.de"
       ]
@@ -30862,7 +30899,7 @@
       "code": "07135073",
       "name": "Pünderich",
       "region": "Rheinland-Pfalz",
-      "website": "puenderich.de",
+      "website": "",
       "emails": [
         "puenderich.de"
       ]
@@ -30898,7 +30935,7 @@
       "code": "07135077",
       "name": "Schauren",
       "region": "Rheinland-Pfalz",
-      "website": "zell-mosel.de",
+      "website": "",
       "emails": [
         "zell-mosel.de"
       ]
@@ -30934,7 +30971,7 @@
       "code": "07135081",
       "name": "Tellig",
       "region": "Rheinland-Pfalz",
-      "website": "zell-mosel.de",
+      "website": "",
       "emails": [
         "zell-mosel.de"
       ]
@@ -30998,7 +31035,7 @@
       "code": "07135088",
       "name": "Walhausen",
       "region": "Rheinland-Pfalz",
-      "website": "zell-mosel.de",
+      "website": "",
       "emails": [
         "zell-mosel.de"
       ]
@@ -31709,7 +31746,7 @@
       "code": "07137218",
       "name": "Niederwerth",
       "region": "Rheinland-Pfalz",
-      "website": "niederwerth.de",
+      "website": "",
       "emails": [
         "niederwerth.de"
       ]
@@ -31736,7 +31773,7 @@
       "code": "07137221",
       "name": "Rhens",
       "region": "Rheinland-Pfalz",
-      "website": "rhens.de",
+      "website": "",
       "emails": [
         "rhens.de"
       ]
@@ -32002,7 +32039,7 @@
       "code": "07138024",
       "name": "Hammerstein",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "hammerstein-am-rhein.de",
       "emails": [
         "hammerstein-am-rhein.de"
       ]
@@ -32628,7 +32665,9 @@
       "name": "Dillendorf",
       "region": "Rheinland-Pfalz",
       "website": "",
-      "emails": []
+      "emails": [
+        "dillendorf.de"
+      ]
     },
     {
       "code": "07140031",
@@ -32644,7 +32683,9 @@
       "name": "Ellern",
       "region": "Rheinland-Pfalz",
       "website": "ellern.de",
-      "emails": []
+      "emails": [
+        "ellern.de"
+      ]
     },
     {
       "code": "07140036",
@@ -32668,7 +32709,7 @@
       "code": "07140039",
       "name": "Fronhofen",
       "region": "Rheinland-Pfalz",
-      "website": "fronhofen.info",
+      "website": "",
       "emails": [
         "fronhofen.info"
       ]
@@ -33083,7 +33124,7 @@
       "code": "07140100",
       "name": "Nannhausen",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "nannhausen.de",
       "emails": [
         "nannhausen.de"
       ]
@@ -33677,7 +33718,7 @@
       "code": "07141004",
       "name": "Auel",
       "region": "Rheinland-Pfalz",
-      "website": "auel.de",
+      "website": "auel.welterbe-mittelrheintal.de",
       "emails": [
         "auel.de"
       ]
@@ -33912,7 +33953,7 @@
       "code": "07141033",
       "name": "Dornholzhausen",
       "region": "Rheinland-Pfalz",
-      "website": "dornholzhausen-rhein-lahn.de",
+      "website": "",
       "emails": [
         "dornholzhausen-rhein-lahn.de"
       ]
@@ -34209,7 +34250,7 @@
       "code": "07141068",
       "name": "Katzenelnbogen",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "stadt-katzenelnbogen.de",
       "emails": [
         "katzenelnbogen.de"
       ]
@@ -34802,7 +34843,7 @@
       "code": "07141137",
       "name": "Welterod",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "gemeinde-welterod.de",
       "emails": [
         "welterod.de"
       ]
@@ -34865,7 +34906,7 @@
       "code": "07141502",
       "name": "Diethardt",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "diethardt.de",
       "emails": [
         "diethardt.de"
       ]
@@ -34919,7 +34960,7 @@
       "code": "07143007",
       "name": "Caan",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "caan.de",
       "emails": [
         "caan.de"
       ]
@@ -35762,7 +35803,7 @@
       "code": "07143226",
       "name": "Girkenroth",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "girkenroth.de",
       "emails": [
         "girkenroth.de"
       ]
@@ -36358,7 +36399,7 @@
       "code": "07143292",
       "name": "Seck",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "gemeinde-seck.de",
       "emails": [
         "gemeinde-seck.de"
       ]
@@ -36900,7 +36941,7 @@
       "code": "07231041",
       "name": "Graach an der Mosel",
       "region": "Rheinland-Pfalz",
-      "website": "graach.de",
+      "website": "",
       "emails": [
         "graach.de"
       ]
@@ -37197,7 +37238,7 @@
       "code": "07231086",
       "name": "Minheim",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "minheim.de",
       "emails": [
         "minheim.de"
       ]
@@ -37341,7 +37382,7 @@
       "code": "07231111",
       "name": "Rivenich",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "rivenich.de",
       "emails": [
         "rivenich.de"
       ]
@@ -38226,7 +38267,7 @@
       "code": "07232075",
       "name": "Malberg",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "de.wikipedia.org",
       "emails": [
         "malberg-eifel.de"
       ]
@@ -38935,7 +38976,7 @@
       "code": "07232223",
       "name": "Fleringen",
       "region": "Rheinland-Pfalz",
-      "website": "fleringen.de",
+      "website": "",
       "emails": [
         "vg-pruem.de"
       ]
@@ -39025,7 +39066,7 @@
       "code": "07232234",
       "name": "Harspelt",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "harspelt.de",
       "emails": [
         "harspelt.de"
       ]
@@ -39485,7 +39526,7 @@
       "code": "07232304",
       "name": "Schönecken",
       "region": "Rheinland-Pfalz",
-      "website": "schoenecken.de",
+      "website": "",
       "emails": [
         "schoenecken.de"
       ]
@@ -39701,7 +39742,7 @@
       "code": "07233003",
       "name": "Beinhausen",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "vgv-kelberg.de",
       "emails": [
         "vgv-kelberg.de"
       ]
@@ -39737,7 +39778,7 @@
       "code": "07233007",
       "name": "Birgel",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "birgel-eifel.de",
       "emails": [
         "birgel-eifel.de"
       ]
@@ -39755,7 +39796,7 @@
       "code": "07233010",
       "name": "Boxberg",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "vgv-kelberg.de",
       "emails": [
         "vgv-kelberg.de"
       ]
@@ -39828,7 +39869,9 @@
       "name": "Ellscheid",
       "region": "Rheinland-Pfalz",
       "website": "",
-      "emails": []
+      "emails": [
+        "ellscheid.de"
+      ]
     },
     {
       "code": "07233022",
@@ -39915,7 +39958,7 @@
       "code": "07233032",
       "name": "Hörschhausen",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "vgv-kelberg.de",
       "emails": [
         "vgv-kelberg.de"
       ]
@@ -39960,7 +40003,7 @@
       "code": "07233037",
       "name": "Katzwinkel",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "vgv-kelberg.de",
       "emails": [
         "vgv-kelberg.de"
       ]
@@ -40023,14 +40066,14 @@
       "code": "07233046",
       "name": "Mückeln",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "mueckeln.de",
       "emails": []
     },
     {
       "code": "07233048",
       "name": "Neichen",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "vgv-kelberg.de",
       "emails": [
         "vgv-kelberg.de"
       ]
@@ -40282,7 +40325,7 @@
       "code": "07233201",
       "name": "Arbach",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "vgv-kelberg.de",
       "emails": [
         "vgv-kelberg.de"
       ]
@@ -40291,7 +40334,7 @@
       "code": "07233202",
       "name": "Bereborn",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "vgv-kelberg.de",
       "emails": [
         "vgv-kelberg.de"
       ]
@@ -40300,7 +40343,7 @@
       "code": "07233203",
       "name": "Berenbach",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "vgv-kelberg.de",
       "emails": [
         "vgv-kelberg.de"
       ]
@@ -40327,7 +40370,7 @@
       "code": "07233206",
       "name": "Bongard",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "vgv-kelberg.de",
       "emails": [
         "vgv-kelberg.de"
       ]
@@ -40336,7 +40379,7 @@
       "code": "07233207",
       "name": "Borler",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "vgv-kelberg.de",
       "emails": [
         "vgv-kelberg.de"
       ]
@@ -40345,7 +40388,7 @@
       "code": "07233208",
       "name": "Brücktal",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "vgv-kelberg.de",
       "emails": [
         "vgv-kelberg.de"
       ]
@@ -40363,7 +40406,7 @@
       "code": "07233210",
       "name": "Drees",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "vgv-kelberg.de",
       "emails": [
         "vgv-kelberg.de"
       ]
@@ -40381,7 +40424,7 @@
       "code": "07233212",
       "name": "Gelenberg",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "vgv-kelberg.de",
       "emails": [
         "vgv-kelberg.de"
       ]
@@ -40417,7 +40460,7 @@
       "code": "07233216",
       "name": "Horperath",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "vgv-kelberg.de",
       "emails": [
         "vgv-kelberg.de"
       ]
@@ -40454,7 +40497,7 @@
       "code": "07233220",
       "name": "Kirsbach",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "vgv-kelberg.de",
       "emails": [
         "vgv-kelberg.de"
       ]
@@ -40472,7 +40515,7 @@
       "code": "07233222",
       "name": "Kolverath",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "vgv-kelberg.de",
       "emails": [
         "vgv-kelberg.de"
       ]
@@ -40508,7 +40551,7 @@
       "code": "07233226",
       "name": "Mosbruch",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "vgv-kelberg.de",
       "emails": [
         "vgv-kelberg.de"
       ]
@@ -40526,7 +40569,7 @@
       "code": "07233228",
       "name": "Nitz",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "vgv-kelberg.de",
       "emails": [
         "vgv-kelberg.de"
       ]
@@ -40544,7 +40587,7 @@
       "code": "07233230",
       "name": "Oberelz",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "vgv-kelberg.de",
       "emails": [
         "vgv-kelberg.de"
       ]
@@ -40562,7 +40605,7 @@
       "code": "07233233",
       "name": "Reimerath",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "vgv-kelberg.de",
       "emails": [
         "vgv-kelberg.de"
       ]
@@ -40571,7 +40614,7 @@
       "code": "07233234",
       "name": "Retterath",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "vgv-kelberg.de",
       "emails": [
         "vgv-kelberg.de"
       ]
@@ -40643,7 +40686,7 @@
       "code": "07233243",
       "name": "Ueß",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "vgv-kelberg.de",
       "emails": [
         "vgv-kelberg.de"
       ]
@@ -40652,7 +40695,7 @@
       "code": "07233244",
       "name": "Welcherath",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "vgv-kelberg.de",
       "emails": [
         "vgv-kelberg.de"
       ]
@@ -40815,7 +40858,7 @@
       "code": "07235030",
       "name": "Geisfeld",
       "region": "Rheinland-Pfalz",
-      "website": "geisfeld.de",
+      "website": "",
       "emails": [
         "geisfeld.de"
       ]
@@ -40834,9 +40877,7 @@
       "name": "Grimburg",
       "region": "Rheinland-Pfalz",
       "website": "grimburg.de",
-      "emails": [
-        "grimburg.de"
-      ]
+      "emails": []
     },
     {
       "code": "07235036",
@@ -41094,7 +41135,7 @@
       "code": "07235078",
       "name": "Longuich",
       "region": "Rheinland-Pfalz",
-      "website": "longuich.de",
+      "website": "",
       "emails": [
         "longuich.de"
       ]
@@ -41310,7 +41351,7 @@
       "code": "07235114",
       "name": "Reinsfeld",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "reinsfeld.de",
       "emails": [
         "reinsfeld.de"
       ]
@@ -41490,7 +41531,7 @@
       "code": "07235141",
       "name": "Waldrach",
       "region": "Rheinland-Pfalz",
-      "website": "waldrach.de",
+      "website": "",
       "emails": [
         "waldrach.de"
       ]
@@ -41646,7 +41687,8 @@
       "region": "Rheinland-Pfalz",
       "website": "mainz.de",
       "emails": [
-        "mainz.de"
+        "mainz.de",
+        "stadt.mainz.de"
       ]
     },
     {
@@ -41879,7 +41921,7 @@
       "code": "07331023",
       "name": "Flörsheim-Dalsheim",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "floersheimdalsheim.de",
       "emails": [
         "floersheimdalsheim.de"
       ]
@@ -42460,7 +42502,7 @@
       "code": "07332017",
       "name": "Forst an der Weinstraße",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "forst-pfalz.de",
       "emails": [
         "forst-weinstrasse.de"
       ]
@@ -42560,7 +42602,7 @@
       "code": "07332028",
       "name": "Kallstadt",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "kallstadt.de",
       "emails": [
         "kallstadt.de"
       ]
@@ -42742,7 +42784,7 @@
       "code": "07332049",
       "name": "Weisenheim am Berg",
       "region": "Rheinland-Pfalz",
-      "website": "weisenheim.de",
+      "website": "",
       "emails": [
         "weisenheim.de"
       ]
@@ -43511,7 +43553,7 @@
       "code": "07334004",
       "name": "Erlenbach bei Kandel",
       "region": "Rheinland-Pfalz",
-      "website": "erlenbach-pfalz.de",
+      "website": "",
       "emails": [
         "erlenbach-pfalz.de"
       ]
@@ -44019,7 +44061,7 @@
       "code": "07335030",
       "name": "Niedermohr",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "ramstein-miesenbach.de",
       "emails": [
         "ramstein-miesenbach.de"
       ]
@@ -44073,7 +44115,7 @@
       "code": "07335038",
       "name": "Ramstein-Miesenbach",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "ramstein-miesenbach.de",
       "emails": [
         "ramstein-miesenbach.de",
         "ramstein.de"
@@ -44166,6 +44208,7 @@
       "region": "Rheinland-Pfalz",
       "website": "weilerbach-pfalz.de",
       "emails": [
+        "vg-weilerbach.de",
         "weilerbach-pfalz.de"
       ]
     },
@@ -44561,7 +44604,7 @@
       "code": "07336042",
       "name": "Hinzweiler",
       "region": "Rheinland-Pfalz",
-      "website": "hinzweiler.de",
+      "website": "",
       "emails": [
         "hinzweiler.de"
       ]
@@ -45437,7 +45480,7 @@
       "code": "07337044",
       "name": "Insheim",
       "region": "Rheinland-Pfalz",
-      "website": "insheim.de",
+      "website": "",
       "emails": [
         "insheim.de"
       ]
@@ -45609,7 +45652,7 @@
       "code": "07337066",
       "name": "Rhodt unter Rietburg",
       "region": "Rheinland-Pfalz",
-      "website": "rhodt.de",
+      "website": "",
       "emails": [
         "rhodt.de"
       ]
@@ -45773,7 +45816,8 @@
       "region": "Rheinland-Pfalz",
       "website": "",
       "emails": [
-        "annweiler.de"
+        "annweiler.de",
+        "annweiler.rlp.de"
       ]
     },
     {
@@ -45789,7 +45833,7 @@
       "code": "07338002",
       "name": "Beindersheim",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "beindersheim.de",
       "emails": [
         "beindersheim.de"
       ]
@@ -45816,7 +45860,7 @@
       "code": "07338005",
       "name": "Böhl-Iggelheim",
       "region": "Rheinland-Pfalz",
-      "website": "boehl-iggelheim.de",
+      "website": "",
       "emails": [
         "boehl-iggelheim.de"
       ]
@@ -45978,7 +46022,9 @@
       "name": "Römerberg",
       "region": "Rheinland-Pfalz",
       "website": "",
-      "emails": []
+      "emails": [
+        "roemerberg.de"
+      ]
     },
     {
       "code": "07338025",
@@ -46389,7 +46435,7 @@
       "code": "07339046",
       "name": "Ober-Hilbersheim",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "ober-hilbersheim.de",
       "emails": [
         "ober-hilbersheim.de"
       ]
@@ -46524,7 +46570,7 @@
       "code": "07339063",
       "name": "Weiler bei Bingen",
       "region": "Rheinland-Pfalz",
-      "website": "weiler-bei-bingen.de",
+      "website": "",
       "emails": [
         "weilerbeibingen.de"
       ]
@@ -46804,7 +46850,7 @@
       "code": "07340025",
       "name": "Horbach",
       "region": "Rheinland-Pfalz",
-      "website": "horbach.de",
+      "website": "vgwaldfischbach-burgalben.de",
       "emails": [
         "horbach.de"
       ]
@@ -46976,7 +47022,7 @@
       "code": "07340044",
       "name": "Schmalenberg",
       "region": "Rheinland-Pfalz",
-      "website": "schmalenberg.de",
+      "website": "vgwaldfischbach-burgalben.de",
       "emails": [
         "schmalenberg.de"
       ]
@@ -47021,7 +47067,7 @@
       "code": "07340050",
       "name": "Steinalben",
       "region": "Rheinland-Pfalz",
-      "website": "",
+      "website": "vgwaldfischbach-burgalben.de",
       "emails": [
         "steinalben.de"
       ]
@@ -47480,7 +47526,7 @@
       "code": "08115034",
       "name": "Mötzingen",
       "region": "Baden-Württemberg",
-      "website": "moetzingen.de",
+      "website": "",
       "emails": [
         "moetzingen.de"
       ]
@@ -47525,7 +47571,7 @@
       "code": "08115045",
       "name": "Sindelfingen",
       "region": "Baden-Württemberg",
-      "website": "sindelfingen.de",
+      "website": "",
       "emails": [
         "sindelfingen.de"
       ]
@@ -47678,7 +47724,7 @@
       "code": "08116016",
       "name": "Dettingen unter Teck",
       "region": "Baden-Württemberg",
-      "website": "dettingen-teck.de",
+      "website": "",
       "emails": [
         "dettingen-teck.de"
       ]
@@ -47885,7 +47931,7 @@
       "code": "08116063",
       "name": "Schlaitdorf",
       "region": "Baden-Württemberg",
-      "website": "",
+      "website": "schlaitdorf.de",
       "emails": [
         "schlaitdorf.de"
       ]
@@ -48038,7 +48084,7 @@
       "code": "08117009",
       "name": "Birenbach",
       "region": "Baden-Württemberg",
-      "website": "",
+      "website": "birenbach.de",
       "emails": [
         "birenbach.de"
       ]
@@ -48101,7 +48147,7 @@
       "code": "08117017",
       "name": "Dürnau",
       "region": "Baden-Württemberg",
-      "website": "duernau.de",
+      "website": "",
       "emails": [
         "duernau.de"
       ]
@@ -48236,7 +48282,7 @@
       "code": "08117038",
       "name": "Rechberghausen",
       "region": "Baden-Württemberg",
-      "website": "",
+      "website": "rechberghausen.de",
       "emails": [
         "rechberghausen.de"
       ]
@@ -48327,7 +48373,7 @@
       "code": "08117061",
       "name": "Lauterstein",
       "region": "Baden-Württemberg",
-      "website": "",
+      "website": "lauterstein.de",
       "emails": [
         "lauterstein.de"
       ]
@@ -48489,7 +48535,7 @@
       "code": "08118047",
       "name": "Löchgau",
       "region": "Baden-Württemberg",
-      "website": "loechgau.de",
+      "website": "",
       "emails": [
         "loechgau.de"
       ]
@@ -48669,7 +48715,7 @@
       "code": "08118080",
       "name": "Korntal-Münchingen",
       "region": "Baden-Württemberg",
-      "website": "",
+      "website": "korntal-muenchingen.de",
       "emails": [
         "korntal-muenchingen.de"
       ]
@@ -48813,7 +48859,7 @@
       "code": "08119055",
       "name": "Plüderhausen",
       "region": "Baden-Württemberg",
-      "website": "",
+      "website": "pluederhausen.de",
       "emails": [
         "pluederhausen.de"
       ]
@@ -49497,7 +49543,7 @@
       "code": "08126072",
       "name": "Schöntal",
       "region": "Baden-Württemberg",
-      "website": "schoental.de",
+      "website": "",
       "emails": [
         "schoental.de"
       ]
@@ -49614,7 +49660,7 @@
       "code": "08127046",
       "name": "Kirchberg an der Jagst",
       "region": "Baden-Württemberg",
-      "website": "kirchberg-jagst.de",
+      "website": "",
       "emails": [
         "kirchberg-jagst.de"
       ]
@@ -49758,7 +49804,7 @@
       "code": "08127100",
       "name": "Rosengarten",
       "region": "Baden-Württemberg",
-      "website": "",
+      "website": "rosengarten.de",
       "emails": [
         "rosengarten.de"
       ]
@@ -49893,7 +49939,7 @@
       "code": "08128082",
       "name": "Niederstetten",
       "region": "Baden-Württemberg",
-      "website": "",
+      "website": "niederstetten.de",
       "emails": [
         "niederstetten.de"
       ]
@@ -50010,7 +50056,7 @@
       "code": "08135021",
       "name": "Hermaringen",
       "region": "Baden-Württemberg",
-      "website": "",
+      "website": "hermaringen.de",
       "emails": [
         "hermaringen.de"
       ]
@@ -50100,7 +50146,7 @@
       "code": "08136010",
       "name": "Bopfingen",
       "region": "Baden-Württemberg",
-      "website": "",
+      "website": "bopfingen.de",
       "emails": [
         "bopfingen.de"
       ]
@@ -50352,7 +50398,7 @@
       "code": "08136068",
       "name": "Stödtlen",
       "region": "Baden-Württemberg",
-      "website": "stoedtlen.de",
+      "website": "",
       "emails": [
         "stoedtlen.de"
       ]
@@ -50361,7 +50407,7 @@
       "code": "08136070",
       "name": "Täferrot",
       "region": "Baden-Württemberg",
-      "website": "",
+      "website": "taeferrot.de",
       "emails": [
         "taeferrot.de"
       ]
@@ -50415,7 +50461,7 @@
       "code": "08136087",
       "name": "Riesbürg",
       "region": "Baden-Württemberg",
-      "website": "riesbuerg.de",
+      "website": "",
       "emails": [
         "riesbuerg.de"
       ]
@@ -50487,7 +50533,7 @@
       "code": "08215021",
       "name": "Forst",
       "region": "Baden-Württemberg",
-      "website": "forst-baden.de",
+      "website": "",
       "emails": [
         "forst-baden.de"
       ]
@@ -50631,7 +50677,7 @@
       "code": "08215097",
       "name": "Kraichtal",
       "region": "Baden-Württemberg",
-      "website": "",
+      "website": "kraichtal.de",
       "emails": [
         "kraichtal.de"
       ]
@@ -50812,7 +50858,7 @@
       "code": "08216013",
       "name": "Forbach",
       "region": "Baden-Württemberg",
-      "website": "",
+      "website": "forbach.de",
       "emails": [
         "forbach.de"
       ]
@@ -51028,7 +51074,7 @@
       "code": "08225032",
       "name": "Hardheim",
       "region": "Baden-Württemberg",
-      "website": "",
+      "website": "hardheim.de",
       "emails": [
         "hardheim.de"
       ]
@@ -51633,7 +51679,7 @@
       "code": "08226099",
       "name": "Wilhelmsfeld",
       "region": "Baden-Württemberg",
-      "website": "",
+      "website": "wilhelmsfeld.de",
       "emails": [
         "wilhelmsfeld.de"
       ]
@@ -52092,7 +52138,7 @@
       "code": "08236062",
       "name": "Tiefenbronn",
       "region": "Baden-Württemberg",
-      "website": "tiefenbronn.de",
+      "website": "",
       "emails": [
         "tiefenbronn.de"
       ]
@@ -52317,7 +52363,7 @@
       "code": "08237074",
       "name": "Waldachtal",
       "region": "Baden-Württemberg",
-      "website": "waldachtal.de",
+      "website": "",
       "emails": [
         "waldachtal.de"
       ]
@@ -52605,7 +52651,7 @@
       "code": "08315072",
       "name": "Merdingen",
       "region": "Baden-Württemberg",
-      "website": "",
+      "website": "merdingen.de",
       "emails": [
         "merdingen.de"
       ]
@@ -52704,7 +52750,7 @@
       "code": "08315109",
       "name": "Stegen",
       "region": "Baden-Württemberg",
-      "website": "stegen.de",
+      "website": "",
       "emails": [
         "stegen.de"
       ]
@@ -53128,7 +53174,7 @@
       "code": "08317047",
       "name": "Hohberg",
       "region": "Baden-Württemberg",
-      "website": "",
+      "website": "hohberg.de",
       "emails": [
         "hohberg.de"
       ]
@@ -53155,7 +53201,7 @@
       "code": "08317057",
       "name": "Kehl",
       "region": "Baden-Württemberg",
-      "website": "",
+      "website": "kehl.de",
       "emails": [
         "kehl.de",
         "stadt-kehl.de"
@@ -53759,7 +53805,7 @@
       "code": "08326054",
       "name": "Schönwald im Schwarzwald",
       "region": "Baden-Württemberg",
-      "website": "schoenwald.net",
+      "website": "",
       "emails": [
         "schoenwald.net"
       ]
@@ -53804,7 +53850,7 @@
       "code": "08326068",
       "name": "Vöhrenbach",
       "region": "Baden-Württemberg",
-      "website": "voehrenbach.de",
+      "website": "",
       "emails": [
         "voehrenbach.de"
       ]
@@ -53912,7 +53958,7 @@
       "code": "08327012",
       "name": "Durchhausen",
       "region": "Baden-Württemberg",
-      "website": "",
+      "website": "durchhausen.de",
       "emails": [
         "durchhausen.de"
       ]
@@ -54065,7 +54111,7 @@
       "code": "08327046",
       "name": "Spaichingen",
       "region": "Baden-Württemberg",
-      "website": "",
+      "website": "spaichingen.de",
       "emails": [
         "spaichingen.de"
       ]
@@ -54281,7 +54327,7 @@
       "code": "08335077",
       "name": "Steißlingen",
       "region": "Baden-Württemberg",
-      "website": "steisslingen.de",
+      "website": "",
       "emails": [
         "steisslingen.de"
       ]
@@ -54425,7 +54471,7 @@
       "code": "08336025",
       "name": "Fröhnd",
       "region": "Baden-Württemberg",
-      "website": "",
+      "website": "froehnd.de",
       "emails": [
         "froehnd.de"
       ]
@@ -54452,7 +54498,7 @@
       "code": "08336043",
       "name": "Inzlingen",
       "region": "Baden-Württemberg",
-      "website": "inzlingen.de",
+      "website": "",
       "emails": [
         "inzlingen.de"
       ]
@@ -54929,7 +54975,7 @@
       "code": "08337125",
       "name": "Küssaberg",
       "region": "Baden-Württemberg",
-      "website": "kuessaberg.info",
+      "website": "",
       "emails": [
         "kuessaberg.info"
       ]
@@ -54947,7 +54993,7 @@
       "code": "08337127",
       "name": "Wutach",
       "region": "Baden-Württemberg",
-      "website": "wutach.de",
+      "website": "",
       "emails": [
         "wutach.de"
       ]
@@ -55172,7 +55218,7 @@
       "code": "08415091",
       "name": "Sonnenbühl",
       "region": "Baden-Württemberg",
-      "website": "",
+      "website": "sonnenbuehl.de",
       "emails": [
         "sonnenbuehl.de"
       ]
@@ -55397,7 +55443,7 @@
       "code": "08417022",
       "name": "Geislingen",
       "region": "Baden-Württemberg",
-      "website": "geislingen.de",
+      "website": "stadt-geislingen.de",
       "emails": [
         "geislingen.de",
         "stadt-geislingen.de"
@@ -55497,7 +55543,7 @@
       "code": "08417054",
       "name": "Rosenfeld",
       "region": "Baden-Württemberg",
-      "website": "",
+      "website": "rosenfeld.de",
       "emails": [
         "rosenfeld.de"
       ]
@@ -56199,7 +56245,7 @@
       "code": "08426043",
       "name": "Erlenmoos",
       "region": "Baden-Württemberg",
-      "website": "erlenmoos.de",
+      "website": "",
       "emails": [
         "erlenmoos.de"
       ]
@@ -56298,7 +56344,7 @@
       "code": "08426073",
       "name": "Mietingen",
       "region": "Baden-Württemberg",
-      "website": "",
+      "website": "mietingen.de",
       "emails": [
         "mietingen.de"
       ]
@@ -57027,7 +57073,7 @@
       "code": "08437008",
       "name": "Bingen",
       "region": "Baden-Württemberg",
-      "website": "",
+      "website": "bingen-hohenzollern.de",
       "emails": [
         "bingen-hohenzollern.de"
       ]
@@ -57391,7 +57437,7 @@
       "code": "09171125",
       "name": "Neuötting",
       "region": "Bayern",
-      "website": "neuoetting.de",
+      "website": "",
       "emails": [
         "neuoetting.de"
       ]
@@ -57824,7 +57870,8 @@
       "region": "Bayern",
       "website": "altomuenster.de",
       "emails": [
-        "altomuenster.de"
+        "altomuenster.de",
+        "altomuenster.bayern.de"
       ]
     },
     {
@@ -57878,16 +57925,18 @@
       "region": "Bayern",
       "website": "karlsfeld.de",
       "emails": [
-        "karlsfeld.de"
+        "karlsfeld.de",
+        "karlsfeld.bayern.de"
       ]
     },
     {
       "code": "09174131",
       "name": "Markt Indersdorf",
       "region": "Bayern",
-      "website": "",
+      "website": "markt-indersdorf.de",
       "emails": [
-        "markt-indersdorf.de"
+        "markt-indersdorf.de",
+        "markt-indersdorf.bayern.de"
       ]
     },
     {
@@ -57950,7 +57999,8 @@
       "region": "Bayern",
       "website": "hilgertshausen-tandern.de",
       "emails": [
-        "hilgertshausen-tandern.de"
+        "hilgertshausen-tandern.de",
+        "hi-ta.bayern.de"
       ]
     },
     {
@@ -57968,7 +58018,8 @@
       "region": "Bayern",
       "website": "weichs.de",
       "emails": [
-        "weichs.de"
+        "weichs.de",
+        "weichs.bayern.de"
       ]
     },
     {
@@ -57977,7 +58028,8 @@
       "region": "Bayern",
       "website": "anzing.de",
       "emails": [
-        "anzing.de"
+        "anzing.de",
+        "anzing.bayern.de"
       ]
     },
     {
@@ -58031,7 +58083,8 @@
       "region": "Bayern",
       "website": "forstinning.de",
       "emails": [
-        "forstinning.de"
+        "forstinning.de",
+        "forstinning.bayern.de"
       ]
     },
     {
@@ -58160,7 +58213,8 @@
       "region": "Bayern",
       "website": "zorneding.de",
       "emails": [
-        "zorneding.de"
+        "zorneding.de",
+        "zorneding.bayern.de"
       ]
     },
     {
@@ -58176,7 +58230,7 @@
       "code": "09176112",
       "name": "Q442666",
       "region": "Bayern",
-      "website": "",
+      "website": "altmannstein.de",
       "emails": [
         "altmannstein.de"
       ]
@@ -58306,8 +58360,7 @@
       "region": "Bayern",
       "website": "kipfenberg.de",
       "emails": [
-        "kipfenberg.de",
-        "markt-kipfenberg.de"
+        "kipfenberg.de"
       ]
     },
     {
@@ -58427,7 +58480,8 @@
       "region": "Bayern",
       "website": "wellheim.de",
       "emails": [
-        "wellheim.de"
+        "wellheim.de",
+        "wellheim.bayern.de"
       ]
     },
     {
@@ -58454,7 +58508,8 @@
       "region": "Bayern",
       "website": "bockhorn-obb.de",
       "emails": [
-        "bockhorn-obb.de"
+        "bockhorn-obb.de",
+        "bockhorn-obb.bayern.de"
       ]
     },
     {
@@ -58841,7 +58896,7 @@
       "code": "09178143",
       "name": "Moosburg an der Isar",
       "region": "Bayern",
-      "website": "moosburg.de",
+      "website": "",
       "emails": [
         "moosburg.de"
       ]
@@ -58907,7 +58962,7 @@
       "code": "09179111",
       "name": "Adelshofen",
       "region": "Bayern",
-      "website": "vgmammendorf.de",
+      "website": "gemeinde-adelshofen.de",
       "emails": [
         "gemeinde-adelshofen.de",
         "vgmammendorf.de"
@@ -58926,7 +58981,7 @@
       "code": "09179114",
       "name": "Althegnenberg",
       "region": "Bayern",
-      "website": "vgmammendorf.de",
+      "website": "althegnenberg.de",
       "emails": [
         "althegnenberg.de",
         "vgmammendorf.de"
@@ -58974,7 +59029,8 @@
       "region": "Bayern",
       "website": "germering.de",
       "emails": [
-        "germering.de"
+        "germering.de",
+        "germering.bayern.de"
       ]
     },
     {
@@ -58983,7 +59039,8 @@
       "region": "Bayern",
       "website": "",
       "emails": [
-        "grafrath.de"
+        "grafrath.de",
+        "grafrath.bayern.de"
       ]
     },
     {
@@ -59021,14 +59078,15 @@
       "region": "Bayern",
       "website": "",
       "emails": [
-        "kottgeisering.de"
+        "kottgeisering.de",
+        "grafrath.bayern.de"
       ]
     },
     {
       "code": "09179132",
       "name": "Landsberied",
       "region": "Bayern",
-      "website": "vgmammendorf.de",
+      "website": "landsberied.de",
       "emails": [
         "landsberied.de",
         "vgmammendorf.de"
@@ -59069,7 +59127,8 @@
       "region": "Bayern",
       "website": "moorenweis.de",
       "emails": [
-        "moorenweis.de"
+        "moorenweis.de",
+        "moorenweis.bayern.de"
       ]
     },
     {
@@ -59106,7 +59165,8 @@
       "region": "Bayern",
       "website": "",
       "emails": [
-        "schoengeising.de"
+        "schoengeising.de",
+        "grafrath.bayern.de"
       ]
     },
     {
@@ -59394,7 +59454,7 @@
       "code": "09181121",
       "name": "Fuchstal",
       "region": "Bayern",
-      "website": "fuchstal.de",
+      "website": "vgem-fuchstal.de",
       "emails": [
         "fuchstal.de",
         "vgem-fuchstal.de"
@@ -59467,7 +59527,7 @@
       "code": "09181130",
       "name": "Landsberg am Lech",
       "region": "Bayern",
-      "website": "",
+      "website": "landsberg.de",
       "emails": [
         "landsberg.de"
       ]
@@ -59476,7 +59536,7 @@
       "code": "09181131",
       "name": "Obermeitingen",
       "region": "Bayern",
-      "website": "obermeitingen.de",
+      "website": "",
       "emails": [
         "obermeitingen.de"
       ]
@@ -59663,7 +59723,8 @@
       "region": "Bayern",
       "website": "holzkirchen.de",
       "emails": [
-        "holzkirchen.de"
+        "holzkirchen.de",
+        "vgem-helmstadt.bayern.de"
       ]
     },
     {
@@ -59874,7 +59935,8 @@
       "region": "Bayern",
       "website": "",
       "emails": [
-        "lohkirchen.de"
+        "lohkirchen.de",
+        "vgem-oberbergkirchen.bayern.de"
       ]
     },
     {
@@ -59938,7 +60000,8 @@
       "region": "Bayern",
       "website": "oberbergkirchen.de",
       "emails": [
-        "oberbergkirchen.de"
+        "oberbergkirchen.de",
+        "vgem-oberbergkirchen.bayern.de"
       ]
     },
     {
@@ -60004,14 +60067,15 @@
       "region": "Bayern",
       "website": "oberbergkirchen.de",
       "emails": [
-        "oberbergkirchen.de"
+        "oberbergkirchen.de",
+        "vgem-oberbergkirchen.bayern.de"
       ]
     },
     {
       "code": "09183144",
       "name": "Schwindegg",
       "region": "Bayern",
-      "website": "",
+      "website": "schwindegg.de",
       "emails": [
         "gemeinde-schwindegg.de"
       ]
@@ -60050,7 +60114,8 @@
       "region": "Bayern",
       "website": "",
       "emails": [
-        "zangberg.de"
+        "zangberg.de",
+        "vgem-oberbergkirchen.bayern.de"
       ]
     },
     {
@@ -60078,7 +60143,8 @@
       "region": "Bayern",
       "website": "brunnthal.de",
       "emails": [
-        "brunnthal.de"
+        "brunnthal.de",
+        "brunnthal.bayern.de"
       ]
     },
     {
@@ -60105,7 +60171,8 @@
       "region": "Bayern",
       "website": "graefelfing.de",
       "emails": [
-        "graefelfing.de"
+        "graefelfing.de",
+        "graefelfing.bayern.de"
       ]
     },
     {
@@ -60159,7 +60226,8 @@
       "region": "Bayern",
       "website": "ismaning.de",
       "emails": [
-        "ismaning.de"
+        "ismaning.de",
+        "ismaning.bayern.de"
       ]
     },
     {
@@ -60247,8 +60315,10 @@
       "code": "09184141",
       "name": "Sauerlach",
       "region": "Bayern",
-      "website": "",
-      "emails": []
+      "website": "sauerlach.de",
+      "emails": [
+        "sauerlach.bayern.de"
+      ]
     },
     {
       "code": "09184142",
@@ -60310,7 +60380,8 @@
       "region": "Bayern",
       "website": "",
       "emails": [
-        "unterschleissheim.de"
+        "unterschleissheim.de",
+        "ush.bayern.de"
       ]
     },
     {
@@ -60430,7 +60501,7 @@
       "code": "09185153",
       "name": "Rennertshofen",
       "region": "Bayern",
-      "website": "",
+      "website": "rennertshofen.de",
       "emails": [
         "rennertshofen.de"
       ]
@@ -60515,7 +60586,8 @@
       "region": "Bayern",
       "website": "gerolsbach.de",
       "emails": [
-        "gerolsbach.de"
+        "gerolsbach.de",
+        "gerolsbach.bayern.de"
       ]
     },
     {
@@ -60569,7 +60641,8 @@
       "region": "Bayern",
       "website": "muenchsmuenster.de",
       "emails": [
-        "muenchsmuenster.de"
+        "muenchsmuenster.de",
+        "muenchsmuenster.bayern.de"
       ]
     },
     {
@@ -60856,7 +60929,7 @@
       "code": "09187145",
       "name": "Höslwang",
       "region": "Bayern",
-      "website": "hoeslwang.de",
+      "website": "",
       "emails": [
         "hoeslwang.de"
       ]
@@ -60973,7 +61046,7 @@
       "code": "09187169",
       "name": "Rohrdorf",
       "region": "Bayern",
-      "website": "",
+      "website": "rohrdorf.de",
       "emails": [
         "rohrdorf.de"
       ]
@@ -60982,7 +61055,7 @@
       "code": "09187170",
       "name": "Rott am Inn",
       "region": "Bayern",
-      "website": "",
+      "website": "rottinn.de",
       "emails": [
         "rottinn.net"
       ]
@@ -61045,7 +61118,7 @@
       "code": "09187181",
       "name": "Vogtareuth",
       "region": "Bayern",
-      "website": "",
+      "website": "vogtareuth.de",
       "emails": [
         "vogtareuth.de"
       ]
@@ -61239,7 +61312,8 @@
       "region": "Bayern",
       "website": "fridolfing.de",
       "emails": [
-        "fridolfing.de"
+        "fridolfing.de",
+        "fridolfing.bayern.de"
       ]
     },
     {
@@ -61274,7 +61348,7 @@
       "code": "09189126",
       "name": "Kienberg",
       "region": "Bayern",
-      "website": "vg-obing.de",
+      "website": "kienberg.de",
       "emails": [
         "kienberg.eu",
         "vg-obing.de"
@@ -61311,7 +61385,7 @@
       "code": "09189133",
       "name": "Obing",
       "region": "Bayern",
-      "website": "vg-obing.de",
+      "website": "obing.de",
       "emails": [
         "obing.de",
         "vg-obing.de"
@@ -61323,7 +61397,8 @@
       "region": "Bayern",
       "website": "palling.de",
       "emails": [
-        "palling.de"
+        "palling.de",
+        "palling.bayern.de"
       ]
     },
     {
@@ -61339,7 +61414,7 @@
       "code": "09189137",
       "name": "Pittenhart",
       "region": "Bayern",
-      "website": "vg-obing.de",
+      "website": "pittenhart.de",
       "emails": [
         "pittenhart.de",
         "vg-obing.de"
@@ -61351,7 +61426,8 @@
       "region": "Bayern",
       "website": "reitimwinkl.de",
       "emails": [
-        "reitimwinkl.de"
+        "reitimwinkl.de",
+        "reitimwinkl.bayern.de"
       ]
     },
     {
@@ -61396,7 +61472,8 @@
       "region": "Bayern",
       "website": "siegsdorf.de",
       "emails": [
-        "siegsdorf.de"
+        "siegsdorf.de",
+        "siegsdorf.bayern.de"
       ]
     },
     {
@@ -61524,7 +61601,8 @@
       "region": "Bayern",
       "website": "altenstadt-obb.de",
       "emails": [
-        "altenstadt-obb.de"
+        "altenstadt-obb.de",
+        "altenstadt-wm.bayern.de"
       ]
     },
     {
@@ -61533,7 +61611,8 @@
       "region": "Bayern",
       "website": "antdorf.de",
       "emails": [
-        "antdorf.de"
+        "antdorf.de",
+        "antdorf.bayern.de"
       ]
     },
     {
@@ -61596,7 +61675,8 @@
       "region": "Bayern",
       "website": "habach.de",
       "emails": [
-        "habach.de"
+        "habach.de",
+        "habach.bayern.de"
       ]
     },
     {
@@ -61605,7 +61685,8 @@
       "region": "Bayern",
       "website": "hohenfurch.de",
       "emails": [
-        "hohenfurch.de"
+        "hohenfurch.de",
+        "hohenfurch.bayern.de"
       ]
     },
     {
@@ -61614,16 +61695,18 @@
       "region": "Bayern",
       "website": "hohenpeissenberg.de",
       "emails": [
-        "hohenpeissenberg.de"
+        "hohenpeissenberg.de",
+        "hohenpeissenberg.bayern.de"
       ]
     },
     {
       "code": "09190131",
       "name": "Huglfing",
       "region": "Bayern",
-      "website": "",
+      "website": "huglfing.de",
       "emails": [
-        "huglfing.de"
+        "huglfing.de",
+        "huglfing.bayern.de"
       ]
     },
     {
@@ -61641,7 +61724,8 @@
       "region": "Bayern",
       "website": "ingenried.de",
       "emails": [
-        "ingenried.de"
+        "ingenried.de",
+        "ingenried.bayern.de"
       ]
     },
     {
@@ -61660,6 +61744,7 @@
       "region": "Bayern",
       "website": "soechering.eu",
       "emails": [
+        "obersoechering.bayern.de",
         "soechering.eu"
       ]
     },
@@ -61669,14 +61754,15 @@
       "region": "Bayern",
       "website": "gemeinde-paehl.de",
       "emails": [
-        "gemeinde-paehl.de"
+        "gemeinde-paehl.de",
+        "paehl.bayern.de"
       ]
     },
     {
       "code": "09190139",
       "name": "Peißenberg",
       "region": "Bayern",
-      "website": "peissenberg.de",
+      "website": "",
       "emails": [
         "peissenberg.de"
       ]
@@ -61687,7 +61773,8 @@
       "region": "Bayern",
       "website": "peiting.de",
       "emails": [
-        "peiting.de"
+        "peiting.de",
+        "peiting.bayern.de"
       ]
     },
     {
@@ -61724,7 +61811,8 @@
       "region": "Bayern",
       "website": "raisting.de",
       "emails": [
-        "raisting.de"
+        "raisting.de",
+        "raisting.bayern.de"
       ]
     },
     {
@@ -61751,7 +61839,8 @@
       "region": "Bayern",
       "website": "schwabbruck.de",
       "emails": [
-        "schwabbruck.de"
+        "schwabbruck.de",
+        "schwabbruck.bayern.de"
       ]
     },
     {
@@ -61760,7 +61849,8 @@
       "region": "Bayern",
       "website": "schwabsoien.de",
       "emails": [
-        "schwabsoien.de"
+        "schwabsoien.de",
+        "schwabsoien.bayern.de"
       ]
     },
     {
@@ -61778,7 +61868,8 @@
       "region": "Bayern",
       "website": "",
       "emails": [
-        "sindelsdorf.de"
+        "sindelsdorf.de",
+        "sindelsdorf.bayern.de"
       ]
     },
     {
@@ -61814,7 +61905,8 @@
       "region": "Bayern",
       "website": "wielenbach.de",
       "emails": [
-        "wielenbach.de"
+        "wielenbach.de",
+        "wielenbach.bayern.de"
       ]
     },
     {
@@ -61859,8 +61951,7 @@
       "region": "Bayern",
       "website": "aholming.de",
       "emails": [
-        "aholming.de",
-        "gemeinde-aholming.de"
+        "aholming.de"
       ]
     },
     {
@@ -61869,7 +61960,8 @@
       "region": "Bayern",
       "website": "gemeinde-auerbach.de",
       "emails": [
-        "gemeinde-auerbach.de"
+        "gemeinde-auerbach.de",
+        "auerbach.bayern.de"
       ]
     },
     {
@@ -61895,9 +61987,10 @@
       "code": "09271118",
       "name": "Buchhofen",
       "region": "Bayern",
-      "website": "",
+      "website": "gemeinde-buchhofen.de",
       "emails": [
-        "gemeinde-buchhofen.de"
+        "gemeinde-buchhofen.de",
+        "vgem-moos.bayern.de"
       ]
     },
     {
@@ -61906,7 +61999,8 @@
       "region": "Bayern",
       "website": "deggendorf.de",
       "emails": [
-        "deggendorf.de"
+        "deggendorf.de",
+        "deggendorf.bayern.de"
       ]
     },
     {
@@ -61915,7 +62009,8 @@
       "region": "Bayern",
       "website": "grafling.de",
       "emails": [
-        "grafling.de"
+        "grafling.de",
+        "grafling.bayern.de"
       ]
     },
     {
@@ -61924,14 +62019,15 @@
       "region": "Bayern",
       "website": "",
       "emails": [
-        "grattersdorf.de"
+        "grattersdorf.de",
+        "vgem-lalling.bayern.de"
       ]
     },
     {
       "code": "09271125",
       "name": "Hengersberg",
       "region": "Bayern",
-      "website": "",
+      "website": "hengersberg.de",
       "emails": [
         "hengersberg.de"
       ]
@@ -61941,7 +62037,10 @@
       "name": "Hunding",
       "region": "Bayern",
       "website": "",
-      "emails": []
+      "emails": [
+        "gemeinde-hunding.de",
+        "vgem-lalling.bayern.de"
+      ]
     },
     {
       "code": "09271127",
@@ -61949,7 +62048,8 @@
       "region": "Bayern",
       "website": "iggensbach.de",
       "emails": [
-        "iggensbach.de"
+        "iggensbach.de",
+        "iggensbach.bayern.de"
       ]
     },
     {
@@ -61967,7 +62067,8 @@
       "region": "Bayern",
       "website": "",
       "emails": [
-        "lalling.de"
+        "lalling.de",
+        "vgem-lalling.bayern.de"
       ]
     },
     {
@@ -61976,7 +62077,8 @@
       "region": "Bayern",
       "website": "markt-metten.de",
       "emails": [
-        "markt-metten.de"
+        "markt-metten.de",
+        "markt-metten.bayern.de"
       ]
     },
     {
@@ -61985,7 +62087,8 @@
       "region": "Bayern",
       "website": "gemeinde-moos.de",
       "emails": [
-        "gemeinde-moos.de"
+        "gemeinde-moos.de",
+        "vgem-moos.bayern.de"
       ]
     },
     {
@@ -61994,7 +62097,8 @@
       "region": "Bayern",
       "website": "niederalteich.de",
       "emails": [
-        "niederalteich.de"
+        "niederalteich.de",
+        "niederalteich.bayern.de"
       ]
     },
     {
@@ -62003,7 +62107,8 @@
       "region": "Bayern",
       "website": "vg-oberpoering.de",
       "emails": [
-        "oberpoering.de"
+        "oberpoering.de",
+        "vgem-oberpoering.bayern.de"
       ]
     },
     {
@@ -62012,7 +62117,8 @@
       "region": "Bayern",
       "website": "offenberg.de",
       "emails": [
-        "offenberg.de"
+        "offenberg.de",
+        "offenberg.bayern.de"
       ]
     },
     {
@@ -62030,7 +62136,8 @@
       "region": "Bayern",
       "website": "vg-oberpoering.de",
       "emails": [
-        "otzing.de"
+        "otzing.de",
+        "vgem-oberpoering.bayern.de"
       ]
     },
     {
@@ -62039,7 +62146,8 @@
       "region": "Bayern",
       "website": "plattling.de",
       "emails": [
-        "plattling.de"
+        "plattling.de",
+        "plattling.bayern.de"
       ]
     },
     {
@@ -62048,7 +62156,8 @@
       "region": "Bayern",
       "website": "",
       "emails": [
-        "schaufling.de"
+        "schaufling.de",
+        "vgem-lalling.bayern.de"
       ]
     },
     {
@@ -62065,9 +62174,10 @@
       "code": "09271151",
       "name": "Stephansposching",
       "region": "Bayern",
-      "website": "stephansposching.de",
+      "website": "",
       "emails": [
-        "stephansposching.de"
+        "stephansposching.de",
+        "stephansposching.bayern.de"
       ]
     },
     {
@@ -62076,7 +62186,8 @@
       "region": "Bayern",
       "website": "vg-oberpoering.de",
       "emails": [
-        "vg-oberpoering.de"
+        "vg-oberpoering.de",
+        "vgem-oberpoering.bayern.de"
       ]
     },
     {
@@ -62131,7 +62242,8 @@
       "region": "Bayern",
       "website": "grainet.de",
       "emails": [
-        "grainet.de"
+        "grainet.de",
+        "grainet.bayern.de"
       ]
     },
     {
@@ -62140,7 +62252,8 @@
       "region": "Bayern",
       "website": "haidmuehle.eu",
       "emails": [
-        "haidmuehle.eu"
+        "haidmuehle.eu",
+        "haidmuehle.bayern.de"
       ]
     },
     {
@@ -62149,7 +62262,8 @@
       "region": "Bayern",
       "website": "hinterschmiding.de",
       "emails": [
-        "vg-hinterschmiding.de"
+        "vg-hinterschmiding.de",
+        "hinterschmiding.bayern.de"
       ]
     },
     {
@@ -62158,7 +62272,8 @@
       "region": "Bayern",
       "website": "hohenau.de",
       "emails": [
-        "hohenau.de"
+        "hohenau.de",
+        "hohenau.bayern.de"
       ]
     },
     {
@@ -62185,7 +62300,8 @@
       "region": "Bayern",
       "website": "",
       "emails": [
-        "mauth.de"
+        "mauth.de",
+        "mauth.bayern.de"
       ]
     },
     {
@@ -62194,7 +62310,8 @@
       "region": "Bayern",
       "website": "neureichenau.de",
       "emails": [
-        "neureichenau.de"
+        "neureichenau.de",
+        "neureichenau.bayern.de"
       ]
     },
     {
@@ -62221,7 +62338,8 @@
       "region": "Bayern",
       "website": "ringelai.de",
       "emails": [
-        "ringelai.de"
+        "ringelai.de",
+        "ringelai.bayern.de"
       ]
     },
     {
@@ -62239,7 +62357,8 @@
       "region": "Bayern",
       "website": "saldenburg.de",
       "emails": [
-        "saldenburg.de"
+        "saldenburg.de",
+        "saldenburg.bayern.de"
       ]
     },
     {
@@ -62266,7 +62385,8 @@
       "region": "Bayern",
       "website": "neuschoenau.de",
       "emails": [
-        "neuschoenau.de"
+        "neuschoenau.de",
+        "neuschoenau.bayern.de"
       ]
     },
     {
@@ -62275,16 +62395,18 @@
       "region": "Bayern",
       "website": "markt-schoenberg.de",
       "emails": [
-        "markt-schoenberg.de"
+        "markt-schoenberg.de",
+        "vgem-oberbergkirchen.bayern.de"
       ]
     },
     {
       "code": "09272149",
       "name": "Spiegelau",
       "region": "Bayern",
-      "website": "",
+      "website": "spiegelau.de",
       "emails": [
-        "gemeinde-spiegelau.de"
+        "gemeinde-spiegelau.de",
+        "spiegelau.bayern.de"
       ]
     },
     {
@@ -62514,7 +62636,7 @@
       "code": "09273177",
       "name": "Train",
       "region": "Bayern",
-      "website": "",
+      "website": "gemeinde-train.de",
       "emails": [
         "gemeinde-train.de"
       ]
@@ -62790,7 +62912,7 @@
       "code": "09274183",
       "name": "Velden",
       "region": "Bayern",
-      "website": "markt-velden.de",
+      "website": "vg-velden.de",
       "emails": [
         "vg-velden.de",
         "markt-velden.de"
@@ -63012,7 +63134,8 @@
       "region": "Bayern",
       "website": "koesslarn.de",
       "emails": [
-        "koesslarn.de"
+        "koesslarn.de",
+        "koesslarn.bayern.de"
       ]
     },
     {
@@ -63067,7 +63190,8 @@
       "region": "Bayern",
       "website": "gemeinde-ortenburg.de",
       "emails": [
-        "ortenburg.de"
+        "ortenburg.de",
+        "ortenburg.bayern.de"
       ]
     },
     {
@@ -63138,7 +63262,7 @@
       "code": "09275150",
       "name": "Thyrnau",
       "region": "Bayern",
-      "website": "thyrnau.de",
+      "website": "",
       "emails": [
         "thyrnau.de"
       ]
@@ -63169,7 +63293,8 @@
       "region": "Bayern",
       "website": "untergriesbach.de",
       "emails": [
-        "untergriesbach.de"
+        "untergriesbach.de",
+        "untergriesbach.com"
       ]
     },
     {
@@ -63225,7 +63350,8 @@
       "region": "Bayern",
       "website": "arnbruck.de",
       "emails": [
-        "arnbruck.de"
+        "arnbruck.de",
+        "arnbruck.landkreis-regen.de"
       ]
     },
     {
@@ -63234,7 +63360,8 @@
       "region": "Bayern",
       "website": "bayerisch-eisenstein.de",
       "emails": [
-        "bayerisch-eisenstein.de"
+        "bayerisch-eisenstein.de",
+        "bayerisch-eisenstein.landkreis-regen.de"
       ]
     },
     {
@@ -63243,7 +63370,8 @@
       "region": "Bayern",
       "website": "bischofsmais.de",
       "emails": [
-        "bischofsmais.de"
+        "bischofsmais.de",
+        "bischofsmais.landkreis-regen.de"
       ]
     },
     {
@@ -63252,7 +63380,8 @@
       "region": "Bayern",
       "website": "bodenmais.de",
       "emails": [
-        "bodenmais.de"
+        "bodenmais.de",
+        "bodenmais.landkreis-regen.de"
       ]
     },
     {
@@ -63270,7 +63399,8 @@
       "region": "Bayern",
       "website": "drachselsried.de",
       "emails": [
-        "drachselsried.de"
+        "drachselsried.de",
+        "drachselsried.landkreis-regen.de"
       ]
     },
     {
@@ -63343,7 +63473,8 @@
       "region": "Bayern",
       "website": "gemeinde-lindberg.de",
       "emails": [
-        "gemeinde-lindberg.de"
+        "gemeinde-lindberg.de",
+        "lindberg.landkreis-regen.de"
       ]
     },
     {
@@ -63499,7 +63630,8 @@
       "region": "Bayern",
       "website": "vg-falkenberg.de",
       "emails": [
-        "vg-falkenberg.de"
+        "vg-falkenberg.de",
+        "gemeinde-falkenberg.de"
       ]
     },
     {
@@ -63637,7 +63769,8 @@
       "region": "Bayern",
       "website": "gemeinde-schoenau.de",
       "emails": [
-        "gemeinde-schoenau.de"
+        "gemeinde-schoenau.de",
+        "schoenau.bayern.de"
       ]
     },
     {
@@ -63758,7 +63891,8 @@
       "region": "Bayern",
       "website": "bogen.de",
       "emails": [
-        "bogen.de"
+        "bogen.de",
+        "bogen.bayern.de"
       ]
     },
     {
@@ -63835,7 +63969,8 @@
       "region": "Bayern",
       "website": "kirchroth.de",
       "emails": [
-        "kirchroth.de"
+        "kirchroth.de",
+        "kirchroth.bayern.de"
       ]
     },
     {
@@ -63862,7 +63997,8 @@
       "region": "Bayern",
       "website": "",
       "emails": [
-        "gemeinde-leiblfing.de"
+        "gemeinde-leiblfing.de",
+        "leiblfing.bayern.de"
       ]
     },
     {
@@ -63926,7 +64062,7 @@
       "code": "09278167",
       "name": "Oberschneiding",
       "region": "Bayern",
-      "website": "",
+      "website": "oberschneiding.de",
       "emails": [
         "oberschneiding.de"
       ]
@@ -63993,7 +64129,7 @@
       "code": "09278182",
       "name": "Salching",
       "region": "Bayern",
-      "website": "aiterhofen.de",
+      "website": "salching.de",
       "emails": [
         "salching.de",
         "aiterhofen.de"
@@ -64034,7 +64170,8 @@
       "region": "Bayern",
       "website": "gemeinde-steinach.de",
       "emails": [
-        "steinach.eu"
+        "steinach.eu",
+        "steinach.bayern.de"
       ]
     },
     {
@@ -64170,6 +64307,7 @@
       "region": "Bayern",
       "website": "markt-pilsting.de",
       "emails": [
+        "pilsting.de",
         "markt-pilsting.de"
       ]
     },
@@ -64377,7 +64515,7 @@
       "code": "09371136",
       "name": "Kümmersbruck",
       "region": "Bayern",
-      "website": "",
+      "website": "kuemmersbruck.de",
       "emails": [
         "kuemmersbruck.de"
       ]
@@ -64416,7 +64554,8 @@
       "region": "Bayern",
       "website": "rieden.com",
       "emails": [
-        "rieden.com"
+        "rieden.com",
+        "rieden-zellerberg.bayern.de"
       ]
     },
     {
@@ -64425,7 +64564,8 @@
       "region": "Bayern",
       "website": "schmidmuehlen.de",
       "emails": [
-        "schmidmuehlen.de"
+        "schmidmuehlen.de",
+        "schmidmuehlen.bayern.de"
       ]
     },
     {
@@ -64452,7 +64592,8 @@
       "region": "Bayern",
       "website": "ursensollen.de",
       "emails": [
-        "ursensollen.de"
+        "ursensollen.de",
+        "ursensollen.bayern.de"
       ]
     },
     {
@@ -64526,7 +64667,8 @@
       "region": "Bayern",
       "website": "eschlkam.de",
       "emails": [
-        "markt-eschlkam.de"
+        "markt-eschlkam.de",
+        "markt-eschlkam.bayern.de"
       ]
     },
     {
@@ -64569,7 +64711,7 @@
       "code": "09372135",
       "name": "Hohenwarth",
       "region": "Bayern",
-      "website": "",
+      "website": "hohenwarth.de",
       "emails": [
         "hohenwarth.de"
       ]
@@ -64614,7 +64756,7 @@
       "code": "09372144",
       "name": "Neukirchen beim Heiligen Blut",
       "region": "Bayern",
-      "website": "neukirchen.bayern",
+      "website": "",
       "emails": [
         "neukirchen-online.de"
       ]
@@ -64679,7 +64821,7 @@
       "code": "09372154",
       "name": "Rötz",
       "region": "Bayern",
-      "website": "",
+      "website": "roetz.de",
       "emails": [
         "roetz.de"
       ]
@@ -65076,7 +65218,8 @@
       "region": "Bayern",
       "website": "grafenwoehr.de",
       "emails": [
-        "grafenwoehr.de"
+        "grafenwoehr.de",
+        "grafenwoehr.bayern.de"
       ]
     },
     {
@@ -65121,9 +65264,10 @@
       "code": "09374132",
       "name": "Leuchtenberg",
       "region": "Bayern",
-      "website": "leuchtenberg.de",
+      "website": "",
       "emails": [
-        "leuchtenberg.de"
+        "leuchtenberg.de",
+        "vgem-taennesberg.bayern.de"
       ]
     },
     {
@@ -65141,14 +65285,15 @@
       "region": "Bayern",
       "website": "markt-mantel.com",
       "emails": [
-        "markt-mantel.com"
+        "markt-mantel.com",
+        "mantel.bayern.de"
       ]
     },
     {
       "code": "09374137",
       "name": "Moosbach",
       "region": "Bayern",
-      "website": "",
+      "website": "moosbach.de",
       "emails": [
         "moosbach.de"
       ]
@@ -65282,7 +65427,8 @@
       "region": "Bayern",
       "website": "taennesberg.de",
       "emails": [
-        "taennesberg.de"
+        "taennesberg.de",
+        "vgem-taennesberg.bayern.de"
       ]
     },
     {
@@ -65755,7 +65901,7 @@
       "code": "09376116",
       "name": "Q545325",
       "region": "Bayern",
-      "website": "bodenwoehr.de",
+      "website": "",
       "emails": [
         "bodenwoehr.de"
       ]
@@ -65810,7 +65956,7 @@
       "code": "09376133",
       "name": "Guteneck",
       "region": "Bayern",
-      "website": "guteneck.de",
+      "website": "nabburg.de",
       "emails": [
         "guteneck.de",
         "vg-nabburg.de"
@@ -65847,9 +65993,10 @@
       "code": "09376147",
       "name": "Neunburg vorm Wald",
       "region": "Bayern",
-      "website": "neunburgvormwald.de",
+      "website": "",
       "emails": [
-        "neunburgvormwald.de"
+        "neunburgvormwald.de",
+        "neunburg.de"
       ]
     },
     {
@@ -65875,7 +66022,7 @@
       "code": "09376150",
       "name": "Wernberg-Köblitz",
       "region": "Bayern",
-      "website": "wernberg-koeblitz.de",
+      "website": "",
       "emails": [
         "wernberg-koeblitz.de"
       ]
@@ -66213,7 +66360,7 @@
       "code": "09377145",
       "name": "Pechbrunn",
       "region": "Bayern",
-      "website": "mitterteich.de",
+      "website": "pechbrunn.de",
       "emails": [
         "pechbrunn.de",
         "mitterteich.de"
@@ -66297,7 +66444,8 @@
       "region": "Bayern",
       "website": "bayreuth.de",
       "emails": [
-        "bayreuth.de"
+        "bayreuth.de",
+        "stadt.bayreuth.de"
       ]
     },
     {
@@ -66545,7 +66693,7 @@
       "code": "09471175",
       "name": "Reckendorf",
       "region": "Bayern",
-      "website": "vg-baunach.de",
+      "website": "reckendorf.de",
       "emails": [
         "reckendorf.de",
         "vg-baunach.de"
@@ -66649,7 +66797,8 @@
       "region": "Bayern",
       "website": "ahorntal.de",
       "emails": [
-        "ahorntal.de"
+        "ahorntal.de",
+        "ahorntal.bayern.de"
       ]
     },
     {
@@ -66658,7 +66807,8 @@
       "region": "Bayern",
       "website": "aufsess.de",
       "emails": [
-        "aufsess.de"
+        "aufsess.de",
+        "vg-hollfeld.bayern.de"
       ]
     },
     {
@@ -66676,7 +66826,8 @@
       "region": "Bayern",
       "website": "betzenstein.de",
       "emails": [
-        "betzenstein.de"
+        "betzenstein.de",
+        "vgem-betzenstein.bayern.de"
       ]
     },
     {
@@ -66685,7 +66836,8 @@
       "region": "Bayern",
       "website": "bindlach.de",
       "emails": [
-        "bindlach.de"
+        "bindlach.de",
+        "bindlach.bayern.de"
       ]
     },
     {
@@ -66694,7 +66846,8 @@
       "region": "Bayern",
       "website": "bischofsgruen.de",
       "emails": [
-        "bischofsgruen.de"
+        "bischofsgruen.de",
+        "bischofsgruen.bayern.de"
       ]
     },
     {
@@ -66703,7 +66856,8 @@
       "region": "Bayern",
       "website": "stadt-creussen.de",
       "emails": [
-        "stadt-creussen.de"
+        "stadt-creussen.de",
+        "vgem-creussen.bayern.de"
       ]
     },
     {
@@ -66712,7 +66866,8 @@
       "region": "Bayern",
       "website": "eckersdorf.de",
       "emails": [
-        "eckersdorf.de"
+        "eckersdorf.de",
+        "eckersdorf.bayern.de"
       ]
     },
     {
@@ -66731,7 +66886,8 @@
       "region": "Bayern",
       "website": "fichtelberg.de",
       "emails": [
-        "fichtelberg.de"
+        "fichtelberg.de",
+        "fichtelberg.bayern.de"
       ]
     },
     {
@@ -66740,7 +66896,8 @@
       "region": "Bayern",
       "website": "gefrees.de",
       "emails": [
-        "gefrees.de"
+        "gefrees.de",
+        "gefrees.bayern.de"
       ]
     },
     {
@@ -66749,7 +66906,8 @@
       "region": "Bayern",
       "website": "gesees.de",
       "emails": [
-        "gesees.de"
+        "gesees.de",
+        "vg-mistelbach.bayern.de"
       ]
     },
     {
@@ -66767,7 +66925,8 @@
       "region": "Bayern",
       "website": "goldkronach.de",
       "emails": [
-        "goldkronach.de"
+        "goldkronach.de",
+        "goldkronach.bayern.de"
       ]
     },
     {
@@ -66776,7 +66935,8 @@
       "region": "Bayern",
       "website": "haag-oberfranken.de",
       "emails": [
-        "haag-oberfranken.de"
+        "haag-oberfranken.de",
+        "vgem-creussen.bayern.de"
       ]
     },
     {
@@ -66795,7 +66955,8 @@
       "region": "Bayern",
       "website": "hollfeld.de",
       "emails": [
-        "hollfeld.de"
+        "hollfeld.de",
+        "vg-hollfeld.bayern.de"
       ]
     },
     {
@@ -66804,7 +66965,8 @@
       "region": "Bayern",
       "website": "hummeltal.de",
       "emails": [
-        "hummeltal.de"
+        "hummeltal.de",
+        "vg-mistelbach.bayern.de"
       ]
     },
     {
@@ -66823,7 +66985,8 @@
       "region": "Bayern",
       "website": "mehlmeisel.de",
       "emails": [
-        "mehlmeisel.de"
+        "mehlmeisel.de",
+        "mehlmeisel.bayern.de"
       ]
     },
     {
@@ -66832,7 +66995,8 @@
       "region": "Bayern",
       "website": "mistelbach.de",
       "emails": [
-        "mistelbach.de"
+        "mistelbach.de",
+        "vg-mistelbach.bayern.de"
       ]
     },
     {
@@ -66841,7 +67005,8 @@
       "region": "Bayern",
       "website": "mistelgau.de",
       "emails": [
-        "mistelgau.de"
+        "mistelgau.de",
+        "vg-mistelgau.bayern.de"
       ]
     },
     {
@@ -66859,7 +67024,8 @@
       "region": "Bayern",
       "website": "plankenfels.de",
       "emails": [
-        "plankenfels.de"
+        "plankenfels.de",
+        "vg-hollfeld.bayern.de"
       ]
     },
     {
@@ -66868,7 +67034,8 @@
       "region": "Bayern",
       "website": "plech.de",
       "emails": [
-        "plech.de"
+        "plech.de",
+        "vgem-betzenstein.bayern.de"
       ]
     },
     {
@@ -66877,7 +67044,8 @@
       "region": "Bayern",
       "website": "pottenstein.de",
       "emails": [
-        "pottenstein.de"
+        "pottenstein.de",
+        "pottenstein.bayern.de"
       ]
     },
     {
@@ -66886,7 +67054,8 @@
       "region": "Bayern",
       "website": "gemeinde-prebitz.de",
       "emails": [
-        "gemeinde-prebitz.de"
+        "gemeinde-prebitz.de",
+        "vgem-creussen.bayern.de"
       ]
     },
     {
@@ -66895,7 +67064,8 @@
       "region": "Bayern",
       "website": "markt-schnabelwaid.de",
       "emails": [
-        "markt-schnabelwaid.de"
+        "markt-schnabelwaid.de",
+        "vgem-creussen.bayern.de"
       ]
     },
     {
@@ -66914,7 +67084,8 @@
       "region": "Bayern",
       "website": "speichersdorf.de",
       "emails": [
-        "speichersdorf.de"
+        "speichersdorf.de",
+        "speichersdorf.bayern.de"
       ]
     },
     {
@@ -66923,7 +67094,8 @@
       "region": "Bayern",
       "website": "waischenfeld.de",
       "emails": [
-        "waischenfeld.de"
+        "waischenfeld.de",
+        "waischenfeld.bayern.de"
       ]
     },
     {
@@ -66932,7 +67104,8 @@
       "region": "Bayern",
       "website": "warmensteinach.de",
       "emails": [
-        "warmensteinach.de"
+        "warmensteinach.de",
+        "warmensteinach.bayern.de"
       ]
     },
     {
@@ -67183,7 +67356,7 @@
       "code": "09474134",
       "name": "Hausen",
       "region": "Bayern",
-      "website": "hausen-spessart.de",
+      "website": "hausen.de",
       "emails": [
         "hausen.de",
         "hausen-spessart.de"
@@ -67222,7 +67395,7 @@
       "code": "09474140",
       "name": "Igensdorf",
       "region": "Bayern",
-      "website": "",
+      "website": "igensdorf.de",
       "emails": [
         "igensdorf.de"
       ]
@@ -67297,7 +67470,7 @@
       "code": "09474158",
       "name": "Pinzberg",
       "region": "Bayern",
-      "website": "pinzberg.de",
+      "website": "vg-gosberg.de",
       "emails": [
         "pinzberg.de",
         "vg-gosberg.de"
@@ -67566,7 +67739,7 @@
       "code": "09475174",
       "name": "Sparneck",
       "region": "Bayern",
-      "website": "",
+      "website": "sparneck.de",
       "emails": [
         "sparneck.de"
       ]
@@ -67602,7 +67775,7 @@
       "code": "09475184",
       "name": "Weißdorf",
       "region": "Bayern",
-      "website": "weissdorf.de",
+      "website": "",
       "emails": [
         "weissdorf.de"
       ]
@@ -67685,7 +67858,7 @@
       "code": "09476171",
       "name": "Schneckenlohe",
       "region": "Bayern",
-      "website": "vgem-mitwitz.de",
+      "website": "schneckenlohe.de",
       "emails": [
         "schneckenlohe.de",
         "vgem-mitwitz.de"
@@ -67715,14 +67888,15 @@
       "region": "Bayern",
       "website": "stockheim-online.de",
       "emails": [
-        "stockheim-online.de"
+        "stockheim-online.de",
+        "stockheim.bayern.de"
       ]
     },
     {
       "code": "09476179",
       "name": "Tettau",
       "region": "Bayern",
-      "website": "",
+      "website": "tettau.de",
       "emails": [
         "tettau.de"
       ]
@@ -67751,7 +67925,7 @@
       "code": "09476183",
       "name": "Marktrodach",
       "region": "Bayern",
-      "website": "marktrodach.de",
+      "website": "",
       "emails": [
         "marktrodach.de"
       ]
@@ -67865,7 +68039,7 @@
       "code": "09477135",
       "name": "Ludwigschorgast",
       "region": "Bayern",
-      "website": "vg-untersteinach.de",
+      "website": "ludwigschorgast.de",
       "emails": [
         "ludwigschorgast.de",
         "vg-untersteinach.de"
@@ -68193,7 +68367,7 @@
       "code": "09479152",
       "name": "Selb",
       "region": "Bayern",
-      "website": "selb.de",
+      "website": "",
       "emails": [
         "selb.de"
       ]
@@ -68278,7 +68452,8 @@
       "region": "Bayern",
       "website": "nuernberg.de",
       "emails": [
-        "nuernberg.de"
+        "nuernberg.de",
+        "stadt.nuernberg.de"
       ]
     },
     {
@@ -68342,7 +68517,7 @@
       "code": "09571125",
       "name": "Buch am Wald",
       "region": "Bayern",
-      "website": "",
+      "website": "buch-am-wald.de",
       "emails": [
         "buchamwald.de"
       ]
@@ -68605,7 +68780,7 @@
       "code": "09571188",
       "name": "Ohrenbach",
       "region": "Bayern",
-      "website": "ohrenbach.de",
+      "website": "",
       "emails": [
         "ohrenbach.de"
       ]
@@ -68853,7 +69028,7 @@
       "code": "09572119",
       "name": "Bubenreuth",
       "region": "Bayern",
-      "website": "bubenreuth.de",
+      "website": "",
       "emails": [
         "bubenreuth.de"
       ]
@@ -68945,7 +69120,7 @@
       "code": "09572137",
       "name": "Kalchreuth",
       "region": "Bayern",
-      "website": "",
+      "website": "kalchreuth.de",
       "emails": [
         "kalchreuth.de"
       ]
@@ -69279,7 +69454,7 @@
       "code": "09574138",
       "name": "Lauf an der Pegnitz",
       "region": "Bayern",
-      "website": "",
+      "website": "lauf.de",
       "emails": [
         "lauf.de"
       ]
@@ -69288,7 +69463,7 @@
       "code": "09574139",
       "name": "Leinburg",
       "region": "Bayern",
-      "website": "leinburg.de",
+      "website": "",
       "emails": [
         "leinburg.de"
       ]
@@ -69405,7 +69580,7 @@
       "code": "09574160",
       "name": "Velden",
       "region": "Bayern",
-      "website": "vg-velden.de",
+      "website": "velden.de",
       "emails": [
         "velden.de",
         "vg-velden.de"
@@ -69553,7 +69728,7 @@
       "code": "09575129",
       "name": "Hagenbüchach",
       "region": "Bayern",
-      "website": "hagenbuechach.de",
+      "website": "",
       "emails": [
         "hagenbuechach.de"
       ]
@@ -69949,7 +70124,7 @@
       "code": "09577114",
       "name": "Muhr am See",
       "region": "Bayern",
-      "website": "",
+      "website": "muhr-am-see.de",
       "emails": [
         "muhr-am-see.de"
       ]
@@ -69989,6 +70164,7 @@
       "region": "Bayern",
       "website": "stadt-ellingen.de",
       "emails": [
+        "ellingen.de",
         "vgem-ellingen.de"
       ]
     },
@@ -70064,7 +70240,7 @@
       "code": "09577149",
       "name": "Markt Berolzheim",
       "region": "Bayern",
-      "website": "vgem-altmuehltal.de",
+      "website": "",
       "emails": [
         "markt-berolzheim.de",
         "vgem-altmuehltal.de"
@@ -70074,7 +70250,7 @@
       "code": "09577150",
       "name": "Meinheim",
       "region": "Bayern",
-      "website": "vgem-altmuehltal.de",
+      "website": "",
       "emails": [
         "vgem-altmuehltal.de"
       ]
@@ -70254,7 +70430,8 @@
       "region": "Bayern",
       "website": "geiselbach.de",
       "emails": [
-        "geiselbach.de"
+        "geiselbach.de",
+        "geiselbach.bayern.de"
       ]
     },
     {
@@ -70263,7 +70440,8 @@
       "region": "Bayern",
       "website": "glattbach.de",
       "emails": [
-        "glattbach.de"
+        "glattbach.de",
+        "glattbach.bayern.de"
       ]
     },
     {
@@ -70308,7 +70486,9 @@
       "name": "Heimbuchenthal",
       "region": "Bayern",
       "website": "",
-      "emails": []
+      "emails": [
+        "vgem-mespelbrunn.bayern.de"
+      ]
     },
     {
       "code": "09671128",
@@ -70325,7 +70505,8 @@
       "region": "Bayern",
       "website": "hoesbach.de",
       "emails": [
-        "hoesbach.de"
+        "hoesbach.de",
+        "hoesbach.bayern.de"
       ]
     },
     {
@@ -70360,7 +70541,7 @@
       "code": "09671136",
       "name": "Kleinostheim",
       "region": "Bayern",
-      "website": "",
+      "website": "kleinostheim.de",
       "emails": [
         "kleinostheim.de"
       ]
@@ -70398,7 +70579,9 @@
       "name": "Mespelbrunn",
       "region": "Bayern",
       "website": "",
-      "emails": []
+      "emails": [
+        "vgem-mespelbrunn.bayern.de"
+      ]
     },
     {
       "code": "09671143",
@@ -70406,7 +70589,8 @@
       "region": "Bayern",
       "website": "moembris.de",
       "emails": [
-        "moembris.de"
+        "moembris.de",
+        "moembris.bayern.de"
       ]
     },
     {
@@ -70424,7 +70608,8 @@
       "region": "Bayern",
       "website": "sailauf.de",
       "emails": [
-        "sailauf.de"
+        "sailauf.de",
+        "sailauf.bayern.de"
       ]
     },
     {
@@ -70471,7 +70656,8 @@
       "region": "Bayern",
       "website": "weibersbrunn.de",
       "emails": [
-        "weibersbrunn.de"
+        "weibersbrunn.de",
+        "weibersbrunn.bayern.de"
       ]
     },
     {
@@ -70490,7 +70676,8 @@
       "region": "Bayern",
       "website": "dammbach.de",
       "emails": [
-        "dammbach.de"
+        "dammbach.de",
+        "vgem-mespelbrunn.bayern.de"
       ]
     },
     {
@@ -70534,9 +70721,10 @@
       "code": "09672114",
       "name": "Bad Kissingen",
       "region": "Bayern",
-      "website": "",
+      "website": "badkissingen.de",
       "emails": [
-        "badkissingen.de"
+        "badkissingen.de",
+        "gkst-badkissingen.bayern.de"
       ]
     },
     {
@@ -70608,7 +70796,7 @@
       "code": "09672134",
       "name": "Motten",
       "region": "Bayern",
-      "website": "motten.de",
+      "website": "",
       "emails": [
         "motten.de"
       ]
@@ -70654,7 +70842,7 @@
       "code": "09672140",
       "name": "Oerlenbach",
       "region": "Bayern",
-      "website": "",
+      "website": "oerlenbach.de",
       "emails": [
         "oerlenbach.de"
       ]
@@ -70729,9 +70917,7 @@
       "name": "Wildflecken",
       "region": "Bayern",
       "website": "wildflecken.de",
-      "emails": [
-        "wildflecken.de"
-      ]
+      "emails": []
     },
     {
       "code": "09672166",
@@ -71002,7 +71188,8 @@
       "region": "Bayern",
       "website": "gemeinde-stockheim.de",
       "emails": [
-        "gemeinde-stockheim.de"
+        "gemeinde-stockheim.de",
+        "stockheim.bayern.de"
       ]
     },
     {
@@ -71178,7 +71365,7 @@
       "code": "09674149",
       "name": "Hofheim in Unterfranken",
       "region": "Bayern",
-      "website": "stadt-hofheim.de",
+      "website": "",
       "emails": [
         "stadt-hofheim.de"
       ]
@@ -71374,7 +71561,7 @@
       "code": "09675116",
       "name": "Castell",
       "region": "Bayern",
-      "website": "castell-gemeinde.de",
+      "website": "wiesentheid.de",
       "emails": [
         "castell-gemeinde.de",
         "wiesentheid.de"
@@ -71565,7 +71752,7 @@
       "code": "09675167",
       "name": "Seinsheim",
       "region": "Bayern",
-      "website": "seinsheim.de",
+      "website": "marktbreit.de",
       "emails": [
         "seinsheim.de",
         "marktbreit.de"
@@ -71594,7 +71781,7 @@
       "code": "09675174",
       "name": "Volkach",
       "region": "Bayern",
-      "website": "volkach.de",
+      "website": "",
       "emails": [
         "volkach.de"
       ]
@@ -71612,7 +71799,7 @@
       "code": "09675178",
       "name": "Wiesentheid",
       "region": "Bayern",
-      "website": "",
+      "website": "wiesentheid.de",
       "emails": [
         "wiesentheid.de"
       ]
@@ -71642,7 +71829,8 @@
       "region": "Bayern",
       "website": "amorbach.de",
       "emails": [
-        "amorbach.de"
+        "amorbach.de",
+        "stadt-amorbach.de"
       ]
     },
     {
@@ -71803,7 +71991,7 @@
       "code": "09676139",
       "name": "Miltenberg",
       "region": "Bayern",
-      "website": "",
+      "website": "miltenberg.de",
       "emails": [
         "miltenberg.de"
       ]
@@ -71830,7 +72018,7 @@
       "code": "09676143",
       "name": "Neunkirchen",
       "region": "Bayern",
-      "website": "neunkirchen-unterfranken.de",
+      "website": "",
       "emails": [
         "neunkirchen-unterfranken.de"
       ]
@@ -71875,7 +72063,7 @@
       "code": "09676156",
       "name": "Schneeberg",
       "region": "Bayern",
-      "website": "",
+      "website": "schneeberg-odenwald.de",
       "emails": [
         "schneeberg-odenwald.de"
       ]
@@ -71922,7 +72110,8 @@
       "region": "Bayern",
       "website": "stadtarnstein.de",
       "emails": [
-        "stadtarnstein.de"
+        "stadtarnstein.de",
+        "arnstein.bayern.de"
       ]
     },
     {
@@ -71959,7 +72148,8 @@
       "region": "Bayern",
       "website": "vgem-burgsinn.de",
       "emails": [
-        "vgem-burgsinn.de"
+        "vgem-burgsinn.de",
+        "vgem-burgsinn.bayern.de"
       ]
     },
     {
@@ -71995,14 +72185,15 @@
       "region": "Bayern",
       "website": "sinngrundallianz.de",
       "emails": [
-        "fellen.de"
+        "fellen.de",
+        "vgem-burgsinn.bayern.de"
       ]
     },
     {
       "code": "09677129",
       "name": "Frammersbach",
       "region": "Bayern",
-      "website": "",
+      "website": "frammersbach.de",
       "emails": [
         "frammersbach.de"
       ]
@@ -72022,7 +72213,8 @@
       "region": "Bayern",
       "website": "",
       "emails": [
-        "goessenheim.de"
+        "goessenheim.de",
+        "vgem-gemuenden.bayern.de"
       ]
     },
     {
@@ -72031,7 +72223,8 @@
       "region": "Bayern",
       "website": "vgem-gemuenden.de",
       "emails": [
-        "graefendorf.de"
+        "graefendorf.de",
+        "vgem-gemuenden.bayern.de"
       ]
     },
     {
@@ -72049,7 +72242,8 @@
       "region": "Bayern",
       "website": "hasloch.de",
       "emails": [
-        "hasloch.de"
+        "hasloch.de",
+        "vgem-kreuzwertheim.bayern.de"
       ]
     },
     {
@@ -72086,7 +72280,8 @@
       "region": "Bayern",
       "website": "",
       "emails": [
-        "karsbach.de"
+        "karsbach.de",
+        "vgem-gemuenden.bayern.de"
       ]
     },
     {
@@ -72095,7 +72290,8 @@
       "region": "Bayern",
       "website": "kreuzwertheim.de",
       "emails": [
-        "kreuzwertheim.de"
+        "kreuzwertheim.de",
+        "vgem-kreuzwertheim.bayern.de"
       ]
     },
     {
@@ -72104,7 +72300,8 @@
       "region": "Bayern",
       "website": "markt-triefenstein.de",
       "emails": [
-        "markt-triefenstein.de"
+        "markt-triefenstein.de",
+        "triefenstein.bayern.de"
       ]
     },
     {
@@ -72120,7 +72317,7 @@
       "code": "09677157",
       "name": "Marktheidenfeld",
       "region": "Bayern",
-      "website": "stadt-marktheidenfeld.de",
+      "website": "",
       "emails": [
         "marktheidenfeld.de"
       ]
@@ -72131,7 +72328,8 @@
       "region": "Bayern",
       "website": "sinngrundallianz.de",
       "emails": [
-        "mittelsinn.de"
+        "mittelsinn.de",
+        "vgem-burgsinn.bayern.de"
       ]
     },
     {
@@ -72149,7 +72347,8 @@
       "region": "Bayern",
       "website": "vg-partenstein.de",
       "emails": [
-        "neuhuetten.de"
+        "neuhuetten.de",
+        "vgem-partenstein.bayern.de"
       ]
     },
     {
@@ -72167,7 +72366,8 @@
       "region": "Bayern",
       "website": "markt-obersinn.de",
       "emails": [
-        "markt-obersinn.de"
+        "markt-obersinn.de",
+        "vgem-burgsinn.bayern.de"
       ]
     },
     {
@@ -72176,7 +72376,8 @@
       "region": "Bayern",
       "website": "",
       "emails": [
-        "partenstein.de"
+        "partenstein.de",
+        "vgem-partenstein.bayern.de"
       ]
     },
     {
@@ -72204,7 +72405,8 @@
       "region": "Bayern",
       "website": "rieneck.de",
       "emails": [
-        "rieneck.de"
+        "rieneck.de",
+        "rieneck.bayern.de"
       ]
     },
     {
@@ -72231,7 +72433,8 @@
       "region": "Bayern",
       "website": "schollbrunn.de",
       "emails": [
-        "schollbrunn.de"
+        "schollbrunn.de",
+        "vgem-kreuzwertheim.bayern.de"
       ]
     },
     {
@@ -72268,7 +72471,8 @@
       "region": "Bayern",
       "website": "vg-partenstein.de",
       "emails": [
-        "wiesthal.de"
+        "wiesthal.de",
+        "vgem-partenstein.bayern.de"
       ]
     },
     {
@@ -72377,7 +72581,8 @@
       "region": "Bayern",
       "website": "grettstadt.de",
       "emails": [
-        "grettstadt.de"
+        "grettstadt.de",
+        "gemeinde.grettstadt.de"
       ]
     },
     {
@@ -72458,7 +72663,8 @@
       "region": "Bayern",
       "website": "schwanfeld.de",
       "emails": [
-        "schwanfeld.de"
+        "schwanfeld.de",
+        "vg-schwanfeld.de"
       ]
     },
     {
@@ -72548,7 +72754,8 @@
       "region": "Bayern",
       "website": "stadt-aub.de",
       "emails": [
-        "stadt-aub.de"
+        "stadt-aub.de",
+        "vgem-aub.bayern.de"
       ]
     },
     {
@@ -72557,7 +72764,8 @@
       "region": "Bayern",
       "website": "",
       "emails": [
-        "bergtheim.de"
+        "bergtheim.de",
+        "vgem-bergtheim.bayern.de"
       ]
     },
     {
@@ -72566,7 +72774,8 @@
       "region": "Bayern",
       "website": "bieberehren.de",
       "emails": [
-        "bieberehren.de"
+        "bieberehren.de",
+        "vgem-roettingen.bayern.de"
       ]
     },
     {
@@ -72593,7 +72802,8 @@
       "region": "Bayern",
       "website": "eisingen.de",
       "emails": [
-        "eisingen.de"
+        "eisingen.de",
+        "eisingen.bayern.de"
       ]
     },
     {
@@ -72602,7 +72812,8 @@
       "region": "Bayern",
       "website": "gemeinde-erlabrunn.de",
       "emails": [
-        "gemeinde-erlabrunn.de"
+        "gemeinde-erlabrunn.de",
+        "vgem-margetshoechheim.bayern.de"
       ]
     },
     {
@@ -72611,7 +72822,8 @@
       "region": "Bayern",
       "website": "estenfeld.net",
       "emails": [
-        "estenfeld.net"
+        "estenfeld.net",
+        "vgem-estenfeld.bayern.de"
       ]
     },
     {
@@ -72629,7 +72841,8 @@
       "region": "Bayern",
       "website": "gaukoenigshofen.de",
       "emails": [
-        "gaukoenigshofen.de"
+        "gaukoenigshofen.de",
+        "gaukoenigshofen.bayern.de"
       ]
     },
     {
@@ -72638,7 +72851,8 @@
       "region": "Bayern",
       "website": "gelchsheim.de",
       "emails": [
-        "gelchsheim.de"
+        "gelchsheim.de",
+        "vgem-aub.bayern.de"
       ]
     },
     {
@@ -72683,7 +72897,8 @@
       "region": "Bayern",
       "website": "guentersleben.de",
       "emails": [
-        "guentersleben.de"
+        "guentersleben.de",
+        "guentersleben.bayern.de"
       ]
     },
     {
@@ -72701,7 +72916,8 @@
       "region": "Bayern",
       "website": "helmstadt-ufr.de",
       "emails": [
-        "helmstadt-ufr.de"
+        "helmstadt-ufr.de",
+        "vgem-helmstadt.bayern.de"
       ]
     },
     {
@@ -72746,7 +72962,8 @@
       "region": "Bayern",
       "website": "gemeinde-kist.de",
       "emails": [
-        "gemeinde-kist.de"
+        "gemeinde-kist.de",
+        "vgem-kist.bayern.de"
       ]
     },
     {
@@ -72755,7 +72972,8 @@
       "region": "Bayern",
       "website": "kleinrinderfeld.de",
       "emails": [
-        "kleinrinderfeld.de"
+        "kleinrinderfeld.de",
+        "kleinrinderfeld.bayern.de"
       ]
     },
     {
@@ -72773,7 +72991,8 @@
       "region": "Bayern",
       "website": "margetshoechheim.de",
       "emails": [
-        "margetshoechheim.de"
+        "margetshoechheim.de",
+        "vgem-margetshoechheim.bayern.de"
       ]
     },
     {
@@ -72791,7 +73010,8 @@
       "region": "Bayern",
       "website": "altertheim.de",
       "emails": [
-        "gemeinde-altertheim.de"
+        "gemeinde-altertheim.de",
+        "vgem-kist.bayern.de"
       ]
     },
     {
@@ -72800,7 +73020,8 @@
       "region": "Bayern",
       "website": "eisenheim.de",
       "emails": [
-        "eisenheim.de"
+        "eisenheim.de",
+        "vgem-estenfeld.bayern.de"
       ]
     },
     {
@@ -72809,7 +73030,8 @@
       "region": "Bayern",
       "website": "",
       "emails": [
-        "oberpleichfeld.de"
+        "oberpleichfeld.de",
+        "vgem-bergtheim.bayern.de"
       ]
     },
     {
@@ -72828,7 +73050,8 @@
       "region": "Bayern",
       "website": "prosselsheim.de",
       "emails": [
-        "prosselsheim.de"
+        "prosselsheim.de",
+        "vgem-estenfeld.bayern.de"
       ]
     },
     {
@@ -72837,7 +73060,8 @@
       "region": "Bayern",
       "website": "randersacker.de",
       "emails": [
-        "randersacker.de"
+        "randersacker.de",
+        "randersacker.bayern.de"
       ]
     },
     {
@@ -72846,7 +73070,8 @@
       "region": "Bayern",
       "website": "markt-reichenberg.de",
       "emails": [
-        "markt-reichenberg.de"
+        "markt-reichenberg.de",
+        "reichenberg.bayern.de"
       ]
     },
     {
@@ -72855,7 +73080,8 @@
       "region": "Bayern",
       "website": "remlingen.de",
       "emails": [
-        "remlingen.de"
+        "remlingen.de",
+        "vgem-helmstadt.bayern.de"
       ]
     },
     {
@@ -72864,7 +73090,8 @@
       "region": "Bayern",
       "website": "riedenheim.de",
       "emails": [
-        "riedenheim.de"
+        "riedenheim.de",
+        "vgem-roettingen.bayern.de"
       ]
     },
     {
@@ -72882,7 +73109,8 @@
       "region": "Bayern",
       "website": "roettingen.de",
       "emails": [
-        "roettingen.de"
+        "roettingen.de",
+        "vgem-roettingen.bayern.de"
       ]
     },
     {
@@ -72918,7 +73146,8 @@
       "region": "Bayern",
       "website": "tauberrettersheim.de",
       "emails": [
-        "tauberrettersheim.de"
+        "tauberrettersheim.de",
+        "vgem-roettingen.bayern.de"
       ]
     },
     {
@@ -72927,7 +73156,8 @@
       "region": "Bayern",
       "website": "theilheim.de",
       "emails": [
-        "theilheim.de"
+        "theilheim.de",
+        "theilheim.bayern.de"
       ]
     },
     {
@@ -72936,7 +73166,8 @@
       "region": "Bayern",
       "website": "thuengersheim.de",
       "emails": [
-        "thuengersheim.de"
+        "thuengersheim.de",
+        "thuengersheim.bayern.de"
       ]
     },
     {
@@ -72945,7 +73176,8 @@
       "region": "Bayern",
       "website": "uettingen.de",
       "emails": [
-        "uettingen.de"
+        "uettingen.de",
+        "vgem-helmstadt.bayern.de"
       ]
     },
     {
@@ -72963,7 +73195,8 @@
       "region": "Bayern",
       "website": "unterpleichfeld.de",
       "emails": [
-        "unterpleichfeld.de"
+        "unterpleichfeld.de",
+        "unterpleichfeld.bayern.de"
       ]
     },
     {
@@ -72981,7 +73214,8 @@
       "region": "Bayern",
       "website": "gemeinde-waldbrunn.de",
       "emails": [
-        "gemeinde-waldbrunn.de"
+        "gemeinde-waldbrunn.de",
+        "waldbrunn.bayern.de"
       ]
     },
     {
@@ -73024,7 +73258,7 @@
       "code": "09762000",
       "name": "Kaufbeuren",
       "region": "Bayern",
-      "website": "kaufbeuren.de",
+      "website": "",
       "emails": [
         "kaufbeuren.de"
       ]
@@ -73157,7 +73391,8 @@
       "region": "Bayern",
       "website": "gemeinde-merching.de",
       "emails": [
-        "merching.de"
+        "merching.de",
+        "gemeinde-merching.bayern.de"
       ]
     },
     {
@@ -73166,7 +73401,8 @@
       "region": "Bayern",
       "website": "mering.de",
       "emails": [
-        "mering.de"
+        "mering.de",
+        "mering.bayern.de"
       ]
     },
     {
@@ -73251,7 +73487,8 @@
       "region": "Bayern",
       "website": "steindorf.eu",
       "emails": [
-        "steindorf.eu"
+        "steindorf.eu",
+        "mering.bayern.de"
       ]
     },
     {
@@ -73401,14 +73638,15 @@
       "region": "Bayern",
       "website": "gablingen.de",
       "emails": [
-        "gablingen.de"
+        "gablingen.de",
+        "gablingen.bayern.de"
       ]
     },
     {
       "code": "09772147",
       "name": "Gersthofen",
       "region": "Bayern",
-      "website": "gersthofen.de",
+      "website": "",
       "emails": [
         "gersthofen.de",
         "stadt-gersthofen.de"
@@ -73509,7 +73747,7 @@
       "code": "09772167",
       "name": "Kutzenhausen",
       "region": "Bayern",
-      "website": "kutzenhausen.de",
+      "website": "",
       "emails": [
         "kutzenhausen.de"
       ]
@@ -74158,7 +74396,7 @@
       "code": "09774155",
       "name": "Leipheim",
       "region": "Bayern",
-      "website": "",
+      "website": "leipheim.de",
       "emails": [
         "leipheim.de"
       ]
@@ -74167,7 +74405,7 @@
       "code": "09774160",
       "name": "Münsterhausen",
       "region": "Bayern",
-      "website": "",
+      "website": "muensterhausen.de",
       "emails": [
         "muensterhausen.de"
       ]
@@ -74187,7 +74425,8 @@
       "region": "Bayern",
       "website": "vgziemetshausen.de",
       "emails": [
-        "vgziemetshausen.de"
+        "vgziemetshausen.de",
+        "vg.ziemetshausen.de"
       ]
     },
     {
@@ -74272,7 +74511,9 @@
       "name": "Ziemetshausen",
       "region": "Bayern",
       "website": "",
-      "emails": []
+      "emails": [
+        "vg.ziemetshausen.de"
+      ]
     },
     {
       "code": "09775111",
@@ -74280,7 +74521,8 @@
       "region": "Bayern",
       "website": "altenstadt-vg.de",
       "emails": [
-        "altenstadt-vg.de"
+        "altenstadt-vg.de",
+        "altenstadt-wm.bayern.de"
       ]
     },
     {
@@ -74305,7 +74547,7 @@
       "code": "09775126",
       "name": "Holzheim",
       "region": "Bayern",
-      "website": "gemeinde-holzheim.de",
+      "website": "holzheim-nu.de",
       "emails": [
         "holzheim-nu.de",
         "gemeinde-holzheim.de"
@@ -74333,7 +74575,7 @@
       "code": "09775134",
       "name": "Nersingen",
       "region": "Bayern",
-      "website": "",
+      "website": "nersingen.de",
       "emails": [
         "nersingen.de"
       ]
@@ -74360,7 +74602,7 @@
       "code": "09775141",
       "name": "Oberroth",
       "region": "Bayern",
-      "website": "oberroth.de",
+      "website": "",
       "emails": [
         "oberroth.de"
       ]
@@ -74424,7 +74666,7 @@
       "code": "09775164",
       "name": "Weißenhorn",
       "region": "Bayern",
-      "website": "",
+      "website": "weissenhorn.de",
       "emails": [
         "weissenhorn.de"
       ]
@@ -74609,7 +74851,8 @@
       "region": "Bayern",
       "website": "aitrang.de",
       "emails": [
-        "aitrang.de"
+        "aitrang.de",
+        "aitrang.bayern.de"
       ]
     },
     {
@@ -74618,7 +74861,8 @@
       "region": "Bayern",
       "website": "biessenhofen.de",
       "emails": [
-        "biessenhofen.de"
+        "biessenhofen.de",
+        "biessenhofen.bayern.de"
       ]
     },
     {
@@ -74636,7 +74880,8 @@
       "region": "Bayern",
       "website": "bidingen.de",
       "emails": [
-        "bidingen.de"
+        "bidingen.de",
+        "bidingen.bayern.de"
       ]
     },
     {
@@ -74654,7 +74899,8 @@
       "region": "Bayern",
       "website": "eggenthal.de",
       "emails": [
-        "eggenthal.de"
+        "eggenthal.de",
+        "eggenthal.bayern.de"
       ]
     },
     {
@@ -74726,14 +74972,15 @@
       "region": "Bayern",
       "website": "irsee.de",
       "emails": [
-        "irsee.de"
+        "irsee.de",
+        "irsee.bayern.de"
       ]
     },
     {
       "code": "09777140",
       "name": "Jengen",
       "region": "Bayern",
-      "website": "",
+      "website": "jengen.de",
       "emails": [
         "jengen.de"
       ]
@@ -74779,7 +75026,7 @@
       "code": "09777149",
       "name": "Lengenwang",
       "region": "Bayern",
-      "website": "lengenwang.de",
+      "website": "",
       "emails": [
         "lengenwang.de"
       ]
@@ -74799,7 +75046,8 @@
       "region": "Bayern",
       "website": "mauerstetten.de",
       "emails": [
-        "mauerstetten.de"
+        "mauerstetten.de",
+        "mauerstetten.bayern.de"
       ]
     },
     {
@@ -74808,7 +75056,8 @@
       "region": "Bayern",
       "website": "nesselwang-buergerservice.de",
       "emails": [
-        "nesselwang-buergerservice.de"
+        "nesselwang-buergerservice.de",
+        "nesselwang.bayern.de"
       ]
     },
     {
@@ -74817,7 +75066,8 @@
       "region": "Bayern",
       "website": "oberguenzburg.de",
       "emails": [
-        "oberguenzburg.de"
+        "oberguenzburg.de",
+        "vgem-oberguenzburg.bayern.de"
       ]
     },
     {
@@ -74844,7 +75094,8 @@
       "region": "Bayern",
       "website": "pforzen.de",
       "emails": [
-        "pforzen.de"
+        "pforzen.de",
+        "pforzen.bayern.de"
       ]
     },
     {
@@ -74853,7 +75104,8 @@
       "region": "Bayern",
       "website": "pfronten.de",
       "emails": [
-        "pfronten.de"
+        "pfronten.de",
+        "pfronten.bayern.de"
       ]
     },
     {
@@ -74871,7 +75123,8 @@
       "region": "Bayern",
       "website": "rieden-zellerberg.de",
       "emails": [
-        "rieden-zellerberg.de"
+        "rieden-zellerberg.de",
+        "rieden-zellerberg.bayern.de"
       ]
     },
     {
@@ -74889,7 +75142,8 @@
       "region": "Bayern",
       "website": "rosshaupten.de",
       "emails": [
-        "rosshaupten.de"
+        "rosshaupten.de",
+        "vgem-rosshaupten.bayern.de"
       ]
     },
     {
@@ -74898,7 +75152,8 @@
       "region": "Bayern",
       "website": "ruderatshofen.de",
       "emails": [
-        "ruderatshofen.de"
+        "ruderatshofen.de",
+        "ruderatshofen.bayern.de"
       ]
     },
     {
@@ -74916,7 +75171,8 @@
       "region": "Bayern",
       "website": "schwangau.de",
       "emails": [
-        "schwangau.de"
+        "schwangau.de",
+        "schwangau.bayern.de"
       ]
     },
     {
@@ -74970,7 +75226,8 @@
       "region": "Bayern",
       "website": "untrasried.de",
       "emails": [
-        "untrasried.de"
+        "untrasried.de",
+        "untrasried.bayern.de"
       ]
     },
     {
@@ -75190,7 +75447,7 @@
       "code": "09778157",
       "name": "Kirchhaslach",
       "region": "Bayern",
-      "website": "babenhausen-schwaben.de",
+      "website": "kirchhaslach.de",
       "emails": [
         "kirchhaslach.de",
         "babenhausen-schwaben.de"
@@ -75605,7 +75862,7 @@
       "code": "09779148",
       "name": "Fünfstetten",
       "region": "Bayern",
-      "website": "",
+      "website": "fuenfstetten.de",
       "emails": [
         "fuenfstetten.de"
       ]
@@ -75770,7 +76027,7 @@
       "code": "09779192",
       "name": "Niederschönenfeld",
       "region": "Bayern",
-      "website": "niederschoenenfeld.de",
+      "website": "",
       "emails": [
         "niederschoenenfeld.de"
       ]
@@ -75797,7 +76054,7 @@
       "code": "09779197",
       "name": "Oettingen in Bayern",
       "region": "Bayern",
-      "website": "oettingen.de",
+      "website": "",
       "emails": [
         "oettingen.de"
       ]
@@ -75843,7 +76100,7 @@
       "code": "09779217",
       "name": "Tagmersheim",
       "region": "Bayern",
-      "website": "",
+      "website": "tagmersheim.de",
       "emails": [
         "tagmersheim.de"
       ]
@@ -75997,7 +76254,7 @@
       "code": "09780123",
       "name": "Bad Hindelang",
       "region": "Bayern",
-      "website": "marktbadhindelang.de",
+      "website": "badhindelang.de",
       "emails": [
         "badhindelang.de"
       ]
@@ -76105,7 +76362,7 @@
       "code": "09780143",
       "name": "Waltenhofen",
       "region": "Bayern",
-      "website": "",
+      "website": "waltenhofen.de",
       "emails": [
         "waltenhofen.de"
       ]
@@ -76285,7 +76542,7 @@
       "code": "10042116",
       "name": "Wadern",
       "region": "Saarland",
-      "website": "",
+      "website": "ssl.wadern.de",
       "emails": [
         "stadt-wadern.de"
       ]
@@ -76393,7 +76650,7 @@
       "code": "10044114",
       "name": "Rehlingen-Siersburg",
       "region": "Saarland",
-      "website": "rehlingen-siersburg.de",
+      "website": "",
       "emails": [
         "rehlingen-siersburg.de"
       ]
@@ -76971,7 +77228,7 @@
       "code": "12061217",
       "name": "Heidesee",
       "region": "Brandenburg",
-      "website": "gemeinde-heidesee.de",
+      "website": "",
       "emails": [
         "gemeinde-heidesee.de"
       ]
@@ -77116,7 +77373,7 @@
       "code": "12061433",
       "name": "Schönefeld",
       "region": "Brandenburg",
-      "website": "gemeinde-schoenefeld.de",
+      "website": "",
       "emails": [
         "gemeinde-schoenefeld.de"
       ]
@@ -77251,7 +77508,7 @@
       "code": "12062124",
       "name": "Elsterwerda",
       "region": "Brandenburg",
-      "website": "",
+      "website": "elsterwerda.de",
       "emails": [
         "elsterwerda.de"
       ]
@@ -77695,7 +77952,8 @@
       "region": "Brandenburg",
       "website": "rathenow.de",
       "emails": [
-        "rathenow.de"
+        "rathenow.de",
+        "stadt-rathenow.de"
       ]
     },
     {
@@ -77720,7 +77978,7 @@
       "code": "12063273",
       "name": "Schönwalde-Glien",
       "region": "Brandenburg",
-      "website": "schoenwalde-glien.de",
+      "website": "",
       "emails": [
         "schoenwalde-glien.de"
       ]
@@ -78316,7 +78574,7 @@
       "code": "12065332",
       "name": "Velten",
       "region": "Brandenburg",
-      "website": "",
+      "website": "velten.de",
       "emails": [
         "velten.de"
       ]
@@ -78618,7 +78876,7 @@
       "code": "12067120",
       "name": "Eisenhüttenstadt",
       "region": "Brandenburg",
-      "website": "",
+      "website": "eisenhuettenstadt.de",
       "emails": [
         "eisenhuettenstadt.de"
       ]
@@ -79224,7 +79482,7 @@
       "code": "12069249",
       "name": "Groß Kreutz (Havel)",
       "region": "Brandenburg",
-      "website": "gross-kreutz.de",
+      "website": "",
       "emails": [
         "gross-kreutz.de"
       ]
@@ -79242,7 +79500,7 @@
       "code": "12069304",
       "name": "Kleinmachnow",
       "region": "Brandenburg",
-      "website": "kleinmachnow.de",
+      "website": "",
       "emails": [
         "kleinmachnow.de"
       ]
@@ -79765,7 +80023,7 @@
       "code": "12071076",
       "name": "Forst (Lausitz)",
       "region": "Brandenburg",
-      "website": "forst-lausitz.de",
+      "website": "",
       "emails": [
         "forst-lausitz.de"
       ]
@@ -79965,7 +80223,8 @@
       "region": "Brandenburg",
       "website": "gemeinde-am-mellensee.de",
       "emails": [
-        "am-mellensee.de"
+        "am-mellensee.de",
+        "mellensee.de"
       ]
     },
     {
@@ -80066,7 +80325,8 @@
       "region": "Brandenburg",
       "website": "",
       "emails": [
-        "niederer-flaeming.de"
+        "niederer-flaeming.de",
+        "gemeinde-niederer-flaeming.de"
       ]
     },
     {
@@ -80084,7 +80344,8 @@
       "region": "Brandenburg",
       "website": "rangsdorf.de",
       "emails": [
-        "rangsdorf.de"
+        "rangsdorf.de",
+        "gv-rangsdorf.de"
       ]
     },
     {
@@ -80102,7 +80363,8 @@
       "region": "Brandenburg",
       "website": "zossen.de",
       "emails": [
-        "zossen.de"
+        "zossen.de",
+        "svzossen.brandenburg.de"
       ]
     },
     {
@@ -81959,7 +82221,7 @@
       "code": "13072007",
       "name": "Bartenshagen-Parkentin",
       "region": "Mecklenburg-Vorpommern",
-      "website": "amt-doberan-land.de",
+      "website": "",
       "emails": [
         "doberan-land.de"
       ]
@@ -82049,7 +82311,7 @@
       "code": "13072017",
       "name": "Börgerende-Rethwisch",
       "region": "Mecklenburg-Vorpommern",
-      "website": "amt-doberan-land.de",
+      "website": "",
       "emails": [
         "doberan-land.de"
       ]
@@ -82410,7 +82672,7 @@
       "code": "13072058",
       "name": "Kröpelin",
       "region": "Mecklenburg-Vorpommern",
-      "website": "stadt-kroepelin.de",
+      "website": "",
       "emails": [
         "kroepelin.de"
       ]
@@ -82635,7 +82897,7 @@
       "code": "13072085",
       "name": "Rerik",
       "region": "Mecklenburg-Vorpommern",
-      "website": "",
+      "website": "rerik.de",
       "emails": [
         "rerik.de"
       ]
@@ -82763,7 +83025,7 @@
       "code": "13072099",
       "name": "Steffenshagen",
       "region": "Mecklenburg-Vorpommern",
-      "website": "amt-doberan-land.de",
+      "website": "",
       "emails": [
         "doberan-land.de"
       ]
@@ -84202,7 +84464,7 @@
       "code": "13074035",
       "name": "Poel",
       "region": "Mecklenburg-Vorpommern",
-      "website": "",
+      "website": "ostseebad-insel-poel.de",
       "emails": [
         "ostseebad-insel-poel.de"
       ]
@@ -85039,7 +85301,7 @@
       "code": "13075044",
       "name": "Gützkow",
       "region": "Mecklenburg-Vorpommern",
-      "website": "guetzkow.de",
+      "website": "",
       "emails": [
         "guetzkow.de"
       ]
@@ -85075,7 +85337,7 @@
       "code": "13075049",
       "name": "Heringsdorf",
       "region": "Mecklenburg-Vorpommern",
-      "website": "",
+      "website": "gemeinde-ostseebad-heringsdorf.de",
       "emails": [
         "gemeinde-ostseebad-heringsdorf.de"
       ]
@@ -86047,7 +86309,7 @@
       "code": "13076012",
       "name": "Blievenstorf",
       "region": "Mecklenburg-Vorpommern",
-      "website": "",
+      "website": "neustadt-glewe.de",
       "emails": [
         "neustadt-glewe.de"
       ]
@@ -86092,7 +86354,7 @@
       "code": "13076017",
       "name": "Brenz",
       "region": "Mecklenburg-Vorpommern",
-      "website": "",
+      "website": "neustadt-glewe.de",
       "emails": [
         "neustadt-glewe.de"
       ]
@@ -86795,7 +87057,7 @@
       "code": "13076105",
       "name": "Neustadt-Glewe",
       "region": "Mecklenburg-Vorpommern",
-      "website": "",
+      "website": "neustadt-glewe.de",
       "emails": [
         "neustadt-glewe.de"
       ]
@@ -87284,7 +87546,7 @@
       "code": "13076167",
       "name": "Kloster Tempzin",
       "region": "Mecklenburg-Vorpommern",
-      "website": "",
+      "website": "amt-ssl.de",
       "emails": [
         "amt-ssl.de"
       ]
@@ -87395,7 +87657,8 @@
       "region": "Sachsen",
       "website": "bockau.de",
       "emails": [
-        "bockau.de"
+        "bockau.de",
+        "bockau-erzgebirge.de"
       ]
     },
     {
@@ -87503,7 +87766,7 @@
       "code": "14521210",
       "name": "Geyer",
       "region": "Sachsen",
-      "website": "",
+      "website": "stadt-geyer.de",
       "emails": [
         "stadt-geyer.de",
         "stadt-geyer.com"
@@ -87576,7 +87839,7 @@
       "code": "14521290",
       "name": "Hohndorf",
       "region": "Sachsen",
-      "website": "",
+      "website": "hohndorf.com",
       "emails": [
         "hohndorf.com"
       ]
@@ -87659,7 +87922,7 @@
       "code": "14521380",
       "name": "Lugau",
       "region": "Sachsen",
-      "website": "stadt-lugau.de",
+      "website": "",
       "emails": [
         "stadt-lugau.de"
       ]
@@ -87733,7 +87996,8 @@
       "region": "Sachsen",
       "website": "olbernhau.de",
       "emails": [
-        "olbernhau.de"
+        "olbernhau.de",
+        "stadtverwaltung-olbernhau.de"
       ]
     },
     {
@@ -87758,7 +88022,7 @@
       "code": "14521500",
       "name": "Raschau-Markersbach",
       "region": "Sachsen",
-      "website": "raschau-markersbach.de",
+      "website": "",
       "emails": [
         "raschau-markersbach.de"
       ]
@@ -87787,7 +88051,6 @@
       "region": "Sachsen",
       "website": "bergstadt-schneeberg.de",
       "emails": [
-        "schneeberg.de",
         "bergstadt-schneeberg.de"
       ]
     },
@@ -87869,6 +88132,7 @@
       "region": "Sachsen",
       "website": "wiesenbad.de",
       "emails": [
+        "thermalbad-wiesenbad.de",
         "wiesenbad.de"
       ]
     },
@@ -88098,7 +88362,7 @@
       "code": "14522230",
       "name": "Hainichen",
       "region": "Sachsen",
-      "website": "hainichen.de",
+      "website": "",
       "emails": [
         "hainichen.de"
       ]
@@ -88125,7 +88389,7 @@
       "code": "14522260",
       "name": "Hartmannsdorf",
       "region": "Sachsen",
-      "website": "gemeinde-hartmannsdorf.de",
+      "website": "",
       "emails": [
         "gemeinde-hartmannsdorf.de"
       ]
@@ -88236,6 +88500,7 @@
       "region": "Sachsen",
       "website": "gemeinde-muehlau-sachsen.de",
       "emails": [
+        "gemeinde-muehlau.de",
         "gemeinde-muehlau-sachsen.de"
       ]
     },
@@ -88462,7 +88727,7 @@
       "code": "14523060",
       "name": "Bösenbrunn",
       "region": "Sachsen",
-      "website": "",
+      "website": "boesenbrunn.de",
       "emails": [
         "boesenbrunn.de"
       ]
@@ -88574,10 +88839,8 @@
       "code": "14523240",
       "name": "Mühltroff",
       "region": "Sachsen",
-      "website": "",
-      "emails": [
-        "muehltroff.de"
-      ]
+      "website": "muehltroff.de",
+      "emails": []
     },
     {
       "code": "14523245",
@@ -88657,7 +88920,8 @@
       "region": "Sachsen",
       "website": "poehl.de",
       "emails": [
-        "poehl.de"
+        "poehl.de",
+        "gemeinde-poehl.de"
       ]
     },
     {
@@ -88829,7 +89093,7 @@
       "code": "14524080",
       "name": "Glauchau",
       "region": "Sachsen",
-      "website": "glauchau.de",
+      "website": "",
       "emails": [
         "glauchau.de"
       ]
@@ -88894,7 +89158,8 @@
       "region": "Sachsen",
       "website": "langenweissbach.de",
       "emails": [
-        "langenweissbach.de"
+        "langenweissbach.de",
+        "gv-langenweissbach.de"
       ]
     },
     {
@@ -89384,7 +89649,7 @@
       "code": "14625380",
       "name": "Neukirch/Lausitz",
       "region": "Sachsen",
-      "website": "neukirch-lausitz.de",
+      "website": "",
       "emails": [
         "neukirch-lausitz.de"
       ]
@@ -89560,7 +89825,8 @@
       "region": "Sachsen",
       "website": "steinigtwolmsdorf.de",
       "emails": [
-        "steinigtwolmsdorf.de"
+        "steinigtwolmsdorf.de",
+        "gemeinde-steinigtwolmsdorf.de"
       ]
     },
     {
@@ -89661,7 +89927,8 @@
       "region": "Sachsen",
       "website": "",
       "emails": [
-        "duerrhennersdorf.com"
+        "duerrhennersdorf.com",
+        "dhdf.info"
       ]
     },
     {
@@ -89771,7 +90038,8 @@
       "region": "Sachsen",
       "website": "horka.de",
       "emails": [
-        "horka.de"
+        "horka.de",
+        "gemeinde-horka.de"
       ]
     },
     {
@@ -89789,7 +90057,8 @@
       "region": "Sachsen",
       "website": "kodersdorf.de",
       "emails": [
-        "kodersdorf.de"
+        "kodersdorf.de",
+        "gemeinde-kodersdorf.de"
       ]
     },
     {
@@ -89825,6 +90094,7 @@
       "region": "Sachsen",
       "website": "gemeinde-kreba-neudorf.de",
       "emails": [
+        "krebaneudorf.de",
         "gemeinde-kreba-neudorf.de"
       ]
     },
@@ -89862,7 +90132,8 @@
       "region": "Sachsen",
       "website": "markersdorf.de",
       "emails": [
-        "markersdorf.de"
+        "markersdorf.de",
+        "gemeinde-markersdorf.de"
       ]
     },
     {
@@ -89889,7 +90160,8 @@
       "region": "Sachsen",
       "website": "neisseaue.de",
       "emails": [
-        "neisseaue.de"
+        "neisseaue.de",
+        "gemeinde-neisseaue.de"
       ]
     },
     {
@@ -90006,7 +90278,7 @@
       "code": "14626470",
       "name": "Rosenbach",
       "region": "Sachsen",
-      "website": "gemeinde-rosenbach.de",
+      "website": "",
       "emails": [
         "gemeinde-rosenbach.de"
       ]
@@ -90053,6 +90325,7 @@
       "region": "Sachsen",
       "website": "gemeinde-schoepstal.de",
       "emails": [
+        "gemeindeschoepstal.de",
         "gemeinde-schoepstal.de"
       ]
     },
@@ -90096,9 +90369,8 @@
       "code": "14626590",
       "name": "Weißkeißel",
       "region": "Sachsen",
-      "website": "",
+      "website": "weisskeissel-online.de",
       "emails": [
-        "weisskeissel.de",
         "weisskeissel-online.de"
       ]
     },
@@ -90106,7 +90378,7 @@
       "code": "14626600",
       "name": "Weißwasser/O.L.",
       "region": "Sachsen",
-      "website": "",
+      "website": "weisswasser.de",
       "emails": [
         "weisswasser.de"
       ]
@@ -90263,7 +90535,7 @@
       "code": "14627180",
       "name": "Nossen",
       "region": "Sachsen",
-      "website": "nossen.de",
+      "website": "",
       "emails": [
         "nossen.de"
       ]
@@ -90491,7 +90763,7 @@
       "code": "14628130",
       "name": "Glashütte",
       "region": "Sachsen",
-      "website": "",
+      "website": "glashuette-sachs.de",
       "emails": [
         "glashuette-sachs.de"
       ]
@@ -90973,7 +91245,6 @@
       "region": "Sachsen",
       "website": "stadt-pegau.de",
       "emails": [
-        "pegau.de",
         "stadt-pegau.de"
       ]
     },
@@ -91121,7 +91392,8 @@
       "region": "Sachsen",
       "website": "dreiheide.de",
       "emails": [
-        "dreiheide.de"
+        "dreiheide.de",
+        "gemeinde-dreiheide.de"
       ]
     },
     {
@@ -91185,7 +91457,7 @@
       "code": "14730180",
       "name": "Löbnitz",
       "region": "Sachsen",
-      "website": "loebnitz-am-see.de",
+      "website": "kin-sachsen.de",
       "emails": [
         "loebnitz-am-see.de",
         "kin-sachsen.de"
@@ -91195,7 +91467,7 @@
       "code": "14730190",
       "name": "Mockrehna",
       "region": "Sachsen",
-      "website": "",
+      "website": "mockrehna.de",
       "emails": [
         "mockrehna.de"
       ]
@@ -91378,7 +91650,7 @@
       "code": "15081095",
       "name": "Dähre",
       "region": "Sachsen-Anhalt",
-      "website": "gemeinde-daehre.de",
+      "website": "beetzendorf-diesdorf.de",
       "emails": [
         "gemeinde-daehre.de",
         "vg-beetzendorf.de"
@@ -91416,7 +91688,7 @@
       "code": "15081240",
       "name": "Kalbe (Milde)",
       "region": "Sachsen-Anhalt",
-      "website": "stadt-kalbe-milde.de",
+      "website": "",
       "emails": [
         "stadt-kalbe-milde.de"
       ]
@@ -91497,7 +91769,7 @@
       "code": "15082241",
       "name": "Muldestausee",
       "region": "Sachsen-Anhalt",
-      "website": "",
+      "website": "gemeinde-muldestausee.de",
       "emails": [
         "gemeinde-muldestausee.de"
       ]
@@ -91786,7 +92058,7 @@
       "code": "15083440",
       "name": "Rogätz",
       "region": "Sachsen-Anhalt",
-      "website": "elbe-heide.de",
+      "website": "rogaetz.de",
       "emails": [
         "rogaetz.de",
         "elbe-heide.de"
@@ -92529,7 +92801,7 @@
       "code": "15087130",
       "name": "Eisleben",
       "region": "Sachsen-Anhalt",
-      "website": "",
+      "website": "eisleben.eu",
       "emails": [
         "eisleben.eu"
       ]
@@ -93205,7 +93477,7 @@
       "code": "15090535",
       "name": "Stendal",
       "region": "Sachsen-Anhalt",
-      "website": "serviceportal.stendal.de",
+      "website": "",
       "emails": [
         "stendal.de"
       ]
@@ -93376,7 +93648,7 @@
       "code": "16053000",
       "name": "Jena",
       "region": "Thüringen",
-      "website": "",
+      "website": "startseite.jena.de",
       "emails": [
         "jena.de"
       ]
@@ -93405,7 +93677,7 @@
       "code": "16056000",
       "name": "Eisenach",
       "region": "Thüringen",
-      "website": "",
+      "website": "eisenach.de",
       "emails": [
         "eisenach.de"
       ]
@@ -93638,7 +93910,8 @@
       "region": "Thüringen",
       "website": "gernrode-eic.de",
       "emails": [
-        "gernrode-eic.de"
+        "gernrode-eic.de",
+        "eichsfeld-wipperaue.de"
       ]
     },
     {
@@ -93784,7 +94057,8 @@
       "region": "Thüringen",
       "website": "eichsfeld-wipperaue.de",
       "emails": [
-        "kirchworbis.de"
+        "kirchworbis.de",
+        "eichsfeld-wipperaue.de"
       ]
     },
     {
@@ -94104,7 +94378,7 @@
       "code": "16061115",
       "name": "Leinefelde-Worbis",
       "region": "Thüringen",
-      "website": "leinefelde-worbis.de",
+      "website": "",
       "emails": [
         "leinefelde-worbis.de"
       ]
@@ -94231,7 +94505,7 @@
       "code": "16062022",
       "name": "Ilfeld",
       "region": "Thüringen",
-      "website": "gemeinde-harztor.com",
+      "website": "",
       "emails": [
         "harztor.de"
       ]
@@ -94918,7 +95192,7 @@
       "code": "16063105",
       "name": "Eisenach",
       "region": "Thüringen",
-      "website": "",
+      "website": "eisenach.de",
       "emails": [
         "eisenach.de"
       ]
@@ -94938,7 +95212,8 @@
       "region": "Thüringen",
       "website": "",
       "emails": [
-        "badlangensalza.de"
+        "badlangensalza.de",
+        "bad-langensalza.thueringen.de"
       ]
     },
     {
@@ -95076,7 +95351,7 @@
       "code": "16064032",
       "name": "Kammerforst",
       "region": "Thüringen",
-      "website": "gemeinde-vogtei.de",
+      "website": "kammerforst.de",
       "emails": [
         "kammerforst.de",
         "gemeinde-vogtei.de"
@@ -95610,7 +95885,7 @@
       "code": "16065058",
       "name": "Rockstedt",
       "region": "Thüringen",
-      "website": "ebeleben.de",
+      "website": "rockstedt.de",
       "emails": [
         "rockstedt.de",
         "ebeleben.de"
@@ -96095,7 +96370,7 @@
       "code": "16066063",
       "name": "Schmalkalden",
       "region": "Thüringen",
-      "website": "schmalkalden.de",
+      "website": "",
       "emails": [
         "schmalkalden.de"
       ]
@@ -96141,7 +96416,7 @@
       "code": "16066071",
       "name": "Stepfershausen",
       "region": "Thüringen",
-      "website": "stepfershausen.de",
+      "website": "",
       "emails": [
         "stepfershausen.de"
       ]
@@ -96790,7 +97065,7 @@
       "code": "16068008",
       "name": "Ellersleben",
       "region": "Thüringen",
-      "website": "lg-buttstaedt.de",
+      "website": "",
       "emails": [
         "lg-buttstaedt.de"
       ]
@@ -96808,7 +97083,7 @@
       "code": "16068011",
       "name": "Eßleben-Teutleben",
       "region": "Thüringen",
-      "website": "lg-buttstaedt.de",
+      "website": "",
       "emails": [
         "lg-buttstaedt.de"
       ]
@@ -96854,7 +97129,7 @@
       "code": "16068016",
       "name": "Großbrembach",
       "region": "Thüringen",
-      "website": "lg-buttstaedt.de",
+      "website": "",
       "emails": [
         "lg-buttstaedt.de"
       ]
@@ -96901,7 +97176,7 @@
       "code": "16068023",
       "name": "Guthmannshausen",
       "region": "Thüringen",
-      "website": "lg-buttstaedt.de",
+      "website": "",
       "emails": [
         "lg-buttstaedt.de"
       ]
@@ -96910,7 +97185,7 @@
       "code": "16068024",
       "name": "Hardisleben",
       "region": "Thüringen",
-      "website": "lg-buttstaedt.de",
+      "website": "",
       "emails": [
         "lg-buttstaedt.de"
       ]
@@ -96955,7 +97230,7 @@
       "code": "16068031",
       "name": "Kleinbrembach",
       "region": "Thüringen",
-      "website": "lg-buttstaedt.de",
+      "website": "",
       "emails": [
         "lg-buttstaedt.de"
       ]
@@ -96992,7 +97267,7 @@
       "code": "16068035",
       "name": "Mannstedt",
       "region": "Thüringen",
-      "website": "lg-buttstaedt.de",
+      "website": "",
       "emails": [
         "lg-buttstaedt.de"
       ]
@@ -97020,7 +97295,7 @@
       "code": "16068038",
       "name": "Olbersleben",
       "region": "Thüringen",
-      "website": "lg-buttstaedt.de",
+      "website": "",
       "emails": [
         "lg-buttstaedt.de"
       ]
@@ -97078,7 +97353,7 @@
       "code": "16068046",
       "name": "Rudersdorf",
       "region": "Thüringen",
-      "website": "lg-buttstaedt.de",
+      "website": "",
       "emails": [
         "lg-buttstaedt.de"
       ]
@@ -97146,6 +97421,7 @@
       "region": "Thüringen",
       "website": "gramme-vippach.de",
       "emails": [
+        "udestedt.de",
         "gramme-vippach.de"
       ]
     },
@@ -97210,7 +97486,7 @@
       "code": "16068063",
       "name": "Buttstädt",
       "region": "Thüringen",
-      "website": "lg-buttstaedt.de",
+      "website": "",
       "emails": [
         "lg-buttstaedt.de"
       ]
@@ -97309,7 +97585,7 @@
       "code": "16069015",
       "name": "Gompertshausen",
       "region": "Thüringen",
-      "website": "gompertshausen.de",
+      "website": "",
       "emails": [
         "gompertshausen.de"
       ]
@@ -98297,7 +98573,7 @@
       "code": "16071056",
       "name": "Mellingen",
       "region": "Thüringen",
-      "website": "vgem-mellingen.de",
+      "website": "mellingen-online.de",
       "emails": [
         "vgem-mellingen.de",
         "mellingen-online.de"
@@ -98471,7 +98747,7 @@
       "code": "16071082",
       "name": "Sachsenhausen",
       "region": "Thüringen",
-      "website": "sachsenhausen-in-thueringen.de",
+      "website": "",
       "emails": [
         "sachsenhausen-in-thueringen.de"
       ]
@@ -98711,6 +98987,7 @@
       "region": "Thüringen",
       "website": "gemeindefrankenblick.de",
       "emails": [
+        "frankenblick.eu",
         "gemeindefrankenblick.de"
       ]
     },
@@ -98727,7 +99004,7 @@
       "code": "16073001",
       "name": "Allendorf",
       "region": "Thüringen",
-      "website": "koenigsee.de",
+      "website": "",
       "emails": [
         "koenigsee.de"
       ]
@@ -98754,7 +99031,7 @@
       "code": "16073006",
       "name": "Bechstedt",
       "region": "Thüringen",
-      "website": "koenigsee.de",
+      "website": "",
       "emails": [
         "koenigsee.de"
       ]
@@ -98954,7 +99231,8 @@
       "region": "Thüringen",
       "website": "saalfeld.de",
       "emails": [
-        "saalfeld.de"
+        "saalfeld.de",
+        "stadt-saalfeld.de"
       ]
     },
     {
@@ -99062,7 +99340,7 @@
       "code": "16073112",
       "name": "Königsee",
       "region": "Thüringen",
-      "website": "koenigsee.de",
+      "website": "",
       "emails": [
         "koenigsee.de"
       ]
@@ -99366,7 +99644,7 @@
       "code": "16074042",
       "name": "Hummelshain",
       "region": "Thüringen",
-      "website": "vg-suedliches-saaletal.de",
+      "website": "hummelshain-schmoelln.de",
       "emails": [
         "hummelshain-schmoelln.de",
         "vg-suedliches-saaletal.de"
@@ -99698,7 +99976,7 @@
       "code": "16074085",
       "name": "Schlöben",
       "region": "Thüringen",
-      "website": "bad-klosterlausnitz.de",
+      "website": "bioenergiedorf.schloeben.eu",
       "emails": [
         "bioenergiedorf.schloeben.eu",
         "bad-klosterlausnitz.de"
@@ -99964,7 +100242,7 @@
       "code": "16075006",
       "name": "Bodelwitz",
       "region": "Thüringen",
-      "website": "vg-oppurg.de",
+      "website": "",
       "emails": [
         "vg-oppurg.de"
       ]
@@ -100018,7 +100296,7 @@
       "code": "16075016",
       "name": "Döbritz",
       "region": "Thüringen",
-      "website": "vg-oppurg.de",
+      "website": "",
       "emails": [
         "vg-oppurg.de"
       ]
@@ -100064,7 +100342,7 @@
       "code": "16075031",
       "name": "Gertewitz",
       "region": "Thüringen",
-      "website": "vg-oppurg.de",
+      "website": "",
       "emails": [
         "vg-oppurg.de"
       ]
@@ -100100,7 +100378,7 @@
       "code": "16075039",
       "name": "Grobengereuth",
       "region": "Thüringen",
-      "website": "vg-oppurg.de",
+      "website": "",
       "emails": [
         "vg-oppurg.de"
       ]
@@ -100175,7 +100453,7 @@
       "code": "16075056",
       "name": "Lausnitz bei Neustadt an der Orla",
       "region": "Thüringen",
-      "website": "vg-oppurg.de",
+      "website": "",
       "emails": [
         "vg-oppurg.de"
       ]
@@ -100285,7 +100563,7 @@
       "code": "16075074",
       "name": "Nimritz",
       "region": "Thüringen",
-      "website": "vg-oppurg.de",
+      "website": "",
       "emails": [
         "vg-oppurg.de"
       ]
@@ -100294,7 +100572,7 @@
       "code": "16075075",
       "name": "Oberoppurg",
       "region": "Thüringen",
-      "website": "vg-oppurg.de",
+      "website": "",
       "emails": [
         "vg-oppurg.de"
       ]
@@ -100303,7 +100581,7 @@
       "code": "16075076",
       "name": "Oettersdorf",
       "region": "Thüringen",
-      "website": "oettersdorf.de",
+      "website": "vg-seenplatte.de",
       "emails": [
         "oettersdorf.de",
         "vg-seenplatte.de"
@@ -100313,7 +100591,7 @@
       "code": "16075077",
       "name": "Oppurg",
       "region": "Thüringen",
-      "website": "vg-oppurg.de",
+      "website": "",
       "emails": [
         "vg-oppurg.de"
       ]
@@ -100376,7 +100654,7 @@
       "code": "16075087",
       "name": "Quaschwitz",
       "region": "Thüringen",
-      "website": "vg-oppurg.de",
+      "website": "",
       "emails": [
         "vg-oppurg.de"
       ]
@@ -100457,7 +100735,7 @@
       "code": "16075105",
       "name": "Solkwitz",
       "region": "Thüringen",
-      "website": "vg-oppurg.de",
+      "website": "",
       "emails": [
         "vg-oppurg.de"
       ]
@@ -100511,7 +100789,7 @@
       "code": "16075121",
       "name": "Weira",
       "region": "Thüringen",
-      "website": "vg-oppurg.de",
+      "website": "",
       "emails": [
         "vg-oppurg.de"
       ]
@@ -100520,7 +100798,7 @@
       "code": "16075124",
       "name": "Wernburg",
       "region": "Thüringen",
-      "website": "vg-oppurg.de",
+      "website": "",
       "emails": [
         "vg-oppurg.de"
       ]
@@ -100613,7 +100891,8 @@
       "region": "Thüringen",
       "website": "stadtbadkoestritz.de",
       "emails": [
-        "stadtbadkoestritz.de"
+        "stadtbadkoestritz.de",
+        "stadt-bad-koestritz.de"
       ]
     },
     {
@@ -100676,7 +100955,7 @@
       "code": "16076014",
       "name": "Crimla",
       "region": "Thüringen",
-      "website": "weida.de",
+      "website": "crimla.de",
       "emails": [
         "crimla.de",
         "weida.de"
@@ -100750,7 +101029,7 @@
       "code": "16076029",
       "name": "Hohenleuben",
       "region": "Thüringen",
-      "website": "langenwetzendorf.de",
+      "website": "stadt-hohenleuben.de",
       "emails": [
         "stadt-hohenleuben.de",
         "langenwetzendorf.de"

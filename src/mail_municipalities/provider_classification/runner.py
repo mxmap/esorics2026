@@ -18,17 +18,22 @@ PROVIDER_OUTPUT_NAMES: dict[str, str] = {
     "ms365": "microsoft",
 }
 
-_CATEGORY_MAP: dict[str, str] = {
-    "microsoft": "us-cloud",
-    "google": "us-cloud",
-    "aws": "us-cloud",
-    "infomaniak": "swiss-based",
-    "swiss-isp": "swiss-based",
-    "independent": "swiss-based",
-}
+
+def _build_category_map(country_code: str) -> dict[str, str]:
+    """Build provider → category mapping for a given country."""
+    domestic = f"{country_code}-based"
+    return {
+        "microsoft": "us-cloud",
+        "google": "us-cloud",
+        "aws": "us-cloud",
+        "domestic": domestic,
+        "foreign": "foreign",
+        "unknown": "unknown",
+    }
 
 
 _FRONTEND_FIELDS = {
+    "code",
     "name",
     "domain",
     "region",
@@ -44,13 +49,13 @@ _FRONTEND_FIELDS = {
 
 def _minify_for_frontend(full_output: dict[str, Any]) -> dict[str, Any]:
     """Strip fields the frontend doesn't use, producing a compact payload."""
-    municipalities = {}
-    for code, entry in full_output["municipalities"].items():
+    municipalities = []
+    for entry in full_output["municipalities"]:
         mini = {k: v for k, v in entry.items() if k in _FRONTEND_FIELDS}
         mini["classification_signals"] = [
             {"kind": s["kind"], "detail": s["detail"]} for s in entry.get("classification_signals", [])
         ]
-        municipalities[code] = mini
+        municipalities.append(mini)
     return {
         "generated": full_output["generated"],
         "commit": full_output.get("commit"),
@@ -63,10 +68,12 @@ def _output_provider(provider: Provider) -> str:
     return PROVIDER_OUTPUT_NAMES.get(provider.value, provider.value)
 
 
-def _serialize_result(entry: dict[str, Any], result: ClassificationResult) -> dict[str, Any]:
+def _serialize_result(
+    entry: dict[str, Any], result: ClassificationResult, category_map: dict[str, str]
+) -> dict[str, Any]:
     """Serialize a ClassificationResult into a municipality output entry."""
     provider = _output_provider(result.provider)
-    category = _CATEGORY_MAP.get(provider, "unknown")
+    category = category_map.get(provider, "unknown")
     out: dict[str, Any] = {
         "code": entry["code"],
         "name": entry["name"],
@@ -121,7 +128,8 @@ def _load_resolver_output(domains_path: Path) -> dict[str, dict[str, Any]]:
     return entries
 
 
-async def run(domains_path: Path, output_path: Path) -> None:
+async def run(domains_path: Path, output_path: Path, *, country_code: str = "ch") -> None:
+    category_map = _build_category_map(country_code)
     entries = _load_resolver_output(domains_path)
     total = len(entries)
 
@@ -163,9 +171,9 @@ async def run(domains_path: Path, output_path: Path) -> None:
             results[entry["code"]]["resolve_flags"] = entry["flags"]
 
     # Classify domains
-    async for domain, classification in classify_many(unique_domains):
+    async for domain, classification in classify_many(unique_domains, country_code=country_code):
         for entry in domain_to_entries[domain]:
-            serialized = _serialize_result(entry, classification)
+            serialized = _serialize_result(entry, classification, category_map)
             results[entry["code"]] = serialized
 
         done += len(domain_to_entries[domain])
@@ -180,11 +188,12 @@ async def run(domains_path: Path, output_path: Path) -> None:
         )
 
     # Final counts
+    domestic_label = f"{country_code}-based"
     counts: dict[str, int] = {}
     cat_counts: dict[str, int] = {}
     for r in results.values():
         counts[r["provider"]] = counts.get(r["provider"], 0) + 1
-        cat = _CATEGORY_MAP.get(r["provider"], "unknown")
+        cat = category_map.get(r["provider"], "unknown")
         cat_counts[cat] = cat_counts.get(cat, 0) + 1
 
     elapsed = time.monotonic() - t0
@@ -197,16 +206,17 @@ async def run(domains_path: Path, output_path: Path) -> None:
         counts.get("aws", 0),
     )
     logger.info(
-        "  Swiss Based      {:>5}  (Infomaniak={} ISP={} Indep={})",
-        cat_counts.get("swiss-based", 0),
-        counts.get("infomaniak", 0),
-        counts.get("swiss-isp", 0),
-        counts.get("independent", 0),
+        "  Domestic         {:>5}",
+        cat_counts.get(domestic_label, 0),
+    )
+    logger.info(
+        "  Foreign          {:>5}",
+        cat_counts.get("foreign", 0),
     )
     logger.info("  Unknown/No MX    {:>5}", cat_counts.get("unknown", 0))
 
     sorted_counts = dict(sorted(counts.items()))
-    sorted_munis = dict(sorted(results.items(), key=lambda kv: int(kv[0])))
+    sorted_munis = sorted(results.values(), key=lambda m: int(m["code"]))
 
     commit = (
         subprocess.run(

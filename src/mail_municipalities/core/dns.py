@@ -5,7 +5,6 @@ from __future__ import annotations
 import asyncio
 
 import dns.asyncresolver
-import dns.exception
 import dns.resolver
 from loguru import logger
 
@@ -42,55 +41,32 @@ def reset_resolvers() -> None:
 
 
 async def resolve_robust(qname: str, rdtype: str) -> dns.resolver.Answer | None:
-    """DNS query with multi-resolver fallback.
-
-    Iterates system -> Quad9 -> Cloudflare resolvers.
-    NXDOMAIN is terminal (returns None immediately).
-    NoAnswer/NoNameservers retry next resolver.
-    Timeout retries next resolver.
-    """
+    """DNS query with multi-resolver fallback."""
     resolvers = get_resolvers()
-    had_timeout = False
     for i, resolver in enumerate(resolvers):
         try:
             return await resolver.resolve(qname, rdtype)
         except dns.resolver.NXDOMAIN:
             return None
-        except dns.exception.Timeout:
-            had_timeout = True
-            logger.debug("DNS {}/{}: Timeout on resolver {}, retrying", qname, rdtype, i)
-            await asyncio.sleep(0.5)
-        except (dns.resolver.NoAnswer, dns.resolver.NoNameservers) as e:
-            logger.debug(
-                "DNS {}/{}: {} on resolver {}, trying next",
-                qname,
-                rdtype,
-                type(e).__name__,
-                i,
-            )
-        except Exception as e:
-            logger.warning(
-                "DNS {}/{}: unexpected error on resolver {}: {}",
-                qname,
-                rdtype,
-                i,
-                type(e).__name__,
-            )
-    if had_timeout:
-        logger.warning("DNS {}/{}: all resolvers exhausted", qname, rdtype)
-    else:
-        logger.debug("DNS {}/{}: all resolvers exhausted", qname, rdtype)
+        except dns.resolver.NoAnswer:
+            logger.trace("DNS {}/{}: NoAnswer (terminal)", qname, rdtype)
+            return None
+        except dns.resolver.NoNameservers:
+            logger.trace("DNS {}/{}: NoNameservers on resolver {}", qname, rdtype, i)
+        except Exception:
+            logger.trace("DNS {}/{}: error on resolver {}", qname, rdtype, i)
+    logger.warning("DNS {}/{}: all resolvers exhausted", qname, rdtype)
     return None
 
 
 async def lookup_a(domain: str) -> bool:
     """Check if domain resolves (A or AAAA record)."""
     async with _dns_semaphore:
-        answer = await resolve_robust(domain, "A")
-        if answer is not None:
-            return True
-        answer = await resolve_robust(domain, "AAAA")
-        return answer is not None
+        a_result, aaaa_result = await asyncio.gather(
+            resolve_robust(domain, "A"),
+            resolve_robust(domain, "AAAA"),
+        )
+        return a_result is not None or aaaa_result is not None
 
 
 async def lookup_mx(domain: str) -> list[str]:

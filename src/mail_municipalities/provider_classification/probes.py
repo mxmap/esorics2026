@@ -9,11 +9,10 @@ import stamina
 from loguru import logger
 
 from mail_municipalities.core.dns import resolve_robust
-from .models import Evidence, Provider, SignalKind
+from .models import CymruResult, Evidence, Provider, SignalKind
 from .signatures import (
     GATEWAY_KEYWORDS,
     SIGNATURES,
-    SWISS_ISP_ASNS,
     match_patterns,
 )
 
@@ -297,7 +296,7 @@ async def probe_smtp(mx_hosts: list[str]) -> list[Evidence]:
     wait_initial=1.0,
 )
 async def _fetch_tenant(client: httpx.AsyncClient, url: str, params: dict) -> httpx.Response:
-    r = await client.get(url, params=params, timeout=10)
+    r = await client.get(url, params=params, timeout=6)
     r.raise_for_status()
     return r
 
@@ -327,8 +326,8 @@ async def probe_tenant(domain: str) -> list[Evidence]:
     return results
 
 
-async def probe_asn(mx_hosts: list[str]) -> list[Evidence]:
-    """Resolve MX IPs, query Team Cymru for ASN, match against providers + Swiss ISPs."""
+async def probe_asn(mx_hosts: list[str], *, country_code: str | None = None) -> list[Evidence]:
+    """Resolve MX IPs, query Team Cymru for ASN, match against providers and domestic ISPs."""
     results: list[Evidence] = []
 
     for host in mx_hosts:
@@ -347,40 +346,45 @@ async def probe_asn(mx_hosts: list[str]) -> list[Evidence]:
 
             for asn_rdata in asn_answer:
                 txt = b"".join(asn_rdata.strings).decode("utf-8", errors="ignore")
-                # Format: "ASN | IP | PREFIX | CC | REGISTRY"
-                parts = txt.split("|")
-                if not parts:
-                    continue
-                try:
-                    asn_num = int(parts[0].strip())
-                except (ValueError, IndexError):
+                cymru = CymruResult.from_txt(txt)
+                if cymru is None:
                     continue
 
                 # Check provider ASNs
                 for sig in SIGNATURES:
-                    if asn_num in sig.asns:
+                    if cymru.asn in sig.asns:
                         results.append(
                             Evidence(
                                 kind=SignalKind.ASN,
                                 provider=sig.provider,
                                 weight=WEIGHTS[SignalKind.ASN],
-                                detail=f"ASN {asn_num} matches {sig.provider.value}",
-                                raw=str(asn_num),
+                                detail=f"ASN {cymru.asn} matches {sig.provider.value}",
+                                raw=str(cymru.asn),
                             )
                         )
 
-                # Check Swiss ISP ASNs
-                if asn_num in SWISS_ISP_ASNS:
-                    isp_name = SWISS_ISP_ASNS[asn_num]
-                    results.append(
-                        Evidence(
-                            kind=SignalKind.ASN,
-                            provider=Provider.SWISS_ISP,
-                            weight=WEIGHTS[SignalKind.ASN],
-                            detail=f"ASN {asn_num} is Swiss ISP: {isp_name}",
-                            raw=str(asn_num),
+                # Classify by country code
+                if country_code and cymru.country_code:
+                    if cymru.country_code == country_code:
+                        results.append(
+                            Evidence(
+                                kind=SignalKind.ASN,
+                                provider=Provider.DOMESTIC,
+                                weight=WEIGHTS[SignalKind.ASN],
+                                detail=f"ASN {cymru.asn} registered in {cymru.country_code.upper()}",
+                                raw=str(cymru.asn),
+                            )
                         )
-                    )
+                    else:
+                        results.append(
+                            Evidence(
+                                kind=SignalKind.ASN,
+                                provider=Provider.FOREIGN,
+                                weight=WEIGHTS[SignalKind.ASN],
+                                detail=f"ASN {cymru.asn} registered in {cymru.country_code.upper()} (not {country_code.upper()})",
+                                raw=str(cymru.asn),
+                            )
+                        )
     return results
 
 
@@ -424,8 +428,8 @@ async def probe_txt_verification(domain: str) -> list[Evidence]:
     return results
 
 
-async def probe_spf_ip(domain: str) -> list[Evidence]:
-    """Parse SPF ip4: and a: entries, resolve IPs to ASN, match against providers + Swiss ISPs."""
+async def probe_spf_ip(domain: str, *, country_code: str | None = None) -> list[Evidence]:
+    """Parse SPF ip4: and a: entries, resolve IPs to ASN, match against providers and domestic ISPs."""
     results: list[Evidence] = []
     answer = await resolve_robust(domain, "TXT")
     if answer is None:
@@ -459,40 +463,47 @@ async def probe_spf_ip(domain: str) -> list[Evidence]:
 
         for asn_rdata in asn_answer:
             txt = b"".join(asn_rdata.strings).decode("utf-8", errors="ignore")
-            parts = txt.split("|")
-            if not parts:
-                continue
-            try:
-                asn_num = int(parts[0].strip())
-            except (ValueError, IndexError):
+            cymru = CymruResult.from_txt(txt)
+            if cymru is None:
                 continue
 
-            if asn_num in seen_asns:
+            if cymru.asn in seen_asns:
                 continue
-            seen_asns.add(asn_num)
+            seen_asns.add(cymru.asn)
 
             for sig in SIGNATURES:
-                if asn_num in sig.asns:
+                if cymru.asn in sig.asns:
                     results.append(
                         Evidence(
                             kind=SignalKind.SPF_IP,
                             provider=sig.provider,
                             weight=WEIGHTS[SignalKind.SPF_IP],
-                            detail=f"SPF ip4/a ASN {asn_num} matches {sig.provider.value}",
-                            raw=f"{ip}:{asn_num}",
+                            detail=f"SPF ip4/a ASN {cymru.asn} matches {sig.provider.value}",
+                            raw=f"{ip}:{cymru.asn}",
                         )
                     )
 
-            if asn_num in SWISS_ISP_ASNS:
-                isp_name = SWISS_ISP_ASNS[asn_num]
-                results.append(
-                    Evidence(
-                        kind=SignalKind.SPF_IP,
-                        provider=Provider.SWISS_ISP,
-                        weight=WEIGHTS[SignalKind.SPF_IP],
-                        detail=f"SPF ip4/a ASN {asn_num} is Swiss ISP: {isp_name}",
-                        raw=f"{ip}:{asn_num}",
+            # Classify by country code
+            if country_code and cymru.country_code:
+                if cymru.country_code == country_code:
+                    results.append(
+                        Evidence(
+                            kind=SignalKind.SPF_IP,
+                            provider=Provider.DOMESTIC,
+                            weight=WEIGHTS[SignalKind.SPF_IP],
+                            detail=f"SPF ip4/a ASN {cymru.asn} registered in {cymru.country_code.upper()}",
+                            raw=f"{ip}:{cymru.asn}",
+                        )
                     )
-                )
+                else:
+                    results.append(
+                        Evidence(
+                            kind=SignalKind.SPF_IP,
+                            provider=Provider.FOREIGN,
+                            weight=WEIGHTS[SignalKind.SPF_IP],
+                            detail=f"SPF ip4/a ASN {cymru.asn} registered in {cymru.country_code.upper()} (not {country_code.upper()})",
+                            raw=f"{ip}:{cymru.asn}",
+                        )
+                    )
 
     return results

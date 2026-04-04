@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-02T18:30:25.624837Z",
+  "generated": "2026-04-03T00:02:21.335526Z",
   "total": 2092,
   "municipalities": [
     {
@@ -29,7 +29,7 @@
       "code": "10201",
       "name": "Rust",
       "region": "Burgenland",
-      "website": "",
+      "website": "freistadt-rust.at",
       "emails": [
         "rust.bgld.gv.at",
         "freistadt-rust.at"
@@ -312,7 +312,7 @@
       "code": "10312",
       "name": "Purbach am Neusiedler See",
       "region": "Burgenland",
-      "website": "",
+      "website": "purbach.gv.at",
       "emails": [
         "purbach.gv.at"
       ],
@@ -355,7 +355,7 @@
       "code": "10314",
       "name": "Schützen am Gebirge",
       "region": "Burgenland",
-      "website": "schuetzen-am-gebirge.com",
+      "website": "schuetzen-am-gebirge.at",
       "emails": [
         "schuetzen-am-gebirge.bgld.gv.at",
         "schuetzen-am-gebirge.at"
@@ -657,7 +657,7 @@
       "code": "10404",
       "name": "Gerersdorf-Sulz",
       "region": "Burgenland",
-      "website": "",
+      "website": "gerersdorf-sulz.at",
       "emails": [
         "gerersdorf-sulz.bgld.gv.at"
       ],
@@ -749,7 +749,7 @@
       "code": "10408",
       "name": "Kukmirn",
       "region": "Burgenland",
-      "website": "",
+      "website": "kukmirn.at",
       "emails": [
         "kukmirn.bgld.gv.at"
       ],
@@ -819,7 +819,7 @@
       "code": "10411",
       "name": "Olbendorf",
       "region": "Burgenland",
-      "website": "",
+      "website": "olbendorf.at",
       "emails": [
         "olbendorf.bgld.gv.at"
       ],
@@ -842,7 +842,7 @@
       "code": "10412",
       "name": "Ollersdorf im Burgenland",
       "region": "Burgenland",
-      "website": "",
+      "website": "ollersdorf-burgenland.at",
       "emails": [
         "ollersdorf.bgld.gv.at",
         "ollersdorf-burgenland.at"
@@ -978,7 +978,7 @@
       "code": "10418",
       "name": "Hackerberg",
       "region": "Burgenland",
-      "website": "",
+      "website": "hackerberg.at",
       "emails": [
         "hackerberg.bgld.gv.at",
         "hackerberg.at"
@@ -1254,12 +1254,11 @@
       "code": "10502",
       "name": "Eltendorf",
       "region": "Burgenland",
-      "website": "",
+      "website": "eltendorf.at",
       "emails": [
-        "eltendorf.bgld.gv.at",
-        "eltendorf.at"
+        "eltendorf.bgld.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -1278,8 +1277,9 @@
       "code": "10503",
       "name": "Heiligenkreuz im Lafnitztal",
       "region": "Burgenland",
-      "website": "heiligenkreuz.at",
+      "website": "heiligenkreuz-lafnitztal.at",
       "emails": [
+        "heiligenkreuz.gv.at",
         "heiligenkreuz.at"
       ],
       "source": "scrape",
@@ -1304,12 +1304,12 @@
       "code": "10504",
       "name": "Jennersdorf",
       "region": "Burgenland",
-      "website": "",
+      "website": "jennersdorf.eu",
       "emails": [
         "jennersdorf.bgld.gv.at",
-        "jennersdorf.eu"
+        "bgld.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -1328,13 +1328,11 @@
       "code": "10505",
       "name": "Minihof-Liebau",
       "region": "Burgenland",
-      "website": "",
+      "website": "minihof-liebau.at",
       "emails": [
-        "minihof-liebau.bgld.gv.at",
-        "minihof-liebau.gv.at",
         "minihof-liebau.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -1377,7 +1375,7 @@
       "code": "10507",
       "name": "Neuhaus am Klausenbach",
       "region": "Burgenland",
-      "website": "",
+      "website": "neuhaus-klausenbach.at",
       "emails": [
         "neuhaus-klausenbach.bgld.gv.at",
         "neuhaus-klausenbach.at"
@@ -1404,7 +1402,7 @@
       "code": "10508",
       "name": "Rudersdorf",
       "region": "Burgenland",
-      "website": "",
+      "website": "rudersdorf.at",
       "emails": [
         "rudersdorf.bgld.gv.at",
         "rudersdorf.at"
@@ -1428,13 +1426,11 @@
       "code": "10509",
       "name": "Sankt Martin an der Raab",
       "region": "Burgenland",
-      "website": "",
+      "website": "st-martin-raab.at",
       "emails": [
-        "st-martin-raab.bgld.gv.at",
-        "sankt-martin-raab.at",
         "st-martin-raab.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -1456,7 +1452,7 @@
       "code": "10510",
       "name": "Weichselbaum",
       "region": "Burgenland",
-      "website": "",
+      "website": "gemeinde-weichselbaum.at",
       "emails": [
         "weichselbaum.bgld.gv.at"
       ],
@@ -1479,7 +1475,7 @@
       "code": "10511",
       "name": "Königsdorf",
       "region": "Burgenland",
-      "website": "",
+      "website": "koenigsdorf.at",
       "emails": [
         "koenigsdorf.bgld.gv.at",
         "koenigsdorf.at"
@@ -1503,7 +1499,7 @@
       "code": "10512",
       "name": "Mühlgraben",
       "region": "Burgenland",
-      "website": "a1.net",
+      "website": "muehlgraben.at",
       "emails": [
         "muehlgraben.bgld.gv.at",
         "muehlgraben.at"
@@ -1527,13 +1523,11 @@
       "code": "10601",
       "name": "Draßburg",
       "region": "Burgenland",
-      "website": "drassburg.at",
+      "website": "drassburg.gv.at",
       "emails": [
-        "drassburg.bgld.gv.at",
-        "drassburg.gv.at",
-        "drassburg.at"
+        "drassburg.bgld.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -1552,12 +1546,11 @@
       "code": "10602",
       "name": "Forchtenstein",
       "region": "Burgenland",
-      "website": "",
+      "website": "forchtenstein.at",
       "emails": [
-        "forchtenstein.bgld.gv.at",
-        "forchtenstein.at"
+        "forchtenstein.bgld.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -1578,11 +1571,9 @@
       "region": "Burgenland",
       "website": "hirm.gv.at",
       "emails": [
-        "hirm.bgld.gv.at",
-        "hirm.gv.at",
-        "gemeinde-hirm.at"
+        "hirm.bgld.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -1697,7 +1688,7 @@
       "code": "10608",
       "name": "Pöttelsdorf",
       "region": "Burgenland",
-      "website": "",
+      "website": "xn--pttelsdorf-ecb.at",
       "emails": [
         "poettelsdorf.bgld.gv.at"
       ],
@@ -1816,7 +1807,7 @@
       "code": "10613",
       "name": "Sieggraben",
       "region": "Burgenland",
-      "website": "",
+      "website": "sieggraben.at",
       "emails": [
         "sieggraben.bgld.gv.at",
         "sieggraben.at"
@@ -1983,7 +1974,7 @@
       "code": "10701",
       "name": "Andau",
       "region": "Burgenland",
-      "website": "",
+      "website": "andau-gemeinde.at",
       "emails": [
         "andau.bgld.gv.at",
         "andau-gemeinde.at"
@@ -2009,6 +2000,7 @@
       "region": "Burgenland",
       "website": "apetlon.info",
       "emails": [
+        "apetlon.bgld.gv.at",
         "apetlon.info"
       ],
       "source": "scrape",
@@ -2032,10 +2024,9 @@
       "region": "Burgenland",
       "website": "bruckneudorf.eu",
       "emails": [
-        "bruckneudorf.bgld.gv.at",
-        "bruckneudorf.eu"
+        "bruckneudorf.bgld.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -2104,12 +2095,11 @@
       "code": "10706",
       "name": "Gattendorf",
       "region": "Burgenland",
-      "website": "",
+      "website": "gattendorf.at",
       "emails": [
-        "gattendorf.bgld.gv.at",
-        "gattendorf.at"
+        "gattendorf.bgld.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -2131,10 +2121,9 @@
       "website": "gols.co.at",
       "emails": [
         "gols.bgld.gv.at",
-        "gols.at",
-        "gols.co.at"
+        "gols.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -2250,7 +2239,7 @@
       "code": "10712",
       "name": "Mönchhof",
       "region": "Burgenland",
-      "website": "",
+      "website": "moenchhof.at",
       "emails": [
         "moenchhof.bgld.gv.at",
         "moenchhof.at"
@@ -2321,12 +2310,11 @@
       "code": "10715",
       "name": "Pama",
       "region": "Burgenland",
-      "website": "",
+      "website": "gemeinde-pama.at",
       "emails": [
-        "pama.bgld.gv.at",
-        "gemeinde-pama.at"
+        "pama.bgld.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -2416,7 +2404,7 @@
       "code": "10719",
       "name": "Sankt Andrä am Zicksee",
       "region": "Burgenland",
-      "website": "st-andrae.gv.at",
+      "website": "gemeinde-standrae.at",
       "emails": [
         "st-andrae.at"
       ],
@@ -2445,9 +2433,9 @@
       "website": "tadten.at",
       "emails": [
         "tadten.bgld.gv.at",
-        "bgld.gv.at"
+        "tadten.at"
       ],
-      "source": "scrape",
+      "source": "static",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -2655,10 +2643,9 @@
       "region": "Burgenland",
       "website": "drassmarkt.at",
       "emails": [
-        "drassmarkt.bgld.gv.at",
-        "drassmarkt.at"
+        "drassmarkt.bgld.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -2726,7 +2713,6 @@
       "website": "horitschon.at",
       "emails": [
         "horitschon.bgld.gv.at",
-        "horitschon.at",
         "horitschon.com"
       ],
       "source": "scrape",
@@ -2772,12 +2758,11 @@
       "code": "10807",
       "name": "Kobersdorf",
       "region": "Burgenland",
-      "website": "",
+      "website": "kobersdorf.at",
       "emails": [
-        "kobersdorf.bgld.gv.at",
-        "kobersdorf.at"
+        "kobersdorf.bgld.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -2913,13 +2898,11 @@
       "code": "10813",
       "name": "Neckenmarkt",
       "region": "Burgenland",
-      "website": "",
+      "website": "neckenmarkt.net",
       "emails": [
-        "neckenmarkt.bgld.gv.at",
-        "neckenmarkt.eu",
         "neckenmarkt.net"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -2988,7 +2971,8 @@
       "website": "oberpullendorf.gv.at",
       "emails": [
         "oberpullendorf.bgld.gv.at",
-        "oberpullendorf.gv.at"
+        "oberpullendorf.gv.at",
+        "bgld.gv.at"
       ],
       "source": "scrape",
       "confidence": "high",
@@ -3058,10 +3042,9 @@
       "region": "Burgenland",
       "website": "raiding-online.at",
       "emails": [
-        "raiding.bgld.gv.at",
-        "raiding.at"
+        "raiding.bgld.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -3307,10 +3290,9 @@
       "region": "Burgenland",
       "website": "bernstein.gv.at",
       "emails": [
-        "bernstein.bgld.gv.at",
-        "bernstein.gv.at"
+        "bernstein.bgld.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -3332,9 +3314,9 @@
       "website": "eisenberg.at",
       "emails": [
         "deutsch-schuetzen-eisenberg.bgld.gv.at",
-        "eisenberg.at"
+        "bgld.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -3401,12 +3383,12 @@
       "code": "10906",
       "name": "Hannersdorf",
       "region": "Burgenland",
-      "website": "",
+      "website": "hannersdorf.at",
       "emails": [
         "hannersdorf.bgld.gv.at",
         "hannersdorf.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -3656,7 +3638,9 @@
       "region": "Burgenland",
       "website": "oberwart.gv.at",
       "emails": [
-        "oberwart.bgld.gv.at"
+        "oberwart.bgld.gv.at",
+        "oberwart.gv.at",
+        "bgld.gv.at"
       ],
       "source": "scrape",
       "confidence": "high",
@@ -3840,7 +3824,7 @@
       "code": "10925",
       "name": "Unterwart",
       "region": "Burgenland",
-      "website": "",
+      "website": "unterwart.at",
       "emails": [
         "unterwart.bgld.gv.at",
         "unterwart.at"
@@ -3864,7 +3848,7 @@
       "code": "10926",
       "name": "Weiden bei Rechnitz",
       "region": "Burgenland",
-      "website": "",
+      "website": "weiden-rechnitz.at",
       "emails": [
         "weiden-rechnitz.bgld.gv.at"
       ],
@@ -3887,10 +3871,11 @@
       "code": "10927",
       "name": "Wiesfleck",
       "region": "Burgenland",
-      "website": "wiesfleck.at",
+      "website": "",
       "emails": [
         "wiesfleck.bgld.gv.at",
-        "gemeinde-wiesfleck.at"
+        "gemeinde-wiesfleck.at",
+        "wiesfleck.at"
       ],
       "source": "static",
       "confidence": "high",
@@ -5188,7 +5173,7 @@
       "code": "20603",
       "name": "Berg im Drautal",
       "region": "Kärnten",
-      "website": "bergimdrautal.at",
+      "website": "berg-drautal.gv.at",
       "emails": [
         "ktn.gde.at"
       ],
@@ -5608,7 +5593,7 @@
       "code": "20631",
       "name": "Rangersdorf",
       "region": "Kärnten",
-      "website": "nationalpark-hohetauern.at",
+      "website": "rangersdorf.gv.at",
       "emails": [
         "ktn.gde.at"
       ],
@@ -5795,7 +5780,7 @@
       "code": "20639",
       "name": "Weißensee",
       "region": "Kärnten",
-      "website": "",
+      "website": "gemeinde-weissensee.at",
       "emails": [
         "ktn.gde.at"
       ],
@@ -6347,7 +6332,7 @@
       "code": "20801",
       "name": "Bleiburg",
       "region": "Kärnten",
-      "website": "",
+      "website": "bleiburg.gv.at",
       "emails": [
         "ktn.gde.at"
       ],
@@ -6392,6 +6377,7 @@
       "region": "Kärnten",
       "website": "eberndorf.at",
       "emails": [
+        "ktn.gde.at",
         "eberndorf.at"
       ],
       "source": "scrape",
@@ -7449,7 +7435,7 @@
       "emails": [
         "haag.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -7751,8 +7737,7 @@
       "region": "Niederösterreich",
       "website": "seitenstetten.gv.at",
       "emails": [
-        "seitenstetten.gv.at",
-        "seitenstetten.at"
+        "seitenstetten.gv.at"
       ],
       "source": "scrape",
       "confidence": "high",
@@ -7819,7 +7804,7 @@
       "code": "30536",
       "name": "Viehdorf",
       "region": "Niederösterreich",
-      "website": "",
+      "website": "viehdorf.gv.at",
       "emails": [
         "viehdorf.gv.at"
       ],
@@ -7982,6 +7967,7 @@
       "region": "Niederösterreich",
       "website": "alland.at",
       "emails": [
+        "alland.gv.at",
         "alland.at"
       ],
       "source": "scrape",
@@ -8007,7 +7993,7 @@
       "emails": [
         "altenmarkt-triesting.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -8055,7 +8041,8 @@
       "website": "baden.at",
       "emails": [
         "baden.gv.at",
-        "baden.at"
+        "baden.at",
+        "stadtgemeinde-baden.at"
       ],
       "source": "scrape",
       "confidence": "high",
@@ -8194,6 +8181,7 @@
       "region": "Niederösterreich",
       "website": "heiligenkreuz.at",
       "emails": [
+        "heiligenkreuz.gv.at",
         "heiligenkreuz.at"
       ],
       "source": "scrape",
@@ -8399,10 +8387,9 @@
       "region": "Niederösterreich",
       "website": "pottendorf.at",
       "emails": [
-        "pottendorf.gv.at",
-        "pottendorf.at"
+        "pottendorf.gv.at"
       ],
-      "source": "scrape",
+      "source": "static",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -9051,7 +9038,7 @@
       "emails": [
         "scharndorf.gv.at"
       ],
-      "source": "scrape",
+      "source": "static",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -9209,12 +9196,11 @@
       "code": "30732",
       "name": "Himberg",
       "region": "Niederösterreich",
-      "website": "",
+      "website": "himberg.gv.at",
       "emails": [
-        "himberg.gv.at",
-        "gemeinde-himberg.at"
+        "himberg.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -9371,11 +9357,11 @@
       "code": "30739",
       "name": "Schwadorf",
       "region": "Niederösterreich",
-      "website": "schwadorf.gv.at",
+      "website": "",
       "emails": [
         "schwadorf.gv.at"
       ],
-      "source": "scrape",
+      "source": "static",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -9652,9 +9638,10 @@
       "region": "Niederösterreich",
       "website": "eckartsau.gv.at",
       "emails": [
-        "eckartsau.gv.at"
+        "eckartsau.gv.at",
+        "marktgemeinde-eckartsau.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -9840,11 +9827,11 @@
       "code": "30826",
       "name": "Hauskirchen",
       "region": "Niederösterreich",
-      "website": "hauskirchen.gv.at",
+      "website": "",
       "emails": [
         "hauskirchen.gv.at"
       ],
-      "source": "scrape",
+      "source": "static",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -9983,7 +9970,7 @@
       "code": "30834",
       "name": "Mannsdorf an der Donau",
       "region": "Niederösterreich",
-      "website": "",
+      "website": "mannsdorf.at",
       "emails": [
         "mannsdorf.gv.at",
         "mannsdorf.at"
@@ -10229,7 +10216,7 @@
       "code": "30850",
       "name": "Ringelsdorf-Niederabsdorf",
       "region": "Niederösterreich",
-      "website": "",
+      "website": "ringelsdorf.at",
       "emails": [
         "ringelsdorf-niederabsdorf.gv.at",
         "ringelsdorf.at"
@@ -10437,7 +10424,7 @@
       "code": "30865",
       "name": "Weiden an der March",
       "region": "Niederösterreich",
-      "website": "",
+      "website": "weiden-march.at",
       "emails": [
         "weiden-march.at"
       ],
@@ -11640,7 +11627,7 @@
       "emails": [
         "gars.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -11984,12 +11971,11 @@
       "code": "31201",
       "name": "Bisamberg",
       "region": "Niederösterreich",
-      "website": "",
+      "website": "bisamberg.at",
       "emails": [
-        "bisamberg.gv.at",
         "bisamberg.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -12125,9 +12111,10 @@
       "region": "Niederösterreich",
       "website": "harmannsdorf.gv.at",
       "emails": [
-        "harmannsdorf.gv.at"
+        "harmannsdorf.gv.at",
+        "harmannsdorf.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -12150,7 +12137,7 @@
       "emails": [
         "hausleiten.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -12171,8 +12158,7 @@
       "region": "Niederösterreich",
       "website": "korneuburg.gv.at",
       "emails": [
-        "korneuburg.gv.at",
-        "korneuburg.at"
+        "korneuburg.gv.at"
       ],
       "source": "scrape",
       "confidence": "high",
@@ -12517,12 +12503,12 @@
       "code": "31304",
       "name": "Dürnstein",
       "region": "Niederösterreich",
-      "website": "",
+      "website": "duernstein.at",
       "emails": [
         "duernstein.gv.at",
         "duernstein.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -12592,10 +12578,9 @@
       "region": "Niederösterreich",
       "website": "gedersdorf.gv.at",
       "emails": [
-        "gedersdorf.gv.at",
         "gedersdorf.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -13059,7 +13044,7 @@
       "code": "31350",
       "name": "Weinzierl am Walde",
       "region": "Niederösterreich",
-      "website": "",
+      "website": "weinzierl-walde.gv.at",
       "emails": [
         "weinzierl-walde.gv.at"
       ],
@@ -13103,7 +13088,7 @@
       "code": "31355",
       "name": "Schönberg am Kamp",
       "region": "Niederösterreich",
-      "website": "",
+      "website": "schoenberg.gv.at",
       "emails": [
         "schoenberg.gv.at"
       ],
@@ -13197,7 +13182,8 @@
       "region": "Niederösterreich",
       "website": "hainfeld.gv.at",
       "emails": [
-        "hainfeld.gv.at"
+        "hainfeld.gv.at",
+        "hainfeld.at"
       ],
       "source": "scrape",
       "confidence": "high",
@@ -13710,7 +13696,6 @@
       "region": "Niederösterreich",
       "website": "kilb.gv.at",
       "emails": [
-        "gde.kilb.at",
         "kilb.at"
       ],
       "source": "scrape",
@@ -13757,8 +13742,7 @@
       "region": "Niederösterreich",
       "website": "klein-poechlarn.gv.at",
       "emails": [
-        "klein-poechlarn.gv.at",
-        "kleinpoechlarn.at"
+        "klein-poechlarn.gv.at"
       ],
       "source": "scrape",
       "confidence": "high",
@@ -14054,11 +14038,11 @@
       "code": "31533",
       "name": "Pöchlarn",
       "region": "Niederösterreich",
-      "website": "poechlarn.at",
+      "website": "",
       "emails": [
         "poechlarn.at"
       ],
-      "source": "scrape",
+      "source": "static",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -14194,7 +14178,8 @@
       "region": "Niederösterreich",
       "website": "st-oswald.gv.at",
       "emails": [
-        "st-oswald.gv.at"
+        "st-oswald.gv.at",
+        "stoswald.com"
       ],
       "source": "scrape",
       "confidence": "high",
@@ -14235,7 +14220,7 @@
       "code": "31543",
       "name": "Schollach",
       "region": "Niederösterreich",
-      "website": "schollach.gv.at",
+      "website": "schollach.at",
       "emails": [
         "schollach.at"
       ],
@@ -14352,9 +14337,7 @@
       "region": "Niederösterreich",
       "website": "yspertal.gv.at",
       "emails": [
-        "yspertal.gv.at",
-        "yspertal.at",
-        "yspertal.com"
+        "yspertal.gv.at"
       ],
       "source": "scrape",
       "confidence": "high",
@@ -14561,11 +14544,9 @@
       "region": "Niederösterreich",
       "website": "gaubitsch.gv.at",
       "emails": [
-        "gaubitsch.gv.at",
-        "gaubitsch.at",
         "gemeinde-gaubitsch.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -14586,10 +14567,9 @@
       "region": "Niederösterreich",
       "website": "gaweinstal.at",
       "emails": [
-        "gaweinstal.gv.at",
-        "gaweinstal.at"
+        "gaweinstal.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -14612,7 +14592,7 @@
       "emails": [
         "gnadendorf.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -14768,7 +14748,8 @@
       "region": "Niederösterreich",
       "website": "hochleithen.gv.at",
       "emails": [
-        "hochleithen.gv.at"
+        "hochleithen.gv.at",
+        "hochleithen.at"
       ],
       "source": "scrape",
       "confidence": "high",
@@ -15299,10 +15280,9 @@
       "region": "Niederösterreich",
       "website": "brunnamgebirge.at",
       "emails": [
-        "brunnamgebirge.gv.at",
-        "brunnamgebirge.at"
+        "brunnamgebirge.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -15647,7 +15627,7 @@
       "code": "31725",
       "name": "Wiener Neudorf",
       "region": "Niederösterreich",
-      "website": "",
+      "website": "wiener-neudorf.gv.at",
       "emails": [
         "wiener-neudorf.gv.at",
         "wr-neudorf.at"
@@ -15702,7 +15682,7 @@
       "emails": [
         "gemeinde-altendorf.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -15771,7 +15751,7 @@
       "emails": [
         "breitenau.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -15792,10 +15772,9 @@
       "region": "Niederösterreich",
       "website": "breitenstein.gv.at",
       "emails": [
-        "breitenstein.gv.at",
-        "breitenstein.at"
+        "breitenstein.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -15912,8 +15891,7 @@
       "region": "Niederösterreich",
       "website": "gloggnitz.at",
       "emails": [
-        "gloggnitz.gv.at",
-        "gloggnitz.at"
+        "gloggnitz.gv.at"
       ],
       "source": "scrape",
       "confidence": "high",
@@ -16100,10 +16078,9 @@
       "region": "Niederösterreich",
       "website": "otterthal.gv.at",
       "emails": [
-        "otterthal.gv.at",
-        "otterthal.at"
+        "otterthal.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -16220,8 +16197,7 @@
       "region": "Niederösterreich",
       "website": "raach-hochgebirge.gv.at",
       "emails": [
-        "raach-hochgebirge.gv.at",
-        "raach.at"
+        "raach-hochgebirge.gv.at"
       ],
       "source": "scrape",
       "confidence": "high",
@@ -16295,7 +16271,7 @@
       "emails": [
         "st-egyden.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -16642,7 +16618,7 @@
       "emails": [
         "wimpassing.at"
       ],
-      "source": "scrape",
+      "source": "static",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -16829,7 +16805,7 @@
       "emails": [
         "eichgraben.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -16851,7 +16827,7 @@
       "code": "31906",
       "name": "Frankenfels",
       "region": "Niederösterreich",
-      "website": "",
+      "website": "frankenfels.at",
       "emails": [
         "frankenfels.at"
       ],
@@ -16878,7 +16854,7 @@
       "emails": [
         "gerersdorf.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -17459,7 +17435,7 @@
       "code": "31939",
       "name": "Schwarzenbach an der Pielach",
       "region": "Niederösterreich",
-      "website": "",
+      "website": "schwarzenbach-pielach.at",
       "emails": [
         "schwarzenbach-pielach.at"
       ],
@@ -17648,6 +17624,7 @@
       "region": "Niederösterreich",
       "website": "gablitz.at",
       "emails": [
+        "gablitz.gv.at",
         "gablitz.at"
       ],
       "source": "scrape",
@@ -17790,7 +17767,7 @@
       "emails": [
         "gaming.noe.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -18207,7 +18184,7 @@
       "emails": [
         "absdorf.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -18275,8 +18252,7 @@
       "region": "Niederösterreich",
       "website": "grafenwoerth.gv.at",
       "emails": [
-        "grafenwoerth.gv.at",
-        "grafenwoerth.at"
+        "grafenwoerth.gv.at"
       ],
       "source": "scrape",
       "confidence": "high",
@@ -18717,7 +18693,7 @@
       "emails": [
         "dietmanns.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu_email": [
@@ -19249,7 +19225,8 @@
       "region": "Niederösterreich",
       "website": "hochwolkersdorf.gv.at",
       "emails": [
-        "hochwolkersdorf.gv.at"
+        "hochwolkersdorf.gv.at",
+        "hochwolkersdorf.at"
       ],
       "source": "scrape",
       "confidence": "high",
@@ -19460,11 +19437,11 @@
       "code": "32319",
       "name": "Markt Piesting",
       "region": "Niederösterreich",
-      "website": "piesting.at",
+      "website": "",
       "emails": [
         "piesting.at"
       ],
-      "source": "scrape",
+      "source": "static",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -19530,7 +19507,7 @@
       "code": "32322",
       "name": "Muggendorf",
       "region": "Niederösterreich",
-      "website": "muggendorf.gv.at",
+      "website": "",
       "emails": [
         "muggendorf.gv.at"
       ],
@@ -19794,10 +19771,9 @@
       "region": "Niederösterreich",
       "website": "wiesmath.at",
       "emails": [
-        "wiesmath.gv.at",
-        "wiesmath.at"
+        "wiesmath.gv.at"
       ],
-      "source": "scrape",
+      "source": "static",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -19805,9 +19781,6 @@
         ],
         "bresu_email": [
           "wiesmath.gv.at"
-        ],
-        "wikidata": [
-          "wiesmath.at"
         ]
       },
       "flags": []
@@ -20022,7 +19995,7 @@
       "emails": [
         "gerungs.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -20421,7 +20394,7 @@
       "emails": [
         "zwettl.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -20463,7 +20436,7 @@
       "code": "40201",
       "name": "Steyr",
       "region": "Oberösterreich",
-      "website": "steyr.gv.at",
+      "website": "steyr.at",
       "emails": [
         "steyr.gv.at"
       ],
@@ -20837,11 +20810,11 @@
       "code": "40415",
       "name": "Höhnhart",
       "region": "Oberösterreich",
-      "website": "hoehnhart.ooe.gv.at",
+      "website": "",
       "emails": [
         "hoehnhart.ooe.gv.at"
       ],
-      "source": "scrape",
+      "source": "static",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -21562,7 +21535,8 @@
       "region": "Oberösterreich",
       "website": "weng-innkreis.gv.at",
       "emails": [
-        "weng-innkreis.ooe.gv.at"
+        "weng-innkreis.ooe.gv.at",
+        "ooe.gv.at"
       ],
       "source": "scrape",
       "confidence": "high",
@@ -21585,7 +21559,6 @@
       "region": "Oberösterreich",
       "website": "alkoven.at",
       "emails": [
-        "alkoven.ooe.gv.at",
         "alkoven.at"
       ],
       "source": "scrape",
@@ -21709,8 +21682,7 @@
       "website": "hartkirchen.at",
       "emails": [
         "hartkirchen.ooe.gv.at",
-        "ooe.gv.at",
-        "hartkirchen.at"
+        "ooe.gv.at"
       ],
       "source": "scrape",
       "confidence": "high",
@@ -21910,7 +21882,7 @@
       "code": "40603",
       "name": "Gutau",
       "region": "Oberösterreich",
-      "website": "",
+      "website": "gutau.at",
       "emails": [
         "gutau.ooe.gv.at",
         "gutau.at"
@@ -21938,7 +21910,7 @@
       "emails": [
         "hagenberg.ooe.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -21960,7 +21932,8 @@
       "website": "hirschbach.ooe.gv.at",
       "emails": [
         "hirschbach.gv.at",
-        "hirschbach.ooe.gv.at"
+        "hirschbach.ooe.gv.at",
+        "ooe.gv.at"
       ],
       "source": "scrape",
       "confidence": "high",
@@ -23072,7 +23045,8 @@
       "region": "Oberösterreich",
       "website": "gaspoltshofen.ooe.gv.at",
       "emails": [
-        "gaspoltshofen.ooe.gv.at"
+        "gaspoltshofen.ooe.gv.at",
+        "ooe.gv.at"
       ],
       "source": "scrape",
       "confidence": "high",
@@ -23142,7 +23116,8 @@
       "region": "Oberösterreich",
       "website": "haag-hausruck.at",
       "emails": [
-        "haag-hausruck.ooe.gv.at"
+        "haag-hausruck.ooe.gv.at",
+        "haag.gv.at"
       ],
       "source": "scrape",
       "confidence": "high",
@@ -23543,7 +23518,8 @@
       "region": "Oberösterreich",
       "website": "schluesslberg.ooe.gv.at",
       "emails": [
-        "schluesslberg.ooe.gv.at"
+        "schluesslberg.ooe.gv.at",
+        "ooe.gv.at"
       ],
       "source": "scrape",
       "confidence": "high",
@@ -23875,7 +23851,7 @@
       "emails": [
         "gemeinde-klaus.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -23983,12 +23959,11 @@
       "code": "40911",
       "name": "Oberschlierbach",
       "region": "Oberösterreich",
-      "website": "",
+      "website": "gemeinde-oberschlierbach.at",
       "emails": [
-        "oberschlierbach.ooe.gv.at",
-        "gemeinde-oberschlierbach.at"
+        "oberschlierbach.ooe.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -24317,7 +24292,7 @@
       "emails": [
         "ansfelden.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -24412,7 +24387,7 @@
       "emails": [
         "hargelsberg.ooe.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -24456,10 +24431,9 @@
       "region": "Oberösterreich",
       "website": "hofkirchen.info",
       "emails": [
-        "hofkirchen-traunkreis.ooe.gv.at",
-        "hofkirchen.info"
+        "hofkirchen-traunkreis.ooe.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -24734,12 +24708,11 @@
       "code": "41020",
       "name": "St. Marien",
       "region": "Oberösterreich",
-      "website": "",
+      "website": "st-marien.at",
       "emails": [
-        "st-marien.ooe.gv.at",
         "st-marien.at"
       ],
-      "source": "wikidata",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -25565,12 +25538,11 @@
       "code": "41207",
       "name": "Geinberg",
       "region": "Oberösterreich",
-      "website": "geinberg.ooe.gv.at",
+      "website": "geinberg.at",
       "emails": [
-        "geinberg.ooe.gv.at",
-        "geinberg.at"
+        "geinberg.ooe.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -25591,10 +25563,9 @@
       "region": "Oberösterreich",
       "website": "gemeinde-gurten.at",
       "emails": [
-        "gurten.ooe.gv.at",
-        "gemeinde-gurten.at"
+        "gurten.ooe.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -25685,7 +25656,8 @@
       "region": "Oberösterreich",
       "website": "lambrechten.at",
       "emails": [
-        "lambrechten.ooe.gv.at"
+        "lambrechten.ooe.gv.at",
+        "lambrechten.at"
       ],
       "source": "scrape",
       "confidence": "high",
@@ -26359,9 +26331,10 @@
       "region": "Oberösterreich",
       "website": "haslach.ooe.gv.at",
       "emails": [
-        "haslach.ooe.gv.at"
+        "haslach.ooe.gv.at",
+        "ooe.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -26856,7 +26829,6 @@
       "region": "Oberösterreich",
       "website": "sankt-martin.at",
       "emails": [
-        "ooe.gv.at",
         "sankt-martin.at"
       ],
       "source": "scrape",
@@ -27118,11 +27090,11 @@
       "code": "41346",
       "name": "St. Stefan-Afiesl",
       "region": "Oberösterreich",
-      "website": "ststefan-afiesl.at",
+      "website": "",
       "emails": [
         "ststefan-afiesl.at"
       ],
-      "source": "scrape",
+      "source": "static",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -27168,7 +27140,7 @@
       "emails": [
         "andorf.ooe.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -27421,6 +27393,7 @@
       "region": "Oberösterreich",
       "website": "muenzkirchen.at",
       "emails": [
+        "ooe.gv.at",
         "muenzkirchen.at"
       ],
       "source": "scrape",
@@ -28383,9 +28356,10 @@
       "code": "41604",
       "name": "Eidenberg",
       "region": "Oberösterreich",
-      "website": "eidenberg.ooe.gv.at",
+      "website": "eidenberg.at",
       "emails": [
-        "eidenberg.ooe.gv.at"
+        "eidenberg.ooe.gv.at",
+        "eidenberg.at"
       ],
       "source": "scrape",
       "confidence": "high",
@@ -28792,9 +28766,7 @@
       "region": "Oberösterreich",
       "website": "sanktgotthard.at",
       "emails": [
-        "st-gotthard.ooe.gv.at",
-        "ooe.gv.at",
-        "sanktgotthard.at"
+        "st-gotthard.ooe.gv.at"
       ],
       "source": "scrape",
       "confidence": "high",
@@ -28910,6 +28882,7 @@
       "region": "Oberösterreich",
       "website": "zwettl-rodl.at",
       "emails": [
+        "zwettl.gv.at",
         "zwettl-rodl.at"
       ],
       "source": "scrape",
@@ -29545,7 +29518,7 @@
       "code": "41726",
       "name": "Pöndorf",
       "region": "Oberösterreich",
-      "website": "",
+      "website": "poendorf.at",
       "emails": [
         "poendorf.at"
       ],
@@ -29637,11 +29610,11 @@
       "code": "41730",
       "name": "Redlham",
       "region": "Oberösterreich",
-      "website": "redlham.at",
+      "website": "",
       "emails": [
         "redlham.ooe.gv.at"
       ],
-      "source": "scrape",
+      "source": "static",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -30366,10 +30339,9 @@
       "region": "Oberösterreich",
       "website": "gemeinde-holzhausen.at",
       "emails": [
-        "holzhausen.ooe.gv.at",
-        "gemeinde-holzhausen.at"
+        "holzhausen.ooe.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -30667,7 +30639,7 @@
       "code": "41822",
       "name": "Steinhaus",
       "region": "Oberösterreich",
-      "website": "gem-steinhaus.at",
+      "website": "steinhaus.ooe.gv.at",
       "emails": [
         "steinhaus.ooe.gv.at",
         "gem-steinhaus.at"
@@ -30716,7 +30688,8 @@
       "region": "Oberösterreich",
       "website": "weisskirchen.at",
       "emails": [
-        "weisskirchen.ooe.gv.at"
+        "weisskirchen.ooe.gv.at",
+        "ooe.gv.at"
       ],
       "source": "scrape",
       "confidence": "high",
@@ -30740,7 +30713,6 @@
       "website": "salzburg.gv.at",
       "emails": [
         "salzburg.gv.at",
-        "sbw.salzburg.at",
         "stadt-salzburg.at"
       ],
       "source": "scrape",
@@ -30858,7 +30830,7 @@
       "emails": [
         "hallein.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -31608,7 +31580,6 @@
       "region": "Salzburg",
       "website": "neumarkt.at",
       "emails": [
-        "salzburg.gv.at",
         "neumarkt.at"
       ],
       "source": "scrape",
@@ -31751,7 +31722,7 @@
       "emails": [
         "gemgilgen.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -31892,10 +31863,9 @@
       "region": "Salzburg",
       "website": "wals-siezenheim.at",
       "emails": [
-        "salzburg.gv.at",
         "wals-siezenheim.at"
       ],
-      "source": "scrape",
+      "source": "static",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -31916,7 +31886,6 @@
       "region": "Salzburg",
       "website": "seekirchen.at",
       "emails": [
-        "kinder.seekirchen.at",
         "seekirchen.at"
       ],
       "source": "scrape",
@@ -32127,6 +32096,7 @@
       "region": "Salzburg",
       "website": "gemeinde-forstau.at",
       "emails": [
+        "salzburg.gv.at",
         "forstau.at"
       ],
       "source": "scrape",
@@ -32337,7 +32307,6 @@
       "region": "Salzburg",
       "website": "st.johann.at",
       "emails": [
-        "stjohannimpongau.at",
         "st.johann.at"
       ],
       "source": "scrape",
@@ -33158,11 +33127,11 @@
       "code": "50613",
       "name": "Mittersill",
       "region": "Salzburg",
-      "website": "mittersill.at",
+      "website": "",
       "emails": [
         "mittersill.at"
       ],
-      "source": "scrape",
+      "source": "static",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -33752,11 +33721,11 @@
       "code": "60345",
       "name": "Eibiswald",
       "region": "Steiermark",
-      "website": "eibiswald.gv.at",
+      "website": "",
       "emails": [
         "eibiswald.gv.at"
       ],
-      "source": "scrape",
+      "source": "static",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -33922,7 +33891,7 @@
       "emails": [
         "feldkirchen-graz.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -33992,9 +33961,10 @@
       "region": "Steiermark",
       "website": "hartbeigraz.at",
       "emails": [
+        "stmk.gv.at",
         "hartbeigraz.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -34331,7 +34301,7 @@
       "code": "60647",
       "name": "Stiwoll",
       "region": "Steiermark",
-      "website": "",
+      "website": "stiwoll.at",
       "emails": [
         "stiwoll.gv.at",
         "stiwoll.at",
@@ -34523,7 +34493,7 @@
       "emails": [
         "dobl-zwaring.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -34565,11 +34535,11 @@
       "code": "60662",
       "name": "Fernitz-Mellach",
       "region": "Steiermark",
-      "website": "",
+      "website": "fernitz-mellach.gv.at",
       "emails": [
         "fernitz-mellach.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -34936,7 +34906,7 @@
       "code": "61017",
       "name": "Hengsberg",
       "region": "Steiermark",
-      "website": "",
+      "website": "hengsberg.at",
       "emails": [
         "hengsberg.at"
       ],
@@ -35123,7 +35093,7 @@
       "code": "61033",
       "name": "Sankt Nikolai im Sausal",
       "region": "Steiermark",
-      "website": "",
+      "website": "nikolai-sausal.at",
       "emails": [
         "st-nikolai-sausal.steiermark.at",
         "nikolai-sausal.at"
@@ -35266,6 +35236,9 @@
       "region": "Steiermark",
       "website": "heiligenkreuz-waasen.gv.at",
       "emails": [
+        "heiligenkreuz-waasen.gv.at",
+        "heiligenkreuz.gv.at",
+        "stmk.gv.at",
         "heiligenkreuz.at"
       ],
       "source": "scrape",
@@ -35336,11 +35309,12 @@
       "code": "61055",
       "name": "Sankt Georgen an der Stiefing",
       "region": "Steiermark",
-      "website": "st-georgen-stiefing.gv.at",
+      "website": "",
       "emails": [
-        "st-georgen-stiefing.gv.at"
+        "st-georgen-stiefing.gv.at",
+        "st-georgen-stiefing.steiermark.at"
       ],
-      "source": "scrape",
+      "source": "static",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -35382,7 +35356,7 @@
       "code": "61059",
       "name": "Wildon",
       "region": "Steiermark",
-      "website": "",
+      "website": "wildon.gv.at",
       "emails": [
         "wildon.gv.at"
       ],
@@ -35474,7 +35448,7 @@
       "code": "61105",
       "name": "Kalwang",
       "region": "Steiermark",
-      "website": "kalwang.at",
+      "website": "kalwang.gv.at",
       "emails": [
         "kalwang.gv.at"
       ],
@@ -35572,7 +35546,7 @@
       "code": "61109",
       "name": "Mautern in Steiermark",
       "region": "Steiermark",
-      "website": "",
+      "website": "mautern.com",
       "emails": [
         "mautern.com",
         "mautern.steiermark.at"
@@ -35596,12 +35570,13 @@
       "code": "61110",
       "name": "Niklasdorf",
       "region": "Steiermark",
-      "website": "niklasdorf.at",
+      "website": "",
       "emails": [
-        "niklasdorf.at",
+        "niklasdorf.eu",
+        "niklasdorf.info",
         "niklasdorf.steiermark.at"
       ],
-      "source": "scrape",
+      "source": "static",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -35620,7 +35595,7 @@
       "code": "61111",
       "name": "Proleb",
       "region": "Steiermark",
-      "website": "",
+      "website": "proleb.net",
       "emails": [
         "proleb.at",
         "proleb.net",
@@ -35668,7 +35643,7 @@
       "code": "61113",
       "name": "Sankt Michael in Obersteiermark",
       "region": "Steiermark",
-      "website": "info.gem2go.page",
+      "website": "gemeinde-stmichael.at",
       "emails": [
         "gemeinde-stmichael.at",
         "st-michael.steiermark.at"
@@ -35715,7 +35690,7 @@
       "code": "61115",
       "name": "Sankt Stefan ob Leoben",
       "region": "Steiermark",
-      "website": "stefan-leoben.at",
+      "website": "st-stefan-leoben.at",
       "emails": [
         "stefan-leoben.at"
       ],
@@ -35738,7 +35713,7 @@
       "code": "61116",
       "name": "Traboch",
       "region": "Steiermark",
-      "website": "traboch.gv.at",
+      "website": "traboch.at",
       "emails": [
         "traboch.at",
         "traboch.steiermark.at"
@@ -35793,7 +35768,7 @@
       "code": "61119",
       "name": "Wald am Schoberpaß",
       "region": "Steiermark",
-      "website": "",
+      "website": "schoberpass.at",
       "emails": [
         "schoberpass.at"
       ],
@@ -35816,7 +35791,7 @@
       "code": "61120",
       "name": "Trofaiach",
       "region": "Steiermark",
-      "website": "",
+      "website": "trofaiach.gv.at",
       "emails": [
         "trofaiach.gv.at",
         "trofaiach.steiermark.at"
@@ -36029,7 +36004,7 @@
       "code": "61222",
       "name": "Lassing",
       "region": "Steiermark",
-      "website": "",
+      "website": "lassing.at",
       "emails": [
         "lassing.at"
       ],
@@ -36125,11 +36100,11 @@
       "code": "61251",
       "name": "Wildalpen",
       "region": "Steiermark",
-      "website": "",
+      "website": "wildalpen.gv.at",
       "emails": [
         "wildalpen.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -36148,7 +36123,7 @@
       "code": "61252",
       "name": "Wörschach",
       "region": "Steiermark",
-      "website": "",
+      "website": "woerschach.at",
       "emails": [
         "woerschach.gv.at",
         "woerschach.at"
@@ -36197,7 +36172,7 @@
       "code": "61254",
       "name": "Aich",
       "region": "Steiermark",
-      "website": "",
+      "website": "aich.at",
       "emails": [
         "aich.at"
       ],
@@ -36243,11 +36218,11 @@
       "code": "61256",
       "name": "Gaishorn am See",
       "region": "Steiermark",
-      "website": "gaishornamsee.at",
+      "website": "gaishorn-see.gv.at",
       "emails": [
         "gaishorn-see.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -36266,7 +36241,7 @@
       "code": "61257",
       "name": "Irdning-Donnersbachtal",
       "region": "Steiermark",
-      "website": "",
+      "website": "irdning-donnersbachtal.at",
       "emails": [
         "irdning.at"
       ],
@@ -36455,11 +36430,11 @@
       "code": "61265",
       "name": "Schladming",
       "region": "Steiermark",
-      "website": "",
+      "website": "gemeinde.schladming.at",
       "emails": [
         "schladming.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -36480,11 +36455,9 @@
       "region": "Steiermark",
       "website": "soelk.at",
       "emails": [
-        "soelk.gv.at",
-        "stmk.gv.at",
-        "soelk.at"
+        "soelk.gv.at"
       ],
-      "source": "scrape",
+      "source": "static",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -36500,7 +36473,7 @@
       "code": "61267",
       "name": "Stainach-Pürgg",
       "region": "Steiermark",
-      "website": "",
+      "website": "stainach-puergg.gv.at",
       "emails": [
         "stainach-puergg.gv.at"
       ],
@@ -36550,7 +36523,7 @@
       "code": "61413",
       "name": "Niederwölz",
       "region": "Steiermark",
-      "website": "",
+      "website": "niederwoelz.gv.at",
       "emails": [
         "niederwoelz.gv.at",
         "niederwoelz.steiermark.at"
@@ -36574,12 +36547,11 @@
       "code": "61425",
       "name": "St. Peter am Kammersberg",
       "region": "Steiermark",
-      "website": "",
+      "website": "st-peter-kammersberg.gv.at",
       "emails": [
-        "st-peter-kammersberg.gv.at",
-        "st-peter-kammersberg.at"
+        "st-peter-kammersberg.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -36598,7 +36570,7 @@
       "code": "61428",
       "name": "Schöder",
       "region": "Steiermark",
-      "website": "",
+      "website": "schoeder.gv.at",
       "emails": [
         "schoeder.gv.at",
         "schoeder.steiermark.at"
@@ -36645,7 +36617,7 @@
       "code": "61438",
       "name": "Murau",
       "region": "Steiermark",
-      "website": "",
+      "website": "murau.gv.at",
       "emails": [
         "murau.gv.at"
       ],
@@ -36715,7 +36687,7 @@
       "code": "61441",
       "name": "Ranten",
       "region": "Steiermark",
-      "website": "",
+      "website": "ranten.gv.at",
       "emails": [
         "ranten.gv.at"
       ],
@@ -36738,7 +36710,7 @@
       "code": "61442",
       "name": "Sankt Georgen am Kreischberg",
       "region": "Steiermark",
-      "website": "",
+      "website": "st-georgen-kreischberg.gv.at",
       "emails": [
         "st-georgen-kreischberg.gv.at"
       ],
@@ -36761,7 +36733,7 @@
       "code": "61443",
       "name": "Sankt Lambrecht",
       "region": "Steiermark",
-      "website": "",
+      "website": "stlambrecht.at",
       "emails": [
         "st-lambrecht.gv.at",
         "stlambrecht.at"
@@ -36785,7 +36757,7 @@
       "code": "61444",
       "name": "Scheifling",
       "region": "Steiermark",
-      "website": "",
+      "website": "scheifling.gv.at",
       "emails": [
         "scheifling.gv.at",
         "scheifling.steiermark.at"
@@ -36809,7 +36781,7 @@
       "code": "61445",
       "name": "Stadl-Predlitz",
       "region": "Steiermark",
-      "website": "",
+      "website": "stadl-predlitz.gv.at",
       "emails": [
         "stadl-predlitz.gv.at"
       ],
@@ -36832,7 +36804,7 @@
       "code": "61446",
       "name": "Teufenbach-Katsch",
       "region": "Steiermark",
-      "website": "",
+      "website": "teufenbach-katsch.gv.at",
       "emails": [
         "teufenbach-katsch.gv.at"
       ],
@@ -37074,9 +37046,9 @@
       "website": "geistthal-soedingberg.at",
       "emails": [
         "geistthal-soedingberg.gv.at",
-        "geistthal-soedingberg.at"
+        "stmk.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -37120,10 +37092,9 @@
       "region": "Steiermark",
       "website": "kainach.at",
       "emails": [
-        "kainach-voitsberg.gv.at",
-        "kainach.at"
+        "kainach-voitsberg.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -37170,8 +37141,7 @@
       "region": "Steiermark",
       "website": "maria-lankowitz.at",
       "emails": [
-        "maria-lankowitz.gv.at",
-        "stmk.gv.at"
+        "maria-lankowitz.gv.at"
       ],
       "source": "scrape",
       "confidence": "high",
@@ -37285,7 +37255,7 @@
       "code": "61711",
       "name": "Gasen",
       "region": "Steiermark",
-      "website": "",
+      "website": "gasen.at",
       "emails": [
         "gasen.gv.at",
         "gasen.at"
@@ -37358,7 +37328,7 @@
       "code": "61727",
       "name": "Ludersdorf-Wilfersdorf",
       "region": "Steiermark",
-      "website": "",
+      "website": "lu-wi.at",
       "emails": [
         "ludersdorf-wilfersdorf.at",
         "lu-wi.at"
@@ -37624,11 +37594,13 @@
       "code": "61748",
       "name": "Sinabelkirchen",
       "region": "Steiermark",
-      "website": "sinabelkirchen.eu",
+      "website": "",
       "emails": [
-        "sinabelkirchen.gv.at"
+        "sinabelkirchen.gv.at",
+        "sinabelkirchen.com",
+        "sinabelkirchen.steiermark.at"
       ],
-      "source": "scrape",
+      "source": "static",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -37673,7 +37645,6 @@
       "region": "Steiermark",
       "website": "thannhausen.gv.at",
       "emails": [
-        "stmk.gv.at",
         "thannhausen.at"
       ],
       "source": "scrape",
@@ -37769,7 +37740,8 @@
       "region": "Steiermark",
       "website": "gersdorf.gv.at",
       "emails": [
-        "gersdorf.gv.at"
+        "gersdorf.gv.at",
+        "stmk.gv.at"
       ],
       "source": "scrape",
       "confidence": "high",
@@ -38305,7 +38277,7 @@
       "code": "62044",
       "name": "Pölstal",
       "region": "Steiermark",
-      "website": "",
+      "website": "poelstal.gv.at",
       "emails": [
         "poelstal.gv.at"
       ],
@@ -38328,7 +38300,7 @@
       "code": "62045",
       "name": "Sankt Marein-Feistritz",
       "region": "Steiermark",
-      "website": "",
+      "website": "st-marein-feistritz.gv.at",
       "emails": [
         "st-marein-feistritz.gv.at"
       ],
@@ -38348,7 +38320,7 @@
       "code": "62046",
       "name": "Sankt Margarethen bei Knittelfeld",
       "region": "Steiermark",
-      "website": "",
+      "website": "st-margarethen-knittelfeld.gv.at",
       "emails": [
         "st-margarethen-knittelfeld.gv.at"
       ],
@@ -38420,6 +38392,7 @@
       "region": "Steiermark",
       "website": "breitenau-hochlantsch.at",
       "emails": [
+        "breitenau.gv.at",
         "breitenau-hochlantsch.at"
       ],
       "source": "scrape",
@@ -38518,7 +38491,7 @@
       "code": "62128",
       "name": "Sankt Lorenzen im Mürztal",
       "region": "Steiermark",
-      "website": "",
+      "website": "stlorenzen.at",
       "emails": [
         "stlorenzen.at"
       ],
@@ -38635,12 +38608,11 @@
       "code": "62139",
       "name": "Bruck an der Mur",
       "region": "Steiermark",
-      "website": "",
+      "website": "bruckmur.at",
       "emails": [
-        "bruck-mur.gv.at",
         "bruckmur.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -38708,7 +38680,9 @@
       "region": "Steiermark",
       "website": "mariazell.gv.at",
       "emails": [
-        "mariazell.gv.at"
+        "mariazell.gv.at",
+        "stmk.gv.at",
+        "mariazell.at"
       ],
       "source": "scrape",
       "confidence": "high",
@@ -38875,7 +38849,7 @@
       "emails": [
         "bad-blumau.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu_email": [
@@ -38935,12 +38909,11 @@
       "code": "62209",
       "name": "Ebersdorf",
       "region": "Steiermark",
-      "website": "",
+      "website": "ebersdorf.eu",
       "emails": [
-        "ebersdorf.eu",
-        "ebersdorf.steiermark.at"
+        "ebersdorf.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -38963,7 +38936,7 @@
       "emails": [
         "friedberg.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -39293,9 +39266,9 @@
       "website": "wenigzell.at",
       "emails": [
         "wenigzell.gv.at",
-        "wenigzell.at"
+        "wenigzell.steiermark.at"
       ],
-      "source": "scrape",
+      "source": "static",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -39316,9 +39289,10 @@
       "region": "Steiermark",
       "website": "bad-waltersdorf.gv.at",
       "emails": [
-        "bad-waltersdorf.gv.at"
+        "bad-waltersdorf.gv.at",
+        "stmk.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -39339,10 +39313,9 @@
       "region": "Steiermark",
       "website": "dechantskirchen.gv.at",
       "emails": [
-        "dechantskirchen.gv.at",
-        "dechantskirchen.at"
+        "dechantskirchen.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -39363,6 +39336,7 @@
       "region": "Steiermark",
       "website": "feistritztal.at",
       "emails": [
+        "feistritztal.gv.at",
         "feistritztal.at"
       ],
       "source": "scrape",
@@ -39409,10 +39383,9 @@
       "region": "Steiermark",
       "website": "grosswilfersdorf.at",
       "emails": [
-        "grosswilfersdorf.gv.at",
-        "grosswilfersdorf.steiermark.at"
+        "grosswilfersdorf.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -39686,9 +39659,10 @@
       "region": "Steiermark",
       "website": "edelsbach.at",
       "emails": [
+        "stmk.gv.at",
         "edelsbach.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -39707,12 +39681,11 @@
       "code": "62314",
       "name": "Eichkögl",
       "region": "Steiermark",
-      "website": "",
+      "website": "eichkoegl.gv.at",
       "emails": [
-        "eichkoegl.gv.at",
-        "eichkoegl.at"
+        "eichkoegl.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -39754,11 +39727,12 @@
       "code": "62330",
       "name": "Jagerberg",
       "region": "Steiermark",
-      "website": "jagerberg.info",
+      "website": "",
       "emails": [
+        "jagerberg.gv.at",
         "jagerberg.info"
       ],
-      "source": "scrape",
+      "source": "static",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -39973,6 +39947,8 @@
       "region": "Steiermark",
       "website": "fehring.at",
       "emails": [
+        "fehring.gv.at",
+        "stmk.gv.at",
         "fehring.at"
       ],
       "source": "scrape",
@@ -39998,7 +39974,7 @@
       "emails": [
         "feldbach.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -40017,12 +39993,11 @@
       "code": "62380",
       "name": "Gnas",
       "region": "Steiermark",
-      "website": "",
+      "website": "gnas.gv.at",
       "emails": [
-        "gnas.gv.at",
-        "gnas.at"
+        "gnas.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -40113,10 +40088,9 @@
       "region": "Steiermark",
       "website": "paldau.gv.at",
       "emails": [
-        "paldau.gv.at",
-        "paldau.at"
+        "paldau.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -41022,7 +40996,7 @@
       "emails": [
         "fulpmes.gv.at"
       ],
-      "source": "wikidata",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu_email": [
@@ -41282,7 +41256,7 @@
       "emails": [
         "gemeinde-lans.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -41628,6 +41602,7 @@
       "region": "Tirol",
       "website": "reith-seefeld.at",
       "emails": [
+        "tirol.gv.at",
         "reith-seefeld.at"
       ],
       "source": "scrape",
@@ -41751,7 +41726,7 @@
       "code": "70350",
       "name": "Schönberg im Stubaital",
       "region": "Tirol",
-      "website": "schoenberg-stubaital.gv.at",
+      "website": "schoenberg.gv.at",
       "emails": [
         "schoenberg-stubaital.gv.at"
       ],
@@ -42227,7 +42202,7 @@
       "emails": [
         "fieberbrunn.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -43217,8 +43192,7 @@
       "region": "Tirol",
       "website": "walchsee.gv.at",
       "emails": [
-        "walchsee.gv.at",
-        "tirol.gv.at"
+        "walchsee.gv.at"
       ],
       "source": "scrape",
       "confidence": "high",
@@ -43493,9 +43467,10 @@
       "code": "70611",
       "name": "Kaunertal",
       "region": "Tirol",
-      "website": "kaunertal.gv.at",
+      "website": "kaunertal-ferien.com",
       "emails": [
-        "kaunertal.gv.at"
+        "kaunertal.gv.at",
+        "kaunertal.at"
       ],
       "source": "scrape",
       "confidence": "high",
@@ -43965,9 +43940,10 @@
       "code": "70703",
       "name": "Amlach",
       "region": "Tirol",
-      "website": "amlach.at",
+      "website": "amlacherhof.at",
       "emails": [
-        "amlach.net"
+        "amlach.net",
+        "amlacherhof.at"
       ],
       "source": "scrape",
       "confidence": "high",
@@ -44084,7 +44060,7 @@
       "emails": [
         "gaimberg.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -44653,7 +44629,7 @@
       "code": "70735",
       "name": "Heinfels",
       "region": "Tirol",
-      "website": "",
+      "website": "heinfels.at",
       "emails": [
         "heinfels.at"
       ],
@@ -45051,11 +45027,11 @@
       "code": "70818",
       "name": "Jungholz",
       "region": "Tirol",
-      "website": "jungholz.gv.at",
+      "website": "",
       "emails": [
         "jungholz.gv.at"
       ],
-      "source": "scrape",
+      "source": "wikidata",
       "confidence": "high",
       "sources_detail": {
         "bresu_email": [
@@ -45278,6 +45254,7 @@
       "region": "Tirol",
       "website": "reutte.at",
       "emails": [
+        "tirol.gv.at",
         "reutte.at"
       ],
       "source": "scrape",
@@ -45514,11 +45491,11 @@
       "code": "70902",
       "name": "Aschau im Zillertal",
       "region": "Tirol",
-      "website": "",
+      "website": "aschauimzillertal.com",
       "emails": [
-        "aschauimzillertal.com"
+        "aschau-zillertal.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -45899,7 +45876,7 @@
       "code": "70922",
       "name": "Ramsau im Zillertal",
       "region": "Tirol",
-      "website": "ramsau-zillertal.gv.at",
+      "website": "ramsau.gv.at",
       "emails": [
         "ramsau-zillertal.gv.at",
         "ramsau.gv.at"
@@ -46157,10 +46134,9 @@
       "region": "Tirol",
       "website": "gemeinde-tux.at",
       "emails": [
-        "tux.gv.at",
-        "gemeinde-tux.at"
+        "tux.gv.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -46219,7 +46195,7 @@
       "code": "70937",
       "name": "Weer",
       "region": "Tirol",
-      "website": "",
+      "website": "weer.at",
       "emails": [
         "weer.at"
       ],
@@ -47279,7 +47255,7 @@
       "emails": [
         "fussach.at"
       ],
-      "source": "static",
+      "source": "scrape",
       "confidence": "high",
       "sources_detail": {
         "bresu": [
@@ -47949,7 +47925,8 @@
       "region": "Vorarlberg",
       "website": "hohenems.at",
       "emails": [
-        "hohenems.at"
+        "hohenems.at",
+        "hohenems.onmicrosoft.com"
       ],
       "source": "scrape",
       "confidence": "high",
@@ -48393,11 +48370,11 @@
       "code": "80418",
       "name": "Schlins",
       "region": "Vorarlberg",
-      "website": "schlins.at",
+      "website": "",
       "emails": [
         "schlins.at"
       ],
-      "source": "scrape",
+      "source": "static",
       "confidence": "high",
       "sources_detail": {
         "bresu": [

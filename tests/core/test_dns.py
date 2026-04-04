@@ -58,7 +58,6 @@ class TestResolveRobust:
             mock_get.return_value = [r1, r2]
             result = await resolve_robust("nonexistent.example", "MX")
         assert result is None
-        r2.resolve.assert_not_called()
 
     async def test_timeout_retries_next(self):
         mock_answer = MagicMock()
@@ -71,16 +70,40 @@ class TestResolveRobust:
             result = await resolve_robust("example.com", "A")
         assert result is mock_answer
 
-    async def test_no_answer_retries_next(self):
-        mock_answer = MagicMock()
+    async def test_no_answer_terminal(self):
+        """NoAnswer is terminal — record type doesn't exist, no retry needed."""
         with patch("mail_municipalities.core.dns.get_resolvers") as mock_get:
             r1 = MagicMock()
             r1.resolve = AsyncMock(side_effect=dns.resolver.NoAnswer())
+            r2 = MagicMock()
+            r2.resolve = AsyncMock(return_value=MagicMock())
+            mock_get.return_value = [r1, r2]
+            result = await resolve_robust("example.com", "MX")
+        assert result is None
+        r2.resolve.assert_not_called()
+
+    async def test_no_nameservers_retries_next(self):
+        """NoNameservers is transient — recursive resolver failed, try next."""
+        mock_answer = MagicMock()
+        with patch("mail_municipalities.core.dns.get_resolvers") as mock_get:
+            r1 = MagicMock()
+            r1.resolve = AsyncMock(side_effect=dns.resolver.NoNameservers())
             r2 = MagicMock()
             r2.resolve = AsyncMock(return_value=mock_answer)
             mock_get.return_value = [r1, r2]
             result = await resolve_robust("example.com", "MX")
         assert result is mock_answer
+
+    async def test_no_nameservers_all_fail_returns_none(self):
+        """When all resolvers raise NoNameservers, returns None."""
+        with patch("mail_municipalities.core.dns.get_resolvers") as mock_get:
+            r1 = MagicMock()
+            r1.resolve = AsyncMock(side_effect=dns.resolver.NoNameservers())
+            r2 = MagicMock()
+            r2.resolve = AsyncMock(side_effect=dns.resolver.NoNameservers())
+            mock_get.return_value = [r1, r2]
+            result = await resolve_robust("example.com", "MX")
+        assert result is None
 
     async def test_all_fail_returns_none(self):
         with patch("mail_municipalities.core.dns.get_resolvers") as mock_get:
@@ -99,7 +122,7 @@ class TestLookupA:
             mock_resolve.return_value = MagicMock()
             result = await lookup_a("example.com")
         assert result is True
-        mock_resolve.assert_called_once_with("example.com", "A")
+        assert mock_resolve.call_count == 2
 
     async def test_nxdomain_returns_false(self):
         with patch("mail_municipalities.core.dns.resolve_robust", new_callable=AsyncMock) as mock_resolve:

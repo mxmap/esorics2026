@@ -7,6 +7,7 @@ import pytest
 
 from mail_municipalities.provider_classification.runner import (
     PROVIDER_OUTPUT_NAMES,
+    _build_category_map,
     _load_resolver_output,
     _minify_for_frontend,
     _output_provider,
@@ -32,8 +33,8 @@ class TestProviderOutputNames:
     def test_output_provider_google(self):
         assert _output_provider(Provider.GOOGLE) == "google"
 
-    def test_output_provider_independent(self):
-        assert _output_provider(Provider.INDEPENDENT) == "independent"
+    def test_output_provider_unknown(self):
+        assert _output_provider(Provider.UNKNOWN) == "unknown"
 
 
 class TestLoadResolverOutput:
@@ -72,6 +73,7 @@ class TestLoadResolverOutput:
 
 class TestSerializeResult:
     def test_basic_serialization(self):
+        category_map = _build_category_map("ch")
         result = ClassificationResult(
             provider=Provider.MS365,
             confidence=0.4,
@@ -100,7 +102,7 @@ class TestSerializeResult:
             "region": "Kanton Bern",
             "_domain": "bern.ch",
         }
-        out = _serialize_result(entry, result)
+        out = _serialize_result(entry, result, category_map)
 
         assert out["code"] == "351"
         assert out["provider"] == "microsoft"
@@ -113,6 +115,7 @@ class TestSerializeResult:
         assert out["classification_signals"][0]["provider"] == "microsoft"
 
     def test_gateway_included(self):
+        category_map = _build_category_map("ch")
         result = ClassificationResult(
             provider=Provider.MS365,
             confidence=0.4,
@@ -121,23 +124,25 @@ class TestSerializeResult:
             mx_hosts=[],
         )
         entry = {"code": "1", "name": "Test", "_domain": "test.ch"}
-        out = _serialize_result(entry, result)
+        out = _serialize_result(entry, result, category_map)
         assert out["gateway"] == "seppmail"
 
     def test_no_gateway_omitted(self):
+        category_map = _build_category_map("ch")
         result = ClassificationResult(
-            provider=Provider.INDEPENDENT,
+            provider=Provider.UNKNOWN,
             confidence=0.0,
             evidence=[],
             mx_hosts=[],
         )
         entry = {"code": "1", "name": "Test", "_domain": "test.ch"}
-        out = _serialize_result(entry, result)
+        out = _serialize_result(entry, result, category_map)
         assert "gateway" not in out
 
     def test_resolve_fields_passthrough(self):
+        category_map = _build_category_map("ch")
         result = ClassificationResult(
-            provider=Provider.INDEPENDENT,
+            provider=Provider.UNKNOWN,
             confidence=0.0,
             evidence=[],
             mx_hosts=[],
@@ -149,7 +154,7 @@ class TestSerializeResult:
             "sources_detail": {"scrape": ["test.ch"]},
             "flags": ["test_flag"],
         }
-        out = _serialize_result(entry, result)
+        out = _serialize_result(entry, result, category_map)
         assert out["sources_detail"] == {"scrape": ["test.ch"]}
         assert out["resolve_flags"] == ["test_flag"]
 
@@ -198,7 +203,7 @@ class TestPipelineRun:
             mx_hosts=["bern-ch.mail.protection.outlook.com"],
         )
 
-        async def fake_classify_many(domains, max_concurrency=20):
+        async def fake_classify_many(domains, max_concurrency=20, *, country_code=None):
             for d in domains:
                 yield d, ms_result
 
@@ -207,18 +212,19 @@ class TestPipelineRun:
             "mail_municipalities.provider_classification.runner.classify_many",
             side_effect=fake_classify_many,
         ):
-            await run(domains_json, output_path)
+            await run(domains_json, output_path, country_code="ch")
 
         assert output_path.exists()
         data = json.loads(output_path.read_text())
         assert data["total"] == 2
-        assert "351" in data["municipalities"]
-        assert "9999" in data["municipalities"]
-        assert data["municipalities"]["351"]["provider"] == "microsoft"
-        assert data["municipalities"]["351"]["category"] == "us-cloud"
-        assert data["municipalities"]["9999"]["provider"] == "unknown"
-        assert data["municipalities"]["9999"]["category"] == "unknown"
-        assert data["municipalities"]["9999"]["classification_confidence"] == 0.0
+        munis = {m["code"]: m for m in data["municipalities"]}
+        assert "351" in munis
+        assert "9999" in munis
+        assert munis["351"]["provider"] == "microsoft"
+        assert munis["351"]["category"] == "us-cloud"
+        assert munis["9999"]["provider"] == "unknown"
+        assert munis["9999"]["category"] == "unknown"
+        assert munis["9999"]["classification_confidence"] == 0.0
 
     async def test_run_no_domain_entry(self, domains_json, tmp_path):
         ms_result = ClassificationResult(
@@ -228,7 +234,7 @@ class TestPipelineRun:
             mx_hosts=[],
         )
 
-        async def fake_classify_many(domains, max_concurrency=20):
+        async def fake_classify_many(domains, max_concurrency=20, *, country_code=None):
             for d in domains:
                 yield d, ms_result
 
@@ -237,10 +243,11 @@ class TestPipelineRun:
             "mail_municipalities.provider_classification.runner.classify_many",
             side_effect=fake_classify_many,
         ):
-            await run(domains_json, output_path)
+            await run(domains_json, output_path, country_code="ch")
 
         data = json.loads(output_path.read_text())
-        no_domain = data["municipalities"]["9999"]
+        munis = {m["code"]: m for m in data["municipalities"]}
+        no_domain = munis["9999"]
         assert no_domain["domain"] == ""
         assert no_domain["mx"] == []
 
@@ -267,7 +274,7 @@ class TestPipelineRun:
             mx_hosts=["mx.google.com"],
         )
 
-        async def fake_classify_many(domains, max_concurrency=20):
+        async def fake_classify_many(domains, max_concurrency=20, *, country_code=None):
             for d in domains:
                 yield d, result
 
@@ -276,10 +283,11 @@ class TestPipelineRun:
             "mail_municipalities.provider_classification.runner.classify_many",
             side_effect=fake_classify_many,
         ):
-            await run(path, output_path)
+            await run(path, output_path, country_code="ch")
 
         out = json.loads(output_path.read_text())
-        entry = out["municipalities"]["100"]
+        munis = {m["code"]: m for m in out["municipalities"]}
+        entry = munis["100"]
         assert entry["sources_detail"] == {"scrape": ["town.ch"]}
         assert entry["resolve_flags"] == ["test_flag"]
 
@@ -291,7 +299,7 @@ class TestPipelineRun:
             mx_hosts=[],
         )
 
-        async def fake_classify_many(domains, max_concurrency=20):
+        async def fake_classify_many(domains, max_concurrency=20, *, country_code=None):
             for d in domains:
                 yield d, result
 
@@ -300,7 +308,7 @@ class TestPipelineRun:
             "mail_municipalities.provider_classification.runner.classify_many",
             side_effect=fake_classify_many,
         ):
-            await run(domains_json, output_path)
+            await run(domains_json, output_path, country_code="ch")
 
         data = json.loads(output_path.read_text())
         assert "counts" in data
@@ -323,7 +331,7 @@ class TestPipelineRun:
             mx_hosts=["bern-ch.mail.protection.outlook.com"],
         )
 
-        async def fake_classify_many(domains, max_concurrency=20):
+        async def fake_classify_many(domains, max_concurrency=20, *, country_code=None):
             for d in domains:
                 yield d, ms_result
 
@@ -332,7 +340,7 @@ class TestPipelineRun:
             "mail_municipalities.provider_classification.runner.classify_many",
             side_effect=fake_classify_many,
         ):
-            await run(domains_json, output_path)
+            await run(domains_json, output_path, country_code="ch")
 
         mini_path = tmp_path / "providers.min.json"
         assert mini_path.exists()
@@ -353,8 +361,8 @@ class TestMinifyForFrontend:
             "generated": "2026-01-01T00:00:00Z",
             "total": 1,
             "counts": {"microsoft": 1},
-            "municipalities": {
-                "351": {
+            "municipalities": [
+                {
                     "code": "351",
                     "name": "Bern",
                     "region": "Kanton Bern",
@@ -376,15 +384,14 @@ class TestMinifyForFrontend:
                     "sources_detail": {"scrape": ["bern.ch"]},
                     "resolve_flags": ["test_flag"],
                 }
-            },
+            ],
         }
 
     def test_minify_strips_unused_fields(self):
         full = self._make_full_output()
         mini = _minify_for_frontend(full)
 
-        entry = mini["municipalities"]["351"]
-        assert "code" not in entry
+        entry = mini["municipalities"][0]
         assert "sources_detail" not in entry
         assert "resolve_flags" not in entry
 
@@ -400,7 +407,7 @@ class TestMinifyForFrontend:
         mini = _minify_for_frontend(full)
 
         assert mini["generated"] == "2026-01-01T00:00:00Z"
-        entry = mini["municipalities"]["351"]
+        entry = mini["municipalities"][0]
         assert entry["name"] == "Bern"
         assert entry["domain"] == "bern.ch"
         assert entry["mx"] == ["bern-ch.mail.protection.outlook.com"]
@@ -440,7 +447,7 @@ class TestPipelineLogging:
             mx_hosts=[],
         )
 
-        async def fake_classify_many(domains, max_concurrency=20):
+        async def fake_classify_many(domains, max_concurrency=20, *, country_code=None):
             for d in domains:
                 yield d, ms_result
 
@@ -449,7 +456,7 @@ class TestPipelineLogging:
             "mail_municipalities.provider_classification.runner.classify_many",
             side_effect=fake_classify_many,
         ):
-            await run(domains_json, output_path)
+            await run(domains_json, output_path, country_code="ch")
 
         assert any("Classifying" in msg for msg in caplog.messages)
         assert any("Wrote" in msg for msg in caplog.messages)

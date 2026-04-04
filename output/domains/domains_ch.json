@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-01T14:57:10.807954Z",
+  "generated": "2026-04-02T22:23:47.439481Z",
   "total": 2110,
   "municipalities": [
     {
@@ -619,8 +619,7 @@
       "region": "Kanton Luzern",
       "website": "altbueron.ch",
       "emails": [
-        "altbueron.ch",
-        "lu.ch"
+        "altbueron.ch"
       ]
     },
     {
@@ -693,8 +692,7 @@
       "region": "Kanton Luzern",
       "website": "hergiswil-lu.ch",
       "emails": [
-        "hergiswil-lu.ch",
-        "lu.ch"
+        "hergiswil-lu.ch"
       ]
     },
     {
@@ -823,8 +821,7 @@
       "region": "Kanton Luzern",
       "website": "willisau.ch",
       "emails": [
-        "willisau.ch",
-        "lu.ch"
+        "willisau.ch"
       ]
     },
     {
@@ -1018,8 +1015,7 @@
       "region": "Kanton Uri",
       "website": "seelisberg.ch",
       "emails": [
-        "seelisberg.ch",
-        "seelisberg.com"
+        "seelisberg.ch"
       ]
     },
     {
@@ -1054,7 +1050,7 @@
       "code": "1219",
       "name": "Unterschächen",
       "region": "Kanton Uri",
-      "website": "",
+      "website": "unterschaechen.ch",
       "emails": [
         "unterschaechen.ch"
       ]
@@ -1645,7 +1641,7 @@
       "code": "157",
       "name": "Oetwil am See",
       "region": "Kanton Zürich",
-      "website": "oetwil.ch",
+      "website": "",
       "emails": [
         "oetwil.ch"
       ]
@@ -2034,8 +2030,7 @@
       "region": "Kanton Freiburg",
       "website": "nuvilly.ch",
       "emails": [
-        "nuvilly.ch",
-        "fr.ch"
+        "nuvilly.ch"
       ]
     },
     {
@@ -2053,8 +2048,7 @@
       "region": "Kanton Freiburg",
       "website": "saint-aubin.ch",
       "emails": [
-        "saint-aubin.ch",
-        "fr.ch"
+        "saint-aubin.ch"
       ]
     },
     {
@@ -2072,8 +2066,7 @@
       "region": "Kanton Freiburg",
       "website": "surpierre-fr.ch",
       "emails": [
-        "surpierre-fr.ch",
-        "fr.ch"
+        "surpierre-fr.ch"
       ]
     },
     {
@@ -2118,8 +2111,7 @@
       "region": "Kanton Freiburg",
       "website": "estavayer.ch",
       "emails": [
-        "estavayer.ch",
-        "fr.ch"
+        "estavayer.ch"
       ]
     },
     {
@@ -2218,8 +2210,7 @@
       "region": "Kanton Freiburg",
       "website": "siviriez.ch",
       "emails": [
-        "siviriez.ch",
-        "fr.ch"
+        "siviriez.ch"
       ]
     },
     {
@@ -2228,8 +2219,7 @@
       "region": "Kanton Freiburg",
       "website": "ursy.ch",
       "emails": [
-        "ursy.ch",
-        "fr.ch"
+        "ursy.ch"
       ]
     },
     {
@@ -2265,8 +2255,7 @@
       "region": "Kanton Freiburg",
       "website": "torny.ch",
       "emails": [
-        "torny.ch",
-        "fr.ch"
+        "torny.ch"
       ]
     },
     {
@@ -2284,8 +2273,7 @@
       "region": "Kanton Freiburg",
       "website": "haut-intyamon.ch",
       "emails": [
-        "haut-intyamon.ch",
-        "fr.ch"
+        "haut-intyamon.ch"
       ]
     },
     {
@@ -2358,8 +2346,7 @@
       "region": "Kanton Freiburg",
       "website": "cresuz.ch",
       "emails": [
-        "cresuz.ch",
-        "fr.ch"
+        "cresuz.ch"
       ]
     },
     {
@@ -2496,8 +2483,7 @@
       "region": "Kanton Freiburg",
       "website": "sorens.ch",
       "emails": [
-        "sorens.ch",
-        "fr.ch"
+        "sorens.ch"
       ]
     },
     {
@@ -2542,8 +2528,7 @@
       "region": "Kanton Freiburg",
       "website": "val-de-charmey.ch",
       "emails": [
-        "val-de-charmey.ch",
-        "fr.ch"
+        "val-de-charmey.ch"
       ]
     },
     {
@@ -2678,7 +2663,7 @@
       "code": "2206",
       "name": "Marly",
       "region": "Kanton Freiburg",
-      "website": "marly.ch",
+      "website": "",
       "emails": [
         "marly.ch"
       ]
@@ -2725,8 +2710,7 @@
       "region": "Kanton Freiburg",
       "website": "le-mouret.ch",
       "emails": [
-        "le-mouret.ch",
-        "fr.ch"
+        "le-mouret.ch"
       ]
     },
     {
@@ -2735,7 +2719,7 @@
       "region": "Kanton Freiburg",
       "website": "treyvaux.ch",
       "emails": [
-        "fr.ch"
+        "treyvaux.ch"
       ]
     },
     {
@@ -2808,8 +2792,7 @@
       "region": "Kanton Freiburg",
       "website": "prez.ch",
       "emails": [
-        "prez.ch",
-        "fr.ch"
+        "prez.ch"
       ]
     },
     {
@@ -2864,8 +2847,7 @@
       "region": "Kanton Freiburg",
       "website": "courtepin.ch",
       "emails": [
-        "courtepin.ch",
-        "fr.ch"
+        "courtepin.ch"
       ]
     },
     {
@@ -2883,15 +2865,14 @@
       "region": "Kanton Freiburg",
       "website": "fraeschels.ch",
       "emails": [
-        "fraeschels.ch",
-        "fr.ch"
+        "fraeschels.ch"
       ]
     },
     {
       "code": "226",
       "name": "Schlatt (ZH)",
       "region": "Kanton Zürich",
-      "website": "schlatt-zh.ch",
+      "website": "",
       "emails": [
         "schlatt-zh.ch"
       ]
@@ -3004,8 +2985,7 @@
       "region": "Kanton Freiburg",
       "website": "mont-vully.ch",
       "emails": [
-        "mont-vully.ch",
-        "fr.ch"
+        "mont-vully.ch"
       ]
     },
     {
@@ -3221,8 +3201,7 @@
       "region": "Kanton Freiburg",
       "website": "saint-martin-fr.ch",
       "emails": [
-        "saint-martin-fr.ch",
-        "fr.ch"
+        "saint-martin-fr.ch"
       ]
     },
     {
@@ -3240,8 +3219,7 @@
       "region": "Kanton Freiburg",
       "website": "leflon.ch",
       "emails": [
-        "leflon.ch",
-        "fr.ch"
+        "leflon.ch"
       ]
     },
     {
@@ -4358,8 +4336,7 @@
       "region": "Kanton Basel-Stadt",
       "website": "riehen.ch",
       "emails": [
-        "riehen.ch",
-        "bs.ch"
+        "riehen.ch"
       ]
     },
     {
@@ -4456,7 +4433,7 @@
       "code": "2771",
       "name": "Oberwil (BL)",
       "region": "Kanton Basel-Landschaft",
-      "website": "oberwil.ch",
+      "website": "",
       "emails": [
         "oberwil.ch"
       ]
@@ -4559,7 +4536,8 @@
       "region": "Kanton Basel-Landschaft",
       "website": "laufen-bl.ch",
       "emails": [
-        "laufen-bl.ch"
+        "laufen-bl.ch",
+        "bl.ch"
       ]
     },
     {
@@ -4584,8 +4562,10 @@
       "code": "2790",
       "name": "Roggenburg",
       "region": "Kanton Basel-Landschaft",
-      "website": "",
-      "emails": []
+      "website": "roggenburg.ch",
+      "emails": [
+        "roggenburg.ch"
+      ]
     },
     {
       "code": "2791",
@@ -5207,8 +5187,7 @@
       "region": "Kanton Schaffhausen",
       "website": "buettenhardt.ch",
       "emails": [
-        "buettenhardt.ch",
-        "sh.ch"
+        "buettenhardt.ch"
       ]
     },
     {
@@ -5781,8 +5760,7 @@
       "region": "Kanton Appenzell Innerrhoden",
       "website": "gonten.ch",
       "emails": [
-        "gonten.ch",
-        "ai.ch"
+        "gonten.ch"
       ]
     },
     {
@@ -6159,7 +6137,6 @@
       "region": "Kanton St. Gallen",
       "website": "grabs.ch",
       "emails": [
-        "grabs.ch",
         "grabs.sg.ch"
       ]
     },
@@ -6315,8 +6292,7 @@
       "region": "Kanton St. Gallen",
       "website": "kaltbrunn.ch",
       "emails": [
-        "kaltbrunn.ch",
-        "sg.ch"
+        "kaltbrunn.ch"
       ]
     },
     {
@@ -6353,8 +6329,7 @@
       "region": "Kanton Bern",
       "website": "melchnau.ch",
       "emails": [
-        "melchnau.ch",
-        "be.ch"
+        "melchnau.ch"
       ]
     },
     {
@@ -6390,9 +6365,7 @@
       "region": "Kanton St. Gallen",
       "website": "gommiswald.ch",
       "emails": [
-        "gommiswald.ch",
-        "gommiswald.sg.ch",
-        "sg.ch"
+        "gommiswald.ch"
       ]
     },
     {
@@ -6537,8 +6510,7 @@
       "region": "Kanton St. Gallen",
       "website": "neckertal.ch",
       "emails": [
-        "neckertal.ch",
-        "sg.ch"
+        "neckertal.ch"
       ]
     },
     {
@@ -6902,8 +6874,7 @@
       "region": "Kanton Graubünden",
       "website": "sagogn.ch",
       "emails": [
-        "sagogn.ch",
-        "gr.ch"
+        "sagogn.ch"
       ]
     },
     {
@@ -7011,8 +6982,7 @@
       "region": "Kanton Graubünden",
       "website": "scharans.ch",
       "emails": [
-        "scharans.ch",
-        "gr.ch"
+        "scharans.ch"
       ]
     },
     {
@@ -7407,7 +7377,7 @@
       "code": "38",
       "name": "Rheinau",
       "region": "Kanton Zürich",
-      "website": "rheinau.ch",
+      "website": "",
       "emails": [
         "rheinau.ch"
       ]
@@ -7633,7 +7603,7 @@
       "code": "388",
       "name": "Leuzigen",
       "region": "Kanton Bern",
-      "website": "leuzigen.ch",
+      "website": "",
       "emails": [
         "leuzigen.ch"
       ]
@@ -8070,8 +8040,7 @@
       "region": "Kanton Aargau",
       "website": "baden.ch",
       "emails": [
-        "baden.ch",
-        "ag.ch"
+        "baden.ch"
       ]
     },
     {
@@ -9501,8 +9470,7 @@
       "region": "Kanton Aargau",
       "website": "rottenschwil.ch",
       "emails": [
-        "rottenschwil.ch",
-        "ag.ch"
+        "rottenschwil.ch"
       ]
     },
     {
@@ -9693,7 +9661,7 @@
       "code": "4275",
       "name": "Kirchleerau",
       "region": "Kanton Aargau",
-      "website": "kirchleerau.ch",
+      "website": "",
       "emails": [
         "kirchleerau.ch"
       ]
@@ -9768,8 +9736,7 @@
       "region": "Kanton Aargau",
       "website": "staffelbach.ch",
       "emails": [
-        "staffelbach.ch",
-        "ag.ch"
+        "staffelbach.ch"
       ]
     },
     {
@@ -9952,8 +9919,7 @@
       "region": "Kanton Aargau",
       "website": "siglistorf.ch",
       "emails": [
-        "siglistorf.ch",
-        "ag.ch"
+        "siglistorf.ch"
       ]
     },
     {
@@ -10052,8 +10018,7 @@
       "region": "Kanton Bern",
       "website": "renan.ch",
       "emails": [
-        "renan.ch",
-        "be.ch"
+        "renan.ch"
       ]
     },
     {
@@ -10108,8 +10073,7 @@
       "region": "Kanton Bern",
       "website": "saint-imier.ch",
       "emails": [
-        "saint-imier.ch",
-        "be.ch"
+        "saint-imier.ch"
       ]
     },
     {
@@ -10325,10 +10289,9 @@
       "code": "4561",
       "name": "Felben-Wellhausen",
       "region": "Kanton Thurgau",
-      "website": "felben-wellhausen.ch",
+      "website": "",
       "emails": [
-        "felben-wellhausen.ch",
-        "tg.ch"
+        "felben-wellhausen.ch"
       ]
     },
     {
@@ -10437,8 +10400,7 @@
       "region": "Kanton Thurgau",
       "website": "ermatingen.ch",
       "emails": [
-        "ermatingen.ch",
-        "tg.ch"
+        "ermatingen.ch"
       ]
     },
     {
@@ -10512,8 +10474,7 @@
       "region": "Kanton Thurgau",
       "website": "taegerwilen.ch",
       "emails": [
-        "taegerwilen.ch",
-        "tg.ch"
+        "taegerwilen.ch"
       ]
     },
     {
@@ -10583,10 +10544,9 @@
       "code": "4741",
       "name": "Lommis",
       "region": "Kanton Thurgau",
-      "website": "lommis.ch",
+      "website": "",
       "emails": [
-        "lommis.ch",
-        "tg.ch"
+        "lommis.ch"
       ]
     },
     {
@@ -10732,8 +10692,7 @@
       "region": "Kanton Thurgau",
       "website": "pfyn.ch",
       "emails": [
-        "pfyn.ch",
-        "tg.ch"
+        "pfyn.ch"
       ]
     },
     {
@@ -11972,8 +11931,7 @@
       "region": "Kanton Waadt",
       "website": "chessel.ch",
       "emails": [
-        "chessel.ch",
-        "vd.ch"
+        "chessel.ch"
       ]
     },
     {
@@ -11982,8 +11940,7 @@
       "region": "Kanton Waadt",
       "website": "corbeyrier.ch",
       "emails": [
-        "corbeyrier.ch",
-        "vd.ch"
+        "corbeyrier.ch"
       ]
     },
     {
@@ -12031,8 +11988,7 @@
       "region": "Kanton Waadt",
       "website": "ollon.ch",
       "emails": [
-        "ollon.ch",
-        "vd.ch"
+        "ollon.ch"
       ]
     },
     {
@@ -12104,8 +12060,7 @@
       "region": "Kanton Waadt",
       "website": "aubonne.ch",
       "emails": [
-        "aubonne.ch",
-        "vd.ch"
+        "aubonne.ch"
       ]
     },
     {
@@ -12132,8 +12087,7 @@
       "region": "Kanton Waadt",
       "website": "biere-vd.ch",
       "emails": [
-        "biere-vd.ch",
-        "vd.ch"
+        "biere-vd.ch"
       ]
     },
     {
@@ -12581,8 +12535,7 @@
       "region": "Kanton Waadt",
       "website": "assens.ch",
       "emails": [
-        "assens.ch",
-        "vd.ch"
+        "assens.ch"
       ]
     },
     {
@@ -12646,8 +12599,7 @@
       "region": "Kanton Waadt",
       "website": "essertines-sur-yverdon.ch",
       "emails": [
-        "essertines-sur-yverdon.ch",
-        "vd.ch"
+        "essertines-sur-yverdon.ch"
       ]
     },
     {
@@ -12685,17 +12637,16 @@
       "region": "Kanton Waadt",
       "website": "morrens.ch",
       "emails": [
-        "morrens.ch",
-        "vd.ch"
+        "morrens.ch"
       ]
     },
     {
       "code": "5529",
       "name": "Oulens-sous-Echallens",
       "region": "Kanton Waadt",
-      "website": "oulens.ch",
+      "website": "",
       "emails": [
-        "oulens-sous-echallens.ch"
+        "oulens.ch"
       ]
     },
     {
@@ -12732,8 +12683,7 @@
       "region": "Kanton Waadt",
       "website": "poliez-pittet.ch",
       "emails": [
-        "poliez-pittet.ch",
-        "vd.ch"
+        "poliez-pittet.ch"
       ]
     },
     {
@@ -13005,8 +12955,7 @@
       "region": "Kanton Waadt",
       "website": "epalinges.ch",
       "emails": [
-        "epalinges.ch",
-        "vd.ch"
+        "epalinges.ch"
       ]
     },
     {
@@ -13096,8 +13045,7 @@
       "region": "Kanton Waadt",
       "website": "chexbres.ch",
       "emails": [
-        "chexbres.ch",
-        "vd.ch"
+        "chexbres.ch"
       ]
     },
     {
@@ -13318,8 +13266,7 @@
       "region": "Kanton Waadt",
       "website": "lavigny.ch",
       "emails": [
-        "lavigny.ch",
-        "vd.ch"
+        "lavigny.ch"
       ]
     },
     {
@@ -13648,8 +13595,7 @@
       "region": "Kanton Waadt",
       "website": "montanaire.ch",
       "emails": [
-        "montanaire.ch",
-        "vd.ch"
+        "montanaire.ch"
       ]
     },
     {
@@ -13915,10 +13861,9 @@
       "code": "5726",
       "name": "La Rippe",
       "region": "Kanton Waadt",
-      "website": "larippe.ch",
+      "website": "",
       "emails": [
-        "larippe.ch",
-        "vd.ch"
+        "larippe.ch"
       ]
     },
     {
@@ -14099,8 +14044,7 @@
       "region": "Kanton Waadt",
       "website": "croy.ch",
       "emails": [
-        "croy.ch",
-        "vd.ch"
+        "croy.ch"
       ]
     },
     {
@@ -14138,8 +14082,7 @@
       "region": "Kanton Waadt",
       "website": "orbe.ch",
       "emails": [
-        "orbe.ch",
-        "vd.ch"
+        "orbe.ch"
       ]
     },
     {
@@ -14657,8 +14600,7 @@
       "region": "Kanton Waadt",
       "website": "vinzel.ch",
       "emails": [
-        "vinzel.ch",
-        "vd.ch"
+        "vinzel.ch"
       ]
     },
     {
@@ -14687,7 +14629,7 @@
       "region": "Kanton Waadt",
       "website": "communeduchenit.ch",
       "emails": [
-        "vd.ch"
+        "communeduchenit.ch"
       ]
     },
     {
@@ -14714,8 +14656,7 @@
       "region": "Kanton Waadt",
       "website": "chardonne.ch",
       "emails": [
-        "chardonne.ch",
-        "vd.ch"
+        "chardonne.ch"
       ]
     },
     {
@@ -14758,7 +14699,7 @@
       "code": "5889",
       "name": "La Tour-de-Peilz",
       "region": "Kanton Waadt",
-      "website": "la-tour-de-peilz.ch",
+      "website": "",
       "emails": [
         "la-tour-de-peilz.ch"
       ]
@@ -14787,7 +14728,8 @@
       "region": "Kanton Waadt",
       "website": "veytaux.ch",
       "emails": [
-        "veytaux.ch"
+        "veytaux.ch",
+        "vd.ch"
       ]
     },
     {
@@ -14934,8 +14876,7 @@
       "region": "Kanton Waadt",
       "website": "ependesvd.ch",
       "emails": [
-        "ependesvd.ch",
-        "vd.ch"
+        "ependesvd.ch"
       ]
     },
     {
@@ -15113,8 +15054,7 @@
       "region": "Kanton Waadt",
       "website": "yvonand.ch",
       "emails": [
-        "yvonand.ch",
-        "vd.ch"
+        "yvonand.ch"
       ]
     },
     {
@@ -15384,7 +15324,7 @@
       "code": "6061",
       "name": "Lax",
       "region": "Kanton Wallis",
-      "website": "lax.ch",
+      "website": "",
       "emails": [
         "lax.ch"
       ]
@@ -15658,7 +15598,6 @@
       "region": "Kanton Wallis",
       "website": "fully.ch",
       "emails": [
-        "fully.ch",
         "admin.fully.ch"
       ]
     },
@@ -15765,7 +15704,7 @@
       "code": "6152",
       "name": "Collombey-Muraz",
       "region": "Kanton Wallis",
-      "website": "",
+      "website": "collombey-muraz.ch",
       "emails": [
         "collombey-muraz.ch"
       ]
@@ -16469,7 +16408,7 @@
       "code": "63",
       "name": "Lufingen",
       "region": "Kanton Zürich",
-      "website": "lufingen.ch",
+      "website": "",
       "emails": [
         "lufingen.ch"
       ]
@@ -16577,7 +16516,7 @@
       "code": "6423",
       "name": "La Sagne",
       "region": "Kanton Neuenburg",
-      "website": "lasagne.ch",
+      "website": "",
       "emails": [
         "ne.ch"
       ]
@@ -16829,7 +16768,7 @@
       "code": "6610",
       "name": "Céligny",
       "region": "Kanton Genf",
-      "website": "celigny.ch",
+      "website": "",
       "emails": [
         "celigny.ch"
       ]
@@ -17533,7 +17472,7 @@
       "code": "6774",
       "name": "Boncourt",
       "region": "Kanton Jura",
-      "website": "boncourt.ch",
+      "website": "",
       "emails": [
         "boncourt.ch"
       ]
@@ -17679,8 +17618,7 @@
       "region": "Kanton Bern",
       "website": "belprahon.ch",
       "emails": [
-        "belprahon.ch",
-        "be.ch"
+        "belprahon.ch"
       ]
     },
     {
@@ -17734,8 +17672,7 @@
       "region": "Kanton Bern",
       "website": "corcelles-be.ch",
       "emails": [
-        "corcelles-be.ch",
-        "be.ch"
+        "corcelles-be.ch"
       ]
     },
     {
@@ -17796,7 +17733,7 @@
       "code": "7",
       "name": "Knonau",
       "region": "Kanton Zürich",
-      "website": "knonau.ch",
+      "website": "",
       "emails": [
         "knonau.ch"
       ]
@@ -17844,8 +17781,7 @@
       "region": "Kanton Bern",
       "website": "saicourt.ch",
       "emails": [
-        "saicourt.ch",
-        "be.ch"
+        "saicourt.ch"
       ]
     },
     {
@@ -18031,8 +17967,7 @@
       "region": "Kanton Bern",
       "website": "hermrigen.ch",
       "emails": [
-        "hermrigen.ch",
-        "be.ch"
+        "hermrigen.ch"
       ]
     },
     {
@@ -18068,8 +18003,7 @@
       "region": "Kanton Bern",
       "website": "merzligen.ch",
       "emails": [
-        "merzligen.ch",
-        "be.ch"
+        "merzligen.ch"
       ]
     },
     {
@@ -18231,7 +18165,7 @@
       "code": "767",
       "name": "Reutigen",
       "region": "Kanton Bern",
-      "website": "reutigen.ch",
+      "website": "",
       "emails": [
         "reutigen.ch"
       ]

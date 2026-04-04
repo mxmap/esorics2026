@@ -139,7 +139,7 @@ def _patch_all_probes(**overrides):
 class TestAggregate:
     def test_empty(self):
         result, _ = _aggregate([])
-        assert result.provider == Provider.INDEPENDENT
+        assert result.provider == Provider.UNKNOWN
         assert result.confidence == 0.0
         assert result.evidence == []
         assert result.gateway is None
@@ -187,7 +187,7 @@ class TestAggregate:
     def test_gateway_dkim_beats_spf_from_dns_host(self):
         """Behind a gateway, DKIM provider wins over SPF-only provider."""
         evidence = [
-            _ev(SignalKind.SPF, Provider.INFOMANIAK),
+            _ev(SignalKind.SPF, Provider.GOOGLE),
             _ev(SignalKind.DKIM, Provider.MS365),
             _ev(SignalKind.TENANT, Provider.MS365),
         ]
@@ -197,11 +197,11 @@ class TestAggregate:
     def test_no_dkim_boost_without_gateway(self):
         """Without gateway, SPF still beats DKIM (normal precedence)."""
         evidence = [
-            _ev(SignalKind.SPF, Provider.INFOMANIAK),
+            _ev(SignalKind.SPF, Provider.GOOGLE),
             _ev(SignalKind.DKIM, Provider.MS365),
         ]
         result, _ = _aggregate(evidence)
-        assert result.provider == Provider.INFOMANIAK
+        assert result.provider == Provider.GOOGLE
 
     def test_confidence_capped_at_1(self):
         evidence = [_ev(kind, Provider.MS365) for kind in SignalKind]
@@ -209,11 +209,11 @@ class TestAggregate:
         assert result.confidence == 1.0
 
     def test_independent_evidence_no_winner(self):
-        evidence = [_ev(SignalKind.MX, Provider.INDEPENDENT)]
+        evidence = [_ev(SignalKind.MX, Provider.UNKNOWN)]
         result, _ = _aggregate(evidence)
-        assert result.provider == Provider.INDEPENDENT
-        # MX evidence present → 0.60
-        assert result.confidence == pytest.approx(0.60)
+        assert result.provider == Provider.UNKNOWN
+        # No Cymru country data → confidence 0
+        assert result.confidence == 0.0
 
     def test_gateway_passthrough(self):
         evidence = [_ev(SignalKind.MX, Provider.MS365)]
@@ -226,15 +226,45 @@ class TestAggregate:
         result, _ = _aggregate(evidence)
         assert result.gateway is None
 
+    def test_gateway_no_primary_is_unknown(self):
+        """Behind a gateway with no primary signals → UNKNOWN."""
+        evidence = [
+            _ev(SignalKind.TENANT, Provider.MS365),
+            _ev(SignalKind.ASN, Provider.FOREIGN),
+        ]
+        result, rule = _aggregate(evidence, gateway="sophos")
+        assert result.provider == Provider.UNKNOWN
+        assert result.confidence == 0.0
+        assert rule == "gateway_no_primary"
+
+    def test_gateway_with_primary_still_works(self):
+        """Gateway + primary signal → normal classification (not UNKNOWN)."""
+        evidence = [
+            _ev(SignalKind.SPF, Provider.MS365),
+            _ev(SignalKind.TENANT, Provider.MS365),
+        ]
+        result, _ = _aggregate(evidence, gateway="sophos")
+        assert result.provider == Provider.MS365
+        assert result.confidence == pytest.approx(0.90)
+
+    def test_no_gateway_fallback_unchanged(self):
+        """Without gateway, country fallback still works as before."""
+        evidence = [
+            _ev(SignalKind.ASN, Provider.DOMESTIC),
+        ]
+        result, _ = _aggregate(evidence, mx_hosts=["mail.example.ch"], spf_raw="v=spf1 a ~all")
+        assert result.provider == Provider.DOMESTIC
+        assert result.confidence > 0.0
+
     def test_tenant_alone_no_winner(self):
         """Tenant evidence without primary signals cannot pick a winner."""
         evidence = [
             _ev(SignalKind.TENANT, Provider.MS365),
         ]
         result, _ = _aggregate(evidence)
-        assert result.provider == Provider.INDEPENDENT
-        # No MX, secondary evidence only → 0.20 base + 1 extra kind × 0.02
-        assert result.confidence == pytest.approx(0.22)
+        assert result.provider == Provider.UNKNOWN
+        # No Cymru country data → confidence 0
+        assert result.confidence == 0.0
 
     def test_tenant_with_primary(self):
         """Tenant evidence with MX primary → MX+TENANT rule."""
@@ -287,9 +317,9 @@ class TestAggregate:
             _ev(SignalKind.TXT_VERIFICATION, Provider.MS365),
         ]
         result, _ = _aggregate(evidence)
-        assert result.provider == Provider.INDEPENDENT
-        # No MX, secondary evidence only → 0.20 base + 1 extra kind × 0.02
-        assert result.confidence == pytest.approx(0.22)
+        assert result.provider == Provider.UNKNOWN
+        # No Cymru country data → confidence 0
+        assert result.confidence == 0.0
 
     def test_txt_verification_with_primary(self):
         """TXT_VERIFICATION with primary signals boosts confidence."""
@@ -308,9 +338,9 @@ class TestAggregate:
             _ev(SignalKind.ASN, Provider.AWS),
         ]
         result, _ = _aggregate(evidence)
-        assert result.provider == Provider.INDEPENDENT
-        # No MX, secondary evidence only → 0.20 base + 1 extra kind × 0.02
-        assert result.confidence == pytest.approx(0.22)
+        assert result.provider == Provider.UNKNOWN
+        # No Cymru country data → confidence 0
+        assert result.confidence == 0.0
 
     def test_asn_with_primary(self):
         """ASN evidence with primary signals boosts confidence."""
@@ -323,22 +353,15 @@ class TestAggregate:
         # MX-only rule (0.80) + ASN boost (0.02) = 0.82
         assert result.confidence == pytest.approx(0.82)
 
-    def test_infomaniak_classification(self):
-        evidence = [
-            _ev(SignalKind.MX, Provider.INFOMANIAK),
-            _ev(SignalKind.SPF, Provider.INFOMANIAK),
-        ]
-        result, _ = _aggregate(evidence)
-        assert result.provider == Provider.INFOMANIAK
-
-    def test_swiss_isp_spf_ip_alone_no_winner(self):
+    def test_domestic_spf_ip_alone_no_winner(self):
         """SPF_IP alone cannot pick a winner (not primary)."""
         evidence = [
-            _ev(SignalKind.SPF_IP, Provider.SWISS_ISP),
+            _ev(SignalKind.SPF_IP, Provider.DOMESTIC),
         ]
         result, _ = _aggregate(evidence)
-        assert result.provider == Provider.INDEPENDENT
-        # No MX, secondary evidence only → 0.20 base + 1 extra kind × 0.02
+        # Domestic fallback: DOMESTIC has evidence but no primary signals
+        assert result.provider == Provider.DOMESTIC
+        # No MX, secondary evidence only → dom_secondary 0.20 + 1 extra kind × 0.02
         assert result.confidence == pytest.approx(0.22)
 
     def test_spf_ip_alone_no_winner(self):
@@ -347,9 +370,9 @@ class TestAggregate:
             _ev(SignalKind.SPF_IP, Provider.GOOGLE),
         ]
         result, _ = _aggregate(evidence)
-        assert result.provider == Provider.INDEPENDENT
-        # No MX, secondary evidence only → 0.20 base + 1 extra kind × 0.02
-        assert result.confidence == pytest.approx(0.22)
+        assert result.provider == Provider.UNKNOWN
+        # No Cymru country data → confidence 0
+        assert result.confidence == 0.0
 
     def test_spf_ip_with_primary(self):
         """MX(Google) + SPF_IP(Google) → Google with boosted confidence."""
@@ -444,31 +467,11 @@ class TestAggregate:
         assert result.provider == Provider.MS365
         assert result.confidence == pytest.approx(0.72)
 
-    def test_independent_with_mx_and_spf_full_confidence(self):
-        """Independent domain with MX + SPF → 90% base confidence."""
+    def test_independent_no_country_data(self):
+        """Independent domain (no Cymru data) → confidence 0."""
         result, _ = _aggregate([], mx_hosts=["mail.example.ch"], spf_raw="v=spf1 a mx ~all")
-        assert result.provider == Provider.INDEPENDENT
-        # MX + SPF present → 0.90 base, no extra signals
-        assert result.confidence == pytest.approx(0.90)
-
-    def test_independent_with_mx_spf_and_extra_signals(self):
-        """Independent domain with MX + SPF + extra signals gets boosted."""
-        evidence = [
-            _ev(SignalKind.ASN, Provider.INDEPENDENT),
-            _ev(SignalKind.TXT_VERIFICATION, Provider.INDEPENDENT),
-            _ev(SignalKind.TENANT, Provider.INDEPENDENT),
-        ]
-        result, _ = _aggregate(evidence, mx_hosts=["mail.example.ch"], spf_raw="v=spf1 a mx ~all")
-        assert result.provider == Provider.INDEPENDENT
-        # MX + SPF base (0.90) + 3 extra kinds × 0.02 = 0.96
-        assert result.confidence == pytest.approx(0.96)
-
-    def test_independent_with_mx_only_half_confidence(self):
-        """Independent domain with MX only → 60% confidence."""
-        result, _ = _aggregate([], mx_hosts=["mail.example.ch"])
-        assert result.provider == Provider.INDEPENDENT
-        # MX present, no SPF → 0.60
-        assert result.confidence == pytest.approx(0.60)
+        assert result.provider == Provider.UNKNOWN
+        assert result.confidence == 0.0
 
     def test_mx_hosts_passthrough(self):
         evidence = [_ev(SignalKind.MX, Provider.MS365)]
@@ -687,14 +690,14 @@ class TestAggregate:
         assert result.confidence == pytest.approx(0.42)
 
     def test_gateway_dkim_tenant_anniviers_scenario(self):
-        """Anniviers: SPF(Infomaniak) + DKIM(MS365) + TENANT(MS365) behind proofpoint."""
+        """Anniviers: SPF(Google) + DKIM(MS365) + TENANT(MS365) behind proofpoint."""
         evidence = [
-            _ev(SignalKind.SPF, Provider.INFOMANIAK),
+            _ev(SignalKind.SPF, Provider.GOOGLE),
             _ev(SignalKind.DKIM, Provider.MS365),
             _ev(SignalKind.TENANT, Provider.MS365),
         ]
         result, rule = _aggregate(evidence, gateway="proofpoint")
-        # Gateway DKIM boost: MS365 DKIM 0.15 + 0.06 = 0.21 > Infomaniak SPF 0.20
+        # Gateway DKIM boost: MS365 DKIM 0.15 + 0.06 = 0.21 > Google SPF 0.20
         assert result.provider == Provider.MS365
         assert rule == "dkim_tenant_gw"
         assert result.confidence == pytest.approx(0.85)
@@ -768,7 +771,7 @@ class TestClassify:
         with _patch_all_probes():
             result = await classify("example.com")
 
-        assert result.provider == Provider.INDEPENDENT
+        assert result.provider == Provider.UNKNOWN
         assert result.confidence == 0.0
 
     async def test_gateway_scenario(self):
@@ -802,39 +805,14 @@ class TestClassify:
         assert result.provider == Provider.MS365
         assert result.gateway == "seppmail"
 
-    async def test_infomaniak_scenario(self):
-        mx_ev = [
-            Evidence(
-                kind=SignalKind.MX,
-                provider=Provider.INFOMANIAK,
-                weight=WEIGHTS[SignalKind.MX],
-                detail="MX match",
-                raw="mxpool.infomaniak.com",
-            )
-        ]
-        spf_ev = [
-            Evidence(
-                kind=SignalKind.SPF,
-                provider=Provider.INFOMANIAK,
-                weight=WEIGHTS[SignalKind.SPF],
-                detail="SPF match",
-                raw="v=spf1",
-            )
-        ]
-
-        with _patch_all_probes(probe_mx=mx_ev, probe_spf=spf_ev):
-            result = await classify("example.com")
-
-        assert result.provider == Provider.INFOMANIAK
-
-    async def test_swiss_isp_scenario(self):
-        """Swiss ISP detected via SPF_IP alone → INDEPENDENT (confirmation-only)."""
+    async def test_domestic_isp_scenario(self):
+        """Domestic ISP detected via SPF_IP alone -> DOMESTIC_ISP (domestic fallback)."""
         spf_ip_ev = [
             Evidence(
                 kind=SignalKind.SPF_IP,
-                provider=Provider.SWISS_ISP,
+                provider=Provider.DOMESTIC,
                 weight=WEIGHTS[SignalKind.SPF_IP],
-                detail="SPF ip4/a ASN 3303 is Swiss ISP: Swisscom",
+                detail="SPF ip4/a ASN 3303 registered in CH",
                 raw="195.186.1.1:3303",
             )
         ]
@@ -842,16 +820,17 @@ class TestClassify:
         with _patch_all_probes(probe_spf_ip=spf_ip_ev):
             result = await classify("example.com")
 
-        assert result.provider == Provider.INDEPENDENT
+        # Domestic fallback: DOMESTIC_ISP evidence present, no primary signals
+        assert result.provider == Provider.DOMESTIC
 
     async def test_tenant_confirmation_only_in_classify(self):
-        """Domain with Swiss ISP SPF IPs + positive M365 tenant → both confirmation-only, both discarded → INDEPENDENT."""
+        """Domain with domestic ISP SPF IPs + positive M365 tenant -> DOMESTIC_ISP wins via fallback."""
         spf_ip_ev = [
             Evidence(
                 kind=SignalKind.SPF_IP,
-                provider=Provider.SWISS_ISP,
+                provider=Provider.DOMESTIC,
                 weight=WEIGHTS[SignalKind.SPF_IP],
-                detail="SPF ip4/a ASN 3303 is Swiss ISP: Swisscom",
+                detail="SPF ip4/a ASN 3303 registered in CH",
                 raw="195.186.1.1:3303",
             )
         ]
@@ -868,8 +847,8 @@ class TestClassify:
         with _patch_all_probes(probe_spf_ip=spf_ip_ev, probe_tenant=tenant_ev):
             result = await classify("example.com")
 
-        # Both SPF_IP and TENANT are confirmation-only → all discarded → INDEPENDENT
-        assert result.provider == Provider.INDEPENDENT
+        # Neither SPF_IP nor TENANT are primary signals, but domestic fallback applies
+        assert result.provider == Provider.DOMESTIC
 
     async def test_tenant_confirmation_with_ms365_primary(self):
         """Domain with MX→outlook + positive M365 tenant → MS365 with boosted confidence."""
@@ -1048,7 +1027,7 @@ class TestClassifyMany:
         """One failing domain should not crash the loop; others succeed."""
         call_count = 0
 
-        async def _flaky_classify(domain):
+        async def _flaky_classify(domain, *, country_code=None):
             nonlocal call_count
             call_count += 1
             if domain == "fail.com":
@@ -1056,7 +1035,7 @@ class TestClassifyMany:
             from mail_municipalities.provider_classification.models import ClassificationResult
 
             return ClassificationResult(
-                provider=Provider.INDEPENDENT,
+                provider=Provider.UNKNOWN,
                 confidence=0.0,
                 evidence=[],
                 gateway=None,
@@ -1110,13 +1089,13 @@ class TestRuleHitCounting:
         _aggregate(evidence)
         assert _rule_hits["fallback"] == 1
 
-    def test_independent_rule_mx_spf(self):
+    def test_independent_no_country_data(self):
         _aggregate([], mx_hosts=["mail.example.ch"], spf_raw="v=spf1 a mx ~all")
-        assert _rule_hits["ind_mx_spf"] == 1
-
-    def test_independent_rule_none(self):
-        _aggregate([])
-        assert _rule_hits["ind_none"] == 1
+        # No Cymru data → INDEPENDENT with confidence 0, no rule hit tracked
+        result, rule = _aggregate([])
+        assert result.provider == Provider.UNKNOWN
+        assert result.confidence == 0.0
+        assert rule == "no_country_data"
 
     def test_counter_accumulation(self):
         evidence = [_ev(SignalKind.MX, Provider.MS365)]
@@ -1127,7 +1106,7 @@ class TestRuleHitCounting:
     async def test_classify_many_summary(self, caplog):
         from mail_municipalities.provider_classification.models import ClassificationResult
 
-        async def _mock_classify(domain):
+        async def _mock_classify(domain, *, country_code=None):
             _rule_hits["mx_spf"] += 1
             return ClassificationResult(
                 provider=Provider.MS365,

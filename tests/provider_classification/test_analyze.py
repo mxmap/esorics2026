@@ -24,6 +24,21 @@ from mail_municipalities.provider_classification.analyze import (
 # Synthetic test data
 # ---------------------------------------------------------------------------
 
+_CATEGORY_MAP = {
+    "microsoft": "us-cloud",
+    "google": "us-cloud",
+    "aws": "us-cloud",
+    "domestic": "ch-based",
+    "foreign": "foreign",
+    "unknown": "unknown",
+}
+_DOMESTIC_LABEL = "ch-based"
+_REGION_LOOKUP = {
+    "Kanton Zürich": "ZH",
+    "Kanton Bern": "BE",
+    "Kanton Genf": "GE",
+}
+
 _MUNIS = {
     "1": {
         "code": "1",
@@ -62,19 +77,19 @@ _MUNIS = {
         "name": "Bern Village",
         "region": "Kanton Bern",
         "domain": "bern.ch",
-        "provider": "independent",
-        "category": "swiss-based",
+        "provider": "unknown",
+        "category": "unknown",
         "classification_confidence": 90.0,
         "classification_signals": [
             {
                 "kind": "mx",
-                "provider": "independent",
+                "provider": "unknown",
                 "weight": 0.2,
                 "detail": "mx match",
             },
             {
                 "kind": "spf",
-                "provider": "independent",
+                "provider": "unknown",
                 "weight": 0.2,
                 "detail": "spf match",
             },
@@ -88,19 +103,19 @@ _MUNIS = {
         "name": "Genf City",
         "region": "Kanton Genf",
         "domain": "shared.ch",
-        "provider": "infomaniak",
-        "category": "swiss-based",
+        "provider": "domestic",
+        "category": "ch-based",
         "classification_confidence": 50.0,
         "classification_signals": [
             {
                 "kind": "spf",
-                "provider": "infomaniak",
+                "provider": "domestic",
                 "weight": 0.2,
                 "detail": "spf match",
             },
         ],
-        "mx": ["mxpool.infomaniak.com"],
-        "spf": "v=spf1 include:spf.infomaniak.ch -all",
+        "mx": ["mx.localmail.ch"],
+        "spf": "v=spf1 include:spf.localmail.ch -all",
         "gateway": "seppmail",
     },
     "4": {
@@ -108,13 +123,13 @@ _MUNIS = {
         "name": "Genf Town",
         "region": "Kanton Genf",
         "domain": "shared.ch",
-        "provider": "infomaniak",
-        "category": "swiss-based",
+        "provider": "domestic",
+        "category": "ch-based",
         "classification_confidence": 55.0,
         "classification_signals": [
             {
                 "kind": "spf",
-                "provider": "infomaniak",
+                "provider": "domestic",
                 "weight": 0.2,
                 "detail": "spf match",
             },
@@ -125,8 +140,8 @@ _MUNIS = {
                 "detail": "mx conflict",
             },
         ],
-        "mx": ["mxpool.infomaniak.com"],
-        "spf": "v=spf1 include:spf.infomaniak.ch -all",
+        "mx": ["mx.localmail.ch"],
+        "spf": "v=spf1 include:spf.localmail.ch -all",
         "gateway": "seppmail",
     },
     "5": {
@@ -134,8 +149,8 @@ _MUNIS = {
         "name": "No Signal Town",
         "region": "",
         "domain": "nosignal.ch",
-        "provider": "independent",
-        "category": "swiss-based",
+        "provider": "unknown",
+        "category": "unknown",
         "classification_confidence": 60.0,
         "classification_signals": [],
         "mx": [],
@@ -144,12 +159,14 @@ _MUNIS = {
     },
 }
 
+_MUNIS_LIST = list(_MUNIS.values())
+
 _DATA = {
     "generated": "2026-03-24T00:00:00Z",
     "commit": "abc1234",
     "total": 5,
-    "counts": {"microsoft": 1, "independent": 2, "infomaniak": 2},
-    "municipalities": _MUNIS,
+    "counts": {"microsoft": 1, "unknown": 2, "domestic": 2},
+    "municipalities": _MUNIS_LIST,
 }
 
 
@@ -177,18 +194,18 @@ def test_load_data_missing(tmp_path: Path) -> None:
 
 
 def test_report_overall_summary(capsys: pytest.CaptureFixture[str]) -> None:
-    report_overall_summary(_DATA, _MUNIS)
+    report_overall_summary(_DATA, _MUNIS, _CATEGORY_MAP, _DOMESTIC_LABEL)
     out = capsys.readouterr().out
     assert "OVERALL SUMMARY" in out
     assert "5" in out  # total
     assert "microsoft" in out
-    assert "independent" in out
+    assert "unknown" in out
     assert "US Cloud" in out
-    assert "Swiss Based" in out
+    assert "Domestic" in out
 
 
 def test_report_regional(capsys: pytest.CaptureFixture[str]) -> None:
-    report_regional(_MUNIS)
+    report_regional(_MUNIS, _CATEGORY_MAP, _REGION_LOOKUP)
     out = capsys.readouterr().out
     assert "REGIONAL" in out
     assert "ZH" in out
@@ -203,7 +220,7 @@ def test_report_confidence(capsys: pytest.CaptureFixture[str]) -> None:
     assert "CONFIDENCE" in out
     assert "Average confidence" in out
     assert "microsoft" in out
-    assert "infomaniak" in out
+    assert "domestic" in out
 
 
 def test_report_signals(capsys: pytest.CaptureFixture[str]) -> None:
@@ -233,7 +250,7 @@ def test_report_domain_sharing(capsys: pytest.CaptureFixture[str]) -> None:
 
 
 def test_report_low_confidence(capsys: pytest.CaptureFixture[str]) -> None:
-    report_low_confidence(_MUNIS)
+    report_low_confidence(_MUNIS, _REGION_LOOKUP)
     out = capsys.readouterr().out
     assert "LOW-CONFIDENCE" in out
     assert "Genf City" in out  # confidence 50
@@ -244,9 +261,9 @@ def test_report_low_confidence(capsys: pytest.CaptureFixture[str]) -> None:
 def test_report_low_confidence_shows_conflicts(
     capsys: pytest.CaptureFixture[str],
 ) -> None:
-    report_low_confidence(_MUNIS)
+    report_low_confidence(_MUNIS, _REGION_LOOKUP)
     out = capsys.readouterr().out
-    # muni 4 has mx pointing to microsoft but winner is infomaniak
+    # muni 4 has mx pointing to microsoft but winner is domestic-isp
     assert "microsoft" in out
 
 

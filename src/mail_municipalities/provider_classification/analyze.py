@@ -4,13 +4,14 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
 
-from .constants import CANTON_ABBREVIATIONS
-from .runner import _CATEGORY_MAP
+from .constants import REGION_ABBREVIATIONS
+from .runner import _build_category_map
 
 # ---------------------------------------------------------------------------
 # ANSI color helpers (respect NO_COLOR convention and pipe detection)
@@ -95,19 +96,28 @@ def load_data(path: Path) -> dict[str, Any]:
 # Helpers
 # ---------------------------------------------------------------------------
 
-_CANTON_LOOKUP = {k: v.upper() for k, v in CANTON_ABBREVIATIONS.items()}
-
-_PROVIDERS_ORDERED = ["microsoft", "google", "aws", "infomaniak", "independent"]
+_PROVIDERS_ORDERED = ["microsoft", "google", "aws", "domestic", "foreign", "unknown"]
 
 _PRIMARY_SIGNAL_KINDS = {"mx", "spf", "dkim", "autodiscover"}
 
 
-def _region_abbr(region: str) -> str:
-    return _CANTON_LOOKUP.get(region, region[:4] if region else "??")
+def _infer_country(path: Path) -> str:
+    """Infer country code from filename like ``providers_ch.json``."""
+    match = re.search(r"providers_(\w{2})", path.stem)
+    return match.group(1) if match else "ch"
 
 
-def _category(provider: str) -> str:
-    return _CATEGORY_MAP.get(provider, "unknown")
+def _make_region_lookup(country_code: str) -> dict[str, str]:
+    abbrevs = REGION_ABBREVIATIONS.get(country_code, {})
+    return {k: v.upper() for k, v in abbrevs.items()}
+
+
+def _region_abbr(region: str, region_lookup: dict[str, str]) -> str:
+    return region_lookup.get(region, region[:4] if region else "??")
+
+
+def _category(provider: str, category_map: dict[str, str]) -> str:
+    return category_map.get(provider, "unknown")
 
 
 # ---------------------------------------------------------------------------
@@ -115,7 +125,9 @@ def _category(provider: str) -> str:
 # ---------------------------------------------------------------------------
 
 
-def report_overall_summary(data: dict[str, Any], munis: dict[str, Any]) -> None:
+def report_overall_summary(
+    data: dict[str, Any], munis: dict[str, Any], category_map: dict[str, str], domestic_label: str
+) -> None:
     _header("OVERALL SUMMARY")
     total = len(munis)
     generated = data.get("generated", "?")
@@ -126,15 +138,15 @@ def report_overall_summary(data: dict[str, Any], munis: dict[str, Any]) -> None:
     # Category split
     cat_counts: Counter[str] = Counter()
     for m in munis.values():
-        cat_counts[_category(m["provider"])] += 1
+        cat_counts[_category(m["provider"], category_map)] += 1
 
     print()
     print(f"  {'Category':<16} {'Count':>6}  {'%':>6}  Bar")
     _sep()
-    for cat in ["us-cloud", "swiss-based"]:
+    for cat in ["us-cloud", domestic_label]:
         cnt = cat_counts[cat]
         color = _red if cat == "us-cloud" else _green
-        label = "US Cloud" if cat == "us-cloud" else "Swiss Based"
+        label = "US Cloud" if cat == "us-cloud" else "Domestic"
         print(f"  {color(f'{label:<16}')} {cnt:>6,}  {_pct(cnt, total)}  {color(_bar(cnt, total))}")
 
     # Provider distribution
@@ -147,7 +159,7 @@ def report_overall_summary(data: dict[str, Any], munis: dict[str, Any]) -> None:
     _sep()
     for prov in _PROVIDERS_ORDERED:
         cnt = prov_counts.get(prov, 0)
-        color = _red if _category(prov) == "us-cloud" else _green
+        color = _red if _category(prov, category_map) == "us-cloud" else _green
         print(f"  {color(f'{prov:<16}')} {cnt:>6,}  {_pct(cnt, total)}  {color(_bar(cnt, max(prov_counts.values())))}")
 
 
@@ -156,43 +168,45 @@ def report_overall_summary(data: dict[str, Any], munis: dict[str, Any]) -> None:
 # ---------------------------------------------------------------------------
 
 
-def report_regional(munis: dict[str, Any]) -> None:
+def report_regional(munis: dict[str, Any], category_map: dict[str, str], region_lookup: dict[str, str]) -> None:
     _header("REGIONAL BREAKDOWN (sorted by US-Cloud %)")
 
     # Group by region
     by_region: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for m in munis.values():
-        by_region[_region_abbr(m.get("region", ""))].append(m)
+        by_region[_region_abbr(m.get("region", ""), region_lookup)].append(m)
 
     # Build rows
     rows: list[tuple[str, int, dict[str, int], float]] = []
     for abbr, entries in by_region.items():
         total = len(entries)
         prov_counts: Counter[str] = Counter(e["provider"] for e in entries)
-        us_cloud = sum(prov_counts.get(p, 0) for p in _PROVIDERS_ORDERED if _category(p) == "us-cloud")
+        us_cloud = sum(prov_counts.get(p, 0) for p in _PROVIDERS_ORDERED if _category(p, category_map) == "us-cloud")
         us_pct = us_cloud / total * 100 if total else 0
         rows.append((abbr, total, dict(prov_counts), us_pct))
 
     rows.sort(key=lambda r: r[3], reverse=True)
 
     hdr = (
-        f"  {'Region':<8}{'Total':>5}{'MSFT':>6}{'Goog':>6}{'AWS':>5}{'Info':>6}{'Indep':>6}  {'US%':>6}  {'Swiss%':>6}"
+        f"  {'Region':<8}{'Total':>5}{'MSFT':>6}{'Goog':>6}{'AWS':>5}"
+        f"{'Dom':>5}{'Frgn':>5}{'Unkn':>5}  {'US%':>6}  {'Dom%':>6}"
     )
     print(hdr)
     _sep()
 
     for abbr, total, pc, us_pct in rows:
-        swiss_pct = 100 - us_pct
+        domestic_pct = 100 - us_pct
         color = _red if us_pct >= 70 else (_yellow if us_pct >= 50 else _green)
         print(
             f"  {abbr:<8}{total:>5}"
             f"{pc.get('microsoft', 0):>6}"
             f"{pc.get('google', 0):>6}"
             f"{pc.get('aws', 0):>5}"
-            f"{pc.get('infomaniak', 0):>6}"
-            f"{pc.get('independent', 0):>6}"
+            f"{pc.get('domestic', 0):>5}"
+            f"{pc.get('foreign', 0):>5}"
+            f"{pc.get('independent', 0):>5}"
             f"  {color(f'{us_pct:5.1f}%')}"
-            f"  {f'{swiss_pct:5.1f}%':>6}"
+            f"  {f'{domestic_pct:5.1f}%':>6}"
         )
 
 
@@ -363,7 +377,7 @@ def report_domain_sharing(munis: dict[str, Any]) -> None:
 # ---------------------------------------------------------------------------
 
 
-def report_low_confidence(munis: dict[str, Any]) -> None:
+def report_low_confidence(munis: dict[str, Any], region_lookup: dict[str, str]) -> None:
     _header("LOW-CONFIDENCE / REVIEW CANDIDATES")
 
     # Low confidence
@@ -379,7 +393,7 @@ def report_low_confidence(munis: dict[str, Any]) -> None:
             signals = "+".join(sorted({s["kind"] for s in m.get("classification_signals", [])}))
             print(
                 f"  {m['code']:>5}  {m['name']:<28} "
-                f"{_region_abbr(m.get('region', '')):>4}  "
+                f"{_region_abbr(m.get('region', ''), region_lookup):>4}  "
                 f"{m['provider']:<14} "
                 f"{m['classification_confidence']:>4.0f}%  {signals}"
             )
@@ -413,17 +427,22 @@ def report_low_confidence(munis: dict[str, Any]) -> None:
 # ---------------------------------------------------------------------------
 
 
-def main(data_path: Path | None = None) -> None:
+def main(data_path: Path | None = None, *, country_code: str | None = None) -> None:
     path = data_path or Path("output/providers/providers_ch.json")
-    data = load_data(path)
-    munis = data["municipalities"]
+    cc = country_code or _infer_country(path)
+    category_map = _build_category_map(cc)
+    domestic_label = f"{cc}-based"
+    region_lookup = _make_region_lookup(cc)
 
-    report_overall_summary(data, munis)
-    report_regional(munis)
+    data = load_data(path)
+    munis = {m["code"]: m for m in data["municipalities"]}
+
+    report_overall_summary(data, munis, category_map, domestic_label)
+    report_regional(munis, category_map, region_lookup)
     report_confidence(munis)
     report_signals(munis)
     report_gateways(munis)
     report_domain_sharing(munis)
-    report_low_confidence(munis)
+    report_low_confidence(munis, region_lookup)
 
     print()

@@ -41,8 +41,6 @@ def _resolve_impl(
     no_cache: bool = False,
 ) -> None:
     """Shared resolve implementation."""
-    setup_logging(verbose)
-
     if not country and not all_countries:
         typer.echo("Provide a country code (ch, de, at) or use --all", err=True)
         raise typer.Exit(code=1)
@@ -58,6 +56,7 @@ def _resolve_impl(
     data_base = Path("data")
 
     for cc in countries:
+        setup_logging(verbose, log_path=output_dir / f"resolve_{cc}.log")
         config = _get_config(cc)
         data_dir = data_base / cc
         asyncio.run(
@@ -120,16 +119,31 @@ def classify_cmd(
         Optional[Path],
         typer.Option("-o", "--output", help="Custom output directory"),
     ] = None,
+    validate: Annotated[
+        bool,
+        typer.Option("--validate", help="Validate existing output instead of classifying"),
+    ] = False,
+    baseline: Annotated[
+        Optional[Path],
+        typer.Option("--baseline", help="Baseline file for regression comparison"),
+    ] = None,
 ) -> None:
     """Classify email providers for municipalities."""
-    setup_logging(verbose, log_filename="classification.log")
+    output_dir = output or Path("output/providers")
+    setup_logging(verbose, log_path=output_dir / f"classify_{country}.log")
+
+    output_path = output_dir / f"providers_{country}.json"
+
+    if validate:
+        from mail_municipalities.provider_classification.validate import run_validation
+
+        ok = run_validation(output_path, baseline_path=baseline)
+        raise typer.Exit(code=0 if ok else 1)
 
     from mail_municipalities.provider_classification.runner import run
 
     domains_path = domains_dir / f"domains_{country}_detailed.json"
-    output_dir = output or Path("output/providers")
-    output_path = output_dir / f"providers_{country}.json"
-    asyncio.run(run(domains_path, output_path))
+    asyncio.run(run(domains_path, output_path, country_code=country))
 
 
 @app.command("analyze")
@@ -203,16 +217,31 @@ def _classify_main(
         Optional[Path],
         typer.Option("-o", "--output", help="Custom output directory"),
     ] = None,
+    validate: Annotated[
+        bool,
+        typer.Option("--validate", help="Validate existing output instead of classifying"),
+    ] = False,
+    baseline: Annotated[
+        Optional[Path],
+        typer.Option("--baseline", help="Baseline file for regression comparison"),
+    ] = None,
 ) -> None:
     """Classify email providers for municipalities."""
-    setup_logging(verbose, log_filename="classification.log")
+    output_dir = output or Path("output/providers")
+    setup_logging(verbose, log_path=output_dir / f"classify_{country}.log")
+
+    output_path = output_dir / f"providers_{country}.json"
+
+    if validate:
+        from mail_municipalities.provider_classification.validate import run_validation
+
+        ok = run_validation(output_path, baseline_path=baseline)
+        raise typer.Exit(code=0 if ok else 1)
 
     from mail_municipalities.provider_classification.runner import run
 
     domains_path = domains_dir / f"domains_{country}_detailed.json"
-    output_dir = output or Path("output/providers")
-    output_path = output_dir / f"providers_{country}.json"
-    asyncio.run(run(domains_path, output_path))
+    asyncio.run(run(domains_path, output_path, country_code=country))
 
 
 _analyze_app = typer.Typer(add_completion=False)

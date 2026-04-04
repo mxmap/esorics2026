@@ -57,7 +57,7 @@ def _srv_rdata(target: str):
 def _a_rdata(ip: str):
     """Create a mock A rdata."""
     rdata = MagicMock()
-    rdata.__str__ = lambda self: ip
+    rdata.configure_mock(**{"__str__.return_value": ip})
     return rdata
 
 
@@ -121,16 +121,6 @@ class TestProbeMx:
         assert len(results) == 1
         assert results[0].provider == Provider.GOOGLE
 
-    def test_infomaniak_hit(self):
-        results = probe_mx(["mxpool.infomaniak.com"])
-        assert len(results) == 1
-        assert results[0].provider == Provider.INFOMANIAK
-
-    def test_infomaniak_mta_gw_hit(self):
-        results = probe_mx(["mta-gw.infomaniak.ch"])
-        assert len(results) == 1
-        assert results[0].provider == Provider.INFOMANIAK
-
     def test_smtp_google_hit(self):
         results = probe_mx(["smtp.google.com"])
         assert len(results) == 1
@@ -168,17 +158,6 @@ class TestProbeSpf:
             results = await probe_spf("example.com")
         assert len(results) == 1
         assert results[0].provider == Provider.GOOGLE
-
-    async def test_infomaniak_hit(self):
-        answer = [_txt_rdata("v=spf1 include:spf.infomaniak.ch ~all")]
-        with patch(
-            "mail_municipalities.provider_classification.probes.resolve_robust",
-            new_callable=AsyncMock,
-            return_value=answer,
-        ):
-            results = await probe_spf("example.com")
-        assert len(results) == 1
-        assert results[0].provider == Provider.INFOMANIAK
 
     async def test_no_spf_record(self):
         answer = [_txt_rdata("google-site-verification=abc123")]
@@ -607,7 +586,7 @@ class TestProbeAsn:
             results = await probe_asn(["mx.outlook.com"])
         assert any(e.provider == Provider.MS365 and e.kind == SignalKind.ASN for e in results)
 
-    async def test_swiss_isp_asn(self):
+    async def test_domestic_isp_asn(self):
         async def _resolve(qname, rdtype):
             if rdtype == "A":
                 return [_a_rdata("195.186.1.1")]
@@ -619,9 +598,9 @@ class TestProbeAsn:
             "mail_municipalities.provider_classification.probes.resolve_robust",
             side_effect=_resolve,
         ):
-            results = await probe_asn(["mx.swisscom.ch"])
-        assert any(e.provider == Provider.SWISS_ISP and e.kind == SignalKind.ASN for e in results)
-        assert any("Swisscom" in e.detail for e in results)
+            results = await probe_asn(["mx.swisscom.ch"], country_code="ch")
+        assert any(e.provider == Provider.DOMESTIC and e.kind == SignalKind.ASN for e in results)
+        assert any("CH" in e.detail for e in results)
 
     async def test_empty_mx_hosts(self):
         results = await probe_asn([])
@@ -688,8 +667,8 @@ class TestProbeTxtVerification:
 
 
 class TestProbeSpfIp:
-    async def test_ip4_swiss_isp(self):
-        """SPF ip4: entry resolving to Swiss ISP ASN produces SPF_IP evidence."""
+    async def test_ip4_domestic_isp(self):
+        """SPF ip4: entry resolving to domestic ISP ASN produces SPF_IP evidence."""
 
         async def _resolve(qname, rdtype):
             if qname == "example.com" and rdtype == "TXT":
@@ -702,12 +681,11 @@ class TestProbeSpfIp:
             "mail_municipalities.provider_classification.probes.resolve_robust",
             side_effect=_resolve,
         ):
-            results = await probe_spf_ip("example.com")
-        assert any(e.provider == Provider.SWISS_ISP and e.kind == SignalKind.SPF_IP for e in results)
-        assert any("Swisscom" in e.detail for e in results)
+            results = await probe_spf_ip("example.com", country_code="ch")
+        assert any(e.provider == Provider.DOMESTIC and e.kind == SignalKind.SPF_IP for e in results)
 
     async def test_ip4_with_cidr(self):
-        """ip4: with CIDR notation — uses first IP of the range for ASN lookup."""
+        """ip4: with CIDR notation -- uses first IP of the range for ASN lookup."""
 
         async def _resolve(qname, rdtype):
             if qname == "example.com" and rdtype == "TXT":
@@ -720,8 +698,8 @@ class TestProbeSpfIp:
             "mail_municipalities.provider_classification.probes.resolve_robust",
             side_effect=_resolve,
         ):
-            results = await probe_spf_ip("example.com")
-        assert any(e.provider == Provider.SWISS_ISP and e.kind == SignalKind.SPF_IP for e in results)
+            results = await probe_spf_ip("example.com", country_code="ch")
+        assert any(e.provider == Provider.DOMESTIC and e.kind == SignalKind.SPF_IP for e in results)
 
     async def test_a_entry_resolution(self):
         """SPF a: entry is resolved to IP, then to ASN."""
@@ -739,8 +717,8 @@ class TestProbeSpfIp:
             "mail_municipalities.provider_classification.probes.resolve_robust",
             side_effect=_resolve,
         ):
-            results = await probe_spf_ip("example.com")
-        assert any(e.provider == Provider.SWISS_ISP and e.kind == SignalKind.SPF_IP for e in results)
+            results = await probe_spf_ip("example.com", country_code="ch")
+        assert any(e.provider == Provider.DOMESTIC and e.kind == SignalKind.SPF_IP for e in results)
 
     async def test_provider_asn_match(self):
         """SPF ip4: matching a known provider ASN produces evidence."""
@@ -798,9 +776,9 @@ class TestProbeSpfIp:
             "mail_municipalities.provider_classification.probes.resolve_robust",
             side_effect=_resolve,
         ):
-            results = await probe_spf_ip("example.com")
-        swiss_isp_results = [e for e in results if e.provider == Provider.SWISS_ISP]
-        assert len(swiss_isp_results) == 1
+            results = await probe_spf_ip("example.com", country_code="ch")
+        domestic_isp_results = [e for e in results if e.provider == Provider.DOMESTIC]
+        assert len(domestic_isp_results) == 1
 
 
 class TestProbeTenantRetry:

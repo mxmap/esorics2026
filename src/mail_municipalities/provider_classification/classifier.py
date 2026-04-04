@@ -2,7 +2,7 @@
 
 Algorithm:
 1. **Winner** — sum primary signal weights (MX, SPF, DKIM, AUTODISCOVER) per
-   provider; highest total wins.  No primary signals → INDEPENDENT.
+   provider; highest total wins.  No primary signals → UNKNOWN.
 2. **Confidence** — match winner's signals against ``_PROVIDER_RULES`` (first
    match wins); extra signals add +0.02 each; capped at 1.0.
 
@@ -93,16 +93,29 @@ _PROVIDER_RULES: tuple[_Rule, ...] = (
 _rule_hits: Counter[str] = Counter()
 
 # fmt: off
-_INDEPENDENT_RULES: tuple[tuple[str, float], ...] = (
-    ("ind_mx_spf",     0.90),  # MX + SPF present
-    ("ind_mx_only",    0.60),  # MX only
-    ("ind_secondary",  0.20),  # secondary evidence only
-    ("ind_none",       0.00),  # nothing
+# Domestic rules: IP confirmed in target country via Cymru CC.
+_DOMESTIC_RULES: tuple[tuple[str, float], ...] = (
+    ("dom_mx_spf",     0.70),  # MX + SPF present, IP in target country
+    ("dom_mx_only",    0.50),  # MX only
+    ("dom_secondary",  0.20),  # secondary evidence only
+    ("dom_none",       0.00),  # nothing
+)
+
+# Foreign rules: IP confirmed in a different country — weaker signal because
+# this often indicates a gateway or CDN obscuring the real provider.
+_FOREIGN_RULES: tuple[tuple[str, float], ...] = (
+    ("frgn_mx_spf",     0.50),  # MX + SPF present, IP in foreign country
+    ("frgn_mx_only",    0.35),  # MX only
+    ("frgn_secondary",  0.10),  # secondary evidence only
+    ("frgn_none",       0.00),  # nothing
 )
 # fmt: on
 
-_ALL_RULE_NAMES: tuple[str, ...] = tuple(r.name for r in _PROVIDER_RULES) + tuple(
-    name for name, _ in _INDEPENDENT_RULES
+_ALL_RULE_NAMES: tuple[str, ...] = (
+    tuple(r.name for r in _PROVIDER_RULES)
+    + ("gateway_no_primary",)
+    + tuple(name for name, _ in _DOMESTIC_RULES)
+    + tuple(name for name, _ in _FOREIGN_RULES)
 )
 
 
@@ -142,25 +155,29 @@ def _rule_confidence(provider: Provider, signals: set[SignalKind], gateway: str 
     return 0.40, "fallback"  # pragma: no cover
 
 
-def _independent_confidence(mx_hosts: list[str], spf_raw: str, evidence: list[Evidence]) -> tuple[float, str]:
-    """Return ``(confidence, rule_name)`` for an INDEPENDENT domain.
+def _country_confidence(
+    mx_hosts: list[str],
+    spf_raw: str,
+    evidence: list[Evidence],
+    rules: tuple[tuple[str, float], ...],
+) -> tuple[float, str]:
+    """Return ``(confidence, rule_name)`` for a DOMESTIC or FOREIGN domain.
 
-    Rules (no provider won the primary-signal vote):
-    ``ind_mx_spf`` 0.90 · ``ind_mx_only`` 0.60 · ``ind_secondary`` 0.20 ·
-    ``ind_none`` 0.0.  Extra signal kinds beyond MX/SPF add
-    ``_BOOST_PER_SIGNAL`` each; capped at 1.0.
+    Uses ``_DOMESTIC_RULES`` or ``_FOREIGN_RULES`` depending on the caller.
+    Lower base scores than ``_independent_confidence`` because the country
+    classification rests on ASN evidence (weight 0.03), not provider signatures.
     """
     has_mx = bool(mx_hosts) or any(e.kind == SignalKind.MX for e in evidence)
     has_spf = bool(spf_raw) or any(e.kind == SignalKind.SPF for e in evidence)
 
     if has_mx and has_spf:
-        name, base = _INDEPENDENT_RULES[0]
+        name, base = rules[0]
     elif has_mx:
-        name, base = _INDEPENDENT_RULES[1]
+        name, base = rules[1]
     elif evidence:
-        name, base = _INDEPENDENT_RULES[2]
+        name, base = rules[2]
     else:
-        name, base = _INDEPENDENT_RULES[3]
+        name, base = rules[3]
         _rule_hits[name] += 1
         logger.debug("rule={} base=0.00", name)
         return 0.0, name
@@ -182,7 +199,7 @@ def _aggregate(
 ) -> tuple[ClassificationResult, str]:
     """Aggregate evidence → ``(ClassificationResult, rule_name)``.
 
-    1. Deduplicate by ``(provider, kind)``; exclude INDEPENDENT.
+    1. Deduplicate by ``(provider, kind)``; exclude UNKNOWN.
     2. Elect winner by highest primary-signal weight sum.
     3. Score via ``_rule_confidence`` (winner) or ``_independent_confidence``.
     4. Attach ``gateway``, ``mx_hosts``, ``spf_raw`` unchanged.
@@ -192,7 +209,7 @@ def _aggregate(
     # Deduplicate by (provider, kind) — each signal type counts once per provider
     by_provider: dict[Provider, set[SignalKind]] = defaultdict(set)
     for e in evidence:
-        if e.provider == Provider.INDEPENDENT:
+        if e.provider == Provider.UNKNOWN:
             continue
         by_provider[e.provider].add(e.kind)
 
@@ -212,11 +229,28 @@ def _aggregate(
                 primary_scores[provider] += _GATEWAY_DKIM_BOOST
 
     if primary_scores:
-        winner = max(primary_scores, key=primary_scores.get)
+        winner = max(primary_scores, key=lambda p: primary_scores[p])
         confidence, rule_name = _rule_confidence(winner, by_provider[winner], gateway)
     else:
-        winner = Provider.INDEPENDENT
-        confidence, rule_name = _independent_confidence(_mx_hosts, spf_raw, evidence)
+        # Behind a gateway with no primary provider signals, we cannot
+        # determine the email provider — classify as UNKNOWN.
+        if gateway:
+            winner = Provider.UNKNOWN
+            confidence, rule_name = 0.0, "gateway_no_primary"
+            _rule_hits["gateway_no_primary"] += 1
+            logger.debug("rule=gateway_no_primary (gateway blocks primary signals)")
+        # Country-based fallback from Cymru CC evidence:
+        # DOMESTIC = IP in target country, FOREIGN = IP in another country,
+        # UNKNOWN = no Cymru data available.
+        elif Provider.DOMESTIC in by_provider:
+            winner = Provider.DOMESTIC
+            confidence, rule_name = _country_confidence(_mx_hosts, spf_raw, evidence, _DOMESTIC_RULES)
+        elif Provider.FOREIGN in by_provider:
+            winner = Provider.FOREIGN
+            confidence, rule_name = _country_confidence(_mx_hosts, spf_raw, evidence, _FOREIGN_RULES)
+        else:
+            winner = Provider.UNKNOWN
+            confidence, rule_name = 0.0, "no_country_data"
 
     return ClassificationResult(
         provider=winner,
@@ -228,7 +262,7 @@ def _aggregate(
     ), rule_name
 
 
-async def classify(domain: str) -> ClassificationResult:
+async def classify(domain: str, *, country_code: str | None = None) -> ClassificationResult:
     """Classify a single domain: resolve MX, run probes concurrently, aggregate."""
     # Lookup ALL MX hosts first (robust, multi-resolver), then pattern-match
     all_mx_hosts = await lookup_mx(domain)
@@ -237,9 +271,11 @@ async def classify(domain: str) -> ClassificationResult:
     # Gateway detection (sync, no I/O)
     gateway = detect_gateway(all_mx_hosts)
 
+    # SPF raw record (awaited separately to preserve str type through gather)
+    spf_raw = await lookup_spf_raw(domain)
+
     # Run remaining probes concurrently, using ALL MX hosts
     (
-        spf_raw,
         dkim_ev,
         dmarc_ev,
         auto_ev,
@@ -250,16 +286,15 @@ async def classify(domain: str) -> ClassificationResult:
         txt_ev,
         spf_ip_ev,
     ) = await asyncio.gather(
-        lookup_spf_raw(domain),
         probe_dkim(domain),
         probe_dmarc(domain),
         probe_autodiscover(domain),
         probe_cname_chain(domain, all_mx_hosts),
         probe_smtp(all_mx_hosts),
         probe_tenant(domain),
-        probe_asn(all_mx_hosts),
+        probe_asn(all_mx_hosts, country_code=country_code),
         probe_txt_verification(domain),
-        probe_spf_ip(domain),
+        probe_spf_ip(domain, country_code=country_code),
     )
 
     # Derive SPF evidence from the raw record (no second DNS query)
@@ -294,7 +329,10 @@ async def classify(domain: str) -> ClassificationResult:
 
 
 async def classify_many(
-    domains: list[str], max_concurrency: int = 20
+    domains: list[str],
+    max_concurrency: int = 20,
+    *,
+    country_code: str | None = None,
 ) -> AsyncIterator[tuple[str, ClassificationResult]]:
     """Classify domains concurrently (semaphore-bounded), yield in completion order.
 
@@ -306,7 +344,7 @@ async def classify_many(
     async def _bounded(domain: str) -> tuple[str, ClassificationResult] | None:
         async with semaphore:
             try:
-                result = await classify(domain)
+                result = await classify(domain, country_code=country_code)
                 return (domain, result)
             except Exception:
                 logger.exception("Classification failed for {}", domain)
