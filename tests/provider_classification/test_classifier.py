@@ -187,7 +187,7 @@ class TestAggregate:
     def test_gateway_dkim_beats_spf_from_dns_host(self):
         """Behind a gateway, DKIM provider wins over SPF-only provider."""
         evidence = [
-            _ev(SignalKind.SPF, Provider.INFOMANIAK),
+            _ev(SignalKind.SPF, Provider.GOOGLE),
             _ev(SignalKind.DKIM, Provider.MS365),
             _ev(SignalKind.TENANT, Provider.MS365),
         ]
@@ -197,11 +197,11 @@ class TestAggregate:
     def test_no_dkim_boost_without_gateway(self):
         """Without gateway, SPF still beats DKIM (normal precedence)."""
         evidence = [
-            _ev(SignalKind.SPF, Provider.INFOMANIAK),
+            _ev(SignalKind.SPF, Provider.GOOGLE),
             _ev(SignalKind.DKIM, Provider.MS365),
         ]
         result, _ = _aggregate(evidence)
-        assert result.provider == Provider.INFOMANIAK
+        assert result.provider == Provider.GOOGLE
 
     def test_confidence_capped_at_1(self):
         evidence = [_ev(kind, Provider.MS365) for kind in SignalKind]
@@ -323,21 +323,14 @@ class TestAggregate:
         # MX-only rule (0.80) + ASN boost (0.02) = 0.82
         assert result.confidence == pytest.approx(0.82)
 
-    def test_infomaniak_classification(self):
-        evidence = [
-            _ev(SignalKind.MX, Provider.INFOMANIAK),
-            _ev(SignalKind.SPF, Provider.INFOMANIAK),
-        ]
-        result, _ = _aggregate(evidence)
-        assert result.provider == Provider.INFOMANIAK
-
-    def test_swiss_isp_spf_ip_alone_no_winner(self):
+    def test_domestic_isp_spf_ip_alone_no_winner(self):
         """SPF_IP alone cannot pick a winner (not primary)."""
         evidence = [
-            _ev(SignalKind.SPF_IP, Provider.SWISS_ISP),
+            _ev(SignalKind.SPF_IP, Provider.DOMESTIC_ISP),
         ]
         result, _ = _aggregate(evidence)
-        assert result.provider == Provider.INDEPENDENT
+        # Domestic fallback: DOMESTIC_ISP has evidence but no primary signals
+        assert result.provider == Provider.DOMESTIC_ISP
         # No MX, secondary evidence only → 0.20 base + 1 extra kind × 0.02
         assert result.confidence == pytest.approx(0.22)
 
@@ -687,14 +680,14 @@ class TestAggregate:
         assert result.confidence == pytest.approx(0.42)
 
     def test_gateway_dkim_tenant_anniviers_scenario(self):
-        """Anniviers: SPF(Infomaniak) + DKIM(MS365) + TENANT(MS365) behind proofpoint."""
+        """Anniviers: SPF(Google) + DKIM(MS365) + TENANT(MS365) behind proofpoint."""
         evidence = [
-            _ev(SignalKind.SPF, Provider.INFOMANIAK),
+            _ev(SignalKind.SPF, Provider.GOOGLE),
             _ev(SignalKind.DKIM, Provider.MS365),
             _ev(SignalKind.TENANT, Provider.MS365),
         ]
         result, rule = _aggregate(evidence, gateway="proofpoint")
-        # Gateway DKIM boost: MS365 DKIM 0.15 + 0.06 = 0.21 > Infomaniak SPF 0.20
+        # Gateway DKIM boost: MS365 DKIM 0.15 + 0.06 = 0.21 > Google SPF 0.20
         assert result.provider == Provider.MS365
         assert rule == "dkim_tenant_gw"
         assert result.confidence == pytest.approx(0.85)
@@ -802,39 +795,14 @@ class TestClassify:
         assert result.provider == Provider.MS365
         assert result.gateway == "seppmail"
 
-    async def test_infomaniak_scenario(self):
-        mx_ev = [
-            Evidence(
-                kind=SignalKind.MX,
-                provider=Provider.INFOMANIAK,
-                weight=WEIGHTS[SignalKind.MX],
-                detail="MX match",
-                raw="mxpool.infomaniak.com",
-            )
-        ]
-        spf_ev = [
-            Evidence(
-                kind=SignalKind.SPF,
-                provider=Provider.INFOMANIAK,
-                weight=WEIGHTS[SignalKind.SPF],
-                detail="SPF match",
-                raw="v=spf1",
-            )
-        ]
-
-        with _patch_all_probes(probe_mx=mx_ev, probe_spf=spf_ev):
-            result = await classify("example.com")
-
-        assert result.provider == Provider.INFOMANIAK
-
-    async def test_swiss_isp_scenario(self):
-        """Swiss ISP detected via SPF_IP alone → INDEPENDENT (confirmation-only)."""
+    async def test_domestic_isp_scenario(self):
+        """Domestic ISP detected via SPF_IP alone -> DOMESTIC_ISP (domestic fallback)."""
         spf_ip_ev = [
             Evidence(
                 kind=SignalKind.SPF_IP,
-                provider=Provider.SWISS_ISP,
+                provider=Provider.DOMESTIC_ISP,
                 weight=WEIGHTS[SignalKind.SPF_IP],
-                detail="SPF ip4/a ASN 3303 is Swiss ISP: Swisscom",
+                detail="SPF ip4/a ASN 3303 registered in CH",
                 raw="195.186.1.1:3303",
             )
         ]
@@ -842,16 +810,17 @@ class TestClassify:
         with _patch_all_probes(probe_spf_ip=spf_ip_ev):
             result = await classify("example.com")
 
-        assert result.provider == Provider.INDEPENDENT
+        # Domestic fallback: DOMESTIC_ISP evidence present, no primary signals
+        assert result.provider == Provider.DOMESTIC_ISP
 
     async def test_tenant_confirmation_only_in_classify(self):
-        """Domain with Swiss ISP SPF IPs + positive M365 tenant → both confirmation-only, both discarded → INDEPENDENT."""
+        """Domain with domestic ISP SPF IPs + positive M365 tenant -> DOMESTIC_ISP wins via fallback."""
         spf_ip_ev = [
             Evidence(
                 kind=SignalKind.SPF_IP,
-                provider=Provider.SWISS_ISP,
+                provider=Provider.DOMESTIC_ISP,
                 weight=WEIGHTS[SignalKind.SPF_IP],
-                detail="SPF ip4/a ASN 3303 is Swiss ISP: Swisscom",
+                detail="SPF ip4/a ASN 3303 registered in CH",
                 raw="195.186.1.1:3303",
             )
         ]
@@ -868,8 +837,8 @@ class TestClassify:
         with _patch_all_probes(probe_spf_ip=spf_ip_ev, probe_tenant=tenant_ev):
             result = await classify("example.com")
 
-        # Both SPF_IP and TENANT are confirmation-only → all discarded → INDEPENDENT
-        assert result.provider == Provider.INDEPENDENT
+        # Neither SPF_IP nor TENANT are primary signals, but domestic fallback applies
+        assert result.provider == Provider.DOMESTIC_ISP
 
     async def test_tenant_confirmation_with_ms365_primary(self):
         """Domain with MX→outlook + positive M365 tenant → MS365 with boosted confidence."""
@@ -1048,7 +1017,7 @@ class TestClassifyMany:
         """One failing domain should not crash the loop; others succeed."""
         call_count = 0
 
-        async def _flaky_classify(domain):
+        async def _flaky_classify(domain, *, country_code=None):
             nonlocal call_count
             call_count += 1
             if domain == "fail.com":
@@ -1127,7 +1096,7 @@ class TestRuleHitCounting:
     async def test_classify_many_summary(self, caplog):
         from mail_municipalities.provider_classification.models import ClassificationResult
 
-        async def _mock_classify(domain):
+        async def _mock_classify(domain, *, country_code=None):
             _rule_hits["mx_spf"] += 1
             return ClassificationResult(
                 provider=Provider.MS365,

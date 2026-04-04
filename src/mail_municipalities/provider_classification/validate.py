@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 import statistics
 from collections import Counter
 from pathlib import Path
@@ -13,7 +14,7 @@ from rich.table import Table
 
 from .models import Provider, SignalKind
 from .probes import WEIGHTS
-from .runner import PROVIDER_OUTPUT_NAMES, _CATEGORY_MAP
+from .runner import PROVIDER_OUTPUT_NAMES, _build_category_map
 
 # ── Constants ─────────────────────────────────────────────────────────
 
@@ -40,7 +41,8 @@ VALID_PROVIDERS = {
     PROVIDER_OUTPUT_NAMES.get(p.value, p.value) for p in Provider
 } | {"unknown"}
 
-VALID_CATEGORIES = {"us-cloud", "swiss-based", "unknown"}
+def _valid_categories(country_code: str = "ch") -> set[str]:
+    return set(_build_category_map(country_code).values()) | {"unknown"}
 
 VALID_SIGNAL_KINDS = {k.value for k in SignalKind}
 
@@ -128,7 +130,9 @@ def _check_metadata(data: dict, r: ValidationResult) -> None:
         r.ok("counts keys sorted")
 
 
-def _check_entry(entry: dict, r: ValidationResult) -> None:
+def _check_entry(
+    entry: dict, r: ValidationResult, category_map: dict[str, str], valid_cats: set[str]
+) -> None:
     code = entry.get("code", "?")
     required = ("code", "name", "region", "domain", "mx", "spf",
                 "provider", "category", "classification_confidence",
@@ -143,9 +147,9 @@ def _check_entry(entry: dict, r: ValidationResult) -> None:
         r.error(f"{code}: unknown provider '{provider}'")
 
     category = entry["category"]
-    if category not in VALID_CATEGORIES:
+    if category not in valid_cats:
         r.error(f"{code}: unknown category '{category}'")
-    expected_cat = _CATEGORY_MAP.get(provider, "unknown")
+    expected_cat = category_map.get(provider, "unknown")
     if category != expected_cat:
         r.error(f"{code}: provider '{provider}' should map to '{expected_cat}', got '{category}'")
 
@@ -198,9 +202,11 @@ def _check_signal(code: str, sig: dict, r: ValidationResult) -> None:
         r.warn(f"{code}: signal detail empty")
 
 
-def validate_structure(data: dict) -> ValidationResult:
+def validate_structure(data: dict, *, country_code: str = "ch") -> ValidationResult:
     """Run all structural validation checks on a provider output file."""
     r = ValidationResult()
+    category_map = _build_category_map(country_code)
+    valid_cats = _valid_categories(country_code)
 
     _check_metadata(data, r)
     if not r.success:
@@ -215,7 +221,7 @@ def validate_structure(data: dict) -> ValidationResult:
         r.ok("codes sorted numerically")
 
     for entry in munis:
-        _check_entry(entry, r)
+        _check_entry(entry, r, category_map, valid_cats)
 
     # Confidence distribution sanity
     confs = [e["classification_confidence"] for e in munis]
@@ -464,6 +470,12 @@ def print_regression_report(r: ValidationResult) -> None:
 # ── Main entry point ──────────────────────────────────────────────────
 
 
+def _infer_country(path: Path) -> str:
+    """Infer country code from filename like ``providers_ch.json``."""
+    match = re.search(r"providers_(\w{2})", path.stem)
+    return match.group(1) if match else "ch"
+
+
 def run_validation(
     output_path: Path,
     baseline_path: Path | None = None,
@@ -478,10 +490,12 @@ def run_validation(
         console.print(f"\n  [red]Error[/red]: output file not found: {output_path}")
         return False
 
+    country_code = _infer_country(output_path)
+
     with open(output_path, encoding="utf-8") as f:
         data = json.load(f)
 
-    struct_result = validate_structure(data)
+    struct_result = validate_structure(data, country_code=country_code)
     print_structural_report(struct_result)
 
     reg_result = None

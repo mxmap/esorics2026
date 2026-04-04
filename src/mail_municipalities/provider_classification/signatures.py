@@ -67,19 +67,6 @@ SIGNATURES: list[ProviderSignature] = [
         txt_verification_patterns=("amazonses",),
         asns=(16509, 14618),
     ),
-    ProviderSignature(
-        provider=Provider.INFOMANIAK,
-        mx_patterns=("mxpool.infomaniak.com", "ikmail.com", "mta-gw.infomaniak.ch"),
-        spf_includes=("spf.infomaniak.ch",),
-        dkim_selectors=(),
-        dkim_cname_patterns=(),
-        autodiscover_patterns=(),
-        cname_patterns=("infomaniak",),
-        dmarc_patterns=(),
-        smtp_banner_patterns=("infomaniak",),
-        txt_verification_patterns=(),
-        asns=(51786,),
-    ),
 ]
 
 
@@ -96,23 +83,6 @@ GATEWAY_KEYWORDS: dict[str, list[str]] = {
     "spamvor": ["spamvor.com"],
     "abxsec": ["abxsec.com"],
     "messagelabs": ["messagelabs.com"],
-}
-
-
-SWISS_ISP_ASNS: dict[int, str] = {
-    559: "SWITCH",
-    3303: "Swisscom",
-    6730: "Sunrise UPC",
-    6830: "Liberty Global (UPC/Sunrise)",
-    12399: "Sunrise",
-    13030: "Init7",
-    13213: "Cyberlink AG",
-    15576: "NTS",
-    15600: "Quickline",
-    15796: "Netzone AG",
-    24889: "Datapark AG",
-    29691: "Hostpoint / Green.ch",
-    51786: "Infomaniak Network SA",
 }
 
 

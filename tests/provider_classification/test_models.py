@@ -5,6 +5,7 @@ from pydantic import ValidationError
 
 from mail_municipalities.provider_classification.models import (
     ClassificationResult,
+    CymruResult,
     Evidence,
     Provider,
     SignalKind,
@@ -16,8 +17,7 @@ class TestProvider:
         assert Provider.MS365 == "ms365"
         assert Provider.GOOGLE == "google"
         assert Provider.AWS == "aws"
-        assert Provider.INFOMANIAK == "infomaniak"
-        assert Provider.SWISS_ISP == "swiss-isp"
+        assert Provider.DOMESTIC_ISP == "domestic-isp"
         assert Provider.INDEPENDENT == "independent"
 
     def test_str_serialization(self):
@@ -29,8 +29,7 @@ class TestProvider:
             Provider.MS365,
             Provider.GOOGLE,
             Provider.AWS,
-            Provider.INFOMANIAK,
-            Provider.SWISS_ISP,
+            Provider.DOMESTIC_ISP,
             Provider.INDEPENDENT,
         }
 
@@ -163,3 +162,25 @@ class TestClassificationResult:
     def test_spf_raw_default_empty(self):
         r = ClassificationResult(provider=Provider.MS365, confidence=0.5, evidence=[])
         assert r.spf_raw == ""
+
+
+class TestCymruResult:
+    def test_valid_parse(self):
+        result = CymruResult.from_txt(
+            "3303 | 195.186.1.1 | 195.186.0.0/16 | CH | ripencc"
+        )
+        assert result is not None
+        assert result.asn == 3303
+        assert result.country_code == "ch"
+
+    def test_too_few_parts(self):
+        result = CymruResult.from_txt("3303 | 195.186.0.0/16")
+        assert result is None
+
+    def test_invalid_asn(self):
+        result = CymruResult.from_txt("abc | 195.186.1.1 | 195.186.0.0/16 | CH | ripencc")
+        assert result is None
+
+    def test_empty_string(self):
+        result = CymruResult.from_txt("")
+        assert result is None

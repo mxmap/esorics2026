@@ -32,7 +32,7 @@ class TestRealProviderOutputFiles:
         if data is None:
             pytest.skip(f"providers_{cc}.json not found")
 
-        result = validate_structure(data)
+        result = validate_structure(data, country_code=cc)
         assert result.success, (
             f"[{cc}] structural validation failed:\n"
             + "\n".join(f"  - {e}" for e in result.errors)

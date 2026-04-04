@@ -4,15 +4,14 @@ from __future__ import annotations
 
 import enum
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
 
 class Provider(str, enum.Enum):
     MS365 = "ms365"
     GOOGLE = "google"
     AWS = "aws"
-    INFOMANIAK = "infomaniak"
-    SWISS_ISP = "swiss-isp"
+    DOMESTIC_ISP = "domestic-isp"
     INDEPENDENT = "independent"
 
 
@@ -49,3 +48,23 @@ class ClassificationResult(BaseModel):
     gateway: str | None = None
     mx_hosts: list[str] = []
     spf_raw: str = ""
+
+
+class CymruResult(BaseModel):
+    """Parsed Team Cymru IP-to-ASN DNS response."""
+
+    model_config = ConfigDict(frozen=True)
+
+    asn: int
+    country_code: str  # 2-letter ISO (lowercased)
+
+    @classmethod
+    def from_txt(cls, txt: str) -> CymruResult | None:
+        """Parse ``'ASN | IP | PREFIX | CC | REGISTRY'`` response."""
+        parts = txt.split("|")
+        if len(parts) < 4:
+            return None
+        try:
+            return cls(asn=int(parts[0].strip()), country_code=parts[3].strip().lower())
+        except (ValueError, ValidationError):
+            return None

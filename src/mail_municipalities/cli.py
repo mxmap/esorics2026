@@ -144,7 +144,7 @@ def classify_cmd(
     from mail_municipalities.provider_classification.runner import run
 
     domains_path = domains_dir / f"domains_{country}_detailed.json"
-    asyncio.run(run(domains_path, output_path))
+    asyncio.run(run(domains_path, output_path, country_code=country))
 
 
 @app.command("analyze")
@@ -242,7 +242,7 @@ def _classify_main(
     from mail_municipalities.provider_classification.runner import run
 
     domains_path = domains_dir / f"domains_{country}_detailed.json"
-    asyncio.run(run(domains_path, output_path))
+    asyncio.run(run(domains_path, output_path, country_code=country))
 
 
 _analyze_app = typer.Typer(add_completion=False)

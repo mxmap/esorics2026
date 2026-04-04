@@ -215,7 +215,12 @@ def _aggregate(
         winner = max(primary_scores, key=primary_scores.get)
         confidence, rule_name = _rule_confidence(winner, by_provider[winner], gateway)
     else:
-        winner = Provider.INDEPENDENT
+        # Domestic fallback: if ASN/SPF_IP evidence places the domain in the
+        # target country, classify as DOMESTIC_ISP rather than INDEPENDENT.
+        if Provider.DOMESTIC_ISP in by_provider:
+            winner = Provider.DOMESTIC_ISP
+        else:
+            winner = Provider.INDEPENDENT
         confidence, rule_name = _independent_confidence(_mx_hosts, spf_raw, evidence)
 
     return ClassificationResult(
@@ -228,7 +233,9 @@ def _aggregate(
     ), rule_name
 
 
-async def classify(domain: str) -> ClassificationResult:
+async def classify(
+    domain: str, *, country_code: str | None = None
+) -> ClassificationResult:
     """Classify a single domain: resolve MX, run probes concurrently, aggregate."""
     # Lookup ALL MX hosts first (robust, multi-resolver), then pattern-match
     all_mx_hosts = await lookup_mx(domain)
@@ -257,9 +264,9 @@ async def classify(domain: str) -> ClassificationResult:
         probe_cname_chain(domain, all_mx_hosts),
         probe_smtp(all_mx_hosts),
         probe_tenant(domain),
-        probe_asn(all_mx_hosts),
+        probe_asn(all_mx_hosts, country_code=country_code),
         probe_txt_verification(domain),
-        probe_spf_ip(domain),
+        probe_spf_ip(domain, country_code=country_code),
     )
 
     # Derive SPF evidence from the raw record (no second DNS query)
@@ -294,7 +301,10 @@ async def classify(domain: str) -> ClassificationResult:
 
 
 async def classify_many(
-    domains: list[str], max_concurrency: int = 20
+    domains: list[str],
+    max_concurrency: int = 20,
+    *,
+    country_code: str | None = None,
 ) -> AsyncIterator[tuple[str, ClassificationResult]]:
     """Classify domains concurrently (semaphore-bounded), yield in completion order.
 
@@ -306,7 +316,7 @@ async def classify_many(
     async def _bounded(domain: str) -> tuple[str, ClassificationResult] | None:
         async with semaphore:
             try:
-                result = await classify(domain)
+                result = await classify(domain, country_code=country_code)
                 return (domain, result)
             except Exception:
                 logger.exception("Classification failed for {}", domain)
