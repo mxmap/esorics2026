@@ -1,7 +1,26 @@
 {
-  "generated": "2026-04-01T14:57:10.807954Z",
-  "total": 6,
+  "generated": "2026-04-02T22:23:47.439481Z",
+  "total": 8,
   "municipalities": [
+    {
+      "code": "157",
+      "name": "Oetwil am See",
+      "region": "Kanton Zürich",
+      "website": "",
+      "emails": [
+        "oetwil.ch"
+      ],
+      "source": "wikidata",
+      "confidence": "medium",
+      "sources_detail": {
+        "wikidata": [
+          "oetwil.ch"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
     {
       "code": "2549",
       "name": "Kammersrohr",
@@ -16,17 +35,6 @@
       "flags": [
         "no_mx"
       ]
-    },
-    {
-      "code": "2790",
-      "name": "Roggenburg",
-      "region": "Kanton Basel-Landschaft",
-      "website": "",
-      "emails": [],
-      "source": "none",
-      "confidence": "none",
-      "sources_detail": {},
-      "flags": []
     },
     {
       "code": "5471",
@@ -48,6 +56,25 @@
       ]
     },
     {
+      "code": "5529",
+      "name": "Oulens-sous-Echallens",
+      "region": "Kanton Waadt",
+      "website": "",
+      "emails": [
+        "oulens.ch"
+      ],
+      "source": "wikidata",
+      "confidence": "medium",
+      "sources_detail": {
+        "wikidata": [
+          "oulens.ch"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
       "code": "5640",
       "name": "Lussy-sur-Morges",
       "region": "Kanton Waadt",
@@ -64,6 +91,25 @@
       },
       "flags": [
         "no_mx"
+      ]
+    },
+    {
+      "code": "5872",
+      "name": "Le Chenit",
+      "region": "Kanton Waadt",
+      "website": "communeduchenit.ch",
+      "emails": [
+        "communeduchenit.ch"
+      ],
+      "source": "wikidata",
+      "confidence": "medium",
+      "sources_detail": {
+        "wikidata": [
+          "communeduchenit.ch"
+        ]
+      },
+      "flags": [
+        "unverified"
       ]
     },
     {
