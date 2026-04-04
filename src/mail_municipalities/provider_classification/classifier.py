@@ -2,7 +2,7 @@
 
 Algorithm:
 1. **Winner** — sum primary signal weights (MX, SPF, DKIM, AUTODISCOVER) per
-   provider; highest total wins.  No primary signals → INDEPENDENT.
+   provider; highest total wins.  No primary signals → UNKNOWN.
 2. **Confidence** — match winner's signals against ``_PROVIDER_RULES`` (first
    match wins); extra signals add +0.02 each; capped at 1.0.
 
@@ -93,16 +93,28 @@ _PROVIDER_RULES: tuple[_Rule, ...] = (
 _rule_hits: Counter[str] = Counter()
 
 # fmt: off
-_INDEPENDENT_RULES: tuple[tuple[str, float], ...] = (
-    ("ind_mx_spf",     0.90),  # MX + SPF present
-    ("ind_mx_only",    0.60),  # MX only
-    ("ind_secondary",  0.20),  # secondary evidence only
-    ("ind_none",       0.00),  # nothing
+# Domestic rules: IP confirmed in target country via Cymru CC.
+_DOMESTIC_RULES: tuple[tuple[str, float], ...] = (
+    ("dom_mx_spf",     0.70),  # MX + SPF present, IP in target country
+    ("dom_mx_only",    0.50),  # MX only
+    ("dom_secondary",  0.20),  # secondary evidence only
+    ("dom_none",       0.00),  # nothing
+)
+
+# Foreign rules: IP confirmed in a different country — weaker signal because
+# this often indicates a gateway or CDN obscuring the real provider.
+_FOREIGN_RULES: tuple[tuple[str, float], ...] = (
+    ("frgn_mx_spf",     0.50),  # MX + SPF present, IP in foreign country
+    ("frgn_mx_only",    0.35),  # MX only
+    ("frgn_secondary",  0.10),  # secondary evidence only
+    ("frgn_none",       0.00),  # nothing
 )
 # fmt: on
 
-_ALL_RULE_NAMES: tuple[str, ...] = tuple(r.name for r in _PROVIDER_RULES) + tuple(
-    name for name, _ in _INDEPENDENT_RULES
+_ALL_RULE_NAMES: tuple[str, ...] = (
+    tuple(r.name for r in _PROVIDER_RULES)
+    + tuple(name for name, _ in _DOMESTIC_RULES)
+    + tuple(name for name, _ in _FOREIGN_RULES)
 )
 
 
@@ -142,25 +154,29 @@ def _rule_confidence(provider: Provider, signals: set[SignalKind], gateway: str 
     return 0.40, "fallback"  # pragma: no cover
 
 
-def _independent_confidence(mx_hosts: list[str], spf_raw: str, evidence: list[Evidence]) -> tuple[float, str]:
-    """Return ``(confidence, rule_name)`` for an INDEPENDENT domain.
+def _country_confidence(
+    mx_hosts: list[str],
+    spf_raw: str,
+    evidence: list[Evidence],
+    rules: tuple[tuple[str, float], ...],
+) -> tuple[float, str]:
+    """Return ``(confidence, rule_name)`` for a DOMESTIC or FOREIGN domain.
 
-    Rules (no provider won the primary-signal vote):
-    ``ind_mx_spf`` 0.90 · ``ind_mx_only`` 0.60 · ``ind_secondary`` 0.20 ·
-    ``ind_none`` 0.0.  Extra signal kinds beyond MX/SPF add
-    ``_BOOST_PER_SIGNAL`` each; capped at 1.0.
+    Uses ``_DOMESTIC_RULES`` or ``_FOREIGN_RULES`` depending on the caller.
+    Lower base scores than ``_independent_confidence`` because the country
+    classification rests on ASN evidence (weight 0.03), not provider signatures.
     """
     has_mx = bool(mx_hosts) or any(e.kind == SignalKind.MX for e in evidence)
     has_spf = bool(spf_raw) or any(e.kind == SignalKind.SPF for e in evidence)
 
     if has_mx and has_spf:
-        name, base = _INDEPENDENT_RULES[0]
+        name, base = rules[0]
     elif has_mx:
-        name, base = _INDEPENDENT_RULES[1]
+        name, base = rules[1]
     elif evidence:
-        name, base = _INDEPENDENT_RULES[2]
+        name, base = rules[2]
     else:
-        name, base = _INDEPENDENT_RULES[3]
+        name, base = rules[3]
         _rule_hits[name] += 1
         logger.debug("rule={} base=0.00", name)
         return 0.0, name
@@ -182,7 +198,7 @@ def _aggregate(
 ) -> tuple[ClassificationResult, str]:
     """Aggregate evidence → ``(ClassificationResult, rule_name)``.
 
-    1. Deduplicate by ``(provider, kind)``; exclude INDEPENDENT.
+    1. Deduplicate by ``(provider, kind)``; exclude UNKNOWN.
     2. Elect winner by highest primary-signal weight sum.
     3. Score via ``_rule_confidence`` (winner) or ``_independent_confidence``.
     4. Attach ``gateway``, ``mx_hosts``, ``spf_raw`` unchanged.
@@ -192,7 +208,7 @@ def _aggregate(
     # Deduplicate by (provider, kind) — each signal type counts once per provider
     by_provider: dict[Provider, set[SignalKind]] = defaultdict(set)
     for e in evidence:
-        if e.provider == Provider.INDEPENDENT:
+        if e.provider == Provider.UNKNOWN:
             continue
         by_provider[e.provider].add(e.kind)
 
@@ -215,13 +231,18 @@ def _aggregate(
         winner = max(primary_scores, key=primary_scores.get)
         confidence, rule_name = _rule_confidence(winner, by_provider[winner], gateway)
     else:
-        # Domestic fallback: if ASN/SPF_IP evidence places the domain in the
-        # target country, classify as DOMESTIC_ISP rather than INDEPENDENT.
-        if Provider.DOMESTIC_ISP in by_provider:
-            winner = Provider.DOMESTIC_ISP
+        # Country-based fallback from Cymru CC evidence:
+        # DOMESTIC = IP in target country, FOREIGN = IP in another country,
+        # UNKNOWN = no Cymru data available.
+        if Provider.DOMESTIC in by_provider:
+            winner = Provider.DOMESTIC
+            confidence, rule_name = _country_confidence(_mx_hosts, spf_raw, evidence, _DOMESTIC_RULES)
+        elif Provider.FOREIGN in by_provider:
+            winner = Provider.FOREIGN
+            confidence, rule_name = _country_confidence(_mx_hosts, spf_raw, evidence, _FOREIGN_RULES)
         else:
-            winner = Provider.INDEPENDENT
-        confidence, rule_name = _independent_confidence(_mx_hosts, spf_raw, evidence)
+            winner = Provider.UNKNOWN
+            confidence, rule_name = 0.0, "no_country_data"
 
     return ClassificationResult(
         provider=winner,

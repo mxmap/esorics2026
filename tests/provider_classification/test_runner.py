@@ -33,8 +33,8 @@ class TestProviderOutputNames:
     def test_output_provider_google(self):
         assert _output_provider(Provider.GOOGLE) == "google"
 
-    def test_output_provider_independent(self):
-        assert _output_provider(Provider.INDEPENDENT) == "independent"
+    def test_output_provider_unknown(self):
+        assert _output_provider(Provider.UNKNOWN) == "unknown"
 
 
 class TestLoadResolverOutput:
@@ -130,7 +130,7 @@ class TestSerializeResult:
     def test_no_gateway_omitted(self):
         category_map = _build_category_map("ch")
         result = ClassificationResult(
-            provider=Provider.INDEPENDENT,
+            provider=Provider.UNKNOWN,
             confidence=0.0,
             evidence=[],
             mx_hosts=[],
@@ -142,7 +142,7 @@ class TestSerializeResult:
     def test_resolve_fields_passthrough(self):
         category_map = _build_category_map("ch")
         result = ClassificationResult(
-            provider=Provider.INDEPENDENT,
+            provider=Provider.UNKNOWN,
             confidence=0.0,
             evidence=[],
             mx_hosts=[],

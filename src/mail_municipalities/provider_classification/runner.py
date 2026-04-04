@@ -26,8 +26,9 @@ def _build_category_map(country_code: str) -> dict[str, str]:
         "microsoft": "us-cloud",
         "google": "us-cloud",
         "aws": "us-cloud",
-        "domestic-isp": domestic,
-        "independent": domestic,
+        "domestic": domestic,
+        "foreign": "foreign",
+        "unknown": "unknown",
     }
 
 
@@ -205,10 +206,12 @@ async def run(domains_path: Path, output_path: Path, *, country_code: str = "ch"
         counts.get("aws", 0),
     )
     logger.info(
-        "  Domestic         {:>5}  (ISP={} Indep={})",
+        "  Domestic         {:>5}",
         cat_counts.get(domestic_label, 0),
-        counts.get("domestic-isp", 0),
-        counts.get("independent", 0),
+    )
+    logger.info(
+        "  Foreign          {:>5}",
+        cat_counts.get("foreign", 0),
     )
     logger.info("  Unknown/No MX    {:>5}", cat_counts.get("unknown", 0))
 

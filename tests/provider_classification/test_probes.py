@@ -576,7 +576,7 @@ class TestProbeAsn:
             if rdtype == "A":
                 return [_a_rdata("40.97.1.1")]
             if rdtype == "TXT" and "origin.asn.cymru.com" in qname:
-                return [_txt_rdata("8075 | 40.97.1.1 | 40.96.0.0/12 | US | arin")]
+                return [_txt_rdata("8075 | 40.96.0.0/12 | US | arin | 2015-01-01")]
             return None
 
         with patch(
@@ -591,7 +591,7 @@ class TestProbeAsn:
             if rdtype == "A":
                 return [_a_rdata("195.186.1.1")]
             if rdtype == "TXT" and "origin.asn.cymru.com" in qname:
-                return [_txt_rdata("3303 | 195.186.1.1 | 195.186.0.0/16 | CH | ripencc")]
+                return [_txt_rdata("3303 | 195.186.0.0/16 | CH | ripencc | 1999-01-01")]
             return None
 
         with patch(
@@ -599,7 +599,7 @@ class TestProbeAsn:
             side_effect=_resolve,
         ):
             results = await probe_asn(["mx.swisscom.ch"], country_code="ch")
-        assert any(e.provider == Provider.DOMESTIC_ISP and e.kind == SignalKind.ASN for e in results)
+        assert any(e.provider == Provider.DOMESTIC and e.kind == SignalKind.ASN for e in results)
         assert any("CH" in e.detail for e in results)
 
     async def test_empty_mx_hosts(self):
@@ -674,7 +674,7 @@ class TestProbeSpfIp:
             if qname == "example.com" and rdtype == "TXT":
                 return [_txt_rdata("v=spf1 ip4:195.186.1.1 ~all")]
             if rdtype == "TXT" and "origin.asn.cymru.com" in qname:
-                return [_txt_rdata("3303 | 195.186.1.1 | 195.186.0.0/16 | CH | ripencc")]
+                return [_txt_rdata("3303 | 195.186.0.0/16 | CH | ripencc | 1999-01-01")]
             return None
 
         with patch(
@@ -682,7 +682,7 @@ class TestProbeSpfIp:
             side_effect=_resolve,
         ):
             results = await probe_spf_ip("example.com", country_code="ch")
-        assert any(e.provider == Provider.DOMESTIC_ISP and e.kind == SignalKind.SPF_IP for e in results)
+        assert any(e.provider == Provider.DOMESTIC and e.kind == SignalKind.SPF_IP for e in results)
 
     async def test_ip4_with_cidr(self):
         """ip4: with CIDR notation -- uses first IP of the range for ASN lookup."""
@@ -691,7 +691,7 @@ class TestProbeSpfIp:
             if qname == "example.com" and rdtype == "TXT":
                 return [_txt_rdata("v=spf1 ip4:195.186.1.0/24 ~all")]
             if rdtype == "TXT" and "origin.asn.cymru.com" in qname:
-                return [_txt_rdata("3303 | 195.186.1.0 | 195.186.0.0/16 | CH | ripencc")]
+                return [_txt_rdata("3303 | 195.186.0.0/16 | CH | ripencc | 1999-01-01")]
             return None
 
         with patch(
@@ -699,7 +699,7 @@ class TestProbeSpfIp:
             side_effect=_resolve,
         ):
             results = await probe_spf_ip("example.com", country_code="ch")
-        assert any(e.provider == Provider.DOMESTIC_ISP and e.kind == SignalKind.SPF_IP for e in results)
+        assert any(e.provider == Provider.DOMESTIC and e.kind == SignalKind.SPF_IP for e in results)
 
     async def test_a_entry_resolution(self):
         """SPF a: entry is resolved to IP, then to ASN."""
@@ -710,7 +710,7 @@ class TestProbeSpfIp:
             if qname == "mail.example.ch" and rdtype == "A":
                 return [_a_rdata("195.186.1.1")]
             if rdtype == "TXT" and "origin.asn.cymru.com" in qname:
-                return [_txt_rdata("3303 | 195.186.1.1 | 195.186.0.0/16 | CH | ripencc")]
+                return [_txt_rdata("3303 | 195.186.0.0/16 | CH | ripencc | 1999-01-01")]
             return None
 
         with patch(
@@ -718,7 +718,7 @@ class TestProbeSpfIp:
             side_effect=_resolve,
         ):
             results = await probe_spf_ip("example.com", country_code="ch")
-        assert any(e.provider == Provider.DOMESTIC_ISP and e.kind == SignalKind.SPF_IP for e in results)
+        assert any(e.provider == Provider.DOMESTIC and e.kind == SignalKind.SPF_IP for e in results)
 
     async def test_provider_asn_match(self):
         """SPF ip4: matching a known provider ASN produces evidence."""
@@ -727,7 +727,7 @@ class TestProbeSpfIp:
             if qname == "example.com" and rdtype == "TXT":
                 return [_txt_rdata("v=spf1 ip4:40.97.1.1 ~all")]
             if rdtype == "TXT" and "origin.asn.cymru.com" in qname:
-                return [_txt_rdata("8075 | 40.97.1.1 | 40.96.0.0/12 | US | arin")]
+                return [_txt_rdata("8075 | 40.96.0.0/12 | US | arin | 2015-01-01")]
             return None
 
         with patch(
@@ -769,7 +769,7 @@ class TestProbeSpfIp:
             if qname == "example.com" and rdtype == "TXT":
                 return [_txt_rdata("v=spf1 ip4:195.186.1.1 ip4:195.186.2.2 ~all")]
             if rdtype == "TXT" and "origin.asn.cymru.com" in qname:
-                return [_txt_rdata("3303 | 195.186.1.1 | 195.186.0.0/16 | CH | ripencc")]
+                return [_txt_rdata("3303 | 195.186.0.0/16 | CH | ripencc | 1999-01-01")]
             return None
 
         with patch(
@@ -777,7 +777,7 @@ class TestProbeSpfIp:
             side_effect=_resolve,
         ):
             results = await probe_spf_ip("example.com", country_code="ch")
-        domestic_isp_results = [e for e in results if e.provider == Provider.DOMESTIC_ISP]
+        domestic_isp_results = [e for e in results if e.provider == Provider.DOMESTIC]
         assert len(domestic_isp_results) == 1
 
 

@@ -17,8 +17,9 @@ class TestProvider:
         assert Provider.MS365 == "ms365"
         assert Provider.GOOGLE == "google"
         assert Provider.AWS == "aws"
-        assert Provider.DOMESTIC_ISP == "domestic-isp"
-        assert Provider.INDEPENDENT == "independent"
+        assert Provider.DOMESTIC == "domestic"
+        assert Provider.FOREIGN == "foreign"
+        assert Provider.UNKNOWN == "unknown"
 
     def test_str_serialization(self):
         assert str(Provider.MS365) == "Provider.MS365"
@@ -29,8 +30,9 @@ class TestProvider:
             Provider.MS365,
             Provider.GOOGLE,
             Provider.AWS,
-            Provider.DOMESTIC_ISP,
-            Provider.INDEPENDENT,
+            Provider.DOMESTIC,
+            Provider.FOREIGN,
+            Provider.UNKNOWN,
         }
 
 
@@ -106,8 +108,8 @@ class TestEvidence:
 
 class TestClassificationResult:
     def test_construction(self):
-        r = ClassificationResult(provider=Provider.INDEPENDENT, confidence=0.0, evidence=[])
-        assert r.provider == Provider.INDEPENDENT
+        r = ClassificationResult(provider=Provider.UNKNOWN, confidence=0.0, evidence=[])
+        assert r.provider == Provider.UNKNOWN
         assert r.confidence == 0.0
         assert r.evidence == []
         assert r.gateway is None
@@ -166,7 +168,7 @@ class TestClassificationResult:
 
 class TestCymruResult:
     def test_valid_parse(self):
-        result = CymruResult.from_txt("3303 | 195.186.1.1 | 195.186.0.0/16 | CH | ripencc")
+        result = CymruResult.from_txt("3303 | 193.5.224.0/20 | CH | ripencc | 1997-05-26")
         assert result is not None
         assert result.asn == 3303
         assert result.country_code == "ch"
@@ -176,7 +178,7 @@ class TestCymruResult:
         assert result is None
 
     def test_invalid_asn(self):
-        result = CymruResult.from_txt("abc | 195.186.1.1 | 195.186.0.0/16 | CH | ripencc")
+        result = CymruResult.from_txt("abc | 193.5.224.0/20 | CH | ripencc | 1997-05-26")
         assert result is None
 
     def test_empty_string(self):

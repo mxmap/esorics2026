@@ -96,7 +96,7 @@ def load_data(path: Path) -> dict[str, Any]:
 # Helpers
 # ---------------------------------------------------------------------------
 
-_PROVIDERS_ORDERED = ["microsoft", "google", "aws", "domestic-isp", "independent"]
+_PROVIDERS_ORDERED = ["microsoft", "google", "aws", "domestic", "foreign", "unknown"]
 
 _PRIMARY_SIGNAL_KINDS = {"mx", "spf", "dkim", "autodiscover"}
 
@@ -188,7 +188,8 @@ def report_regional(munis: dict[str, Any], category_map: dict[str, str], region_
     rows.sort(key=lambda r: r[3], reverse=True)
 
     hdr = (
-        f"  {'Region':<8}{'Total':>5}{'MSFT':>6}{'Goog':>6}{'AWS':>5}{'Domst':>6}{'Indep':>6}  {'US%':>6}  {'Dom%':>6}"
+        f"  {'Region':<8}{'Total':>5}{'MSFT':>6}{'Goog':>6}{'AWS':>5}"
+        f"{'Dom':>5}{'Frgn':>5}{'Unkn':>5}  {'US%':>6}  {'Dom%':>6}"
     )
     print(hdr)
     _sep()
@@ -201,8 +202,9 @@ def report_regional(munis: dict[str, Any], category_map: dict[str, str], region_
             f"{pc.get('microsoft', 0):>6}"
             f"{pc.get('google', 0):>6}"
             f"{pc.get('aws', 0):>5}"
-            f"{pc.get('domestic-isp', 0):>6}"
-            f"{pc.get('independent', 0):>6}"
+            f"{pc.get('domestic', 0):>5}"
+            f"{pc.get('foreign', 0):>5}"
+            f"{pc.get('independent', 0):>5}"
             f"  {color(f'{us_pct:5.1f}%')}"
             f"  {f'{domestic_pct:5.1f}%':>6}"
         )
@@ -433,7 +435,7 @@ def main(data_path: Path | None = None, *, country_code: str | None = None) -> N
     region_lookup = _make_region_lookup(cc)
 
     data = load_data(path)
-    munis = data["municipalities"]
+    munis = {m["code"]: m for m in data["municipalities"]}
 
     report_overall_summary(data, munis, category_map, domestic_label)
     report_regional(munis, category_map, region_lookup)

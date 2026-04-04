@@ -173,7 +173,7 @@ def _check_entry(entry: dict, r: ValidationResult, category_map: dict[str, str],
         if "@" in domain:
             r.error(f"{code}: domain looks like email: {domain}")
     else:
-        if provider not in ("unknown", "independent"):
+        if provider != "unknown":
             r.warn(f"{code}: empty domain for provider '{provider}'")
 
     for sig in entry["classification_signals"]:

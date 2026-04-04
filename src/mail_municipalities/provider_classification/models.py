@@ -11,8 +11,9 @@ class Provider(str, enum.Enum):
     MS365 = "ms365"
     GOOGLE = "google"
     AWS = "aws"
-    DOMESTIC_ISP = "domestic-isp"
-    INDEPENDENT = "independent"
+    DOMESTIC = "domestic"
+    FOREIGN = "foreign"
+    UNKNOWN = "unknown"
 
 
 class SignalKind(str, enum.Enum):
@@ -60,11 +61,11 @@ class CymruResult(BaseModel):
 
     @classmethod
     def from_txt(cls, txt: str) -> CymruResult | None:
-        """Parse ``'ASN | IP | PREFIX | CC | REGISTRY'`` response."""
+        """Parse ``'ASN | IP/Prefix | CC | Registry | Allocated'`` response."""
         parts = txt.split("|")
-        if len(parts) < 4:
+        if len(parts) < 3:
             return None
         try:
-            return cls(asn=int(parts[0].strip()), country_code=parts[3].strip().lower())
+            return cls(asn=int(parts[0].strip()), country_code=parts[2].strip().lower())
         except (ValueError, ValidationError):
             return None

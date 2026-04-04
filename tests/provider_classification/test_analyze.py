@@ -28,8 +28,9 @@ _CATEGORY_MAP = {
     "microsoft": "us-cloud",
     "google": "us-cloud",
     "aws": "us-cloud",
-    "domestic-isp": "ch-based",
-    "independent": "ch-based",
+    "domestic": "ch-based",
+    "foreign": "foreign",
+    "unknown": "unknown",
 }
 _DOMESTIC_LABEL = "ch-based"
 _REGION_LOOKUP = {
@@ -76,19 +77,19 @@ _MUNIS = {
         "name": "Bern Village",
         "region": "Kanton Bern",
         "domain": "bern.ch",
-        "provider": "independent",
-        "category": "ch-based",
+        "provider": "unknown",
+        "category": "unknown",
         "classification_confidence": 90.0,
         "classification_signals": [
             {
                 "kind": "mx",
-                "provider": "independent",
+                "provider": "unknown",
                 "weight": 0.2,
                 "detail": "mx match",
             },
             {
                 "kind": "spf",
-                "provider": "independent",
+                "provider": "unknown",
                 "weight": 0.2,
                 "detail": "spf match",
             },
@@ -102,13 +103,13 @@ _MUNIS = {
         "name": "Genf City",
         "region": "Kanton Genf",
         "domain": "shared.ch",
-        "provider": "domestic-isp",
+        "provider": "domestic",
         "category": "ch-based",
         "classification_confidence": 50.0,
         "classification_signals": [
             {
                 "kind": "spf",
-                "provider": "domestic-isp",
+                "provider": "domestic",
                 "weight": 0.2,
                 "detail": "spf match",
             },
@@ -122,13 +123,13 @@ _MUNIS = {
         "name": "Genf Town",
         "region": "Kanton Genf",
         "domain": "shared.ch",
-        "provider": "domestic-isp",
+        "provider": "domestic",
         "category": "ch-based",
         "classification_confidence": 55.0,
         "classification_signals": [
             {
                 "kind": "spf",
-                "provider": "domestic-isp",
+                "provider": "domestic",
                 "weight": 0.2,
                 "detail": "spf match",
             },
@@ -148,8 +149,8 @@ _MUNIS = {
         "name": "No Signal Town",
         "region": "",
         "domain": "nosignal.ch",
-        "provider": "independent",
-        "category": "ch-based",
+        "provider": "unknown",
+        "category": "unknown",
         "classification_confidence": 60.0,
         "classification_signals": [],
         "mx": [],
@@ -164,7 +165,7 @@ _DATA = {
     "generated": "2026-03-24T00:00:00Z",
     "commit": "abc1234",
     "total": 5,
-    "counts": {"microsoft": 1, "independent": 2, "domestic-isp": 2},
+    "counts": {"microsoft": 1, "unknown": 2, "domestic": 2},
     "municipalities": _MUNIS_LIST,
 }
 
@@ -198,7 +199,7 @@ def test_report_overall_summary(capsys: pytest.CaptureFixture[str]) -> None:
     assert "OVERALL SUMMARY" in out
     assert "5" in out  # total
     assert "microsoft" in out
-    assert "independent" in out
+    assert "unknown" in out
     assert "US Cloud" in out
     assert "Domestic" in out
 
@@ -219,7 +220,7 @@ def test_report_confidence(capsys: pytest.CaptureFixture[str]) -> None:
     assert "CONFIDENCE" in out
     assert "Average confidence" in out
     assert "microsoft" in out
-    assert "domestic-isp" in out
+    assert "domestic" in out
 
 
 def test_report_signals(capsys: pytest.CaptureFixture[str]) -> None:
@@ -272,16 +273,12 @@ def test_report_low_confidence_shows_conflicts(
 
 
 def test_main(capsys: pytest.CaptureFixture[str], tmp_path: Path) -> None:
-    # main() calls data["municipalities"] which report functions expect as a dict.
-    # The JSON file stores municipalities as a list, but main() needs a dict keyed
-    # by code.  Build the mock return value accordingly.
-    data_with_dict_munis = dict(_DATA, municipalities=_MUNIS)
     p = tmp_path / "providers.json"
     p.write_text(json.dumps(_DATA), encoding="utf-8")
 
     with patch(
         "mail_municipalities.provider_classification.analyze.load_data",
-        return_value=data_with_dict_munis,
+        return_value=_DATA,
     ):
         main()
 

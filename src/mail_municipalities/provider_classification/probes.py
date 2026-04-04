@@ -363,17 +363,28 @@ async def probe_asn(mx_hosts: list[str], *, country_code: str | None = None) -> 
                             )
                         )
 
-                # Check domestic ISP via country code
-                if country_code and cymru.country_code == country_code:
-                    results.append(
-                        Evidence(
-                            kind=SignalKind.ASN,
-                            provider=Provider.DOMESTIC_ISP,
-                            weight=WEIGHTS[SignalKind.ASN],
-                            detail=f"ASN {cymru.asn} registered in {cymru.country_code.upper()}",
-                            raw=str(cymru.asn),
+                # Classify by country code
+                if country_code and cymru.country_code:
+                    if cymru.country_code == country_code:
+                        results.append(
+                            Evidence(
+                                kind=SignalKind.ASN,
+                                provider=Provider.DOMESTIC,
+                                weight=WEIGHTS[SignalKind.ASN],
+                                detail=f"ASN {cymru.asn} registered in {cymru.country_code.upper()}",
+                                raw=str(cymru.asn),
+                            )
                         )
-                    )
+                    else:
+                        results.append(
+                            Evidence(
+                                kind=SignalKind.ASN,
+                                provider=Provider.FOREIGN,
+                                weight=WEIGHTS[SignalKind.ASN],
+                                detail=f"ASN {cymru.asn} registered in {cymru.country_code.upper()} (not {country_code.upper()})",
+                                raw=str(cymru.asn),
+                            )
+                        )
     return results
 
 
@@ -472,16 +483,27 @@ async def probe_spf_ip(domain: str, *, country_code: str | None = None) -> list[
                         )
                     )
 
-            # Check domestic ISP via country code
-            if country_code and cymru.country_code == country_code:
-                results.append(
-                    Evidence(
-                        kind=SignalKind.SPF_IP,
-                        provider=Provider.DOMESTIC_ISP,
-                        weight=WEIGHTS[SignalKind.SPF_IP],
-                        detail=f"SPF ip4/a ASN {cymru.asn} registered in {cymru.country_code.upper()}",
-                        raw=f"{ip}:{cymru.asn}",
+            # Classify by country code
+            if country_code and cymru.country_code:
+                if cymru.country_code == country_code:
+                    results.append(
+                        Evidence(
+                            kind=SignalKind.SPF_IP,
+                            provider=Provider.DOMESTIC,
+                            weight=WEIGHTS[SignalKind.SPF_IP],
+                            detail=f"SPF ip4/a ASN {cymru.asn} registered in {cymru.country_code.upper()}",
+                            raw=f"{ip}:{cymru.asn}",
+                        )
                     )
-                )
+                else:
+                    results.append(
+                        Evidence(
+                            kind=SignalKind.SPF_IP,
+                            provider=Provider.FOREIGN,
+                            weight=WEIGHTS[SignalKind.SPF_IP],
+                            detail=f"SPF ip4/a ASN {cymru.asn} registered in {cymru.country_code.upper()} (not {country_code.upper()})",
+                            raw=f"{ip}:{cymru.asn}",
+                        )
+                    )
 
     return results
