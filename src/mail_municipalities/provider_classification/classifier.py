@@ -113,6 +113,7 @@ _FOREIGN_RULES: tuple[tuple[str, float], ...] = (
 
 _ALL_RULE_NAMES: tuple[str, ...] = (
     tuple(r.name for r in _PROVIDER_RULES)
+    + ("gateway_no_primary",)
     + tuple(name for name, _ in _DOMESTIC_RULES)
     + tuple(name for name, _ in _FOREIGN_RULES)
 )
@@ -231,10 +232,17 @@ def _aggregate(
         winner = max(primary_scores, key=primary_scores.get)
         confidence, rule_name = _rule_confidence(winner, by_provider[winner], gateway)
     else:
+        # Behind a gateway with no primary provider signals, we cannot
+        # determine the email provider — classify as UNKNOWN.
+        if gateway:
+            winner = Provider.UNKNOWN
+            confidence, rule_name = 0.0, "gateway_no_primary"
+            _rule_hits["gateway_no_primary"] += 1
+            logger.debug("rule=gateway_no_primary (gateway blocks primary signals)")
         # Country-based fallback from Cymru CC evidence:
         # DOMESTIC = IP in target country, FOREIGN = IP in another country,
         # UNKNOWN = no Cymru data available.
-        if Provider.DOMESTIC in by_provider:
+        elif Provider.DOMESTIC in by_provider:
             winner = Provider.DOMESTIC
             confidence, rule_name = _country_confidence(_mx_hosts, spf_raw, evidence, _DOMESTIC_RULES)
         elif Provider.FOREIGN in by_provider:

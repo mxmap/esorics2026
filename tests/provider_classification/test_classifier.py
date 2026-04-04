@@ -226,6 +226,36 @@ class TestAggregate:
         result, _ = _aggregate(evidence)
         assert result.gateway is None
 
+    def test_gateway_no_primary_is_unknown(self):
+        """Behind a gateway with no primary signals → UNKNOWN."""
+        evidence = [
+            _ev(SignalKind.TENANT, Provider.MS365),
+            _ev(SignalKind.ASN, Provider.FOREIGN),
+        ]
+        result, rule = _aggregate(evidence, gateway="sophos")
+        assert result.provider == Provider.UNKNOWN
+        assert result.confidence == 0.0
+        assert rule == "gateway_no_primary"
+
+    def test_gateway_with_primary_still_works(self):
+        """Gateway + primary signal → normal classification (not UNKNOWN)."""
+        evidence = [
+            _ev(SignalKind.SPF, Provider.MS365),
+            _ev(SignalKind.TENANT, Provider.MS365),
+        ]
+        result, _ = _aggregate(evidence, gateway="sophos")
+        assert result.provider == Provider.MS365
+        assert result.confidence == pytest.approx(0.90)
+
+    def test_no_gateway_fallback_unchanged(self):
+        """Without gateway, country fallback still works as before."""
+        evidence = [
+            _ev(SignalKind.ASN, Provider.DOMESTIC),
+        ]
+        result, _ = _aggregate(evidence, mx_hosts=["mail.example.ch"], spf_raw="v=spf1 a ~all")
+        assert result.provider == Provider.DOMESTIC
+        assert result.confidence > 0.0
+
     def test_tenant_alone_no_winner(self):
         """Tenant evidence without primary signals cannot pick a winner."""
         evidence = [
