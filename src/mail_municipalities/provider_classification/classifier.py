@@ -229,7 +229,7 @@ def _aggregate(
                 primary_scores[provider] += _GATEWAY_DKIM_BOOST
 
     if primary_scores:
-        winner = max(primary_scores, key=primary_scores.get)
+        winner = max(primary_scores, key=lambda p: primary_scores[p])
         confidence, rule_name = _rule_confidence(winner, by_provider[winner], gateway)
     else:
         # Behind a gateway with no primary provider signals, we cannot
@@ -271,9 +271,11 @@ async def classify(domain: str, *, country_code: str | None = None) -> Classific
     # Gateway detection (sync, no I/O)
     gateway = detect_gateway(all_mx_hosts)
 
+    # SPF raw record (awaited separately to preserve str type through gather)
+    spf_raw = await lookup_spf_raw(domain)
+
     # Run remaining probes concurrently, using ALL MX hosts
     (
-        spf_raw,
         dkim_ev,
         dmarc_ev,
         auto_ev,
@@ -284,7 +286,6 @@ async def classify(domain: str, *, country_code: str | None = None) -> Classific
         txt_ev,
         spf_ip_ev,
     ) = await asyncio.gather(
-        lookup_spf_raw(domain),
         probe_dkim(domain),
         probe_dmarc(domain),
         probe_autodiscover(domain),

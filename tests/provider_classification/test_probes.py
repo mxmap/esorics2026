@@ -57,7 +57,7 @@ def _srv_rdata(target: str):
 def _a_rdata(ip: str):
     """Create a mock A rdata."""
     rdata = MagicMock()
-    rdata.__str__ = lambda self: ip
+    rdata.configure_mock(**{"__str__.return_value": ip})
     return rdata
 
 
