@@ -166,7 +166,7 @@ def _check_entry(entry: dict, r: ValidationResult, category_map: dict[str, str],
         if conf != 0.0:
             r.error(f"{code}: unknown provider with confidence {conf} (expected 0)")
         if entry["classification_signals"]:
-            r.error(f"{code}: unknown provider with signals")
+            r.warn(f"{code}: unknown provider with signals (gateway or confirmation-only)")
 
     domain = entry["domain"]
     if domain:
@@ -377,7 +377,7 @@ def validate_regression(
 # ── Reporting ─────────────────────────────────────────────────────────
 
 
-def _print_result_list(items: list[str], style: str, limit: int = 30) -> None:
+def _print_result_list(items: list[str], style: str, limit: int = 30) -> None:  # pragma: no cover
     symbol = "[red]x[/red]" if style == "error" else "[yellow]![/yellow]"
     for item in items[:limit]:
         console.print(f"    {symbol} {item}")
@@ -385,7 +385,7 @@ def _print_result_list(items: list[str], style: str, limit: int = 30) -> None:
         console.print(f"    [dim]... and {len(items) - limit} more[/dim]")
 
 
-def print_structural_report(r: ValidationResult) -> None:
+def print_structural_report(r: ValidationResult) -> None:  # pragma: no cover
     console.rule("[bold]Structural Validation[/bold]")
     console.print(f"  Result: {r.summary_markup()}")
 
@@ -398,7 +398,7 @@ def print_structural_report(r: ValidationResult) -> None:
         _print_result_list(r.warnings, "warn", limit=15)
 
 
-def print_regression_report(r: ValidationResult) -> None:
+def print_regression_report(r: ValidationResult) -> None:  # pragma: no cover
     reg: dict[str, Any] | None = getattr(r, "_regression", None)
     if reg is None:
         return
