@@ -41,9 +41,9 @@ function effectiveCategory(m, domesticCategory) {
 }
 
 function confidenceLevel(confidence) {
-  if (confidence >= 90) return 'high';
-  if (confidence >= 60) return 'medium';
-  if (confidence >= 30) return 'low';
+  if (confidence >= 75) return 'high';
+  if (confidence >= 50) return 'medium';
+  if (confidence >= 25) return 'low';
   return 'insufficient';
 }
 
