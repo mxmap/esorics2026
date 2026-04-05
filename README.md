@@ -72,3 +72,18 @@ Three tiers per country:
 ### `output/security/` -- Security Analysis Output
 
 *(Planned -- file format TBD)*
+
+## Maps
+
+Interactive Leaflet maps visualize the provider classification per country. After running Stages 1 and 2, serve the maps locally:
+
+```bash
+python3 -m http.server              # from the project root
+# then open http://localhost:8000/maps/
+```
+
+- [Switzerland](maps/ch.html) -- ~2,100 municipalities
+- [Austria](maps/at.html) -- ~2,100 municipalities
+- [Germany](maps/de.html) -- ~11,100 municipalities
+
+Each map colors municipalities by email jurisdiction (domestic, US cloud, foreign) with confidence-level shading, and provides interactive popups with MX/SPF records and classification signals.
