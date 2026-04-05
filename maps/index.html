@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Municipality Email Provider Maps</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='2' y='7' width='28' height='18' rx='2' fill='%231a1a2e'/%3E%3Cpath d='M2 9l14 9 14-9' fill='none' stroke='%2316a34a' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/shared.css">
+<style>
+body { background: #f0f1f5; min-height: 100vh; }
+.landing { max-width: 720px; margin: 0 auto; padding: 40px 20px; }
+.landing h2 { font-size: 22px; font-weight: 700; color: #1a1a2e; margin-bottom: 8px; }
+.landing p { font-size: 14px; color: #555; line-height: 1.6; margin-bottom: 24px; }
+.country-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+.country-card {
+  display: block; background: #fff; border-radius: 8px; padding: 20px;
+  text-decoration: none; color: #1a1a2e; border: 1px solid #d8dae0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: box-shadow 0.15s;
+}
+.country-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
+.country-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+.country-card .count { font-size: 13px; color: #888; }
+</style>
+</head>
+<body>
+<header id="header">
+  <div class="header-left">
+    <h1 class="brand">Municipality Emails</h1>
+  </div>
+</header>
+<div class="landing">
+  <h2>Municipality Email Provider Maps</h2>
+  <p>Interactive maps showing which providers handle official email for municipalities in Switzerland, Austria, and Germany, based on DNS analysis.</p>
+  <div class="country-list">
+    <a href="ch.html" class="country-card">
+      <h3>Switzerland</h3>
+      <span class="count">~2,100 municipalities</span>
+    </a>
+    <a href="at.html" class="country-card">
+      <h3>Austria</h3>
+      <span class="count">~2,100 municipalities</span>
+    </a>
+    <a href="de.html" class="country-card">
+      <h3>Germany</h3>
+      <span class="count">~11,100 municipalities</span>
+    </a>
+  </div>
+</div>
+</body>
+</html>
