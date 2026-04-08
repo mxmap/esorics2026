@@ -152,11 +152,31 @@ def analyze_cmd(
         Optional[Path],
         typer.Argument(help="Path to providers JSON file"),
     ] = None,
+    all_countries: Annotated[
+        bool,
+        typer.Option("--all", help="Analyze all countries and produce combined table"),
+    ] = False,
+    latex: Annotated[
+        bool,
+        typer.Option("--latex", help="Export tables as LNCS-formatted LaTeX file"),
+    ] = False,
 ) -> None:
     """Analyze provider classification results."""
+    if all_countries:
+        from mail_municipalities.provider_classification.combined_analysis import (
+            export_combined_latex,
+            print_combined_summary,
+        )
+
+        if latex:
+            export_combined_latex()
+        else:
+            print_combined_summary()
+        return
+
     from mail_municipalities.provider_classification.analyze import main
 
-    main(data_path)
+    main(data_path, latex=latex)
 
 
 # ── Script entry points (called by [project.scripts]) ──────────────
@@ -253,11 +273,31 @@ def _analyze_main(
         Optional[Path],
         typer.Argument(help="Path to providers JSON file"),
     ] = None,
+    all_countries: Annotated[
+        bool,
+        typer.Option("--all", help="Analyze all countries and produce combined table"),
+    ] = False,
+    latex: Annotated[
+        bool,
+        typer.Option("--latex", help="Export tables as LNCS-formatted LaTeX file"),
+    ] = False,
 ) -> None:
     """Analyze provider classification results."""
+    if all_countries:
+        from mail_municipalities.provider_classification.combined_analysis import (
+            export_combined_latex,
+            print_combined_summary,
+        )
+
+        if latex:
+            export_combined_latex()
+        else:
+            print_combined_summary()
+        return
+
     from mail_municipalities.provider_classification.analyze import main
 
-    main(data_path)
+    main(data_path, latex=latex)
 
 
 def resolve() -> None:

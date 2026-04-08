@@ -427,7 +427,7 @@ def report_low_confidence(munis: dict[str, Any], region_lookup: dict[str, str]) 
 # ---------------------------------------------------------------------------
 
 
-def main(data_path: Path | None = None, *, country_code: str | None = None) -> None:
+def main(data_path: Path | None = None, *, country_code: str | None = None, latex: bool = False) -> None:
     path = data_path or Path("output/providers/providers_ch.json")
     cc = country_code or _infer_country(path)
     category_map = _build_category_map(cc)
@@ -444,5 +444,16 @@ def main(data_path: Path | None = None, *, country_code: str | None = None) -> N
     report_gateways(munis)
     report_domain_sharing(munis)
     report_low_confidence(munis, region_lookup)
+
+    if latex:
+        from datetime import datetime, timezone
+
+        from .latex_export import export_latex
+
+        timestamp = datetime.now(tz=timezone.utc).strftime("%Y%m%d_%H%M%S")
+        output_dir = path.parent
+        tex_path = output_dir / f"tables_{cc}_{timestamp}.tex"
+        result = export_latex(data, munis, category_map, region_lookup, cc, tex_path)
+        print(f"\n  LaTeX tables written to: {result}")
 
     print()

@@ -28,7 +28,10 @@ uv run classify de            # classify German municipality providers
 uv run classify at            # classify Austrian municipality providers
 
 # Stage 3: Analyze classification results
-NOT IMPLEMENTED YET
+uv run analyze output/providers/providers_ch.json          # single country console report
+uv run analyze output/providers/providers_ch.json --latex   # single country LaTeX export
+uv run analyze --all                                        # combined summary (console)
+uv run analyze --all --latex                                # combined multi-country LaTeX table
 ```
 
 ## Architecture
@@ -54,6 +57,8 @@ NOT IMPLEMENTED YET
     - `models.py` -- Provider, SignalKind, Evidence, ClassificationResult
     - `runner.py` -- classification pipeline orchestration
     - `analyze.py` -- statistical analysis reports
+    - `combined_analysis.py` -- combined multi-country analysis with pandas
+    - `latex_export.py` -- per-country LaTeX table export
     - `constants.py` -- canton abbreviations
   - `security_analysis/` -- Stage 3: security analysis (placeholder)
 - `data/{cc}/` -- input data, overrides per country and cached network data
