@@ -40,6 +40,7 @@ packages = ["src/mail_municipalities"]
 resolve = "mail_municipalities.cli:resolve"
 classify = "mail_municipalities.cli:classify"
 analyze = "mail_municipalities.cli:analyze"
+scan = "mail_municipalities.cli:scan"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

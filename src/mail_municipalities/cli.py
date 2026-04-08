@@ -146,6 +146,37 @@ def classify_cmd(
     asyncio.run(run(domains_path, output_path, country_code=country))
 
 
+@app.command("scan")
+def scan_cmd(
+    country: Annotated[
+        str,
+        typer.Argument(help="Country code: ch, de, at"),
+    ],
+    verbose: Annotated[
+        bool,
+        typer.Option("-v", "--verbose", help="Enable debug logging"),
+    ] = False,
+    domains_dir: Annotated[
+        Path,
+        typer.Option("--domains-dir", help="Directory with domain resolver output"),
+    ] = Path("output/domains"),
+    output: Annotated[
+        Optional[Path],
+        typer.Option("-o", "--output", help="Custom output directory"),
+    ] = None,
+) -> None:
+    """Run security scan (DANE, SPF, DKIM, DMARC) for municipalities."""
+    output_dir = output or Path("output/security")
+    setup_logging(verbose, log_path=output_dir / f"scan_{country}.log")
+
+    domains_path = domains_dir / f"domains_{country}.json"
+    output_path = output_dir / f"security_{country}.json"
+
+    from mail_municipalities.security_analysis.runner import run
+
+    run(domains_path, output_path, cc=country, verbose=verbose)
+
+
 @app.command("analyze")
 def analyze_cmd(
     data_path: Annotated[
@@ -300,6 +331,40 @@ def _analyze_main(
     main(data_path, latex=latex)
 
 
+_scan_app = typer.Typer(add_completion=False)
+
+
+@_scan_app.command()
+def _scan_main(
+    country: Annotated[
+        str,
+        typer.Argument(help="Country code: ch, de, at"),
+    ],
+    verbose: Annotated[
+        bool,
+        typer.Option("-v", "--verbose", help="Enable debug logging"),
+    ] = False,
+    domains_dir: Annotated[
+        Path,
+        typer.Option("--domains-dir", help="Directory with domain resolver output"),
+    ] = Path("output/domains"),
+    output: Annotated[
+        Optional[Path],
+        typer.Option("-o", "--output", help="Custom output directory"),
+    ] = None,
+) -> None:
+    """Run security scan (DANE, SPF, DKIM, DMARC) for municipalities."""
+    output_dir = output or Path("output/security")
+    setup_logging(verbose, log_path=output_dir / f"scan_{country}.log")
+
+    domains_path = domains_dir / f"domains_{country}.json"
+    output_path = output_dir / f"security_{country}.json"
+
+    from mail_municipalities.security_analysis.runner import run
+
+    run(domains_path, output_path, cc=country, verbose=verbose)
+
+
 def resolve() -> None:
     """Entry point for 'resolve' script."""
     _resolve_app()
@@ -313,3 +378,8 @@ def classify() -> None:
 def analyze() -> None:
     """Entry point for 'analyze' script."""
     _analyze_app()
+
+
+def scan() -> None:
+    """Entry point for 'scan' script."""
+    _scan_app()

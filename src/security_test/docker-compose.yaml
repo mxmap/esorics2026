@@ -1,0 +1,37 @@
+services:
+  scanner:
+    build:
+      context: ./scanner
+    tmpfs:
+      - /tmp:size=1G
+    volumes:
+      - ./scanner/scanner-result:/app/scanner-result
+      - ./scanner/scanner-input:/app/scanner-input
+    hostname: ${DANE_EHLO_NAME:-localhost}
+    environment:
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      INPUT_FILE: ${INPUT_FILE:-}
+      DNS_NAMESERVER: ${DNS_NAMESERVER:-8.8.8.8}
+      DNS_QUERIES_PER_SECOND: ${DNS_QUERIES_PER_SECOND:-10.0}
+      DNS_THREAD_MULTIPLIER: ${DNS_THREAD_MULTIPLIER:-4}
+      TESTSSL_STARTTLS_SLEEP: ${TESTSSL_STARTTLS_SLEEP:-60}
+      TESTSSL_CONNECT_TIMEOUT: ${TESTSSL_CONNECT_TIMEOUT:-30s}
+      TESTSSL_OPENSSL_TIMEOUT: ${TESTSSL_OPENSSL_TIMEOUT:-30s}
+      SCAN_THREAD_MULTIPLIER: ${SCAN_THREAD_MULTIPLIER:-4}
+      DANE_RETRIES: ${DANE_RETRIES:-5}
+      DANE_TRIES_PER_SECOND: ${DANE_TRIES_PER_SECOND:-10.0}
+      DANE_TIMEOUT: ${DANE_TIMEOUT:-300}
+      TLS_RETRIES: ${TLS_RETRIES:-5}
+      TLS_TRIES_PER_SECOND: ${TLS_TRIES_PER_SECOND:-10.0}
+      TLS_TIMEOUT: ${TLS_TIMEOUT:-300}
+      DSS_TRIES_PER_SECOND: ${DSS_TRIES_PER_SECOND:-10.0}
+      DATASET_DELAY_MINUTES: ${DATASET_DELAY_MINUTES:-0}
+
+  evaluator:
+    build:
+      context: ./evaluator
+    volumes:
+      - ./evaluator/evaluator-input:/app/evaluator-input
+      - ./evaluator/evaluator-result:/app/evaluator-result
+    environment:
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}

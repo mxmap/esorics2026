@@ -27,7 +27,13 @@ uv run classify ch            # classify Swiss municipality providers
 uv run classify de            # classify German municipality providers
 uv run classify at            # classify Austrian municipality providers
 
-# Stage 3: Analyze classification results
+# Stage 3: Security scan (requires Docker)
+uv run scan ch                # scan Swiss municipality email domains
+uv run scan de                # scan German municipality email domains
+uv run scan at                # scan Austrian municipality email domains
+uv run scan ch -v             # verbose logging (streams Docker output)
+
+# Stage 4: Analyze classification results
 uv run analyze output/providers/providers_ch.json          # single country console report
 uv run analyze output/providers/providers_ch.json --latex   # single country LaTeX export
 uv run analyze --all                                        # combined summary (console)
@@ -37,7 +43,7 @@ uv run analyze --all --latex                                # combined multi-cou
 ## Architecture
 
 - `src/mail_municipalities/` -- main package
-  - `cli.py` -- unified Typer CLI (resolve, classify, analyze commands)
+  - `cli.py` -- unified Typer CLI (resolve, classify, scan, analyze commands)
   - `core/` -- shared infrastructure
     - `dns.py` -- multi-resolver DNS with fallback
     - `log.py` -- loguru setup
@@ -60,12 +66,19 @@ uv run analyze --all --latex                                # combined multi-cou
     - `combined_analysis.py` -- combined multi-country analysis with pandas
     - `latex_export.py` -- per-country LaTeX table export
     - `constants.py` -- canton abbreviations
-  - `security_analysis/` -- Stage 3: security analysis (placeholder)
+  - `security_analysis/` -- Stage 3: security scanning (DANE, SPF, DKIM, DMARC)
+    - `runner.py` -- orchestrates Docker scanner/evaluator, transforms I/O
+    - `models.py` -- Pydantic models (DaneSummary, DssSummary, MunicipalitySecurity)
+    - `defaults.py` -- default .env configuration for Docker scanner
+- `src/security_test/` -- Kotlin/Docker security scanner (external tool)
+  - `scanner/` -- TLS/DANE/DSS scanning via testssl.sh, gotls, dss
+  - `evaluator/` -- aggregates scan results into per-domain assessments
+  - `docker-compose.yaml` -- orchestrates scanner and evaluator containers
 - `data/{cc}/` -- input data, overrides per country and cached network data
 - `output/` -- output directory (gitignored)
   - `domains/` -- domain resolver output (domains_{cc}.json, _detailed, _review)
   - `providers/` -- provider classification output (providers_{cc}.json, .min.json)
-  - `security/` -- security analysis output (planned)
+  - `security/` -- security scan output (security_{cc}.json)
 - `tests/` -- pytest suite (90% coverage required)
 
 ## Key conventions
@@ -76,6 +89,8 @@ uv run analyze --all --latex                                # combined multi-cou
 - Decision algorithm is scraping-first, unified across countries
 - Provider classification uses 10 concurrent DNS probes with weighted evidence aggregation
 - Output: three tiers per country for domains, full + minified for providers
+- Security scan wraps Kotlin/Docker tool; requires Docker to be running
+- Security scan reads from output/domains/, writes to output/security/
 
 ## What NOT to do
 - modify JSON files in `output/`
