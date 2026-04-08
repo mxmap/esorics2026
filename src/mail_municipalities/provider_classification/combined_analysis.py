@@ -100,12 +100,12 @@ def build_combined_dataframe(
     parts: list[pd.DataFrame] = []
     for cc in _COUNTRIES:
         cc_upper = cc.upper()
-        part = summary[summary["country"] == cc_upper].sort_values("us_pct", ascending=False)
+        part = summary[summary["country"] == cc_upper].sort_values("us_pct", ascending=False)  # pyright: ignore[reportCallIssue]
         parts.append(part)
 
         # Country subtotal row
-        totals = part[list(_PROVIDERS_ORDERED)].sum()
-        total_n = int(totals.sum())
+        totals = part[list(_PROVIDERS_ORDERED)].sum().to_dict()
+        total_n = int(sum(totals.values()))
         us_n = int(totals["microsoft"] + totals["google"] + totals["aws"])
         dom_n = int(totals["domestic"])
         sub = pd.DataFrame(
@@ -124,8 +124,8 @@ def build_combined_dataframe(
         parts.append(sub)
 
     # Grand total row
-    all_provs = summary[list(_PROVIDERS_ORDERED)].sum()
-    grand_total = int(all_provs.sum())
+    all_provs = summary[list(_PROVIDERS_ORDERED)].sum().to_dict()
+    grand_total = int(sum(all_provs.values()))
     grand_us = int(all_provs["microsoft"] + all_provs["google"] + all_provs["aws"])
     grand_dom = int(all_provs["domestic"])
     grand = pd.DataFrame(
@@ -222,7 +222,8 @@ def latex_combined_regional(df: pd.DataFrame) -> str:
 
     prev_country: str | None = None
 
-    for _, row in df.iterrows():
+    for _, row_s in df.iterrows():
+        row = row_s.to_dict()
         country = str(row["country"])
         region = str(row["region"])
         is_subtotal = region == "Total"
@@ -286,7 +287,7 @@ def build_country_overview(
         _, munis = all_data[cc]
         total = len(munis)
         provs = pd.Series([m["provider"] for m in munis.values()])
-        pc = provs.value_counts()
+        pc = provs.value_counts().to_dict()
         us = int(pc.get("microsoft", 0) + pc.get("google", 0) + pc.get("aws", 0))
         dom = int(pc.get("domestic", 0))
 
@@ -367,7 +368,8 @@ def latex_country_overview(df: pd.DataFrame) -> str:
     )
     lines.append("        \\midrule")
 
-    for _, row in df.iterrows():
+    for _, row_s in df.iterrows():
+        row = row_s.to_dict()
         is_total = row["country"] == "Total"
 
         def _f(val: Any, bold: bool = False) -> str:
