@@ -1,0 +1,102 @@
+2026-04-09 21:17:54 | DEBUG   | logging:callHandlers:1744 | Using selector: KqueueSelector
+2026-04-09 21:17:54 | INFO    | mail_municipalities.provider_classification.runner:run:136 | Classifying 11129 municipalities
+2026-04-09 21:17:54 | DEBUG   | mail_municipalities.provider_classification.classifier:_aggregate:241 | rule=gateway_no_primary (gateway blocks primary signals)
+2026-04-09 21:17:54 | DEBUG   | mail_municipalities.provider_classification.classifier:classify:320 | classify(grefrath.de): provider=unknown confidence=0.00 rule=gateway_no_primary signals=10
+2026-04-09 21:17:54 | DEBUG   | mail_municipalities.provider_classification.classifier:_aggregate:241 | rule=gateway_no_primary (gateway blocks primary signals)
+2026-04-09 21:17:54 | DEBUG   | mail_municipalities.provider_classification.classifier:classify:320 | classify(rheinberg.de): provider=unknown confidence=0.00 rule=gateway_no_primary signals=12
+2026-04-09 21:17:54 | INFO    | mail_municipalities.provider_classification.runner:run:205 | [   1/11129] grefrath.de: provider=unknown confidence=0.00 signals=10
+2026-04-09 21:17:54 | DEBUG   | mail_municipalities.provider_classification.classifier:_aggregate:241 | rule=gateway_no_primary (gateway blocks primary signals)
+2026-04-09 21:17:54 | DEBUG   | mail_municipalities.provider_classification.classifier:classify:320 | classify(kempen.de): provider=unknown confidence=0.00 rule=gateway_no_primary signals=12
+2026-04-09 21:17:54 | DEBUG   | mail_municipalities.provider_classification.classifier:_aggregate:241 | rule=gateway_no_primary (gateway blocks primary signals)
+2026-04-09 21:17:54 | DEBUG   | mail_municipalities.provider_classification.classifier:classify:320 | classify(toenisvorst.de): provider=unknown confidence=0.00 rule=gateway_no_primary signals=11
+2026-04-09 21:17:54 | DEBUG   | mail_municipalities.provider_classification.classifier:_aggregate:241 | rule=gateway_no_primary (gateway blocks primary signals)
+2026-04-09 21:17:54 | DEBUG   | mail_municipalities.provider_classification.classifier:classify:320 | classify(schwalmtal.de): provider=unknown confidence=0.00 rule=gateway_no_primary signals=10
+2026-04-09 21:17:54 | DEBUG   | mail_municipalities.provider_classification.classifier:_aggregate:241 | rule=gateway_no_primary (gateway blocks primary signals)
+2026-04-09 21:17:54 | DEBUG   | mail_municipalities.provider_classification.classifier:classify:320 | classify(neukirchen-vluyn.de): provider=unknown confidence=0.00 rule=gateway_no_primary signals=11
+2026-04-09 21:17:54 | DEBUG   | mail_municipalities.provider_classification.classifier:_aggregate:241 | rule=gateway_no_primary (gateway blocks primary signals)
+2026-04-09 21:17:54 | DEBUG   | mail_municipalities.provider_classification.classifier:classify:320 | classify(niederkruechten.de): provider=unknown confidence=0.00 rule=gateway_no_primary signals=10
+2026-04-09 21:17:54 | DEBUG   | mail_municipalities.provider_classification.classifier:_aggregate:241 | rule=gateway_no_primary (gateway blocks primary signals)
+2026-04-09 21:17:54 | DEBUG   | mail_municipalities.provider_classification.classifier:classify:320 | classify(huenxe.de): provider=unknown confidence=0.00 rule=gateway_no_primary signals=10
+2026-04-09 21:17:54 | DEBUG   | mail_municipalities.provider_classification.classifier:_aggregate:241 | rule=gateway_no_primary (gateway blocks primary signals)
+2026-04-09 21:17:54 | DEBUG   | mail_municipalities.provider_classification.classifier:classify:320 | classify(stadt-willich.de): provider=unknown confidence=0.00 rule=gateway_no_primary signals=11
+2026-04-09 21:17:54 | INFO    | mail_municipalities.provider_classification.runner:run:205 | [   2/11129] rheinberg.de: provider=unknown confidence=0.00 signals=12
+2026-04-09 21:17:54 | DEBUG   | mail_municipalities.provider_classification.classifier:_aggregate:241 | rule=gateway_no_primary (gateway blocks primary signals)
+2026-04-09 21:17:54 | DEBUG   | mail_municipalities.provider_classification.classifier:classify:320 | classify(sonsbeck.de): provider=unknown confidence=0.00 rule=gateway_no_primary signals=10
+2026-04-09 21:17:54 | DEBUG   | mail_municipalities.provider_classification.classifier:_aggregate:241 | rule=gateway_no_primary (gateway blocks primary signals)
+2026-04-09 21:17:54 | DEBUG   | mail_municipalities.provider_classification.classifier:classify:320 | classify(schermbeck.de): provider=unknown confidence=0.00 rule=gateway_no_primary signals=11
+2026-04-09 21:17:54 | DEBUG   | mail_municipalities.provider_classification.classifier:_aggregate:241 | rule=gateway_no_primary (gateway blocks primary signals)
+2026-04-09 21:17:54 | DEBUG   | mail_municipalities.provider_classification.classifier:classify:320 | classify(viersen.de): provider=unknown confidence=0.00 rule=gateway_no_primary signals=11
+2026-04-09 21:17:54 | DEBUG   | mail_municipalities.provider_classification.classifier:_aggregate:241 | rule=gateway_no_primary (gateway blocks primary signals)
+2026-04-09 21:17:54 | DEBUG   | mail_municipalities.provider_classification.classifier:classify:320 | classify(alpen.de): provider=unknown confidence=0.00 rule=gateway_no_primary signals=10
+2026-04-09 21:17:54 | INFO    | mail_municipalities.provider_classification.runner:run:205 | [   3/11129] kempen.de: provider=unknown confidence=0.00 signals=12
+2026-04-09 21:17:54 | INFO    | mail_municipalities.provider_classification.runner:run:205 | [   4/11129] toenisvorst.de: provider=unknown confidence=0.00 signals=11
+2026-04-09 21:17:54 | INFO    | mail_municipalities.provider_classification.runner:run:205 | [   5/11129] schwalmtal.de: provider=unknown confidence=0.00 signals=10
+2026-04-09 21:17:54 | INFO    | mail_municipalities.provider_classification.runner:run:205 | [   6/11129] neukirchen-vluyn.de: provider=unknown confidence=0.00 signals=11
+2026-04-09 21:17:54 | INFO    | mail_municipalities.provider_classification.runner:run:205 | [   7/11129] niederkruechten.de: provider=unknown confidence=0.00 signals=10
+2026-04-09 21:17:54 | INFO    | mail_municipalities.provider_classification.runner:run:205 | [   8/11129] huenxe.de: provider=unknown confidence=0.00 signals=10
+2026-04-09 21:17:54 | INFO    | mail_municipalities.provider_classification.runner:run:205 | [   9/11129] stadt-willich.de: provider=unknown confidence=0.00 signals=11
+2026-04-09 21:17:54 | INFO    | mail_municipalities.provider_classification.runner:run:205 | [  10/11129] sonsbeck.de: provider=unknown confidence=0.00 signals=10
+2026-04-09 21:17:54 | INFO    | mail_municipalities.provider_classification.runner:run:205 | [  11/11129] schermbeck.de: provider=unknown confidence=0.00 signals=11
+2026-04-09 21:17:54 | INFO    | mail_municipalities.provider_classification.runner:run:205 | [  12/11129] viersen.de: provider=unknown confidence=0.00 signals=11
+2026-04-09 21:17:54 | INFO    | mail_municipalities.provider_classification.runner:run:205 | [  13/11129] alpen.de: provider=unknown confidence=0.00 signals=10
+2026-04-09 21:17:55 | DEBUG   | mail_municipalities.provider_classification.classifier:_aggregate:241 | rule=gateway_no_primary (gateway blocks primary signals)
+2026-04-09 21:17:55 | DEBUG   | mail_municipalities.provider_classification.classifier:classify:320 | classify(brueggen.de): provider=unknown confidence=0.00 rule=gateway_no_primary signals=11
+2026-04-09 21:17:55 | INFO    | mail_municipalities.provider_classification.runner:run:205 | [  14/11129] brueggen.de: provider=unknown confidence=0.00 signals=11
+2026-04-09 21:17:55 | DEBUG   | mail_municipalities.provider_classification.classifier:_aggregate:241 | rule=gateway_no_primary (gateway blocks primary signals)
+2026-04-09 21:17:55 | DEBUG   | mail_municipalities.provider_classification.classifier:classify:320 | classify(dinslaken.de): provider=unknown confidence=0.00 rule=gateway_no_primary signals=11
+2026-04-09 21:17:55 | INFO    | mail_municipalities.provider_classification.runner:run:205 | [  15/11129] dinslaken.de: provider=unknown confidence=0.00 signals=11
+2026-04-09 21:17:55 | DEBUG   | mail_municipalities.provider_classification.classifier:_aggregate:241 | rule=gateway_no_primary (gateway blocks primary signals)
+2026-04-09 21:17:55 | DEBUG   | mail_municipalities.provider_classification.classifier:classify:320 | classify(xanten.de): provider=unknown confidence=0.00 rule=gateway_no_primary signals=10
+2026-04-09 21:17:55 | INFO    | mail_municipalities.provider_classification.runner:run:205 | [  16/11129] xanten.de: provider=unknown confidence=0.00 signals=10
+2026-04-09 21:17:55 | DEBUG   | mail_municipalities.provider_classification.classifier:_aggregate:241 | rule=gateway_no_primary (gateway blocks primary signals)
+2026-04-09 21:17:55 | DEBUG   | mail_municipalities.provider_classification.classifier:classify:320 | classify(wesel.de): provider=unknown confidence=0.00 rule=gateway_no_primary signals=12
+2026-04-09 21:17:55 | INFO    | mail_municipalities.provider_classification.runner:run:205 | [  17/11129] wesel.de: provider=unknown confidence=0.00 signals=12
+2026-04-09 21:18:06 | DEBUG   | mail_municipalities.provider_classification.probes:probe_smtp:266 | SMTP banner fetch failed for filter1.as-san.de: [Errno 8] nodename nor servname provided, or not known
+2026-04-09 21:18:06 | DEBUG   | mail_municipalities.provider_classification.classifier:_aggregate:241 | rule=gateway_no_primary (gateway blocks primary signals)
+2026-04-09 21:18:06 | DEBUG   | mail_municipalities.provider_classification.classifier:classify:320 | classify(nettetal.de): provider=unknown confidence=0.00 rule=gateway_no_primary signals=11
+2026-04-09 21:18:06 | INFO    | mail_municipalities.provider_classification.runner:run:205 | [  18/11129] nettetal.de: provider=unknown confidence=0.00 signals=11
+2026-04-09 21:18:06 | DEBUG   | mail_municipalities.provider_classification.classifier:_aggregate:241 | rule=gateway_no_primary (gateway blocks primary signals)
+2026-04-09 21:18:06 | DEBUG   | mail_municipalities.provider_classification.classifier:classify:320 | classify(kamp-lintfort.de): provider=unknown confidence=0.00 rule=gateway_no_primary signals=8
+2026-04-09 21:18:06 | INFO    | mail_municipalities.provider_classification.runner:run:205 | [  19/11129] kamp-lintfort.de: provider=unknown confidence=0.00 signals=8
+2026-04-09 21:18:06 | DEBUG   | mail_municipalities.provider_classification.classifier:_aggregate:241 | rule=gateway_no_primary (gateway blocks primary signals)
+2026-04-09 21:18:06 | DEBUG   | mail_municipalities.provider_classification.classifier:classify:320 | classify(voerde.de): provider=unknown confidence=0.00 rule=gateway_no_primary signals=12
+2026-04-09 21:18:06 | INFO    | mail_municipalities.provider_classification.runner:run:205 | [  20/11129] voerde.de: provider=unknown confidence=0.00 signals=12
+2026-04-09 21:18:06 | DEBUG   | mail_municipalities.provider_classification.classifier:_aggregate:241 | rule=gateway_no_primary (gateway blocks primary signals)
+2026-04-09 21:18:06 | DEBUG   | mail_municipalities.provider_classification.classifier:classify:320 | classify(moers.de): provider=unknown confidence=0.00 rule=gateway_no_primary signals=13
+2026-04-09 21:18:06 | INFO    | mail_municipalities.provider_classification.runner:run:205 | [  21/11129] moers.de: provider=unknown confidence=0.00 signals=13
+2026-04-09 21:18:06 | DEBUG   | mail_municipalities.provider_classification.classifier:_aggregate:241 | rule=gateway_no_primary (gateway blocks primary signals)
+2026-04-09 21:18:06 | DEBUG   | mail_municipalities.provider_classification.classifier:classify:320 | classify(hamminkeln.de): provider=unknown confidence=0.00 rule=gateway_no_primary signals=12
+2026-04-09 21:18:06 | INFO    | mail_municipalities.provider_classification.runner:run:205 | [  22/11129] hamminkeln.de: provider=unknown confidence=0.00 signals=12
+2026-04-09 21:18:06 | INFO    | mail_municipalities.provider_classification.classifier:classify_many:364 | Rule hit summary:
+  gateway_no_primary      22
+  mx_spf_ad                0
+  mx_spf_tenant            0
+  ad_spf_tenant            0
+  dkim_ad_tenant           0
+  dkim_spf_tenant          0
+  mx_spf                   0
+  spf_tenant_gw            0
+  dkim_tenant_gw           0
+  mx_tenant                0
+  spf_tenant               0
+  dkim_tenant              0
+  ad_tenant                0
+  spf_gw                   0
+  mx_only                  0
+  spf_only                 0
+  fallback                 0
+  dom_mx_spf               0
+  dom_mx_only              0
+  dom_secondary            0
+  dom_none                 0
+  frgn_mx_spf              0
+  frgn_mx_only             0
+  frgn_secondary           0
+  frgn_none                0
+2026-04-09 21:18:06 | INFO    | mail_municipalities.provider_classification.runner:run:225 | --- Classification: 46 municipalities in 12.9s ---
+2026-04-09 21:18:06 | INFO    | mail_municipalities.provider_classification.runner:run:226 |   US Cloud             0  (MS=0 Google=0 AWS=0)
+2026-04-09 21:18:06 | INFO    | mail_municipalities.provider_classification.runner:run:233 |   Domestic             0
+2026-04-09 21:18:06 | INFO    | mail_municipalities.provider_classification.runner:run:237 |   Foreign              0
+2026-04-09 21:18:06 | INFO    | mail_municipalities.provider_classification.runner:run:241 |   Unknown/No MX       46
+2026-04-09 21:18:06 | INFO    | mail_municipalities.provider_classification.runner:run:275 | Wrote output/providers/providers_de.json (43.5009765625 KB)
+2026-04-09 21:18:06 | INFO    | mail_municipalities.provider_classification.runner:run:276 | Wrote output/providers/providers_de.min.json (26 KB)
