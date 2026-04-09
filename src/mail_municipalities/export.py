@@ -68,12 +68,27 @@ df.sort_values(["country", "code"], inplace=True, ignore_index=True)
 
 # Column order
 columns = [
-    "country", "code", "name", "region", "domain",
-    "provider", "category", "confidence", "gateway",
-    "mx", "spf",
-    "scan_valid", "dane_supported", "dane_partial",
-    "has_spf", "has_good_spf", "has_dmarc", "has_good_dmarc",
-    "classification_signals", "sources", "resolve_flags",
+    "country",
+    "code",
+    "name",
+    "region",
+    "domain",
+    "provider",
+    "category",
+    "confidence",
+    "gateway",
+    "mx",
+    "spf",
+    "scan_valid",
+    "dane_supported",
+    "dane_partial",
+    "has_spf",
+    "has_good_spf",
+    "has_dmarc",
+    "has_good_dmarc",
+    "classification_signals",
+    "sources",
+    "resolve_flags",
 ]
 df = df[columns]
 
@@ -96,12 +111,27 @@ with pd.ExcelWriter(out_path, engine="openpyxl") as writer:
 
     # Column widths
     widths = {
-        "country": 8, "code": 8, "name": 30, "region": 25, "domain": 30,
-        "provider": 12, "category": 12, "confidence": 12, "gateway": 25,
-        "mx": 40, "spf": 50,
-        "scan_valid": 11, "dane_supported": 15, "dane_partial": 13,
-        "has_spf": 9, "has_good_spf": 13, "has_dmarc": 11, "has_good_dmarc": 15,
-        "classification_signals": 60, "sources": 20, "resolve_flags": 15,
+        "country": 8,
+        "code": 8,
+        "name": 30,
+        "region": 25,
+        "domain": 30,
+        "provider": 12,
+        "category": 12,
+        "confidence": 12,
+        "gateway": 25,
+        "mx": 40,
+        "spf": 50,
+        "scan_valid": 11,
+        "dane_supported": 15,
+        "dane_partial": 13,
+        "has_spf": 9,
+        "has_good_spf": 13,
+        "has_dmarc": 11,
+        "has_good_dmarc": 15,
+        "classification_signals": 60,
+        "sources": 20,
+        "resolve_flags": 15,
     }
     for col_idx, col_name in enumerate(columns, start=1):
         ws.column_dimensions[get_column_letter(col_idx)].width = widths.get(col_name, 15)
@@ -116,9 +146,13 @@ with pd.ExcelWriter(out_path, engine="openpyxl") as writer:
     COL_CONFIDENCE = f"'{S}'!H$2:H${n}"
 
     bool_cols = {
-        "scan_valid": "L", "dane_supported": "M", "dane_partial": "N",
-        "has_spf": "O", "has_good_spf": "P",
-        "has_dmarc": "Q", "has_good_dmarc": "R",
+        "scan_valid": "L",
+        "dane_supported": "M",
+        "dane_partial": "N",
+        "has_spf": "O",
+        "has_good_spf": "P",
+        "has_dmarc": "Q",
+        "has_good_dmarc": "R",
     }
 
     wb = writer.book
@@ -162,7 +196,7 @@ with pd.ExcelWriter(out_path, engine="openpyxl") as writer:
         col += 1
         # Total count
         if cc == "Total":
-            ws2.cell(row=row, column=col, value=f'=COUNTA({COL_COUNTRY})')
+            ws2.cell(row=row, column=col, value=f"=COUNTA({COL_COUNTRY})")
         else:
             ws2.cell(row=row, column=col, value=f'=COUNTIF({COL_COUNTRY},"{cc}")')
         total_cell = f"${get_column_letter(col)}${row}"
@@ -195,7 +229,7 @@ with pd.ExcelWriter(out_path, engine="openpyxl") as writer:
         ws2.cell(row=row, column=col, value=cc).font = Font(bold=(cc == "Total"))
         col += 1
         if cc == "Total":
-            ws2.cell(row=row, column=col, value=f'=COUNTA({COL_COUNTRY})')
+            ws2.cell(row=row, column=col, value=f"=COUNTA({COL_COUNTRY})")
         else:
             ws2.cell(row=row, column=col, value=f'=COUNTIF({COL_COUNTRY},"{cc}")')
         total_cell = f"${get_column_letter(col)}${row}"
@@ -229,7 +263,7 @@ with pd.ExcelWriter(out_path, engine="openpyxl") as writer:
         ws2.cell(row=row, column=col, value=cc).font = Font(bold=(cc == "Total"))
         col += 1
         if cc == "Total":
-            ws2.cell(row=row, column=col, value=f'=COUNTA({COL_COUNTRY})')
+            ws2.cell(row=row, column=col, value=f"=COUNTA({COL_COUNTRY})")
         else:
             ws2.cell(row=row, column=col, value=f'=COUNTIF({COL_COUNTRY},"{cc}")')
         total_cell = f"${get_column_letter(col)}${row}"
@@ -237,7 +271,7 @@ with pd.ExcelWriter(out_path, engine="openpyxl") as writer:
         for label, src_col in bool_cols.items():
             src_range = f"'{S}'!{src_col}$2:{src_col}${n}"
             if cc == "Total":
-                ws2.cell(row=row, column=col, value=f'=COUNTIF({src_range},TRUE)')
+                ws2.cell(row=row, column=col, value=f"=COUNTIF({src_range},TRUE)")
             else:
                 ws2.cell(row=row, column=col, value=f'=COUNTIFS({COL_COUNTRY},"{cc}",{src_range},TRUE)')
             n_cell = f"{get_column_letter(col)}{row}"
