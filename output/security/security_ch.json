@@ -4,7 +4,7 @@
   "total":2110,
   "counts":{
     "scanned":2109,
-    "dane_supported":0,
+    "dane_supported":167,
     "spf":2096,
     "good_spf":1690,
     "dmarc":1175,
@@ -4842,8 +4842,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -4927,8 +4927,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -5138,8 +5138,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -5159,8 +5159,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -5642,8 +5642,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -5769,8 +5769,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -7903,8 +7903,8 @@
         "mail.tankred.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -9935,8 +9935,8 @@
         "mx2.mail.hostpoint.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -10553,8 +10553,8 @@
         "reinach-bl-ch.gate.seppmail.cloud"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -11144,8 +11144,8 @@
         "mx2.mail.hostpoint.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -11312,8 +11312,8 @@
         "mail.tankred.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -11629,8 +11629,8 @@
         "mail.tankred.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -12272,8 +12272,8 @@
         "mx2.mail.hostpoint.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -12600,8 +12600,8 @@
         "mx2.mail.hostpoint.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -12921,8 +12921,8 @@
         "dmzfml0002.ari-ag.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -12965,8 +12965,8 @@
         "dmzfml0002.ari-ag.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -12987,8 +12987,8 @@
         "dmzfml0002.ari-ag.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -13009,8 +13009,8 @@
         "dmzfml0002.ari-ag.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -13031,8 +13031,8 @@
         "dmzfml0002.ari-ag.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -13053,8 +13053,8 @@
         "dmzfml0002.ari-ag.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -13121,8 +13121,8 @@
         "dmzfml0002.ari-ag.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -13143,8 +13143,8 @@
         "dmzfml0002.ari-ag.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -13165,8 +13165,8 @@
         "dmzfml0002.ari-ag.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -13187,8 +13187,8 @@
         "dmzfml0002.ari-ag.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -13254,8 +13254,8 @@
         "dmzfml0002.ari-ag.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -13276,8 +13276,8 @@
         "dmzfml0002.ari-ag.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -13322,8 +13322,8 @@
         "dmzfml0002.ari-ag.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -13344,8 +13344,8 @@
         "dmzfml0002.ari-ag.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -13366,8 +13366,8 @@
         "dmzfml0002.ari-ag.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -13388,8 +13388,8 @@
         "dmzfml0002.ari-ag.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -13410,8 +13410,8 @@
         "dmzfml0002.ari-ag.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -13568,8 +13568,8 @@
         "mailbackup.tankred.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -13657,8 +13657,8 @@
         "mail.tankred.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -13792,8 +13792,8 @@
         "stadt-sg-ch.gate.seppmail.cloud"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -15562,8 +15562,8 @@
         "uzwil-ch.gate.seppmail.cloud"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -15843,8 +15843,8 @@
         "mail.wynau.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -15950,8 +15950,8 @@
         "mail2.hosttech.eu"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -16186,8 +16186,8 @@
         "mail.tankred.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -16935,8 +16935,8 @@
         "mx2.mail.hostpoint.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -17584,8 +17584,8 @@
         "mx2.mail.hostpoint.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -17628,8 +17628,8 @@
         "mx2.mail.hostpoint.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -17779,8 +17779,8 @@
         "mx2.mail.hostpoint.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -18227,8 +18227,8 @@
         "mail.tankred.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -19205,8 +19205,8 @@
         "mail.tankred.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -19353,8 +19353,8 @@
         "mailbackup.tankred.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -20239,8 +20239,8 @@
         "brugg-ch.gate.seppmail.cloud"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -20600,8 +20600,8 @@
         "windisch-ch.gate.seppmail.cloud"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -21299,8 +21299,8 @@
         "mail.tankred.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -21636,8 +21636,8 @@
         "mail.tankred.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -21850,8 +21850,8 @@
         "seon-ch.gate.seppmail.cloud"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -21914,8 +21914,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -22442,8 +22442,8 @@
         "moehlin-ch.gate.seppmail.cloud"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -22526,8 +22526,8 @@
         "rheinfelden-ch.gate.seppmail.cloud"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -22842,8 +22842,8 @@
         "mail.tankred.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -22863,8 +22863,8 @@
         "rothrist-ch.gate.seppmail.cloud"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -22976,8 +22976,8 @@
         "mail.tankred.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -23420,8 +23420,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -23640,8 +23640,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -24005,8 +24005,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -25393,8 +25393,8 @@
         "mail.tankred.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -25908,8 +25908,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -27709,8 +27709,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -27859,8 +27859,8 @@
         "mail.tankred.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -28011,8 +28011,8 @@
         "mail.tankred.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -28476,8 +28476,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -28560,8 +28560,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -28602,8 +28602,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -28644,8 +28644,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -28665,8 +28665,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -28687,8 +28687,8 @@
         "mail.tankred.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -28750,8 +28750,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -28772,8 +28772,8 @@
         "mail.tankred.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -28899,8 +28899,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -28920,8 +28920,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -29067,8 +29067,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -29088,8 +29088,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -29151,8 +29151,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -29172,8 +29172,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -29214,8 +29214,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -29235,8 +29235,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -29362,8 +29362,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -29450,8 +29450,8 @@
         "mail.tankred.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -29579,8 +29579,8 @@
         "mx4.mtaroutes.com"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -29729,8 +29729,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -29813,8 +29813,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -29897,8 +29897,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -29981,8 +29981,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -30044,8 +30044,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -30086,8 +30086,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -30234,8 +30234,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -30786,8 +30786,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -30892,8 +30892,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -30976,8 +30976,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -30997,8 +30997,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -31303,8 +31303,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -31433,8 +31433,8 @@
         "vauxsurmorges-ch01bb.mail.protection.outlook.com"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -31622,8 +31622,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -31643,8 +31643,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -31664,8 +31664,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -31811,8 +31811,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -31859,8 +31859,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -31880,8 +31880,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -32766,8 +32766,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -32892,8 +32892,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -32955,8 +32955,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -32976,8 +32976,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -32997,8 +32997,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -33039,8 +33039,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -33102,8 +33102,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -33503,8 +33503,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -33524,8 +33524,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -33693,8 +33693,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -33735,8 +33735,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -33989,8 +33989,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -34220,8 +34220,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -34304,8 +34304,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -34642,8 +34642,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -34727,8 +34727,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -34790,8 +34790,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -34832,8 +34832,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -34958,8 +34958,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -35021,8 +35021,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -35042,8 +35042,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -35063,8 +35063,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -35084,8 +35084,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -35168,8 +35168,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -35207,7 +35207,10 @@
       "region":"Kanton Waadt",
       "domain":"",
       "mx_records":[],
-      "dane":null,
+      "dane":{
+        "supported":false,
+        "partial":false
+      },
       "dss":null,
       "scan_valid":false
     },
@@ -35369,8 +35372,8 @@
         "mx.rhone.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -35797,8 +35800,8 @@
         "mx.rhone.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -35965,8 +35968,8 @@
         "mx.rhone.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -36052,8 +36055,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -36626,8 +36629,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -36882,8 +36885,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -37330,8 +37333,8 @@
         "mailbackup.tankred.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -37351,8 +37354,8 @@
         "mx.rhone.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -37542,8 +37545,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -37563,8 +37566,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -37797,8 +37800,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -38037,8 +38040,8 @@
         "mail.tankred.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -39823,8 +39826,8 @@
         "mail.tankred.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -40348,8 +40351,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -40411,8 +40414,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -40568,8 +40571,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -40589,8 +40592,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -40610,8 +40613,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -40631,8 +40634,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -40652,8 +40655,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -40784,8 +40787,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -40874,8 +40877,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -40938,8 +40941,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -41007,8 +41010,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -41028,8 +41031,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -41202,8 +41205,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -41673,8 +41676,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -41781,8 +41784,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -41802,8 +41805,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -41823,8 +41826,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -41975,8 +41978,8 @@
         "mta-gw.infomaniak.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -42178,8 +42181,8 @@
         "mail.tankred.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -42398,8 +42401,8 @@
         "mail.tankred.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -42441,8 +42444,8 @@
         "mail.tankred.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -42526,8 +42529,8 @@
         "mail.tankred.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -42940,8 +42943,8 @@
         "mail.tankred.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -43285,8 +43288,8 @@
         "mailbackup.tankred.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -43475,8 +43478,8 @@
         "exchange.hosttech.eu"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -43497,8 +43500,8 @@
         "mail.tankred.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -43675,8 +43678,8 @@
         "mail.tankred.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
@@ -44371,8 +44374,8 @@
         "mx2.mail.hostpoint.ch"
       ],
       "dane":{
-        "supported":false,
-        "partial":false
+        "supported":true,
+        "partial":true
       },
       "dss":{
         "has_spf":true,
