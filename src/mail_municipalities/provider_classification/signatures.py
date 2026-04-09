@@ -85,7 +85,7 @@ GATEWAY_KEYWORDS: dict[str, list[str]] = {
     "abxsec": ["abxsec.com"],
     "messagelabs": ["messagelabs.com"],
     "fortimail": ["fortimail.", "fortimailcloud.com"],
-    "nospamproxy": ["nospamproxy.de", "nospamproxy.com", "as-scan.de"],
+    "nospamproxy": ["nospamproxy.de", "nospamproxy.com"],
     "retarus": ["retarus.com"],
     "spamexperts": ["spamexperts.eu", "spamexperts.net", "spamexperts.com"],
     "ikarus": ["mymailwall.com", "mymailwall.at"],
