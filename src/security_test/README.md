@@ -18,6 +18,15 @@ uv run scan ch -v # verbose (streams Docker output)
 - Docker (with `docker compose` v2 or `docker-compose` v1)
 - Domain resolver output in `output/domains/domains_{cc}.json`
 
+> [!IMPORTANT]
+> **DANE/TLSA scanning requires unrestricted outbound port 25 (SMTP).** The `gotls` tool connects to MX servers on port 25 to validate TLS certificates against TLSA records. Most residential ISPs and macOS/Docker Desktop environments block outbound SMTP, causing all DANE checks to fail with "connection refused" while SPF/DKIM/DMARC results remain correct (DNS-only).
+>
+> Verify port 25 access before relying on DANE results:
+> ```bash
+> nc -z -w5 mta-gw.infomaniak.ch 25 && echo "open" || echo "blocked"
+> ```
+> If blocked, run the scanner on a VPS or server with unrestricted SMTP access.
+
 ## Architecture
 
 - **scanner/** — Kotlin app that resolves MX records and runs TLS (testssl.sh), DANE (gotls), and DSS (SPF/DKIM/DMARC) probes against each domain

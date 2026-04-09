@@ -2,6 +2,8 @@
 data/*/cache.db
 data/*/cache.db-wal
 data/*/cache.db-shm
+output/export.xlsx
+output/~$export.xlsx
 
 # OS generated files
 .DS_Store
