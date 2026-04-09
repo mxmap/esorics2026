@@ -6,7 +6,7 @@ The system has three stages:
 
 1. **Domain Resolver** -- Cross-references official registries, Wikidata, and static datasets to build a list of candidate website domains per municipality. Scrapes those websites for email addresses, validates them via DNS/MX lookups, and applies filtering heuristics to produce a final mapping of municipality code to email domain.
 2. **Provider Classification** -- Fingerprints DNS records (MX, SPF, DKIM, autodiscover, SMTP banners, ASN lookups) to determine whether each municipality uses Microsoft 365, Google Workspace, AWS, Infomaniak, a Swiss ISP, or independent hosting.
-3. **Security Analysis** -- *(planned)* Evaluates email security posture.
+3. **Security Analysis** -- Wraps a Kotlin/Docker scanner to evaluate DANE/DNSSEC and email authentication (SPF, DKIM, DMARC) for each municipality's email domain.
 
 ## How to run
 
@@ -29,8 +29,11 @@ uv run classify ch            # classify Swiss municipality providers
 uv run classify de            # classify German municipality providers
 uv run classify at            # classify Austrian municipality providers
 
-# Stage 3: Analyze security posture
-TODO
+# Stage 3: Security scan (requires Docker)
+uv run scan ch                # scan Swiss municipalities
+uv run scan de                # scan German municipalities
+uv run scan at                # scan Austrian municipalities
+uv run scan ch -v             # verbose (streams Docker output)
 ```
 
 ## Output files
@@ -71,7 +74,45 @@ Three tiers per country:
 
 ### `output/security/` -- Security Analysis Output
 
-*(Planned -- file format TBD)*
+> [!IMPORTANT]
+> DANE/TLSA scanning requires unrestricted outbound port 25 (SMTP). Most residential ISPs and macOS/Docker Desktop environments block this. SPF/DKIM/DMARC results are unaffected. See [`src/security_test/README.md`](src/security_test/README.md) for details.
+
+**`security_{cc}.json`** -- Per-municipality security assessment with aggregate counts.
+
+```json
+{
+  "generated": "2026-04-08T14:47:39Z",
+  "commit": "fa40a79",
+  "total": 2110,
+  "counts": {
+    "scanned": 2109,
+    "dane_supported": 0,
+    "spf": 2096,
+    "good_spf": 1690,
+    "dmarc": 1175,
+    "good_dmarc": 284,
+    "dkim": 597
+  },
+  "municipalities": [
+    {
+      "code": "1",
+      "name": "Aeugst am Albis",
+      "region": "Kanton Zürich",
+      "domain": "aeugst-albis.ch",
+      "mx_records": ["mailgw01.zii.ch", "mailgw02.zii.ch"],
+      "dane": { "supported": false, "partial": false },
+      "dss": {
+        "has_spf": true,
+        "has_good_spf": true,
+        "has_dmarc": false,
+        "has_good_dmarc": false,
+        "has_dkim": false
+      },
+      "scan_valid": true
+    }
+  ]
+}
+```
 
 ## Maps
 
