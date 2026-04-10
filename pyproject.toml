@@ -42,7 +42,6 @@ resolve = "mail_municipalities.cli:resolve"
 classify = "mail_municipalities.cli:classify"
 analyze = "mail_municipalities.cli:analyze"
 scan = "mail_municipalities.cli:scan"
-sec-analyze = "mail_municipalities.cli:sec_analyze"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

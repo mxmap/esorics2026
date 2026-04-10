@@ -1,4 +1,4 @@
-"""Export analysis tables as LNCS-formatted LaTeX fragments."""
+"""Export provider analysis tables as LNCS-formatted LaTeX fragments."""
 
 from __future__ import annotations
 
@@ -7,18 +7,18 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from mail_municipalities.analysis.helpers import (
-    COUNTRY_NAMES as _COUNTRY_NAMES,
-    divider as _divider,
-    esc as _esc,
-    num as _num,
-    pct as _pct,
-)
-
-from .analyze import (
+from mail_municipalities.provider_classification.analyze import (
     _PROVIDERS_ORDERED,
     _category,
     _region_abbr,
+)
+
+from .helpers import (
+    COUNTRY_NAMES,
+    divider,
+    esc,
+    num,
+    pct,
 )
 
 
@@ -33,7 +33,7 @@ def latex_overall_summary(
     country_code: str,
 ) -> str:
     total = len(munis)
-    country = _COUNTRY_NAMES.get(country_code, country_code.upper())
+    country = COUNTRY_NAMES.get(country_code, country_code.upper())
 
     cat_counts: Counter[str] = Counter()
     for m in munis.values():
@@ -48,7 +48,7 @@ def latex_overall_summary(
         cnt = prov_counts.get(prov, 0)
         cat = _category(prov, category_map)
         cat_label = "US Cloud" if cat == "us-cloud" else cat.replace("-", " ").title()
-        rows.append(f"        {_esc(prov.title())} & {cat_label} & {_num(cnt)} & {_pct(cnt, total)}\\% \\\\")
+        rows.append(f"        {esc(prov.title())} & {cat_label} & {num(cnt)} & {pct(cnt, total)}\\% \\\\")
 
     us = cat_counts.get("us-cloud", 0)
     domestic_key = f"{country_code}-based"
@@ -58,7 +58,7 @@ def latex_overall_summary(
         f"\\begin{{table}}[t]\n"
         f"    \\centering\n"
         f"    \\caption{{Provider distribution for {country} "
-        f"($n={_num(total)}$ municipalities).}}\n"
+        f"($n={num(total)}$ municipalities).}}\n"
         f"    \\label{{tab:overall-{country_code}}}\n"
         f"    \\small\n"
         f"    \\begin{{tabular}}{{llrr}}\n"
@@ -66,8 +66,8 @@ def latex_overall_summary(
         f"        \\textbf{{Provider}} & \\textbf{{Category}} & \\textbf{{Count}} & \\textbf{{\\%}} \\\\\n"
         f"        \\midrule\n" + "\n".join(rows) + "\n"
         f"        \\midrule\n"
-        f"        US Cloud (total) & & {_num(us)} & {_pct(us, total)}\\% \\\\\n"
-        f"        Domestic (total) & & {_num(dom)} & {_pct(dom, total)}\\% \\\\\n"
+        f"        US Cloud (total) & & {num(us)} & {pct(us, total)}\\% \\\\\n"
+        f"        Domestic (total) & & {num(dom)} & {pct(dom, total)}\\% \\\\\n"
         f"        \\bottomrule\n"
         f"    \\end{{tabular}}\n"
         f"\\end{{table}}\n"
@@ -85,7 +85,7 @@ def latex_regional(
     region_lookup: dict[str, str],
     country_code: str,
 ) -> str:
-    country = _COUNTRY_NAMES.get(country_code, country_code.upper())
+    country = COUNTRY_NAMES.get(country_code, country_code.upper())
 
     by_region: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for m in munis.values():
@@ -105,7 +105,7 @@ def latex_regional(
     rows: list[str] = []
     for abbr, total, pc, us_pct, dom_pct in rows_data:
         rows.append(
-            f"        {_esc(abbr)} & {_num(total)}"
+            f"        {esc(abbr)} & {num(total)}"
             f" & {pc.get('microsoft', 0)}"
             f" & {pc.get('google', 0)}"
             f" & {pc.get('aws', 0)}"
@@ -141,7 +141,7 @@ def latex_regional(
 
 
 def latex_confidence(munis: dict[str, Any], country_code: str) -> str:
-    country = _COUNTRY_NAMES.get(country_code, country_code.upper())
+    country = COUNTRY_NAMES.get(country_code, country_code.upper())
 
     confidences = [m["classification_confidence"] for m in munis.values()]
     total = len(confidences)
@@ -150,9 +150,9 @@ def latex_confidence(munis: dict[str, Any], country_code: str) -> str:
     rows: list[str] = []
     for lo, hi in buckets:
         cnt = sum(1 for c in confidences if lo <= c <= (hi if hi == 100 else hi - 0.01))
-        pct = _pct(cnt, total)
+        pct_val = pct(cnt, total)
         label = f"{lo}--{hi}\\%"
-        rows.append(f"        {label} & {_num(cnt)} & {pct}\\% \\\\")
+        rows.append(f"        {label} & {num(cnt)} & {pct_val}\\% \\\\")
 
     avg = sum(confidences) / total if total else 0
 
@@ -169,7 +169,7 @@ def latex_confidence(munis: dict[str, Any], country_code: str) -> str:
         avg_p = sum(confs) / len(confs)
         min_p = min(confs)
         low = sum(1 for c in confs if c < 60)
-        prov_rows.append(f"        {_esc(prov.title())} & {avg_p:.1f}\\% & {min_p:.1f}\\% & {low} \\\\")
+        prov_rows.append(f"        {esc(prov.title())} & {avg_p:.1f}\\% & {min_p:.1f}\\% & {low} \\\\")
 
     return (
         f"\\begin{{table}}[t]\n"
@@ -203,7 +203,7 @@ def latex_confidence(munis: dict[str, Any], country_code: str) -> str:
 
 
 def latex_signals(munis: dict[str, Any], country_code: str) -> str:
-    country = _COUNTRY_NAMES.get(country_code, country_code.upper())
+    country = COUNTRY_NAMES.get(country_code, country_code.upper())
     total = len(munis)
 
     signal_counts: Counter[str] = Counter()
@@ -219,16 +219,16 @@ def latex_signals(munis: dict[str, Any], country_code: str) -> str:
 
     sig_rows: list[str] = []
     for kind, cnt in signal_counts.most_common():
-        sig_rows.append(f"        {_esc(kind)} & {_num(cnt)} & {_pct(cnt, total)}\\% \\\\")
+        sig_rows.append(f"        {esc(kind)} & {num(cnt)} & {pct(cnt, total)}\\% \\\\")
 
     combo_rows: list[str] = []
     for i, (combo, cnt) in enumerate(combo_counts.most_common(15), 1):
-        combo_rows.append(f"        {i} & {_esc(combo)} & {_num(cnt)} \\\\")
+        combo_rows.append(f"        {i} & {esc(combo)} & {num(cnt)} \\\\")
 
     return (
         f"\\begin{{table}}[t]\n"
         f"    \\centering\n"
-        f"    \\caption{{Signal coverage for {country} ($n={_num(total)}$).}}\n"
+        f"    \\caption{{Signal coverage for {country} ($n={num(total)}$).}}\n"
         f"    \\label{{tab:signals-{country_code}}}\n"
         f"    \\small\n"
         f"    \\begin{{tabular}}{{lrr}}\n"
@@ -260,7 +260,7 @@ def latex_signals(munis: dict[str, Any], country_code: str) -> str:
 
 
 def latex_gateways(munis: dict[str, Any], country_code: str) -> str:
-    country = _COUNTRY_NAMES.get(country_code, country_code.upper())
+    country = COUNTRY_NAMES.get(country_code, country_code.upper())
     total = len(munis)
 
     with_gw = {c: m for c, m in munis.items() if m.get("gateway")}
@@ -270,22 +270,22 @@ def latex_gateways(munis: dict[str, Any], country_code: str) -> str:
 
     gw_rows: list[str] = []
     for gw, cnt in gw_counts.most_common():
-        gw_rows.append(f"        {_esc(gw)} & {_num(cnt)} & {_pct(cnt, total)}\\% \\\\")
+        gw_rows.append(f"        {esc(gw)} & {num(cnt)} & {pct(cnt, total)}\\% \\\\")
 
     prov_rows: list[str] = []
     for prov in _PROVIDERS_ORDERED:
         cnt_w = sum(1 for m in with_gw.values() if m["provider"] == prov)
         cnt_wo = sum(1 for m in without_gw.values() if m["provider"] == prov)
         prov_rows.append(
-            f"        {_esc(prov.title())} & {_num(cnt_w)} & {_pct(cnt_w, len(with_gw))}\\%"
-            f" & {_num(cnt_wo)} & {_pct(cnt_wo, len(without_gw))}\\% \\\\"
+            f"        {esc(prov.title())} & {num(cnt_w)} & {pct(cnt_w, len(with_gw))}\\%"
+            f" & {num(cnt_wo)} & {pct(cnt_wo, len(without_gw))}\\% \\\\"
         )
 
     return (
         f"\\begin{{table}}[t]\n"
         f"    \\centering\n"
         f"    \\caption{{Security gateway usage for {country}"
-        f" ({_num(len(with_gw))}/{_num(total)} municipalities, {_pct(len(with_gw), total)}\\%).}}\n"
+        f" ({num(len(with_gw))}/{num(total)} municipalities, {pct(len(with_gw), total)}\\%).}}\n"
         f"    \\label{{tab:gateways-{country_code}}}\n"
         f"    \\small\n"
         f"    \\begin{{tabular}}{{lrr}}\n"
@@ -314,7 +314,7 @@ def latex_gateways(munis: dict[str, Any], country_code: str) -> str:
 
 
 def latex_domain_sharing(munis: dict[str, Any], country_code: str) -> str:
-    country = _COUNTRY_NAMES.get(country_code, country_code.upper())
+    country = COUNTRY_NAMES.get(country_code, country_code.upper())
 
     by_domain: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for m in munis.values():
@@ -326,13 +326,13 @@ def latex_domain_sharing(munis: dict[str, Any], country_code: str) -> str:
 
     rows: list[str] = []
     for domain, ms in shared_sorted[:20]:
-        rows.append(f"        \\texttt{{{_esc(domain)}}} & {len(ms)} & {_esc(ms[0]['provider'].title())} \\\\")
+        rows.append(f"        \\texttt{{{esc(domain)}}} & {len(ms)} & {esc(ms[0]['provider'].title())} \\\\")
 
     return (
         f"\\begin{{table}}[t]\n"
         f"    \\centering\n"
         f"    \\caption{{Shared email domains in {country}"
-        f" ({_num(len(shared))} domains used by multiple municipalities).}}\n"
+        f" ({num(len(shared))} domains used by multiple municipalities).}}\n"
         f"    \\label{{tab:shared-domains-{country_code}}}\n"
         f"    \\small\n"
         f"    \\begin{{tabularx}}{{\\textwidth}}{{Xrc}}\n"
@@ -355,7 +355,7 @@ def latex_low_confidence(
     region_lookup: dict[str, str],
     country_code: str,
 ) -> str:
-    country = _COUNTRY_NAMES.get(country_code, country_code.upper())
+    country = COUNTRY_NAMES.get(country_code, country_code.upper())
 
     low = [m for m in munis.values() if m["classification_confidence"] < 60]
     low.sort(key=lambda m: m["classification_confidence"])
@@ -365,16 +365,16 @@ def latex_low_confidence(
         signals = "+".join(sorted({s["kind"] for s in m.get("classification_signals", [])}))
         region = _region_abbr(m.get("region", ""), region_lookup)
         rows.append(
-            f"        {m['code']} & {_esc(m['name'])} & {region}"
-            f" & {_esc(m['provider'].title())} & {m['classification_confidence']:.0f}\\%"
-            f" & {_esc(signals)} \\\\"
+            f"        {m['code']} & {esc(m['name'])} & {region}"
+            f" & {esc(m['provider'].title())} & {m['classification_confidence']:.0f}\\%"
+            f" & {esc(signals)} \\\\"
         )
 
     return (
         f"\\begin{{table}}[t]\n"
         f"    \\centering\n"
         f"    \\caption{{Low-confidence classifications for {country}"
-        f" ({_num(len(low))} municipalities below 60\\%).}}\n"
+        f" ({num(len(low))} municipalities below 60\\%).}}\n"
         f"    \\label{{tab:low-confidence-{country_code}}}\n"
         f"    \\small\n"
         f"    \\renewcommand{{\\arraystretch}}{{0.85}}\n"
@@ -405,7 +405,7 @@ def export_latex(
     """Generate all LaTeX tables and write to *output_path*."""
     generated = data.get("generated", "unknown")
     commit = data.get("commit", "unknown")
-    country = _COUNTRY_NAMES.get(country_code, country_code.upper())
+    country = COUNTRY_NAMES.get(country_code, country_code.upper())
 
     header = (
         f"% Auto-generated LaTeX tables for {country}\n"
@@ -419,16 +419,16 @@ def export_latex(
     )
 
     sections = [
-        (_divider("1. Overall Summary"), latex_overall_summary(munis, category_map, country_code)),
-        (_divider("2. Regional Breakdown"), latex_regional(munis, category_map, region_lookup, country_code)),
-        (_divider("3. Confidence Distribution"), latex_confidence(munis, country_code)),
-        (_divider("4. Signal Analysis"), latex_signals(munis, country_code)),
-        (_divider("5. Gateway Report"), latex_gateways(munis, country_code)),
-        (_divider("6. Domain Sharing"), latex_domain_sharing(munis, country_code)),
-        (_divider("7. Low-Confidence / Review Candidates"), latex_low_confidence(munis, region_lookup, country_code)),
+        (divider("1. Overall Summary"), latex_overall_summary(munis, category_map, country_code)),
+        (divider("2. Regional Breakdown"), latex_regional(munis, category_map, region_lookup, country_code)),
+        (divider("3. Confidence Distribution"), latex_confidence(munis, country_code)),
+        (divider("4. Signal Analysis"), latex_signals(munis, country_code)),
+        (divider("5. Gateway Report"), latex_gateways(munis, country_code)),
+        (divider("6. Domain Sharing"), latex_domain_sharing(munis, country_code)),
+        (divider("7. Low-Confidence / Review Candidates"), latex_low_confidence(munis, region_lookup, country_code)),
     ]
 
-    content = header + "\n".join(divider + table for divider, table in sections)
+    content = header + "\n".join(d + table for d, table in sections)
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(content, encoding="utf-8")

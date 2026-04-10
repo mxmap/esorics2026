@@ -177,24 +177,19 @@ def scan_cmd(
     run(domains_path, output_path, cc=country, verbose=verbose)
 
 
-@app.command("analyze")
-def analyze_cmd(
-    data_path: Annotated[
-        Optional[Path],
-        typer.Argument(help="Path to providers JSON file"),
-    ] = None,
-    all_countries: Annotated[
-        bool,
-        typer.Option("--all", help="Analyze all countries and produce combined table"),
-    ] = False,
-    latex: Annotated[
-        bool,
-        typer.Option("--latex", help="Export tables as LNCS-formatted LaTeX file"),
-    ] = False,
+# ── Analyze subcommands ──────────────────────────────────────────────
+
+_analyze_app = typer.Typer(add_completion=False, help="Analyze classification and security results.")
+app.add_typer(_analyze_app, name="analyze")
+
+
+def _analyze_providers_impl(
+    data_path: Path | None = None,
+    all_countries: bool = False,
+    latex: bool = False,
 ) -> None:
-    """Analyze provider classification results."""
     if all_countries:
-        from mail_municipalities.provider_classification.combined_analysis import (
+        from mail_municipalities.analysis.provider_combined import (
             export_combined_latex,
             print_combined_summary,
         )
@@ -210,12 +205,11 @@ def analyze_cmd(
     main(data_path, latex=latex)
 
 
-def _sec_analyze_impl(
+def _analyze_security_impl(
     data_path: Path | None = None,
     all_countries: bool = False,
     latex: bool = False,
 ) -> None:
-    """Shared sec-analyze implementation."""
     if all_countries:
         from mail_municipalities.analysis.security_combined import (
             export_combined_security_latex,
@@ -233,8 +227,27 @@ def _sec_analyze_impl(
     security_main(data_path, latex=latex)
 
 
-@app.command("sec-analyze")
-def sec_analyze_cmd(
+@_analyze_app.command("providers")
+def analyze_providers_cmd(
+    data_path: Annotated[
+        Optional[Path],
+        typer.Argument(help="Path to providers JSON file"),
+    ] = None,
+    all_countries: Annotated[
+        bool,
+        typer.Option("--all", help="Analyze all countries and produce combined table"),
+    ] = False,
+    latex: Annotated[
+        bool,
+        typer.Option("--latex", help="Export tables as LNCS-formatted LaTeX file"),
+    ] = False,
+) -> None:
+    """Analyze provider classification results."""
+    _analyze_providers_impl(data_path, all_countries, latex)
+
+
+@_analyze_app.command("security")
+def analyze_security_cmd(
     data_path: Annotated[
         Optional[Path],
         typer.Argument(help="Path to security JSON file"),
@@ -249,7 +262,7 @@ def sec_analyze_cmd(
     ] = False,
 ) -> None:
     """Analyze security scan results."""
-    _sec_analyze_impl(data_path, all_countries, latex)
+    _analyze_security_impl(data_path, all_countries, latex)
 
 
 # ── Script entry points (called by [project.scripts]) ──────────────
@@ -337,42 +350,6 @@ def _classify_main(
     asyncio.run(run(domains_path, output_path, country_code=country))
 
 
-_analyze_app = typer.Typer(add_completion=False)
-
-
-@_analyze_app.command()
-def _analyze_main(
-    data_path: Annotated[
-        Optional[Path],
-        typer.Argument(help="Path to providers JSON file"),
-    ] = None,
-    all_countries: Annotated[
-        bool,
-        typer.Option("--all", help="Analyze all countries and produce combined table"),
-    ] = False,
-    latex: Annotated[
-        bool,
-        typer.Option("--latex", help="Export tables as LNCS-formatted LaTeX file"),
-    ] = False,
-) -> None:
-    """Analyze provider classification results."""
-    if all_countries:
-        from mail_municipalities.provider_classification.combined_analysis import (
-            export_combined_latex,
-            print_combined_summary,
-        )
-
-        if latex:
-            export_combined_latex()
-        else:
-            print_combined_summary()
-        return
-
-    from mail_municipalities.provider_classification.analyze import main
-
-    main(data_path, latex=latex)
-
-
 _scan_app = typer.Typer(add_completion=False)
 
 
@@ -407,28 +384,6 @@ def _scan_main(
     run(domains_path, output_path, cc=country, verbose=verbose)
 
 
-_sec_analyze_app = typer.Typer(add_completion=False)
-
-
-@_sec_analyze_app.command()
-def _sec_analyze_main(
-    data_path: Annotated[
-        Optional[Path],
-        typer.Argument(help="Path to security JSON file"),
-    ] = None,
-    all_countries: Annotated[
-        bool,
-        typer.Option("--all", help="Analyze all countries and produce combined table"),
-    ] = False,
-    latex: Annotated[
-        bool,
-        typer.Option("--latex", help="Export tables as LNCS-formatted LaTeX file"),
-    ] = False,
-) -> None:
-    """Analyze security scan results."""
-    _sec_analyze_impl(data_path, all_countries, latex)
-
-
 def resolve() -> None:
     """Entry point for 'resolve' script."""
     _resolve_app()
@@ -447,8 +402,3 @@ def analyze() -> None:
 def scan() -> None:
     """Entry point for 'scan' script."""
     _scan_app()
-
-
-def sec_analyze() -> None:
-    """Entry point for 'sec-analyze' script."""
-    _sec_analyze_app()

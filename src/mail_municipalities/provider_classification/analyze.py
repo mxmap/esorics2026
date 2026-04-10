@@ -448,7 +448,7 @@ def main(data_path: Path | None = None, *, country_code: str | None = None, late
     if latex:
         from datetime import datetime, timezone
 
-        from .latex_export import export_latex
+        from mail_municipalities.analysis.provider_latex import export_latex
 
         timestamp = datetime.now(tz=timezone.utc).strftime("%Y%m%d_%H%M%S")
         output_dir = path.parent

@@ -3,26 +3,24 @@
 from __future__ import annotations
 
 import sys
-from collections.abc import Sequence
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
 import pandas as pd
 
-from mail_municipalities.analysis.helpers import (
+from mail_municipalities.provider_classification.analyze import (
+    _PROVIDERS_ORDERED,
+    load_data,
+)
+
+from .helpers import (
+    COUNTRIES as _COUNTRIES,
     COUNTRY_NAMES as _COUNTRY_NAMES,
     esc as _esc,
     num as _num,
     region_name as _region_name,
 )
-
-from .analyze import (
-    _PROVIDERS_ORDERED,
-    load_data,
-)
-
-_COUNTRIES: Sequence[str] = ("at", "ch", "de")
 
 
 # ---------------------------------------------------------------------------
