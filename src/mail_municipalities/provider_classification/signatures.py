@@ -26,7 +26,12 @@ class ProviderSignature(BaseModel):
 SIGNATURES: list[ProviderSignature] = [
     ProviderSignature(
         provider=Provider.MS365,
-        mx_patterns=("mail.protection.outlook.com", "mx.microsoft"),
+        mx_patterns=(
+            "mail.protection.outlook.com",
+            "mx.microsoft",
+            "mail.protection.outlook.de",
+            "mail.eo.outlook.com",
+        ),
         spf_includes=("spf.protection.outlook.com",),
         dkim_selectors=("selector1", "selector2"),
         dkim_cname_patterns=("onmicrosoft.com",),

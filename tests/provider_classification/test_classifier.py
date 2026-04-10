@@ -362,8 +362,8 @@ class TestAggregate:
         result, _ = _aggregate(evidence)
         # Domestic fallback: DOMESTIC has evidence but no primary signals
         assert result.provider == Provider.DOMESTIC
-        # No MX, secondary evidence only → dom_secondary 0.20 + 1 extra kind × 0.02
-        assert result.confidence == pytest.approx(0.22)
+        # No MX, secondary evidence only → dom_secondary 0.20 (no boost)
+        assert result.confidence == pytest.approx(0.20)
 
     def test_spf_ip_alone_no_winner(self):
         """SPF_IP(Google) alone → INDEPENDENT (regression test for zuerich.ch)."""
@@ -738,6 +738,24 @@ class TestAggregate:
         assert result.confidence == pytest.approx(0.67)
 
 
+class TestEoOutlookMxPattern:
+    """mail.eo.outlook.com is a newer MS365 MX hostname that must be recognized."""
+
+    def test_eo_outlook_mx_classified_as_ms365(self):
+        """Siselen scenario: MX=*.mail.eo.outlook.com → MS365, not FOREIGN."""
+        evidence = [
+            _ev(SignalKind.MX, Provider.MS365),
+            _ev(SignalKind.SPF, Provider.MS365),
+        ]
+        result, _ = _aggregate(
+            evidence,
+            mx_hosts=["siselen-ch.mail.eo.outlook.com"],
+            spf_raw="v=spf1 include:spf.protection.outlook.com ~all",
+        )
+        assert result.provider == Provider.MS365
+        assert result.confidence == pytest.approx(0.90)
+
+
 class TestDomesticMxOverride:
     """Domestic MX override: non-cloud, non-gateway MX + ASN country → country classification."""
 
@@ -754,17 +772,15 @@ class TestDomesticMxOverride:
             spf_raw="v=spf1 include:spf.protection.outlook.com ~all",
         )
         assert result.provider == Provider.DOMESTIC
-        # dom_mx_spf (0.80) + TENANT + ASN boosts
-        assert result.confidence >= 0.80
+        # dom_mx_spf (0.80), no boosts for country classification
+        assert result.confidence == pytest.approx(0.80)
 
     def test_domestic_mx_no_cloud_signals(self):
         """Domestic MX with only ASN evidence → DOMESTIC."""
         evidence = [
             _ev(SignalKind.ASN, Provider.DOMESTIC),
         ]
-        result, rule = _aggregate(
-            evidence, mx_hosts=["mail.example.ch"], spf_raw="v=spf1 a mx ~all"
-        )
+        result, rule = _aggregate(evidence, mx_hosts=["mail.example.ch"], spf_raw="v=spf1 a mx ~all")
         assert result.provider == Provider.DOMESTIC
         assert rule == "dom_mx_spf"
 

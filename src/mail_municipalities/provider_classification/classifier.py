@@ -170,10 +170,7 @@ def _country_confidence(
 
     _rule_hits[name] += 1
     logger.debug("rule={} base={:.2f}", name, base)
-
-    extra_kinds = {e.kind for e in evidence} - {SignalKind.MX, SignalKind.SPF}
-    boost = len(extra_kinds) * _BOOST_PER_SIGNAL
-    return min(1.0, base + boost), name
+    return base, name
 
 
 def _aggregate(
