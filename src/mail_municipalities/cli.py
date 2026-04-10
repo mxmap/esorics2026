@@ -177,8 +177,58 @@ def scan_cmd(
     run(domains_path, output_path, cc=country, verbose=verbose)
 
 
-@app.command("analyze")
-def analyze_cmd(
+# ── Analyze subcommands ──────────────────────────────────────────────
+
+_analyze_app = typer.Typer(add_completion=False, help="Analyze classification and security results.")
+app.add_typer(_analyze_app, name="analyze")
+
+
+def _analyze_providers_impl(
+    data_path: Path | None = None,
+    all_countries: bool = False,
+    latex: bool = False,
+) -> None:
+    if all_countries:
+        from mail_municipalities.analysis.provider_combined import (
+            export_combined_latex,
+            print_combined_summary,
+        )
+
+        if latex:
+            export_combined_latex()
+        else:
+            print_combined_summary()
+        return
+
+    from mail_municipalities.provider_classification.analyze import main
+
+    main(data_path, latex=latex)
+
+
+def _analyze_security_impl(
+    data_path: Path | None = None,
+    all_countries: bool = False,
+    latex: bool = False,
+) -> None:
+    if all_countries:
+        from mail_municipalities.analysis.security_combined import (
+            export_combined_security_latex,
+            print_combined_security_summary,
+        )
+
+        if latex:
+            export_combined_security_latex()
+        else:
+            print_combined_security_summary()
+        return
+
+    from mail_municipalities.analysis.security_latex import main as security_main
+
+    security_main(data_path, latex=latex)
+
+
+@_analyze_app.command("providers")
+def analyze_providers_cmd(
     data_path: Annotated[
         Optional[Path],
         typer.Argument(help="Path to providers JSON file"),
@@ -193,21 +243,26 @@ def analyze_cmd(
     ] = False,
 ) -> None:
     """Analyze provider classification results."""
-    if all_countries:
-        from mail_municipalities.provider_classification.combined_analysis import (
-            export_combined_latex,
-            print_combined_summary,
-        )
+    _analyze_providers_impl(data_path, all_countries, latex)
 
-        if latex:
-            export_combined_latex()
-        else:
-            print_combined_summary()
-        return
 
-    from mail_municipalities.provider_classification.analyze import main
-
-    main(data_path, latex=latex)
+@_analyze_app.command("security")
+def analyze_security_cmd(
+    data_path: Annotated[
+        Optional[Path],
+        typer.Argument(help="Path to security JSON file"),
+    ] = None,
+    all_countries: Annotated[
+        bool,
+        typer.Option("--all", help="Analyze all countries and produce combined table"),
+    ] = False,
+    latex: Annotated[
+        bool,
+        typer.Option("--latex", help="Export tables as LNCS-formatted LaTeX file"),
+    ] = False,
+) -> None:
+    """Analyze security scan results."""
+    _analyze_security_impl(data_path, all_countries, latex)
 
 
 # ── Script entry points (called by [project.scripts]) ──────────────
@@ -293,42 +348,6 @@ def _classify_main(
 
     domains_path = domains_dir / f"domains_{country}_detailed.json"
     asyncio.run(run(domains_path, output_path, country_code=country))
-
-
-_analyze_app = typer.Typer(add_completion=False)
-
-
-@_analyze_app.command()
-def _analyze_main(
-    data_path: Annotated[
-        Optional[Path],
-        typer.Argument(help="Path to providers JSON file"),
-    ] = None,
-    all_countries: Annotated[
-        bool,
-        typer.Option("--all", help="Analyze all countries and produce combined table"),
-    ] = False,
-    latex: Annotated[
-        bool,
-        typer.Option("--latex", help="Export tables as LNCS-formatted LaTeX file"),
-    ] = False,
-) -> None:
-    """Analyze provider classification results."""
-    if all_countries:
-        from mail_municipalities.provider_classification.combined_analysis import (
-            export_combined_latex,
-            print_combined_summary,
-        )
-
-        if latex:
-            export_combined_latex()
-        else:
-            print_combined_summary()
-        return
-
-    from mail_municipalities.provider_classification.analyze import main
-
-    main(data_path, latex=latex)
 
 
 _scan_app = typer.Typer(add_completion=False)

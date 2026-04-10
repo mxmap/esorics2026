@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from mail_municipalities.provider_classification.latex_export import (
+from mail_municipalities.analysis.provider_latex import (
     export_latex,
     latex_confidence,
     latex_domain_sharing,

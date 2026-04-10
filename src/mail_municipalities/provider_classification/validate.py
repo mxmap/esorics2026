@@ -182,6 +182,15 @@ def _check_entry(entry: dict, r: ValidationResult, category_map: dict[str, str],
     if "gateway" in entry and not entry["gateway"]:
         r.warn(f"{code}: gateway field present but empty")
 
+    if "override" in entry:
+        ovr = entry["override"]
+        if not isinstance(ovr, dict):
+            r.error(f"{code}: override must be a dict")
+        else:
+            for field in ("operator", "source"):
+                if field not in ovr or not ovr[field]:
+                    r.error(f"{code}: override missing '{field}'")
+
 
 def _check_signal(code: str, sig: dict, r: ValidationResult) -> None:
     for field in ("kind", "provider", "weight", "detail"):

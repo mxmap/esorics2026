@@ -13,6 +13,9 @@ from loguru import logger
 from .classifier import classify_many
 from .models import ClassificationResult, Provider
 
+# Valid provider values in output (used by override validation)
+_VALID_OVERRIDE_PROVIDERS = {"microsoft", "google", "aws", "domestic", "foreign"}
+
 # Map internal Provider enum values to output names
 PROVIDER_OUTPUT_NAMES: dict[str, str] = {
     "ms365": "microsoft",
@@ -44,6 +47,7 @@ _FRONTEND_FIELDS = {
     "classification_confidence",
     "classification_signals",
     "gateway",
+    "override",
 }
 
 
@@ -128,6 +132,65 @@ def _load_resolver_output(domains_path: Path) -> dict[str, dict[str, Any]]:
     return entries
 
 
+def _load_provider_overrides(country_code: str) -> dict[str, dict[str, str]]:
+    """Load provider classification overrides from ``data/{cc}/provider_overrides.json``.
+
+    Returns dict keyed by municipality code with ``provider``, ``operator``,
+    ``source`` fields.  Returns empty dict if the file does not exist.
+    """
+    path = Path("data") / country_code / "provider_overrides.json"
+    if not path.exists():
+        return {}
+
+    with open(path, encoding="utf-8") as f:
+        raw: dict[str, Any] = json.load(f)
+
+    overrides: dict[str, dict[str, str]] = {}
+    for code, entry in raw.items():
+        missing = [k for k in ("provider", "operator", "source") if k not in entry]
+        if missing:
+            logger.warning("provider override {}: missing fields {} — skipped", code, missing)
+            continue
+        if entry["provider"] not in _VALID_OVERRIDE_PROVIDERS:
+            logger.warning("provider override {}: invalid provider '{}' — skipped", code, entry["provider"])
+            continue
+        overrides[code] = entry
+
+    logger.info("Loaded {} provider overrides from {}", len(overrides), path)
+    return overrides
+
+
+def _apply_provider_overrides(
+    results: dict[str, dict[str, Any]],
+    overrides: dict[str, dict[str, str]],
+    category_map: dict[str, str],
+) -> int:
+    """Apply provider overrides to municipality results.  Returns count applied."""
+    applied = 0
+    for code, override in overrides.items():
+        if code not in results:
+            logger.warning("provider override for {} but municipality not in results", code)
+            continue
+
+        entry = results[code]
+        if entry["provider"] != "unknown":
+            logger.info(
+                "provider override available for {} ({}) but auto-classification is '{}' — not applied",
+                code,
+                entry.get("name", "?"),
+                entry["provider"],
+            )
+            continue
+
+        entry["provider"] = override["provider"]
+        entry["category"] = category_map.get(override["provider"], "unknown")
+        entry["classification_confidence"] = 100.0
+        entry["override"] = {"operator": override["operator"], "source": override["source"]}
+        applied += 1
+
+    return applied
+
+
 async def run(domains_path: Path, output_path: Path, *, country_code: str = "ch") -> None:
     category_map = _build_category_map(country_code)
     entries = _load_resolver_output(domains_path)
@@ -186,6 +249,13 @@ async def run(domains_path: Path, output_path: Path, *, country_code: str = "ch"
             classification.confidence,
             len(classification.evidence),
         )
+
+    # Apply provider overrides
+    provider_overrides = _load_provider_overrides(country_code)
+    overrides_applied = 0
+    if provider_overrides:
+        overrides_applied = _apply_provider_overrides(results, provider_overrides, category_map)
+        logger.info("Provider overrides: {} available, {} applied", len(provider_overrides), overrides_applied)
 
     # Final counts
     domestic_label = f"{country_code}-based"

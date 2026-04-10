@@ -7,7 +7,7 @@ from pathlib import Path
 
 import pytest
 
-from mail_municipalities.provider_classification.combined_analysis import (
+from mail_municipalities.analysis.provider_combined import (
     build_combined_dataframe,
     build_country_overview,
     export_combined_latex,
@@ -306,7 +306,7 @@ def test_build_country_overview(tmp_path: Path) -> None:
 
     # 3 countries + 1 total row = 4
     assert len(df) == 4
-    assert list(df["country"]) == ["Austria", "Switzerland", "Germany", "Total"]
+    assert list(df["country"]) == ["Germany", "Austria", "Switzerland", "Total"]
 
     # AT: 2 munis (1 aws, 1 domestic)
     at = df[df["country"] == "Austria"].iloc[0]

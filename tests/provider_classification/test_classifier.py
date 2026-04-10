@@ -245,7 +245,8 @@ class TestAggregate:
         ]
         result, _ = _aggregate(evidence, gateway="sophos")
         assert result.provider == Provider.MS365
-        assert result.confidence == pytest.approx(0.90)
+        # spf_gw (0.70) + TENANT boost (0.02) = 0.72
+        assert result.confidence == pytest.approx(0.72)
 
     def test_no_gateway_fallback_unchanged(self):
         """Without gateway, country fallback still works as before."""
@@ -267,29 +268,29 @@ class TestAggregate:
         assert result.confidence == 0.0
 
     def test_tenant_with_primary(self):
-        """Tenant evidence with MX primary → MX+TENANT rule."""
+        """Tenant evidence with MX primary → mx_only + TENANT boost."""
         evidence = [
             _ev(SignalKind.MX, Provider.MS365),
             _ev(SignalKind.TENANT, Provider.MS365),
         ]
         result, _ = _aggregate(evidence)
         assert result.provider == Provider.MS365
-        # MX+TENANT rule → 0.85
-        assert result.confidence == pytest.approx(0.85)
+        # mx_only (0.80) + TENANT boost (0.02) = 0.82
+        assert result.confidence == pytest.approx(0.82)
 
     def test_spf_tenant_no_gateway(self):
-        """SPF + Tenant without gateway (Le Locle scenario) → 80%."""
+        """SPF + Tenant without gateway → spf_only + boost."""
         evidence = [
             _ev(SignalKind.SPF, Provider.MS365),
             _ev(SignalKind.TENANT, Provider.MS365),
         ]
         result, _ = _aggregate(evidence)
         assert result.provider == Provider.MS365
-        # SPF+Tenant rule → 0.80
-        assert result.confidence == pytest.approx(0.80)
+        # spf_only (0.50) + TENANT boost (0.02) = 0.52
+        assert result.confidence == pytest.approx(0.52)
 
     def test_spf_tenant_no_gateway_with_extra_signals(self):
-        """Le Locle full scenario: SPF+Tenant+TXT_VERIFICATION → 82%."""
+        """SPF+Tenant+TXT_VERIFICATION → spf_only + 2 boosts."""
         evidence = [
             _ev(SignalKind.SPF, Provider.MS365),
             _ev(SignalKind.TENANT, Provider.MS365),
@@ -297,8 +298,8 @@ class TestAggregate:
         ]
         result, _ = _aggregate(evidence)
         assert result.provider == Provider.MS365
-        # SPF+Tenant rule (0.80) + TXT_VERIFICATION boost (0.02) = 0.82
-        assert result.confidence == pytest.approx(0.82)
+        # spf_only (0.50) + TENANT boost + TXT boost = 0.54
+        assert result.confidence == pytest.approx(0.54)
 
     def test_tenant_different_provider_no_effect_on_winner(self):
         """MS365 tenant can't pick winner; Google wins via MX primary signal."""
@@ -361,8 +362,8 @@ class TestAggregate:
         result, _ = _aggregate(evidence)
         # Domestic fallback: DOMESTIC has evidence but no primary signals
         assert result.provider == Provider.DOMESTIC
-        # No MX, secondary evidence only → dom_secondary 0.20 + 1 extra kind × 0.02
-        assert result.confidence == pytest.approx(0.22)
+        # No MX, secondary evidence only → dom_secondary 0.20 (no boost)
+        assert result.confidence == pytest.approx(0.20)
 
     def test_spf_ip_alone_no_winner(self):
         """SPF_IP(Google) alone → INDEPENDENT (regression test for zuerich.ch)."""
@@ -394,15 +395,15 @@ class TestAggregate:
         assert result.confidence == pytest.approx(0.42)
 
     def test_autodiscover_plus_tenant(self):
-        """Autodiscover + tenant → dedicated ad_tenant rule."""
+        """Autodiscover + tenant → fallback + boosts."""
         evidence = [
             _ev(SignalKind.AUTODISCOVER, Provider.MS365),
             _ev(SignalKind.TENANT, Provider.MS365),
         ]
         result, _ = _aggregate(evidence)
         assert result.provider == Provider.MS365
-        # ad_tenant rule → 0.75
-        assert result.confidence == pytest.approx(0.75)
+        # fallback (0.40) + AD boost + TENANT boost = 0.44
+        assert result.confidence == pytest.approx(0.44)
 
     def test_autodiscover_beats_asn(self):
         """Zernez scenario: autodiscover(microsoft) + ASN(aws) → microsoft."""
@@ -416,7 +417,7 @@ class TestAggregate:
         assert result.confidence == pytest.approx(0.42)
 
     def test_mx_spf_autodiscover(self):
-        """R2: MX + SPF + AUTODISCOVER → 0.95."""
+        """MX + SPF + AUTODISCOVER → mx_spf + AD boost."""
         evidence = [
             _ev(SignalKind.MX, Provider.MS365),
             _ev(SignalKind.SPF, Provider.MS365),
@@ -424,10 +425,11 @@ class TestAggregate:
         ]
         result, _ = _aggregate(evidence)
         assert result.provider == Provider.MS365
-        assert result.confidence == pytest.approx(0.95)
+        # mx_spf (0.90) + AD boost (0.02) = 0.92
+        assert result.confidence == pytest.approx(0.92)
 
     def test_autodiscover_spf_tenant(self):
-        """R3: AD + SPF + TENANT → 0.95."""
+        """AD + SPF + TENANT → spf_only + 2 boosts."""
         evidence = [
             _ev(SignalKind.AUTODISCOVER, Provider.MS365),
             _ev(SignalKind.SPF, Provider.MS365),
@@ -435,7 +437,8 @@ class TestAggregate:
         ]
         result, _ = _aggregate(evidence)
         assert result.provider == Provider.MS365
-        assert result.confidence == pytest.approx(0.95)
+        # spf_only (0.50) + AD boost + TENANT boost = 0.54
+        assert result.confidence == pytest.approx(0.54)
 
     def test_autodiscover_spf(self):
         """AD + SPF → falls to spf_only (0.50) + AD boost."""
@@ -483,7 +486,7 @@ class TestAggregate:
         assert result.mx_hosts == []
 
     def test_mx_spf_tenant_ms365(self):
-        """Full cloud setup: MX + SPF + Tenant → 95%."""
+        """Full cloud setup: MX + SPF + Tenant → mx_spf + TENANT boost."""
         evidence = [
             _ev(SignalKind.MX, Provider.MS365),
             _ev(SignalKind.SPF, Provider.MS365),
@@ -491,19 +494,19 @@ class TestAggregate:
         ]
         result, _ = _aggregate(evidence)
         assert result.provider == Provider.MS365
-        # MX+SPF+Tenant rule → 0.95
-        assert result.confidence == pytest.approx(0.95)
+        # mx_spf (0.90) + TENANT boost (0.02) = 0.92
+        assert result.confidence == pytest.approx(0.92)
 
     def test_spf_tenant_gateway_ms365(self):
-        """MS365 behind security gateway: SPF + Tenant + Gateway → 90%."""
+        """MS365 behind security gateway: SPF + Tenant + Gateway → spf_gw + boost."""
         evidence = [
             _ev(SignalKind.SPF, Provider.MS365),
             _ev(SignalKind.TENANT, Provider.MS365),
         ]
         result, _ = _aggregate(evidence, gateway="seppmail")
         assert result.provider == Provider.MS365
-        # SPF+Tenant+Gateway rule → 0.90
-        assert result.confidence == pytest.approx(0.90)
+        # spf_gw (0.70) + TENANT boost (0.02) = 0.72
+        assert result.confidence == pytest.approx(0.72)
 
     def test_spf_gateway_no_tenant(self):
         """SPF + Gateway without tenant → 70%."""
@@ -535,17 +538,18 @@ class TestAggregate:
         assert result.spf_raw == ""
 
     def test_mx_tenant_no_spf(self):
-        """MX + TENANT without SPF → dedicated 0.85 tier."""
+        """MX + TENANT without SPF → mx_only + TENANT boost."""
         evidence = [
             _ev(SignalKind.MX, Provider.MS365),
             _ev(SignalKind.TENANT, Provider.MS365),
         ]
         result, _ = _aggregate(evidence)
         assert result.provider == Provider.MS365
-        assert result.confidence == pytest.approx(0.85)
+        # mx_only (0.80) + TENANT boost (0.02) = 0.82
+        assert result.confidence == pytest.approx(0.82)
 
     def test_mx_tenant_no_spf_with_extra(self):
-        """MX + TENANT + DKIM → 0.85 base + 0.02 boost = 0.87."""
+        """MX + TENANT + DKIM → mx_only + 2 boosts."""
         evidence = [
             _ev(SignalKind.MX, Provider.MS365),
             _ev(SignalKind.TENANT, Provider.MS365),
@@ -553,7 +557,8 @@ class TestAggregate:
         ]
         result, _ = _aggregate(evidence)
         assert result.provider == Provider.MS365
-        assert result.confidence == pytest.approx(0.87)
+        # mx_only (0.80) + DKIM boost + TENANT boost = 0.84
+        assert result.confidence == pytest.approx(0.84)
 
     def test_monotonicity_mx_tenant_gte_spf_tenant(self):
         """MX+TENANT must score >= SPF+TENANT (MX is stronger than SPF)."""
@@ -574,18 +579,19 @@ class TestAggregate:
     # --- DKIM rules ---
 
     def test_dkim_tenant(self):
-        """Ittigen scenario: DKIM + TENANT → dkim_tenant (0.75)."""
+        """DKIM + TENANT → fallback + 2 boosts (tenant is not email-specific)."""
         evidence = [
             _ev(SignalKind.DKIM, Provider.MS365),
             _ev(SignalKind.TENANT, Provider.MS365),
         ]
         result, rule = _aggregate(evidence)
         assert result.provider == Provider.MS365
-        assert rule == "dkim_tenant"
-        assert result.confidence == pytest.approx(0.75)
+        assert rule == "fallback"
+        # fallback (0.40) + DKIM boost + TENANT boost = 0.44
+        assert result.confidence == pytest.approx(0.44)
 
     def test_dkim_tenant_with_extra(self):
-        """DKIM + TENANT + TXT_VERIFICATION → 0.75 + 0.02 = 0.77."""
+        """DKIM + TENANT + TXT_VERIFICATION → fallback + 3 boosts."""
         evidence = [
             _ev(SignalKind.DKIM, Provider.MS365),
             _ev(SignalKind.TENANT, Provider.MS365),
@@ -593,22 +599,24 @@ class TestAggregate:
         ]
         result, rule = _aggregate(evidence)
         assert result.provider == Provider.MS365
-        assert rule == "dkim_tenant"
-        assert result.confidence == pytest.approx(0.77)
+        assert rule == "fallback"
+        # fallback (0.40) + 3 × 0.02 = 0.46
+        assert result.confidence == pytest.approx(0.46)
 
     def test_dkim_tenant_gateway(self):
-        """DKIM + TENANT behind gateway → dkim_tenant_gw (0.85)."""
+        """DKIM + TENANT behind gateway → dkim_gw + TENANT boost."""
         evidence = [
             _ev(SignalKind.DKIM, Provider.MS365),
             _ev(SignalKind.TENANT, Provider.MS365),
         ]
         result, rule = _aggregate(evidence, gateway="seppmail")
         assert result.provider == Provider.MS365
-        assert rule == "dkim_tenant_gw"
-        assert result.confidence == pytest.approx(0.85)
+        assert rule == "dkim_gw"
+        # dkim_gw (0.65) + TENANT boost (0.02) = 0.67
+        assert result.confidence == pytest.approx(0.67)
 
     def test_dkim_ad_tenant(self):
-        """Windisch scenario: DKIM + AD + TENANT → dkim_ad_tenant (0.90)."""
+        """DKIM + AD + TENANT → fallback + 3 boosts."""
         evidence = [
             _ev(SignalKind.DKIM, Provider.MS365),
             _ev(SignalKind.AUTODISCOVER, Provider.MS365),
@@ -616,11 +624,12 @@ class TestAggregate:
         ]
         result, rule = _aggregate(evidence)
         assert result.provider == Provider.MS365
-        assert rule == "dkim_ad_tenant"
-        assert result.confidence == pytest.approx(0.90)
+        assert rule == "fallback"
+        # fallback (0.40) + DKIM + AD + TENANT boosts = 0.46
+        assert result.confidence == pytest.approx(0.46)
 
     def test_dkim_ad_tenant_with_extra(self):
-        """DKIM + AD + TENANT + TXT_VERIFICATION → 0.90 + 0.02 = 0.92."""
+        """DKIM + AD + TENANT + TXT_VERIFICATION → fallback + 4 boosts."""
         evidence = [
             _ev(SignalKind.DKIM, Provider.MS365),
             _ev(SignalKind.AUTODISCOVER, Provider.MS365),
@@ -629,11 +638,12 @@ class TestAggregate:
         ]
         result, rule = _aggregate(evidence)
         assert result.provider == Provider.MS365
-        assert rule == "dkim_ad_tenant"
-        assert result.confidence == pytest.approx(0.92)
+        assert rule == "fallback"
+        # fallback (0.40) + 4 × 0.02 = 0.48
+        assert result.confidence == pytest.approx(0.48)
 
     def test_dkim_spf_tenant(self):
-        """DKIM + SPF + TENANT → dkim_spf_tenant (0.90)."""
+        """DKIM + SPF + TENANT → dkim_spf + TENANT boost."""
         evidence = [
             _ev(SignalKind.DKIM, Provider.MS365),
             _ev(SignalKind.SPF, Provider.MS365),
@@ -641,22 +651,24 @@ class TestAggregate:
         ]
         result, rule = _aggregate(evidence)
         assert result.provider == Provider.MS365
-        assert rule == "dkim_spf_tenant"
-        assert result.confidence == pytest.approx(0.90)
+        assert rule == "dkim_spf"
+        # dkim_spf (0.60) + TENANT boost (0.02) = 0.62
+        assert result.confidence == pytest.approx(0.62)
 
     def test_ad_tenant(self):
-        """Geroldswil scenario: AD + TENANT → ad_tenant (0.75)."""
+        """AD + TENANT → fallback + 2 boosts."""
         evidence = [
             _ev(SignalKind.AUTODISCOVER, Provider.MS365),
             _ev(SignalKind.TENANT, Provider.MS365),
         ]
         result, rule = _aggregate(evidence)
         assert result.provider == Provider.MS365
-        assert rule == "ad_tenant"
-        assert result.confidence == pytest.approx(0.75)
+        assert rule == "fallback"
+        # fallback (0.40) + AD + TENANT boosts = 0.44
+        assert result.confidence == pytest.approx(0.44)
 
     def test_ad_tenant_with_extra(self):
-        """AD + TENANT + TXT_VERIFICATION → 0.75 + 0.02 = 0.77."""
+        """AD + TENANT + TXT_VERIFICATION → fallback + 3 boosts."""
         evidence = [
             _ev(SignalKind.AUTODISCOVER, Provider.MS365),
             _ev(SignalKind.TENANT, Provider.MS365),
@@ -664,8 +676,9 @@ class TestAggregate:
         ]
         result, rule = _aggregate(evidence)
         assert result.provider == Provider.MS365
-        assert rule == "ad_tenant"
-        assert result.confidence == pytest.approx(0.77)
+        assert rule == "fallback"
+        # fallback (0.40) + 3 × 0.02 = 0.46
+        assert result.confidence == pytest.approx(0.46)
 
     def test_dkim_only_falls_to_fallback(self):
         """DKIM alone without TENANT → fallback (DKIM not strong enough alone)."""
@@ -676,6 +689,27 @@ class TestAggregate:
         assert result.provider == Provider.MS365
         assert rule == "fallback"
         assert result.confidence == pytest.approx(0.42)
+
+    def test_dkim_spf_rule(self):
+        """DKIM + SPF without MX → dkim_spf (0.60)."""
+        evidence = [
+            _ev(SignalKind.DKIM, Provider.MS365),
+            _ev(SignalKind.SPF, Provider.MS365),
+        ]
+        result, rule = _aggregate(evidence)
+        assert result.provider == Provider.MS365
+        assert rule == "dkim_spf"
+        assert result.confidence == pytest.approx(0.60)
+
+    def test_dkim_gw_rule(self):
+        """DKIM behind gateway without SPF → dkim_gw (0.65)."""
+        evidence = [
+            _ev(SignalKind.DKIM, Provider.MS365),
+        ]
+        result, rule = _aggregate(evidence, gateway="seppmail")
+        assert result.provider == Provider.MS365
+        assert rule == "dkim_gw"
+        assert result.confidence == pytest.approx(0.65)
 
     def test_dkim_tenant_non_ms365_no_tenant_in_present(self):
         """DKIM(Google) + TENANT(MS365) → TENANT not counted for Google."""
@@ -699,8 +733,127 @@ class TestAggregate:
         result, rule = _aggregate(evidence, gateway="proofpoint")
         # Gateway DKIM boost: MS365 DKIM 0.15 + 0.06 = 0.21 > Google SPF 0.20
         assert result.provider == Provider.MS365
-        assert rule == "dkim_tenant_gw"
-        assert result.confidence == pytest.approx(0.85)
+        assert rule == "dkim_gw"
+        # dkim_gw (0.65) + TENANT boost (0.02) = 0.67
+        assert result.confidence == pytest.approx(0.67)
+
+
+class TestEoOutlookMxPattern:
+    """mail.eo.outlook.com is a newer MS365 MX hostname that must be recognized."""
+
+    def test_eo_outlook_mx_classified_as_ms365(self):
+        """Siselen scenario: MX=*.mail.eo.outlook.com → MS365, not FOREIGN."""
+        evidence = [
+            _ev(SignalKind.MX, Provider.MS365),
+            _ev(SignalKind.SPF, Provider.MS365),
+        ]
+        result, _ = _aggregate(
+            evidence,
+            mx_hosts=["siselen-ch.mail.eo.outlook.com"],
+            spf_raw="v=spf1 include:spf.protection.outlook.com ~all",
+        )
+        assert result.provider == Provider.MS365
+        assert result.confidence == pytest.approx(0.90)
+
+
+class TestDomesticMxOverride:
+    """Domestic MX override: non-cloud, non-gateway MX + ASN country → country classification."""
+
+    def test_domestic_mx_with_cloud_spf(self):
+        """Domestic MX + MS365 SPF + TENANT → DOMESTIC (MX is authoritative)."""
+        evidence = [
+            _ev(SignalKind.SPF, Provider.MS365),
+            _ev(SignalKind.TENANT, Provider.MS365),
+            _ev(SignalKind.ASN, Provider.DOMESTIC),
+        ]
+        result, rule = _aggregate(
+            evidence,
+            mx_hosts=["mail.admin.ch"],
+            spf_raw="v=spf1 include:spf.protection.outlook.com ~all",
+        )
+        assert result.provider == Provider.DOMESTIC
+        # dom_mx_spf (0.80), no boosts for country classification
+        assert result.confidence == pytest.approx(0.80)
+
+    def test_domestic_mx_no_cloud_signals(self):
+        """Domestic MX with only ASN evidence → DOMESTIC."""
+        evidence = [
+            _ev(SignalKind.ASN, Provider.DOMESTIC),
+        ]
+        result, rule = _aggregate(evidence, mx_hosts=["mail.example.ch"], spf_raw="v=spf1 a mx ~all")
+        assert result.provider == Provider.DOMESTIC
+        assert rule == "dom_mx_spf"
+
+    def test_domestic_mx_no_spf(self):
+        """Domestic MX without SPF → dom_mx_only."""
+        evidence = [
+            _ev(SignalKind.ASN, Provider.DOMESTIC),
+        ]
+        result, rule = _aggregate(evidence, mx_hosts=["mail.example.ch"])
+        assert result.provider == Provider.DOMESTIC
+        assert rule == "dom_mx_only"
+
+    def test_cloud_mx_not_overridden(self):
+        """Cloud MX (MS365 match) → normal provider classification, not domestic."""
+        evidence = [
+            _ev(SignalKind.MX, Provider.MS365),
+            _ev(SignalKind.SPF, Provider.MS365),
+            _ev(SignalKind.ASN, Provider.DOMESTIC),
+        ]
+        result, _ = _aggregate(
+            evidence,
+            mx_hosts=["example-com.mail.protection.outlook.com"],
+            spf_raw="v=spf1 include:spf.protection.outlook.com ~all",
+        )
+        assert result.provider == Provider.MS365
+
+    def test_gateway_not_overridden(self):
+        """Gateway MX → normal classification, domestic override skipped."""
+        evidence = [
+            _ev(SignalKind.SPF, Provider.MS365),
+            _ev(SignalKind.ASN, Provider.DOMESTIC),
+        ]
+        result, _ = _aggregate(
+            evidence,
+            gateway="seppmail",
+            mx_hosts=["mx.seppmail.cloud"],
+            spf_raw="v=spf1 include:spf.protection.outlook.com ~all",
+        )
+        assert result.provider == Provider.MS365
+
+    def test_foreign_mx_override(self):
+        """Foreign MX (non-cloud, non-gateway) → FOREIGN."""
+        evidence = [
+            _ev(SignalKind.SPF, Provider.MS365),
+            _ev(SignalKind.ASN, Provider.FOREIGN),
+        ]
+        result, _ = _aggregate(
+            evidence,
+            mx_hosts=["mail.foreign-host.de"],
+            spf_raw="v=spf1 include:spf.protection.outlook.com ~all",
+        )
+        assert result.provider == Provider.FOREIGN
+
+    def test_no_mx_hosts_no_override(self):
+        """No MX hosts → domestic override does not fire."""
+        evidence = [
+            _ev(SignalKind.SPF, Provider.MS365),
+            _ev(SignalKind.ASN, Provider.DOMESTIC),
+        ]
+        result, _ = _aggregate(evidence)
+        assert result.provider == Provider.MS365
+
+    def test_no_country_evidence_falls_through(self):
+        """Non-cloud MX but no ASN country data → fall through to provider."""
+        evidence = [
+            _ev(SignalKind.SPF, Provider.MS365),
+        ]
+        result, _ = _aggregate(
+            evidence,
+            mx_hosts=["mail.example.ch"],
+            spf_raw="v=spf1 include:spf.protection.outlook.com ~all",
+        )
+        assert result.provider == Provider.MS365
 
 
 class TestClassify:
@@ -851,7 +1004,7 @@ class TestClassify:
         assert result.provider == Provider.DOMESTIC
 
     async def test_tenant_confirmation_with_ms365_primary(self):
-        """Domain with MX→outlook + positive M365 tenant → MS365 with boosted confidence."""
+        """Domain with MX→outlook + positive M365 tenant → MS365 with boost."""
         mx_ev = [
             Evidence(
                 kind=SignalKind.MX,
@@ -875,8 +1028,8 @@ class TestClassify:
             result = await classify("example.com")
 
         assert result.provider == Provider.MS365
-        # MX+TENANT rule → 0.85
-        assert result.confidence == pytest.approx(0.85)
+        # mx_only (0.80) + TENANT boost (0.02) = 0.82
+        assert result.confidence == pytest.approx(0.82)
 
     async def test_classify_passes_mx_hosts_to_cname_chain(self):
         """cname_chain should receive hosts from lookup_mx, not from MX evidence."""
@@ -1066,13 +1219,14 @@ class TestRuleHitCounting:
         _rule_hits.clear()
 
     def test_provider_rule_mx_spf_tenant(self):
+        """MX+SPF+TENANT → hits mx_spf (TENANT is boost-only, not a rule signal)."""
         evidence = [
             _ev(SignalKind.MX, Provider.MS365),
             _ev(SignalKind.SPF, Provider.MS365),
             _ev(SignalKind.TENANT, Provider.MS365),
         ]
         _aggregate(evidence)
-        assert _rule_hits["mx_spf_tenant"] == 1
+        assert _rule_hits["mx_spf"] == 1
 
     def test_provider_rule_mx_only(self):
         evidence = [_ev(SignalKind.MX, Provider.MS365)]

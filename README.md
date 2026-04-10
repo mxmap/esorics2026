@@ -36,6 +36,11 @@ uv run scan at                # scan Austrian municipalities
 uv run scan ch -v             # verbose (streams Docker output)
 ```
 
+> [!IMPORTANT]
+> This tool requires unrestricted outbound port 25 (SMTP). Most residential ISPs and Laptops block this.
+> For best results, run from a cloud VM with port 25 access opened.
+
+
 ## Output files
 
 Results are written to `output/` with separate directories per stage:
@@ -73,9 +78,6 @@ Three tiers per country:
 **`providers_{cc}.min.json`** -- Minified version for frontend consumption.
 
 ### `output/security/` -- Security Analysis Output
-
-> [!IMPORTANT]
-> DANE/TLSA scanning requires unrestricted outbound port 25 (SMTP). Most residential ISPs and macOS/Docker Desktop environments block this. SPF/DKIM/DMARC results are unaffected. See [`src/security_test/README.md`](src/security_test/README.md) for details.
 
 **`security_{cc}.json`** -- Per-municipality security assessment with aggregate counts.
 

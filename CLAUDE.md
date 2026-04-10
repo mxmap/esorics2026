@@ -33,17 +33,27 @@ uv run scan de                # scan German municipality email domains
 uv run scan at                # scan Austrian municipality email domains
 uv run scan ch -v             # verbose logging (streams Docker output)
 
-# Stage 4: Analyze classification results
-uv run analyze output/providers/providers_ch.json          # single country console report
-uv run analyze output/providers/providers_ch.json --latex   # single country LaTeX export
-uv run analyze --all                                        # combined summary (console)
-uv run analyze --all --latex                                # combined multi-country LaTeX table
+# Stage 4: Analyze results
+uv run analyze providers output/providers/providers_ch.json          # single country console report
+uv run analyze providers output/providers/providers_ch.json --latex   # single country LaTeX export
+uv run analyze providers --all                                        # combined summary (console)
+uv run analyze providers --all --latex                                # combined multi-country LaTeX table
+uv run analyze security output/security/security_ch.json             # single country console report
+uv run analyze security output/security/security_ch.json --latex     # single country LaTeX export
+uv run analyze security --all                                         # combined summary (console)
+uv run analyze security --all --latex                                 # combined multi-country LaTeX table
 ```
 
 ## Architecture
 
 - `src/mail_municipalities/` -- main package
   - `cli.py` -- unified Typer CLI (resolve, classify, scan, analyze commands)
+  - `analysis/` -- shared analysis and LaTeX export
+    - `helpers.py` -- shared LaTeX formatting helpers
+    - `provider_latex.py` -- single-country provider LaTeX tables
+    - `provider_combined.py` -- combined multi-country provider tables (pandas)
+    - `security_latex.py` -- single-country security LaTeX tables
+    - `security_combined.py` -- combined multi-country security tables (pandas)
   - `core/` -- shared infrastructure
     - `dns.py` -- multi-resolver DNS with fallback
     - `log.py` -- loguru setup
@@ -62,10 +72,8 @@ uv run analyze --all --latex                                # combined multi-cou
     - `signatures.py` -- provider fingerprint patterns
     - `models.py` -- Provider, SignalKind, Evidence, ClassificationResult
     - `runner.py` -- classification pipeline orchestration
-    - `analyze.py` -- statistical analysis reports
-    - `combined_analysis.py` -- combined multi-country analysis with pandas
-    - `latex_export.py` -- per-country LaTeX table export
-    - `constants.py` -- canton abbreviations
+    - `analyze.py` -- statistical analysis console reports
+    - `constants.py` -- canton/region abbreviations
   - `security_analysis/` -- Stage 3: security scanning (DANE, SPF, DKIM, DMARC)
     - `runner.py` -- orchestrates Docker scanner/evaluator, transforms I/O
     - `models.py` -- Pydantic models (DaneSummary, DssSummary, MunicipalitySecurity)

@@ -1,15 +1,19 @@
 """Classify domains by aggregating DNS/probe evidence into provider + confidence.
 
 Algorithm:
-1. **Winner** — sum primary signal weights (MX, SPF, DKIM, AUTODISCOVER) per
+1. **Domestic/foreign MX override** — when MX hosts exist but none matched a
+   known cloud provider and there is no gateway, classify by ASN country
+   evidence (DOMESTIC / FOREIGN).  Confidence is a flat base from
+   ``_DOMESTIC_RULES`` / ``_FOREIGN_RULES`` (no per-signal boost).
+2. **Winner** — sum primary signal weights (MX, SPF, DKIM, AUTODISCOVER) per
    provider; highest total wins.  No primary signals → UNKNOWN.
-2. **Confidence** — match winner's signals against ``_PROVIDER_RULES`` (first
+3. **Confidence** — match winner's signals against ``_PROVIDER_RULES`` (first
    match wins); extra signals add +0.02 each; capped at 1.0.
 
 Signal tiers:
 - **Primary** (MX, SPF, DKIM, AUTODISCOVER): elect a winner.
-- **Confirmation** (TENANT, ASN, SPF_IP, TXT_VERIFICATION, …): boost only.
-  TENANT restricted to MS365 winner.
+- **Confirmation** (TENANT, ASN, SPF_IP, TXT_VERIFICATION, …): boost provider
+  confidence only (+0.02 per extra signal); ignored for country classification.
 - **Gateway**: rule-matching flag from MX hostnames, not a SignalKind.
   Behind a gateway, DKIM providers get +0.06 to beat SPF-from-DNS-host.
 """
@@ -66,27 +70,14 @@ _S = SignalKind  # local alias for compact table
 
 # fmt: off
 _PROVIDER_RULES: tuple[_Rule, ...] = (
-    # rule name             signals                                            gw?      base
-    # --- 3 signals (0.90–0.95) ---
-    _Rule("mx_spf_ad",      frozenset({_S.MX, _S.SPF, _S.AUTODISCOVER}),       False,   0.95),
-    _Rule("mx_spf_tenant",  frozenset({_S.MX, _S.SPF, _S.TENANT}),             False,   0.95),
-    _Rule("ad_spf_tenant",  frozenset({_S.AUTODISCOVER, _S.SPF, _S.TENANT}),   False,   0.95),
-    _Rule("dkim_ad_tenant", frozenset({_S.DKIM, _S.AUTODISCOVER, _S.TENANT}),  False,   0.90),
-    _Rule("dkim_spf_tenant",frozenset({_S.DKIM, _S.SPF, _S.TENANT}),           False,   0.90),
-    # --- 2 signals (0.75–0.90) ---
-    _Rule("mx_spf",         frozenset({_S.MX, _S.SPF}),                        False,   0.90),
-    _Rule("spf_tenant_gw",  frozenset({_S.SPF, _S.TENANT}),                    True,    0.90),
-    _Rule("dkim_tenant_gw", frozenset({_S.DKIM, _S.TENANT}),                   True,    0.85),
-    _Rule("mx_tenant",      frozenset({_S.MX, _S.TENANT}),                     False,   0.85),
-    _Rule("spf_tenant",     frozenset({_S.SPF, _S.TENANT}),                    False,   0.80),
-    _Rule("dkim_tenant",    frozenset({_S.DKIM, _S.TENANT}),                   False,   0.75),
-    _Rule("ad_tenant",      frozenset({_S.AUTODISCOVER, _S.TENANT}),           False,   0.75),
-    # --- 1 signal + gateway ---
-    _Rule("spf_gw",         frozenset({_S.SPF}),                               True,    0.70),
-    # --- 1 signal ---
-    _Rule("mx_only",        frozenset({_S.MX}),                                False,   0.80),
-    _Rule("spf_only",       frozenset({_S.SPF}),                               False,   0.50),
-    _Rule("fallback",       frozenset(),                                       False,   0.40),
+    # rule name         signals                         gw?      base
+    _Rule("mx_spf",    frozenset({_S.MX, _S.SPF}),      False,   0.90),  # routing + authorization
+    _Rule("mx_only",   frozenset({_S.MX}),              False,   0.80),  # routing alone
+    _Rule("spf_gw",    frozenset({_S.SPF}),             True,    0.70),  # SPF visible through gateway
+    _Rule("dkim_gw",   frozenset({_S.DKIM}),            True,    0.65),  # DKIM proves signer behind gw
+    _Rule("dkim_spf",  frozenset({_S.DKIM, _S.SPF}),    False,   0.60),  # two signals, no routing
+    _Rule("spf_only",  frozenset({_S.SPF}),             False,   0.50),  # authorization only
+    _Rule("fallback",  frozenset(),                     False,   0.40),  # catch-all
 )
 # fmt: on
 
@@ -94,19 +85,21 @@ _rule_hits: Counter[str] = Counter()
 
 # fmt: off
 # Domestic rules: IP confirmed in target country via Cymru CC.
+# Used both by the domestic MX override (primary path) and the country
+# fallback (no primary signals at all).
 _DOMESTIC_RULES: tuple[tuple[str, float], ...] = (
-    ("dom_mx_spf",     0.70),  # MX + SPF present, IP in target country
-    ("dom_mx_only",    0.50),  # MX only
-    ("dom_secondary",  0.20),  # secondary evidence only
+    ("dom_mx_spf",     0.80),  # MX routes domestic + SPF present
+    ("dom_mx_only",    0.70),  # MX routes domestic, no SPF
+    ("dom_secondary",  0.20),  # secondary evidence only (no MX)
     ("dom_none",       0.00),  # nothing
 )
 
 # Foreign rules: IP confirmed in a different country — weaker signal because
-# this often indicates a gateway or CDN obscuring the real provider.
+# a non-cloud foreign IP is more ambiguous (CDN, shared hosting).
 _FOREIGN_RULES: tuple[tuple[str, float], ...] = (
-    ("frgn_mx_spf",     0.50),  # MX + SPF present, IP in foreign country
-    ("frgn_mx_only",    0.35),  # MX only
-    ("frgn_secondary",  0.10),  # secondary evidence only
+    ("frgn_mx_spf",     0.60),  # MX routes foreign + SPF present
+    ("frgn_mx_only",    0.50),  # MX routes foreign, no SPF
+    ("frgn_secondary",  0.10),  # secondary evidence only (no MX)
     ("frgn_none",       0.00),  # nothing
 )
 # fmt: on
@@ -123,20 +116,14 @@ def _rule_confidence(provider: Provider, signals: set[SignalKind], gateway: str 
     """Return ``(confidence, rule_name)`` for a winning provider.
 
     Iterates ``_PROVIDER_RULES`` (first match wins) via subset check:
-    ``rule.signals <= present``.  TENANT only counted when winner is MS365.
-    Unconsumed signals each add ``_BOOST_PER_SIGNAL``; result capped at 1.0.
+    ``rule.signals <= present``.  Only MX, SPF, DKIM participate in rule
+    matching; all other signals (TENANT, AD, ASN, …) contribute via the
+    per-signal boost only.
     """
     present: set[SignalKind] = set()
-    if SignalKind.MX in signals:
-        present.add(SignalKind.MX)
-    if SignalKind.SPF in signals:
-        present.add(SignalKind.SPF)
-    if SignalKind.TENANT in signals and provider == Provider.MS365:
-        present.add(SignalKind.TENANT)
-    if SignalKind.AUTODISCOVER in signals:
-        present.add(SignalKind.AUTODISCOVER)
-    if SignalKind.DKIM in signals:
-        present.add(SignalKind.DKIM)
+    for kind in (SignalKind.MX, SignalKind.SPF, SignalKind.DKIM):
+        if kind in signals:
+            present.add(kind)
     has_gateway = gateway is not None
 
     for rule in _PROVIDER_RULES:
@@ -164,8 +151,9 @@ def _country_confidence(
     """Return ``(confidence, rule_name)`` for a DOMESTIC or FOREIGN domain.
 
     Uses ``_DOMESTIC_RULES`` or ``_FOREIGN_RULES`` depending on the caller.
-    Lower base scores than ``_independent_confidence`` because the country
-    classification rests on ASN evidence (weight 0.03), not provider signatures.
+    Returns a flat base confidence (no per-signal boost) because cloud provider
+    signals (TENANT, TXT_VERIFICATION, etc.) are irrelevant to the country
+    classification.
     """
     has_mx = bool(mx_hosts) or any(e.kind == SignalKind.MX for e in evidence)
     has_spf = bool(spf_raw) or any(e.kind == SignalKind.SPF for e in evidence)
@@ -184,10 +172,7 @@ def _country_confidence(
 
     _rule_hits[name] += 1
     logger.debug("rule={} base={:.2f}", name, base)
-
-    extra_kinds = {e.kind for e in evidence} - {SignalKind.MX, SignalKind.SPF}
-    boost = len(extra_kinds) * _BOOST_PER_SIGNAL
-    return min(1.0, base + boost), name
+    return base, name
 
 
 def _aggregate(
@@ -200,9 +185,9 @@ def _aggregate(
     """Aggregate evidence → ``(ClassificationResult, rule_name)``.
 
     1. Deduplicate by ``(provider, kind)``; exclude UNKNOWN.
-    2. Elect winner by highest primary-signal weight sum.
-    3. Score via ``_rule_confidence`` (winner) or ``_independent_confidence``.
-    4. Attach ``gateway``, ``mx_hosts``, ``spf_raw`` unchanged.
+    2. Domestic/foreign MX override if MX is non-cloud and non-gateway.
+    3. Elect winner by highest primary-signal weight sum.
+    4. Score via ``_rule_confidence`` (provider) or ``_country_confidence``.
     """
     _mx_hosts = mx_hosts or []
 
@@ -227,6 +212,36 @@ def _aggregate(
         for provider, kinds in by_provider.items():
             if SignalKind.DKIM in kinds and provider in primary_scores:
                 primary_scores[provider] += _GATEWAY_DKIM_BOOST
+
+    # Domestic MX override: when MX hosts exist but none matched a known
+    # cloud provider, and there is no gateway, the MX hostname is the
+    # authoritative signal for where inbound email routes.  SPF/DKIM/TENANT
+    # may reflect general cloud usage (e.g., MS365 for Teams) rather than
+    # email-specific infrastructure.
+    has_cloud_mx = any(e.kind == SignalKind.MX for e in evidence)
+    if not gateway and _mx_hosts and not has_cloud_mx:
+        if Provider.DOMESTIC in by_provider:
+            confidence, rule_name = _country_confidence(_mx_hosts, spf_raw, evidence, _DOMESTIC_RULES)
+            logger.debug("domestic MX override: rule={} conf={:.2f}", rule_name, confidence)
+            return ClassificationResult(
+                provider=Provider.DOMESTIC,
+                confidence=confidence,
+                evidence=list(evidence),
+                gateway=gateway,
+                mx_hosts=_mx_hosts,
+                spf_raw=spf_raw,
+            ), rule_name
+        if Provider.FOREIGN in by_provider:
+            confidence, rule_name = _country_confidence(_mx_hosts, spf_raw, evidence, _FOREIGN_RULES)
+            logger.debug("foreign MX override: rule={} conf={:.2f}", rule_name, confidence)
+            return ClassificationResult(
+                provider=Provider.FOREIGN,
+                confidence=confidence,
+                evidence=list(evidence),
+                gateway=gateway,
+                mx_hosts=_mx_hosts,
+                spf_raw=spf_raw,
+            ), rule_name
 
     if primary_scores:
         winner = max(primary_scores, key=lambda p: primary_scores[p])
