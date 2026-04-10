@@ -1,9 +1,10 @@
 """Classify domains by aggregating DNS/probe evidence into provider + confidence.
 
 Algorithm:
-1. **Domestic MX override** — when MX hosts exist but none matched a known
-   cloud provider and there is no gateway, classify by ASN country evidence
-   (DOMESTIC / FOREIGN).
+1. **Domestic/foreign MX override** — when MX hosts exist but none matched a
+   known cloud provider and there is no gateway, classify by ASN country
+   evidence (DOMESTIC / FOREIGN).  Confidence is a flat base from
+   ``_DOMESTIC_RULES`` / ``_FOREIGN_RULES`` (no per-signal boost).
 2. **Winner** — sum primary signal weights (MX, SPF, DKIM, AUTODISCOVER) per
    provider; highest total wins.  No primary signals → UNKNOWN.
 3. **Confidence** — match winner's signals against ``_PROVIDER_RULES`` (first
@@ -11,8 +12,8 @@ Algorithm:
 
 Signal tiers:
 - **Primary** (MX, SPF, DKIM, AUTODISCOVER): elect a winner.
-- **Confirmation** (TENANT, ASN, SPF_IP, TXT_VERIFICATION, …): boost only
-  (+0.02 per extra signal).
+- **Confirmation** (TENANT, ASN, SPF_IP, TXT_VERIFICATION, …): boost provider
+  confidence only (+0.02 per extra signal); ignored for country classification.
 - **Gateway**: rule-matching flag from MX hostnames, not a SignalKind.
   Behind a gateway, DKIM providers get +0.06 to beat SPF-from-DNS-host.
 """
@@ -150,8 +151,9 @@ def _country_confidence(
     """Return ``(confidence, rule_name)`` for a DOMESTIC or FOREIGN domain.
 
     Uses ``_DOMESTIC_RULES`` or ``_FOREIGN_RULES`` depending on the caller.
-    Lower base scores than ``_independent_confidence`` because the country
-    classification rests on ASN evidence (weight 0.03), not provider signatures.
+    Returns a flat base confidence (no per-signal boost) because cloud provider
+    signals (TENANT, TXT_VERIFICATION, etc.) are irrelevant to the country
+    classification.
     """
     has_mx = bool(mx_hosts) or any(e.kind == SignalKind.MX for e in evidence)
     has_spf = bool(spf_raw) or any(e.kind == SignalKind.SPF for e in evidence)
@@ -183,9 +185,9 @@ def _aggregate(
     """Aggregate evidence → ``(ClassificationResult, rule_name)``.
 
     1. Deduplicate by ``(provider, kind)``; exclude UNKNOWN.
-    2. Elect winner by highest primary-signal weight sum.
-    3. Score via ``_rule_confidence`` (winner) or ``_independent_confidence``.
-    4. Attach ``gateway``, ``mx_hosts``, ``spf_raw`` unchanged.
+    2. Domestic/foreign MX override if MX is non-cloud and non-gateway.
+    3. Elect winner by highest primary-signal weight sum.
+    4. Score via ``_rule_confidence`` (provider) or ``_country_confidence``.
     """
     _mx_hosts = mx_hosts or []
 
