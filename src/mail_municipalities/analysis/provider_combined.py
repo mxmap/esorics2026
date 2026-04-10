@@ -344,8 +344,7 @@ def latex_country_overview(df: pd.DataFrame) -> str:
     lines.append("\\begin{table}[t]")
     lines.append("    \\centering")
     lines.append(
-        f"    \\caption{{Country-level overview of email provider classification "
-        f"($n={_num(grand_n)}$ municipalities).}}"
+        f"    \\caption{{Country-level overview of email provider classification}}"
     )
     lines.append("    \\label{tab:country-overview}")
     lines.append("    \\footnotesize")
@@ -354,7 +353,7 @@ def latex_country_overview(df: pd.DataFrame) -> str:
     lines.append("        \\toprule")
     lines.append(
         "        \\textbf{Country} & \\textbf{$n$}"
-        " & \\textbf{MSFT} & \\textbf{GOOGL} & \\textbf{AMZN}"
+        " & \\textbf{MS} & \\textbf{GOOG} & \\textbf{AWS}"
         " & \\textbf{Dom} & \\textbf{Frgn} & \\textbf{Unkn}"
         " & \\textbf{US\\%}"
         " & \\textbf{Conf.\\tnote{1}} & \\textbf{GW\\tnote{2}} \\\\"
