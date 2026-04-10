@@ -7,43 +7,19 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from mail_municipalities.analysis.helpers import (
+    COUNTRY_NAMES as _COUNTRY_NAMES,
+    divider as _divider,
+    esc as _esc,
+    num as _num,
+    pct as _pct,
+)
+
 from .analyze import (
     _PROVIDERS_ORDERED,
     _category,
     _region_abbr,
 )
-
-# ---------------------------------------------------------------------------
-# LaTeX helpers
-# ---------------------------------------------------------------------------
-
-_COUNTRY_NAMES = {"ch": "Switzerland", "de": "Germany", "at": "Austria"}
-
-
-def _num(n: int) -> str:
-    """Format integer with LaTeX thousands separator."""
-    if n < 1_000:
-        return str(n)
-    s = f"{n:,}"
-    return s.replace(",", "{,}")
-
-
-def _pct(n: int, total: int) -> str:
-    if total == 0:
-        return "0.0"
-    return f"{n / total * 100:.1f}"
-
-
-def _esc(text: str) -> str:
-    """Escape special LaTeX characters in text."""
-    for ch, repl in [("&", "\\&"), ("%", "\\%"), ("_", "\\_"), ("#", "\\#")]:
-        text = text.replace(ch, repl)
-    return text
-
-
-def _divider(title: str) -> str:
-    line = "%" + " " + "-" * 70
-    return f"\n{line}\n% {title}\n{line}\n"
 
 
 # ---------------------------------------------------------------------------

@@ -10,24 +10,19 @@ from typing import Any
 
 import pandas as pd
 
+from mail_municipalities.analysis.helpers import (
+    COUNTRY_NAMES as _COUNTRY_NAMES,
+    esc as _esc,
+    num as _num,
+    region_name as _region_name,
+)
+
 from .analyze import (
     _PROVIDERS_ORDERED,
     load_data,
 )
-from .latex_export import _COUNTRY_NAMES, _esc, _num
 
 _COUNTRIES: Sequence[str] = ("at", "ch", "de")
-
-_MAX_REGION_LEN = 18
-
-
-def _region_name(region: str) -> str:
-    """Return a human-readable region name, truncated if needed."""
-    # Strip "Kanton " prefix for Swiss cantons
-    name = region.removeprefix("Kanton ")
-    if len(name) > _MAX_REGION_LEN:
-        return name[: _MAX_REGION_LEN - 1] + "."
-    return name
 
 
 # ---------------------------------------------------------------------------

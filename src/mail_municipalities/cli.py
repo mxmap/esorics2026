@@ -210,6 +210,48 @@ def analyze_cmd(
     main(data_path, latex=latex)
 
 
+def _sec_analyze_impl(
+    data_path: Path | None = None,
+    all_countries: bool = False,
+    latex: bool = False,
+) -> None:
+    """Shared sec-analyze implementation."""
+    if all_countries:
+        from mail_municipalities.analysis.security_combined import (
+            export_combined_security_latex,
+            print_combined_security_summary,
+        )
+
+        if latex:
+            export_combined_security_latex()
+        else:
+            print_combined_security_summary()
+        return
+
+    from mail_municipalities.analysis.security_latex import main as security_main
+
+    security_main(data_path, latex=latex)
+
+
+@app.command("sec-analyze")
+def sec_analyze_cmd(
+    data_path: Annotated[
+        Optional[Path],
+        typer.Argument(help="Path to security JSON file"),
+    ] = None,
+    all_countries: Annotated[
+        bool,
+        typer.Option("--all", help="Analyze all countries and produce combined table"),
+    ] = False,
+    latex: Annotated[
+        bool,
+        typer.Option("--latex", help="Export tables as LNCS-formatted LaTeX file"),
+    ] = False,
+) -> None:
+    """Analyze security scan results."""
+    _sec_analyze_impl(data_path, all_countries, latex)
+
+
 # ── Script entry points (called by [project.scripts]) ──────────────
 
 
@@ -365,6 +407,28 @@ def _scan_main(
     run(domains_path, output_path, cc=country, verbose=verbose)
 
 
+_sec_analyze_app = typer.Typer(add_completion=False)
+
+
+@_sec_analyze_app.command()
+def _sec_analyze_main(
+    data_path: Annotated[
+        Optional[Path],
+        typer.Argument(help="Path to security JSON file"),
+    ] = None,
+    all_countries: Annotated[
+        bool,
+        typer.Option("--all", help="Analyze all countries and produce combined table"),
+    ] = False,
+    latex: Annotated[
+        bool,
+        typer.Option("--latex", help="Export tables as LNCS-formatted LaTeX file"),
+    ] = False,
+) -> None:
+    """Analyze security scan results."""
+    _sec_analyze_impl(data_path, all_countries, latex)
+
+
 def resolve() -> None:
     """Entry point for 'resolve' script."""
     _resolve_app()
@@ -383,3 +447,8 @@ def analyze() -> None:
 def scan() -> None:
     """Entry point for 'scan' script."""
     _scan_app()
+
+
+def sec_analyze() -> None:
+    """Entry point for 'sec-analyze' script."""
+    _sec_analyze_app()
