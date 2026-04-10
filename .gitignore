@@ -4,6 +4,8 @@ data/*/cache.db-wal
 data/*/cache.db-shm
 #output/export.xlsx
 output/~$export.xlsx
+output/domains/resolve_xx.log
+output/**/**.tex
 
 # OS generated files
 .DS_Store
