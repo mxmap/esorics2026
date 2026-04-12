@@ -190,8 +190,10 @@ def _analyze_providers_impl(
 ) -> None:
     if all_countries:
         if latex:
-            typer.echo("Use 'analyze merged --latex' for the combined LaTeX table.", err=True)
-            raise typer.Exit(code=1)
+            from mail_municipalities.analysis.provider_combined import export_combined_latex
+
+            export_combined_latex()
+            return
         from mail_municipalities.analysis.provider_combined import print_combined_summary
 
         print_combined_summary()
@@ -209,8 +211,10 @@ def _analyze_security_impl(
 ) -> None:
     if all_countries:
         if latex:
-            typer.echo("Use 'analyze merged --latex' for the combined LaTeX table.", err=True)
-            raise typer.Exit(code=1)
+            from mail_municipalities.analysis.security_combined import export_combined_security_latex
+
+            export_combined_security_latex()
+            return
         from mail_municipalities.analysis.security_combined import print_combined_security_summary
 
         print_combined_security_summary()
