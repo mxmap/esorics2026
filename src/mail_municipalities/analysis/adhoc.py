@@ -103,10 +103,10 @@ def provider_country_security(df: pd.DataFrame) -> None:
             subset = df[(df["provider"] == provider) & (df["country"] == country)]
             if len(subset) < 10:
                 continue
-            rows.append({"provider": provider, "country": country, **_security_row("", subset)})
+            rows.append({"provider": provider, "country": country, **_security_row("", pd.DataFrame(subset))})
 
     result = pd.DataFrame(rows)[["provider", "country", "n", *_SECURITY_COLS]]
-    _print_df(result)
+    _print_df(pd.DataFrame(result))
 
     # Verify claims
     print()
