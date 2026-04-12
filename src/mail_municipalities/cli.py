@@ -189,15 +189,12 @@ def _analyze_providers_impl(
     latex: bool = False,
 ) -> None:
     if all_countries:
-        from mail_municipalities.analysis.provider_combined import (
-            export_combined_latex,
-            print_combined_summary,
-        )
-
         if latex:
-            export_combined_latex()
-        else:
-            print_combined_summary()
+            typer.echo("Use 'analyze merged --latex' for the combined LaTeX table.", err=True)
+            raise typer.Exit(code=1)
+        from mail_municipalities.analysis.provider_combined import print_combined_summary
+
+        print_combined_summary()
         return
 
     from mail_municipalities.provider_classification.analyze import main
@@ -211,15 +208,12 @@ def _analyze_security_impl(
     latex: bool = False,
 ) -> None:
     if all_countries:
-        from mail_municipalities.analysis.security_combined import (
-            export_combined_security_latex,
-            print_combined_security_summary,
-        )
-
         if latex:
-            export_combined_security_latex()
-        else:
-            print_combined_security_summary()
+            typer.echo("Use 'analyze merged --latex' for the combined LaTeX table.", err=True)
+            raise typer.Exit(code=1)
+        from mail_municipalities.analysis.security_combined import print_combined_security_summary
+
+        print_combined_security_summary()
         return
 
     from mail_municipalities.analysis.security_latex import main as security_main
@@ -263,6 +257,33 @@ def analyze_security_cmd(
 ) -> None:
     """Analyze security scan results."""
     _analyze_security_impl(data_path, all_countries, latex)
+
+
+@_analyze_app.command("adhoc")
+def analyze_adhoc_cmd() -> None:
+    """Ad-hoc analysis: provider–security correlations."""
+    from mail_municipalities.analysis.adhoc import main as adhoc_main
+
+    adhoc_main()
+
+
+@_analyze_app.command("merged")
+def analyze_merged_cmd(
+    latex: Annotated[
+        bool,
+        typer.Option("--latex", help="Export merged table as LNCS-formatted LaTeX file"),
+    ] = False,
+) -> None:
+    """Merged provider + security regional table (all countries)."""
+    from mail_municipalities.analysis.merged_combined import (
+        export_merged_latex,
+        print_merged_summary,
+    )
+
+    if latex:
+        export_merged_latex()
+    else:
+        print_merged_summary()
 
 
 # ── Script entry points (called by [project.scripts]) ──────────────

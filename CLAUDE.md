@@ -37,11 +37,11 @@ uv run scan ch -v             # verbose logging (streams Docker output)
 uv run analyze providers output/providers/providers_ch.json          # single country console report
 uv run analyze providers output/providers/providers_ch.json --latex   # single country LaTeX export
 uv run analyze providers --all                                        # combined summary (console)
-uv run analyze providers --all --latex                                # combined multi-country LaTeX table
 uv run analyze security output/security/security_ch.json             # single country console report
 uv run analyze security output/security/security_ch.json --latex     # single country LaTeX export
 uv run analyze security --all                                         # combined summary (console)
-uv run analyze security --all --latex                                 # combined multi-country LaTeX table
+uv run analyze merged                                                 # merged provider+security summary (console)
+uv run analyze merged --latex                                         # merged multi-country LaTeX table
 ```
 
 ## Architecture
@@ -54,6 +54,7 @@ uv run analyze security --all --latex                                 # combined
     - `provider_combined.py` -- combined multi-country provider tables (pandas)
     - `security_latex.py` -- single-country security LaTeX tables
     - `security_combined.py` -- combined multi-country security tables (pandas)
+    - `merged_combined.py` -- merged provider+security LaTeX table (pandas)
   - `core/` -- shared infrastructure
     - `dns.py` -- multi-resolver DNS with fallback
     - `log.py` -- loguru setup

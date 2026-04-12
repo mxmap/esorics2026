@@ -338,14 +338,11 @@ def build_country_overview(
 def latex_country_overview(df: pd.DataFrame) -> str:
     """Render a compact country overview table."""
     grand = df[df["country"] == "Total"].iloc[0]
-    grand_n = int(grand["total"])
 
     lines: list[str] = []
     lines.append("\\begin{table}[t]")
     lines.append("    \\centering")
-    lines.append(
-        f"    \\caption{{Country-level overview of email provider classification}}"
-    )
+    lines.append("    \\caption{{Country-level overview of email provider classification}}")
     lines.append("    \\label{tab:country-overview}")
     lines.append("    \\footnotesize")
     lines.append("    \\begin{threeparttable}")

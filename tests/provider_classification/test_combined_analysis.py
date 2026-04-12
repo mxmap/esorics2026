@@ -342,9 +342,9 @@ def test_latex_country_overview_structure(tmp_path: Path) -> None:
     assert "Germany" in tex
     assert "Conf." in tex
     assert "GW" in tex
-    assert "MSFT" in tex
-    assert "GOOGL" in tex
-    assert "AMZN" in tex
+    assert "MS" in tex
+    assert "GOOG" in tex
+    assert "AWS" in tex
     assert "threeparttable" in tex
     assert "tablenotes" in tex
     # No cell colors in the overview table
