@@ -11,7 +11,6 @@ from mail_municipalities.analysis.provider_combined import (
     build_combined_dataframe,
     build_country_overview,
     export_combined_latex,
-    latex_combined_regional,
     latex_country_overview,
     load_all_countries,
 )
@@ -243,59 +242,6 @@ def test_build_combined_dataframe_sorted_by_us_pct(tmp_path: Path) -> None:
 
 
 # ---------------------------------------------------------------------------
-# Tests: latex_combined_regional
-# ---------------------------------------------------------------------------
-
-
-def test_latex_combined_regional_structure(tmp_path: Path) -> None:
-    all_data = _build_test_all_data(tmp_path)
-    df = build_combined_dataframe(all_data)
-    tex = latex_combined_regional(df)
-
-    assert "\\begin{table}" in tex
-    assert "\\end{table}" in tex
-    assert "\\toprule" in tex
-    assert "\\bottomrule" in tex
-    assert "\\caption{" in tex
-    assert "tab:combined-regional" in tex
-
-
-def test_latex_combined_regional_contains_all_countries(tmp_path: Path) -> None:
-    all_data = _build_test_all_data(tmp_path)
-    df = build_combined_dataframe(all_data)
-    tex = latex_combined_regional(df)
-
-    assert "CH" in tex
-    assert "DE" in tex
-    assert "AT" in tex
-    assert "ALL" in tex
-
-
-def test_latex_combined_regional_has_colors(tmp_path: Path) -> None:
-    all_data = _build_test_all_data(tmp_path)
-    df = build_combined_dataframe(all_data)
-    tex = latex_combined_regional(df)
-
-    assert "\\definecolor{ushigh}" in tex
-    assert "\\definecolor{usmid}" in tex
-    assert "\\definecolor{uslow}" in tex
-    assert "\\cellcolor{" in tex
-
-
-def test_latex_combined_numbers_match_dataframe(tmp_path: Path) -> None:
-    all_data = _build_test_all_data(tmp_path)
-    df = build_combined_dataframe(all_data)
-    tex = latex_combined_regional(df)
-
-    # Grand total row should show total=7
-    grand = df[df["country"] == "ALL"].iloc[0]
-    assert str(int(grand["total"])) in tex
-
-    # CH Zürich has 2 municipalities — should appear in tex
-    assert "rich" in tex  # "Zürich" rendered in LaTeX
-
-
-# ---------------------------------------------------------------------------
 # Tests: build_country_overview / latex_country_overview
 # ---------------------------------------------------------------------------
 
@@ -366,10 +312,8 @@ def test_export_combined_latex_writes_file(tmp_path: Path) -> None:
     content = output.read_text(encoding="utf-8")
 
     assert "Auto-generated" in content
-    assert "tab:combined-regional" in content
     assert "\\begin{table}" in content
     assert "\\end{table}" in content
     assert "tab:country-overview" in content
-    assert "tab:combined-regional" in content
-    assert content.count("\\begin{table}") == 2
-    assert content.count("\\end{table}") == 2
+    assert content.count("\\begin{table}") == 1
+    assert content.count("\\end{table}") == 1

@@ -11,7 +11,6 @@ from mail_municipalities.analysis.security_combined import (
     build_security_dataframe,
     build_security_overview,
     export_combined_security_latex,
-    latex_combined_security,
     latex_security_overview,
     load_all_security,
 )
@@ -189,46 +188,6 @@ def test_build_security_dataframe_totals(tmp_path: Path) -> None:
 
 
 # ---------------------------------------------------------------------------
-# Tests: latex_combined_security
-# ---------------------------------------------------------------------------
-
-
-def test_latex_combined_security_structure(tmp_path: Path) -> None:
-    all_data = _build_test_all_data(tmp_path)
-    df = build_security_dataframe(all_data)
-    tex = latex_combined_security(df)
-
-    assert "\\begin{table}" in tex
-    assert "\\end{table}" in tex
-    assert "\\toprule" in tex
-    assert "\\bottomrule" in tex
-    assert "\\caption{" in tex
-    assert "tab:combined-security" in tex
-
-
-def test_latex_combined_security_contains_all_countries(tmp_path: Path) -> None:
-    all_data = _build_test_all_data(tmp_path)
-    df = build_security_dataframe(all_data)
-    tex = latex_combined_security(df)
-
-    assert "CH" in tex
-    assert "DE" in tex
-    assert "AT" in tex
-    assert "ALL" in tex
-
-
-def test_latex_combined_security_has_colors(tmp_path: Path) -> None:
-    all_data = _build_test_all_data(tmp_path)
-    df = build_security_dataframe(all_data)
-    tex = latex_combined_security(df)
-
-    assert "\\definecolor{sechigh}" in tex
-    assert "\\definecolor{secmid}" in tex
-    assert "\\definecolor{seclow}" in tex
-    assert "\\cellcolor{" in tex
-
-
-# ---------------------------------------------------------------------------
 # Tests: latex_security_overview
 # ---------------------------------------------------------------------------
 
@@ -272,6 +231,5 @@ def test_export_combined_security_latex_writes_file(tmp_path: Path) -> None:
 
     assert "Auto-generated" in content
     assert "tab:security-overview" in content
-    assert "tab:combined-security" in content
-    assert content.count("\\begin{table}") == 2
-    assert content.count("\\end{table}") == 2
+    assert content.count("\\begin{table}") == 1
+    assert content.count("\\end{table}") == 1

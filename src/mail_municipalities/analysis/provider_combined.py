@@ -147,126 +147,6 @@ def build_combined_dataframe(
 
 
 # ---------------------------------------------------------------------------
-# LaTeX rendering
-# ---------------------------------------------------------------------------
-
-# Color thresholds for US% cells
-_COLOR_DEFS = (
-    "\\definecolor{ushigh}{RGB}{253,216,213}%   >=70% US\n"
-    "\\definecolor{usmid}{RGB}{255,244,199}%    >=50% US\n"
-    "\\definecolor{uslow}{RGB}{214,240,216}%    <50% US\n"
-)
-
-
-def _us_cell(pct: float, bold: bool = False) -> str:
-    """Format a US% cell with background colour."""
-    if pct >= 70:
-        color = "ushigh"
-    elif pct >= 50:
-        color = "usmid"
-    else:
-        color = "uslow"
-    text = f"{pct:.1f}\\%"
-    if bold:
-        text = f"\\textbf{{{text}}}"
-    return f"\\cellcolor{{{color}}}{text}"
-
-
-def _dom_cell(pct: float, bold: bool = False) -> str:
-    """Format a Dom% cell with background colour (inverse of US)."""
-    if pct > 50:
-        color = "uslow"
-    elif pct > 30:
-        color = "usmid"
-    else:
-        color = "ushigh"
-    text = f"{pct:.1f}\\%"
-    if bold:
-        text = f"\\textbf{{{text}}}"
-    return f"\\cellcolor{{{color}}}{text}"
-
-
-def latex_combined_regional(df: pd.DataFrame) -> str:
-    """Render the combined DataFrame as an LNCS-formatted LaTeX table."""
-    grand_row = df[df["country"] == "ALL"].iloc[0]
-    grand_n = int(grand_row["total"])
-
-    lines: list[str] = []
-    lines.append("\\begin{table}[t]")
-    lines.append("    \\centering")
-    lines.append(f"    \\caption{{Provider distribution by region across all countries ($n={_num(grand_n)}$).}}")
-    lines.append("    \\label{tab:combined-regional}")
-    lines.append("    \\scriptsize")
-    lines.append("    \\renewcommand{\\arraystretch}{0.82}")
-    lines.append("")
-    lines.append("    % Color definitions")
-    for cdef in _COLOR_DEFS.strip().splitlines():
-        lines.append(f"    {cdef}")
-    lines.append("")
-    lines.append("    \\begin{tabularx}{\\textwidth}{lXrrrrrrrrr}")
-    lines.append("        \\toprule")
-    lines.append(
-        "        \\textbf{Country} & \\textbf{Region} & \\textbf{Total}"
-        " & \\textbf{MSFT} & \\textbf{Goog} & \\textbf{AWS}"
-        " & \\textbf{Dom} & \\textbf{Frgn} & \\textbf{Unkn}"
-        " & \\textbf{US\\%} & \\textbf{Dom\\%} \\\\"
-    )
-    lines.append("        \\midrule")
-
-    prev_country: str | None = None
-
-    for _, row_s in df.iterrows():
-        row = row_s.to_dict()
-        country = str(row["country"])
-        region = str(row["region"])
-        is_subtotal = region == "Total"
-        is_grand = country == "ALL"
-        is_bold = is_subtotal or is_grand
-
-        # Separator between country groups
-        if prev_country is not None and country != prev_country:
-            lines.append("        \\midrule")
-
-        # Country label: show only on first row of group
-        if country == prev_country and not is_subtotal:
-            country_cell = ""
-        else:
-            country_cell = f"\\textbf{{{country}}}" if is_bold else country
-
-        # Format cells
-        def _fmt(val: Any, bold: bool = False) -> str:
-            n = int(val)
-            s = _num(n)
-            return f"\\textbf{{{s}}}" if bold else s
-
-        region_cell = f"\\textbf{{{_esc(region)}}}" if is_bold else _esc(region)
-        total_cell = _fmt(row["total"], is_bold)
-        msft = _fmt(row["microsoft"], is_bold)
-        goog = _fmt(row["google"], is_bold)
-        aws = _fmt(row["aws"], is_bold)
-        dom = _fmt(row["domestic"], is_bold)
-        frgn = _fmt(row["foreign"], is_bold)
-        unkn = _fmt(row["unknown"], is_bold)
-        us_pct_cell = _us_cell(float(row["us_pct"]), is_bold)
-        dom_pct_cell = _dom_cell(float(row["dom_pct"]), is_bold)
-
-        lines.append(
-            f"        {country_cell} & {region_cell} & {total_cell}"
-            f" & {msft} & {goog} & {aws}"
-            f" & {dom} & {frgn} & {unkn}"
-            f" & {us_pct_cell} & {dom_pct_cell} \\\\"
-        )
-
-        prev_country = country
-
-    lines.append("        \\bottomrule")
-    lines.append("    \\end{tabularx}")
-    lines.append("\\end{table}")
-
-    return "\n".join(lines) + "\n"
-
-
-# ---------------------------------------------------------------------------
 # Country overview table
 # ---------------------------------------------------------------------------
 
@@ -438,9 +318,8 @@ def export_combined_latex(
     print("\n  Country overview:\n")
     print(overview_df.to_string(index=False))
 
-    # Render LaTeX
+    # Render LaTeX (overview only; regional detail is in merged_combined)
     tex_overview = latex_country_overview(overview_df)
-    tex_regional = latex_combined_regional(df)
 
     # Build output path
     if output_path is None:
@@ -469,7 +348,7 @@ def export_combined_latex(
     )
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    content = header + "\n" + tex_overview + "\n" + tex_regional
+    content = header + "\n" + tex_overview
     output_path.write_text(content, encoding="utf-8")
 
     print(f"\n  LaTeX table written to: {output_path}")

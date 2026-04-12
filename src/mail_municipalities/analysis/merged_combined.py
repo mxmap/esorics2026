@@ -238,20 +238,20 @@ def validate_merged_dataframe(df: pd.DataFrame) -> None:
         sub = subtotal.iloc[0]
 
         for col in prov_count_cols:
-            expected = int(regions[col].sum())
+            expected = int(regions[col].sum())  # pyright: ignore[reportArgumentType]
             actual = int(sub[col])
             assert actual == expected, f"{cc} subtotal {col}: expected {expected}, got {actual}"
 
         for col in sec_count_cols:
-            expected = int(regions[col].sum())
+            expected = int(regions[col].sum())  # pyright: ignore[reportArgumentType]
             actual = int(sub[col])
             assert actual == expected, f"{cc} security subtotal {col}: expected {expected}, got {actual}"
 
-        expected_total = int(regions["total"].sum())
+        expected_total = int(regions["total"].sum())  # pyright: ignore[reportArgumentType]
         assert int(sub["total"]) == expected_total, (
             f"{cc} subtotal total: expected {expected_total}, got {int(sub['total'])}"
         )
-        expected_sec_total = int(regions["sec_total"].sum())
+        expected_sec_total = int(regions["sec_total"].sum())  # pyright: ignore[reportArgumentType]
         assert int(sub["sec_total"]) == expected_sec_total, (
             f"{cc} subtotal sec_total: expected {expected_sec_total}, got {int(sub['sec_total'])}"
         )
@@ -263,7 +263,7 @@ def validate_merged_dataframe(df: pd.DataFrame) -> None:
     g = grand.iloc[0]
 
     for col in [*prov_count_cols, *sec_count_cols, "total", "sec_total"]:
-        expected = int(subtotals[col].sum())
+        expected = int(subtotals[col].sum())  # pyright: ignore[reportArgumentType]
         actual = int(g[col])
         assert actual == expected, f"Grand total {col}: expected {expected}, got {actual}"
 
