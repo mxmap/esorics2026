@@ -1,4 +1,4 @@
-# Municipality Email Infrastructure — ESORICS 2026
+# Email Provider Dependencies and Email Security in Municipalities Across Germany, Austria, and Switzerland -- ESORICS 2026
 
 ![CI](https://github.com/davidhuser/paper-municipality-emails/actions/workflows/ci.yml/badge.svg)
 
