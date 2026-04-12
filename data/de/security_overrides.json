@@ -1,0 +1,10 @@
+{
+  "02000000": {
+    "dss": {"has_spf": true, "has_good_spf": true},
+    "source": "dss bug: large TXT response (45 records) causes silent SPF drop"
+  },
+  "08119008": {
+    "dss": {"has_spf": true, "has_good_spf": false},
+    "source": "dss bug: uppercase V=spf1 not matched (case-sensitive regex)"
+  }
+}

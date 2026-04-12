@@ -286,6 +286,23 @@ def analyze_merged_cmd(
         print_merged_summary()
 
 
+@_analyze_app.command("outliers")
+def analyze_outliers_cmd(
+    country: Annotated[
+        Optional[str],
+        typer.Option("--country", help="Limit to one country (ch, de, at)"),
+    ] = None,
+    verify: Annotated[
+        bool,
+        typer.Option("--verify", help="Run DNS verification on sample findings"),
+    ] = False,
+) -> None:
+    """Investigate outliers and potential errors in classification and security data."""
+    from mail_municipalities.analysis.outliers import main as outliers_main
+
+    outliers_main(country=country, verify=verify)
+
+
 # ── Script entry points (called by [project.scripts]) ──────────────
 
 

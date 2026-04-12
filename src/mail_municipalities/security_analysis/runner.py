@@ -8,6 +8,7 @@ import subprocess
 import time
 from collections import defaultdict
 from pathlib import Path
+from typing import Any
 
 from loguru import logger
 
@@ -190,6 +191,60 @@ def build_domain_security(rows: list[dict]) -> dict[str, dict]:
     return result
 
 
+def _load_security_overrides(cc: str) -> dict[str, dict[str, Any]]:
+    """Load security scan overrides from ``data/{cc}/security_overrides.json``.
+
+    Returns dict keyed by municipality code.  Returns empty dict if the file does not exist.
+    """
+    path = Path("data") / cc / "security_overrides.json"
+    if not path.exists():
+        return {}
+
+    with open(path, encoding="utf-8") as f:
+        raw: dict[str, Any] = json.load(f)
+
+    overrides: dict[str, dict[str, Any]] = {}
+    for code, entry in raw.items():
+        if "source" not in entry:
+            logger.warning("security override {}: missing 'source' field — skipped", code)
+            continue
+        overrides[code] = entry
+
+    logger.info("Loaded {} security overrides from {}", len(overrides), path)
+    return overrides
+
+
+def _apply_security_overrides(
+    municipalities: list[MunicipalitySecurity],
+    overrides: dict[str, dict[str, Any]],
+) -> int:
+    """Apply security overrides to municipality results.  Returns count applied."""
+    by_code = {m.code: m for m in municipalities}
+    applied = 0
+    for code, override in overrides.items():
+        if code not in by_code:
+            logger.warning("security override for {} but municipality not in results", code)
+            continue
+
+        muni = by_code[code]
+
+        # Merge DSS fields
+        if "dss" in override and muni.dss is not None:
+            for field, value in override["dss"].items():
+                setattr(muni.dss, field, value)
+
+        # Merge DANE fields
+        if "dane" in override and muni.dane is not None:
+            for field, value in override["dane"].items():
+                setattr(muni.dane, field, value)
+
+        muni.scan_valid = True
+        muni.override = {"source": override["source"]}
+        applied += 1
+
+    return applied
+
+
 def build_output(domains_path: Path, domain_security: dict[str, dict], cc: str) -> SecurityOutput:
     """Map security data back to municipalities and build the output envelope."""
     with open(domains_path, encoding="utf-8") as f:
@@ -224,6 +279,12 @@ def build_output(domains_path: Path, domain_security: dict[str, dict], cc: str) 
         )
 
     municipalities.sort(key=lambda m: m.code)
+
+    # Apply security overrides
+    security_overrides = _load_security_overrides(cc)
+    if security_overrides:
+        overrides_applied = _apply_security_overrides(municipalities, security_overrides)
+        logger.info("Security overrides: {} available, {} applied", len(security_overrides), overrides_applied)
 
     # Aggregate counts
     scanned = sum(1 for m in municipalities if m.scan_valid)
