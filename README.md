@@ -1,12 +1,14 @@
-# Municipality Email Infrastructure
+# Municipality Email Infrastructure — ESORICS 2026
 
-Automated pipeline to collect email domains, classify email providers, and analyze email infrastructure for municipalities in Switzerland (~2,100), Germany (~9,000), and Austria (~2,350).
+![CI](https://github.com/davidhuser/paper-municipality-emails/actions/workflows/ci.yml/badge.svg)
 
-The system has three stages:
+Automated pipeline to collect email domains, classify email providers, and analyze email security for municipalities in Switzerland (~2,100), Germany (~9,000), and Austria (~2,350).
 
-1. **Domain Resolver** -- Cross-references official registries, Wikidata, and static datasets to build a list of candidate website domains per municipality. Scrapes those websites for email addresses, validates them via DNS/MX lookups, and applies filtering heuristics to produce a final mapping of municipality code to email domain.
-2. **Provider Classification** -- Fingerprints DNS records (MX, SPF, DKIM, autodiscover, SMTP banners, ASN lookups) to determine whether each municipality uses Microsoft 365, Google Workspace, AWS, Infomaniak, a Swiss ISP, or independent hosting.
-3. **Security Analysis** -- Wraps a Kotlin/Docker scanner to evaluate DANE/DNSSEC and email authentication (SPF, DKIM, DMARC) for each municipality's email domain.
+## Pipeline
+
+1. **Resolve** — Collect municipality websites from official registries and Wikidata, scrape for email addresses, validate via DNS/MX, and produce a municipality-to-domain mapping.
+2. **Classify** — Fingerprint DNS records (MX, SPF, autodiscover, SMTP banners, ASN) to determine email provider (Microsoft 365, Google Workspace, AWS, domestic hosting, etc.).
+3. **Scan** — Evaluate DANE/DNSSEC and email authentication (SPF, DMARC) per domain via a Kotlin/Docker scanner.
 
 ## How to run
 
@@ -37,96 +39,34 @@ uv run scan ch -v             # verbose (streams Docker output)
 ```
 
 > [!IMPORTANT]
-> This tool requires unrestricted outbound port 25 (SMTP). Most residential ISPs and Laptops block this.
+> This tool requires unrestricted outbound port 25 (SMTP). Most residential ISPs and laptops block this.
 > For best results, run from a cloud VM with port 25 access opened.
-
 
 ## Output files
 
-Results are written to `output/` with separate directories per stage:
+Results are written to `output/`:
 
-### `output/domains/` -- Domain Resolver Output
-
-Three tiers per country:
-
-**`domains_{cc}.json`** -- Minimal output. One entry per municipality with code, name, region, website, and email domain(s).
-
-```json
-{
-  "generated": "2026-04-01T14:57:10.807954Z",
-  "total": 2110,
-  "municipalities": [
-    {
-      "code": "1",
-      "name": "Aeugst am Albis",
-      "region": "Kanton Zurich",
-      "website": "aeugst-albis.ch",
-      "emails": ["aeugst-albis.ch"]
-    }
-  ]
-}
-```
-
-**`domains_{cc}_detailed.json`** -- Same records plus `source`, `confidence`, `sources_detail`, and `flags`.
-
-**`domains_{cc}_review.json`** -- Subset of entries with low/no confidence or non-empty flags.
-
-### `output/providers/` -- Provider Classification Output
-
-**`providers_{cc}.json`** -- Full classification results per municipality including provider, confidence, evidence signals, and gateway detection.
-
-**`providers_{cc}.min.json`** -- Minified version for frontend consumption.
-
-### `output/security/` -- Security Analysis Output
-
-**`security_{cc}.json`** -- Per-municipality security assessment with aggregate counts.
-
-```json
-{
-  "generated": "2026-04-08T14:47:39Z",
-  "commit": "fa40a79",
-  "total": 2110,
-  "counts": {
-    "scanned": 2109,
-    "dane_supported": 0,
-    "spf": 2096,
-    "good_spf": 1690,
-    "dmarc": 1175,
-    "good_dmarc": 284,
-    "dkim": 597
-  },
-  "municipalities": [
-    {
-      "code": "1",
-      "name": "Aeugst am Albis",
-      "region": "Kanton Zürich",
-      "domain": "aeugst-albis.ch",
-      "mx_records": ["mailgw01.zii.ch", "mailgw02.zii.ch"],
-      "dane": { "supported": false, "partial": false },
-      "dss": {
-        "has_spf": true,
-        "has_good_spf": true,
-        "has_dmarc": false,
-        "has_good_dmarc": false,
-        "has_dkim": false
-      },
-      "scan_valid": true
-    }
-  ]
-}
-```
+| Stage | Files | Description |
+|-------|-------|-------------|
+| Resolve | `domains/domains_{cc}.json` | Minimal: code, name, region, website, email domain |
+| | `domains/domains_{cc}_detailed.json` | Full: includes source, confidence, flags |
+| | `domains/domains_{cc}_review.json` | Low-confidence entries for manual review |
+| Classify | `providers/providers_{cc}.json` | Provider, confidence, evidence signals, gateway |
+| | `providers/providers_{cc}.min.json` | Minified for frontend consumption |
+| Scan | `security/security_{cc}.json` | DANE, SPF, DMARC assessment per municipality |
+| Export | `export.xlsx` | Combined workbook: all municipalities + statistics |
 
 ## Maps
 
-Interactive Leaflet maps visualize the provider classification per country. After running Stages 1 and 2, serve the maps locally:
+Interactive Leaflet maps visualize provider classification per country:
 
 ```bash
 python3 -m http.server              # from the project root
 # then open http://localhost:8000/maps/
 ```
 
-- [Switzerland](maps/ch.html) -- ~2,100 municipalities
-- [Austria](maps/at.html) -- ~2,100 municipalities
-- [Germany](maps/de.html) -- ~11,100 municipalities
+- [Switzerland](maps/ch.html) — ~2,100 municipalities
+- [Austria](maps/at.html) — ~2,100 municipalities
+- [Germany](maps/de.html) — ~11,100 municipalities
 
-Each map colors municipalities by email jurisdiction (domestic, US cloud, foreign) with confidence-level shading, and provides interactive popups with MX/SPF records and classification signals.
+Each map colors municipalities by email jurisdiction (domestic, US cloud, foreign) with confidence-level shading and interactive popups showing MX/SPF records and classification signals.
