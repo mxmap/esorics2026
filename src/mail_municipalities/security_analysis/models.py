@@ -35,6 +35,7 @@ class MunicipalitySecurity(BaseModel):
     dane: DaneSummary | None = None
     dss: DssSummary | None = None
     scan_valid: bool = False
+    override: dict[str, str] | None = None
 
 
 class SecurityOutput(BaseModel):

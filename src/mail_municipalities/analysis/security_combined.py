@@ -180,26 +180,6 @@ def build_security_overview(
 # LaTeX rendering
 # ---------------------------------------------------------------------------
 
-_SEC_COLOR_DEFS = (
-    "\\definecolor{sechigh}{RGB}{214,240,216}%   >=80% adoption (good)\n"
-    "\\definecolor{secmid}{RGB}{255,244,199}%    >=50% adoption\n"
-    "\\definecolor{seclow}{RGB}{253,216,213}%    <50% adoption (poor)\n"
-)
-
-
-def _sec_cell(pct: float, bold: bool = False) -> str:
-    """Format a security percentage cell with background colour."""
-    if pct >= 80:
-        color = "sechigh"
-    elif pct >= 50:
-        color = "secmid"
-    else:
-        color = "seclow"
-    text = f"{pct:.1f}\\%"
-    if bold:
-        text = f"\\textbf{{{text}}}"
-    return f"\\cellcolor{{{color}}}{text}"
-
 
 def latex_security_overview(df: pd.DataFrame) -> str:
     """Render a compact country-level security overview table."""
@@ -257,69 +237,6 @@ def latex_security_overview(df: pd.DataFrame) -> str:
     return "\n".join(lines) + "\n"
 
 
-_PCT_COLS = ["spf_pct", "good_spf_pct", "dmarc_pct", "good_dmarc_pct", "dane_pct"]
-_COL_HEADERS = ["SPF\\%", "gSPF\\%", "DMARC\\%", "gDMARC\\%", "DANE\\%"]
-
-
-def latex_combined_security(df: pd.DataFrame) -> str:
-    """Render the combined regional security DataFrame as a colored LaTeX table."""
-    grand_row = df[df["country"] == "ALL"].iloc[0]
-    grand_n = int(grand_row["total"])
-
-    lines: list[str] = []
-    lines.append("\\begin{table}[t]")
-    lines.append("    \\centering")
-    lines.append(f"    \\caption{{Email security adoption by region across all countries ($n={num(grand_n)}$).}}")
-    lines.append("    \\label{tab:combined-security}")
-    lines.append("    \\scriptsize")
-    lines.append("    \\renewcommand{\\arraystretch}{0.82}")
-    lines.append("")
-    lines.append("    % Color definitions")
-    for cdef in _SEC_COLOR_DEFS.strip().splitlines():
-        lines.append(f"    {cdef}")
-    lines.append("")
-
-    col_header = " & ".join(f"\\textbf{{{h}}}" for h in _COL_HEADERS)
-    lines.append("    \\begin{tabularx}{\\textwidth}{lXrrrrrr}")
-    lines.append("        \\toprule")
-    lines.append(f"        \\textbf{{Country}} & \\textbf{{Region}} & \\textbf{{$n$}} & {col_header} \\\\")
-    lines.append("        \\midrule")
-
-    prev_country: str | None = None
-
-    for _, row_s in df.iterrows():
-        row = row_s.to_dict()
-        country = str(row["country"])
-        region_val = str(row["region"])
-        is_subtotal = region_val == "Total"
-        is_grand = country == "ALL"
-        is_bold = is_subtotal or is_grand
-
-        if prev_country is not None and country != prev_country:
-            lines.append("        \\midrule")
-
-        if country == prev_country and not is_subtotal:
-            country_cell = ""
-        else:
-            country_cell = f"\\textbf{{{country}}}" if is_bold else country
-
-        region_cell = f"\\textbf{{{esc(region_val)}}}" if is_bold else esc(region_val)
-        n_str = num(int(row["total"]))
-        n_cell = f"\\textbf{{{n_str}}}" if is_bold else n_str
-
-        pct_cells = " & ".join(_sec_cell(float(row[col]), is_bold) for col in _PCT_COLS)
-
-        lines.append(f"        {country_cell} & {region_cell} & {n_cell} & {pct_cells} \\\\")
-
-        prev_country = country
-
-    lines.append("        \\bottomrule")
-    lines.append("    \\end{tabularx}")
-    lines.append("\\end{table}")
-
-    return "\n".join(lines) + "\n"
-
-
 # ---------------------------------------------------------------------------
 # Export orchestrator
 # ---------------------------------------------------------------------------
@@ -342,8 +259,8 @@ def export_combined_security_latex(
     print("\n  Country overview:\n")
     print(overview_df.to_string(index=False))
 
+    # Overview only; regional detail is in merged_combined
     tex_overview = latex_security_overview(overview_df)
-    tex_regional = latex_combined_security(df)
 
     if output_path is None:
         timestamp = datetime.now(tz=timezone.utc).strftime("%Y%m%d_%H%M%S")
@@ -370,7 +287,7 @@ def export_combined_security_latex(
     )
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    content = header + "\n" + tex_overview + "\n" + tex_regional
+    content = header + "\n" + tex_overview
     output_path.write_text(content, encoding="utf-8")
 
     print(f"\n  LaTeX table written to: {output_path}")

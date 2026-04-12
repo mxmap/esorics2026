@@ -5,7 +5,7 @@
   "counts":{
     "scanned":2109,
     "dane_supported":153,
-    "spf":2091,
+    "spf":2092,
     "good_spf":1685,
     "dmarc":1170,
     "good_dmarc":282,
@@ -30615,13 +30615,16 @@
         "partial":false
       },
       "dss":{
-        "has_spf":false,
+        "has_spf":true,
         "has_good_spf":false,
         "has_dmarc":true,
         "has_good_dmarc":false,
         "has_dkim":true
       },
-      "scan_valid":true
+      "scan_valid":true,
+      "override":{
+        "source":"dss bug: large TXT response causes silent SPF drop"
+      }
     },
     {
       "code":"5592",
