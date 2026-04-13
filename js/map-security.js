@@ -259,5 +259,6 @@ function loadSecurityMap(mapConfig, countries) {
 
     removeLoading();
     map.invalidateSize({ animate: false });
+    addDownloadButton(map, 'security-map.png');
   });
 }
