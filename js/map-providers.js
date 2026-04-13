@@ -220,7 +220,7 @@ function condenseDetail(kind, detail) {
 
 function legendCategoryHtml(label, catKey, count, levels) {
   var colors = CATEGORY_COLORS[catKey];
-  return '<div class="legend-group">' +
+  return '<div class="legend-group" data-filter="' + catKey + '">' +
     '<span class="legend-group-label">' + label + ' (' + count + ')</span>' +
     '<i class="legend-swatch" data-cat="' + catKey + '" data-level="high" style="background:' + colors.high + '"></i>High confidence (' + levels.high + ')<br>' +
     '<i class="legend-swatch" data-cat="' + catKey + '" data-level="medium" style="background:' + colors.medium + '"></i>Medium (' + levels.medium + ')<br>' +
@@ -504,11 +504,11 @@ function loadUnifiedProviderMap(mapConfig, countries) {
       div.innerHTML =
         '<button class="legend-toggle" aria-label="Toggle legend" aria-expanded="' + (!isMobile) + '">' + (isMobile ? 'Legend \u25B8' : '') + '</button>' +
         '<div class="legend-content">' +
-        '<strong>Email Jurisdiction</strong>' +
+        '<strong>Email Jurisdiction</strong><span class="legend-hint">click to filter</span>' +
         legendCategoryHtml('US Cloud', 'us-cloud', catCounts['us-cloud'], levelCounts['us-cloud']) +
         legendCategoryHtml('Foreign', 'foreign', catCounts['foreign'], levelCounts['foreign']) +
         legendCategoryHtml('Domestic', 'domestic', catCounts['domestic'], levelCounts['domestic']) +
-        '<div class="legend-group"><i style="background-image:url(\'' + hatchSvg + '\')"></i>Insufficient data (' + catCounts['insufficient'] + ')</div>' +
+        '<div class="legend-group" data-filter="insufficient"><i style="background-image:url(\'' + hatchSvg + '\')"></i>Insufficient data (' + catCounts['insufficient'] + ')</div>' +
         '<button class="color-toggle" aria-label="Switch to colorblind-safe colors">\u25D0 Colorblind mode</button>' +
         '</div>';
       L.DomEvent.disableClickPropagation(div);
@@ -517,6 +517,33 @@ function loadUnifiedProviderMap(mapConfig, countries) {
     legend.addTo(map);
     document.querySelector('.legend-toggle').addEventListener('click', toggleLegend);
     document.querySelector('.color-toggle').addEventListener('click', toggleColorScheme);
+
+    // Category filter toggles
+    var hiddenCats = {};
+
+    function applyFilters() {
+      for (var i = 0; i < allMuniLayers.length; i++) {
+        var cc = countries[i];
+        var md = allMuniData[i];
+        allMuniLayers[i].eachLayer(function (layer) {
+          var code = cc.featureCodeFn(layer.feature);
+          var m = md[code];
+          var cat = effectiveCategory(m, cc.domesticCategory) || 'insufficient';
+          var visible = !hiddenCats[cat];
+          layer.setStyle({ fillOpacity: visible ? 1 : 0, opacity: visible ? 1 : 0 });
+          if (visible) layer.bindPopup(layer.getPopup()); // keep interactive
+        });
+      }
+    }
+
+    document.querySelectorAll('.legend-group[data-filter]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        var cat = el.dataset.filter;
+        hiddenCats[cat] = !hiddenCats[cat];
+        el.classList.toggle('legend-hidden', hiddenCats[cat]);
+        applyFilters();
+      });
+    });
 
     // Render each country
     for (var ci = 0; ci < results.length; ci++) {
