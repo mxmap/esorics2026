@@ -1,11 +1,10 @@
-/* nav.js — renders CH / AT / DE navigation tabs */
+/* nav.js — renders Providers / Security navigation tabs */
 (function () {
   var path = window.location.pathname;
   var file = path.split('/').pop() || 'index.html';
   var primary = [
-    { href: 'ch.html', label: 'Switzerland', match: ['ch.html'] },
-    { href: 'at.html', label: 'Austria', match: ['at.html'] },
-    { href: 'de.html', label: 'Germany', match: ['de.html'] },
+    { href: 'providers.html', label: 'Providers', match: ['providers.html'] },
+    { href: 'security.html', label: 'Security', match: ['security.html'] },
   ];
 
   var nav = document.getElementById('nav');

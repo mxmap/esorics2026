@@ -410,3 +410,213 @@ function loadProviderMap(config) {
     map.invalidateSize({ animate: false });
   });
 }
+
+/* --- Unified multi-country provider map --- */
+
+function loadUnifiedProviderMap(mapConfig, countries) {
+  var map = initMap('map', mapConfig);
+  setupInfoBar(map);
+  var isMobile = window.innerWidth <= 600;
+
+  window.toggleSection = function(el) {
+    el.classList.toggle('popup-toggle-open');
+    var body = el.nextElementSibling;
+    body.style.display = body.style.display === 'none' ? '' : 'none';
+  };
+
+  var allMuniLayers = [];
+  var allLakeLayers = [];
+  var allMuniData = [];
+
+  function toggleColorScheme() {
+    var isDefault = CATEGORY_COLORS === COLOR_SCHEMES.default;
+    CATEGORY_COLORS = isDefault ? COLOR_SCHEMES.colorblind : COLOR_SCHEMES.default;
+
+    for (var i = 0; i < allMuniLayers.length; i++) {
+      var cc = countries[i];
+      var md = allMuniData[i];
+      allMuniLayers[i].eachLayer(function (layer) {
+        var code = cc.featureCodeFn(layer.feature);
+        var m = md[code];
+        layer.setStyle({ fillColor: getColor(m, cc.domesticCategory) });
+      });
+    }
+
+    for (var i = 0; i < allLakeLayers.length; i++) {
+      if (allLakeLayers[i]) allLakeLayers[i].setStyle({ fillColor: CATEGORY_COLORS.lake });
+    }
+
+    document.querySelectorAll('.legend-swatch').forEach(function (el) {
+      el.style.background = CATEGORY_COLORS[el.dataset.cat][el.dataset.level];
+    });
+
+    var btn = document.querySelector('.color-toggle');
+    btn.textContent = isDefault ? '\u25D0 Default colors' : '\u25D0 Colorblind mode';
+  }
+
+  return fetchMultiCountryData(countries).then(function(results) {
+    // Aggregate counts across all countries
+    var catCounts = { 'us-cloud': 0, 'domestic': 0, 'foreign': 0, 'insufficient': 0 };
+    var levelCounts = {
+      'us-cloud': { high: 0, medium: 0, low: 0 },
+      'domestic': { high: 0, medium: 0, low: 0 },
+      'foreign':  { high: 0, medium: 0, low: 0 }
+    };
+
+    var latestGenerated = null;
+
+    for (var ci = 0; ci < results.length; ci++) {
+      var data = results[ci].data;
+      var cc = countries[ci];
+      var muni = data.municipalities;
+      allMuniData.push(muni);
+
+      if (data.generated && (!latestGenerated || data.generated > latestGenerated)) {
+        latestGenerated = data.generated;
+      }
+
+      var keys = Object.keys(muni);
+      for (var i = 0; i < keys.length; i++) {
+        var m = muni[keys[i]];
+        var cat = effectiveCategory(m, cc.domesticCategory);
+        if (cat) {
+          catCounts[cat]++;
+          var level = confidenceLevel(m.classification_confidence || 0);
+          if (level !== 'insufficient') levelCounts[cat][level]++;
+        } else {
+          catCounts['insufficient']++;
+        }
+      }
+    }
+
+    if (latestGenerated) {
+      showGenerated({ generated: latestGenerated, commit: results[0].data.commit });
+    }
+
+    var hatchSvg = 'data:image/svg+xml,' +
+      encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8"><rect width="8" height="8" fill="#BFBFBF"/><path d="M-1,1 l2,-2 M0,8 l8,-8 M7,9 l2,-2" stroke="#000" stroke-width="1"/></svg>');
+
+    // Legend
+    var legend = L.control({ position: isMobile ? 'topright' : 'bottomright' });
+    legend.onAdd = function () {
+      var div = L.DomUtil.create('div', 'legend');
+      if (isMobile) div.classList.add('legend-collapsed');
+      div.innerHTML =
+        '<button class="legend-toggle" aria-label="Toggle legend" aria-expanded="' + (!isMobile) + '">' + (isMobile ? 'Legend \u25B8' : '') + '</button>' +
+        '<div class="legend-content">' +
+        '<strong>Email Jurisdiction</strong>' +
+        legendCategoryHtml('US Cloud', 'us-cloud', catCounts['us-cloud'], levelCounts['us-cloud']) +
+        legendCategoryHtml('Foreign', 'foreign', catCounts['foreign'], levelCounts['foreign']) +
+        legendCategoryHtml('Domestic', 'domestic', catCounts['domestic'], levelCounts['domestic']) +
+        '<div class="legend-group"><i style="background-image:url(\'' + hatchSvg + '\')"></i>Insufficient data (' + catCounts['insufficient'] + ')</div>' +
+        '<button class="color-toggle" aria-label="Switch to colorblind-safe colors">\u25D0 Colorblind mode</button>' +
+        '</div>';
+      L.DomEvent.disableClickPropagation(div);
+      return div;
+    };
+    legend.addTo(map);
+    document.querySelector('.legend-toggle').addEventListener('click', toggleLegend);
+    document.querySelector('.color-toggle').addEventListener('click', toggleColorScheme);
+
+    // Render each country
+    for (var ci = 0; ci < results.length; ci++) {
+      var topo = results[ci].topo;
+      var cc = countries[ci];
+      var muni = allMuniData[ci];
+
+      // Lakes
+      allLakeLayers.push(addLakes(map, topo, CATEGORY_COLORS.lake));
+
+      // Municipalities
+      var geojson = topojson.feature(topo, topo.objects[cc.topoObject]);
+
+      var muniLayer = (function(cc, muni, geojson) {
+        return L.geoJSON(geojson, {
+          style: function (feature) {
+            var code = cc.featureCodeFn(feature);
+            var m = muni[code];
+            return {
+              fillColor: getColor(m, cc.domesticCategory),
+              weight: 0.6,
+              color: '#666',
+              fillOpacity: 1
+            };
+          },
+          onEachFeature: function (feature, layer) {
+            var code = cc.featureCodeFn(feature);
+            var m = muni[code];
+            if (!m) {
+              layer.bindPopup('<div class="info-popup"><strong>ID ' + escapeHtml(code) + '</strong><br>No data</div>');
+              return;
+            }
+            var color = getColor(m, cc.domesticCategory);
+            var label = LABELS[m.provider] || m.provider;
+
+            var regionCode = cc.REGION_CODES[m.region] || '';
+            var nameDisplay = regionCode ? escapeHtml(m.name) + ' (' + regionCode + ')' : escapeHtml(m.name);
+            var eDomain = escapeHtml(m.domain || 'unknown');
+            var eLabel = escapeHtml(label);
+            var badge = '<span class="provider-badge" style="background:' + color + ';color:#000">' + eLabel + '</span>';
+
+            var confidence = m.classification_confidence != null ? m.classification_confidence : 0;
+            var confPct = Math.round(confidence) + '%';
+            var metaParts = ['Confidence: ' + confPct];
+            if (m.gateway) metaParts.push('Gateway: ' + escapeHtml(m.gateway));
+            var metaLine = '<div class="popup-meta">' + metaParts.join(' &middot; ') + '</div>';
+
+            var showBody = isMobile ? 'display:none' : '';
+
+            var mxSection;
+            if (m.mx && m.mx.length > 0) {
+              mxSection = '<div class="popup-section"><div class="popup-toggle' + (isMobile ? '' : ' popup-toggle-open') + '" onclick="window.toggleSection(this)">Incoming mail handled by <span class="popup-section-hint">(MX)</span></div><div class="popup-section-body" style="' + showBody + '">' + renderTable(m.mx, cc.domesticTLDs) + '</div></div>';
+            } else {
+              mxSection = '<div class="popup-section"><div class="popup-toggle' + (isMobile ? '' : ' popup-toggle-open') + '" onclick="window.toggleSection(this)">Incoming mail handled by <span class="popup-section-hint">(MX)</span></div><div class="popup-section-body" style="' + showBody + '"><span class="popup-empty">No MX records found</span></div></div>';
+            }
+
+            var spfDelegations = parseSpfDelegations(m.spf);
+            var spfSection;
+            if (spfDelegations.length > 0) {
+              spfSection = '<div class="popup-section"><div class="popup-toggle' + (isMobile ? '' : ' popup-toggle-open') + '" onclick="window.toggleSection(this)">Authorized to send mail <span class="popup-section-hint">(SPF)</span></div><div class="popup-section-body" style="' + showBody + '">' + renderTable(spfDelegations, cc.domesticTLDs) + '</div></div>';
+            } else if (m.spf) {
+              spfSection = '<div class="popup-section"><div class="popup-toggle' + (isMobile ? '' : ' popup-toggle-open') + '" onclick="window.toggleSection(this)">Authorized to send mail <span class="popup-section-hint">(SPF)</span></div><div class="popup-section-body" style="' + showBody + '"><span class="popup-empty">' + escapeHtml(m.spf) + '</span></div></div>';
+            } else {
+              spfSection = '<div class="popup-section"><div class="popup-toggle' + (isMobile ? '' : ' popup-toggle-open') + '" onclick="window.toggleSection(this)">Authorized to send mail <span class="popup-section-hint">(SPF)</span></div><div class="popup-section-body" style="' + showBody + '"><span class="popup-empty">No SPF record found</span></div></div>';
+            }
+
+            var signalsSection;
+            if (m.classification_signals && m.classification_signals.length > 0) {
+              var deduped = deduplicateSignals(m.classification_signals);
+              var uniqueCount = deduped.length;
+              var signalItems = deduped.map(function(s) {
+                var kindLabel = SIGNAL_LABELS[s.kind] || s.kind;
+                var condensed = condenseDetail(s.kind, s.detail);
+                var dup = s.count > 1 ? '<span class="signal-dup">\u00d7' + s.count + '</span>' : '';
+                return '<div class="signal-item" title="' + escapeHtml(s.detail).replace(/"/g, '&quot;') + '"><span class="signal-kind">' + escapeHtml(kindLabel) + '</span><span class="signal-text">' + escapeHtml(condensed) + '</span>' + dup + '</div>';
+              }).join('');
+              signalsSection = '<div class="popup-section"><div class="popup-toggle" onclick="window.toggleSection(this)">Classification signals <span class="popup-signal-count" title="DNS and network evidence used to identify the email provider">' + uniqueCount + '</span></div><div class="popup-section-body" style="display:none"><div class="signal-list">' + signalItems + '</div></div></div>';
+            } else {
+              signalsSection = '<div class="popup-section"><div class="popup-toggle" onclick="window.toggleSection(this)">Classification signals</div><div class="popup-section-body" style="display:none"><span class="popup-empty">No classification signals</span></div></div>';
+            }
+
+            layer.bindPopup(
+              '<div class="info-popup">' +
+              '<strong>' + nameDisplay + '</strong><br>' +
+              eDomain + ' ' + badge +
+              metaLine +
+              mxSection + spfSection + signalsSection +
+              '</div>',
+              { maxWidth: isMobile ? 300 : 450 }
+            );
+            layer.on('mouseover', function () { this.setStyle({ weight: 2, color: '#333' }); });
+            layer.on('mouseout', function () { this.setStyle({ weight: 0.6, color: '#666' }); });
+          }
+        }).addTo(map);
+      })(cc, muni, geojson);
+
+      allMuniLayers.push(muniLayer);
+    }
+
+    removeLoading();
+    map.invalidateSize({ animate: false });
+  });
+}
