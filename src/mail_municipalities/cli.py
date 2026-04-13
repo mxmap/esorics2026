@@ -279,6 +279,22 @@ def analyze_charts_cmd() -> None:
     charts_main()
 
 
+@_analyze_app.command("timestamps")
+def analyze_timestamps_cmd(
+    latex: Annotated[
+        bool,
+        typer.Option("--latex", help="Export table as LaTeX file"),
+    ] = False,
+) -> None:
+    """Pipeline execution timestamps for the appendix."""
+    from mail_municipalities.analysis.timestamps import export_latex, print_summary
+
+    if latex:
+        export_latex()
+    else:
+        print_summary()
+
+
 @_analyze_app.command("merged")
 def analyze_merged_cmd(
     latex: Annotated[
