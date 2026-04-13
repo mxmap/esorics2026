@@ -295,14 +295,6 @@ def analyze_timestamps_cmd(
         print_summary()
 
 
-@_analyze_app.command("charts")
-def analyze_charts_cmd() -> None:
-    """Generate security & provider charts for the paper."""
-    from mail_municipalities.analysis.charts import main as charts_main
-
-    charts_main()
-
-
 @_analyze_app.command("merged")
 def analyze_merged_cmd(
     latex: Annotated[

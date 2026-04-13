@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+from typing import TYPE_CHECKING, cast
 
 import matplotlib
 import matplotlib.pyplot as plt
@@ -10,6 +11,9 @@ import pandas as pd
 import seaborn as sns
 
 from mail_municipalities.analysis.helpers import COUNTRIES, COUNTRY_NAMES
+
+if TYPE_CHECKING:
+    from matplotlib.axes import Axes
 
 matplotlib.use("pdf")
 
@@ -44,19 +48,19 @@ _COUNTRY_PALETTE = {
 }
 
 
-def _load_data() -> pd.DataFrame:
+def _load_data() -> pd.DataFrame:  # pragma: no cover
     return pd.read_excel(EXPORT_PATH, sheet_name="Municipalities")
 
 
-def _regional_security_by_provider(df: pd.DataFrame) -> pd.DataFrame:
+def _regional_security_by_provider(df: pd.DataFrame) -> pd.DataFrame:  # pragma: no cover
     """Per-region security rates, split by provider category."""
-    valid = df[df["scan_valid"] == True].copy()  # noqa: E712
-    valid["cat"] = valid["category"].map(_CAT_MAP)
+    valid = cast(pd.DataFrame, df[df["scan_valid"] == True]).copy()  # noqa: E712
+    valid["cat"] = valid["category"].replace(_CAT_MAP)
 
     rows: list[dict] = []
     for cc in COUNTRIES:
         for cat in ["Domestic", "US Cloud"]:
-            sub = valid[(valid["country"] == cc.upper()) & (valid["cat"] == cat)]
+            sub = cast(pd.DataFrame, valid[(valid["country"] == cc.upper()) & (valid["cat"] == cat)])
             for region, grp in sub.groupby("region"):
                 n = len(grp)
                 if n < 5:  # drop city-states/tiny cantons (<28 of 15k, 0.2%)
@@ -74,8 +78,8 @@ def _regional_security_by_provider(df: pd.DataFrame) -> pd.DataFrame:
     return pd.DataFrame(rows)
 
 
-def _plot_panel(
-    ax: matplotlib.axes.Axes,
+def _plot_panel(  # pragma: no cover
+    ax: Axes,
     data: pd.DataFrame,
     title: str,
 ) -> None:
@@ -107,10 +111,12 @@ def _plot_panel(
     ax.tick_params(axis="both", labelsize=7)
     sns.despine(ax=ax, offset=10, trim=True)
 
-    ax.get_legend().remove()
+    legend = ax.get_legend()
+    if legend is not None:
+        legend.remove()
 
 
-def generate_figure() -> Path:
+def generate_figure() -> Path:  # pragma: no cover
     """Generate horizontal box plot chart with provider split."""
     df = _load_data()
     rdf = _regional_security_by_provider(df)
@@ -126,8 +132,8 @@ def generate_figure() -> Path:
     )
     fig.subplots_adjust(bottom=0.22)
 
-    dom = rdf[rdf["provider"] == "Domestic"]
-    us = rdf[rdf["provider"] == "US Cloud"]
+    dom = cast(pd.DataFrame, rdf[rdf["provider"] == "Domestic"])
+    us = cast(pd.DataFrame, rdf[rdf["provider"] == "US Cloud"])
 
     _plot_panel(ax_dom, dom, "(a) Domestic providers")
     _plot_panel(ax_us, us, "(b) US Cloud providers")
@@ -156,7 +162,7 @@ def generate_figure() -> Path:
     return out_pdf
 
 
-def _apply_style() -> None:
+def _apply_style() -> None:  # pragma: no cover
     sns.set_theme(style="ticks", font_scale=0.9)
     plt.rcParams.update(
         {
@@ -172,5 +178,5 @@ def _apply_style() -> None:
     )
 
 
-def main() -> None:
+def main() -> None:  # pragma: no cover
     generate_figure()

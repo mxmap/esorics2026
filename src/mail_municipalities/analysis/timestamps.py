@@ -71,9 +71,7 @@ def export_latex() -> Path:
         "\\begin{tabular}{lccc}\n"
         "\\toprule\n"
         f"  Stage & {header} \\\\\n"
-        "\\midrule\n"
-        + "\n".join(body_lines)
-        + "\n"
+        "\\midrule\n" + "\n".join(body_lines) + "\n"
         "\\bottomrule\n"
         "\\end{tabular}\n"
         "\\end{table}\n"

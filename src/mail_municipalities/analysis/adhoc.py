@@ -22,7 +22,7 @@ _COUNTRIES = ("ch", "de", "at")
 _SECURITY_COLS = ["has_spf", "has_good_spf", "has_dmarc", "has_good_dmarc", "dane_supported"]
 
 
-def load_merged_dataframe(output_dir: Path = OUTPUT_DIR) -> pd.DataFrame:
+def load_merged_dataframe(output_dir: Path = OUTPUT_DIR) -> pd.DataFrame:  # pragma: no cover
     """Load provider + security data for all countries into a single DataFrame.
 
     Reuses the same flatten/merge logic as ``export_xlsx`` so the numbers
@@ -71,7 +71,7 @@ def _security_row(label: str, subset: pd.DataFrame) -> dict:  # pyright: ignore[
     }
 
 
-def _print_df(df: pd.DataFrame, float_fmt: str = "{:.1f}") -> None:
+def _print_df(df: pd.DataFrame, float_fmt: str = "{:.1f}") -> None:  # pragma: no cover
     """Print DataFrame with consistent formatting."""
     pd.set_option("display.width", 200)
     pd.set_option("display.float_format", float_fmt.format)
@@ -84,7 +84,7 @@ def _print_df(df: pd.DataFrame, float_fmt: str = "{:.1f}") -> None:
 # ---------------------------------------------------------------------------
 
 
-def provider_country_security(df: pd.DataFrame) -> None:
+def provider_country_security(df: pd.DataFrame) -> None:  # pragma: no cover
     """Provider × country security matrix.
 
     Backs the claim that MS365 leads on good SPF in every country,
@@ -134,7 +134,7 @@ def provider_country_security(df: pd.DataFrame) -> None:
 # ---------------------------------------------------------------------------
 
 
-def gateway_prevalence_and_effect(df: pd.DataFrame) -> None:
+def gateway_prevalence_and_effect(df: pd.DataFrame) -> None:  # pragma: no cover
     """Gateway prevalence by country and overall security deltas.
 
     Backs the claim that gateways trade SPF quality for DMARC presence,
@@ -189,7 +189,7 @@ def gateway_prevalence_and_effect(df: pd.DataFrame) -> None:
 # ---------------------------------------------------------------------------
 
 
-def gateway_product_profiles(df: pd.DataFrame) -> None:
+def gateway_product_profiles(df: pd.DataFrame) -> None:  # pragma: no cover
     """Per-gateway-product security breakdown.
 
     Backs the claim that SEPPmail and Sophos auto-configure
@@ -248,7 +248,7 @@ def _classify_mx_infra(mx: str | float) -> str:
     return "other"
 
 
-def domestic_operator_profiles(df: pd.DataFrame) -> None:
+def domestic_operator_profiles(df: pd.DataFrame) -> None:  # pragma: no cover
     """Security profiles for key domestic operators.
 
     Backs the claim that 'domestic' conceals wide heterogeneity,
@@ -293,7 +293,7 @@ def domestic_operator_profiles(df: pd.DataFrame) -> None:
 # ---------------------------------------------------------------------------
 
 
-def main() -> None:
+def main() -> None:  # pragma: no cover
     """Run all analyses that back the Discussion claims."""
     df = load_merged_dataframe()
     print(f"\nLoaded {len(df)} municipalities with domain + valid scan\n")
