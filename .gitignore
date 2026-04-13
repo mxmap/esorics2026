@@ -6,6 +6,8 @@ data/*/cache.db-shm
 output/~$export.xlsx
 output/domains/resolve_xx.log
 output/**/**.tex
+output/**/**.png
+output/**/**.pdf
 
 # OS generated files
 .DS_Store

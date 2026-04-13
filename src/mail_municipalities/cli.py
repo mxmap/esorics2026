@@ -271,6 +271,30 @@ def analyze_adhoc_cmd() -> None:
     adhoc_main()
 
 
+@_analyze_app.command("charts")
+def analyze_charts_cmd() -> None:
+    """Generate security & provider charts for the paper."""
+    from mail_municipalities.analysis.charts import main as charts_main
+
+    charts_main()
+
+
+@_analyze_app.command("timestamps")
+def analyze_timestamps_cmd(
+    latex: Annotated[
+        bool,
+        typer.Option("--latex", help="Export table as LaTeX file"),
+    ] = False,
+) -> None:
+    """Pipeline execution timestamps for the appendix."""
+    from mail_municipalities.analysis.timestamps import export_latex, print_summary
+
+    if latex:
+        export_latex()
+    else:
+        print_summary()
+
+
 @_analyze_app.command("merged")
 def analyze_merged_cmd(
     latex: Annotated[
