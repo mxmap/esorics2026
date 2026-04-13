@@ -18,6 +18,7 @@ dependencies = [
     "typer>=0.24.1",
     "pandas>=2.2",
     "openpyxl>=3.1",
+    "seaborn>=0.13.2",
 ]
 
 [dependency-groups]
