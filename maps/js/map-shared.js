@@ -120,6 +120,27 @@ async function fetchMapData(topoUrl, dataUrl) {
   return { topo: topo, providerData: providerData };
 }
 
+async function fetchMultiCountryData(countries) {
+  var urls = [];
+  for (var i = 0; i < countries.length; i++) {
+    urls.push(fetch(countries[i].topoUrl));
+    urls.push(fetch(countries[i].dataUrl));
+  }
+  var responses = await Promise.all(urls);
+  var results = [];
+  for (var i = 0; i < countries.length; i++) {
+    var topoResp = responses[i * 2];
+    var dataResp = responses[i * 2 + 1];
+    if (!topoResp.ok) throw new Error('Failed to fetch topology for ' + (countries[i].label || 'country') + ': ' + topoResp.status);
+    if (!dataResp.ok) throw new Error('Failed to fetch data for ' + (countries[i].label || 'country') + ': ' + dataResp.status);
+    var topo = await topoResp.json();
+    var data = await dataResp.json();
+    indexMunicipalities(data);
+    results.push({ topo: topo, data: data });
+  }
+  return results;
+}
+
 function removeLoading() {
   var loading = document.getElementById('map-loading');
   if (loading) loading.remove();

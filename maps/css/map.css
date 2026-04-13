@@ -114,6 +114,18 @@ body { display: flex; flex-direction: column; height: 100dvh; overflow: hidden; 
 }
 .color-toggle:hover { background: #e5e7eb; }
 
+/* Security map popup badges */
+.sec-status { margin-top: 6px; }
+.sec-row { display: flex; align-items: center; gap: 8px; margin: 3px 0; }
+.sec-label { font-size: 11px; font-weight: 600; color: #999; text-transform: uppercase; letter-spacing: 0.3px; width: 52px; flex-shrink: 0; }
+.sec-badge {
+  display: inline-block; padding: 1px 8px; border-radius: 3px;
+  font-size: 12px; font-weight: 600;
+}
+.sec-good { background: #dcfce7; color: #166534; }
+.sec-partial { background: #fef3c7; color: #92400e; }
+.sec-missing { background: #fee2e2; color: #991b1b; }
+
 @media (max-width: 600px) {
   .info-title { display: block; }
   .info-grid { grid-template-columns: 1fr; }
