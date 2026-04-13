@@ -226,6 +226,11 @@ function loadSecurityMap(mapConfig, countries) {
       allMuniLayers.push(muniLayer);
     }
 
+    // Country outlines on top
+    for (var ci = 0; ci < results.length; ci++) {
+      addCountryOutline(map, results[ci].topo, countries[ci].topoObject);
+    }
+
     removeLoading();
     map.invalidateSize({ animate: false });
   });
