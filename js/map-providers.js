@@ -650,5 +650,6 @@ function loadUnifiedProviderMap(mapConfig, countries) {
 
     removeLoading();
     map.invalidateSize({ animate: false });
+    addDownloadButton(map, 'providers-map.png');
   });
 }
