@@ -96,6 +96,14 @@ function addLakes(map, topo, lakeColor) {
   return null;
 }
 
+function addCountryOutline(map, topo, topoObject) {
+  var merged = topojson.merge(topo, topo.objects[topoObject].geometries);
+  return L.geoJSON(merged, {
+    interactive: false,
+    style: { fill: false, weight: 1.5, color: '#333', opacity: 0.6 }
+  }).addTo(map);
+}
+
 function indexMunicipalities(data) {
   if (Array.isArray(data.municipalities)) {
     var indexed = {};

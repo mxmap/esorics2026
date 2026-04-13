@@ -50,7 +50,7 @@ function dmarcLabel(dss) {
 }
 
 function secLegendItem(label, colorKey, count) {
-  return '<div class="legend-group">' +
+  return '<div class="legend-group" data-filter="' + colorKey + '">' +
     '<i class="legend-swatch" data-sec="' + colorKey + '" style="background:' + SEC_COLORS[colorKey] + '"></i>' +
     '<span>' + label + ' (' + count + ')</span>' +
     '</div>';
@@ -137,12 +137,12 @@ function loadSecurityMap(mapConfig, countries) {
       div.innerHTML =
         '<button class="legend-toggle" aria-label="Toggle legend" aria-expanded="' + (!isMobile) + '">' + (isMobile ? 'Legend \u25B8' : '') + '</button>' +
         '<div class="legend-content">' +
-        '<strong>Email Security</strong>' +
+        '<strong>Email Security</strong><span class="legend-hint">click to filter</span>' +
         secLegendItem('Good SPF + Good DMARC', 'both', catCounts['both']) +
         secLegendItem('Good SPF only', 'spf-only', catCounts['spf-only']) +
         secLegendItem('Good DMARC only', 'dmarc-only', catCounts['dmarc-only']) +
         secLegendItem('Neither', 'none', catCounts['none']) +
-        '<div class="legend-group"><i style="background-image:url(\'' + hatchSvg + '\')"></i>No scan data (' + catCounts['no-data'] + ')</div>' +
+        '<div class="legend-group" data-filter="no-data"><i style="background-image:url(\'' + hatchSvg + '\')"></i>No scan data (' + catCounts['no-data'] + ')</div>' +
         '<button class="color-toggle" aria-label="Switch to colorblind-safe colors">\u25D0 Colorblind mode</button>' +
         '</div>';
       L.DomEvent.disableClickPropagation(div);
@@ -151,6 +151,32 @@ function loadSecurityMap(mapConfig, countries) {
     legend.addTo(map);
     document.querySelector('.legend-toggle').addEventListener('click', toggleLegend);
     document.querySelector('.color-toggle').addEventListener('click', toggleColorScheme);
+
+    // Category filter toggles
+    var hiddenCats = {};
+
+    function applyFilters() {
+      for (var i = 0; i < allMuniLayers.length; i++) {
+        var cc = countries[i];
+        var md = allMuniData[i];
+        allMuniLayers[i].eachLayer(function (layer) {
+          var code = cc.featureCodeFn(layer.feature);
+          var m = md[code];
+          var cat = securityCategory(m) || 'no-data';
+          var visible = !hiddenCats[cat];
+          layer.setStyle({ fillOpacity: visible ? 1 : 0, opacity: visible ? 1 : 0 });
+        });
+      }
+    }
+
+    document.querySelectorAll('.legend-group[data-filter]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        var cat = el.dataset.filter;
+        hiddenCats[cat] = !hiddenCats[cat];
+        el.classList.toggle('legend-hidden', hiddenCats[cat]);
+        applyFilters();
+      });
+    });
 
     // Render each country
     for (var ci = 0; ci < results.length; ci++) {
@@ -224,6 +250,11 @@ function loadSecurityMap(mapConfig, countries) {
       })(cc, muni, geojson);
 
       allMuniLayers.push(muniLayer);
+    }
+
+    // Country outlines on top
+    for (var ci = 0; ci < results.length; ci++) {
+      addCountryOutline(map, results[ci].topo, countries[ci].topoObject);
     }
 
     removeLoading();
