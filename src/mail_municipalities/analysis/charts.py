@@ -3,12 +3,13 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import TYPE_CHECKING, cast
+from typing import TYPE_CHECKING, Any, cast
 
 import matplotlib
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
+from scipy.stats import chi2_contingency
 
 from mail_municipalities.analysis.helpers import COUNTRIES, COUNTRY_NAMES
 
@@ -76,6 +77,48 @@ def _regional_security_by_provider(df: pd.DataFrame) -> pd.DataFrame:  # pragma:
                         }
                     )
     return pd.DataFrame(rows)
+
+
+def compute_chi_square_tests(df: pd.DataFrame | None = None) -> list[dict[str, Any]]:
+    """Chi-square tests of independence: provider category vs security metric.
+
+    Tests whether security outcomes are independent of provider category
+    (Domestic vs US Cloud), pooled across all countries.
+    """
+    if df is None:
+        df = _load_data()
+    valid = cast(pd.DataFrame, df[df["scan_valid"] == True]).copy()  # noqa: E712
+    valid["cat"] = valid["category"].replace(_CAT_MAP)
+    subset = cast(pd.DataFrame, valid[valid["cat"].isin(["Domestic", "US Cloud"])])
+
+    results: list[dict[str, Any]] = []
+    for col, label in _METRIC_COLS:
+        ct = pd.crosstab(subset["cat"], subset[col])
+        ct = ct.reindex(columns=[False, True], fill_value=0)
+        if ct[False].sum() == 0 or ct[True].sum() == 0:
+            chi2, p, dof = 0.0, 1.0, 1
+        else:
+            chi2, p, dof, _ = chi2_contingency(ct)
+        results.append({
+            "metric": label,
+            "column": col,
+            "chi2": chi2,
+            "p": p,
+            "dof": dof,
+            "n": len(subset),
+        })
+    return results
+
+
+def _print_chi_square_results(results: list[dict[str, Any]]) -> None:  # pragma: no cover
+    n = results[0]["n"] if results else 0
+    print("\nChi-square tests: provider category vs security metric")
+    print(f"  (Domestic vs US Cloud, pooled across DE/AT/CH, n={n})\n")
+    print(f"  {'Metric':<20} {'chi2':>10} {'p':>12} {'dof':>5}")
+    print(f"  {'-' * 49}")
+    for r in results:
+        p_str = f"{r['p']:.4f}" if r["p"] >= 0.001 else "<0.001"
+        print(f"  {r['metric'].replace(chr(10), ' '):<20} {r['chi2']:>10.2f} {p_str:>12} {r['dof']:>5}")
 
 
 def _plot_panel(  # pragma: no cover
@@ -180,3 +223,5 @@ def _apply_style() -> None:  # pragma: no cover
 
 def main() -> None:  # pragma: no cover
     generate_figure()
+    results = compute_chi_square_tests()
+    _print_chi_square_results(results)
