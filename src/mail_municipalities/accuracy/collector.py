@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import asyncio
 import email
+import email.policy
 import imaplib
 import re
 from datetime import datetime, timedelta, timezone
