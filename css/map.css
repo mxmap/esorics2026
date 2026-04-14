@@ -135,6 +135,7 @@ body { display: flex; flex-direction: column; height: 100dvh; overflow: hidden; 
 .sec-missing { background: #fee2e2; color: #991b1b; }
 
 @media (max-width: 600px) {
+  #download-btn { display: none; }
   .info-title { display: block; }
   .info-grid { grid-template-columns: 1fr; }
   .legend-toggle {
