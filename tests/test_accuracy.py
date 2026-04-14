@@ -164,7 +164,6 @@ class TestNdrParser:
     def test_google_workspace(self):
         msg = _make_ndr_email(
             from_addr="mailer-daemon@googlemail.com",
-            extra_headers={"X-Gm-Message-State": "some-state"},
             received=["from mail-wr1-f54.google.com by mx.example.com"],
             body="Delivery to the following recipient failed permanently.",
         )
@@ -215,6 +214,87 @@ class TestNdrParser:
         provider, confidence, mta, evidence = parse_ndr(msg)
         # Has Exchange headers but no outlook.com in the chain -> on-premises.
         assert provider == NdrProvider.EXCHANGE_ONPREM
+
+    def test_gmail_relay_bounce_to_microsoft(self):
+        """Gmail generates the NDR but the actual target is MS365.
+
+        This is the key scenario: our Gmail relay reports a rejection from
+        a Microsoft MTA.  The parser must see through Gmail's headers.
+        """
+        from email.mime.multipart import MIMEMultipart
+        from email.mime.text import MIMEText
+
+        outer = MIMEMultipart("report", report_type="delivery-status")
+        outer["From"] = "mailer-daemon@googlemail.com"
+        outer["X-Gm-Message-State"] = "some-state"
+        outer["Received"] = "from mail-wr1-f54.google.com by mx.google.com"
+
+        text_part = MIMEText("Delivery to the following recipient failed permanently.")
+        outer.attach(text_part)
+
+        dsn_part = MIMEText(
+            "Reporting-MTA: dns; googlemail.com\n"
+            "Remote-MTA: dns; municipality.mail.protection.outlook.com\n"
+            "Diagnostic-Code: smtp; 550 5.1.1 The email account does not exist\n",
+            "delivery-status",
+        )
+        outer.attach(dsn_part)
+
+        # Parse via email.message.EmailMessage
+        import email
+        import email.policy
+
+        parsed = email.message_from_bytes(outer.as_bytes(), policy=email.policy.default)
+        assert isinstance(parsed, EmailMessage)
+        provider, confidence, mta, evidence = parse_ndr(parsed)
+        assert provider == NdrProvider.MICROSOFT, f"Expected MICROSOFT, got {provider}"
+
+    def test_gmail_relay_bounce_to_aws(self):
+        """Gmail NDR where the actual target is AWS SES."""
+        from email.mime.multipart import MIMEMultipart
+        from email.mime.text import MIMEText
+
+        outer = MIMEMultipart("report", report_type="delivery-status")
+        outer["From"] = "mailer-daemon@googlemail.com"
+        outer["X-Gm-Message-State"] = "some-state"
+        outer["Received"] = "from mail-wr1-f54.google.com by mx.google.com"
+
+        text_part = MIMEText("Delivery to the following recipient failed permanently.")
+        outer.attach(text_part)
+
+        dsn_part = MIMEText(
+            "Reporting-MTA: dns; googlemail.com\n"
+            "Remote-MTA: dns; inbound-smtp.eu-west-1.amazonaws.com\n"
+            "Diagnostic-Code: smtp; 550 5.1.1 unknown user\n",
+            "delivery-status",
+        )
+        outer.attach(dsn_part)
+
+        import email
+        import email.policy
+
+        parsed = email.message_from_bytes(outer.as_bytes(), policy=email.policy.default)
+        assert isinstance(parsed, EmailMessage)
+        provider, confidence, mta, evidence = parse_ndr(parsed)
+        assert provider == NdrProvider.AWS, f"Expected AWS, got {provider}"
+
+    def test_gmail_relay_headers_ignored(self):
+        """X-Gm-* and Received from google.com should not trigger Google detection."""
+        msg = _make_ndr_email(
+            from_addr="postmaster@mx.example.ch",
+            extra_headers={
+                "X-Gm-Message-State": "some-state",
+                "X-MS-Exchange-Organization-SCL": "-1",
+            },
+            received=[
+                "from mail-wr1-f54.google.com by mx.google.com",
+                "from mx.example.ch by mx.example.ch",
+            ],
+            body="Delivery has failed to these recipients or groups.",
+        )
+        provider, confidence, mta, evidence = parse_ndr(msg)
+        # Should detect Exchange, not Google.
+        assert provider in (NdrProvider.MICROSOFT, NdrProvider.EXCHANGE_ONPREM)
 
     def test_unknown_ndr(self):
         msg = _make_ndr_email(

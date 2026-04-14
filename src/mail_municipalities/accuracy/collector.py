@@ -169,5 +169,19 @@ def _get_text(msg: EmailMessage) -> str:
 
 
 def _extract_headers(msg: EmailMessage) -> str:
-    """Return the raw header block as a string."""
-    return "\n".join(f"{k}: {v}" for k, v in msg.items())
+    """Return the outer headers plus DSN fields for debugging."""
+    lines = [f"{k}: {v}" for k, v in msg.items()]
+    # Append DSN delivery-status content so it's visible in the DB.
+    if msg.is_multipart():
+        for part in msg.walk():
+            ct = part.get_content_type()
+            if ct in ("message/delivery-status", "text/delivery-status"):
+                lines.append("\n--- DSN delivery-status ---")
+                payload = part.get_payload(decode=True)
+                if isinstance(payload, bytes):
+                    lines.append(payload.decode("utf-8", errors="replace"))
+                elif isinstance(payload, list):
+                    lines.append("\n".join(str(p) for p in payload))
+                elif isinstance(payload, str):
+                    lines.append(payload)
+    return "\n".join(lines)
