@@ -94,45 +94,45 @@ def parse_ndr(msg: EmailMessage) -> tuple[NdrProvider, float, str, list[NdrEvide
             evidence.append(NdrEvidence(pattern=pat, matched_value=val))
         scores[provider] = conf
 
-    # ── Google Workspace ──────────────────────────────────────────
-    # Only count Google if DSN fields or From explicitly point to Google
-    # as the *generating* MTA — NOT just because our relay is Gmail.
-    goog_patterns: list[tuple[str, str]] = []
+    # ── Gmail relay bounce handling ─────────────────────────────────
+    # When we send FROM Gmail and Gmail generates the NDR, the bounce is
+    # ALWAYS a relay bounce — the target is whatever Remote-MTA says,
+    # never Google Workspace itself.  (If the target were Google, the
+    # email would be delivered to Google and Google would bounce as the
+    # destination, not as the relay.)
+    is_gmail_relay_bounce = bool(re.search(r"mailer-daemon@google(mail)?\.com", from_addr))
 
-    if re.search(r"mailer-daemon@google(mail)?\.com", from_addr):
-        # Gmail itself generated this bounce.  The actual target info is
-        # in Remote-MTA / Diagnostic-Code.  If those point elsewhere,
-        # this bounce is Gmail reporting a remote failure, not Google
-        # being the destination.  We handle that below.
-        goog_patterns.append(("from mailer-daemon@google", from_addr))
-
-    if re.search(r"google\.com|googlemail\.com", reporting_mta):
-        goog_patterns.append(("reporting-mta google", reporting_mta))
-
-    if "delivery to the following recipient failed" in body.lower():
-        goog_patterns.append(("google dsn body", "delivery failed permanently"))
-
-    # If From is Gmail but Remote-MTA / Diagnostic-Code point to a
-    # different provider, this is a *relay bounce*: Gmail forwarding a
-    # rejection from the actual target.  Detect the real target instead.
-    if goog_patterns and (remote_mta or diagnostic_code):
+    if is_gmail_relay_bounce:
+        # This is Gmail reporting a remote rejection.  Identify the real
+        # target from Remote-MTA / Diagnostic-Code.
         relay_target = _detect_relay_target(remote_mta, diagnostic_code)
-        if relay_target is not None and relay_target != NdrProvider.GOOGLE:
-            # Override: the real target is not Google.
-            goog_patterns.clear()
-            scores.pop(NdrProvider.GOOGLE, None)
-            evidence_relay = [e for e in evidence if not e.pattern.startswith("from mailer-daemon@google")]
-            evidence[:] = evidence_relay
+        if relay_target is not None:
             relay_patterns = _relay_target_evidence(relay_target, remote_mta, diagnostic_code)
             for pat, val in relay_patterns:
                 evidence.append(NdrEvidence(pattern=pat, matched_value=val))
             scores[relay_target] = min(0.3 + 0.15 * len(relay_patterns), 1.0)
+        elif remote_mta:
+            # Remote-MTA exists but doesn't match any cloud provider.
+            # The target is a self-hosted MTA (Postfix, Exim, etc.).
+            evidence.append(NdrEvidence(pattern="remote-mta (non-cloud relay)", matched_value=remote_mta))
+            scores[NdrProvider.POSTFIX] = 0.45  # generic self-hosted
+        # Do NOT score for Google — this is our relay, not the target.
+    else:
+        # ── Google Workspace (non-relay) ──────────────────────────
+        # The NDR was sent by Google as the *destination* MTA.
+        goog_patterns: list[tuple[str, str]] = []
 
-    if goog_patterns:
-        conf = min(0.3 + 0.2 * len(goog_patterns), 1.0)
-        for pat, val in goog_patterns:
-            evidence.append(NdrEvidence(pattern=pat, matched_value=val))
-        scores[NdrProvider.GOOGLE] = conf
+        if re.search(r"google\.com|googlemail\.com", reporting_mta):
+            goog_patterns.append(("reporting-mta google", reporting_mta))
+
+        if "delivery to the following recipient failed" in body.lower():
+            goog_patterns.append(("google dsn body", "delivery failed permanently"))
+
+        if goog_patterns:
+            conf = min(0.3 + 0.2 * len(goog_patterns), 1.0)
+            for pat, val in goog_patterns:
+                evidence.append(NdrEvidence(pattern=pat, matched_value=val))
+            scores[NdrProvider.GOOGLE] = conf
 
     # ── AWS SES ───────────────────────────────────────────────────
     aws_patterns: list[tuple[str, str]] = []
@@ -297,26 +297,44 @@ def _extract_dsn_fields(msg: EmailMessage) -> dict[str, str]:
     """Extract DSN fields (Reporting-MTA, Remote-MTA, Final-Recipient, etc.).
 
     Handles both ``message/delivery-status`` (RFC 3464) and the common
-    ``text/delivery-status`` variant.  Also scans all text parts for
-    DSN-like key-value lines as a fallback (some MTAs embed DSN fields
-    in the plain-text body).
+    ``text/delivery-status`` variant.
+
+    For ``message/delivery-status``, Python's email library parses the
+    DSN field groups as sub-messages whose *headers* carry the DSN fields
+    (Reporting-MTA, Remote-MTA, Diagnostic-Code, etc.).  For
+    ``text/delivery-status``, the fields appear as plain text lines.
     """
     fields: dict[str, str] = {}
     if not msg.is_multipart():
         _parse_dsn_text(msg.get_payload(decode=True), fields)
         return fields
 
-    dsn_types = ("message/delivery-status", "text/delivery-status")
     for part in msg.walk():
         ct = part.get_content_type()
-        if ct in dsn_types:
+
+        if ct == "message/delivery-status":
+            # RFC 3464: payload is a list of sub-messages.
+            # Sub-message 0 = per-message fields (Reporting-MTA).
+            # Sub-message 1+ = per-recipient fields (Remote-MTA, Diagnostic-Code).
+            raw = part.get_payload()
+            if isinstance(raw, list):
+                for sub in raw:
+                    if hasattr(sub, "items"):
+                        for key, value in sub.items():
+                            _store_dsn_field(key, value, fields)
+
+            # Some libraries also allow bytes access.
+            if not fields:
+                decoded = part.get_payload(decode=True)
+                if decoded:
+                    _parse_dsn_text(decoded, fields)
+
+        elif ct == "text/delivery-status":
+            # Non-standard but common: DSN as plain text.
             _parse_dsn_text(part.get_payload(decode=True), fields)
-            # Also try string/list payloads (email lib quirks).
             if not fields:
                 raw = part.get_payload()
-                if isinstance(raw, list):
-                    _parse_dsn_text("\n".join(str(p) for p in raw), fields)
-                elif isinstance(raw, str):
+                if isinstance(raw, str):
                     _parse_dsn_text(raw, fields)
 
     # Fallback: scan all text/plain parts for DSN-like fields.
@@ -330,6 +348,30 @@ def _extract_dsn_fields(msg: EmailMessage) -> dict[str, str]:
     return fields
 
 
+_DSN_KEYS = {
+    "reporting-mta",
+    "remote-mta",
+    "diagnostic-code",
+    "final-recipient",
+    "original-envelope-id",
+    "action",
+    "status",
+    "last-attempt-date",
+}
+
+
+def _store_dsn_field(key: str, value: str, fields: dict[str, str]) -> None:
+    """Normalise and store a single DSN key-value pair."""
+    key = key.strip().lower()
+    if key not in _DSN_KEYS:
+        return
+    value = value.strip()
+    # Strip DSN type prefix (e.g. "dns;" or "rfc822;").
+    if ";" in value:
+        value = value.split(";", 1)[1].strip()
+    fields[key] = value
+
+
 def _parse_dsn_text(payload: object, fields: dict[str, str]) -> None:
     """Parse DSN key-value lines from raw payload into *fields*."""
     text = ""
@@ -340,28 +382,11 @@ def _parse_dsn_text(payload: object, fields: dict[str, str]) -> None:
     else:
         return
 
-    dsn_keys = {
-        "reporting-mta",
-        "remote-mta",
-        "diagnostic-code",
-        "final-recipient",
-        "original-envelope-id",
-        "action",
-        "status",
-        "last-attempt-date",
-    }
     for line in text.splitlines():
         if ":" not in line:
             continue
         key, _, value = line.partition(":")
-        key = key.strip().lower()
-        if key not in dsn_keys:
-            continue
-        value = value.strip()
-        # Strip DSN type prefix (e.g. "dns;" or "rfc822;").
-        if ";" in value:
-            value = value.split(";", 1)[1].strip()
-        fields[key] = value
+        _store_dsn_field(key, value, fields)
 
 
 def _guess_mta_from_received(received_chain: list[str]) -> str:

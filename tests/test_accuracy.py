@@ -161,9 +161,42 @@ class TestNdrParser:
         assert confidence > 0.3
         assert len(evidence) >= 2
 
-    def test_google_workspace(self):
+    def test_google_workspace_relay_bounce(self):
+        """Gmail relay bounce where the target IS Google Workspace.
+
+        The Remote-MTA in the DSN points to Google, confirming the
+        target is actually Google (not just our relay).
+        """
+        from email.mime.multipart import MIMEMultipart
+        from email.mime.text import MIMEText
+
+        outer = MIMEMultipart("report", report_type="delivery-status")
+        outer["From"] = "mailer-daemon@googlemail.com"
+        outer["Received"] = "from mail-wr1-f54.google.com by mx.google.com"
+
+        text_part = MIMEText("Delivery to the following recipient failed permanently.")
+        outer.attach(text_part)
+
+        dsn_part = MIMEText(
+            "Reporting-MTA: dns; googlemail.com\n"
+            "Remote-MTA: dns; aspmx.l.google.com\n"
+            "Diagnostic-Code: smtp; 550 5.1.1 not exist\n",
+            "delivery-status",
+        )
+        outer.attach(dsn_part)
+
+        import email
+        import email.policy
+
+        parsed = email.message_from_bytes(outer.as_bytes(), policy=email.policy.default)
+        assert isinstance(parsed, EmailMessage)
+        provider, confidence, mta, evidence = parse_ndr(parsed)
+        assert provider == NdrProvider.GOOGLE
+
+    def test_google_workspace_direct_ndr(self):
+        """NDR sent directly by Google (not via our Gmail relay)."""
         msg = _make_ndr_email(
-            from_addr="mailer-daemon@googlemail.com",
+            from_addr="postmaster@google.com",
             received=["from mail-wr1-f54.google.com by mx.example.com"],
             body="Delivery to the following recipient failed permanently.",
         )
@@ -277,6 +310,36 @@ class TestNdrParser:
         assert isinstance(parsed, EmailMessage)
         provider, confidence, mta, evidence = parse_ndr(parsed)
         assert provider == NdrProvider.AWS, f"Expected AWS, got {provider}"
+
+    def test_gmail_relay_bounce_to_selfhosted(self):
+        """Gmail relay bounce to a generic self-hosted MTA (not a cloud provider)."""
+        from email.mime.multipart import MIMEMultipart
+        from email.mime.text import MIMEText
+
+        outer = MIMEMultipart("report", report_type="delivery-status")
+        outer["From"] = "mailer-daemon@googlemail.com"
+        outer["X-Gm-Message-State"] = "some-state"
+        outer["Received"] = "from mail-wr1-f54.google.com by mx.google.com"
+
+        text_part = MIMEText("Delivery to the following recipient failed permanently.")
+        outer.attach(text_part)
+
+        dsn_part = MIMEText(
+            "Reporting-MTA: dns; googlemail.com\n"
+            "Remote-MTA: dns; mail.gemeinde-insul.de\n"
+            "Diagnostic-Code: smtp; 550 5.1.1 user unknown\n",
+            "delivery-status",
+        )
+        outer.attach(dsn_part)
+
+        import email
+        import email.policy
+
+        parsed = email.message_from_bytes(outer.as_bytes(), policy=email.policy.default)
+        assert isinstance(parsed, EmailMessage)
+        provider, confidence, mta, evidence = parse_ndr(parsed)
+        # Remote-MTA is a generic hostname — should be self-hosted, NOT Google.
+        assert provider == NdrProvider.POSTFIX, f"Expected POSTFIX (self-hosted), got {provider}"
 
     def test_gmail_relay_headers_ignored(self):
         """X-Gm-* and Received from google.com should not trigger Google detection."""
