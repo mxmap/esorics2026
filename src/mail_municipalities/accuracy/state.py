@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Any
 
 import aiosqlite
 
@@ -78,7 +79,7 @@ class StateDB:
         await self._db.commit()
         return self
 
-    async def __aexit__(self, *exc: object) -> None:
+    async def __aexit__(self, *_exc: object) -> None:
         if self._db is not None:
             await self._db.close()
             self._db = None
@@ -200,19 +201,23 @@ class StateDB:
 
     async def find_probe_by_message_id(self, message_id: str) -> Probe | None:
         assert self._db is not None
-        rows = await self._db.execute_fetchall("SELECT * FROM probes WHERE message_id = ?", (message_id,))
+        rows: list[Any] = list(
+            await self._db.execute_fetchall("SELECT * FROM probes WHERE message_id = ?", (message_id,))
+        )
         return _row_to_probe(rows[0]) if rows else None
 
     async def find_probe_by_recipient(self, recipient: str) -> Probe | None:
         assert self._db is not None
-        rows = await self._db.execute_fetchall("SELECT * FROM probes WHERE recipient = ?", (recipient,))
+        rows: list[Any] = list(
+            await self._db.execute_fetchall("SELECT * FROM probes WHERE recipient = ?", (recipient,))
+        )
         return _row_to_probe(rows[0]) if rows else None
 
     async def find_probe_by_recipient_substring(self, substring: str) -> Probe | None:
         """Find a probe whose recipient contains *substring* (e.g. the UUID portion)."""
         assert self._db is not None
-        rows = await self._db.execute_fetchall(
-            "SELECT * FROM probes WHERE recipient LIKE ? LIMIT 1", (f"%{substring}%",)
+        rows: list[Any] = list(
+            await self._db.execute_fetchall("SELECT * FROM probes WHERE recipient LIKE ? LIMIT 1", (f"%{substring}%",))
         )
         return _row_to_probe(rows[0]) if rows else None
 
@@ -248,7 +253,9 @@ class StateDB:
 
     async def has_ndr_for_probe(self, probe_id: str) -> bool:
         assert self._db is not None
-        rows = await self._db.execute_fetchall("SELECT 1 FROM ndrs WHERE probe_id = ? LIMIT 1", (probe_id,))
+        rows: list[Any] = list(
+            await self._db.execute_fetchall("SELECT 1 FROM ndrs WHERE probe_id = ? LIMIT 1", (probe_id,))
+        )
         return len(rows) > 0
 
     # ── Status summary ────────────────────────────────────────────

@@ -59,16 +59,19 @@ async def compute_accuracy(state: StateDB) -> AccuracyReport:
 
     # Per-class metrics across all EVAL_LABELS.
     present_labels = [label for label in EVAL_LABELS if label in set(y_true) | set(y_pred)]
-    precision, recall, f1, support = precision_recall_fscore_support(
-        y_true, y_pred, labels=present_labels, zero_division=0.0,
+    prec_arr, rec_arr, f1_arr, sup_arr = precision_recall_fscore_support(
+        y_true,
+        y_pred,
+        labels=present_labels,
+        zero_division="warn",  # type requires str
     )
     per_class: dict[str, ClassMetrics] = {}
     for i, label in enumerate(present_labels):
         per_class[label] = ClassMetrics(
-            precision=float(precision[i]),
-            recall=float(recall[i]),
-            f1=float(f1[i]),
-            support=int(support[i]),
+            precision=float(prec_arr[i]),  # type: ignore[index]
+            recall=float(rec_arr[i]),  # type: ignore[index]
+            f1=float(f1_arr[i]),  # type: ignore[index]
+            support=int(sup_arr[i]),  # type: ignore[index]
         )
     # Fill missing labels with zeros.
     for label in EVAL_LABELS:
@@ -81,7 +84,9 @@ async def compute_accuracy(state: StateDB) -> AccuracyReport:
     wf1_true = [t for t, p in zip(y_true, y_pred) if t in WEIGHTED_F1_LABELS and p in WEIGHTED_F1_LABELS]
     wf1_pred = [p for t, p in zip(y_true, y_pred) if t in WEIGHTED_F1_LABELS and p in WEIGHTED_F1_LABELS]
     if wf1_true:
-        weighted_f1 = float(f1_score(wf1_true, wf1_pred, labels=list(WEIGHTED_F1_LABELS), average="weighted", zero_division=0.0))
+        weighted_f1 = float(
+            f1_score(wf1_true, wf1_pred, labels=list(WEIGHTED_F1_LABELS), average="weighted", zero_division="warn")
+        )
     else:
         weighted_f1 = 0.0
 

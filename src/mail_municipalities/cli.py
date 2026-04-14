@@ -504,7 +504,8 @@ def accuracy_sample_cmd(
 
     cfg = _accuracy_config(output)
     setup_logging(verbose, log_path=cfg.output_dir / "accuracy.log")
-    countries = ["de", "at", "ch"] if all_countries else [country]  # type: ignore[list-item]
+    assert all_countries or country is not None
+    countries: list[str] = ["de", "at", "ch"] if all_countries else [country]  # type: ignore[list-item]
 
     from mail_municipalities.accuracy.sampler import create_sample
     from mail_municipalities.accuracy.state import StateDB

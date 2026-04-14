@@ -319,9 +319,9 @@ def _extract_dsn_fields(msg: EmailMessage) -> dict[str, str]:
             raw = part.get_payload()
             if isinstance(raw, list):
                 for sub in raw:
-                    if hasattr(sub, "items"):
+                    if isinstance(sub, EmailMessage):
                         for key, value in sub.items():
-                            _store_dsn_field(key, value, fields)
+                            _store_dsn_field(key, str(value), fields)
 
             # Some libraries also allow bytes access.
             if not fields:
