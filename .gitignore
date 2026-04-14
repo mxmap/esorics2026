@@ -2,12 +2,18 @@
 data/*/cache.db
 data/*/cache.db-wal
 data/*/cache.db-shm
+output/accuracy/*.db
+output/accuracy/*.db-wal
+output/accuracy/*.db-shm
 #output/export.xlsx
 output/~$export.xlsx
 output/domains/resolve_xx.log
 output/**/**.tex
 output/**/**.png
 output/**/**.pdf
+state.db
+state.db-wal
+state.db-shm
 
 # OS generated files
 .DS_Store

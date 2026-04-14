@@ -42,6 +42,12 @@ uv run scan ch -v             # verbose (streams Docker output)
 > This tool requires unrestricted outbound port 25 (SMTP). Most residential ISPs and laptops block this.
 > For best results, run from a cloud VM with port 25 access opened.
 
+## Validation
+
+The classifier is validated via bounce probing — see [`src/mail_municipalities/accuracy/README.md`](src/mail_municipalities/accuracy/README.md) for the full protocol. 
+This is a separate, manual process (not part of the pipeline above) that sends probe emails to a stratified sample of municipalities 
+and parses the resulting NDRs to identify the actual backend MTA.
+
 ## Output files
 
 Results are written to `output/`:
