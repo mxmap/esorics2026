@@ -608,6 +608,64 @@ class TestMetrics:
         assert report.total_ndrs == 6
         assert report.total_probes == 6
 
+    async def test_weighted_f1_no_aws(self, state_with_data: StateDB):
+        """Weighted F1 over microsoft, google, self-hosted (no AWS in fixture)."""
+        report = await compute_accuracy(state_with_data)
+        assert report.weighted_f1_labels == ["microsoft", "google", "self-hosted"]
+        # Manually compute: weight each class F1 by its support.
+        ms = report.per_class["microsoft"]
+        go = report.per_class["google"]
+        sh = report.per_class["self-hosted"]
+        expected = (ms.f1 * ms.support + go.f1 * go.support + sh.f1 * sh.support) / (
+            ms.support + go.support + sh.support
+        )
+        assert report.weighted_f1 == pytest.approx(expected, abs=0.001)
+
+    async def test_weighted_f1_excludes_aws(self, tmp_path):
+        """AWS probes must not affect the weighted F1 score."""
+        db_path = tmp_path / "wf1_test.db"
+        async with StateDB(db_path) as state:
+            # 2 correct microsoft, 2 correct domestic, 1 aws->self-hosted (wrong but excluded)
+            test_data = [
+                ("microsoft", NdrProvider.MICROSOFT),
+                ("microsoft", NdrProvider.MICROSOFT),
+                ("domestic", NdrProvider.POSTFIX),
+                ("domestic", NdrProvider.POSTFIX),
+                ("aws", NdrProvider.POSTFIX),  # AWS misclassified — should NOT affect weighted F1
+            ]
+            for i, (predicted, actual_ndr) in enumerate(test_data):
+                pid = uuid.uuid4().hex
+                probe = Probe(
+                    probe_id=pid,
+                    domain=f"test{i}.ch",
+                    municipality_code=str(i),
+                    municipality_name=f"Test {i}",
+                    country="ch",
+                    recipient=f"probe-{i}@test{i}.ch",
+                    predicted_provider=predicted,
+                    predicted_confidence=80.0,
+                    status=ProbeStatus.NDR_RECEIVED,
+                )
+                await state.insert_probes([probe])
+                await state.update_probe_status(pid, ProbeStatus.NDR_RECEIVED, sent_at=datetime.now(tz=timezone.utc))
+                ndr = NdrResult(
+                    probe_id=pid,
+                    received_at=datetime.now(tz=timezone.utc),
+                    ndr_from="mailer-daemon@example.com",
+                    ndr_provider=actual_ndr,
+                    generating_mta="mta.example.com",
+                    confidence=0.8,
+                )
+                await state.insert_ndr(ndr)
+
+            report = await compute_accuracy(state)
+
+        # Overall accuracy includes AWS miss: 4/5 = 0.80
+        assert report.overall_accuracy == pytest.approx(0.8, abs=0.01)
+        # Weighted F1 excludes AWS: microsoft and self-hosted both perfect -> 1.0
+        assert report.weighted_f1 == pytest.approx(1.0, abs=0.001)
+        assert "aws" not in report.weighted_f1_labels
+
 
 # ── Config tests ──────────────────────────────────────────────────
 

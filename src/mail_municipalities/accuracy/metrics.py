@@ -19,6 +19,38 @@ from mail_municipalities.accuracy.state import StateDB
 # Label set used for evaluation (after mapping both sides).
 EVAL_LABELS = ("microsoft", "google", "aws", "self-hosted", "unknown")
 
+# Labels included in the weighted F1 headline metric.
+# AWS is excluded: DNS probes see the inbound relay (AWS SES) while the
+# bounce reveals the on-prem backend — a methodological boundary, not a
+# classifier error.  "unknown" is excluded because it has 0 support.
+WEIGHTED_F1_LABELS = ("microsoft", "google", "self-hosted")
+
+
+def _weighted_f1(
+    confusion: dict[str, dict[str, int]],
+    labels: tuple[str, ...],
+) -> float:
+    """Compute support-weighted F1 from a confusion matrix filtered to *labels*.
+
+    Only rows and columns in *labels* are considered, so classes outside the
+    set do not affect precision/recall of the included classes.
+    """
+    total_f1_weighted = 0.0
+    total_support = 0
+    for label in labels:
+        tp = confusion[label].get(label, 0)
+        fp = sum(confusion[other].get(label, 0) for other in labels if other != label)
+        fn = sum(confusion[label].get(other, 0) for other in labels if other != label)
+        support = tp + fn
+        if support == 0:
+            continue
+        precision = tp / (tp + fp) if (tp + fp) > 0 else 0.0
+        recall = tp / (tp + fn) if (tp + fn) > 0 else 0.0
+        f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0.0
+        total_f1_weighted += f1 * support
+        total_support += support
+    return total_f1_weighted / total_support if total_support > 0 else 0.0
+
 
 async def compute_accuracy(state: StateDB) -> AccuracyReport:
     """Compute accuracy metrics from matched probes and NDRs."""
@@ -68,6 +100,12 @@ async def compute_accuracy(state: StateDB) -> AccuracyReport:
     overall_accuracy = total_correct / total_evaluated if total_evaluated > 0 else 0.0
     response_rate = total_ndrs / total_sent if total_sent > 0 else 0.0
 
+    # Weighted F1 over the dominant classes, computed from a filtered
+    # confusion matrix that excludes non-dominant rows AND columns
+    # (AWS, unknown).  This ensures that e.g. AWS→self-hosted
+    # misclassifications do not inflate self-hosted's FP count.
+    weighted_f1 = _weighted_f1(confusion, WEIGHTED_F1_LABELS)
+
     # Serialize confusion matrix to plain dict.
     cm: dict[str, dict[str, int]] = {}
     for pred in EVAL_LABELS:
@@ -80,6 +118,8 @@ async def compute_accuracy(state: StateDB) -> AccuracyReport:
         total_ndrs=total_ndrs,
         response_rate=round(response_rate, 4),
         overall_accuracy=round(overall_accuracy, 4),
+        weighted_f1=round(weighted_f1, 4),
+        weighted_f1_labels=list(WEIGHTED_F1_LABELS),
         per_class=per_class,
         confusion_matrix=cm,
     )

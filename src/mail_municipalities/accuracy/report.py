@@ -50,6 +50,8 @@ def print_report(report: AccuracyReport) -> None:
     console.print(f"  NDRs received:   {report.total_ndrs}")
     console.print(f"  Response rate:   {report.response_rate:.1%}")
     console.print(f"  Overall accuracy:{report.overall_accuracy:.1%}")
+    labels_str = ", ".join(report.weighted_f1_labels)
+    console.print(f"  Weighted F1:     {report.weighted_f1:.3f}  ({labels_str})")
     console.print()
 
     # ── Per-class metrics ─────────────────────────────────────────
@@ -124,6 +126,7 @@ def export_report_latex(report: AccuracyReport, output_dir: Path) -> Path:
         lines.append(f"{name} & {m.precision:.3f} & {m.recall:.3f} & {m.f1:.3f} & {m.support} \\\\")
 
     lines.append(r"\midrule")
+    lines.append(f"Weighted F1 & \\multicolumn{{4}}{{r}}{{{report.weighted_f1:.3f}}} \\\\")
     lines.append(f"Overall accuracy & \\multicolumn{{4}}{{r}}{{{report.overall_accuracy:.1%}}} \\\\")
     lines.append(f"Response rate & \\multicolumn{{4}}{{r}}{{{report.response_rate:.1%}}} \\\\")
     lines.append(r"\bottomrule")

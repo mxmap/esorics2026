@@ -120,5 +120,7 @@ class AccuracyReport(BaseModel):
     total_ndrs: int
     response_rate: float
     overall_accuracy: float
+    weighted_f1: float
+    weighted_f1_labels: list[str]
     per_class: dict[str, ClassMetrics]
     confusion_matrix: dict[str, dict[str, int]]

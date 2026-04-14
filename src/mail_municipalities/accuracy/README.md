@@ -201,35 +201,91 @@ The report shows:
 - Per-class precision, recall, F1, support
 - Confusion matrix (predicted vs actual)
 
-## Typical workflow on the Exoscale VM
+## Production run protocol
+
+A clean, reproducible validation run.  Gmail free accounts allow ~500 emails
+per day, so a 400-probe run fits in a single day.  Target: 400 probes, ~300
+responses (~75% response rate), giving +/-5% margin of error at 95% CI for
+the combined population of 15,331 municipalities.
+
+### Prerequisites
+
+- Fresh Gmail account with App Password and IMAP enabled
+- `.env` configured with the account credentials
+- No prior state: `rm -f output/accuracy/state.db`
+
+### Run steps
 
 ```bash
-# 1. Configure credentials
-vim .env
+# 0. Clean slate
+rm -f output/accuracy/*
 
-# 2. Sample
-uv run accuracy sample --all --size 300 --min-per-class 20
+# 1. Create stratified sample (400 probes across all countries)
+#    min-per-class=22 ensures census of all AWS (22) and Google (12)
+#    municipalities; rest is proportional (domestic ~259, microsoft ~77)
+#    Target: ~300 responses at 75% response rate -> +/-5.6% margin at 95% CI
+#    Fits within Gmail free account daily limit of 500.
+uv run accuracy sample --all --size 400 --min-per-class 22
 
-# 3. Dry run
-uv run accuracy send --dry-run
-
-# 4. Send (start small)
-uv run accuracy send --no-dry-run --max-probes 50 --confirm
-
-# 5. Check progress
+# 2. Verify sample distribution
 uv run accuracy status
 
-# 6. Wait, then collect
+# 3. Dry run — review probe list
+uv run accuracy send --dry-run
+
+# 4. Send all 400 probes (4 batches of 100)
+uv run accuracy send --no-dry-run --max-probes 100 --confirm
+uv run accuracy send --no-dry-run --max-probes 100 --confirm
+uv run accuracy send --no-dry-run --max-probes 100 --confirm
+uv run accuracy send --no-dry-run --max-probes 100 --confirm
+
+# 5. Verify all sent (pending should be 0, failed should be 0)
+uv run accuracy status
+
+# 6. Wait 10-15 minutes for bounces to arrive
+
+# 7. IMPORTANT: Gmail may route some NDRs to Spam.
+#    Open Gmail in a browser, go to Spam folder, select all NDR messages
+#    (from "Mail Delivery Subsystem" / "mailer-daemon"), and click
+#    "Not spam".  Move them to Inbox.  The IMAP collector only searches
+#    INBOX by default.
+
+# 8. Collect NDRs (first pass)
 uv run accuracy collect --poll-once
 
-# 7. Send more if first batch looks good
-uv run accuracy send --no-dry-run --max-probes 250 --confirm
+# 9. Check response rate
+uv run accuracy status
 
-# 8. Collect remaining
-uv run accuracy collect --wait-hours 12
+# 10. Wait another 10-15 minutes, check Spam again, collect stragglers
+uv run accuracy collect --poll-once
 
-# 9. Report
+# 11. Final report
 uv run accuracy report --latex
+```
+
+### Verifying sample validity
+
+After collection, check that the response distribution matches the sample
+stratification.  If the Gmail daily limit was hit mid-run, some strata will
+have unsent probes (`pending` or `failed` status), invalidating the sample.
+
+```bash
+# Check for unsent/failed probes — must all be 0
+sqlite3 output/accuracy/state.db \
+  "SELECT predicted_provider, status, COUNT(*) FROM probes GROUP BY predicted_provider, status"
+```
+
+If any probes are `failed`, reset them and send from another account:
+
+```bash
+sqlite3 output/accuracy/state.db "UPDATE probes SET status='pending' WHERE status='failed';"
+vim .env   # switch to second Gmail account
+uv run accuracy send --no-dry-run --confirm
+# Then collect from this account:
+uv run accuracy collect --poll-once
+# Switch .env back to original account and collect its NDRs too:
+vim .env   # switch back
+uv run accuracy collect --poll-once
 ```
 
 ## Resumability
