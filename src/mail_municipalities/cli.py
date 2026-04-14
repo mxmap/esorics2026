@@ -450,6 +450,384 @@ def _scan_main(
     run(domains_path, output_path, cc=country, verbose=verbose)
 
 
+# ── Accuracy subcommands ────────────────────────────────────────────
+
+_accuracy_app = typer.Typer(add_completion=False, help="Bounce-probe accuracy validation for provider classification.")
+app.add_typer(_accuracy_app, name="accuracy")
+
+
+def _accuracy_config(output: Path | None = None):
+    """Lazily load accuracy config with optional output dir override."""
+    from mail_municipalities.accuracy.config import AccuracyConfig
+
+    cfg = AccuracyConfig()
+    if output is not None:
+        cfg = cfg.model_copy(update={"output_dir": output})
+    return cfg
+
+
+@_accuracy_app.command("sample")
+def accuracy_sample_cmd(
+    country: Annotated[
+        Optional[str],
+        typer.Argument(help="Country code: ch, de, at"),
+    ] = None,
+    all_countries: Annotated[
+        bool,
+        typer.Option("--all", help="Sample from all countries"),
+    ] = False,
+    size: Annotated[
+        int,
+        typer.Option("--size", help="Total sample size"),
+    ] = 50,
+    min_per_class: Annotated[
+        int,
+        typer.Option("--min-per-class", help="Minimum samples per provider class"),
+    ] = 5,
+    providers_dir: Annotated[
+        Path,
+        typer.Option("--providers-dir", help="Directory with provider classification output"),
+    ] = Path("output/providers"),
+    verbose: Annotated[
+        bool,
+        typer.Option("-v", "--verbose", help="Enable debug logging"),
+    ] = False,
+    output: Annotated[
+        Optional[Path],
+        typer.Option("-o", "--output", help="Custom output directory"),
+    ] = None,
+) -> None:
+    """Create a stratified sample and prepare probes (no sending)."""
+    if not country and not all_countries:
+        typer.echo("Provide a country code (ch, de, at) or use --all", err=True)
+        raise typer.Exit(code=1)
+
+    cfg = _accuracy_config(output)
+    setup_logging(verbose, log_path=cfg.output_dir / "accuracy.log")
+    assert all_countries or country is not None
+    countries: list[str] = ["de", "at", "ch"] if all_countries else [country]  # type: ignore[list-item]
+
+    from mail_municipalities.accuracy.sampler import create_sample
+    from mail_municipalities.accuracy.state import StateDB
+
+    async def _run() -> None:
+        async with StateDB(cfg.state_db_path) as state:
+            await create_sample(countries, size, min_per_class, providers_dir, state)
+
+    asyncio.run(_run())
+
+
+@_accuracy_app.command("send")
+def accuracy_send_cmd(
+    dry_run: Annotated[
+        bool,
+        typer.Option("--dry-run/--no-dry-run", help="Dry run (default: enabled)"),
+    ] = True,
+    confirm: Annotated[
+        bool,
+        typer.Option("--confirm", help="Skip interactive confirmation prompt"),
+    ] = False,
+    batch_size: Annotated[
+        Optional[int],
+        typer.Option("--batch-size", help="Emails per batch before pause"),
+    ] = None,
+    max_probes: Annotated[
+        Optional[int],
+        typer.Option("--max-probes", help="Maximum probes to send this run"),
+    ] = None,
+    rate: Annotated[
+        Optional[float],
+        typer.Option("--rate", help="Emails per second"),
+    ] = None,
+    verbose: Annotated[
+        bool,
+        typer.Option("-v", "--verbose", help="Enable debug logging"),
+    ] = False,
+    output: Annotated[
+        Optional[Path],
+        typer.Option("-o", "--output", help="Custom output directory"),
+    ] = None,
+) -> None:
+    """Send probe emails to sampled municipality domains."""
+    cfg = _accuracy_config(output)
+    setup_logging(verbose, log_path=cfg.output_dir / "accuracy.log")
+
+    from mail_municipalities.accuracy.sender import send_probes
+    from mail_municipalities.accuracy.state import StateDB
+
+    async def _run() -> None:
+        async with StateDB(cfg.state_db_path) as state:
+            await send_probes(
+                state,
+                cfg,
+                max_probes=max_probes,
+                dry_run=dry_run,
+                confirm=confirm,
+                batch_size=batch_size,
+                rate=rate,
+            )
+
+    asyncio.run(_run())
+
+
+@_accuracy_app.command("collect")
+def accuracy_collect_cmd(
+    poll_once: Annotated[
+        bool,
+        typer.Option("--poll-once", help="Single IMAP check then exit"),
+    ] = False,
+    wait_hours: Annotated[
+        Optional[float],
+        typer.Option("--wait-hours", help="Max hours to keep polling"),
+    ] = None,
+    poll_interval: Annotated[
+        Optional[int],
+        typer.Option("--poll-interval", help="Seconds between IMAP polls"),
+    ] = None,
+    verbose: Annotated[
+        bool,
+        typer.Option("-v", "--verbose", help="Enable debug logging"),
+    ] = False,
+    output: Annotated[
+        Optional[Path],
+        typer.Option("-o", "--output", help="Custom output directory"),
+    ] = None,
+) -> None:
+    """Poll IMAP for NDRs and match to sent probes."""
+    cfg = _accuracy_config(output)
+    setup_logging(verbose, log_path=cfg.output_dir / "accuracy.log")
+
+    from mail_municipalities.accuracy.collector import collect_ndrs
+    from mail_municipalities.accuracy.state import StateDB
+
+    async def _run() -> None:
+        async with StateDB(cfg.state_db_path) as state:
+            await collect_ndrs(
+                state,
+                cfg,
+                poll_once=poll_once,
+                wait_hours=wait_hours,
+                poll_interval=poll_interval,
+            )
+
+    asyncio.run(_run())
+
+
+@_accuracy_app.command("report")
+def accuracy_report_cmd(
+    latex: Annotated[
+        bool,
+        typer.Option("--latex", help="Export LaTeX tables for the paper"),
+    ] = False,
+    verbose: Annotated[
+        bool,
+        typer.Option("-v", "--verbose", help="Enable debug logging"),
+    ] = False,
+    output: Annotated[
+        Optional[Path],
+        typer.Option("-o", "--output", help="Custom output directory"),
+    ] = None,
+) -> None:
+    """Compute and display accuracy metrics from collected NDRs."""
+    cfg = _accuracy_config(output)
+    setup_logging(verbose, log_path=cfg.output_dir / "accuracy.log")
+
+    from mail_municipalities.accuracy.metrics import compute_accuracy
+    from mail_municipalities.accuracy.report import export_report_json, export_report_latex, print_report
+    from mail_municipalities.accuracy.state import StateDB
+
+    async def _run() -> None:
+        async with StateDB(cfg.state_db_path) as state:
+            report = await compute_accuracy(state)
+        print_report(report)
+        export_report_json(report, cfg.output_dir)
+        if latex:
+            export_report_latex(report, cfg.output_dir)
+
+    asyncio.run(_run())
+
+
+@_accuracy_app.command("status")
+def accuracy_status_cmd(
+    verbose: Annotated[
+        bool,
+        typer.Option("-v", "--verbose", help="Enable debug logging"),
+    ] = False,
+    output: Annotated[
+        Optional[Path],
+        typer.Option("-o", "--output", help="Custom output directory"),
+    ] = None,
+) -> None:
+    """Show current probe lifecycle state."""
+    cfg = _accuracy_config(output)
+    setup_logging(verbose, log_path=cfg.output_dir / "accuracy.log")
+
+    from mail_municipalities.accuracy.report import print_status
+    from mail_municipalities.accuracy.state import StateDB
+
+    async def _run() -> None:
+        async with StateDB(cfg.state_db_path) as state:
+            await print_status(state)
+
+    asyncio.run(_run())
+
+
+_accuracy_standalone_app = typer.Typer(add_completion=False)
+
+
+@_accuracy_standalone_app.command("sample")
+def _accuracy_sample_main(
+    country: Annotated[
+        Optional[str],
+        typer.Argument(help="Country code: ch, de, at"),
+    ] = None,
+    all_countries: Annotated[
+        bool,
+        typer.Option("--all", help="Sample from all countries"),
+    ] = False,
+    size: Annotated[
+        int,
+        typer.Option("--size", help="Total sample size"),
+    ] = 50,
+    min_per_class: Annotated[
+        int,
+        typer.Option("--min-per-class", help="Minimum samples per provider class"),
+    ] = 5,
+    providers_dir: Annotated[
+        Path,
+        typer.Option("--providers-dir", help="Directory with provider classification output"),
+    ] = Path("output/providers"),
+    verbose: Annotated[
+        bool,
+        typer.Option("-v", "--verbose", help="Enable debug logging"),
+    ] = False,
+    output: Annotated[
+        Optional[Path],
+        typer.Option("-o", "--output", help="Custom output directory"),
+    ] = None,
+) -> None:
+    """Create a stratified sample and prepare probes (no sending)."""
+    accuracy_sample_cmd(
+        country=country,
+        all_countries=all_countries,
+        size=size,
+        min_per_class=min_per_class,
+        providers_dir=providers_dir,
+        verbose=verbose,
+        output=output,
+    )
+
+
+@_accuracy_standalone_app.command("send")
+def _accuracy_send_main(
+    dry_run: Annotated[
+        bool,
+        typer.Option("--dry-run/--no-dry-run", help="Dry run (default: enabled)"),
+    ] = True,
+    confirm: Annotated[
+        bool,
+        typer.Option("--confirm", help="Skip interactive confirmation prompt"),
+    ] = False,
+    batch_size: Annotated[
+        Optional[int],
+        typer.Option("--batch-size", help="Emails per batch before pause"),
+    ] = None,
+    max_probes: Annotated[
+        Optional[int],
+        typer.Option("--max-probes", help="Maximum probes to send this run"),
+    ] = None,
+    rate: Annotated[
+        Optional[float],
+        typer.Option("--rate", help="Emails per second"),
+    ] = None,
+    verbose: Annotated[
+        bool,
+        typer.Option("-v", "--verbose", help="Enable debug logging"),
+    ] = False,
+    output: Annotated[
+        Optional[Path],
+        typer.Option("-o", "--output", help="Custom output directory"),
+    ] = None,
+) -> None:
+    """Send probe emails to sampled municipality domains."""
+    accuracy_send_cmd(
+        dry_run=dry_run,
+        confirm=confirm,
+        batch_size=batch_size,
+        max_probes=max_probes,
+        rate=rate,
+        verbose=verbose,
+        output=output,
+    )
+
+
+@_accuracy_standalone_app.command("collect")
+def _accuracy_collect_main(
+    poll_once: Annotated[
+        bool,
+        typer.Option("--poll-once", help="Single IMAP check then exit"),
+    ] = False,
+    wait_hours: Annotated[
+        Optional[float],
+        typer.Option("--wait-hours", help="Max hours to keep polling"),
+    ] = None,
+    poll_interval: Annotated[
+        Optional[int],
+        typer.Option("--poll-interval", help="Seconds between IMAP polls"),
+    ] = None,
+    verbose: Annotated[
+        bool,
+        typer.Option("-v", "--verbose", help="Enable debug logging"),
+    ] = False,
+    output: Annotated[
+        Optional[Path],
+        typer.Option("-o", "--output", help="Custom output directory"),
+    ] = None,
+) -> None:
+    """Poll IMAP for NDRs and match to sent probes."""
+    accuracy_collect_cmd(
+        poll_once=poll_once,
+        wait_hours=wait_hours,
+        poll_interval=poll_interval,
+        verbose=verbose,
+        output=output,
+    )
+
+
+@_accuracy_standalone_app.command("report")
+def _accuracy_report_main(
+    latex: Annotated[
+        bool,
+        typer.Option("--latex", help="Export LaTeX tables for the paper"),
+    ] = False,
+    verbose: Annotated[
+        bool,
+        typer.Option("-v", "--verbose", help="Enable debug logging"),
+    ] = False,
+    output: Annotated[
+        Optional[Path],
+        typer.Option("-o", "--output", help="Custom output directory"),
+    ] = None,
+) -> None:
+    """Compute and display accuracy metrics from collected NDRs."""
+    accuracy_report_cmd(latex=latex, verbose=verbose, output=output)
+
+
+@_accuracy_standalone_app.command("status")
+def _accuracy_status_main(
+    verbose: Annotated[
+        bool,
+        typer.Option("-v", "--verbose", help="Enable debug logging"),
+    ] = False,
+    output: Annotated[
+        Optional[Path],
+        typer.Option("-o", "--output", help="Custom output directory"),
+    ] = None,
+) -> None:
+    """Show current probe lifecycle state."""
+    accuracy_status_cmd(verbose=verbose, output=output)
+
+
 def resolve() -> None:
     """Entry point for 'resolve' script."""
     _resolve_app()
@@ -468,3 +846,8 @@ def analyze() -> None:
 def scan() -> None:
     """Entry point for 'scan' script."""
     _scan_app()
+
+
+def accuracy() -> None:
+    """Entry point for 'accuracy' script."""
+    _accuracy_standalone_app()

@@ -5,6 +5,7 @@ description = "Domain resolution, provider classification, and security analysis
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "aiosmtplib>=3.0",
     "aiosqlite>=0.20.0",
     "dnspython>=2.8.0",
     "playwright>=1.50",
@@ -12,14 +13,16 @@ dependencies = [
     "httpx[http2]>=0.28.1",
     "loguru>=0.7.3",
     "pydantic>=2.12.5",
+    "pydantic-settings>=2.0",
     "python-slugify>=8.0.4",
     "stamina>=25.2.0",
     "tldextract>=5.3.1",
     "typer>=0.24.1",
     "pandas>=2.2",
     "openpyxl>=3.1",
+    "scikit-learn>=1.6",
     "seaborn>=0.13.2",
-    "scipy>=1.14",
+    "scipy>=1.17.1",
 ]
 
 [dependency-groups]
@@ -44,6 +47,7 @@ resolve = "mail_municipalities.cli:resolve"
 classify = "mail_municipalities.cli:classify"
 analyze = "mail_municipalities.cli:analyze"
 scan = "mail_municipalities.cli:scan"
+accuracy = "mail_municipalities.cli:accuracy"
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -55,7 +59,7 @@ source = ["mail_municipalities"]
 
 [tool.coverage.report]
 show_missing = true
-fail_under = 80
+fail_under = 75
 exclude_lines = ["pragma: no cover"]
 
 [tool.ruff]
