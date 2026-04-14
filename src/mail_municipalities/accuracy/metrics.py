@@ -1,9 +1,10 @@
-"""Accuracy metrics: confusion matrix, precision, recall, F1."""
+"""Accuracy metrics via scikit-learn."""
 
 from __future__ import annotations
 
-from collections import defaultdict
 from datetime import datetime, timezone
+
+from sklearn.metrics import accuracy_score, confusion_matrix, f1_score, precision_recall_fscore_support
 
 from mail_municipalities.accuracy.models import (
     CLASSIFIER_TO_EVAL,
@@ -11,7 +12,6 @@ from mail_municipalities.accuracy.models import (
     AccuracyReport,
     ClassMetrics,
     NdrResult,
-    Probe,
     ProbeStatus,
 )
 from mail_municipalities.accuracy.state import StateDB
@@ -26,41 +26,12 @@ EVAL_LABELS = ("microsoft", "google", "aws", "self-hosted", "unknown")
 WEIGHTED_F1_LABELS = ("microsoft", "google", "self-hosted")
 
 
-def _weighted_f1(
-    confusion: dict[str, dict[str, int]],
-    labels: tuple[str, ...],
-) -> float:
-    """Compute support-weighted F1 from a confusion matrix filtered to *labels*.
-
-    Only rows and columns in *labels* are considered, so classes outside the
-    set do not affect precision/recall of the included classes.
-    """
-    total_f1_weighted = 0.0
-    total_support = 0
-    for label in labels:
-        tp = confusion[label].get(label, 0)
-        fp = sum(confusion[other].get(label, 0) for other in labels if other != label)
-        fn = sum(confusion[label].get(other, 0) for other in labels if other != label)
-        support = tp + fn
-        if support == 0:
-            continue
-        precision = tp / (tp + fp) if (tp + fp) > 0 else 0.0
-        recall = tp / (tp + fn) if (tp + fn) > 0 else 0.0
-        f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0.0
-        total_f1_weighted += f1 * support
-        total_support += support
-    return total_f1_weighted / total_support if total_support > 0 else 0.0
-
-
 async def compute_accuracy(state: StateDB) -> AccuracyReport:
     """Compute accuracy metrics from matched probes and NDRs."""
     all_probes = await state.get_all_probes()
     all_ndrs = await state.get_all_ndrs()
 
-    # Index NDRs by probe_id.
-    ndr_by_probe: dict[str, NdrResult] = {}
-    for ndr in all_ndrs:
-        ndr_by_probe[ndr.probe_id] = ndr
+    ndr_by_probe: dict[str, NdrResult] = {ndr.probe_id: ndr for ndr in all_ndrs}
 
     total_probes = len(all_probes)
     total_sent = sum(
@@ -68,48 +39,65 @@ async def compute_accuracy(state: StateDB) -> AccuracyReport:
     )
     total_ndrs = len(all_ndrs)
 
-    # Build confusion matrix from matched pairs.
-    confusion: dict[str, dict[str, int]] = defaultdict(lambda: defaultdict(int))
-    matched_probes: list[tuple[Probe, NdrResult]] = []
-
+    # Build parallel label lists from matched pairs.
+    y_true: list[str] = []
+    y_pred: list[str] = []
     for probe in all_probes:
         if probe.probe_id not in ndr_by_probe:
             continue
         ndr = ndr_by_probe[probe.probe_id]
-        predicted = CLASSIFIER_TO_EVAL.get(probe.predicted_provider, "unknown")
-        actual = NDR_TO_CLASSIFIER.get(ndr.ndr_provider.value, "unknown")
-        confusion[predicted][actual] += 1
-        matched_probes.append((probe, ndr))
+        y_pred.append(CLASSIFIER_TO_EVAL.get(probe.predicted_provider, "unknown"))
+        y_true.append(NDR_TO_CLASSIFIER.get(ndr.ndr_provider.value, "unknown"))
 
-    # Per-class metrics.
-    per_class: dict[str, ClassMetrics] = {}
-    for label in EVAL_LABELS:
-        tp = confusion[label].get(label, 0)
-        fp = sum(confusion[other].get(label, 0) for other in EVAL_LABELS if other != label)
-        fn = sum(confusion[label].get(other, 0) for other in EVAL_LABELS if other != label)
-        support = tp + fn  # actual positives
-
-        precision = tp / (tp + fp) if (tp + fp) > 0 else 0.0
-        recall = tp / (tp + fn) if (tp + fn) > 0 else 0.0
-        f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0.0
-
-        per_class[label] = ClassMetrics(precision=precision, recall=recall, f1=f1, support=support)
-
-    total_correct = sum(confusion[label].get(label, 0) for label in EVAL_LABELS)
-    total_evaluated = sum(sum(row.values()) for row in confusion.values())
-    overall_accuracy = total_correct / total_evaluated if total_evaluated > 0 else 0.0
     response_rate = total_ndrs / total_sent if total_sent > 0 else 0.0
 
-    # Weighted F1 over the dominant classes, computed from a filtered
-    # confusion matrix that excludes non-dominant rows AND columns
-    # (AWS, unknown).  This ensures that e.g. AWS→self-hosted
-    # misclassifications do not inflate self-hosted's FP count.
-    weighted_f1 = _weighted_f1(confusion, WEIGHTED_F1_LABELS)
+    if not y_true:
+        return _empty_report(total_probes, total_sent, total_ndrs, response_rate)
 
-    # Serialize confusion matrix to plain dict.
+    # Overall accuracy across all labels.
+    overall_acc = float(accuracy_score(y_true, y_pred))
+
+    # Per-class metrics across all EVAL_LABELS.
+    present_labels = [label for label in EVAL_LABELS if label in set(y_true) | set(y_pred)]
+    precision, recall, f1, support = precision_recall_fscore_support(
+        y_true, y_pred, labels=present_labels, zero_division=0.0,
+    )
+    per_class: dict[str, ClassMetrics] = {}
+    for i, label in enumerate(present_labels):
+        per_class[label] = ClassMetrics(
+            precision=float(precision[i]),
+            recall=float(recall[i]),
+            f1=float(f1[i]),
+            support=int(support[i]),
+        )
+    # Fill missing labels with zeros.
+    for label in EVAL_LABELS:
+        if label not in per_class:
+            per_class[label] = ClassMetrics(precision=0.0, recall=0.0, f1=0.0, support=0)
+
+    # Weighted F1 over the dominant classes only.
+    # Filter to pairs where BOTH predicted and actual are in WEIGHTED_F1_LABELS,
+    # so excluded classes (AWS) don't affect precision/recall of included ones.
+    wf1_true = [t for t, p in zip(y_true, y_pred) if t in WEIGHTED_F1_LABELS and p in WEIGHTED_F1_LABELS]
+    wf1_pred = [p for t, p in zip(y_true, y_pred) if t in WEIGHTED_F1_LABELS and p in WEIGHTED_F1_LABELS]
+    if wf1_true:
+        weighted_f1 = float(f1_score(wf1_true, wf1_pred, labels=list(WEIGHTED_F1_LABELS), average="weighted", zero_division=0.0))
+    else:
+        weighted_f1 = 0.0
+
+    # Confusion matrix as nested dict (rows=predicted, cols=actual).
+    # sklearn returns rows=true, cols=predicted — transpose via indexing.
+    cm_labels = [label for label in EVAL_LABELS if label in set(y_true) | set(y_pred)]
+    cm_array = confusion_matrix(y_true, y_pred, labels=cm_labels)
     cm: dict[str, dict[str, int]] = {}
-    for pred in EVAL_LABELS:
-        cm[pred] = {actual: confusion[pred].get(actual, 0) for actual in EVAL_LABELS}
+    for i, pred in enumerate(cm_labels):
+        cm[pred] = {actual: int(cm_array[j][i]) for j, actual in enumerate(cm_labels)}
+    # Fill missing labels.
+    for label in EVAL_LABELS:
+        if label not in cm:
+            cm[label] = {a: 0 for a in EVAL_LABELS}
+        for a in EVAL_LABELS:
+            cm[label].setdefault(a, 0)
 
     return AccuracyReport(
         generated=datetime.now(tz=timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -117,8 +105,25 @@ async def compute_accuracy(state: StateDB) -> AccuracyReport:
         total_sent=total_sent,
         total_ndrs=total_ndrs,
         response_rate=round(response_rate, 4),
-        overall_accuracy=round(overall_accuracy, 4),
+        overall_accuracy=round(overall_acc, 4),
         weighted_f1=round(weighted_f1, 4),
+        weighted_f1_labels=list(WEIGHTED_F1_LABELS),
+        per_class=per_class,
+        confusion_matrix=cm,
+    )
+
+
+def _empty_report(total_probes: int, total_sent: int, total_ndrs: int, response_rate: float) -> AccuracyReport:
+    per_class = {label: ClassMetrics(precision=0.0, recall=0.0, f1=0.0, support=0) for label in EVAL_LABELS}
+    cm = {p: {a: 0 for a in EVAL_LABELS} for p in EVAL_LABELS}
+    return AccuracyReport(
+        generated=datetime.now(tz=timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        total_probes=total_probes,
+        total_sent=total_sent,
+        total_ndrs=total_ndrs,
+        response_rate=round(response_rate, 4),
+        overall_accuracy=0.0,
+        weighted_f1=0.0,
         weighted_f1_labels=list(WEIGHTED_F1_LABELS),
         per_class=per_class,
         confusion_matrix=cm,
