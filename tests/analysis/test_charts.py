@@ -17,16 +17,18 @@ def _make_df(
     """Build a minimal DataFrame matching the expected export schema."""
     n = len(categories)
     assert len(metric_vals) == n
-    return pd.DataFrame({
-        "scan_valid": [True] * n,
-        "category": categories,
-        "gateway": gateways if gateways is not None else [""] * n,
-        "has_spf": metric_vals,
-        "has_good_spf": metric_vals,
-        "has_dmarc": metric_vals,
-        "has_good_dmarc": metric_vals,
-        "dane_supported": metric_vals,
-    })
+    return pd.DataFrame(
+        {
+            "scan_valid": [True] * n,
+            "category": categories,
+            "gateway": gateways if gateways is not None else [""] * n,
+            "has_spf": metric_vals,
+            "has_good_spf": metric_vals,
+            "has_dmarc": metric_vals,
+            "has_good_dmarc": metric_vals,
+            "dane_supported": metric_vals,
+        }
+    )
 
 
 class TestChiSquare:

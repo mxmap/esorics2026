@@ -99,14 +99,16 @@ def compute_chi_square_tests(df: pd.DataFrame | None = None) -> list[dict[str, A
             chi2, p, dof = 0.0, 1.0, 1
         else:
             chi2, p, dof, _ = chi2_contingency(ct)
-        results.append({
-            "metric": label,
-            "column": col,
-            "chi2": chi2,
-            "p": p,
-            "dof": dof,
-            "n": len(subset),
-        })
+        results.append(
+            {
+                "metric": label,
+                "column": col,
+                "chi2": chi2,
+                "p": p,
+                "dof": dof,
+                "n": len(subset),
+            }
+        )
     return results
 
 
@@ -137,15 +139,17 @@ def compute_gateway_chi_square(df: pd.DataFrame | None = None) -> list[dict[str,
         no_gw = valid[~valid["has_gateway"]]
         gw_pct = gw[col].sum() / len(gw) * 100 if len(gw) else 0.0
         no_gw_pct = no_gw[col].sum() / len(no_gw) * 100 if len(no_gw) else 0.0
-        results.append({
-            "metric": label,
-            "column": col,
-            "chi2": chi2,
-            "p": p,
-            "dof": dof,
-            "n": len(valid),
-            "delta_pp": gw_pct - no_gw_pct,
-        })
+        results.append(
+            {
+                "metric": label,
+                "column": col,
+                "chi2": chi2,
+                "p": p,
+                "dof": dof,
+                "n": len(valid),
+                "delta_pp": gw_pct - no_gw_pct,
+            }
+        )
     return results
 
 
