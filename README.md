@@ -44,9 +44,7 @@ uv run scan ch -v             # verbose (streams Docker output)
 
 ## Validation
 
-The classifier is validated via bounce probing — see [`src/mail_municipalities/accuracy/README.md`](src/mail_municipalities/accuracy/README.md) for the full protocol. 
-This is a separate, manual process (not part of the pipeline above) that sends probe emails to a stratified sample of municipalities 
-and parses the resulting NDRs to identify the actual backend MTA.
+The classifier is validated via bounce probing — a separate, manual process (not part of the pipeline above) that sends probe emails to a stratified sample of municipalities and parses the resulting NDRs to identify the actual backend MTA. The validation tooling is maintained in a separate repository (available on request).
 
 ## Output files
 
