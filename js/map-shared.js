@@ -387,8 +387,8 @@ function addDownloadButton(map, filename) {
   var btn = document.createElement('button');
   btn.className = 'toggle-info';
   btn.id = 'download-btn';
-  btn.innerHTML = '\u2913 Download';
-  btn.setAttribute('aria-label', 'Download map as PNG');
+  btn.innerHTML = '\u2913 Download HQ image';
+  btn.setAttribute('aria-label', 'Download map as high-quality PNG (~50 MB)');
 
   var headerRight = document.querySelector('.header-right');
   var aboutBtn = document.getElementById('toggle-info');
@@ -400,7 +400,7 @@ function addDownloadButton(map, filename) {
     setTimeout(function () {
       exportMapImage(map, filename, function () {
         btn.disabled = false;
-        btn.innerHTML = '\u2913 Download';
+        btn.innerHTML = '\u2913 Download HQ image';
       });
     }, 50);
   });
