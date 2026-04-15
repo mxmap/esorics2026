@@ -361,6 +361,40 @@ class TestNdrParser:
         # Should detect Exchange, not Google.
         assert provider in (NdrProvider.MICROSOFT, NdrProvider.EXCHANGE_ONPREM)
 
+    def test_exchange_online_onmicrosoft_from(self):
+        """NDR from postmaster@*.onmicrosoft.com with Hosted entity header → MICROSOFT."""
+        msg = _make_ndr_email(
+            from_addr="postmaster@stadtxyz.onmicrosoft.com",
+            extra_headers={
+                "X-MS-Exchange-Message-Is-Ndr": "",
+                "X-Ms-Exchange-Crosstenant-Fromentityheader": "Hosted",
+            },
+            received=[
+                "from GVAP278CU002.outbound.protection.outlook.com by slusv0255.example.ch",
+                "from ZR3P278MB1195.CHEP278.PROD.OUTLOOK.COM by ZR3P278MB1195",
+            ],
+            body="Delivery has failed to these recipients or groups.",
+        )
+        provider, confidence, mta, evidence = parse_ndr(msg)
+        assert provider == NdrProvider.MICROSOFT
+
+    def test_exchange_hybrid_onprem(self):
+        """NDR from postmaster@domain.ch with HybridOnPrem entity header → EXCHANGE_ONPREM."""
+        msg = _make_ndr_email(
+            from_addr="postmaster@bern.ch",
+            extra_headers={
+                "X-MS-Exchange-Message-Is-Ndr": "",
+                "X-Ms-Exchange-Crosstenant-Fromentityheader": "HybridOnPrem",
+            },
+            received=[
+                "from GVAP278CU002.outbound.protection.outlook.com by mx.google.com",
+                "from AutoDiscover.bgov.ch by ZRH2EPF00000151.mail.protection.outlook.com",
+            ],
+            body="Delivery has failed to these recipients or groups.",
+        )
+        provider, confidence, mta, evidence = parse_ndr(msg)
+        assert provider == NdrProvider.EXCHANGE_ONPREM
+
     def test_unknown_ndr(self):
         msg = _make_ndr_email(
             from_addr="postmaster@somegateway.net",
