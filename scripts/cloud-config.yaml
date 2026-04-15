@@ -4,6 +4,7 @@ packages:
   - htop
   - git
   - netcat-openbsd
+  - sqlite3
 users:
   - name: scanner
     ssh-authorized-keys:
