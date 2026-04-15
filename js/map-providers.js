@@ -4,7 +4,7 @@ var COLOR_SCHEMES = {
   default: {
     'us-cloud':  { high: '#ffa199', medium: '#ffccb6', low: '#cccccc' },
     'domestic':  { high: '#88faaa', medium: '#daffc2', low: '#cccccc' },
-    'foreign':   { high: '#f5c842', medium: '#fde7c4', low: '#cccccc' },
+    'foreign':   { high: '#f8c936', medium: '#fde89a', low: '#cccccc' },
     lake: '#89B3D6',
   },
   colorblind: {
