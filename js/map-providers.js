@@ -464,6 +464,7 @@ function loadUnifiedProviderMap(mapConfig, countries) {
     };
 
     var latestGenerated = null;
+    var latestCommit = null;
 
     for (var ci = 0; ci < results.length; ci++) {
       var data = results[ci].data;
@@ -473,6 +474,7 @@ function loadUnifiedProviderMap(mapConfig, countries) {
 
       if (data.generated && (!latestGenerated || data.generated > latestGenerated)) {
         latestGenerated = data.generated;
+        latestCommit = data.commit;
       }
 
       var keys = Object.keys(muni);
@@ -490,7 +492,7 @@ function loadUnifiedProviderMap(mapConfig, countries) {
     }
 
     if (latestGenerated) {
-      showGenerated({ generated: latestGenerated, commit: results[0].data.commit });
+      showGenerated({ generated: latestGenerated, commit: latestCommit });
     }
 
     var hatchSvg = 'data:image/svg+xml,' +
