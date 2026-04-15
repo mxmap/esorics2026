@@ -83,12 +83,28 @@ def parse_ndr(msg: EmailMessage) -> tuple[NdrProvider, float, str, list[NdrEvide
 
     if ms_patterns:
         is_online = any(
-            "outlook.com" in p[1].lower() or "protection.outlook" in p[1].lower()
+            "outlook.com" in p[1].lower() or "protection.outlook" in p[1].lower() or "onmicrosoft.com" in p[1].lower()
             for p in ms_patterns
             if p[0]
-            in ("reporting-mta outlook", "received via outlook", "from postmaster@outlook", "dsn mentions outlook")
+            in (
+                "reporting-mta outlook",
+                "received via outlook",
+                "from postmaster@outlook",
+                "from *.onmicrosoft.com",
+                "dsn mentions outlook",
+            )
         )
         provider = NdrProvider.MICROSOFT if is_online else NdrProvider.EXCHANGE_ONPREM
+
+        # Definitive: Microsoft's own header distinguishes hosted vs hybrid.
+        entity_header = target_headers.get("x-ms-exchange-crosstenant-fromentityheader", "").lower()
+        if entity_header == "hosted":
+            provider = NdrProvider.MICROSOFT
+            evidence.append(NdrEvidence(pattern="crosstenant-fromentityheader", matched_value="Hosted"))
+        elif entity_header == "hybridonprem":
+            provider = NdrProvider.EXCHANGE_ONPREM
+            evidence.append(NdrEvidence(pattern="crosstenant-fromentityheader", matched_value="HybridOnPrem"))
+
         conf = min(0.3 + 0.15 * len(ms_patterns), 1.0)
         for pat, val in ms_patterns:
             evidence.append(NdrEvidence(pattern=pat, matched_value=val))

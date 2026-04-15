@@ -672,6 +672,40 @@ def accuracy_status_cmd(
     asyncio.run(_run())
 
 
+@_accuracy_app.command("check")
+def accuracy_check_cmd(
+    domains: Annotated[
+        list[str],
+        typer.Argument(help="One or more email domains to look up"),
+    ],
+    providers_dir: Annotated[
+        Path,
+        typer.Option("--providers-dir", help="Directory with provider classification output"),
+    ] = Path("output/providers"),
+    verbose: Annotated[
+        bool,
+        typer.Option("-v", "--verbose", help="Enable debug logging"),
+    ] = False,
+    output: Annotated[
+        Optional[Path],
+        typer.Option("-o", "--output", help="Custom output directory"),
+    ] = None,
+) -> None:
+    """Spot-check provider classification for specific domains."""
+    cfg = _accuracy_config(output)
+    setup_logging(verbose, log_path=cfg.output_dir / "accuracy.log")
+
+    from mail_municipalities.accuracy.check import check_domains, print_check_table
+    from mail_municipalities.accuracy.state import StateDB
+
+    async def _run() -> None:
+        async with StateDB(cfg.state_db_path) as state:
+            results = await check_domains(domains, providers_dir, state)
+        print_check_table(results)
+
+    asyncio.run(_run())
+
+
 _accuracy_standalone_app = typer.Typer(add_completion=False)
 
 
@@ -826,6 +860,29 @@ def _accuracy_status_main(
 ) -> None:
     """Show current probe lifecycle state."""
     accuracy_status_cmd(verbose=verbose, output=output)
+
+
+@_accuracy_standalone_app.command("check")
+def _accuracy_check_main(
+    domains: Annotated[
+        list[str],
+        typer.Argument(help="One or more email domains to look up"),
+    ],
+    providers_dir: Annotated[
+        Path,
+        typer.Option("--providers-dir", help="Directory with provider classification output"),
+    ] = Path("output/providers"),
+    verbose: Annotated[
+        bool,
+        typer.Option("-v", "--verbose", help="Enable debug logging"),
+    ] = False,
+    output: Annotated[
+        Optional[Path],
+        typer.Option("-o", "--output", help="Custom output directory"),
+    ] = None,
+) -> None:
+    """Spot-check provider classification for specific domains."""
+    accuracy_check_cmd(domains=domains, providers_dir=providers_dir, verbose=verbose, output=output)
 
 
 def resolve() -> None:

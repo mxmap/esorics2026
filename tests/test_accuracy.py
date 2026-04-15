@@ -2,9 +2,11 @@
 
 from __future__ import annotations
 
+import json
 import uuid
 from datetime import datetime, timezone
 from email.message import EmailMessage
+from pathlib import Path
 
 import pytest
 
@@ -359,6 +361,40 @@ class TestNdrParser:
         # Should detect Exchange, not Google.
         assert provider in (NdrProvider.MICROSOFT, NdrProvider.EXCHANGE_ONPREM)
 
+    def test_exchange_online_onmicrosoft_from(self):
+        """NDR from postmaster@*.onmicrosoft.com with Hosted entity header → MICROSOFT."""
+        msg = _make_ndr_email(
+            from_addr="postmaster@stadtxyz.onmicrosoft.com",
+            extra_headers={
+                "X-MS-Exchange-Message-Is-Ndr": "",
+                "X-Ms-Exchange-Crosstenant-Fromentityheader": "Hosted",
+            },
+            received=[
+                "from GVAP278CU002.outbound.protection.outlook.com by slusv0255.example.ch",
+                "from ZR3P278MB1195.CHEP278.PROD.OUTLOOK.COM by ZR3P278MB1195",
+            ],
+            body="Delivery has failed to these recipients or groups.",
+        )
+        provider, confidence, mta, evidence = parse_ndr(msg)
+        assert provider == NdrProvider.MICROSOFT
+
+    def test_exchange_hybrid_onprem(self):
+        """NDR from postmaster@domain.ch with HybridOnPrem entity header → EXCHANGE_ONPREM."""
+        msg = _make_ndr_email(
+            from_addr="postmaster@bern.ch",
+            extra_headers={
+                "X-MS-Exchange-Message-Is-Ndr": "",
+                "X-Ms-Exchange-Crosstenant-Fromentityheader": "HybridOnPrem",
+            },
+            received=[
+                "from GVAP278CU002.outbound.protection.outlook.com by mx.google.com",
+                "from AutoDiscover.bgov.ch by ZRH2EPF00000151.mail.protection.outlook.com",
+            ],
+            body="Delivery has failed to these recipients or groups.",
+        )
+        provider, confidence, mta, evidence = parse_ndr(msg)
+        assert provider == NdrProvider.EXCHANGE_ONPREM
+
     def test_unknown_ndr(self):
         msg = _make_ndr_email(
             from_addr="postmaster@somegateway.net",
@@ -700,3 +736,119 @@ class TestConfig:
             _env_file=None,  # type: ignore[call-arg]
         )
         assert cfg.sender_address == "sender@custom.com"
+
+
+# ── Check tests ──────────────────────────────────────────────────
+
+
+class TestCheck:
+    @pytest.fixture
+    def providers_dir(self, tmp_path: Path) -> Path:
+        """Create temp providers JSON files."""
+        for cc, entries in [
+            (
+                "de",
+                [
+                    {
+                        "code": "1",
+                        "name": "Berlin",
+                        "domain": "berlin.de",
+                        "provider": "domestic",
+                        "classification_confidence": 80.0,
+                    }
+                ],
+            ),
+            (
+                "ch",
+                [
+                    {
+                        "code": "2",
+                        "name": "Zürich",
+                        "domain": "zurich.ch",
+                        "provider": "microsoft",
+                        "classification_confidence": 100.0,
+                    }
+                ],
+            ),
+            (
+                "at",
+                [
+                    {
+                        "code": "3",
+                        "name": "Wien",
+                        "domain": "wien.gv.at",
+                        "provider": "domestic",
+                        "classification_confidence": 80.0,
+                    }
+                ],
+            ),
+        ]:
+            (tmp_path / f"providers_{cc}.json").write_text(json.dumps({"municipalities": entries}))
+        return tmp_path
+
+    @pytest.mark.asyncio
+    async def test_check_creates_probes(self, providers_dir: Path, tmp_path: Path):
+        from mail_municipalities.accuracy.check import check_domains
+
+        db_path = tmp_path / "state.db"
+        async with StateDB(db_path) as state:
+            results = await check_domains(["berlin.de", "zurich.ch"], providers_dir, state)
+            # Probes should have been created.
+            existing = await state.get_existing_domains()
+
+        assert len(results) == 2
+        assert results[0].name == "Berlin"
+        assert results[0].provider == "domestic"
+        assert results[0].status == "new"
+        assert results[1].provider == "microsoft"
+        assert "berlin.de" in existing
+        assert "zurich.ch" in existing
+
+    @pytest.mark.asyncio
+    async def test_check_domains_not_found(self, providers_dir: Path, tmp_path: Path):
+        from mail_municipalities.accuracy.check import check_domains
+
+        db_path = tmp_path / "state.db"
+        async with StateDB(db_path) as state:
+            results = await check_domains(["nonexistent.de"], providers_dir, state)
+
+        assert len(results) == 1
+        assert results[0].name is None
+        assert results[0].status == "not_found"
+
+    @pytest.mark.asyncio
+    async def test_check_shows_ndr_result(self, providers_dir: Path, tmp_path: Path):
+        from mail_municipalities.accuracy.check import check_domains
+
+        db_path = tmp_path / "state.db"
+        async with StateDB(db_path) as state:
+            probe = Probe(
+                probe_id="p1",
+                domain="berlin.de",
+                municipality_code="1",
+                municipality_name="Berlin",
+                country="de",
+                recipient="validation-probe-abc@berlin.de",
+                predicted_provider="domestic",
+                predicted_confidence=80.0,
+            )
+            await state.insert_probes([probe])
+            ndr = NdrResult(
+                probe_id="p1",
+                received_at=datetime.now(tz=timezone.utc),
+                ndr_from="mailer-daemon@berlin.de",
+                ndr_provider=NdrProvider.POSTFIX,
+                generating_mta="mail.berlin.de",
+                confidence=0.9,
+                evidence=[NdrEvidence(pattern="postfix_body", matched_value="Postfix")],
+                raw_headers="",
+            )
+            await state.insert_ndr(ndr)
+            await state.update_probe_status("p1", ProbeStatus.NDR_RECEIVED)
+
+            results = await check_domains(["berlin.de"], providers_dir, state)
+
+        assert len(results) == 1
+        assert results[0].status == "ndr_received"
+        assert results[0].actual == "self-hosted"
+        assert results[0].match is True
