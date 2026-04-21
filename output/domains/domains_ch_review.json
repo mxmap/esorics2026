@@ -1,0 +1,146 @@
+{
+  "generated": "2026-04-02T22:23:47.439481Z",
+  "total": 8,
+  "municipalities": [
+    {
+      "code": "157",
+      "name": "Oetwil am See",
+      "region": "Kanton Zürich",
+      "website": "",
+      "emails": [
+        "oetwil.ch"
+      ],
+      "source": "wikidata",
+      "confidence": "medium",
+      "sources_detail": {
+        "wikidata": [
+          "oetwil.ch"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "2549",
+      "name": "Kammersrohr",
+      "region": "Kanton Solothurn",
+      "website": "",
+      "emails": [
+        "bluewin.ch"
+      ],
+      "source": "override",
+      "confidence": "medium",
+      "sources_detail": {},
+      "flags": [
+        "no_mx"
+      ]
+    },
+    {
+      "code": "5471",
+      "name": "Bettens",
+      "region": "Kanton Waadt",
+      "website": "commune-bettens.ch",
+      "emails": [
+        "bluewin.ch"
+      ],
+      "source": "override",
+      "confidence": "medium",
+      "sources_detail": {
+        "wikidata": [
+          "commune-bettens.ch"
+        ]
+      },
+      "flags": [
+        "no_mx"
+      ]
+    },
+    {
+      "code": "5529",
+      "name": "Oulens-sous-Echallens",
+      "region": "Kanton Waadt",
+      "website": "",
+      "emails": [
+        "oulens.ch"
+      ],
+      "source": "wikidata",
+      "confidence": "medium",
+      "sources_detail": {
+        "wikidata": [
+          "oulens.ch"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "5640",
+      "name": "Lussy-sur-Morges",
+      "region": "Kanton Waadt",
+      "website": "lussy-sur-morges.ch",
+      "emails": [
+        "bluewin.ch"
+      ],
+      "source": "override",
+      "confidence": "medium",
+      "sources_detail": {
+        "wikidata": [
+          "lussy-sur-morges.ch"
+        ]
+      },
+      "flags": [
+        "no_mx"
+      ]
+    },
+    {
+      "code": "5872",
+      "name": "Le Chenit",
+      "region": "Kanton Waadt",
+      "website": "communeduchenit.ch",
+      "emails": [
+        "communeduchenit.ch"
+      ],
+      "source": "wikidata",
+      "confidence": "medium",
+      "sources_detail": {
+        "wikidata": [
+          "communeduchenit.ch"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "5934",
+      "name": "Valeyres-sous-Ursins",
+      "region": "Kanton Waadt",
+      "website": "valeyres-sous-ursins.ch",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "wikidata": [
+          "valeyres-sous-ursins.ch"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "715",
+      "name": "Rebévelier",
+      "region": "Kanton Bern",
+      "website": "",
+      "emails": [
+        "bluewin.ch"
+      ],
+      "source": "override",
+      "confidence": "medium",
+      "sources_detail": {},
+      "flags": [
+        "no_mx"
+      ]
+    }
+  ]
+}

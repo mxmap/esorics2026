@@ -1,0 +1,4 @@
+package emailtest
+
+class ApplicationTest {
+}

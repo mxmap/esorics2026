@@ -1,0 +1,10 @@
+.env
+/evaluator/evaluator-*/*
+!/evaluator/evaluator-*/.gitkeep
+/scanner/scanner-*/*
+!/scanner/scanner-*/.gitkeep
+.vscode/
+results/
+reverseproxy/data/certbot/conf/*
+/.idea/
+*.iml

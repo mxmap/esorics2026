@@ -1,0 +1,83 @@
+{
+  "generated": "2026-04-14T19:20:50Z",
+  "total_probes": 398,
+  "total_sent": 398,
+  "total_ndrs": 337,
+  "response_rate": 0.8467,
+  "overall_accuracy": 0.9169,
+  "weighted_f1": 0.9775,
+  "weighted_f1_labels": [
+    "microsoft",
+    "google",
+    "self-hosted"
+  ],
+  "per_class": {
+    "microsoft": {
+      "precision": 1.0,
+      "recall": 0.9540229885057471,
+      "f1": 0.976470588235294,
+      "support": 87
+    },
+    "google": {
+      "precision": 0.8888888888888888,
+      "recall": 0.8,
+      "f1": 0.8421052631578948,
+      "support": 10
+    },
+    "aws": {
+      "precision": 1.0,
+      "recall": 0.05,
+      "f1": 0.09523809523809523,
+      "support": 20
+    },
+    "self-hosted": {
+      "precision": 0.8966942148760331,
+      "recall": 0.9863636363636363,
+      "f1": 0.9393939393939394,
+      "support": 220
+    },
+    "unknown": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 0
+    }
+  },
+  "confusion_matrix": {
+    "microsoft": {
+      "microsoft": 83,
+      "google": 0,
+      "aws": 0,
+      "self-hosted": 4,
+      "unknown": 0
+    },
+    "google": {
+      "microsoft": 0,
+      "google": 8,
+      "aws": 0,
+      "self-hosted": 2,
+      "unknown": 0
+    },
+    "aws": {
+      "microsoft": 0,
+      "google": 0,
+      "aws": 1,
+      "self-hosted": 19,
+      "unknown": 0
+    },
+    "self-hosted": {
+      "microsoft": 0,
+      "google": 1,
+      "aws": 0,
+      "self-hosted": 217,
+      "unknown": 2
+    },
+    "unknown": {
+      "microsoft": 0,
+      "google": 0,
+      "aws": 0,
+      "self-hosted": 0,
+      "unknown": 0
+    }
+  }
+}

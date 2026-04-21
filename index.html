@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Municipality Email Maps</title>
+<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<link rel="manifest" href="favicon/site.webmanifest">
+<link rel="stylesheet" href="css/shared.css">
+<style>
+body { background: #f0f1f5; min-height: 100vh; }
+.landing { max-width: 720px; margin: 0 auto; padding: 40px 20px; }
+.landing h2 { font-size: 22px; font-weight: 700; color: #1a1a2e; margin-bottom: 8px; }
+.landing p { font-size: 14px; color: #555; line-height: 1.6; margin-bottom: 24px; }
+.map-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+.map-card {
+  display: block; background: #fff; border-radius: 8px; padding: 24px;
+  text-decoration: none; color: #1a1a2e; border: 1px solid #d8dae0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06); transition: box-shadow 0.15s;
+}
+.map-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.12); }
+.map-card h3 { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
+.map-card p { font-size: 13px; color: #555; line-height: 1.5; margin: 0; }
+.landing-footer { margin-top: 32px; font-size: 12px; color: #999; }
+.landing-footer a { color: #2563eb; text-decoration: none; }
+.landing-footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<header id="header">
+  <div class="header-left">
+    <h1 class="brand">Municipality Emails</h1>
+  </div>
+</header>
+<div class="landing">
+  <h2>Municipality Email Maps</h2>
+  <p>Interactive maps showing email infrastructure of ~15,300 municipalities in Germany, Austria, and Switzerland, based on public DNS records and network signals.</p>
+  <div class="map-list">
+    <a href="providers.html" class="map-card">
+      <h3>📨 Email Providers</h3>
+      <p>Which provider handles each municipality's official email? Classified by jurisdiction: US cloud (Microsoft, Google, AWS), domestic, or foreign.</p>
+    </a>
+    <a href="security.html" class="map-card">
+      <h3>🛡️ Email Security</h3>
+      <p>How well are municipality email domains protected against spoofing? Based on SPF and DMARC configuration.</p>
+    </a>
+  </div>
+  <div class="landing-footer">
+    <p>Part of an ongoing research project currently in peer review. Open source &amp; open data on <a href="https://github.com/davidhuser/paper-municipality-emails" target="_blank">GitHub</a>.</p>
+  </div>
+</div>
+</body>
+</html>

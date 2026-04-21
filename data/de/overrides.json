@@ -1,0 +1,923 @@
+{
+  "01053023": {
+    "email_domain": "amt-hohe-elbgeest.de"
+  },
+  "01053135": {
+    "email_domain": "amt-hohe-elbgeest.de"
+  },
+  "01055028": {
+    "email_domain": "gemeinde-malente.landsh.de"
+  },
+  "01056027": {
+    "email_domain": "amt-gums.de"
+  },
+  "01057052": {
+    "email_domain": "amt-selent-schlesen.de"
+  },
+  "01057064": {
+    "email_domain": "schwentinental.de"
+  },
+  "01058029": {
+    "email_domain": "fockbeck.de"
+  },
+  "01058036": {
+    "email_domain": "fockbeck.de"
+  },
+  "01058046": {
+    "email_domain": "amt-nortorfer-land.de"
+  },
+  "01058074": {
+    "email_domain": "amt-mittelholstein.de"
+  },
+  "01058106": {
+    "email_domain": "amt-mittelholstein.de"
+  },
+  "01058156": {
+    "email_domain": "amt-mittelholstein.de"
+  },
+  "01059023": {
+    "email_domain": "amt-arensharde.de"
+  },
+  "01059157": {
+    "email_domain": "langballig.de"
+  },
+  "01061005": {
+    "email_domain": "amt-breitenburg.de"
+  },
+  "01061058": {
+    "email_domain": "amt-breitenburg.de"
+  },
+  "01061068": {
+    "email_domain": "amt-breitenburg.de"
+  },
+  "01061079": {
+    "email_domain": "amt-breitenburg.de"
+  },
+  "01061096": {
+    "email_domain": "kellinghusen.de"
+  },
+  "01061099": {
+    "email_domain": "schenefeld.de"
+  },
+  "01062092": {
+    "email_domain": "amt-bad-oldesloe-land.de"
+  },
+  "03131170": {
+    "email_domain": "wagenfeld.de"
+  },
+  "03151010": {
+    "email_domain": "sg-wesendorf.de"
+  },
+  "03154002": {
+    "email_domain": "heeseberg.de"
+  },
+  "03154006": {
+    "email_domain": "heeseberg.de"
+  },
+  "03154015": {
+    "email_domain": "grasleben.de"
+  },
+  "03154016": {
+    "email_domain": "grasleben.de"
+  },
+  "03154018": {
+    "email_domain": "grasleben.de"
+  },
+  "03154027": {
+    "email_domain": "heeseberg.de"
+  },
+  "03156001": {
+    "email_domain": "gemeinde-bad-grund.de"
+  },
+  "03158014": {
+    "email_domain": "sg-oderwald.de"
+  },
+  "03158019": {
+    "email_domain": "sg-oderwald.de"
+  },
+  "03158038": {
+    "email_domain": "sg-oderwald.de"
+  },
+  "03159028": {
+    "email_domain": "sg-gieboldehausen.de"
+  },
+  "03254006": {
+    "email_domain": "sg-leinebergland.de"
+  },
+  "03256027": {
+    "email_domain": "heemsen.de"
+  },
+  "03352007": {
+    "email_domain": "hagen-cux.de"
+  },
+  "03352035": {
+    "email_domain": "gwnk.de"
+  },
+  "03352037": {
+    "email_domain": "gwnk.de"
+  },
+  "03352038": {
+    "email_domain": "schwafoerden.de"
+  },
+  "03352040": {
+    "email_domain": "gwnk.de"
+  },
+  "03352047": {
+    "email_domain": "gwnk.de"
+  },
+  "03352049": {
+    "email_domain": "hagen-cux.de"
+  },
+  "03356006": {
+    "email_domain": "hambergen.de"
+  },
+  "03359016": {
+    "email_domain": "sg-mittelweser.de"
+  },
+  "03360013": {
+    "email_domain": "sg-aue.de"
+  },
+  "03360016": {
+    "email_domain": "samtgemeinde-rosche.de"
+  },
+  "03452010": {
+    "email_domain": "sg-hage.de"
+  },
+  "03454050": {
+    "email_domain": "soegel.de"
+  },
+  "06432022": {
+    "email_domain": "seeheim-jugenheim.de"
+  },
+  "06433001": {
+    "email_domain": "biebesheim.de"
+  },
+  "06433012": {
+    "email_domain": "ruesselsheim.de"
+  },
+  "06434009": {
+    "email_domain": "schmitten.de"
+  },
+  "06436010": {
+    "email_domain": "liederbach-taunus.de"
+  },
+  "06437002": {
+    "email_domain": "stadt-oberzent.de"
+  },
+  "06437014": {
+    "email_domain": "stadt-oberzent.de"
+  },
+  "06532018": {
+    "email_domain": "schoeffengrund.de"
+  },
+  "06534020": {
+    "email_domain": "weimar-lahn.info"
+  },
+  "06535015": {
+    "email_domain": "schlitz.de"
+  },
+  "06535016": {
+    "email_domain": "schotten.de"
+  },
+  "06631006": {
+    "email_domain": "eichenzell.de"
+  },
+  "06632018": {
+    "email_domain": "rotenburg.de"
+  },
+  "06632019": {
+    "email_domain": "schenklengsfeld.de"
+  },
+  "06633022": {
+    "email_domain": "reinhardshagen.de"
+  },
+  "06634024": {
+    "email_domain": "spangenberg.de"
+  },
+  "07134090": {
+    "email_domain": "og.vg-hr.de"
+  },
+  "07140023": {
+    "email_domain": "sim-rhb.de"
+  },
+  "07140126": {
+    "email_domain": "sim-rhb.de"
+  },
+  "07141100": {
+    "email_domain": "vg-nastaetten.de"
+  },
+  "07232067": {
+    "email_domain": "beispiel.com"
+  },
+  "07232223": {
+    "email_domain": "vg-pruem.de"
+  },
+  "07233020": {
+    "email_domain": "vgdaun.de"
+  },
+  "07332013": {
+    "email_domain": "ellerstadt.de"
+  },
+  "07333030": {
+    "email_domain": "winnweiler-vg.de"
+  },
+  "07336002": {
+    "email_domain": "vgka.de"
+  },
+  "07336018": {
+    "email_domain": "vgka.de"
+  },
+  "07336051": {
+    "email_domain": "vgka.de"
+  },
+  "07336065": {
+    "email_domain": "vg-lw.de"
+  },
+  "07336070": {
+    "email_domain": "vgka.de"
+  },
+  "07336096": {
+    "email_domain": "vgog.de"
+  },
+  "07336097": {
+    "email_domain": "vgka.de"
+  },
+  "07336098": {
+    "email_domain": "vgka.de"
+  },
+  "07338010": {
+    "email_domain": "vgrd.de"
+  },
+  "07338022": {
+    "email_domain": "vg-dannstadt-schauernheim.de"
+  },
+  "07339015": {
+    "email_domain": "vg-rhein-selz.de"
+  },
+  "07339058": {
+    "email_domain": "trths.de"
+  },
+  "07339064": {
+    "email_domain": "vg-rhein-selz.de"
+  },
+  "07340047": {
+    "email_domain": "hauenstein.de"
+  },
+  "08125024": {
+    "email_domain": "ellhofen.de"
+  },
+  "08136019": {
+    "email_domain": "ellwangen.de"
+  },
+  "08315030": {
+    "email_domain": "eichstetten.de"
+  },
+  "08436027": {
+    "email_domain": "t-online.de"
+  },
+  "09162000": {
+    "email_domain": "muenchen.de"
+  },
+  "09176123": {
+    "email_domain": "eichstaett.de"
+  },
+  "09182116": {
+    "email_domain": "gmund.de"
+  },
+  "09183147": {
+    "email_domain": "gars.de"
+  },
+  "09190120": {
+    "email_domain": "eberfing.bayern.de"
+  },
+  "09375213": {
+    "email_domain": "edelsfeld.de"
+  },
+  "09376168": {
+    "email_domain": "wackersdorf.de"
+  },
+  "09672135": {
+    "email_domain": "muennerstadt.de"
+  },
+  "09676119": {
+    "email_domain": "eichenbuehl.de"
+  },
+  "09679188": {
+    "email_domain": "vgem-aub.bayern.de"
+  },
+  "09772136": {
+    "email_domain": "vg-nordendorf.de"
+  },
+  "09779154": {
+    "email_domain": "oettingen.de"
+  },
+  "09779178": {
+    "email_domain": "gemeinde-marxheim.de"
+  },
+  "12061112": {
+    "email_domain": "eichwalde.de"
+  },
+  "12067324": {
+    "email_domain": "amt-schlaubetal.de"
+  },
+  "12067338": {
+    "email_domain": "neuzelle.de"
+  },
+  "12069460": {
+    "email_domain": "amt-beetzsee.de"
+  },
+  "12073440": {
+    "email_domain": "schwedt.de"
+  },
+  "12073532": {
+    "email_domain": "schwedt.de"
+  },
+  "13071009": {
+    "email_domain": "amtneverin.de"
+  },
+  "13071010": {
+    "email_domain": "amtneverin.de"
+  },
+  "13071017": {
+    "email_domain": "altentreptow.de"
+  },
+  "13071038": {
+    "email_domain": "friedland-mecklenburg.de"
+  },
+  "13071054": {
+    "email_domain": "amt-woldegk.de"
+  },
+  "13071062": {
+    "email_domain": "amt-landhagen.de"
+  },
+  "13071104": {
+    "email_domain": "amtneverin.de"
+  },
+  "13071140": {
+    "email_domain": "amtneverin.de"
+  },
+  "13071170": {
+    "email_domain": "amtneverin.de"
+  },
+  "13071171": {
+    "email_domain": "amtneverin.de"
+  },
+  "13071172": {
+    "email_domain": "amtneverin.de"
+  },
+  "13071173": {
+    "email_domain": "amtneverin.de"
+  },
+  "13071174": {
+    "email_domain": "amtneverin.de"
+  },
+  "13071175": {
+    "email_domain": "amtneverin.de"
+  },
+  "13071176": {
+    "email_domain": "amtneverin.de"
+  },
+  "13071177": {
+    "email_domain": "amtneverin.de"
+  },
+  "13071178": {
+    "email_domain": "amtneverin.de"
+  },
+  "13071179": {
+    "email_domain": "amtneverin.de"
+  },
+  "13072025": {
+    "email_domain": "stadt-laage.de"
+  },
+  "13072053": {
+    "email_domain": "buetzow.de"
+  },
+  "13073056": {
+    "email_domain": "ostseebad-moenchgut.de"
+  },
+  "13073058": {
+    "email_domain": "gemeinde-niepars.de"
+  },
+  "13073094": {
+    "email_domain": "amt-barth.de"
+  },
+  "13074016": {
+    "email_domain": "kluetzer-winkel.de"
+  },
+  "13074029": {
+    "email_domain": "schoenberger-land.de"
+  },
+  "13074058": {
+    "email_domain": "schoenberger-land.de"
+  },
+  "13075004": {
+    "email_domain": "torgelow.de"
+  },
+  "13075152": {
+    "email_domain": "amtusedom.de"
+  },
+  "13076043": {
+    "email_domain": "amt-eldenburg-luebz.de"
+  },
+  "13076061": {
+    "email_domain": "herzberg.de"
+  },
+  "13076066": {
+    "email_domain": "amt-eldenburg-luebz.de"
+  },
+  "13076104": {
+    "email_domain": "gemeinde-neuposerin.de"
+  },
+  "14521035": {
+    "email_domain": "aue.de"
+  },
+  "14521070": {
+    "email_domain": "lauter-bernsbach.de"
+  },
+  "14521470": {
+    "email_domain": "olbernhau.de"
+  },
+  "14522390": {
+    "email_domain": "mulda.de"
+  },
+  "14626090": {
+    "email_domain": "gemeinde-kottmar.de"
+  },
+  "14626250": {
+    "email_domain": "gemeinde-krauschwitz.de"
+  },
+  "14626360": {
+    "email_domain": "gemeinde-kottmar.de"
+  },
+  "14627160": {
+    "email_domain": "groeditz.de"
+  },
+  "14628180": {
+    "email_domain": "gemeinde-klingenberg.de"
+  },
+  "14729130": {
+    "email_domain": "lossatal.eu"
+  },
+  "14730260": {
+    "email_domain": "belgernschildau.de"
+  },
+  "15090003": {
+    "email_domain": "vgem-seehausen.de"
+  },
+  "15090007": {
+    "email_domain": "vgem-seehausen.de"
+  },
+  "15090008": {
+    "email_domain": "vgem-seehausen.de"
+  },
+  "15090635": {
+    "email_domain": "vgem-seehausen.de"
+  },
+  "16061017": {
+    "email_domain": "eichsfeld-wipperaue.de"
+  },
+  "16061019": {
+    "email_domain": "eichsfeld-wipperaue.de"
+  },
+  "16061044": {
+    "email_domain": "eichsfeld-wipperaue.de"
+  },
+  "16061054": {
+    "email_domain": "leinefelde-worbis.de"
+  },
+  "16062014": {
+    "email_domain": "gemeinde-suedharz.de"
+  },
+  "16062022": {
+    "email_domain": "harztor.de"
+  },
+  "16063007": {
+    "email_domain": "stadt-werra-suhl-tal.de"
+  },
+  "16063009": {
+    "email_domain": "dermbach.de"
+  },
+  "16063011": {
+    "email_domain": "geisa.de"
+  },
+  "16063018": {
+    "email_domain": "krayenberggemeinde.de"
+  },
+  "16063023": {
+    "email_domain": "dermbach.de"
+  },
+  "16063024": {
+    "email_domain": "badsalzungen.de"
+  },
+  "16063033": {
+    "email_domain": "geisa.de"
+  },
+  "16063053": {
+    "email_domain": "geratal.de"
+  },
+  "16063054": {
+    "email_domain": "krayenberggemeinde.de"
+  },
+  "16063073": {
+    "email_domain": "vg-leinetal.de"
+  },
+  "16064036": {
+    "email_domain": "bad-langensalza.de"
+  },
+  "16064043": {
+    "email_domain": "stadt-nhh.de"
+  },
+  "16064066": {
+    "email_domain": "muehlhausen.de"
+  },
+  "16065003": {
+    "email_domain": "bad-frankenhausen.de"
+  },
+  "16065008": {
+    "email_domain": "artern.de"
+  },
+  "16065016": {
+    "email_domain": "anderschmuecke.de"
+  },
+  "16065035": {
+    "email_domain": "artern.de"
+  },
+  "16065039": {
+    "email_domain": "bad-frankenhausen.de"
+  },
+  "16065046": {
+    "email_domain": "artern.de"
+  },
+  "16065057": {
+    "email_domain": "vg-gera-aue.de"
+  },
+  "16065076": {
+    "email_domain": "artern.de"
+  },
+  "16066005": {
+    "email_domain": "vg-ds.de"
+  },
+  "16066008": {
+    "email_domain": "steinbach-hallenberg.de"
+  },
+  "16066015": {
+    "email_domain": "vg-ds.de"
+  },
+  "16066016": {
+    "email_domain": "vg-ds.de"
+  },
+  "16066017": {
+    "email_domain": "vg-ds.de"
+  },
+  "16066018": {
+    "email_domain": "vg-ds.de"
+  },
+  "16066025": {
+    "email_domain": "vg-wasungen.de"
+  },
+  "16066033": {
+    "email_domain": "wasungen.de"
+  },
+  "16066038": {
+    "email_domain": "vg-ds.de"
+  },
+  "16066039": {
+    "email_domain": "vg-ds.de"
+  },
+  "16066045": {
+    "email_domain": "vg-ds.de"
+  },
+  "16066051": {
+    "email_domain": "steinbach-hallenberg.de"
+  },
+  "16066057": {
+    "email_domain": "vg-ds.de"
+  },
+  "16066058": {
+    "email_domain": "vg-ds.de"
+  },
+  "16066065": {
+    "email_domain": "vg-ds.de"
+  },
+  "16066075": {
+    "email_domain": "wasungen.de"
+  },
+  "16066079": {
+    "email_domain": "vg-ds.de"
+  },
+  "16066081": {
+    "email_domain": "vg-ds.de"
+  },
+  "16066083": {
+    "email_domain": "wasungen.de"
+  },
+  "16067003": {
+    "email_domain": "gemeinde-nessetal.de"
+  },
+  "16067005": {
+    "email_domain": "gemeinde-nessetal.de"
+  },
+  "16067011": {
+    "email_domain": "fahner-hoehe.de"
+  },
+  "16067021": {
+    "email_domain": "gemeinde-nessetal.de"
+  },
+  "16067026": {
+    "email_domain": "fahner-hoehe.de"
+  },
+  "16067027": {
+    "email_domain": "gemeinde-nessetal.de"
+  },
+  "16067033": {
+    "email_domain": "fahner-hoehe.de"
+  },
+  "16067035": {
+    "email_domain": "gemeinde-nessetal.de"
+  },
+  "16067037": {
+    "email_domain": "gemeinde-nessetal.de"
+  },
+  "16067056": {
+    "email_domain": "gemeinde-nessetal.de"
+  },
+  "16067067": {
+    "email_domain": "fahner-hoehe.de"
+  },
+  "16067074": {
+    "email_domain": "gemeinde-nessetal.de"
+  },
+  "16067075": {
+    "email_domain": "gemeinde-nessetal.de"
+  },
+  "16067078": {
+    "email_domain": "vg-heldburgerunterland.de"
+  },
+  "16067083": {
+    "email_domain": "georgenthal.de"
+  },
+  "16068003": {
+    "email_domain": "koelleda.de"
+  },
+  "16068025": {
+    "email_domain": "vgstraussfurt.de"
+  },
+  "16069001": {
+    "email_domain": "vg-feldstein.de"
+  },
+  "16069002": {
+    "email_domain": "stadt-heldburg.de"
+  },
+  "16069003": {
+    "email_domain": "vg-feldstein.de"
+  },
+  "16069004": {
+    "email_domain": "vg-feldstein.de"
+  },
+  "16069006": {
+    "email_domain": "gv-auengrund.de"
+  },
+  "16069008": {
+    "email_domain": "vg-feldstein.de"
+  },
+  "16069009": {
+    "email_domain": "vg-feldstein.de"
+  },
+  "16069011": {
+    "email_domain": "vg-feldstein.de"
+  },
+  "16069016": {
+    "email_domain": "vg-feldstein.de"
+  },
+  "16069017": {
+    "email_domain": "vg-feldstein.de"
+  },
+  "16069021": {
+    "email_domain": "vg-feldstein.de"
+  },
+  "16069025": {
+    "email_domain": "vg-feldstein.de"
+  },
+  "16069026": {
+    "email_domain": "vg-feldstein.de"
+  },
+  "16069028": {
+    "email_domain": "vg-feldstein.de"
+  },
+  "16069035": {
+    "email_domain": "vg-feldstein.de"
+  },
+  "16069047": {
+    "email_domain": "vg-feldstein.de"
+  },
+  "16069059": {
+    "email_domain": "schleusingen.de"
+  },
+  "16071051": {
+    "email_domain": "ilmtal-weinstrasse.de"
+  },
+  "16071052": {
+    "email_domain": "ilmtal-weinstrasse.de"
+  },
+  "16071054": {
+    "email_domain": "ilmtal-weinstrasse.de"
+  },
+  "16071062": {
+    "email_domain": "ilmtal-weinstrasse.de"
+  },
+  "16071063": {
+    "email_domain": "ilmtal-weinstrasse.de"
+  },
+  "16071066": {
+    "email_domain": "ilmtal-weinstrasse.de"
+  },
+  "16071068": {
+    "email_domain": "ilmtal-weinstrasse.de"
+  },
+  "16071072": {
+    "email_domain": "ilmtal-weinstrasse.de"
+  },
+  "16071074": {
+    "email_domain": "ilmtal-weinstrasse.de"
+  },
+  "16071081": {
+    "email_domain": "vg-schwarzatal.de"
+  },
+  "16071096": {
+    "email_domain": "ilmtal-weinstrasse.de"
+  },
+  "16071099": {
+    "email_domain": "bad-sulza.de"
+  },
+  "16072022": {
+    "email_domain": "sonneberg.de"
+  },
+  "16073001": {
+    "email_domain": "koenigsee.de"
+  },
+  "16073006": {
+    "email_domain": "koenigsee.de"
+  },
+  "16073036": {
+    "email_domain": "unterwellenborn.de"
+  },
+  "16073054": {
+    "email_domain": "stadt-schwarzatal.com"
+  },
+  "16073079": {
+    "email_domain": "stadtsuhl.de"
+  },
+  "16074007": {
+    "email_domain": "huegelland-taeler.de"
+  },
+  "16074016": {
+    "email_domain": "vg-feldstein.de"
+  },
+  "16074017": {
+    "email_domain": "huegelland-taeler.de"
+  },
+  "16074022": {
+    "email_domain": "huegelland-taeler.de"
+  },
+  "16074024": {
+    "email_domain": "huegelland-taeler.de"
+  },
+  "16074029": {
+    "email_domain": "huegelland-taeler.de"
+  },
+  "16074032": {
+    "email_domain": "vg-dornburg-camburg.de"
+  },
+  "16074036": {
+    "email_domain": "vg-dornburg-camburg.de"
+  },
+  "16074037": {
+    "email_domain": "rathaus-eisenberg.de"
+  },
+  "16074045": {
+    "email_domain": "huegelland-taeler.de"
+  },
+  "16074046": {
+    "email_domain": "huegelland-taeler.de"
+  },
+  "16074047": {
+    "email_domain": "huegelland-taeler.de"
+  },
+  "16074051": {
+    "email_domain": "vg-schiefergebirge.de"
+  },
+  "16074053": {
+    "email_domain": "huegelland-taeler.de"
+  },
+  "16074054": {
+    "email_domain": "vg-dornburg-camburg.de"
+  },
+  "16074056": {
+    "email_domain": "huegelland-taeler.de"
+  },
+  "16074063": {
+    "email_domain": "vg-dornburg-camburg.de"
+  },
+  "16074064": {
+    "email_domain": "huegelland-taeler.de"
+  },
+  "16074066": {
+    "email_domain": "huegelland-taeler.de"
+  },
+  "16074069": {
+    "email_domain": "stadtroda.de"
+  },
+  "16074071": {
+    "email_domain": "huegelland-taeler.de"
+  },
+  "16074074": {
+    "email_domain": "huegelland-taeler.de"
+  },
+  "16074077": {
+    "email_domain": "huegelland-taeler.de"
+  },
+  "16074097": {
+    "email_domain": "huegelland-taeler.de"
+  },
+  "16074099": {
+    "email_domain": "vg-dornburg-camburg.de"
+  },
+  "16074101": {
+    "email_domain": "huegelland-taeler.de"
+  },
+  "16074103": {
+    "email_domain": "huegelland-taeler.de"
+  },
+  "16074107": {
+    "email_domain": "huegelland-taeler.de"
+  },
+  "16074108": {
+    "email_domain": "huegelland-taeler.de"
+  },
+  "16074112": {
+    "email_domain": "vg-dornburg-camburg.de"
+  },
+  "16074113": {
+    "email_domain": "vg-dornburg-camburg.de"
+  },
+  "16075002": {
+    "email_domain": "rosenthal-am-rennsteig.de"
+  },
+  "16075003": {
+    "email_domain": "rosenthal-am-rennsteig.de"
+  },
+  "16075008": {
+    "email_domain": "vg-suedliches-saaletal.de"
+  },
+  "16075018": {
+    "email_domain": "neustadtanderorla.de"
+  },
+  "16075049": {
+    "email_domain": "neustadtanderorla.de"
+  },
+  "16075071": {
+    "email_domain": "vg-seenplatte.de"
+  },
+  "16075097": {
+    "email_domain": "rosenthal-am-rennsteig.de"
+  },
+  "16076026": {
+    "email_domain": "vg-hes.de"
+  },
+  "16076038": {
+    "email_domain": "langenwetzendorf.de"
+  },
+  "16076041": {
+    "email_domain": "zeulenroda-triebes.de"
+  },
+  "16076043": {
+    "email_domain": "vg-laendereck.de"
+  },
+  "16077002": {
+    "email_domain": "schmoelln.de"
+  },
+  "16077011": {
+    "email_domain": "nobitz.de"
+  },
+  "01061001": {
+    "email_domain": "aol.de"
+  },
+  "01061011": {
+    "email_domain": "gmail.com"
+  },
+  "01061013": {
+    "email_domain": "web.de"
+  },
+  "01061021": {
+    "email_domain": "web.de"
+  },
+  "01061081": {
+    "email_domain": "freenet.de"
+  },
+  "03352012": {
+    "email_domain": "gwnk.de"
+  },
+  "16066082": {
+    "email_domain": "steinbach-hallenberg.de"
+  }
+}

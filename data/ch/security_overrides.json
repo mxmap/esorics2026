@@ -1,0 +1,6 @@
+{
+  "5591": {
+    "dss": {"has_spf": true, "has_good_spf": false},
+    "source": "dss bug: large TXT response causes silent SPF drop"
+  }
+}

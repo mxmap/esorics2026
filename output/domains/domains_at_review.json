@@ -1,0 +1,44 @@
+{
+  "generated": "2026-04-03T00:02:21.335526Z",
+  "total": 2,
+  "municipalities": [
+    {
+      "code": "30802",
+      "name": "Andlersdorf",
+      "region": "Niederösterreich",
+      "website": "noe.gv.at",
+      "emails": [
+        "aon.at"
+      ],
+      "source": "override",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu": [
+          "noe.gv.at"
+        ]
+      },
+      "flags": [
+        "no_mx"
+      ]
+    },
+    {
+      "code": "70829",
+      "name": "Schattwald",
+      "region": "Tirol",
+      "website": "",
+      "emails": [
+        "schattwald.tirol.gv.at"
+      ],
+      "source": "override",
+      "confidence": "medium",
+      "sources_detail": {
+        "bresu_email": [
+          "schattwald.tirol.gv.at"
+        ]
+      },
+      "flags": [
+        "no_mx"
+      ]
+    }
+  ]
+}
