@@ -1,4 +1,4 @@
-# Email Provider Dependencies and Email Security in Municipalities Across Germany, Austria, and Switzerland -- ESORICS 2026
+# Email Provider Dependencies and Email Security in Municipalities Across Germany, Austria, and Switzerland – ESORICS 2026
 
 [![CI](https://github.com/mxmap/esorics2026/actions/workflows/ci.yml/badge.svg)](https://github.com/mxmap/esorics2026/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/mxmap/esorics2026/branch/main/graph/badge.svg)](https://codecov.io/gh/mxmap/esorics2026)
@@ -7,7 +7,7 @@
 [![Checked with pyright](https://img.shields.io/badge/type%20checker-pyright-yellow.svg)](https://github.com/microsoft/pyright)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-Automated pipeline to collect email domains, classify email providers, and analyze email security for municipalities in Switzerland (~2,100), Germany (~9,000), and Austria (~2,350).
+Automated pipeline to collect email domains, classify email providers, and analyze email security for municipalities in Germany, Austria, and Switzerland.
 
 ## Pipeline
 
@@ -58,8 +58,9 @@ To view them:
 
 ```bash
 python3 -m http.server              # from the project root
-# then open http://localhost:8000/maps/
 ```
+
+Now open http://localhost:8000/maps/ in a browser.
 
 ## License
 
