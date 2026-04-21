@@ -1,0 +1,752 @@
+{
+  "generated": "2026-04-02T22:47:33.314895Z",
+  "total": 36,
+  "municipalities": [
+    {
+      "code": "01058029",
+      "name": "Breiholz",
+      "region": "Schleswig-Holstein",
+      "website": "breiholz.de",
+      "emails": [
+        "fockbeck.de"
+      ],
+      "source": "override",
+      "confidence": "medium",
+      "sources_detail": {
+        "livenson": [
+          "breiholz.de"
+        ],
+        "b42labs": [
+          "fockbek.de"
+        ],
+        "wikidata": [
+          "breiholz.de"
+        ]
+      },
+      "flags": [
+        "no_mx"
+      ]
+    },
+    {
+      "code": "01058036",
+      "name": "Christiansholm",
+      "region": "Schleswig-Holstein",
+      "website": "christiansholm.de",
+      "emails": [
+        "fockbeck.de"
+      ],
+      "source": "override",
+      "confidence": "medium",
+      "sources_detail": {
+        "livenson": [
+          "christiansholm.de"
+        ],
+        "b42labs": [
+          "fockbek.de"
+        ],
+        "wikidata": [
+          "christiansholm.de"
+        ]
+      },
+      "flags": [
+        "no_mx"
+      ]
+    },
+    {
+      "code": "01058055",
+      "name": "Friedrichsgraben",
+      "region": "Schleswig-Holstein",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "livenson": [
+          "gemeinde-friedrichsgraben.de"
+        ],
+        "b42labs": [
+          "gemeinde-friedrichsgraben.de"
+        ],
+        "wikidata": [
+          "gemeinde-friedrichsgraben.de"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "01058129",
+      "name": "Prinzenmoor",
+      "region": "Schleswig-Holstein",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "livenson": [
+          "gemeinde-prinzenmoor.de"
+        ],
+        "b42labs": [
+          "gemeinde-prinzenmoor.de"
+        ],
+        "wikidata": [
+          "gemeinde-prinzenmoor.de"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "01061001",
+      "name": "Aasbüttel",
+      "region": "Schleswig-Holstein",
+      "website": "gemeinde-aasbuettel.de",
+      "emails": [
+        "aol.de"
+      ],
+      "source": "override",
+      "confidence": "medium",
+      "sources_detail": {
+        "livenson": [
+          "gemeinde-aasbuettel.de"
+        ],
+        "wikidata": [
+          "gemeinde-aasbuettel.de"
+        ]
+      },
+      "flags": [
+        "no_mx"
+      ]
+    },
+    {
+      "code": "01061011",
+      "name": "Besdorf",
+      "region": "Schleswig-Holstein",
+      "website": "besdorf.de",
+      "emails": [
+        "gmail.com"
+      ],
+      "source": "override",
+      "confidence": "medium",
+      "sources_detail": {
+        "livenson": [
+          "besdorf.de"
+        ],
+        "wikidata": [
+          "besdorf.de"
+        ]
+      },
+      "flags": [
+        "no_mx"
+      ]
+    },
+    {
+      "code": "01061013",
+      "name": "Bokelrehm",
+      "region": "Schleswig-Holstein",
+      "website": "gemeinde-bokelrehm.de",
+      "emails": [
+        "web.de"
+      ],
+      "source": "override",
+      "confidence": "medium",
+      "sources_detail": {
+        "livenson": [
+          "gemeinde-bokelrehm.de"
+        ],
+        "wikidata": [
+          "gemeinde-bokelrehm.de"
+        ]
+      },
+      "flags": [
+        "no_mx"
+      ]
+    },
+    {
+      "code": "01061021",
+      "name": "Christinenthal",
+      "region": "Schleswig-Holstein",
+      "website": "gemeinde-christinenthal.de",
+      "emails": [
+        "web.de"
+      ],
+      "source": "override",
+      "confidence": "medium",
+      "sources_detail": {
+        "livenson": [
+          "gemeinde-christinenthal.de"
+        ],
+        "wikidata": [
+          "gemeinde-christinenthal.de"
+        ]
+      },
+      "flags": [
+        "no_mx"
+      ]
+    },
+    {
+      "code": "01061076",
+      "name": "Nienbüttel",
+      "region": "Schleswig-Holstein",
+      "website": "nienbuettel.de",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "livenson": [
+          "nienbuettel.de"
+        ],
+        "wikidata": [
+          "nienbuettel.de"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "01061081",
+      "name": "Oldenborstel",
+      "region": "Schleswig-Holstein",
+      "website": "gemeinde-oldenborstel.de",
+      "emails": [
+        "freenet.de"
+      ],
+      "source": "override",
+      "confidence": "medium",
+      "sources_detail": {
+        "livenson": [
+          "gemeinde-oldenborstel.de"
+        ],
+        "wikidata": [
+          "gemeinde-oldenborstel.de"
+        ]
+      },
+      "flags": [
+        "no_mx"
+      ]
+    },
+    {
+      "code": "03251017",
+      "name": "Eydelstedt",
+      "region": "Niedersachsen",
+      "website": "eydelstedt.de",
+      "emails": [
+        "barnstorf.de"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "livenson": [
+          "eydelstedt.de"
+        ],
+        "b42labs": [
+          "eydelstedt.de"
+        ],
+        "wikidata": [
+          "eydelstedt.de"
+        ],
+        "csv_email": [
+          "barnstorf.de"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "07133025",
+      "name": "Dörrebach",
+      "region": "Rheinland-Pfalz",
+      "website": "smartbonus.at",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "livenson": [
+          "doerrebach-online.de"
+        ],
+        "b42labs": [
+          "doerrebach-online.de"
+        ],
+        "wikidata": [
+          "doerrebach-online.de"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "07137070",
+      "name": "Mertloch",
+      "region": "Rheinland-Pfalz",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "livenson": [
+          "mertloch.de"
+        ],
+        "b42labs": [
+          "mertloch.de"
+        ],
+        "wikidata": [
+          "mertloch.de"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "07141084",
+      "name": "Marienfels",
+      "region": "Rheinland-Pfalz",
+      "website": "assets.creatr.de",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "livenson": [
+          "marienfels.de"
+        ],
+        "b42labs": [
+          "marienfels.de"
+        ],
+        "wikidata": [
+          "marienfels.de"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "07143085",
+      "name": "Wölferlingen",
+      "region": "Rheinland-Pfalz",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "livenson": [
+          "vg-selters.de"
+        ],
+        "b42labs": [
+          "vg-selters.de"
+        ],
+        "wikidata": [
+          "vg-selters.de"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "07143221",
+      "name": "Ewighausen",
+      "region": "Rheinland-Pfalz",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "livenson": [
+          "vg-selters.de"
+        ],
+        "b42labs": [
+          "vg-selters.de"
+        ],
+        "wikidata": [
+          "vg-selters.de"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "07232108",
+      "name": "Prümzurlay",
+      "region": "Rheinland-Pfalz",
+      "website": "pruemzurlay.de",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "livenson": [
+          "pruemzurlay.de"
+        ],
+        "b42labs": [
+          "pruemzurlay.de"
+        ],
+        "wikidata": [
+          "pruemzurlay.de"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "07233046",
+      "name": "Mückeln",
+      "region": "Rheinland-Pfalz",
+      "website": "mueckeln.de",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "livenson": [
+          "mueckeln.de"
+        ],
+        "b42labs": [
+          "mueckeln.de"
+        ],
+        "wikidata": [
+          "mueckeln.de"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "07235035",
+      "name": "Grimburg",
+      "region": "Rheinland-Pfalz",
+      "website": "grimburg.de",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "livenson": [
+          "grimburg.de"
+        ],
+        "b42labs": [
+          "grimburg.de"
+        ],
+        "wikidata": [
+          "grimburg.de"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "07338015",
+      "name": "Kleinniedesheim",
+      "region": "Rheinland-Pfalz",
+      "website": "kleinniedesheim.de",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "livenson": [
+          "kleinniedesheim.de"
+        ],
+        "b42labs": [
+          "kleinniedesheim.de"
+        ],
+        "wikidata": [
+          "kleinniedesheim.de"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "07339007",
+      "name": "Breitscheid",
+      "region": "Rheinland-Pfalz",
+      "website": "breitscheid.welterbe-mittelrheintal.de",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "livenson": [
+          "breitscheid.welterbe-mittelrheintal.de"
+        ],
+        "b42labs": [
+          "breitscheid.de"
+        ],
+        "wikidata": [
+          "breitscheid.welterbe-mittelrheintal.de"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "08436027",
+      "name": "Eichstegen",
+      "region": "Baden-Württemberg",
+      "website": "gemeinde-eichstegen.de",
+      "emails": [
+        "t-online.de"
+      ],
+      "source": "override",
+      "confidence": "medium",
+      "sources_detail": {
+        "livenson": [
+          "eichstegen.de"
+        ],
+        "b42labs": [
+          "eichstegen.de"
+        ],
+        "wikidata": [
+          "eichstegen.de"
+        ]
+      },
+      "flags": [
+        "no_mx"
+      ]
+    },
+    {
+      "code": "09671127",
+      "name": "Heimbuchenthal",
+      "region": "Bayern",
+      "website": "",
+      "emails": [
+        "vgem-mespelbrunn.bayern.de"
+      ],
+      "source": "static",
+      "confidence": "medium",
+      "sources_detail": {
+        "livenson": [
+          "heimbuchenthal.de"
+        ],
+        "b42labs": [
+          "heimbuchenthal.de"
+        ],
+        "wikidata": [
+          "heimbuchenthal.de"
+        ],
+        "csv_email": [
+          "vgem-mespelbrunn.bayern.de"
+        ]
+      },
+      "flags": [
+        "unverified"
+      ]
+    },
+    {
+      "code": "09672163",
+      "name": "Wildflecken",
+      "region": "Bayern",
+      "website": "wildflecken.de",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "livenson": [
+          "wildflecken.de"
+        ],
+        "b42labs": [
+          "wildflecken.de"
+        ],
+        "wikidata": [
+          "wildflecken.de"
+        ],
+        "csv_email": [
+          "wildflecken.de"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "12067310",
+      "name": "Madlitz-Wilmersdorf",
+      "region": "Brandenburg",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "guess": [
+          "madlitz-wilmersdorf.de"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "12073386",
+      "name": "Mark Landin",
+      "region": "Brandenburg",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {},
+      "flags": []
+    },
+    {
+      "code": "13073015",
+      "name": "Dettmannsdorf",
+      "region": "Mecklenburg-Vorpommern",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "guess": [
+          "dettmannsdorf.de"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "14523240",
+      "name": "Mühltroff",
+      "region": "Sachsen",
+      "website": "muehltroff.de",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "livenson": [
+          "muehltroff.de"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "15085120",
+      "name": "Gernrode",
+      "region": "Sachsen-Anhalt",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "livenson": [
+          "vgm-gernrode-harz.de"
+        ],
+        "wikidata": [
+          "vgm-gernrode-harz.de"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "16064014",
+      "name": "Dünwald",
+      "region": "Thüringen",
+      "website": "duenwald.de",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "livenson": [
+          "duenwald.de"
+        ],
+        "wikidata": [
+          "duenwald.de"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "16064055",
+      "name": "Rodeberg",
+      "region": "Thüringen",
+      "website": "rodeberg.de",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "livenson": [
+          "rodeberg.de"
+        ],
+        "wikidata": [
+          "rodeberg.de"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "16065003",
+      "name": "Bad Frankenhausen/Kyffhäuser",
+      "region": "Thüringen",
+      "website": "bad-frankenhausen.de",
+      "emails": [
+        "bad-frankenhausen.de"
+      ],
+      "source": "override",
+      "confidence": "medium",
+      "sources_detail": {
+        "livenson": [
+          "bad-frankenhausen.de"
+        ],
+        "b42labs": [
+          "bad-frankenhausen.de"
+        ],
+        "wikidata": [
+          "bad-frankenhausen.de"
+        ],
+        "csv_email": [
+          "bad-frankenhausen.de"
+        ]
+      },
+      "flags": [
+        "no_mx"
+      ]
+    },
+    {
+      "code": "16065039",
+      "name": "Ichstedt",
+      "region": "Thüringen",
+      "website": "vgmzartern.geo.io",
+      "emails": [
+        "bad-frankenhausen.de"
+      ],
+      "source": "override",
+      "confidence": "medium",
+      "sources_detail": {
+        "livenson": [
+          "vgmzartern.de"
+        ],
+        "wikidata": [
+          "vgmzartern.de"
+        ]
+      },
+      "flags": [
+        "no_mx"
+      ]
+    },
+    {
+      "code": "16066062",
+      "name": "Rotterode",
+      "region": "Thüringen",
+      "website": "viernau.de",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "livenson": [
+          "viernau.de"
+        ],
+        "wikidata": [
+          "viernau.de"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "16066077",
+      "name": "Unterschönau",
+      "region": "Thüringen",
+      "website": "viernau.de",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "livenson": [
+          "viernau.de"
+        ],
+        "wikidata": [
+          "viernau.de"
+        ]
+      },
+      "flags": []
+    },
+    {
+      "code": "16071002",
+      "name": "Auerstedt",
+      "region": "Thüringen",
+      "website": "",
+      "emails": [],
+      "source": "none",
+      "confidence": "none",
+      "sources_detail": {
+        "guess": [
+          "auerstedt.de"
+        ]
+      },
+      "flags": []
+    }
+  ]
+}

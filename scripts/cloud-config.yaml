@@ -1,0 +1,33 @@
+#cloud-config
+package_upgrade: true
+packages:
+  - htop
+  - git
+  - netcat-openbsd
+  - sqlite3
+users:
+  - name: scanner
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDHax6hIBKcH5J/Z5mRY4Z7wctUCHSnoqiBe69YaeFwpFhd3JB3jbgOhx0XJ8gOnheLw0DM6jR5M/ybnX7pVwmBkRBIuSoEly+4BqI3/26vYiQFwkOdGKMue0deAXd2FqczLaZeyWa//x15KzKwpSxyOKC9GYgnA+ejQDCRKPSTnPvAw96zQKAJo4f19M/Csf+ETnlU2XFJ83emboNyX1ykHEb7tW7p7xI+HOT/Cy3gstlQBAMIVVWhrCWUaysoev6bm75EHHyNJHiyKWesYMBTEGNTGvMCG4Of3NBsAIIRobuK9/g6j+8j3RXvsbw05OFnGG5tyvPS/RRegp2+C8jT7o2DDVXQZY4A2RsKrI+HtPIleMR5DVyVayvnE0vD+QZItvXWn1P1p+csO9PwWw65CmuBbfLaM83Q1EXB+MJtRlFxDN3yZNEdUAGuwfnFm6FgrGQmtV7BxdtZ1EzBl21wuhN0keRKcFzMLY+9kiQLq8O90vhBG1jTqb6ES3gnlSk=
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    groups: sudo
+    shell: /bin/bash
+write_files:
+  - path: /etc/ssh/sshd_config
+    content: |
+         PubkeyAuthentication yes
+         IgnoreRhosts yes
+         PasswordAuthentication no
+         PermitRootLogin no
+         PermitEmptyPasswords no
+         KbdInteractiveAuthentication no
+         X11Forwarding no
+         PrintMotd yes
+         PrintLastLog yes
+         LogLevel INFO
+         AcceptEnv LANG LC_*
+         Subsystem sftp /usr/lib/openssh/sftp-server
+         UsePAM yes
+         ClientAliveInterval 300
+         MaxAuthTries 2
+         AllowUsers scanner
