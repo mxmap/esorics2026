@@ -16,5 +16,10 @@ jobs:
       - run: uv sync --group dev
       - run: uv run ruff check src tests
       - run: uv run ruff format src tests --check
-      - run: uv run pytest --cov --cov-report=term-missing
+      - run: uv run pytest --cov --cov-report=term-missing --cov-report=xml
       - run: uv run pyright --level=warning --warnings src tests
+      - uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./coverage.xml
+          fail_ci_if_error: true
