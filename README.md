@@ -1,7 +1,7 @@
 # Email Provider Dependencies and Email Security in Municipalities Across Germany, Austria, and Switzerland – ESORICS 2026
 
-[![CI](https://github.com/mxmap/esorics2026/actions/workflows/ci.yml/badge.svg)](https://github.com/mxmap/esorics2026/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/mxmap/esorics2026/branch/main/graph/badge.svg)](https://codecov.io/gh/mxmap/esorics2026)
+[![CI](https://github.com/mxmap/secassure2026/actions/workflows/ci.yml/badge.svg)](https://github.com/mxmap/secassure2026/actions/workflows/ci.yml)
+[![codecov](https://codecov.io/gh/mxmap/secassure2026/branch/main/graph/badge.svg)](https://codecov.io/gh/mxmap/secassure2026)
 [![Python 3.13+](https://img.shields.io/badge/python-3.13%2B-blue.svg)](https://www.python.org/downloads/)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![Checked with pyright](https://img.shields.io/badge/type%20checker-pyright-yellow.svg)](https://github.com/microsoft/pyright)
