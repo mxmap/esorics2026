@@ -1,4 +1,4 @@
-# Email Provider Dependencies and Email Security in Municipalities Across Germany, Austria, and Switzerland – ESORICS 2026
+# Email Provider Dependencies and Email Security in Municipalities Across Germany, Austria, and Switzerland
 
 [![CI](https://github.com/mxmap/secassure2026/actions/workflows/ci.yml/badge.svg)](https://github.com/mxmap/secassure2026/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/mxmap/secassure2026/branch/main/graph/badge.svg)](https://codecov.io/gh/mxmap/secassure2026)
