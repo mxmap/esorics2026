@@ -43,7 +43,7 @@ async def fetch_wikidata(
     logger.info("Fetching municipalities from Wikidata (code_field={})...", code_field)
     headers = {
         "Accept": "application/sparql-results+json",
-        "User-Agent": "MunicipalityEmail/1.0 usage=academic repo=https://github.com/davidhuser",
+        "User-Agent": "MunicipalityEmail/1.0 usage=academic repo=https://github.com/mxmap",
     }
     async with httpx.AsyncClient(timeout=120, http2=True) as client:
         r = await fetch_sparql(client, SPARQL_URL, {"query": sparql_query}, headers)
