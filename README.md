@@ -62,6 +62,10 @@ python3 -m http.server              # from the project root
 
 Now open http://localhost:8000/maps/ in a browser.
 
+## Origins
+
+This project builds on [MXmap](https://mxmap.ch) ([source](https://github.com/davidhuser/mxmap)), a solo project by David Huser mapping the email providers of ~2,100 Swiss municipalities, which spawned around ten country-specific forks across Europe. SecAssure2026 extends that work to all of Germany, Austria and Switzerland and adds a dedicated email-security scanning stage.
+
 ## License
 
 First-party code in this repository is released under the **MIT License** — see [LICENSE](LICENSE).
