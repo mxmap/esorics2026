@@ -1,5 +1,7 @@
 /* map-shared.js — shared utilities for map pages */
 
+var CARTO_KEY = '__CARTO_KEY__'; // injected from the CARTO_KEY GitHub secret at deploy time
+
 function escapeHtml(str) {
   var el = document.createElement('span');
   el.textContent = str;
@@ -19,14 +21,14 @@ function initMap(elementId, options) {
     renderer: L.canvas()
   });
 
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png?key=' + CARTO_KEY, {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
     subdomains: 'abcd',
     maxZoom: 19,
     crossOrigin: ''
   }).addTo(map);
 
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png', {
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_only_labels/{z}/{x}/{y}{r}.png?key=' + CARTO_KEY, {
     subdomains: 'abcd',
     maxZoom: 19,
     pane: 'shadowPane',
@@ -171,7 +173,7 @@ function fetchTileLayer(ctx, layer, zoom, minTX, maxTX, minTY, maxTY, tileSize, 
     for (var ty = minTY; ty <= maxTY; ty++) {
       (function (tx, ty) {
         var sub = 'abcd'.charAt(Math.abs(tx + ty) % 4);
-        var url = 'https://' + sub + '.basemaps.cartocdn.com/' + layer + '/' + zoom + '/' + tx + '/' + ty + '.png';
+        var url = 'https://' + sub + '.basemaps.cartocdn.com/' + layer + '/' + zoom + '/' + tx + '/' + ty + '.png?key=' + CARTO_KEY;
         promises.push(
           fetch(url, { mode: 'cors' })
             .then(function (r) { return r.blob(); })
